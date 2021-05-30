@@ -1,0 +1,16 @@
+module.exports = {
+    parser: 'typescript',
+    printWidth: 120,
+    semi: false,
+    singleQuote: true,
+    quoteProps: 'as-needed',
+    trailingComma: 'all',
+    bracketSpacing: true,
+    jsxBracketSameLine: true,
+    arrowParens: 'avoid',
+    insertPragma: false,
+    tabWidth: 4,
+    useTabs: false,
+    proseWrap: 'preserve',
+    htmlWhitespaceSensitivity: 'css',
+}

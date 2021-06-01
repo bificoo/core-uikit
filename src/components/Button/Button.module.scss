@@ -37,7 +37,7 @@ $color: #c8b7a4;
     width: 100%;
   }
 
-  &:global(.primary) {
+  .primary {
     background-color: $color;
     border-color: $color;
     color: #ffffff;
@@ -59,7 +59,7 @@ $color: #c8b7a4;
     }
   }
 
-  &:global(.secondary) {
+  .secondary {
     background: #ffffff;
     border-color: $color;
     color: $color;
@@ -79,7 +79,7 @@ $color: #c8b7a4;
     }
   }
 
-  &:global(.link) {
+  .link {
     margin: 0;
     padding: 0;
     border: 0;

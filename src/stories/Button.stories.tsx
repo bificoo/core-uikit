@@ -1,13 +1,17 @@
-import React from "react"
 import { Story, Meta } from "@storybook/react"
 
-import { Button, ButtonProps } from "./Button"
+import Button, { ButtonProps, ButtonVariant } from "components/Button"
 
 export default {
-  title: "Example/Button",
+  title: "General/Button",
   component: Button,
   argTypes: {
-    backgroundColor: { control: "color" },
+    as: {
+      control: false,
+    },
+    className: {
+      control: false,
+    },
   },
 } as Meta
 
@@ -15,23 +19,18 @@ const Template: Story<ButtonProps> = args => <Button {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {
-  primary: true,
-  label: "Button",
+  variant: "primary",
+  children: "primary",
 }
 
 export const Secondary = Template.bind({})
 Secondary.args = {
-  label: "Button",
+  variant: "secondary",
+  children: "secondary",
 }
 
-export const Large = Template.bind({})
-Large.args = {
-  size: "large",
-  label: "Button",
-}
-
-export const Small = Template.bind({})
-Small.args = {
-  size: "small",
-  label: "Button",
+export const Link = Template.bind({})
+Link.args = {
+  variant: "link",
+  children: "link",
 }

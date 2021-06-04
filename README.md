@@ -49,7 +49,6 @@ VSCode install [prettier-vscode](https://marketplace.visualstudio.com/items?item
 
 ```
 "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
   "eslint.codeAction.showDocumentation": {
     "enable": true
   },

@@ -53,11 +53,18 @@ module.exports = {
     JSX: true,
   },
   rules: {
+<<<<<<< HEAD
     "no-undef": "error",
     "no-var": "error",
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-uses-vars": "off",
+=======
+    "no-undef": ["error"],
+    "no-var": ["error"],
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+>>>>>>> Resolve 'React' is declared but its value is never read problem
     "prettier/prettier": [
       "error",
       {

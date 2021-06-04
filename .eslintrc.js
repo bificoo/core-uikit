@@ -53,26 +53,11 @@ module.exports = {
     JSX: true,
   },
   rules: {
-<<<<<<< HEAD
-<<<<<<< HEAD
     "no-undef": "error",
     "no-var": "error",
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-uses-vars": "off",
-=======
-    "no-undef": ["error"],
-    "no-var": ["error"],
-    "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off",
->>>>>>> Resolve 'React' is declared but its value is never read problem
-=======
-    "no-undef": "error",
-    "no-var": "error",
-    "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off",
-    "react/jsx-uses-vars": "off",
->>>>>>> In React 17 you no longer need to import react when writing JSX
     "prettier/prettier": [
       "error",
       {

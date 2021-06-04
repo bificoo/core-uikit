@@ -66,4 +66,5 @@ VSCode install [prettier-vscode](https://marketplace.visualstudio.com/items?item
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   }
+  "css.lint.unknownAtRules": "ignore",
 ```

@@ -35,7 +35,7 @@ const Button: React.FC<IButtonProps> = ({
   className,
   children,
   ...props
-}: IButtonProps) => {
+}) => {
   const Component = as
 
   return (

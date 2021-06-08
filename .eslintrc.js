@@ -53,7 +53,7 @@ module.exports = {
     JSX: true,
   },
   rules: {
-    "no-undef": "error",
+    "no-undef": "off", // TS already checked
     "no-var": "error",
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",

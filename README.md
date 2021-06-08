@@ -49,22 +49,22 @@ VSCode install [prettier-vscode](https://marketplace.visualstudio.com/items?item
 
 ```
 "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "eslint.codeAction.showDocumentation": {
-    "enable": true
-  },
-  "eslint.options": {
-    "extensions": [".js", ".ts", ".tsx"]
-  },
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "html",
-    "typescript",
-    "typescriptreact"
-  ],
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "css.lint.unknownAtRules": "ignore",
+"eslint.codeAction.showDocumentation": {
+  "enable": true
+},
+"eslint.options": {
+  "extensions": [".js", ".ts", ".tsx"]
+},
+"eslint.validate": [
+  "javascript",
+  "javascriptreact",
+  "html",
+  "typescript",
+  "typescriptreact"
+],
+"typescript.tsdk": "node_modules/typescript/lib",
+"editor.codeActionsOnSave": {
+  "source.fixAll.eslint": true
+},
+"css.lint.unknownAtRules": "ignore",
 ```

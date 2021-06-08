@@ -1,17 +1,11 @@
-import React from "react"
 import cx from "classnames"
 import tuple from "utils/tuple"
 import style from "./Button.module.scss"
-
+import { CommonComponentWithAs } from "types"
 export const ButtonVariant = tuple("primary", "secondary", "link")
 type TButtonVariant = typeof ButtonVariant[number] // union type
 
-export interface ButtonProps extends Omit<React.HTMLAttributes<HTMLElement>, "className"> {
-  /**
-   * 按鈕類型
-   * @default 'button'
-   */
-  as?: "a" | "button"
+export interface ButtonProps extends CommonComponentWithAs<JSXProps.ButtonElement, ButtonProps> {
   /**
    * 按鈕樣式
    * @default 'primary'
@@ -22,20 +16,16 @@ export interface ButtonProps extends Omit<React.HTMLAttributes<HTMLElement>, "cl
    * @default false
    */
   block?: boolean
-  /** 客製化 css class */
-  className?: string | { [key: string]: boolean }
-  /** 按鈕內容 */
-  children: React.ReactNode
 }
 
-const Button: React.FC<ButtonProps> = ({
+const Button = ({
   as = "button",
   variant = "primary",
   block = false,
   className,
   children = "Click",
   ...props
-}) => {
+}: ButtonProps): JSX.Element => {
   const Component = as
 
   return (
@@ -47,5 +37,4 @@ const Button: React.FC<ButtonProps> = ({
   )
 }
 
-Button
 export default Button

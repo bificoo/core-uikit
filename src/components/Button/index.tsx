@@ -1,11 +1,11 @@
 import cx from "classnames"
 import tuple from "utils/tuple"
 import style from "./Button.module.scss"
-import { CommonComponentWithAs } from "types"
 export const ButtonVariant = tuple("primary", "secondary", "link")
-type TButtonVariant = typeof ButtonVariant[number] // union type
+type TButtonVariant = typeof ButtonVariant[number]
 
-export interface ButtonProps extends CommonComponentWithAs<JSXProps.ButtonElement, ButtonProps> {
+export interface ButtonProps extends JSXProps.ButtonElement {
+  as?: "button"
   /**
    * 按鈕樣式
    * @default 'primary'
@@ -19,15 +19,13 @@ export interface ButtonProps extends CommonComponentWithAs<JSXProps.ButtonElemen
 }
 
 const Button = ({
-  as = "button",
+  as: Component = "button",
   variant = "primary",
   block = false,
   className,
   children = "Click",
   ...props
 }: ButtonProps): JSX.Element => {
-  const Component = as
-
   return (
     <Component
       className={cx(style.wrapper, style[variant], { [style.block]: block }, className)}

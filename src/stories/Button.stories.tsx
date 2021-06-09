@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react"
 import Button, { ButtonProps } from "components/Button"
 
 export default {
-  title: "General/Button",
+  title: "General/Button/Button",
   component: Button,
   argTypes: {
     as: {
@@ -20,17 +20,34 @@ const Template: Story<ButtonProps> = args => <Button {...args} />
 export const Primary = Template.bind({})
 Primary.args = {
   variant: "primary",
-  children: "primary",
+  children: "Primary button",
 }
 
 export const Secondary = Template.bind({})
 Secondary.args = {
   variant: "secondary",
-  children: "secondary",
+  children: "Secondary button",
 }
 
-export const Link = Template.bind({})
-Link.args = {
-  variant: "link",
-  children: "link",
+export const Important = Template.bind({})
+Important.args = {
+  variant: "important",
+  children: "Important button",
+}
+
+export const Disabled = Template.bind({})
+Disabled.args = {
+  disabled: true,
+  children: "Disabled button",
+}
+
+export const Block = Template.bind({})
+Block.args = {
+  block: true,
+  children: "Block button",
+}
+
+export const Chinese = Template.bind({})
+Chinese.args = {
+  children: "按鈕",
 }

@@ -1,38 +1,8 @@
-import cx from "classnames"
-import tuple from "utils/tuple"
-import style from "./Button.module.scss"
-export const ButtonVariant = tuple("primary", "secondary", "link")
-type TButtonVariant = typeof ButtonVariant[number]
+import Button from "./Button"
+export type { ButtonProps } from "./Button"
 
-export interface ButtonProps extends JSXProps.ButtonElement {
-  as?: "button"
-  /**
-   * 按鈕樣式
-   * @default 'primary'
-   */
-  variant?: TButtonVariant
-  /**
-   * 按鈕滿版
-   * @default false
-   */
-  block?: boolean
-}
-
-const Button = ({
-  as: Component = "button",
-  variant = "primary",
-  block = false,
-  className,
-  children = "Click",
-  ...props
-}: ButtonProps): JSX.Element => {
-  return (
-    <Component
-      className={cx(style.wrapper, style[variant], { [style.block]: block }, className)}
-      {...props}>
-      {children}
-    </Component>
-  )
-}
+import LinkButton from "./LinkButton"
+export { LinkButton }
+export type { LinkButtonProps } from "./LinkButton"
 
 export default Button

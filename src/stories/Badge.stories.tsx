@@ -16,47 +16,34 @@ const Template: Story<BadgeProps> = args => <Badge {...args} />
 export const Primary = Template.bind({})
 Primary.args = {
   variant: "primary",
-  children: "Primary",
+  pill: true,
+  children: "5",
 }
 
 export const Secondary = Template.bind({})
 Secondary.args = {
   variant: "secondary",
-  children: "Secondary",
+  pill: true,
+  children: 20,
 }
 
-export const Success = Template.bind({})
-Success.args = {
-  variant: "success",
-  children: "Success",
+export const Important = Template.bind({})
+Important.args = {
+  variant: "important",
+  pill: true,
+  children: "99+",
 }
 
-export const Danger = Template.bind({})
-Danger.args = {
-  variant: "danger",
-  children: "Danger",
+export const SecondaryEnglish = Template.bind({})
+SecondaryEnglish.args = {
+  variant: "secondary",
+  pill: true,
+  children: "New",
 }
 
-export const Warning = Template.bind({})
-Warning.args = {
-  variant: "warning",
-  children: "Warning",
-}
-
-export const Info = Template.bind({})
-Info.args = {
-  variant: "info",
-  children: "Info",
-}
-
-export const Light = Template.bind({})
-Light.args = {
-  variant: "light",
-  children: "Light",
-}
-
-export const Dark = Template.bind({})
-Dark.args = {
-  variant: "dark",
-  children: "Dark",
+export const SecondaryChinese = Template.bind({})
+SecondaryChinese.args = {
+  variant: "secondary",
+  pill: true,
+  children: "標籤樣式",
 }

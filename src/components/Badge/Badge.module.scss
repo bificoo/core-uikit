@@ -1,11 +1,13 @@
 .wrapper {
-  display: inline-block;
-  padding: 0.25em 0.4em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5em;
+  min-width: 1px;
+  height: 16px;
   border-radius: 0.25rem;
-  vertical-align: baseline;
   text-align: center;
-  white-space: nowrap;
-  font-weight: 700;
+  font-weight: normal;
   font-size: 12px;
   font-family: 'Microsoft JhengHei', serif;
   line-height: 1;
@@ -20,37 +22,12 @@
   }
 
   &.secondary {
-    background-color: #6c757d;
-    color: #fff;
+    background-color: #dfe1e6;
+    color: #172b4d;
   }
 
-  &.success {
-    background-color: #28a745;
-    color: #fff;
-  }
-
-  &.danger {
-    background-color: #dc3545;
-    color: #fff;
-  }
-
-  &.warning {
-    background-color: #ffc107;
-    color: #212529;
-  }
-
-  &.info {
-    background-color: #17a2b8;
-    color: #fff;
-  }
-
-  &.light {
-    background-color: #f8f9fa;
-    color: #212529;
-  }
-
-  &.dark {
-    background-color: #343a40;
+  &.important {
+    background-color: #de350b;
     color: #fff;
   }
 }

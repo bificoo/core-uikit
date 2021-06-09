@@ -1,12 +1,56 @@
 .wrapper {
-  background-color: #0052cc;
-  color: #ffffff;
-  border-radius: 2em;
   display: inline-block;
-  font-size: 12px;
-  font-weight: normal;
-  line-height: 1;
-  min-width: 1px;
-  padding: 0.16666666666667em 0.5em;
+  padding: 0.25em 0.4em;
+  border-radius: 0.25rem;
+  vertical-align: baseline;
   text-align: center;
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: 12px;
+  font-family: 'Microsoft JhengHei', serif;
+  line-height: 1;
+
+  &.pill {
+    border-radius: 2em;
+  }
+
+  &.primary {
+    background-color: #0052cc;
+    color: #fff;
+  }
+
+  &.secondary {
+    background-color: #6c757d;
+    color: #fff;
+  }
+
+  &.success {
+    background-color: #28a745;
+    color: #fff;
+  }
+
+  &.danger {
+    background-color: #dc3545;
+    color: #fff;
+  }
+
+  &.warning {
+    background-color: #ffc107;
+    color: #212529;
+  }
+
+  &.info {
+    background-color: #17a2b8;
+    color: #fff;
+  }
+
+  &.light {
+    background-color: #f8f9fa;
+    color: #212529;
+  }
+
+  &.dark {
+    background-color: #343a40;
+    color: #fff;
+  }
 }

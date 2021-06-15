@@ -1,7 +1,6 @@
 import cx from "classnames"
-import tuple from "utils/tuple"
 import style from "./LinkButton.module.scss"
-export const ButtonVariant = tuple("primary")
+export const ButtonVariant = ["primary"] as const
 type TButtonVariant = typeof ButtonVariant[number]
 
 export interface LinkButtonProps extends JSXProps.AElement {

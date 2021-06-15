@@ -1,8 +1,7 @@
 import cx from "classnames"
-import tuple from "utils/tuple"
 import style from "./Badge.module.scss"
 
-export const BadgeVariant = tuple("primary", "secondary", "important")
+export const BadgeVariant = ["primary", "secondary", "important"] as const
 type TBadgeVariant = typeof BadgeVariant[number]
 
 export interface BadgeProps extends JSXProps.SpanElement {

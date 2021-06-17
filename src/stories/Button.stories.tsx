@@ -6,9 +6,6 @@ export default {
   title: "General/Button/Button",
   component: Button,
   argTypes: {
-    as: {
-      control: false,
-    },
     className: {
       control: false,
     },

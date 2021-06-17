@@ -1,29 +1,22 @@
 import cx from "classnames"
 import style from "./Badge.module.scss"
 
-export const BadgeVariant = ["primary", "secondary", "important"] as const
-type TBadgeVariant = typeof BadgeVariant[number]
-
-export interface BadgeProps extends JSXProps.SpanElement {
+export type BadgeProps = {
   /**
    * 標籤樣式
    * @default 'primary'
    */
-  variant?: TBadgeVariant
+  variant?: "primary" | "secondary" | "important"
   /**
    * 標籤是否圓形
    * @default false
    */
   pill?: boolean
-}
-
-const defaultProps = {
-  pill: false,
-}
+} & JSXProps.SpanElement
 
 const Badge = ({
   variant = "primary",
-  pill,
+  pill = false,
   className,
   children,
   ...props
@@ -36,8 +29,5 @@ const Badge = ({
     </span>
   )
 }
-
-Badge.displayName = "Badge"
-Badge.defaultProps = defaultProps
 
 export default Badge

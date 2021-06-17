@@ -1,20 +1,18 @@
 import cx from "classnames"
 import style from "./Button.module.scss"
-export const ButtonVariant = ["primary", "secondary", "important"] as const
-type TButtonVariant = typeof ButtonVariant[number]
 
-export interface ButtonProps extends JSXProps.ButtonElement {
+export type ButtonProps = {
   /**
    * 按鈕樣式
    * @default 'primary'
    */
-  variant?: TButtonVariant
+  variant?: "primary" | "secondary" | "important"
   /**
    * 按鈕滿版
    * @default false
    */
   block?: boolean
-}
+} & JSXProps.ButtonElement
 
 const Button = ({
   variant = "primary",
@@ -22,7 +20,7 @@ const Button = ({
   className,
   children = "Click",
   ...props
-}: ButtonProps): JSX.Element => {
+}: ButtonProps) => {
   return (
     <button
       className={cx(style.wrapper, style[variant], { [style.block]: block }, className)}

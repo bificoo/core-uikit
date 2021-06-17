@@ -1,22 +1,20 @@
 import cx from "classnames"
 import style from "./LinkButton.module.scss"
-export const ButtonVariant = ["primary"] as const
-type TButtonVariant = typeof ButtonVariant[number]
 
-export interface LinkButtonProps extends JSXProps.AElement {
+export type LinkButtonProps = {
   /**
    * 按鈕樣式
    * @default 'primary'
    */
-  variant?: TButtonVariant
-}
+  variant?: "primary"
+} & JSXProps.AElement
 
 const Button = ({
   variant = "primary",
   className,
   children = "Click",
   ...props
-}: LinkButtonProps): JSX.Element => {
+}: LinkButtonProps) => {
   return (
     <a className={cx(style.wrapper, style[variant], className)} {...props}>
       {children}

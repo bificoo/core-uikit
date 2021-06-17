@@ -2,13 +2,13 @@ import React, { useContext, useEffect, useState } from "react"
 import FormContext from "components/Form/FormContext"
 import { FormControlProps } from "../types"
 import cx from "classnames"
-import style from "./FormInput.module.scss"
+import style from "./FormTextarea.module.scss"
 
-export type FormInputProps = FormControlProps & JSXProps.InputElement
-export type FormInputRef = React.Ref<HTMLInputElement>
-const FormInput = React.forwardRef(function FormInput(
-  { id, className, type = "text", ...props }: FormInputProps,
-  ref: FormInputRef = null,
+export type FormTextareaProps = FormControlProps & JSXProps.TextareaElement
+export type FormTextareaRef = React.Ref<HTMLTextAreaElement>
+const FormTextarea = React.forwardRef(function FormTextarea(
+  { id, className, ...props }: FormTextareaProps,
+  ref: FormTextareaRef = null,
 ) {
   const { attributes, setAttributes } = useContext(FormContext)
   const [entered, setEntered] = useState(false)
@@ -39,10 +39,9 @@ const FormInput = React.forwardRef(function FormInput(
         // [style["is-valid"]]: isValid,
         // [style["is-invalid"]]: isInvalid,
       })}>
-      <input
+      <textarea
         {...props}
         ref={ref}
-        type={type}
         id={id || attributes.controlId}
         className={cx(style.control, className)}
         onChange={e => {
@@ -55,4 +54,4 @@ const FormInput = React.forwardRef(function FormInput(
   )
 })
 
-export default FormInput
+export default FormTextarea

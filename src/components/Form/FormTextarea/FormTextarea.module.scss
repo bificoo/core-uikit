@@ -43,9 +43,9 @@
     user-select: none;
   }
 
-  input.control {
-    padding: 0 10px;
-    height: em(36);
+  textarea.control {
+    padding: 7px 10px;
+    height: auto;
     background-color: #0000;
     border: 0px;
     box-sizing: border-box;
@@ -57,6 +57,8 @@
     width: 100%;
     line-height: 1.42857;
     font-family: $font-family;
+    appearance: none;
+    -webkit-appearance: none;
 
     &::placeholder,
     &::-webkit-input-placeholder {

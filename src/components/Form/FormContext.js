@@ -3,11 +3,11 @@ import React from "react"
 const FormContext = React.createContext({
   attributes: {
     controlId: "",
-    as: "input",
-    type: "text",
+    entered: false,
     disabled: false,
     readOnly: false,
-    multiple: false,
+    isValid: null,
+    isInvalid: null,
   },
   setAttributes: () => {
     return

@@ -1,9 +1,9 @@
 import { Story, Meta } from "@storybook/react"
 
-import Form, { FormInputProps } from "components/Form"
+import Form, { FormTextareaProps } from "components/Form"
 export default {
-  title: "General/Form/Input",
-  component: Form.Input,
+  title: "General/Form/Textarea",
+  component: Form.Textarea,
   argTypes: {
     className: {
       control: false,
@@ -11,8 +11,8 @@ export default {
   },
 } as Meta
 
-const Template: Story<FormInputProps> = args => {
-  return <Form.Input {...args} ref={null} />
+const Template: Story<FormTextareaProps> = args => {
+  return <Form.Textarea {...args} ref={null} />
 }
 
 export const Default = Template.bind({})
@@ -35,8 +35,8 @@ WithChineseValue.args = {
   value: "我是文字",
 }
 
-export const DisabledInput = Template.bind({})
-DisabledInput.args = {
+export const Disabled = Template.bind({})
+Disabled.args = {
   value: "I am text",
   disabled: true,
 }

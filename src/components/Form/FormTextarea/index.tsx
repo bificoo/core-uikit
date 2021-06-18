@@ -32,7 +32,7 @@ const FormTextarea = React.forwardRef(function FormTextarea(
 
   return (
     <div
-      className={cx("comp-control", style.wrapper, {
+      className={cx("component-textarea", style.wrapper, {
         [style.entered]: entered,
         [style.disabled]: !!props.disabled,
         [style["read-only"]]: !!props.readOnly,

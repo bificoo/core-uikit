@@ -4,7 +4,10 @@ import { FormControlProps } from "../types"
 import cx from "classnames"
 import style from "./FormInput.module.scss"
 
-export type FormInputProps = FormControlProps & JSXProps.InputElement
+export type FormInputProps = FormControlProps &
+  Omit<JSXProps.InputElement, "type"> & {
+    type: "text" | "password"
+  }
 export type FormInputRef = React.Ref<HTMLInputElement>
 const FormInput = React.forwardRef(function FormInput(
   { id, className, type = "text", ...props }: FormInputProps,
@@ -32,7 +35,7 @@ const FormInput = React.forwardRef(function FormInput(
 
   return (
     <div
-      className={cx("comp-control", style.wrapper, {
+      className={cx("component-input", style.wrapper, {
         [style.entered]: entered,
         [style.disabled]: !!props.disabled,
         [style["read-only"]]: !!props.readOnly,

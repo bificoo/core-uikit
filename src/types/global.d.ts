@@ -118,76 +118,44 @@ declare global {
     type WebviewElement = JSX.IntrinsicElements["webview"]
     type SvgElement = JSX.IntrinsicElements["svg"]
     type AnimateElement = JSX.IntrinsicElements["animate"]
-    type AnimateMotionElement =
-      JSX.IntrinsicElements["animateMotion"]
-    >
-    type AnimateTransformElement =
-      JSX.IntrinsicElements["animateTransform"]
-    >
+    type AnimateMotionElement = JSX.IntrinsicElements["animateMotion"]
+    type AnimateTransformElement = JSX.IntrinsicElements["animateTransform"]
     type CircleElement = JSX.IntrinsicElements["circle"]
     type ClipPathElement = JSX.IntrinsicElements["clipPath"]
     type DefsElement = JSX.IntrinsicElements["defs"]
     type DescElement = JSX.IntrinsicElements["desc"]
     type EllipseElement = JSX.IntrinsicElements["ellipse"]
     type FeBlendElement = JSX.IntrinsicElements["feBlend"]
-    type FeColorMatrixElement =
-      JSX.IntrinsicElements["feColorMatrix"]
-    >
-    type FeComponentTransferElement =
-      JSX.IntrinsicElements["feComponentTransfer"]
-    >
+    type FeColorMatrixElement = JSX.IntrinsicElements["feColorMatrix"]
+    type FeComponentTransferElement = JSX.IntrinsicElements["feComponentTransfer"]
     type FeCompositeElement = JSX.IntrinsicElements["feComposite"]
-    type FeConvolveMatrixElement =
-      JSX.IntrinsicElements["feConvolveMatrix"]
-    >
-    type FeDiffuseLightingElement =
-      JSX.IntrinsicElements["feDiffuseLighting"]
-    >
-    type FeDisplacementMapElement =
-      JSX.IntrinsicElements["feDisplacementMap"]
-    >
-    type FeDistantLightElement =
-      JSX.IntrinsicElements["feDistantLight"]
-    >
-    type FeDropShadowElement =
-      JSX.IntrinsicElements["feDropShadow"]
-    >
+    type FeConvolveMatrixElement = JSX.IntrinsicElements["feConvolveMatrix"]
+    type FeDiffuseLightingElement = JSX.IntrinsicElements["feDiffuseLighting"]
+    type FeDisplacementMapElement = JSX.IntrinsicElements["feDisplacementMap"]
+    type FeDistantLightElement = JSX.IntrinsicElements["feDistantLight"]
+    type FeDropShadowElement = JSX.IntrinsicElements["feDropShadow"]
     type FeFloodElement = JSX.IntrinsicElements["feFlood"]
     type FeFuncAElement = JSX.IntrinsicElements["feFuncA"]
     type FeFuncBElement = JSX.IntrinsicElements["feFuncB"]
     type FeFuncGElement = JSX.IntrinsicElements["feFuncG"]
     type FeFuncRElement = JSX.IntrinsicElements["feFuncR"]
-    type FeGaussianBlurElement =
-      JSX.IntrinsicElements["feGaussianBlur"]
-    >
+    type FeGaussianBlurElement = JSX.IntrinsicElements["feGaussianBlur"]
     type FeImageElement = JSX.IntrinsicElements["feImage"]
     type FeMergeElement = JSX.IntrinsicElements["feMerge"]
     type FeMergeNodeElement = JSX.IntrinsicElements["feMergeNode"]
-    type FeMorphologyElement =
-      JSX.IntrinsicElements["feMorphology"]
-    >
+    type FeMorphologyElement = JSX.IntrinsicElements["feMorphology"]
     type FeOffsetElement = JSX.IntrinsicElements["feOffset"]
-    type FePointLightElement =
-      JSX.IntrinsicElements["fePointLight"]
-    >
-    type FeSpecularLightingElement =
-      JSX.IntrinsicElements["feSpecularLighting"]
-    >
+    type FePointLightElement = JSX.IntrinsicElements["fePointLight"]
+    type FeSpecularLightingElement = JSX.IntrinsicElements["feSpecularLighting"]
     type FeSpotLightElement = JSX.IntrinsicElements["feSpotLight"]
     type FeTileElement = JSX.IntrinsicElements["feTile"]
-    type FeTurbulenceElement =
-      JSX.IntrinsicElements["feTurbulence"]
-    >
+    type FeTurbulenceElement = JSX.IntrinsicElements["feTurbulence"]
     type FilterElement = JSX.IntrinsicElements["filter"]
-    type ForeignObjectElement =
-      JSX.IntrinsicElements["foreignObject"]
-    >
+    type ForeignObjectElement = JSX.IntrinsicElements["foreignObject"]
     type GElement = JSX.IntrinsicElements["g"]
     type ImageElement = JSX.IntrinsicElements["image"]
     type LineElement = JSX.IntrinsicElements["line"]
-    type LinearGradientElement =
-      JSX.IntrinsicElements["linearGradient"]
-    >
+    type LinearGradientElement = JSX.IntrinsicElements["linearGradient"]
     type MarkerElement = JSX.IntrinsicElements["marker"]
     type MaskElement = JSX.IntrinsicElements["mask"]
     type MetadataElement = JSX.IntrinsicElements["metadata"]
@@ -196,9 +164,7 @@ declare global {
     type PatternElement = JSX.IntrinsicElements["pattern"]
     type PolygonElement = JSX.IntrinsicElements["polygon"]
     type PolylineElement = JSX.IntrinsicElements["polyline"]
-    type RadialGradientElement =
-      JSX.IntrinsicElements["radialGradient"]
-    >
+    type RadialGradientElement = JSX.IntrinsicElements["radialGradient"]
     type RectElement = JSX.IntrinsicElements["rect"]
     type StopElement = JSX.IntrinsicElements["stop"]
     type SwitchElement = JSX.IntrinsicElements["switch"]
@@ -208,6 +174,14 @@ declare global {
     type TspanElement = JSX.IntrinsicElements["tspan"]
     type UseElement = JSX.IntrinsicElements["use"]
     type ViewElement = JSX.IntrinsicElements["view"]
+  }
+
+  namespace ReactProps {
+    type WithChildren = { children?: React.ReactNode }
+    type ReplaceClassNameFromHTMLElement<T> = Omit<T, "className"> & {
+      /** 自定義 class */
+      className?: string | { [key: string]: boolean }
+    }
   }
 }
 export default global

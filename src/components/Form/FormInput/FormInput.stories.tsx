@@ -15,19 +15,25 @@ const Template: Story<FormInputProps> = args => {
   return <Form.Input {...args} ref={null} />
 }
 
-export const Default = Template.bind({})
-Default.args = {
+export const Placeholder = Template.bind({})
+Placeholder.args = {
   placeholder: "Please enter text.",
+}
+
+export const Text = Template.bind({})
+Text.args = {
+  value: "I am text",
+}
+
+export const Password = Template.bind({})
+Password.args = {
+  type: "password",
+  value: "password",
 }
 
 export const Chinese = Template.bind({})
 Chinese.args = {
   placeholder: "請輸入文字.",
-}
-
-export const WithValue = Template.bind({})
-WithValue.args = {
-  value: "I am text",
 }
 
 export const WithChineseValue = Template.bind({})

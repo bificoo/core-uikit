@@ -51,7 +51,7 @@ const Tooltip = ({ className, children, content, placement }: TooltipProps) => {
           ref={setPopperElement}
           style={styles.popper}
           {...attributes.popper}>
-          <div id="arrow" ref={setArrowRef} style={styles.arrow} />
+          <div id="arrow" className={style.arrow} ref={setArrowRef} style={styles.arrow} />
           {content}
         </div>
       )}

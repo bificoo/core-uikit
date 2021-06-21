@@ -16,6 +16,38 @@
   pointer-events: none;
 
   overflow-wrap: break-word;
+
+  .arrow {
+    position: absolute;
+    z-index: 1;
+    width: 10px;
+    height: 10px;
+
+    &:after {
+      position: absolute;
+      top: -5px;
+      width: 7px;
+      height: 7px;
+      background-color: #172b4d;
+      box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+      content: ' ';
+      transform: rotate(45deg);
+    }
+  }
+
+  &[data-popper-placement^='top'] > .arrow {
+    bottom: -12px;
+  }
+
+  &[data-popper-placement^='right'] > .arrow {
+    top: 6px !important;
+    left: -4px;
+  }
+
+  &[data-popper-placement^='left'] > .arrow {
+    top: 7px !important;
+    right: -7px;
+  }
 }
 
 .children {

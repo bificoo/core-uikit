@@ -13,6 +13,13 @@ export default {
       control: false,
     },
   },
+  decorators: [
+    Story => (
+      <div style={{ display: "flex", justifyContent: "center", padding: "30px" }}>
+        <Story />
+      </div>
+    ),
+  ],
 } as Meta
 
 const Template: Story<TooltipProps> = args => <Tooltip {...args} />

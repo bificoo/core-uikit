@@ -3,11 +3,10 @@
 .wrapper {
   label.label {
     font-family: $font-family;
-    -webkit-box-align: center;
     align-items: center;
     display: flex;
     color: #091e42;
-    cursor: default;
+    cursor: pointer;
 
     input {
       & + .check {

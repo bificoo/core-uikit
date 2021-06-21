@@ -20,7 +20,7 @@ const Badge = ({
   className,
   children,
   ...props
-}: BadgeProps): JSX.Element => {
+}: BadgeProps) => {
   return (
     <span
       className={cx(style.wrapper, style[variant], { [style.pill]: pill }, className)}

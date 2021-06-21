@@ -1,3 +1,5 @@
+@import 'assets/styles/variables';
+
 .wrapper {
   top: 0;
   left: 0;
@@ -14,4 +16,9 @@
   pointer-events: none;
 
   overflow-wrap: break-word;
+}
+
+.children {
+  display: inline-block;
+  width: auto;
 }

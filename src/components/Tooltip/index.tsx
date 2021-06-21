@@ -1,33 +1,60 @@
-import React, { useRef, MutableRefObject } from "react"
+import React, { useState } from "react"
 import cx from "classnames"
 import style from "./Tooltip.module.scss"
 import { usePopper } from "react-popper"
 import { Placement } from "@popperjs/core"
 
-export interface TooltipProps extends JSXProps.DivElement {
+export type TooltipProps = {
   className?: string
   children: React.ReactNode
   content?: string
-  position?: Placement
+  placement?: Placement
 }
 
-const Tooltip = ({ className, children, content, position }: TooltipProps): JSX.Element => {
-  const targetRef = useRef(null)
-  const popperRef = useRef(null)
-  const { styles, attributes } = usePopper(targetRef.current, popperRef.current, {
-    placement: position,
+const Tooltip = ({ className, children, content, placement }: TooltipProps) => {
+  const [isVisible, setVisibility] = useState(false)
+  const [referenceElement, setReferenceElement] = React.useState<HTMLDivElement | null>(null)
+  const [popperElement, setPopperElement] = React.useState<HTMLDivElement | null>(null)
+  // the ref for the arrow must be a callback ref
+  const [arrowRef, setArrowRef] = useState<HTMLDivElement | null>(null)
+
+  const { styles, attributes } = usePopper(referenceElement, popperElement, {
+    placement,
+    modifiers: [
+      {
+        name: "arrow",
+        options: {
+          element: arrowRef,
+        },
+      },
+      {
+        name: "offset",
+        options: {
+          offset: [0, 10],
+        },
+      },
+    ],
   })
 
   return (
     <>
-      <div ref={targetRef}>{children}</div>
       <div
-        className={cx(style.wrapper, className)}
-        ref={popperRef}
-        style={styles.popper}
-        {...attributes.popper}>
-        {content}
+        className={style.children}
+        ref={setReferenceElement}
+        onMouseEnter={() => setVisibility(true)}
+        onMouseLeave={() => setVisibility(false)}>
+        {children}
       </div>
+      {isVisible && (
+        <div
+          className={cx(style.wrapper, className)}
+          ref={setPopperElement}
+          style={styles.popper}
+          {...attributes.popper}>
+          <div id="arrow" ref={setArrowRef} style={styles.arrow} />
+          {content}
+        </div>
+      )}
     </>
   )
 }

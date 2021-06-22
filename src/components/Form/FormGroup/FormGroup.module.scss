@@ -1,0 +1,18 @@
+.wrapper {
+  display: flex;
+  margin-bottom: 25px;
+  align-items: center;
+
+  .vertical {
+    flex-direction: column;
+
+    label {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .group {
+    width: 100%;
+  }
+}

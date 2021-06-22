@@ -6,32 +6,25 @@ import style from "./FormInput.module.scss"
 
 export type FormInputProps = FormControlProps &
   Omit<JSXProps.InputElement, "type"> & {
-    type: "text" | "password"
+    type?: "text" | "password"
   }
 export type FormInputRef = React.Ref<HTMLInputElement>
 const FormInput = React.forwardRef(function FormInput(
-  { id, className, type = "text", ...props }: FormInputProps,
+  { id, className, type = "text", isValid, isInvalid, ...props }: FormInputProps,
   ref: FormInputRef = null,
 ) {
   const { attributes, setAttributes } = useContext(FormContext)
   const [entered, setEntered] = useState(false)
 
-  // useEffect(() => {
-  //   setAttributes({
-  //     ...attributes,
-  //     entered,
-  //     isValid,
-  //     isInvalid,
-  //     disabled: !!props.disabled,
-  //     readOnly: !!props.readOnly,
-  //   });
-  // }, [
-  //   entered,
-  //   isValid,
-  //   isInvalid,
-  //   props.disabled,
-  //   props.readOnly,
-  // ]);
+  useEffect(() => {
+    setAttributes({
+      entered,
+      isValid,
+      isInvalid,
+      disabled: props.disabled,
+      readOnly: props.readOnly,
+    })
+  }, [entered, isValid, isInvalid, props.disabled, props.readOnly])
 
   return (
     <div
@@ -39,14 +32,14 @@ const FormInput = React.forwardRef(function FormInput(
         [style.entered]: entered,
         [style.disabled]: !!props.disabled,
         [style["read-only"]]: !!props.readOnly,
-        // [style["is-valid"]]: isValid,
-        // [style["is-invalid"]]: isInvalid,
+        [style["is-valid"]]: isValid,
+        [style["is-invalid"]]: isInvalid,
       })}>
       <input
         {...props}
         ref={ref}
         type={type}
-        id={id || attributes.controlId}
+        id={id || attributes?.formId}
         className={cx(style.control, className)}
         onChange={e => {
           if (e.target.value.trim() === "") setEntered(false)

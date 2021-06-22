@@ -2,7 +2,7 @@ import { Story, Meta } from "@storybook/react"
 
 import Form, { FormRadioProps } from "components/Form"
 export default {
-  title: "General/Form/Radio",
+  title: "Components/Form/Radio",
   component: Form.Radio,
   argTypes: {
     className: {
@@ -21,13 +21,13 @@ const Template: Story<FormRadioProps> = ({ children, ...args }) => {
 
 export const Check = Template.bind({})
 Check.args = {
-  children: "radio",
+  children: "Radio",
 }
 
 export const Checked = Template.bind({})
 Checked.args = {
   checked: true,
-  children: "radio",
+  children: "Radio",
 }
 
 export const Chinese = Template.bind({})

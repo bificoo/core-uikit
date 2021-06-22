@@ -2,7 +2,7 @@ import { Story, Meta } from "@storybook/react"
 
 import Form, { FormCheckboxProps } from "components/Form"
 export default {
-  title: "General/Form/Checkbox",
+  title: "Components/Form/Checkbox",
   component: Form.Checkbox,
   argTypes: {
     className: {
@@ -21,13 +21,13 @@ const Template: Story<FormCheckboxProps> = ({ children, ...args }) => {
 
 export const Check = Template.bind({})
 Check.args = {
-  children: "checkbox",
+  children: "Checkbox",
 }
 
 export const Checked = Template.bind({})
 Checked.args = {
   checked: true,
-  children: "checkbox",
+  children: "Checkbox",
 }
 
 export const Chinese = Template.bind({})

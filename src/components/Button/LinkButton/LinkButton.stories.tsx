@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react"
 import { LinkButton, LinkButtonProps } from "components/Button"
 
 export default {
-  title: "General/Button/LinkButton",
+  title: "Components/Button/LinkButton",
   component: LinkButton,
   argTypes: {
     as: {

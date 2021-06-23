@@ -1,5 +1,6 @@
-import { useState } from "react"
-import FormContext, { Attributes } from "components/Form/FormContext"
+import React, { useState, useContext } from "react"
+import FormLabel from "../FormLabel"
+import FormContext, { FormGroupContext, FormGroupAttributes } from "components/Form/FormContext"
 import style from "./FormGroup.module.scss"
 import cx from "classnames"
 
@@ -8,10 +9,11 @@ export type FormGroupProps = ReactProps.Component &
     formId: string
     label: JSX.Element
     layout: "horizontal" | "vertical"
+    labelWidth: number
   }>
 
-const FormGroup = ({ layout = "horizontal", ...props }: FormGroupProps) => {
-  const [attributes, setAttributes] = useState<Attributes>({
+const FormGroup = (props: FormGroupProps) => {
+  const [attributes, setAttributes] = useState<FormGroupAttributes>({
     formId: props.formId,
     entered: false,
     disabled: false,
@@ -19,21 +21,40 @@ const FormGroup = ({ layout = "horizontal", ...props }: FormGroupProps) => {
     isValid: null,
     isInvalid: null,
   })
-
-  const update = (attributes: Partial<Attributes>) => {
+  const { attributes: formAttributes } = useContext(FormContext)
+  const layout = props.layout || formAttributes?.layout || "horizontal"
+  const labelWidth = props.labelWidth || formAttributes?.labelWidth || "auto"
+  const update = (attributes: FormGroupAttributes) => {
     setAttributes(prev => {
-      console.info({ ...prev, ...attributes })
       return { ...prev, ...attributes }
     })
   }
 
+  let label: React.ReactElement | null = null
+  const children: React.ReactElement[] = []
+  React.Children.forEach(props.children, (child, index) => {
+    if (!React.isValidElement(child)) return
+    if (child.type === FormLabel) {
+      label = React.cloneElement(child, {
+        ...child.props,
+        className: "label",
+        style: {
+          ...child.props.style,
+          width: `${labelWidth}px`,
+        },
+      })
+    } else {
+      children.push(React.cloneElement(child, { key: index }))
+    }
+  })
+
   return (
-    <FormContext.Provider value={{ attributes, setAttributes: update }}>
+    <FormGroupContext.Provider value={{ attributes, setAttributes: update }}>
       <div className={cx(style.wrapper, style[layout], props.className)}>
-        {props.label}
-        <div className={style.group}>{props.children}</div>
+        {label}
+        <div className={style.group}>{children}</div>
       </div>
-    </FormContext.Provider>
+    </FormGroupContext.Provider>
   )
 }
 

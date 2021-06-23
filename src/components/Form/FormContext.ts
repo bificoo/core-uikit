@@ -1,17 +1,13 @@
 import React from "react"
 
-export type Attributes = Partial<{
-  formId: string
-  entered: boolean
-  disabled: boolean
-  readOnly: boolean
-  isValid: boolean | null
-  isInvalid: boolean | null
+export type FormAttributes = Partial<{
+  layout: "horizontal" | "vertical"
+  labelWidth: number
 }>
 
 export type FormContextProps = {
-  attributes?: Attributes
-  setAttributes: (attributes: Attributes) => void
+  attributes?: FormAttributes
+  setAttributes: (attributes: FormAttributes) => void
 }
 
 const FormContext = React.createContext<FormContextProps>({
@@ -20,4 +16,25 @@ const FormContext = React.createContext<FormContextProps>({
   },
 })
 
+export type FormGroupAttributes = Partial<{
+  formId: string
+  entered: boolean
+  disabled: boolean
+  readOnly: boolean
+  isValid: boolean | null
+  isInvalid: boolean | null
+}>
+
+export type FormGroupContextProps = {
+  attributes?: FormGroupAttributes
+  setAttributes: (attributes: FormGroupAttributes) => void
+}
+
+const FormGroupContext = React.createContext<FormGroupContextProps>({
+  setAttributes: () => {
+    // set attributes
+  },
+})
+
+export { FormGroupContext }
 export default FormContext

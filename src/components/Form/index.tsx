@@ -1,3 +1,6 @@
+import FormBase from "./Form"
+export type { FormProps } from "./Form"
+
 import FormLabel from "./FormLabel"
 export type { FormLabelProps } from "./FormLabel"
 
@@ -19,14 +22,14 @@ export type { FormGroupProps } from "./FormGroup"
 import InputGroup, { Prepend, Append } from "./InputGroup"
 export type { InputGroupProps, PrependProps, AppendProps } from "./InputGroup"
 
-const Form = {
+const Form = Object.assign(FormBase, {
   Label: FormLabel,
   Input: FormInput,
   Textarea: FormTextarea,
   Checkbox: FormCheckbox,
   Radio: FormRadio,
   Group: FormGroup,
-}
+})
 
 export { InputGroup, Prepend, Append }
 export default Form

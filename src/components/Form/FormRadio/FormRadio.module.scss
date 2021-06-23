@@ -1,11 +1,13 @@
 @import 'assets/styles/variables';
 
 .wrapper {
+  display: flex;
+
   label.label {
     align-items: center;
     font-family: $font-family;
     color: #091e42;
-    display: flex;
+    display: inline-flex;
     position: relative;
     box-sizing: border-box;
     cursor: pointer;

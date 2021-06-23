@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react"
-import FormContext from "components/Form/FormContext"
+import { FormGroupContext } from "components/Form/FormContext"
 import { FormControlProps } from "../types"
 import cx from "classnames"
 import style from "./FormInput.module.scss"
@@ -13,7 +13,7 @@ const FormInput = React.forwardRef(function FormInput(
   { id, className, type = "text", isValid, isInvalid, ...props }: FormInputProps,
   ref: FormInputRef = null,
 ) {
-  const { attributes, setAttributes } = useContext(FormContext)
+  const { attributes, setAttributes } = useContext(FormGroupContext)
   const [entered, setEntered] = useState(false)
 
   useEffect(() => {

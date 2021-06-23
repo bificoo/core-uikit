@@ -16,6 +16,9 @@ export type { FormRadioProps } from "./FormRadio"
 import FormGroup from "./FormGroup"
 export type { FormGroupProps } from "./FormGroup"
 
+import InputGroup, { Prepend, Append } from "./InputGroup"
+export type { InputGroupProps, PrependProps, AppendProps } from "./InputGroup"
+
 const Form = {
   Label: FormLabel,
   Input: FormInput,
@@ -25,4 +28,5 @@ const Form = {
   Group: FormGroup,
 }
 
+export { InputGroup, Prepend, Append }
 export default Form

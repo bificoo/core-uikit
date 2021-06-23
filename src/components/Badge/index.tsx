@@ -1,7 +1,7 @@
 import cx from "classnames"
 import style from "./Badge.module.scss"
 
-export type BadgeProps = {
+export type BadgeProps = ReactProps.Component & {
   /**
    * 標籤樣式
    * @default 'primary'
@@ -12,7 +12,7 @@ export type BadgeProps = {
    * @default false
    */
   pill?: boolean
-} & JSXProps.SpanElement
+}
 
 const Badge = ({
   variant = "primary",

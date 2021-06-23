@@ -3,17 +3,16 @@ import FormContext, { Attributes } from "components/Form/FormContext"
 import style from "./FormGroup.module.scss"
 import cx from "classnames"
 
-export type FormGroupProps = ReactProps.WithChildren &
+export type FormGroupProps = ReactProps.Component &
   Partial<{
     formId: string
-    className: string
     label: JSX.Element
     layout: "horizontal" | "vertical"
   }>
 
 const FormGroup = ({ layout = "horizontal", ...props }: FormGroupProps) => {
   const [attributes, setAttributes] = useState<Attributes>({
-    formId: props.formId ?? null,
+    formId: props.formId,
     entered: false,
     disabled: false,
     readOnly: false,

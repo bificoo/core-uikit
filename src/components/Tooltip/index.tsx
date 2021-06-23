@@ -4,9 +4,7 @@ import style from "./Tooltip.module.scss"
 import { usePopper } from "react-popper"
 import { Placement } from "@popperjs/core"
 
-export type TooltipProps = {
-  className?: string
-  children: React.ReactNode
+export type TooltipProps = ReactProps.Component & {
   content?: string
   placement?: Placement
 }

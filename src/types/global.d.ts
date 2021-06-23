@@ -178,10 +178,8 @@ declare global {
 
   namespace ReactProps {
     type WithChildren = { children?: React.ReactNode }
-    type ReplaceClassNameFromHTMLElement<T> = Omit<T, "className"> & {
-      /** 自定義 class */
-      className?: string | { [key: string]: boolean }
-    }
+    type WithClassName = { className?: string }
+    type Component = WithChildren & WithClassName
   }
 }
 export default global

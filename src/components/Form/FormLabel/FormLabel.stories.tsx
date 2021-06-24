@@ -19,8 +19,8 @@ const Template: Story<FormLabelProps> = ({ children, ...args }) => {
   )
 }
 
-export const Label = Template.bind({})
-Label.args = {
+export const Default = Template.bind({})
+Default.args = {
   children: "Label",
 }
 

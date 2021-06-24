@@ -30,6 +30,12 @@ Password.args = {
   value: "password",
 }
 
+export const Disabled = Template.bind({})
+Disabled.args = {
+  value: "I am text",
+  disabled: true,
+}
+
 export const Chinese = Template.bind({})
 Chinese.args = {
   placeholder: "請輸入文字.",
@@ -38,10 +44,4 @@ Chinese.args = {
 export const WithChineseValue = Template.bind({})
 WithChineseValue.args = {
   value: "我是文字",
-}
-
-export const Disabled = Template.bind({})
-Disabled.args = {
-  value: "I am text",
-  disabled: true,
 }

@@ -19,8 +19,8 @@ const Template: Story<FormRadioProps> = ({ children, ...args }) => {
   )
 }
 
-export const Check = Template.bind({})
-Check.args = {
+export const Default = Template.bind({})
+Default.args = {
   children: "Radio",
 }
 

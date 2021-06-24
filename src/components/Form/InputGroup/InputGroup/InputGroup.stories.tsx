@@ -12,7 +12,7 @@ export default {
   },
 } as Meta
 
-export const Base: Story = () => (
+export const Default: Story = () => (
   <InputGroup>
     <Prepend>$</Prepend>
     <Form.Input placeholder="Enter money" />

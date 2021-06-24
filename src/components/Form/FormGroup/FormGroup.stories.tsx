@@ -12,39 +12,39 @@ export default {
   },
 } as Meta
 
-export const FormGroup: Story = () => (
-  <Form.Group label={<Form.Label>Form label：</Form.Label>}>
+export const Default: Story = () => (
+  <Form.Group>
+    <Form.Label>Form label：</Form.Label>
     <Form.Input />
   </Form.Group>
 )
 
-export const FormGroupWithInput: Story = () => (
-  <Form.Group
-    label={
-      <Form.Label required htmlFor="form-group-name">
-        Name：
-      </Form.Label>
-    }>
-    <Form.Input id="form-group-name" />
+export const FormGroupWithRequiredInput: Story = () => (
+  <Form.Group>
+    <Form.Label required>Name：</Form.Label>
+    <Form.Input />
   </Form.Group>
 )
 
 export const FormGroupWithTextarea: Story = () => (
-  <Form.Group formId="form-group-memo" label={<Form.Label>Memo：</Form.Label>}>
+  <Form.Group>
+    <Form.Label>Memo：</Form.Label>
     <Form.Textarea />
   </Form.Group>
 )
 
 export const FormGroupWithInput1: Story = () => (
-  <Form.Group label={<Form.Label htmlFor="form-group-name1">Name：</Form.Label>}>
+  <Form.Group>
+    <Form.Label htmlFor="form-group-name1">Name：</Form.Label>
     <Form.Input id="form-group-name1" />
   </Form.Group>
 )
-FormGroupWithInput1.storyName = "點擊標題觸發表單"
+FormGroupWithInput1.storyName = "點擊標題觸發表單(by htmlFor)"
 
 export const FormGroupWithInput2: Story = () => (
-  <Form.Group formId="form-group-name2" label={<Form.Label>Name：</Form.Label>}>
+  <Form.Group formId="form-group-name2">
+    <Form.Label>Name：</Form.Label>
     <Form.Input />
   </Form.Group>
 )
-FormGroupWithInput2.storyName = "點擊標題觸發表單（透過 formId）"
+FormGroupWithInput2.storyName = "點擊標題觸發表單(by formId)"

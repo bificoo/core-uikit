@@ -9,7 +9,6 @@ export type FormLabelProps = JSXProps.LabelElement & {
 
 const FormLabel = ({ required = false, className, htmlFor, ...props }: FormLabelProps) => {
   const { attributes } = useContext(FormGroupContext)
-  console.info(props)
   return (
     <label
       htmlFor={htmlFor || attributes?.formId}

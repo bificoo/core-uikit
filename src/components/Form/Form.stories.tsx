@@ -3,7 +3,6 @@ import Button from "components/Button"
 import Form from "components/Form"
 export default {
   title: "Example/Form/Layout",
-  // component: Form,
   argTypes: {
     className: {
       control: false,

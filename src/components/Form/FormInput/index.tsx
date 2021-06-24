@@ -10,7 +10,7 @@ export type FormInputProps = FormControlProps &
   }
 export type FormInputRef = React.Ref<HTMLInputElement>
 const FormInput = React.forwardRef(function FormInput(
-  { id, className, type = "text", isValid, isInvalid, ...props }: FormInputProps,
+  { className, type = "text", isValid, isInvalid, ...props }: FormInputProps,
   ref: FormInputRef = null,
 ) {
   const { attributes, setAttributes } = useContext(FormGroupContext)
@@ -26,6 +26,7 @@ const FormInput = React.forwardRef(function FormInput(
     })
   }, [entered, isValid, isInvalid, props.disabled, props.readOnly])
 
+  console.info(props)
   return (
     <div
       className={cx("component-input", style.wrapper, {
@@ -39,7 +40,7 @@ const FormInput = React.forwardRef(function FormInput(
         {...props}
         ref={ref}
         type={type}
-        id={id || attributes?.formId}
+        id={attributes?.formId}
         className={cx(style.control, className)}
         onChange={e => {
           if (e.target.value.trim() === "") setEntered(false)

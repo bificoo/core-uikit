@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react"
-import FormContext from "components/Form/FormContext"
+import { FormGroupContext } from "components/Form/FormContext"
 import { FormControlProps } from "../types"
 import cx from "classnames"
 import style from "./FormTextarea.module.scss"
@@ -7,10 +7,10 @@ import style from "./FormTextarea.module.scss"
 export type FormTextareaProps = FormControlProps & JSXProps.TextareaElement
 export type FormTextareaRef = React.Ref<HTMLTextAreaElement>
 const FormTextarea = React.forwardRef(function FormTextarea(
-  { id, className, isValid, isInvalid, ...props }: FormTextareaProps,
+  { name, className, isValid, isInvalid, ...props }: FormTextareaProps,
   ref: FormTextareaRef = null,
 ) {
-  const { attributes, setAttributes } = useContext(FormContext)
+  const { attributes, setAttributes } = useContext(FormGroupContext)
   const [entered, setEntered] = useState(false)
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const FormTextarea = React.forwardRef(function FormTextarea(
       <textarea
         {...props}
         ref={ref}
-        id={id || attributes?.formId}
+        id={attributes?.formId}
         className={cx(style.control, className)}
         onChange={e => {
           if (e.target.value.trim() === "") setEntered(false)

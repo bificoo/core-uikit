@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react"
 import FormLabel from "../FormLabel"
 import FormContext, { FormGroupContext, FormGroupAttributes } from "components/Form/FormContext"
+import { uuid } from "uuidv4"
 import style from "./FormGroup.module.scss"
 import cx from "classnames"
 
@@ -14,7 +15,7 @@ export type FormGroupProps = ReactProps.Component &
 
 const FormGroup = (props: FormGroupProps) => {
   const [attributes, setAttributes] = useState<FormGroupAttributes>({
-    formId: props.formId,
+    formId: props.formId || uuid(),
     entered: false,
     disabled: false,
     readOnly: false,
@@ -37,7 +38,6 @@ const FormGroup = (props: FormGroupProps) => {
     if (child.type === FormLabel) {
       label = React.cloneElement(child, {
         ...child.props,
-        className: "label",
         style: {
           ...child.props.style,
           width: `${labelWidth}px`,

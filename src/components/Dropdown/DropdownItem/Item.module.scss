@@ -1,0 +1,17 @@
+.wrapper {
+  padding: 0.5rem;
+  transition: all 0.2s;
+
+  &.active {
+    background-color: red;
+  }
+
+  &:hover {
+    &:not(.active) {
+      border-color: #c8b7a4;
+      background-color: #c8b7a4;
+      color: #fff;
+    }
+  }
+}
+

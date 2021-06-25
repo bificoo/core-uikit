@@ -1,0 +1,21 @@
+.wrapper {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: block;
+  overflow: hidden;
+  padding: 0.5rem 0;
+  min-width: 10rem;
+  border: 1px solid transparent;
+  border-color: #c8b7a4;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  list-style: none;
+  text-align: center;
+  opacity: 0;
+  cursor: pointer;
+  transition: all 0.4s;
+  pointer-events: none;
+}
+

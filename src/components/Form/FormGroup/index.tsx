@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react"
 import FormLabel from "../FormLabel"
 import FormContext, { FormGroupContext, FormGroupAttributes } from "components/Form/FormContext"
 import uuid from "utils/uuid"
-import style from "./FormGroup.module.scss"
+import styled from "./FormGroup.module.scss"
 import cx from "classnames"
 
 export type FormGroupProps = ReactProps.Component &
@@ -50,9 +50,9 @@ const FormGroup = (props: FormGroupProps) => {
 
   return (
     <FormGroupContext.Provider value={{ attributes, setAttributes: update }}>
-      <div className={cx(style.wrapper, style[layout], props.className)}>
+      <div className={cx(styled.wrapper, styled[layout], props.className)}>
         {label}
-        <div className={style.group}>{children}</div>
+        <div className={styled.group}>{children}</div>
       </div>
     </FormGroupContext.Provider>
   )

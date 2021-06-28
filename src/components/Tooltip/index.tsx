@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import ReactDOM from "react-dom"
 import cx from "classnames"
-import style from "./Tooltip.module.scss"
+import styled from "./Tooltip.module.scss"
 import { usePopper } from "react-popper"
 import { BasePlacement } from "@popperjs/core"
 
@@ -45,7 +45,7 @@ const Tooltip = ({
   return (
     <>
       <div
-        className={style.children}
+        className={styled.children}
         ref={setReferenceElement}
         onMouseEnter={() => setVisibility(true)}
         onMouseLeave={() => setVisibility(false)}>
@@ -54,12 +54,12 @@ const Tooltip = ({
       {isVisible &&
         ReactDOM.createPortal(
           <div
-            className={cx(style.wrapper, className)}
+            className={cx(styled.wrapper, className)}
             ref={setPopperElement}
             style={styles.popper}
             {...attributes.popper}>
             {arrow && (
-              <div id="arrow" className={style.arrow} ref={setArrowRef} style={styles.arrow} />
+              <div id="arrow" className={styled.arrow} ref={setArrowRef} style={styles.arrow} />
             )}
             {content}
           </div>,

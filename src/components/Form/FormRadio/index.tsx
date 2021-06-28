@@ -1,14 +1,14 @@
 import cx from "classnames"
-import style from "./FormRadio.module.scss"
+import styled from "./FormRadio.module.scss"
 
 export type FormRadioProps = Omit<JSXProps.InputElement, "type">
 
 const FormRadio = ({ children, ...props }: FormRadioProps) => {
   return (
-    <div className={cx("component-radio", style.wrapper, props.className)}>
-      <label className={style.label}>
+    <div className={cx("component-radio", styled.wrapper, props.className)}>
+      <label className={styled.label}>
         <input type="radio" {...props} />
-        <span className={style.content}>{children}</span>
+        <span className={styled.content}>{children}</span>
       </label>
     </div>
   )

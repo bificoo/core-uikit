@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { FormGroupContext } from "components/Form/FormContext"
-import style from "./FormLabel.module.scss"
+import styled from "./FormLabel.module.scss"
 import cx from "classnames"
 
 export type FormLabelProps = JSXProps.LabelElement & {
@@ -12,8 +12,8 @@ const FormLabel = ({ required = false, className, htmlFor, ...props }: FormLabel
   return (
     <label
       htmlFor={htmlFor || attributes?.formId}
-      className={cx(style.wrapper, className, {
-        [style.required]: required,
+      className={cx(styled.wrapper, className, {
+        [styled.required]: required,
       })}
       {...props}>
       {props.children}

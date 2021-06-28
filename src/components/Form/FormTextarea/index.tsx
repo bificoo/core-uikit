@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react"
 import { FormGroupContext } from "components/Form/FormContext"
 import { FormControlProps } from "../types"
 import cx from "classnames"
-import style from "./FormTextarea.module.scss"
+import styled from "./FormTextarea.module.scss"
 
 export type FormTextareaProps = FormControlProps & JSXProps.TextareaElement
 export type FormTextareaRef = React.Ref<HTMLTextAreaElement>
@@ -25,18 +25,18 @@ const FormTextarea = React.forwardRef(function FormTextarea(
 
   return (
     <div
-      className={cx("component-textarea", style.wrapper, {
-        [style.entered]: entered,
-        [style.disabled]: !!props.disabled,
-        [style["read-only"]]: !!props.readOnly,
-        [style["is-valid"]]: isValid,
-        [style["is-invalid"]]: isInvalid,
+      className={cx("component-textarea", styled.wrapper, {
+        [styled.entered]: entered,
+        [styled.disabled]: !!props.disabled,
+        [styled["read-only"]]: !!props.readOnly,
+        [styled["is-valid"]]: isValid,
+        [styled["is-invalid"]]: isInvalid,
       })}>
       <textarea
         {...props}
         ref={ref}
         id={attributes?.formId}
-        className={cx(style.control, className)}
+        className={cx(styled.control, className)}
         onChange={e => {
           if (e.target.value.trim() === "") setEntered(false)
           else setEntered(true)

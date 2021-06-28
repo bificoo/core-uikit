@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react"
 import { FormGroupContext } from "components/Form/FormContext"
 import { FormControlProps } from "../types"
 import cx from "classnames"
-import style from "./FormInput.module.scss"
+import styled from "./FormInput.module.scss"
 
 export type FormInputProps = FormControlProps &
   Omit<JSXProps.InputElement, "type"> & {
@@ -28,19 +28,19 @@ const FormInput = React.forwardRef(function FormInput(
 
   return (
     <div
-      className={cx("component-input", style.wrapper, {
-        [style.entered]: entered,
-        [style.disabled]: !!props.disabled,
-        [style["read-only"]]: !!props.readOnly,
-        [style["is-valid"]]: isValid,
-        [style["is-invalid"]]: isInvalid,
+      className={cx("component-input", styled.wrapper, {
+        [styled.entered]: entered,
+        [styled.disabled]: !!props.disabled,
+        [styled["read-only"]]: !!props.readOnly,
+        [styled["is-valid"]]: isValid,
+        [styled["is-invalid"]]: isInvalid,
       })}>
       <input
         {...props}
         ref={ref}
         type={type}
         id={attributes?.formId}
-        className={cx(style.control, className)}
+        className={cx(styled.control, className)}
         onChange={e => {
           if (e.target.value.trim() === "") setEntered(false)
           else setEntered(true)

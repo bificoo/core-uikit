@@ -1,5 +1,5 @@
 import cx from "classnames"
-import style from "./LinkButton.module.scss"
+import styled from "./LinkButton.module.scss"
 
 export type LinkButtonProps = {
   /**
@@ -16,7 +16,7 @@ const Button = ({
   ...props
 }: LinkButtonProps) => {
   return (
-    <a className={cx(style.wrapper, style[variant], className)} {...props}>
+    <a className={cx(styled.wrapper, styled[variant], className)} {...props}>
       {children}
     </a>
   )

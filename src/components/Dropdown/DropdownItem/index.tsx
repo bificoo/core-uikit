@@ -1,5 +1,5 @@
 import cx from "classnames"
-import style from "./Item.module.scss"
+import styled from "./Item.module.scss"
 
 export type DropdownItemProps = {
   className?: string
@@ -12,7 +12,7 @@ export type DropdownItemProps = {
 const DropdownItem = ({ className, children, eventKey, active, onClick }: DropdownItemProps) => {
   return (
     <div
-      className={cx(style.wrapper, { [style.active]: active }, className)}
+      className={cx(styled.wrapper, { [styled.active]: active }, className)}
       onClick={e => onClick && onClick(e, { eventKey })}>
       {children}
     </div>

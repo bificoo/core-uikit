@@ -3,7 +3,7 @@ import ReactDOM from "react-dom"
 import cx from "classnames"
 import { usePopper } from "react-popper"
 import { Placement, Options } from "@popperjs/core"
-import style from "./Dropdown.module.scss"
+import styled from "./Dropdown.module.scss"
 import Menu from "../DropdownMenu"
 import ItemComponent from "../DropdownItem"
 import Toggle from "../DropdownToggle"
@@ -51,7 +51,7 @@ const Dropdown = ({ open = false, trigger = "hover", ...props }: DropdownProps) 
 
   return (
     <div
-      className={cx(style.wrapper, props.className)}
+      className={cx(styled.wrapper, props.className)}
       ref={dropdownRef}
       onMouseOver={() => trigger === "hover" && handleShow(true)}
       onMouseLeave={() => trigger === "hover" && handleShow(false)}>
@@ -71,8 +71,8 @@ const Dropdown = ({ open = false, trigger = "hover", ...props }: DropdownProps) 
                 child,
                 {
                   className: cx(
-                    style.menu,
-                    { [style.show]: show, [style.hover]: trigger === "hover" },
+                    styled.menu,
+                    { [styled.show]: show, [styled.hover]: trigger === "hover" },
                     child.props.className,
                   ),
                   style: { ...styles.popper },

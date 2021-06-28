@@ -1,5 +1,5 @@
 import cx from "classnames"
-import style from "./Button.module.scss"
+import styled from "./Button.module.scss"
 
 export type ButtonProps = {
   /**
@@ -23,7 +23,7 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <button
-      className={cx(style.wrapper, style[variant], { [style.block]: block }, className)}
+      className={cx(styled.wrapper, styled[variant], { [styled.block]: block }, className)}
       {...props}>
       {children}
     </button>

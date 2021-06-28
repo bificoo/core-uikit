@@ -1,5 +1,5 @@
 import cx from "classnames"
-import style from "./Badge.module.scss"
+import styled from "./Badge.module.scss"
 
 export type BadgeProps = ReactProps.Component & {
   /**
@@ -23,7 +23,7 @@ const Badge = ({
 }: BadgeProps) => {
   return (
     <span
-      className={cx(style.wrapper, style[variant], { [style.pill]: pill }, className)}
+      className={cx(styled.wrapper, styled[variant], { [styled.pill]: pill }, className)}
       {...props}>
       {children}
     </span>

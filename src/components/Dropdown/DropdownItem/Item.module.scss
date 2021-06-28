@@ -1,17 +1,31 @@
 .wrapper {
+  overflow: hidden;
   padding: 0.5rem;
+  padding: 8px 12px 7px;
+  width: auto;
+  background-color: rgb(255, 255, 255);
+  color: #172b4d;
+  text-decoration: none;
+  text-overflow: ellipsis;
   transition: all 0.2s;
 
   &.active {
-    background-color: red;
+    background-color: rgb(179, 212, 255);
+    color: rgb(23, 43, 77);
+    text-decoration: none;
   }
 
   &:hover {
     &:not(.active) {
-      border-color: #c8b7a4;
-      background-color: #c8b7a4;
-      color: #fff;
+      background-color: rgb(244, 245, 247);
+      color: rgb(23, 43, 77);
+      text-decoration: none;
     }
   }
-}
 
+  &:active {
+    background-color: rgb(179, 212, 255);
+    color: rgb(23, 43, 77);
+    text-decoration: none;
+  }
+}

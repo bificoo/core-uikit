@@ -9,7 +9,7 @@ import Toggle from "../DropdownToggle"
 
 export type DropdownProps = {
   className?: string
-  show: boolean
+  open?: boolean
   onToggle?: React.MouseEventHandler<HTMLElement>
   trigger?: "click" | "hover"
   placement?: Placement
@@ -20,14 +20,21 @@ export type DropdownProps = {
   children?: React.ReactNode
 }
 
-const Dropdown = (props: DropdownProps) => {
+const Dropdown = ({ open = false, trigger = "hover", ...props }: DropdownProps) => {
   const dropdownRef = useRef<HTMLDivElement | null>(null)
-  const [show, setShow] = useState<boolean>(props.show)
+  const [show, setShow] = useState<boolean>(open)
   const [toggleElement, setToggleElement] = useState<HTMLDivElement | null>(null)
   const [menuElement, setMenuElement] = useState<HTMLDivElement | null>(null)
   const { styles, attributes, forceUpdate } = usePopper(toggleElement, menuElement, {
     placement: props.placement,
-    modifiers: props.popperConfig,
+    modifiers: props.popperConfig || [
+      {
+        name: "offset",
+        options: {
+          offset: [-12, 10],
+        },
+      },
+    ],
   })
   const Item = props.itemComponent || ItemComponent
 
@@ -38,15 +45,15 @@ const Dropdown = (props: DropdownProps) => {
   }
 
   const handleToggleClick = () => {
-    props.trigger === "click" && handleShow()
+    trigger === "click" && handleShow()
   }
 
   return (
     <div
       className={cx(style.wrapper, props.className)}
       ref={dropdownRef}
-      onMouseOver={() => props.trigger === "hover" && handleShow(true)}
-      onMouseLeave={() => props.trigger === "hover" && handleShow(false)}>
+      onMouseOver={() => trigger === "hover" && handleShow(true)}
+      onMouseLeave={() => trigger === "hover" && handleShow(false)}>
       {React.Children.map(props.children, child => {
         if (!React.isValidElement(child)) return
         if (child.type === Toggle || child.type === props.toggleComponent)
@@ -60,7 +67,7 @@ const Dropdown = (props: DropdownProps) => {
             {
               className: cx(
                 style.menu,
-                { [style.show]: show, [style.hover]: props.trigger === "hover" },
+                { [style.show]: show, [style.hover]: trigger === "hover" },
                 child.props.className,
               ),
               style: { ...styles.popper },

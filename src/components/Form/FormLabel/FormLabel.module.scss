@@ -1,18 +1,25 @@
 @import 'assets/styles/variables';
+@import 'assets/styles/mixins';
 
 .wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
   font-style: inherit;
   line-height: 1.33333;
   color: #6b778c;
   font-weight: 600;
-  display: inline-block;
   font-family: $font-family;
   margin-right: 10px;
   margin-top: 0px;
   white-space: nowrap;
+  height: em(36);
+  vertical-align: middle;
 
   &.required:before {
     content: "*";
+    left: -10px;
+    position: absolute;
     color: #de350b;
     display: inline-block;
     padding-right: 5px;

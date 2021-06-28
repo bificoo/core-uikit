@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react"
 import FormLabel from "../FormLabel"
 import FormContext, { FormGroupContext, FormGroupAttributes } from "components/Form/FormContext"
-import { uuid } from "uuidv4"
+import uuid from "utils/uuid"
 import style from "./FormGroup.module.scss"
 import cx from "classnames"
 

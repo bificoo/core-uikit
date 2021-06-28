@@ -16,6 +16,9 @@ export type { FormCheckboxProps } from "./FormCheckbox"
 import FormRadio from "./FormRadio"
 export type { FormRadioProps } from "./FormRadio"
 
+import FormFeedback from "./FormFeedback"
+export type { FormFeedbackProps } from "./FormFeedback"
+
 import FormGroup from "./FormGroup"
 export type { FormGroupProps } from "./FormGroup"
 
@@ -28,6 +31,7 @@ const Form = Object.assign(FormBase, {
   Textarea: FormTextarea,
   Checkbox: FormCheckbox,
   Radio: FormRadio,
+  Feedback: FormFeedback,
   Group: FormGroup,
 })
 

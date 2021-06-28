@@ -26,7 +26,6 @@ const FormInput = React.forwardRef(function FormInput(
     })
   }, [entered, isValid, isInvalid, props.disabled, props.readOnly])
 
-  console.info(props)
   return (
     <div
       className={cx("component-input", style.wrapper, {

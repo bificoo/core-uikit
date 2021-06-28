@@ -12,6 +12,12 @@ export default {
     children: {
       control: false,
     },
+    placement: {
+      control: {
+        type: "select",
+        options: ["top", "bottom", "right", "left"],
+      },
+    },
   },
   decorators: [
     Story => (
@@ -26,6 +32,13 @@ const Template: Story<TooltipProps> = args => <Tooltip {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
+  content: "Design System Tooltip",
+  children: <Button variant="primary">Hover over me</Button>,
+}
+
+export const Arrow = Template.bind({})
+Arrow.args = {
+  arrow: true,
   content: "Design System Tooltip",
   children: <Button variant="primary">Hover over me</Button>,
 }

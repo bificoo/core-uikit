@@ -2,14 +2,21 @@ import React, { useState } from "react"
 import cx from "classnames"
 import style from "./Tooltip.module.scss"
 import { usePopper } from "react-popper"
-import { Placement } from "@popperjs/core"
+import { BasePlacement } from "@popperjs/core"
 
 export type TooltipProps = ReactProps.Component & {
+  arrow?: boolean
   content?: string
-  placement?: Placement
+  placement?: BasePlacement
 }
 
-const Tooltip = ({ className, children, content, placement }: TooltipProps) => {
+const Tooltip = ({
+  arrow = false,
+  className,
+  children,
+  content,
+  placement = "bottom",
+}: TooltipProps) => {
   const [isVisible, setVisibility] = useState(false)
   const [referenceElement, setReferenceElement] = React.useState<HTMLDivElement | null>(null)
   const [popperElement, setPopperElement] = React.useState<HTMLDivElement | null>(null)
@@ -49,7 +56,9 @@ const Tooltip = ({ className, children, content, placement }: TooltipProps) => {
           ref={setPopperElement}
           style={styles.popper}
           {...attributes.popper}>
-          <div id="arrow" className={style.arrow} ref={setArrowRef} style={styles.arrow} />
+          {arrow && (
+            <div id="arrow" className={style.arrow} ref={setArrowRef} style={styles.arrow} />
+          )}
           {content}
         </div>
       )}

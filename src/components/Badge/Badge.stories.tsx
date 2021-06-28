@@ -8,6 +8,12 @@ export default {
     className: {
       control: false,
     },
+    variant: {
+      control: {
+        type: "select",
+        options: ["primary", "secondary", "important"],
+      },
+    },
   },
 } as Meta
 

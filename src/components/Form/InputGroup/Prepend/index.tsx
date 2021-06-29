@@ -1,12 +1,12 @@
 import { useContext } from "react"
-import FormContext from "components/Form/FormContext"
+import { FormGroupContext } from "components/Form/FormContext"
 import styled from "./Prepend.module.scss"
 import cx from "classnames"
 
 export type PrependProps = ReactProps.Component
 
 const Prepend = (props: PrependProps) => {
-  const { attributes } = useContext(FormContext)
+  const { attributes } = useContext(FormGroupContext)
   return (
     <div
       className={cx(

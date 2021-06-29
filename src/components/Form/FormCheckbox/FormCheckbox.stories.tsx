@@ -26,7 +26,7 @@ Default.args = {
 
 export const Checked = Template.bind({})
 Checked.args = {
-  checked: true,
+  defaultChecked: true,
   children: "Checkbox",
 }
 

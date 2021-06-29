@@ -1,12 +1,12 @@
-import React, { useContext } from "react"
-import FormContext from "components/Form/FormContext"
+import { useContext } from "react"
+import { FormGroupContext } from "components/Form/FormContext"
 import styled from "./Append.module.scss"
 import cx from "classnames"
 
 export type AppendProps = ReactProps.Component
 
 const Append = (props: AppendProps) => {
-  const { attributes } = useContext(FormContext)
+  const { attributes } = useContext(FormGroupContext)
   return (
     <div
       className={cx(

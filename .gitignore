@@ -8,8 +8,11 @@
 # testing
 /coverage
 
-# production
-/build
+# install library lock file
+package-lock.json
+npm-debug.*
+yarn-error.log
+jsconfig.json
 
 # misc
 .DS_Store

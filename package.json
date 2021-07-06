@@ -1,8 +1,8 @@
 {
   "name": "core-uikit",
   "version": "1.0.0",
-  "main": "./build/static/js/main.chunk.js",
-  "typings": "./build/static/js/main.chunk.js",
+  "main": "./index.ts",
+  "types": "./types/index.d.ts",
   "private": true,
   "scripts": {
     "start": "react-app-rewired start",

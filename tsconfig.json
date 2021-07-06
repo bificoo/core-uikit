@@ -20,6 +20,8 @@
         "jsx": "react-jsx",
         "noImplicitAny": true,
         "strictNullChecks": true,
+        "declaration": true,
+        "declarationDir": "./types"
     },
     "include": ["src"],
     "exclude": ["node_modules"],

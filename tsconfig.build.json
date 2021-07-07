@@ -9,7 +9,7 @@
     "declaration": true,
     "jsx": "react-jsx",
     // classic node 两种选项, node 就会 从nodeModule 里面找对应的模块； classic 会使用绝对路径，导致找不到对应的npm模块
-    "moduleResolution": "Node",
+    "moduleResolution": "node",
     // 之前只能import * as React from 'react', 设置成true, 可以用 import React from 'react'
     "allowSyntheticDefaultImports": true
   },

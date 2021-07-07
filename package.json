@@ -6,6 +6,10 @@
   "types": "dist/index.d.ts",
   "license": "MIT",
   "private": false,
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "clean": "rimraf ./dist",
     "start": "react-app-rewired start",

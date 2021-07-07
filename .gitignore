@@ -8,6 +8,10 @@
 # testing
 /coverage
 
+# production
+/build
+/dist
+
 # install library lock file
 package-lock.json
 npm-debug.*

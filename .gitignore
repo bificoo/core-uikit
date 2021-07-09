@@ -9,8 +9,8 @@
 /coverage
 
 # production
-/build
-/dist
+# /build
+# /dist
 
 # install library lock file
 package-lock.json

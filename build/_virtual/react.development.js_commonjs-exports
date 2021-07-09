@@ -1,4 +1,8 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
 var react_development = {};
 
-export { react_development as __exports };
+exports.__exports = react_development;
 //# sourceMappingURL=react.development.js_commonjs-exports.map

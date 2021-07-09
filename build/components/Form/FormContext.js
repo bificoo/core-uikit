@@ -1,16 +1,20 @@
-import React from '../../node_modules/react/index.js';
+'use strict';
 
-var FormContext = React.createContext({
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var index = require('../../node_modules/react/index.js');
+
+var FormContext = index['default'].createContext({
     setAttributes: function () {
         // set attributes
     },
 });
-var FormGroupContext = React.createContext({
+var FormGroupContext = index['default'].createContext({
     setAttributes: function () {
         // set attributes
     },
 });
 
-export default FormContext;
-export { FormGroupContext };
+exports.FormGroupContext = FormGroupContext;
+exports.default = FormContext;
 //# sourceMappingURL=FormContext.js.map

@@ -1,19 +1,17 @@
 {
   "name": "core-uikit",
   "version": "1.0.0",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "build/index.js",
+  "module": "build/index.es.js",
   "license": "MIT",
   "private": false,
   "files": [
-    "dist",
-    "README.md"
+    "build"
   ],
   "scripts": {
     "clean": "rimraf ./dist",
     "start": "react-app-rewired start",
-    "build": "yarn clean && yarn build-ts && react-app-rewired build",
+    "build": "rollup -c",
     "build-ts": "tsc -p tsconfig.build.json",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
@@ -45,7 +43,6 @@
     "@types/react-dom": "^17.0.7",
     "classnames": "^2.3.1",
     "nanoid": "^3.1.23",
-    "node-sass": "4.14.1",
     "react": "^18.0.0-alpha-aecb3b6d1",
     "react-dom": "^18.0.0-alpha-aecb3b6d1",
     "react-hook-form": "^7.9.0",
@@ -57,12 +54,16 @@
     "web-vitals": "^1.0.1"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^19.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@rollup/plugin-url": "^6.0.0",
     "@storybook/addon-actions": "^6.2.9",
     "@storybook/addon-essentials": "^6.2.9",
     "@storybook/addon-links": "^6.2.9",
     "@storybook/node-logger": "^6.2.9",
     "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/react": "^6.2.9",
+    "@svgr/rollup": "^5.5.0",
     "@typescript-eslint/eslint-plugin": "^4.25.0",
     "@typescript-eslint/parser": "^4.25.0",
     "customize-cra": "^1.0.0",
@@ -74,9 +75,15 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "6.0.0",
     "lint-staged": "11.0.0",
+    "node-sass": "^4.14.1",
+    "postcss": "^8.3.5",
     "prettier": "^2.3.0",
     "react-app-rewired": "^2.1.8",
-    "rewire-entry": "^1.0.1"
+    "rewire-entry": "^1.0.1",
+    "rollup": "^2.53.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.0",
+    "rollup-plugin-typescript2": "^0.30.0"
   },
   "resolutions": {
     "babel-loader": "8.1.0"

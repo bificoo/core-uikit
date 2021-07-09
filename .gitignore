@@ -10,7 +10,7 @@
 
 # production
 /build
-# /dist
+/dist
 
 # install library lock file
 package-lock.json

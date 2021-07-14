@@ -1,8 +1,4 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var jsxRuntime = {exports: {}};
 
-exports.jsxRuntime = jsxRuntime;
+export { jsxRuntime as j };
 //# sourceMappingURL=jsx-runtime.js_commonjs-module.map

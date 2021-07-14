@@ -1,8 +1,4 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var react = {exports: {}};
 
-exports.react = react;
+export { react as r };
 //# sourceMappingURL=index.js_commonjs-module.map

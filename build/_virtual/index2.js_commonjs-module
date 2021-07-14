@@ -1,8 +1,4 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var classnames = {exports: {}};
 
-exports.classnames = classnames;
+export { classnames as c };
 //# sourceMappingURL=index2.js_commonjs-module.map

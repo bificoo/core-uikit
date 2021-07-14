@@ -12,7 +12,7 @@ export default {
   input: "src/index.ts",
   output: {
     dir: "build",
-    format: "cjs",
+    format: "esm",
     sourcemap: true,
     exports: "named",
     preserveModules: true,

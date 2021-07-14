@@ -1,8 +1,4 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var scheduler = {exports: {}};
 
-exports.scheduler = scheduler;
+export { scheduler as s };
 //# sourceMappingURL=index4.js_commonjs-module.map

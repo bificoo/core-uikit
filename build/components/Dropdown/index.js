@@ -1,17 +1,13 @@
-'use strict';
+import Dropdown$1 from './Dropdown/index.js';
+import DropdownToggle from './DropdownToggle/index.js';
+import DropdownMenu from './DropdownMenu/index.js';
+import DropdownItem from './DropdownItem/index.js';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var index = require('./Dropdown/index.js');
-var index$1 = require('./DropdownToggle/index.js');
-var index$2 = require('./DropdownMenu/index.js');
-var index$3 = require('./DropdownItem/index.js');
-
-var Dropdown = Object.assign(index['default'], {
-    Toggle: index$1['default'],
-    Menu: index$2['default'],
-    Item: index$3['default'],
+var Dropdown = Object.assign(Dropdown$1, {
+    Toggle: DropdownToggle,
+    Menu: DropdownMenu,
+    Item: DropdownItem,
 });
 
-exports.default = Dropdown;
+export default Dropdown;
 //# sourceMappingURL=index.js.map

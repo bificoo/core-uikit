@@ -1,8 +1,4 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var scheduler_development = {};
 
-exports.__exports = scheduler_development;
+export { scheduler_development as __exports };
 //# sourceMappingURL=scheduler.development.js_commonjs-exports.map

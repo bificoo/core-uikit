@@ -1,4 +1,4 @@
-import '!style-loader!css-loader!../src/index.css';
+// import '!style-loader!css-loader!../src/index.css';
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {

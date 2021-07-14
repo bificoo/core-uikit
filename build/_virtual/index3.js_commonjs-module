@@ -1,4 +1,4 @@
-var reactDom = {exports: {}};
+var classnames = {exports: {}};
 
-export { reactDom as r };
+export { classnames as c };
 //# sourceMappingURL=index3.js_commonjs-module.map

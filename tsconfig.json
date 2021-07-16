@@ -27,8 +27,7 @@
   "exclude": [
     "node_modules",
     "build",
-    "src/**/*.stories.tsx",
-    "src/**/*.test.tsx"
+    "public",
   ],
   "typeRoots": ["node_modules/@types/**/*.d.ts", "src/types/global.d.ts"]
 }

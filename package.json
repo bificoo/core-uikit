@@ -75,7 +75,6 @@
     "rollup": "^2.53.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.0",
-    "rollup-plugin-rename": "^1.0.1",
     "rollup-plugin-typescript2": "^0.30.0"
   },
   "peerDependencies": {

@@ -5,6 +5,7 @@ import typescript from "rollup-plugin-typescript2"
 import postcss from "rollup-plugin-postcss"
 import svgr from "@svgr/rollup"
 import url from "@rollup/plugin-url"
+// import rename from "rollup-plugin-rename"
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 // const packageJson = require("./package.json")
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -26,17 +27,15 @@ export default {
   // ],
   output: {
     dir: "build",
-    format: "esm",
-    sourcemap: true,
+    format: "cjs",
     exports: "named",
     preserveModules: true,
-    preserveModulesRoot: "src",
   },
   plugins: [
     peerDepsExternal(),
     resolve(),
     commonjs(),
-    typescript({ useTsconfigDeclarationDir: true }),
+    typescript(),
     postcss({
       extract: false,
       modules: true,
@@ -52,5 +51,22 @@ export default {
     }),
     url(),
     svgr(),
+    // rename({
+    //   include: ["**/*.ts"],
+    //   map: name => {
+    //     console.info(
+    //       "---",
+    //       name,
+    //       name
+    //         .replace("src/", "")
+    //         .replace("node_modules/", "external/")
+    //         .replace("../../external", "../external"),
+    //     )
+    //     return name
+    //       .replace("src/", "")
+    //       .replace("node_modules/", "external/")
+    //       .replace("../../external", "../external")
+    //   },
+    // }),
   ],
 }

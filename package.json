@@ -2,7 +2,7 @@
   "name": "core-uikit",
   "version": "1.0.0",
   "main": "build/src/index.js",
-  "types": "src/types/index.d.ts",
+  "types": "build/src/index.d.ts",
   "license": "MIT",
   "files": [
     "build"

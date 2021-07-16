@@ -6,24 +6,32 @@ import postcss from "rollup-plugin-postcss"
 import svgr from "@svgr/rollup"
 import url from "@rollup/plugin-url"
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const packageJson = require("./package.json")
+// const packageJson = require("./package.json")
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require("path")
 
 export default {
   input: "src/index.ts",
-  output: [
-    {
-      file: packageJson.main,
-      format: "cjs",
-      sourcemap: true,
-    },
-    {
-      file: packageJson.module,
-      format: "esm",
-      sourcemap: true,
-    },
-  ],
+  // output: [
+  //   {
+  //     file: packageJson.main,
+  //     format: "cjs",
+  //     sourcemap: true,
+  //   },
+  //   {
+  //     file: packageJson.module,
+  //     format: "esm",
+  //     sourcemap: true,
+  //   },
+  // ],
+  output: {
+    dir: "build",
+    format: "esm",
+    sourcemap: true,
+    exports: "named",
+    preserveModules: true,
+    preserveModulesRoot: "src",
+  },
   plugins: [
     peerDepsExternal(),
     resolve(),

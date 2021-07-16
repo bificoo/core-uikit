@@ -53,6 +53,7 @@ module.exports = {
     jsdom: true,
     JSX: true,
   },
+  ignorePatterns: ["node_modules", "build/**/*"],
   rules: {
     "no-undef": "off", // TS already checked
     "no-var": "error",

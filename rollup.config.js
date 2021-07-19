@@ -3,8 +3,9 @@ import resolve from "@rollup/plugin-node-resolve"
 import commonjs from "@rollup/plugin-commonjs"
 import typescript from "rollup-plugin-typescript2"
 import postcss from "rollup-plugin-postcss"
-import svgr from "@svgr/rollup"
+import copy from "rollup-plugin-copy"
 import url from "@rollup/plugin-url"
+import svgr from "@svgr/rollup"
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require("path")
@@ -37,5 +38,8 @@ export default {
     }),
     url(),
     svgr(),
+    copy({
+      targets: [{ src: 'src/types/*', dest: 'build/src/types' }]
+    }),
   ],
 }

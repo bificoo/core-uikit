@@ -40,8 +40,7 @@ var Tooltip = function (_a) {
             },
         ],
     }), styles = _h.styles, attributes = _h.attributes;
-    return (jsxRuntime.jsxs(jsxRuntime.Fragment, { children: [jsxRuntime.jsx("div", tslib_es6.__assign({ className: Tooltip_module['default'].children, ref: setReferenceElement, onMouseEnter: function () { return setVisibility(true); }, onMouseLeave: function () { return setVisibility(false); } }, { children: children }), void 0),
-            isVisible &&
+    return (jsxRuntime.jsxs(jsxRuntime.Fragment, { children: [jsxRuntime.jsx("div", tslib_es6.__assign({ className: Tooltip_module['default'].children, ref: setReferenceElement, onMouseEnter: function () { return setVisibility(true); }, onMouseLeave: function () { return setVisibility(false); } }, { children: children }), void 0), isVisible &&
                 ReactDOM__default['default'].createPortal(jsxRuntime.jsxs("div", tslib_es6.__assign({ className: cx__default['default'](Tooltip_module['default'].wrapper, className), ref: setPopperElement, style: styles.popper }, attributes.popper, { children: [arrow && (jsxRuntime.jsx("div", { id: "arrow", className: Tooltip_module['default'].arrow, ref: setArrowRef, style: styles.arrow }, void 0)), content] }), void 0), document.body)] }, void 0));
 };
 

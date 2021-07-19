@@ -14,7 +14,7 @@ require('react/jsx-runtime');
 require('react');
 require('./FormContext.js');
 require('./InputGroup/InputGroup/InputGroup.module.scss.js');
-require('classnames');
+require('../../../node_modules/classnames/index.js');
 require('./InputGroup/Prepend/Prepend.module.scss.js');
 require('./InputGroup/Append/Append.module.scss.js');
 

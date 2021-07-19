@@ -71,7 +71,10 @@
     "node-sass": "^4.14.1",
     "postcss": "^8.3.5",
     "prettier": "^2.3.0",
+    "react": "^18.0.0-alpha-aecb3b6d1",
     "react-app-rewired": "^2.1.8",
+    "react-dom": "^18.0.0-alpha-aecb3b6d1",
+    "react-router-dom": "^5.2.0",
     "rewire-entry": "^1.0.1",
     "rollup": "^2.53.0",
     "rollup-plugin-copy": "^3.4.0",
@@ -80,10 +83,8 @@
     "rollup-plugin-typescript2": "^0.30.0"
   },
   "peerDependencies": {
-    "classnames": "^2.3.1",
-    "react": "^18.0.0-alpha-aecb3b6d1",
-    "react-dom": "^18.0.0-alpha-aecb3b6d1",
-    "react-router-dom": "^5.2.0"
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
   },
   "resolutions": {
     "babel-loader": "8.1.0"

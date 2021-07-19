@@ -9,13 +9,12 @@ var index$1 = require('../FormLabel/index.js');
 var FormContext = require('../FormContext.js');
 require('../../../utils/uuid.js');
 var FormGroup_module = require('./FormGroup.module.scss.js');
-var cx = require('classnames');
+var index$2 = require('../../../../node_modules/classnames/index.js');
 var index = require('../../../../node_modules/nanoid/index.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
-var cx__default = /*#__PURE__*/_interopDefaultLegacy(cx);
 
 var FormGroup = function (props) {
     var _a = React.useState({
@@ -46,7 +45,7 @@ var FormGroup = function (props) {
             children.push(React__default['default'].cloneElement(child, { key: index }));
         }
     });
-    return (jsxRuntime.jsx(FormContext.FormGroupContext.Provider, tslib_es6.__assign({ value: { attributes: attributes, setAttributes: update } }, { children: jsxRuntime.jsxs("div", tslib_es6.__assign({ className: cx__default['default'](FormGroup_module['default'].wrapper, FormGroup_module['default'][layout], props.className) }, { children: [label, jsxRuntime.jsx("div", tslib_es6.__assign({ className: FormGroup_module['default'].group }, { children: children }), void 0)] }), void 0) }), void 0));
+    return (jsxRuntime.jsx(FormContext.FormGroupContext.Provider, tslib_es6.__assign({ value: { attributes: attributes, setAttributes: update } }, { children: jsxRuntime.jsxs("div", tslib_es6.__assign({ className: index$2['default'](FormGroup_module['default'].wrapper, FormGroup_module['default'][layout], props.className) }, { children: [label, jsxRuntime.jsx("div", tslib_es6.__assign({ className: FormGroup_module['default'].group }, { children: children }), void 0)] }), void 0) }), void 0));
 };
 
 exports.default = FormGroup;

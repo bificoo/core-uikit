@@ -6,12 +6,13 @@ var tslib_es6 = require('../../../../node_modules/tslib/tslib.es6.js');
 var jsxRuntime = require('react/jsx-runtime');
 var React = require('react');
 var FormContext = require('../FormContext.js');
-var index = require('../../../../node_modules/classnames/index.js');
+var cx = require('classnames');
 var FormInput_module = require('./FormInput.module.scss.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
+var cx__default = /*#__PURE__*/_interopDefaultLegacy(cx);
 
 var FormInput = React__default['default'].forwardRef(function FormInput(_a, ref) {
     var _b;
@@ -28,13 +29,13 @@ var FormInput = React__default['default'].forwardRef(function FormInput(_a, ref)
             readOnly: props.readOnly,
         });
     }, [entered, isValid, isInvalid, props.disabled, props.readOnly]);
-    return (jsxRuntime.jsx("div", tslib_es6.__assign({ className: index['default']("component-input", FormInput_module['default'].wrapper, (_b = {},
+    return (jsxRuntime.jsx("div", tslib_es6.__assign({ className: cx__default['default']("component-input", FormInput_module['default'].wrapper, (_b = {},
             _b[FormInput_module['default'].entered] = entered,
             _b[FormInput_module['default'].disabled] = !!props.disabled,
             _b[FormInput_module['default']["read-only"]] = !!props.readOnly,
             _b[FormInput_module['default']["is-valid"]] = isValid,
             _b[FormInput_module['default']["is-invalid"]] = isInvalid,
-            _b)) }, { children: jsxRuntime.jsx("input", tslib_es6.__assign({}, props, { ref: ref, type: type, id: attributes === null || attributes === void 0 ? void 0 : attributes.formId, className: index['default'](FormInput_module['default'].control, className), onChange: function (e) {
+            _b)) }, { children: jsxRuntime.jsx("input", tslib_es6.__assign({}, props, { ref: ref, type: type, id: attributes === null || attributes === void 0 ? void 0 : attributes.formId, className: cx__default['default'](FormInput_module['default'].control, className), onChange: function (e) {
                 if (e.target.value.trim() === "")
                     setEntered(false);
                 else

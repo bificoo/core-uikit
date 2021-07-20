@@ -4,7 +4,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var index = require('./Button/index.js');
 require('react/jsx-runtime');
-require('../../../node_modules/classnames/index.js');
+require('classnames');
 require('./LinkButton/LinkButton.module.scss.js');
 
 

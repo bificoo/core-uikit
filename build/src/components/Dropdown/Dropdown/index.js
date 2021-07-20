@@ -6,17 +6,18 @@ var tslib_es6 = require('../../../../node_modules/tslib/tslib.es6.js');
 var jsxRuntime = require('react/jsx-runtime');
 var React = require('react');
 var ReactDOM = require('react-dom');
-var index$1 = require('../../../../node_modules/classnames/index.js');
+var cx = require('classnames');
 var usePopper = require('../../../../node_modules/react-popper/lib/esm/usePopper.js');
 var Dropdown_module = require('./Dropdown.module.scss.js');
-var index$3 = require('../DropdownMenu/index.js');
+var index$2 = require('../DropdownMenu/index.js');
 var index = require('../DropdownItem/index.js');
-var index$2 = require('../DropdownToggle/index.js');
+var index$1 = require('../DropdownToggle/index.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 var ReactDOM__default = /*#__PURE__*/_interopDefaultLegacy(ReactDOM);
+var cx__default = /*#__PURE__*/_interopDefaultLegacy(cx);
 
 var Dropdown = function (_a) {
     var _b = _a.open, open = _b === void 0 ? false : _b, _c = _a.trigger, trigger = _c === void 0 ? "hover" : _c, props = tslib_es6.__rest(_a, ["open", "trigger"]);
@@ -46,17 +47,17 @@ var Dropdown = function (_a) {
     var handleToggleClick = function () {
         trigger === "click" && handleShow();
     };
-    return (jsxRuntime.jsx("div", tslib_es6.__assign({ className: index$1['default'](Dropdown_module['default'].wrapper, props.className), ref: dropdownRef, onMouseOver: function () { return trigger === "hover" && handleShow(true); }, onMouseLeave: function () { return trigger === "hover" && handleShow(false); } }, { children: React__default['default'].Children.map(props.children, function (child) {
+    return (jsxRuntime.jsx("div", tslib_es6.__assign({ className: cx__default['default'](Dropdown_module['default'].wrapper, props.className), ref: dropdownRef, onMouseOver: function () { return trigger === "hover" && handleShow(true); }, onMouseLeave: function () { return trigger === "hover" && handleShow(false); } }, { children: React__default['default'].Children.map(props.children, function (child) {
             var _a;
             if (!React__default['default'].isValidElement(child))
                 return;
-            if (child.type === index$2['default'] || child.type === props.toggleComponent)
+            if (child.type === index$1['default'] || child.type === props.toggleComponent)
                 return React__default['default'].cloneElement(child, { onClick: handleToggleClick, ref: setToggleElement });
-            if (child.type === index$3['default'] || child.type === props.menuComponent) {
+            if (child.type === index$2['default'] || child.type === props.menuComponent) {
                 var items = child.props.children &&
                     (Array.isArray(child.props.children) ? child.props.children : [child.props.children]);
                 return ReactDOM__default['default'].createPortal(jsxRuntime.jsx(jsxRuntime.Fragment, { children: React__default['default'].cloneElement(child, {
-                        className: index$1['default'](Dropdown_module['default'].menu, (_a = {}, _a[Dropdown_module['default'].show] = show, _a[Dropdown_module['default'].hover] = trigger === "hover", _a), child.props.className),
+                        className: cx__default['default'](Dropdown_module['default'].menu, (_a = {}, _a[Dropdown_module['default'].show] = show, _a[Dropdown_module['default'].hover] = trigger === "hover", _a), child.props.className),
                         style: tslib_es6.__assign({}, styles.popper),
                         attributes: attributes.popper,
                         ref: setMenuElement,

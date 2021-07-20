@@ -85,7 +85,8 @@
   },
   "peerDependencies": {
     "react": ">=16.9.0",
-    "react-dom": ">=16.9.0"
+    "react-dom": ">=16.9.0",
+    "classnames": ">=2.3.1"
   },
   "resolutions": {
     "babel-loader": "8.1.0"

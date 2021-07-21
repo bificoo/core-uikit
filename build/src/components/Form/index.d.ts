@@ -1,6 +1,7 @@
 /// <reference types="react" />
 export type { FormProps } from "./Form";
 export type { FormLabelProps } from "./FormLabel";
+import FormInput from "./FormInput";
 export type { FormInputProps } from "./FormInput";
 export type { FormTextareaProps } from "./FormTextarea";
 export type { FormCheckboxProps } from "./FormCheckbox";
@@ -18,5 +19,5 @@ declare const Form: (({ layout, labelWidth, ...props }: import("./Form").FormPro
     Feedback: ({ className, ...props }: import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>) => JSX.Element;
     Group: (props: import("./FormGroup").FormGroupProps) => JSX.Element;
 };
-export { InputGroup, Prepend, Append };
+export { InputGroup, Prepend, Append, FormInput };
 export default Form;

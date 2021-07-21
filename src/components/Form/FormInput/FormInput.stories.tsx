@@ -24,11 +24,11 @@ Text.args = {
   value: "I am text",
 }
 
-export const Password = Template.bind({})
-Password.args = {
-  type: "password",
-  value: "password",
-}
+// export const Password = Template.bind({})
+// Password.args = {
+//   type: "password",
+//   value: "password",
+// }
 
 export const Disabled = Template.bind({})
 Disabled.args = {

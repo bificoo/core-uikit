@@ -10,7 +10,7 @@
   "scripts": {
     "start": "start-storybook -p 6006 -s public",
     "build": "build-storybook -s public",
-    "build-release": "rollup -c",
+    "build:library": "rollup -c",
     "eject": "react-scripts eject",
     "eslint": "eslint 'src/**/*.{js,ts,tsx}'",
     "eslint:fix": "eslint 'src/**/*.{js,ts,tsx}' --quiet --fix",

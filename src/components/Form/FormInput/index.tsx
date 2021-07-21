@@ -4,10 +4,10 @@ import { FormControlProps } from "../types"
 import cx from "classnames"
 import styled from "./FormInput.module.scss"
 
-export type FormInputProps = FormControlProps & Omit<JSXProps.InputElement, "type">
-  // Omit<JSXProps.InputElement, "type"> & {
-  //   type?: "text" | "password"
-  // }
+export type FormInputProps = FormControlProps & 
+  Omit<JSXProps.InputElement, "type"> & {
+    type?: "text" | "password"
+  }
 export type FormInputRef = React.Ref<HTMLInputElement>
 const FormInput = React.forwardRef(function FormInput(
   { className, isValid, isInvalid, ...props }: FormInputProps,

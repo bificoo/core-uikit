@@ -11,6 +11,7 @@
 # production
 # /build
 # /dist
+storybook-static
 
 # install library lock file
 package-lock.json

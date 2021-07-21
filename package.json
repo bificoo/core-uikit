@@ -8,15 +8,14 @@
     "build"
   ],
   "scripts": {
-    "start": "react-app-rewired start",
-    "build": "rollup -c",
-    "test": "react-app-rewired test",
+    "start": "start-storybook -p 6006 -s public",
+    "build": "build-storybook -s public",
+    "build-release": "rollup -c",
     "eject": "react-scripts eject",
     "eslint": "eslint 'src/**/*.{js,ts,tsx}'",
     "eslint:fix": "eslint 'src/**/*.{js,ts,tsx}' --quiet --fix",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "storybook": "start-storybook -p 6006 -s public"
   },
   "husky": {
     "hooks": {

@@ -17,9 +17,9 @@ var cx__default = /*#__PURE__*/_interopDefaultLegacy(cx);
 var FormInput = React__default['default'].forwardRef(function FormInput(_a, ref) {
     var _b;
     if (ref === void 0) { ref = null; }
-    var className = _a.className, isValid = _a.isValid, isInvalid = _a.isInvalid, props = tslib_es6.__rest(_a, ["className", "isValid", "isInvalid"]);
-    var _c = React.useContext(FormContext.FormGroupContext), attributes = _c.attributes, setAttributes = _c.setAttributes;
-    var _d = React.useState(false), entered = _d[0], setEntered = _d[1];
+    var className = _a.className, _c = _a.type, type = _c === void 0 ? "text" : _c, isValid = _a.isValid, isInvalid = _a.isInvalid, props = tslib_es6.__rest(_a, ["className", "type", "isValid", "isInvalid"]);
+    var _d = React.useContext(FormContext.FormGroupContext), attributes = _d.attributes, setAttributes = _d.setAttributes;
+    var _e = React.useState(false), entered = _e[0], setEntered = _e[1];
     React.useEffect(function () {
         setAttributes({
             entered: entered,
@@ -35,7 +35,7 @@ var FormInput = React__default['default'].forwardRef(function FormInput(_a, ref)
             _b[FormInput_module['default']["read-only"]] = !!props.readOnly,
             _b[FormInput_module['default']["is-valid"]] = isValid,
             _b[FormInput_module['default']["is-invalid"]] = isInvalid,
-            _b)) }, { children: jsxRuntime.jsx("input", tslib_es6.__assign({}, props, { ref: ref, type: "text", id: attributes === null || attributes === void 0 ? void 0 : attributes.formId, className: cx__default['default'](FormInput_module['default'].control, className), onChange: function (e) {
+            _b)) }, { children: jsxRuntime.jsx("input", tslib_es6.__assign({}, props, { ref: ref, type: type, id: attributes === null || attributes === void 0 ? void 0 : attributes.formId, className: cx__default['default'](FormInput_module['default'].control, className), onChange: function (e) {
                 if (e.target.value.trim() === "")
                     setEntered(false);
                 else

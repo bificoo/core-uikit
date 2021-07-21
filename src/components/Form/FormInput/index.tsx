@@ -5,12 +5,12 @@ import cx from "classnames"
 import styled from "./FormInput.module.scss"
 
 export type FormInputProps = FormControlProps & 
-  Omit<JSXProps.InputElement, "type"> & {
+  Omit<JSXProps.InputElement, "type" | "css"> & {
     type?: "text" | "password"
   }
 export type FormInputRef = React.Ref<HTMLInputElement>
 const FormInput = React.forwardRef(function FormInput(
-  { className, isValid, isInvalid, ...props }: FormInputProps,
+  { className, type = "text", isValid, isInvalid, ...props }: FormInputProps,
   ref: FormInputRef = null,
 ) {
   const { attributes, setAttributes } = useContext(FormGroupContext)
@@ -38,7 +38,7 @@ const FormInput = React.forwardRef(function FormInput(
       <input
         {...props}
         ref={ref}
-        type="text"
+        type={type}
         id={attributes?.formId}
         className={cx(styled.control, className)}
         onChange={e => {

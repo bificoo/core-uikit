@@ -35,5 +35,5 @@ const Form = Object.assign(FormBase, {
   Group: FormGroup,
 })
 
-export { InputGroup, Prepend, Append, FormInput }
+export { InputGroup, Prepend, Append }
 export default Form

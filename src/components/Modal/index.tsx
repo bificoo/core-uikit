@@ -1,3 +1,4 @@
 import Modal from "./Modal"
+import withOpen from "./withOpen"
 
-export default Modal
+export default withOpen(Modal)

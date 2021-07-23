@@ -1,3 +1,4 @@
+import { useRef, useEffect } from "react"
 import Popup from "reactjs-popup"
 import ModalDialog, { ModalDialogProps } from "../ModalDialog"
 import { PopupProps } from "reactjs-popup/dist/types"
@@ -8,17 +9,29 @@ export type ModalProps = {
   open?: boolean
   backdrop?: boolean
   custom?: boolean
+  onExited?: () => void
 } & ModalDialogProps &
   ReactProps.Component &
   Partial<Pick<PopupProps, "open" | "closeOnDocumentClick" | "onClose" | "children">>
 
 const Modal = ({ open = false, backdrop = true, custom = false, ...props }: ModalProps) => {
+  const opened = useRef(false)
+
+  useEffect(() => {
+    if (open) opened.current = true
+  }, [open])
+
+  useEffect(() => {
+    if (!open && opened.current) props.onExited && props.onExited()
+  }, [open, props.onExited])
+
   return (
     <Popup
       modal
       lockScroll
       open={open}
       closeOnDocumentClick={backdrop}
+      closeOnEscape
       onClose={props.onClose}
       contentStyle={{
         background: "transparent",
@@ -45,33 +58,6 @@ const Modal = ({ open = false, backdrop = true, custom = false, ...props }: Moda
       )}
     </Popup>
   )
-  // <div
-  //   className={cx(
-  //     styled.wrapper,
-  //     styled["animation-slide"],
-  //     { [styled.show]: show },
-  //     props.className,
-  //   )}>
-  //   <div
-  //     className={cx(styled.overlay, { "is-backdrop": backdrop })}
-  //     onClick={() => {
-  //       if (backdrop) props.onHide && props.onHide()
-  //     }}
-  //   />
-  //   <ModalDialog
-  //     className={cx(styled.outer, "modal-outer")}
-  //     title={props.title}
-  //     content={props.content}
-  //     confirmText={props.confirmText}
-  //     confirmButtonProps={props.confirmButtonProps}
-  //     cancelText={props.cancelText}
-  //     cancelButtonProps={props.cancelButtonProps}
-  //     onConfirm={props.onConfirm}
-  //     onCancel={props.onCancel}
-  //     onHide={props.onHide}>
-  //     {props.children}
-  //   </ModalDialog>
-  // </div>
 }
 
 export default Modal

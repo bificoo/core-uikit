@@ -65,42 +65,45 @@ const Dropdown = ({ open = false, trigger = "hover", ...props }: DropdownProps) 
             child.props.children &&
             (Array.isArray(child.props.children) ? child.props.children : [child.props.children])
 
-          return ReactDOM.createPortal(
-            <>
-              {React.cloneElement(
-                child,
-                {
-                  className: cx(
-                    styled.menu,
-                    { [styled.show]: show, [styled.hover]: trigger === "hover" },
-                    child.props.className,
-                  ),
-                  style: { ...styles.popper },
-                  attributes: attributes.popper,
-                  ref: setMenuElement,
-                },
-                items?.map((item: JSX.Element, idx: number) => {
-                  if (item.type === Item || item.type === props.itemComponent) {
-                    return (
-                      <Item
-                        key={idx}
-                        {...{
-                          ...item.props,
-                          onClick: (
-                            e: React.MouseEvent<Element, MouseEvent>,
-                            { eventKey }: { eventKey?: string },
-                          ) => {
-                            item.props.onClick && item.props.onClick(e, { eventKey })
-                            handleShow()
-                          },
-                        }}
-                      />
-                    )
-                  } else return item
-                }),
-              )}
-            </>,
-            document.body,
+          return (
+            show &&
+            ReactDOM.createPortal(
+              <>
+                {React.cloneElement(
+                  child,
+                  {
+                    className: cx(
+                      styled.menu,
+                      { [styled.show]: show, [styled.hover]: trigger === "hover" },
+                      child.props.className,
+                    ),
+                    style: { ...styles.popper },
+                    attributes: attributes.popper,
+                    ref: setMenuElement,
+                  },
+                  items?.map((item: JSX.Element, idx: number) => {
+                    if (item.type === Item || item.type === props.itemComponent) {
+                      return (
+                        <Item
+                          key={idx}
+                          {...{
+                            ...item.props,
+                            onClick: (
+                              e: React.MouseEvent<Element, MouseEvent>,
+                              { eventKey }: { eventKey?: string },
+                            ) => {
+                              item.props.onClick && item.props.onClick(e, { eventKey })
+                              handleShow()
+                            },
+                          }}
+                        />
+                      )
+                    } else return item
+                  }),
+                )}
+              </>,
+              document.body,
+            )
           )
         }
       })}

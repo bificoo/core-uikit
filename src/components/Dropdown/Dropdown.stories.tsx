@@ -25,18 +25,20 @@ export default {
   decorators: [Story => <Story />],
 } as Meta
 
-export const Default: Story<DropdownProps> = () => (
-  <Dropdown open={true}>
-    <Dropdown.Toggle>
-      <Button variant="secondary">Page actions</Button>
-    </Dropdown.Toggle>
-    <Dropdown.Menu>
-      <Dropdown.Item>Edit</Dropdown.Item>
-      <Dropdown.Item>Share</Dropdown.Item>
-      <Dropdown.Item>Move</Dropdown.Item>
-      <Dropdown.Item>Clone</Dropdown.Item>
-      <Dropdown.Item>Delete</Dropdown.Item>
-      <Dropdown.Item>Report</Dropdown.Item>
-    </Dropdown.Menu>
-  </Dropdown>
-)
+export const Default: Story<DropdownProps> = () => {
+  return (
+    <Dropdown>
+      <Dropdown.Toggle>
+        <Button variant="secondary">Page actions</Button>
+      </Dropdown.Toggle>
+      <Dropdown.Menu>
+        <Dropdown.Item>Edit</Dropdown.Item>
+        <Dropdown.Item>Share</Dropdown.Item>
+        <Dropdown.Item>Move</Dropdown.Item>
+        <Dropdown.Item>Clone</Dropdown.Item>
+        <Dropdown.Item>Delete</Dropdown.Item>
+        <Dropdown.Item>Report</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  )
+}

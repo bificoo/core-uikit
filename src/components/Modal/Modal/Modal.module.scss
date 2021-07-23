@@ -1,0 +1,59 @@
+@keyframes slideIn {
+  from {
+    transform: translateY(calc(-55% + 0.5px));
+    opacity: 0.5;
+  }
+
+  to {
+    transform: translateY(calc(-50% + 0.5px));
+    opacity: 1;
+  }
+}
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: none;
+  z-index: 1050;
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .main {
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #fff;
+    padding-bottom: 20px;
+  }
+
+  .animation-slide {
+    .outer {
+      display: none;
+      position: relative;
+      top: 50%;
+      margin: 0 auto;
+      transform: translateY(-50%);
+    }
+
+    &.show {
+      display: block;
+
+      .outer {
+        display: flex;
+        animation: slideIn 0.4s;
+      }
+    }
+  }
+}

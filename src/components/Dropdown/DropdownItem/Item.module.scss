@@ -1,6 +1,5 @@
 .wrapper {
   overflow: hidden;
-  padding: 0.5rem;
   padding: 8px 12px 7px;
   width: auto;
   background-color: rgb(255, 255, 255);
@@ -8,6 +7,7 @@
   text-decoration: none;
   text-overflow: ellipsis;
   transition: all 0.2s;
+  cursor: pointer;
 
   &.active {
     background-color: rgb(179, 212, 255);

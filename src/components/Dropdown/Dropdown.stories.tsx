@@ -29,10 +29,10 @@ export const Default: Story<DropdownProps> = () => {
   return (
     <Dropdown>
       <Dropdown.Toggle>
-        <Button variant="secondary">Page actions</Button>
+        <Button>Page actions</Button>
       </Dropdown.Toggle>
-      <Dropdown.Menu>
-        <Dropdown.Item>Edit</Dropdown.Item>
+      <Dropdown.Menu onSelect={(e, { eventKey }) => console.info(e, eventKey)}>
+        <Dropdown.Item eventKey="edit">Edit</Dropdown.Item>
         <Dropdown.Item>Share</Dropdown.Item>
         <Dropdown.Item>Move</Dropdown.Item>
         <Dropdown.Item>Clone</Dropdown.Item>

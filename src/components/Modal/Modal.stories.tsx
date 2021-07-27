@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Story, Meta } from "@storybook/react"
 import Button from "components/Button"
-import Modal from "components/Modal"
+import Modal from "components/Modal/index"
 export default {
   title: "Components/Modal",
   argTypes: {

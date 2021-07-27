@@ -1,20 +1,20 @@
+import React, { useContext } from "react"
 import cx from "classnames"
 import styled from "./Item.module.scss"
+import DropdownContext from "../DropdownContext"
 
 export type DropdownItemProps = {
-  className?: string
-  children: React.ReactNode
-  eventKey?: string
+  eventKey?: ReactProps.EventKey
   active?: boolean
-  onClick?: (e: React.MouseEvent<Element, MouseEvent>, { eventKey }: { eventKey?: string }) => void
-}
+} & ReactProps.Component
 
-const DropdownItem = ({ className, children, eventKey, active, onClick }: DropdownItemProps) => {
+const DropdownItem = (props: DropdownItemProps) => {
+  const context = useContext(DropdownContext)
   return (
     <div
-      className={cx(styled.wrapper, { [styled.active]: active }, className)}
-      onClick={e => onClick && onClick(e, { eventKey })}>
-      {children}
+      className={cx(styled.wrapper, { [styled.active]: props.active }, props.className)}
+      onClick={() => context.onClickItem(props.eventKey)}>
+      {props.children}
     </div>
   )
 }

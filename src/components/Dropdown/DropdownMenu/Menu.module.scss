@@ -1,12 +1,9 @@
 .wrapper {
-  position: absolute;
-  z-index: 400;
-  overflow: auto;
-  box-sizing: border-box;
   padding: 4px 0;
+  width: 100px;
   max-height: 317.5px;
   border-radius: 3px;
   background: rgb(255, 255, 255);
-  box-shadow: rgba(9 ,30 ,66, 25%) 0 4px 8px -2px, rgba(9 ,30 ,66 ,31%) 0 0 1px;
+  box-shadow: #091e4240 0px 4px 8px -2px, #091e424f 0px 0px 1px;
 }
 

@@ -2,8 +2,6 @@ import { useRef, useEffect } from "react"
 import Popup from "reactjs-popup"
 import ModalDialog, { ModalDialogProps } from "../ModalDialog"
 import { PopupProps } from "reactjs-popup/dist/types"
-import "reactjs-popup/dist/index.css"
-// import styled from "./Modal.module.scss"
 
 export type ModalProps = {
   open?: boolean

@@ -1,3 +1,4 @@
+import React from "react"
 declare global {
   namespace JSXProps {
     type AElement = JSX.IntrinsicElements["a"]
@@ -177,6 +178,7 @@ declare global {
   }
 
   namespace ReactProps {
+    type EventKey = string | number
     type WithChildren = { children?: React.ReactNode }
     type WithClassName = { className?: string }
     type Component = WithChildren & WithClassName

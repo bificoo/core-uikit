@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import FormContext, { FormAttributes } from "components/Form/FormContext"
+import FormContext, { FormAttributes } from "../FormContext"
 
 export type FormProps = JSXProps.FormElement & FormAttributes
 

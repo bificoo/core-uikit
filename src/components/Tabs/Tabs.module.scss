@@ -1,0 +1,43 @@
+.wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  height: 30px;
+  border-radius: 17px;
+  background-color: #fff;
+  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1);
+
+  .nav-tabs {
+    display: flex;
+
+    .tab {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 30px;
+      border-radius: 15px;
+      background: #fff;
+      color: #666;
+
+      &.active {
+        background: var(--primary-base);
+        color: #fff;
+      }
+    }
+  }
+
+  .tab-content {
+    position: relative;
+    background-color: var(--navigation-background-color-light);
+
+    .tab-pane {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+}

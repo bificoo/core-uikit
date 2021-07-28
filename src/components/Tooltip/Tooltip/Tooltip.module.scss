@@ -1,0 +1,57 @@
+@import 'assets/styles/variables';
+
+.wrapper {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+
+//.wrapper {
+
+  //padding: 4px 0;
+  //width: 100px;
+  //max-height: 317.5px;
+  //border-radius: 3px;
+  //background: rgb(255, 255, 255);
+  //box-shadow: #091e4240 0px 4px 8px -2px, #091e424f 0px 0px 1px;
+
+
+
+  //.arrow {
+  //  position: absolute;
+  //  z-index: 1;
+  //  width: 10px;
+  //  height: 10px;
+  //
+  //  &:after {
+  //    position: absolute;
+  //    top: -5px;
+  //    width: 7px;
+  //    height: 7px;
+  //    background-color: #172b4d;
+  //    box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  //    content: ' ';
+  //    transform: rotate(45deg);
+  //  }
+  //}
+
+  //&[data-popper-placement^='top'] > .arrow {
+  //  bottom: -12px;
+  //}
+  //
+  //&[data-popper-placement^='right'] > .arrow {
+  //  top: 6px !important;
+  //  left: -4px;
+  //}
+  //
+  //&[data-popper-placement^='left'] > .arrow {
+  //  top: 7px !important;
+  //  right: -7px;
+  //}
+//}
+
+//.children {
+//  display: inline-block;
+//  width: auto;
+//}

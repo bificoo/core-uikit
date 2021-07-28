@@ -1,6 +1,7 @@
 import { Story, Meta } from "@storybook/react"
 import Dropdown, { DropdownProps } from "components/Dropdown"
 import Button from "components/Button"
+import React from "react"
 
 export default {
   title: "Components/Dropdown",
@@ -31,7 +32,11 @@ export const Default: Story<DropdownProps> = () => {
       <Dropdown.Toggle>
         <Button>Page actions</Button>
       </Dropdown.Toggle>
-      <Dropdown.Menu onSelect={(e, { eventKey }) => console.info(e, eventKey)}>
+      <Dropdown.Menu
+        onSelect={(
+          e: React.MouseEvent<Element, MouseEvent>,
+          { eventKey }: { eventKey?: ReactProps.EventKey },
+        ) => console.info(e, eventKey)}>
         <Dropdown.Item eventKey="edit">Edit</Dropdown.Item>
         <Dropdown.Item>Share</Dropdown.Item>
         <Dropdown.Item>Move</Dropdown.Item>

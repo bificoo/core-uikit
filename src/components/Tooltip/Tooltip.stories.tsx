@@ -1,6 +1,7 @@
 import { Story, Meta } from "@storybook/react"
 import Button from "components/Button"
-import Tooltip, { TooltipProps } from "components/Tooltip"
+import Tooltip, { TooltipProps } from "./index"
+import React from "react"
 
 export default {
   title: "Components/Tooltip",
@@ -28,17 +29,46 @@ export default {
   ],
 } as Meta
 
-const Template: Story<TooltipProps> = args => <Tooltip {...args} />
-
-export const Default = Template.bind({})
-Default.args = {
-  content: "Design System Tooltip",
-  children: <Button variant="primary">Hover over me</Button>,
+export const Default: Story<TooltipProps> = () => {
+  return (
+    <Tooltip arrow={false} on="focus">
+      <Tooltip.Toggle>
+        <Button variant="primary">Hover over me</Button>
+      </Tooltip.Toggle>
+      <Tooltip.Body>Design System Tooltip</Tooltip.Body>
+    </Tooltip>
+  )
 }
 
-export const Arrow = Template.bind({})
-Arrow.args = {
-  arrow: true,
-  content: "Design System Tooltip",
-  children: <Button variant="primary">Hover over me</Button>,
+export const Right: Story<TooltipProps> = () => {
+  return (
+    <Tooltip arrow={false} position="right center">
+      <Tooltip.Toggle>
+        <Button variant="primary">Hover over me</Button>
+      </Tooltip.Toggle>
+      <Tooltip.Body>Design System Tooltip</Tooltip.Body>
+    </Tooltip>
+  )
+}
+
+export const Left: Story<TooltipProps> = () => {
+  return (
+    <Tooltip arrow={false} position="left center">
+      <Tooltip.Toggle>
+        <Button variant="primary">Hover over me</Button>
+      </Tooltip.Toggle>
+      <Tooltip.Body>Design System Tooltip</Tooltip.Body>
+    </Tooltip>
+  )
+}
+
+export const Top: Story<TooltipProps> = () => {
+  return (
+    <Tooltip arrow={false} position="top center">
+      <Tooltip.Toggle>
+        <Button variant="primary">Hover over me</Button>
+      </Tooltip.Toggle>
+      <Tooltip.Body>Design System Tooltip</Tooltip.Body>
+    </Tooltip>
+  )
 }

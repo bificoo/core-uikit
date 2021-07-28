@@ -1,14 +1,13 @@
 import React from "react"
 import { forwardRef } from "react"
 
-export type DropdownToggleProps = {
+export type TooltipToggleProps = {
   onClick?: React.MouseEventHandler<HTMLElement>
 } & ReactProps.Component
-
 export type Ref = HTMLDivElement
 
-const DropdownToggle = forwardRef<Ref, DropdownToggleProps>(function DropdownToggle(
-  props: DropdownToggleProps,
+const TooltipToggle = forwardRef<Ref, TooltipToggleProps>(function TooltipToggle(
+  props: TooltipToggleProps,
   ref,
 ) {
   return (
@@ -18,4 +17,4 @@ const DropdownToggle = forwardRef<Ref, DropdownToggleProps>(function DropdownTog
   )
 })
 
-export default DropdownToggle
+export default TooltipToggle

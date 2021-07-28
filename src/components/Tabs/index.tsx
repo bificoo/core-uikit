@@ -17,17 +17,22 @@ const Tabs = ({ ...props }: TabsProps): JSX.Element => {
         <nav className={style["nav-tabs"]}>
           {React.Children.map(props.children, child => {
             if (!React.isValidElement(child)) return
-            const { title, key, className } = child.props
-            return <Tab className={className} title={title} key={key} />
+            return (
+              <Tab
+                className={child.props.className}
+                title={child.props.title}
+                eventKey={child.props.eventKey}
+              />
+            )
           })}
         </nav>
         <div className={style["tab-content"]}>
           {React.Children.map(props.children, child => {
             if (!React.isValidElement(child)) return
-            const { key } = child.props
-            return React.cloneElement(<>{child.props.children}</>, {
-              className: cx({ [style.active]: activeKey === key }),
-            })
+
+            if (activeKey === child.props.eventKey) {
+              return React.cloneElement(<>{child.props.children}</>)
+            }
           })}
         </div>
       </div>

@@ -1,17 +1,14 @@
-/// <reference types="react" />
+import React from "react";
 export declare type DropdownMenuProps = {
-    className?: string;
     style?: {
         [key: string]: React.CSSProperties;
     };
-    eventKey?: string;
-    attributes?: {
-        [key: string]: {
-            [key: string]: string;
-        } | undefined;
-    };
-    children?: React.ReactNode;
+    onSelect?: (e: React.MouseEvent<Element, MouseEvent>, { eventKey }: {
+        eventKey?: ReactProps.EventKey;
+    }) => void;
+} & ReactProps.Component;
+declare const DropdownMenu: {
+    (props: DropdownMenuProps): JSX.Element;
+    displayName: string;
 };
-export declare type Ref = HTMLDivElement;
-declare const DropdownMenu: import("react").ForwardRefExoticComponent<DropdownMenuProps & import("react").RefAttributes<HTMLDivElement>>;
 export default DropdownMenu;

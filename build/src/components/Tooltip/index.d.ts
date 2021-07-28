@@ -1,8 +1,10 @@
-import { BasePlacement } from "@popperjs/core";
-export declare type TooltipProps = ReactProps.Component & {
-    arrow?: boolean;
-    content?: string;
-    placement?: BasePlacement;
+/// <reference types="react" />
+export type { TooltipProps } from "./Tooltip";
+export type { TooltipToggleProps } from "./TooltipToggle";
+declare const Tooltip: (({ on, position, arrow, ...props }: import("reactjs-popup/dist/types").PopupProps) => JSX.Element) & {
+    Toggle: import("react").ForwardRefExoticComponent<{
+        onClick?: import("react").MouseEventHandler<HTMLElement> | undefined;
+    } & ReactProps.WithChildren & ReactProps.WithClassName & import("react").RefAttributes<HTMLDivElement>>;
+    Body: (props: ReactProps.WithChildren) => JSX.Element;
 };
-declare const Tooltip: ({ arrow, className, children, content, placement, }: TooltipProps) => JSX.Element;
 export default Tooltip;

@@ -1,12 +1,6 @@
-/// <reference types="react" />
 export declare type DropdownItemProps = {
-    className?: string;
-    children: React.ReactNode;
-    eventKey?: string;
+    eventKey?: ReactProps.EventKey;
     active?: boolean;
-    onClick?: (e: React.MouseEvent<Element, MouseEvent>, { eventKey }: {
-        eventKey?: string;
-    }) => void;
-};
-declare const DropdownItem: ({ className, children, eventKey, active, onClick }: DropdownItemProps) => JSX.Element;
+} & ReactProps.Component;
+declare const DropdownItem: (props: DropdownItemProps) => JSX.Element;
 export default DropdownItem;

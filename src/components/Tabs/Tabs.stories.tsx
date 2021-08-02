@@ -14,22 +14,22 @@ export default {
   },
 } as Meta
 
-const style = {
-  alignItems: "center",
-  backgroundColor: "#f4f5f7",
-  borderRadius: "3px",
-  color: "#6b778c",
-  display: "flex",
-  fontSize: "4em",
-  fontWeight: 500,
-  flexGrow: 1,
-  justifyContent: "center",
-  marginBottom: "8px",
-  marginTop: "16px",
-  padding: "32px",
-}
-
 export const Default: Story<TabsProps> = () => {
+  const style = {
+    alignItems: "center",
+    backgroundColor: "#f4f5f7",
+    borderRadius: "3px",
+    color: "#6b778c",
+    display: "flex",
+    fontSize: "4em",
+    fontWeight: 500,
+    flexGrow: 1,
+    justifyContent: "center",
+    marginBottom: "8px",
+    marginTop: "16px",
+    padding: "32px",
+  }
+
   return (
     <Tabs defaultActiveKey="Tab1">
       <Tabs.Tab title="Tab1" eventKey="Tab1">

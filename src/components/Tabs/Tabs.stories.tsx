@@ -30,13 +30,13 @@ export const Default: Story<TabsProps> = () => {
 
   return (
     <Tabs defaultActiveKey="Tab1">
-      <Tabs.Tab title="Tab1" eventKey="Tab1">
+      <Tabs.Tab title="數據指標" eventKey="Tab1">
         <div style={style}>One</div>
       </Tabs.Tab>
-      <Tabs.Tab title="Tab2" eventKey="Tab2">
+      <Tabs.Tab title="圖像報表" eventKey="Tab2">
         <div style={style}>Two</div>
       </Tabs.Tab>
-      <Tabs.Tab title="Tab3" eventKey="Tab3">
+      <Tabs.Tab title="用戶清單" eventKey="Tab3">
         <div style={style}>Three</div>
       </Tabs.Tab>
     </Tabs>

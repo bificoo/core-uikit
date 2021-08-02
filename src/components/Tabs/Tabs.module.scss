@@ -7,7 +7,7 @@
   padding: 0;
   color: #32325d;
   list-style: none;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.5715;
 
   .nav-tabs {
@@ -15,7 +15,7 @@
     display: flex;
     margin-bottom: 30px;
     padding: 0;
-    font-weight: 500;
+    font-weight: 400;
 
     &::before {
       position: absolute;
@@ -42,7 +42,8 @@
 
       &.active {
         border-bottom: 2px solid;
-        color: #5e72e4;
+        color: #4d7bca;
+        font-weight: 500;
 
         // &:after {
         //   position: absolute;

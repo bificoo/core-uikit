@@ -5,7 +5,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: #000;
+  color: #32325d;
   list-style: none;
   font-size: 14px;
   line-height: 1.5715;
@@ -13,7 +13,7 @@
   .nav-tabs {
     position: relative;
     display: flex;
-    margin: 0 0 16px;
+    margin-bottom: 30px;
     padding: 0;
     font-weight: 500;
 
@@ -34,7 +34,7 @@
       position: relative;
       overflow: hidden;
       margin: 0;
-      padding: 4px 8px;
+      padding: 6px 20px;
       text-overflow: ellipsis;
       white-space: nowrap;
       line-height: 1.8;
@@ -42,7 +42,7 @@
 
       &.active {
         border-bottom: 2px solid;
-        color: rgb(0, 82, 204);
+        color: #5e72e4;
 
         // &:after {
         //   position: absolute;
@@ -63,8 +63,8 @@
   .tab-content {
     position: relative;
     display: flex;
-    padding: 0 8px;
     background-color: var(--navigation-background-color-light);
+    margin-bottom: 30px;
 
     .tab-pane {
       display: none;

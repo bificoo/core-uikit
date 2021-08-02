@@ -25,8 +25,6 @@ export const Default: Story<TabsProps> = () => {
     fontWeight: 500,
     flexGrow: 1,
     justifyContent: "center",
-    marginBottom: "8px",
-    marginTop: "16px",
     padding: "32px",
   }
 

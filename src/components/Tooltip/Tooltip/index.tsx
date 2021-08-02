@@ -1,6 +1,6 @@
-import React, { useMemo, useRef } from "react"
+import React, { useMemo } from "react"
 import Popup from "reactjs-popup"
-import { PopupActions, PopupProps } from "reactjs-popup/dist/types"
+import { PopupProps } from "reactjs-popup/dist/types"
 import cx from "classnames"
 import styled from "../../Dropdown/Dropdown/Dropdown.module.scss"
 import TooltipToggle from "../TooltipToggle"

@@ -26,7 +26,7 @@ var Tabs = function (_a) {
                         if (!React__default['default'].isValidElement(child))
                             return;
                         if (activeKey === child.props.eventKey) {
-                            return React__default['default'].cloneElement(jsxRuntime.jsx(jsxRuntime.Fragment, { children: child.props.children }, void 0));
+                            return child.props.children;
                         }
                     }) }), void 0)] }), void 0) }), void 0));
 };

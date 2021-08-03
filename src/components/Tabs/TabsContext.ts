@@ -1,8 +1,8 @@
 import React from "react"
 
 export type TabsContextProps = {
-  activeKey?: string | number
-  setActiveKey: (eventKey: string | number) => void
+  activeKey?: ReactProps.EventKey
+  setActiveKey: (eventKey: ReactProps.EventKey) => void
 }
 
 const TabsContext = React.createContext<TabsContextProps>({

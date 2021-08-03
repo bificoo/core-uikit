@@ -31,7 +31,7 @@ const Tabs = ({ ...props }: TabsProps): JSX.Element => {
             if (!React.isValidElement(child)) return
 
             if (activeKey === child.props.eventKey) {
-              return React.cloneElement(<>{child.props.children}</>)
+              return child.props.children
             }
           })}
         </div>

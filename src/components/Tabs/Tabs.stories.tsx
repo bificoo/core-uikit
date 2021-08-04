@@ -29,7 +29,12 @@ export const Default: Story<TabsProps> = () => {
   }
 
   return (
-    <Tabs defaultActiveKey="Tab1">
+    <Tabs
+      defaultActiveKey="Tab1"
+      onSelect={(
+        e: React.MouseEvent<Element, MouseEvent>,
+        { eventKey }: { eventKey?: ReactProps.EventKey },
+      ) => console.info(eventKey)}>
       <Tabs.Tab title="數據指標" eventKey="Tab1">
         <div style={style}>One</div>
       </Tabs.Tab>

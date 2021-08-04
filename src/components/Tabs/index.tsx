@@ -6,6 +6,10 @@ import TabsContext from "./TabsContext"
 
 export type TabsProps = {
   defaultActiveKey: string | number
+  onSelect?: (
+    e: React.MouseEvent<Element, MouseEvent>,
+    { eventKey }: { eventKey?: ReactProps.EventKey },
+  ) => void
 } & ReactProps.Component
 
 const Tabs = ({ ...props }: TabsProps): JSX.Element => {
@@ -13,7 +17,11 @@ const Tabs = ({ ...props }: TabsProps): JSX.Element => {
 
   return (
     <TabsContext.Provider value={{ activeKey, setActiveKey }}>
-      <div className={cx(style.wrapper, props.className)}>
+      <div
+        className={cx(style.wrapper, props.className)}
+        onClick={(e: React.MouseEvent<Element, MouseEvent>) =>
+          props.onSelect && props.onSelect(e, { eventKey: activeKey })
+        }>
         <nav className={style["nav-tabs"]}>
           {React.Children.map(props.children, child => {
             if (!React.isValidElement(child)) return

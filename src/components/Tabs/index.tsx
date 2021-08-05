@@ -34,15 +34,17 @@ const Tabs = ({ ...props }: TabsProps): JSX.Element => {
             )
           })}
         </nav>
-        <div className={style["tab-content"]}>
-          {React.Children.map(props.children, child => {
-            if (!React.isValidElement(child)) return
+        {React.Children.count(props.children) > 0 && (
+          <div className={style["tab-content"]}>
+            {React.Children.map(props.children, child => {
+              if (!React.isValidElement(child)) return
 
-            if (activeKey === child.props.eventKey) {
-              return child.props.children
-            }
-          })}
-        </div>
+              if (activeKey === child.props.eventKey) {
+                return child.props.children
+              }
+            })}
+          </div>
+        )}
       </div>
     </TabsContext.Provider>
   )

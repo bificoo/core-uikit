@@ -24,13 +24,13 @@ var Tabs = function (_a) {
                         if (!React__default['default'].isValidElement(child))
                             return;
                         return (jsxRuntime.jsx(index['default'], { className: child.props.className, title: child.props.title, eventKey: child.props.eventKey }, void 0));
-                    }) }), void 0), jsxRuntime.jsx("div", tslib_es6.__assign({ className: Tabs_module['default']["tab-content"] }, { children: React__default['default'].Children.map(props.children, function (child) {
+                    }) }), void 0), React__default['default'].Children.count(props.children) > 0 && (jsxRuntime.jsx("div", tslib_es6.__assign({ className: Tabs_module['default']["tab-content"] }, { children: React__default['default'].Children.map(props.children, function (child) {
                         if (!React__default['default'].isValidElement(child))
                             return;
                         if (activeKey === child.props.eventKey) {
                             return child.props.children;
                         }
-                    }) }), void 0)] }), void 0) }), void 0));
+                    }) }), void 0))] }), void 0) }), void 0));
 };
 Tabs.Tab = index['default'];
 

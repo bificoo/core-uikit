@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useMemo } from "react"
 import cx from "classnames"
 import Tab from "./Tab"
 import style from "./Tabs.module.scss"
@@ -15,6 +15,13 @@ export type TabsProps = {
 const Tabs = ({ ...props }: TabsProps): JSX.Element => {
   const [activeKey, setActiveKey] = useState<string | number>(props.defaultActiveKey)
 
+  const hasChild = useMemo(() => {
+    let has = false
+    React.Children.forEach(props.children, child => {
+      if (React.isValidElement(child) && React.isValidElement(child.props.children)) has = true
+    })
+    return has
+  }, [props.children])
   return (
     <TabsContext.Provider value={{ activeKey, setActiveKey }}>
       <div
@@ -34,7 +41,7 @@ const Tabs = ({ ...props }: TabsProps): JSX.Element => {
             )
           })}
         </nav>
-        {React.Children.count(props.children) > 0 && (
+        {hasChild && (
           <div className={style["tab-content"]}>
             {React.Children.map(props.children, child => {
               if (!React.isValidElement(child)) return

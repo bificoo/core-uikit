@@ -18,13 +18,21 @@ var cx__default = /*#__PURE__*/_interopDefaultLegacy(cx);
 var Tabs = function (_a) {
     var props = tslib_es6.__rest(_a, []);
     var _b = React.useState(props.defaultActiveKey), activeKey = _b[0], setActiveKey = _b[1];
+    var hasChild = React.useMemo(function () {
+        var has = false;
+        React__default['default'].Children.forEach(props.children, function (child) {
+            if (React__default['default'].isValidElement(child) && React__default['default'].isValidElement(child.props.children))
+                has = true;
+        });
+        return has;
+    }, [props.children]);
     return (jsxRuntime.jsx(TabsContext['default'].Provider, tslib_es6.__assign({ value: { activeKey: activeKey, setActiveKey: setActiveKey } }, { children: jsxRuntime.jsxs("div", tslib_es6.__assign({ className: cx__default['default'](Tabs_module['default'].wrapper, props.className), onClick: function (e) {
                 return props.onSelect && props.onSelect(e, { eventKey: activeKey });
             } }, { children: [jsxRuntime.jsx("nav", tslib_es6.__assign({ className: Tabs_module['default']["nav-tabs"] }, { children: React__default['default'].Children.map(props.children, function (child) {
                         if (!React__default['default'].isValidElement(child))
                             return;
                         return (jsxRuntime.jsx(index['default'], { className: child.props.className, title: child.props.title, eventKey: child.props.eventKey }, void 0));
-                    }) }), void 0), React__default['default'].Children.count(props.children) > 0 && (jsxRuntime.jsx("div", tslib_es6.__assign({ className: Tabs_module['default']["tab-content"] }, { children: React__default['default'].Children.map(props.children, function (child) {
+                    }) }), void 0), hasChild && (jsxRuntime.jsx("div", tslib_es6.__assign({ className: Tabs_module['default']["tab-content"] }, { children: React__default['default'].Children.map(props.children, function (child) {
                         if (!React__default['default'].isValidElement(child))
                             return;
                         if (activeKey === child.props.eventKey) {

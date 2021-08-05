@@ -1,4 +1,5 @@
 @import 'assets/styles/variables';
+@import 'assets/styles/mixins';
 
 .wrapper {
   display: flex;
@@ -102,5 +103,6 @@
 
   &.inline {
     display: inline-flex;
+    height: em(36);
   }
 }

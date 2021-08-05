@@ -59,10 +59,35 @@ export const HorizontalForm: Story = () => (
       <Form.Radio name="sex">Female</Form.Radio>
     </Form.Group>
     <Form.Group>
+      <Form.Label>Sex</Form.Label>
+      <div>
+        <Form.Radio name="sex" inline>
+          Male
+        </Form.Radio>
+        <Form.Radio name="sex" inline>
+          Female
+        </Form.Radio>
+      </div>
+    </Form.Group>
+    <Form.Group>
       <Form.Label>Interesting</Form.Label>
       <Form.Checkbox name="sex">Apple</Form.Checkbox>
       <Form.Checkbox name="sex">Orange</Form.Checkbox>
       <Form.Checkbox name="sex">Banana</Form.Checkbox>
+    </Form.Group>
+    <Form.Group>
+      <Form.Label>Interesting</Form.Label>
+      <div>
+        <Form.Checkbox name="sex" inline>
+          Apple
+        </Form.Checkbox>
+        <Form.Checkbox name="sex" inline>
+          Orange
+        </Form.Checkbox>
+        <Form.Checkbox name="sex" inline>
+          Banana
+        </Form.Checkbox>
+      </div>
     </Form.Group>
     <Button type="submit">Submit</Button>
   </Form>

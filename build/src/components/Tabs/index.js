@@ -17,7 +17,14 @@ var cx__default = /*#__PURE__*/_interopDefaultLegacy(cx);
 
 var Tabs = function (_a) {
     var props = tslib_es6.__rest(_a, []);
-    var _b = React.useState(props.defaultActiveKey), activeKey = _b[0], setActiveKey = _b[1];
+    var activeKey = React.useRef(props.defaultActiveKey);
+    var _b = React.useReducer(function (x) { return x + 1; }, 0), forceUpdate = _b[1];
+    var handleClickTab = function (eventKey) {
+        if (!eventKey)
+            return;
+        activeKey.current = eventKey;
+        forceUpdate();
+    };
     var hasChild = React.useMemo(function () {
         var has = false;
         React__default['default'].Children.forEach(props.children, function (child) {
@@ -26,8 +33,8 @@ var Tabs = function (_a) {
         });
         return has;
     }, [props.children]);
-    return (jsxRuntime.jsx(TabsContext['default'].Provider, tslib_es6.__assign({ value: { activeKey: activeKey, setActiveKey: setActiveKey } }, { children: jsxRuntime.jsxs("div", tslib_es6.__assign({ className: cx__default['default'](Tabs_module['default'].wrapper, props.className), onClick: function (e) {
-                return props.onSelect && props.onSelect(e, { eventKey: activeKey });
+    return (jsxRuntime.jsx(TabsContext['default'].Provider, tslib_es6.__assign({ value: { activeKey: activeKey.current, setActiveKey: handleClickTab } }, { children: jsxRuntime.jsxs("div", tslib_es6.__assign({ className: cx__default['default'](Tabs_module['default'].wrapper, props.className), onClick: function (e) {
+                return props.onSelect && props.onSelect(e, { eventKey: activeKey.current });
             } }, { children: [jsxRuntime.jsx("nav", tslib_es6.__assign({ className: Tabs_module['default']["nav-tabs"] }, { children: React__default['default'].Children.map(props.children, function (child) {
                         if (!React__default['default'].isValidElement(child))
                             return;
@@ -35,7 +42,7 @@ var Tabs = function (_a) {
                     }) }), void 0), hasChild && (jsxRuntime.jsx("div", tslib_es6.__assign({ className: Tabs_module['default']["tab-content"] }, { children: React__default['default'].Children.map(props.children, function (child) {
                         if (!React__default['default'].isValidElement(child))
                             return;
-                        if (activeKey === child.props.eventKey) {
+                        if (activeKey.current === child.props.eventKey) {
                             return child.props.children;
                         }
                     }) }), void 0))] }), void 0) }), void 0));

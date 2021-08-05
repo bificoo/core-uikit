@@ -5,3 +5,5 @@ export default _default;
 export declare const Default: Story<FormRadioProps>;
 export declare const Checked: Story<FormRadioProps>;
 export declare const Chinese: Story<FormRadioProps>;
+export declare const VerticalMulti: () => JSX.Element;
+export declare const HorizontalMulti: () => JSX.Element;

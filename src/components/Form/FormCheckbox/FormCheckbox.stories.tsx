@@ -34,3 +34,21 @@ export const Chinese = Template.bind({})
 Chinese.args = {
   children: "複選選項",
 }
+
+export const VerticalMulti = () => {
+  return (
+    <>
+      <Form.Checkbox>Checkbox1</Form.Checkbox>
+      <Form.Checkbox>Checkbox2</Form.Checkbox>
+    </>
+  )
+}
+
+export const HorizontalMulti = () => {
+  return (
+    <>
+      <Form.Checkbox inline>Checkbox1</Form.Checkbox>
+      <Form.Checkbox inline>Checkbox2</Form.Checkbox>
+    </>
+  )
+}

@@ -2,11 +2,19 @@ import cx from "classnames"
 import { ReactComponent as CheckIcon } from "./check.svg"
 import styled from "./FormCheckbox.module.scss"
 
-export type FormCheckboxProps = Omit<JSXProps.InputElement, "type">
+export type FormCheckboxProps = {
+  inline?: boolean
+} & Omit<JSXProps.InputElement, "type">
 
-const FormCheckbox = ({ children, ...props }: FormCheckboxProps) => {
+const FormCheckbox = ({ children, inline, ...props }: FormCheckboxProps) => {
   return (
-    <div className={cx("component-checkbox", styled.wrapper, props.className)}>
+    <div
+      className={cx(
+        "component-checkbox",
+        styled.wrapper,
+        { [styled.inline]: inline },
+        props.className,
+      )}>
       <label className={styled.label}>
         <input type="checkbox" {...props} />
         {!props.checked ? (

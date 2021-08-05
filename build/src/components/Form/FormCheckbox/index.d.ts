@@ -1,3 +1,5 @@
-export declare type FormCheckboxProps = Omit<JSXProps.InputElement, "type">;
-declare const FormCheckbox: ({ children, ...props }: FormCheckboxProps) => JSX.Element;
+export declare type FormCheckboxProps = {
+    inline?: boolean;
+} & Omit<JSXProps.InputElement, "type">;
+declare const FormCheckbox: ({ children, inline, ...props }: FormCheckboxProps) => JSX.Element;
 export default FormCheckbox;

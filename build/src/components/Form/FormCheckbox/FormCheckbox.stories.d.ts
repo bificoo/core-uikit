@@ -5,3 +5,5 @@ export default _default;
 export declare const Default: Story<FormCheckboxProps>;
 export declare const Checked: Story<FormCheckboxProps>;
 export declare const Chinese: Story<FormCheckboxProps>;
+export declare const VerticalMulti: () => JSX.Element;
+export declare const HorizontalMulti: () => JSX.Element;

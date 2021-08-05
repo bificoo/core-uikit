@@ -1,12 +1,15 @@
 @import 'assets/styles/variables';
 
 .wrapper {
+  display: flex;
+
   label.label {
     font-family: $font-family;
     align-items: center;
     display: inline-flex;
     color: #091e42;
     cursor: pointer;
+    line-height: 1.33333;
 
     input {
       & + .check {
@@ -98,5 +101,9 @@
     width: 0px;
     height: 0px;
     outline: none;
+  }
+
+  &.inline {
+    display: inline-flex;
   }
 }

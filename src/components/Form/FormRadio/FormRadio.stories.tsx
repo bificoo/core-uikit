@@ -34,3 +34,21 @@ export const Chinese = Template.bind({})
 Chinese.args = {
   children: "單選選項",
 }
+
+export const VerticalMulti = () => {
+  return (
+    <>
+      <Form.Radio>Radio1</Form.Radio>
+      <Form.Radio>Radio2</Form.Radio>
+    </>
+  )
+}
+
+export const HorizontalMulti = () => {
+  return (
+    <>
+      <Form.Radio inline>Radio1</Form.Radio>
+      <Form.Radio inline>Radio2</Form.Radio>
+    </>
+  )
+}

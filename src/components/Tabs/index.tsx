@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react"
+import React, { useReducer, useRef, useMemo } from "react"
 import cx from "classnames"
 import Tab from "./Tab"
 import style from "./Tabs.module.scss"
@@ -13,7 +13,14 @@ export type TabsProps = {
 } & ReactProps.Component
 
 const Tabs = ({ ...props }: TabsProps): JSX.Element => {
-  const [activeKey, setActiveKey] = useState<string | number>(props.defaultActiveKey)
+  const activeKey = useRef<ReactProps.EventKey>(props.defaultActiveKey)
+  const [, forceUpdate] = useReducer(x => x + 1, 0)
+
+  const handleClickTab = (eventKey?: ReactProps.EventKey) => {
+    if (!eventKey) return
+    activeKey.current = eventKey
+    forceUpdate()
+  }
 
   const hasChild = useMemo(() => {
     let has = false
@@ -23,11 +30,11 @@ const Tabs = ({ ...props }: TabsProps): JSX.Element => {
     return has
   }, [props.children])
   return (
-    <TabsContext.Provider value={{ activeKey, setActiveKey }}>
+    <TabsContext.Provider value={{ activeKey: activeKey.current, setActiveKey: handleClickTab }}>
       <div
         className={cx(style.wrapper, props.className)}
         onClick={(e: React.MouseEvent<Element, MouseEvent>) =>
-          props.onSelect && props.onSelect(e, { eventKey: activeKey })
+          props.onSelect && props.onSelect(e, { eventKey: activeKey.current })
         }>
         <nav className={style["nav-tabs"]}>
           {React.Children.map(props.children, child => {
@@ -46,7 +53,7 @@ const Tabs = ({ ...props }: TabsProps): JSX.Element => {
             {React.Children.map(props.children, child => {
               if (!React.isValidElement(child)) return
 
-              if (activeKey === child.props.eventKey) {
+              if (activeKey.current === child.props.eventKey) {
                 return child.props.children
               }
             })}

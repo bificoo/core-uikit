@@ -74,7 +74,7 @@ export const NoTabContent: Story<TabsProps> = () => {
         <Tabs.Tab title="圖像報表" eventKey="Tab2" />
         <Tabs.Tab title="用戶清單" eventKey="Tab3" />
       </Tabs>
-      <div style={{ background: "#ccc" }}>Content</div>
+      <div style={style}>Content</div>
     </>
   )
 }

@@ -44,27 +44,14 @@
         border-bottom: 2px solid;
         color: #4d7bca;
         font-weight: 500;
-
-        // &:after {
-        //   position: absolute;
-        //   right: 8px;
-        //   bottom: 0;
-        //   left: 8px;
-        //   margin: 0;
-        //   width: inherit;
-        //   height: 0;
-        //   border-bottom: 2px solid rgb(0, 82, 204);
-        //   border-radius: 2px;
-        //   content: '';
-        // }
       }
     }
   }
 
   .tab-content {
     position: relative;
-    background-color: var(--navigation-background-color-light);
     margin-bottom: 30px;
+    background-color: var(--navigation-background-color-light);
 
     .tab-pane {
       display: none;

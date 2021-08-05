@@ -46,9 +46,19 @@ export const VerticalMulti = () => {
 
 export const HorizontalMulti = () => {
   return (
-    <>
-      <Form.Checkbox inline>Checkbox1</Form.Checkbox>
-      <Form.Checkbox inline>Checkbox2</Form.Checkbox>
-    </>
+    <Form.Group>
+      <Form.Label>請選擇檢視下載欄位：</Form.Label>
+      <div>
+        <Form.Checkbox name="sex" inline>
+          用戶系統識別號
+        </Form.Checkbox>
+        <Form.Checkbox name="sex" inline>
+          用戶帳號
+        </Form.Checkbox>
+        <Form.Checkbox name="sex" inline>
+          最新登入日期
+        </Form.Checkbox>
+      </div>
+    </Form.Group>
   )
 }

@@ -17,8 +17,9 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 var cx__default = /*#__PURE__*/_interopDefaultLegacy(cx);
 
-var Dropdown = function (props) {
-    var activeKey = React.useRef(null);
+var Dropdown = function (_a) {
+    var props = tslib_es6.__rest(_a, []);
+    var activeKey = React.useRef("");
     var popupRef = React.useRef(null);
     var dropdown = React.useMemo(function () {
         var triggerElement = jsxRuntime.jsx("div", {}, void 0);
@@ -29,12 +30,8 @@ var Dropdown = function (props) {
             if (child.type === index['default']) {
                 triggerElement = child;
             }
-            else if (child.type === index$1['default']) {
-                menuElement = React__default['default'].cloneElement(child, {
-                    onSelect: function (e) {
-                        child.props.onSelect && child.props.onSelect(e, { eventKey: activeKey.current });
-                    },
-                });
+            if (child.type === index$1['default']) {
+                menuElement = React__default['default'].cloneElement(child, { activeKey: activeKey });
             }
         });
         return {
@@ -44,10 +41,13 @@ var Dropdown = function (props) {
     }, [props.children]);
     var handleClickItem = function (eventKey) {
         var _a;
-        activeKey.current = eventKey || null;
+        if (!eventKey)
+            return;
+        activeKey.current = eventKey;
         (_a = popupRef.current) === null || _a === void 0 ? void 0 : _a.close();
     };
-    return (jsxRuntime.jsx(DropdownContext.DropdownContext.Provider, tslib_es6.__assign({ value: { onClickItem: handleClickItem } }, { children: jsxRuntime.jsx("div", tslib_es6.__assign({ className: cx__default['default'](Dropdown_module['default'].wrapper, props.className) }, { children: jsxRuntime.jsx(reactjsPopup_esm['default'], tslib_es6.__assign({ ref: popupRef, trigger: function (open) { return dropdown.trigger && React__default['default'].cloneElement(dropdown.trigger, { open: open }); }, position: "bottom center", on: "click", closeOnDocumentClick: true, mouseLeaveDelay: 300, mouseEnterDelay: 0, arrow: false, contentStyle: {
+    console.log(activeKey.current);
+    return (jsxRuntime.jsx(DropdownContext.DropdownContext.Provider, tslib_es6.__assign({ value: { activeKey: activeKey.current, setActiveKey: handleClickItem } }, { children: jsxRuntime.jsx("div", tslib_es6.__assign({ className: cx__default['default'](Dropdown_module['default'].wrapper, props.className), style: props.style }, { children: jsxRuntime.jsx(reactjsPopup_esm['default'], tslib_es6.__assign({ ref: popupRef, trigger: function (open) { return dropdown.trigger && React__default['default'].cloneElement(dropdown.trigger, { open: open }); }, position: "bottom center", on: "click", closeOnDocumentClick: true, mouseLeaveDelay: 300, mouseEnterDelay: 0, arrow: false, contentStyle: {
                     width: "100px",
                     border: "none",
                     padding: "8px",

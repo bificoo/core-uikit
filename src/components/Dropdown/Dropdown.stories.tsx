@@ -36,13 +36,15 @@ export const Default: Story<DropdownProps> = () => {
         onSelect={(
           e: React.MouseEvent<Element, MouseEvent>,
           { eventKey }: { eventKey?: ReactProps.EventKey },
-        ) => console.info(e, eventKey)}>
+        ) => {
+          console.info(eventKey)
+        }}>
         <Dropdown.Item eventKey="edit">Edit</Dropdown.Item>
-        <Dropdown.Item>Share</Dropdown.Item>
-        <Dropdown.Item>Move</Dropdown.Item>
-        <Dropdown.Item>Clone</Dropdown.Item>
-        <Dropdown.Item>Delete</Dropdown.Item>
-        <Dropdown.Item>Report</Dropdown.Item>
+        <Dropdown.Item eventKey="share">Share</Dropdown.Item>
+        <Dropdown.Item eventKey="move">Move</Dropdown.Item>
+        <Dropdown.Item eventKey="clone">Clone</Dropdown.Item>
+        <Dropdown.Item eventKey="delete">Delete</Dropdown.Item>
+        <Dropdown.Item eventKey="report">Report</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
   )

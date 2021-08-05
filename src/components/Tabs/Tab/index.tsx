@@ -5,7 +5,7 @@ import TabsContext from "../TabsContext"
 
 export type TabProps = {
   title: string
-  eventKey: string | number
+  eventKey: ReactProps.EventKey
 } & ReactProps.Component
 
 const Tab = ({ ...props }: TabProps) => {

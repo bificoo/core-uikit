@@ -29,6 +29,8 @@ const Tabs = ({ ...props }: TabsProps): JSX.Element => {
     })
     return has
   }, [props.children])
+
+  console.log("Tabs render")
   return (
     <TabsContext.Provider value={{ activeKey: activeKey.current, setActiveKey: handleClickTab }}>
       <div

@@ -7,10 +7,12 @@ import DropdownToggle from "../DropdownToggle"
 import DropdownMenu from "../DropdownMenu"
 import styled from "./Dropdown.module.scss"
 
-export type DropdownProps = ReactProps.Component
+export type DropdownProps = {
+  style?: React.CSSProperties
+} & ReactProps.Component
 
-const Dropdown = (props: DropdownProps) => {
-  const activeKey = useRef<ReactProps.EventKey | null>(null)
+const Dropdown = ({ ...props }: DropdownProps) => {
+  const activeKey = useRef<ReactProps.EventKey>("")
   const popupRef = useRef<PopupActions | null>(null)
 
   const dropdown = useMemo(() => {
@@ -20,12 +22,9 @@ const Dropdown = (props: DropdownProps) => {
       if (!React.isValidElement(child)) return
       if (child.type === DropdownToggle) {
         triggerElement = child
-      } else if (child.type === DropdownMenu) {
-        menuElement = React.cloneElement(child, {
-          onSelect: (e: React.MouseEvent<Element, MouseEvent>) => {
-            child.props.onSelect && child.props.onSelect(e, { eventKey: activeKey.current })
-          },
-        })
+      }
+      if (child.type === DropdownMenu) {
+        menuElement = React.cloneElement(child, { activeKey: activeKey })
       }
     })
     return {
@@ -35,13 +34,16 @@ const Dropdown = (props: DropdownProps) => {
   }, [props.children])
 
   const handleClickItem = (eventKey?: ReactProps.EventKey) => {
-    activeKey.current = eventKey || null
+    if (!eventKey) return
+    activeKey.current = eventKey
     popupRef.current?.close()
   }
 
+  console.log(activeKey.current)
   return (
-    <DropdownContext.Provider value={{ onClickItem: handleClickItem }}>
-      <div className={cx(styled.wrapper, props.className)}>
+    <DropdownContext.Provider
+      value={{ activeKey: activeKey.current, setActiveKey: handleClickItem }}>
+      <div className={cx(styled.wrapper, props.className)} style={props.style}>
         <Popup
           ref={popupRef}
           trigger={open => dropdown.trigger && React.cloneElement(dropdown.trigger, { open })}

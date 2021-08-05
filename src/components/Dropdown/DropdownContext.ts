@@ -1,12 +1,13 @@
 import React from "react"
 
 export type DropdownContextProps = {
-  onClickItem: (eventKey?: ReactProps.EventKey) => void
+  activeKey?: ReactProps.EventKey
+  setActiveKey: (eventKey: ReactProps.EventKey) => void
 }
 
 const DropdownContext = React.createContext<DropdownContextProps>({
-  onClickItem: () => {
-    //
+  setActiveKey: () => {
+    // set attributes
   },
 })
 

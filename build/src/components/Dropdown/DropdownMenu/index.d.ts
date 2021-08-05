@@ -3,6 +3,7 @@ export declare type DropdownMenuProps = {
     style?: {
         [key: string]: React.CSSProperties;
     };
+    activeKey?: ReactProps.EventKey;
     onSelect?: (e: React.MouseEvent<Element, MouseEvent>, { eventKey }: {
         eventKey?: ReactProps.EventKey;
     }) => void;

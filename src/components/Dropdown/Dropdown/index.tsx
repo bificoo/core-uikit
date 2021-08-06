@@ -39,7 +39,6 @@ const Dropdown = ({ ...props }: DropdownProps) => {
     popupRef.current?.close()
   }
 
-  console.log(activeKey.current)
   return (
     <DropdownContext.Provider
       value={{ activeKey: activeKey.current, setActiveKey: handleClickItem }}>

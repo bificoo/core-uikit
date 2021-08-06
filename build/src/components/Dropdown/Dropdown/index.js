@@ -46,7 +46,6 @@ var Dropdown = function (_a) {
         activeKey.current = eventKey;
         (_a = popupRef.current) === null || _a === void 0 ? void 0 : _a.close();
     };
-    console.log(activeKey.current);
     return (jsxRuntime.jsx(DropdownContext.DropdownContext.Provider, tslib_es6.__assign({ value: { activeKey: activeKey.current, setActiveKey: handleClickItem } }, { children: jsxRuntime.jsx("div", tslib_es6.__assign({ className: cx__default['default'](Dropdown_module['default'].wrapper, props.className), style: props.style }, { children: jsxRuntime.jsx(reactjsPopup_esm['default'], tslib_es6.__assign({ ref: popupRef, trigger: function (open) { return dropdown.trigger && React__default['default'].cloneElement(dropdown.trigger, { open: open }); }, position: "bottom center", on: "click", closeOnDocumentClick: true, mouseLeaveDelay: 300, mouseEnterDelay: 0, arrow: false, contentStyle: {
                     width: "100px",
                     border: "none",

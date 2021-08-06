@@ -35,7 +35,7 @@ export const Default: Story<DropdownProps> = () => {
       <Dropdown.Menu
         onSelect={(
           e: React.MouseEvent<Element, MouseEvent>,
-          { eventKey }: { eventKey?: ReactProps.EventKey },
+          { eventKey }: { eventKey?: { current: ReactProps.EventKey } },
         ) => {
           console.info(eventKey)
         }}>

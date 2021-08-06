@@ -33,7 +33,6 @@ var Tabs = function (_a) {
         });
         return has;
     }, [props.children]);
-    console.log("Tabs render");
     return (jsxRuntime.jsx(TabsContext['default'].Provider, tslib_es6.__assign({ value: { activeKey: activeKey.current, setActiveKey: handleClickTab } }, { children: jsxRuntime.jsxs("div", tslib_es6.__assign({ className: cx__default['default'](Tabs_module['default'].wrapper, props.className), onClick: function (e) {
                 return props.onSelect && props.onSelect(e, { eventKey: activeKey.current });
             } }, { children: [jsxRuntime.jsx("nav", tslib_es6.__assign({ className: Tabs_module['default']["nav-tabs"] }, { children: React__default['default'].Children.map(props.children, function (child) {

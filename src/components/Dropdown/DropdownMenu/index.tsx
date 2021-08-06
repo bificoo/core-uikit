@@ -3,7 +3,7 @@ import cx from "classnames"
 import styled from "./Menu.module.scss"
 
 export type DropdownMenuProps = {
-  style?: { [key: string]: React.CSSProperties }
+  style?: React.CSSProperties
   activeKey?: ReactProps.EventKey
   onSelect?: (
     e: React.MouseEvent<Element, MouseEvent>,

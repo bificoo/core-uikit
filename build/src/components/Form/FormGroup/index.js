@@ -5,12 +5,11 @@ Object.defineProperty(exports, '__esModule', { value: true });
 var tslib_es6 = require('../../../../node_modules/tslib/tslib.es6.js');
 var jsxRuntime = require('react/jsx-runtime');
 var React = require('react');
-var index$1 = require('../FormLabel/index.js');
+var index = require('../FormLabel/index.js');
 var FormContext = require('../FormContext.js');
-require('../../../utils/uuid.js');
+var uuid = require('../../../utils/uuid.js');
 var FormGroup_module = require('./FormGroup.module.scss.js');
 var cx = require('classnames');
-var index = require('../../../../node_modules/nanoid/index.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -19,7 +18,7 @@ var cx__default = /*#__PURE__*/_interopDefaultLegacy(cx);
 
 var FormGroup = function (props) {
     var _a = React.useState({
-        formId: props.formId || index.nanoid(),
+        formId: props.formId || uuid['default'](),
         entered: false,
         disabled: false,
         readOnly: false,
@@ -36,17 +35,17 @@ var FormGroup = function (props) {
     };
     var label = null;
     var children = [];
-    React__default['default'].Children.forEach(props.children, function (child, index) {
+    React__default['default'].Children.forEach(props.children, function (child, index$1) {
         if (!React__default['default'].isValidElement(child))
             return;
-        if (child.type === index$1['default']) {
+        if (child.type === index['default']) {
             label = React__default['default'].cloneElement(child, tslib_es6.__assign(tslib_es6.__assign({}, child.props), { style: tslib_es6.__assign(tslib_es6.__assign({}, child.props.style), { width: labelWidth + "px" }) }));
         }
         else {
-            children.push(React__default['default'].cloneElement(child, { key: index }));
+            children.push(React__default['default'].cloneElement(child, { key: index$1 }));
         }
     });
     return (jsxRuntime.jsx(FormContext.FormGroupContext.Provider, tslib_es6.__assign({ value: { attributes: attributes, setAttributes: update } }, { children: jsxRuntime.jsxs("div", tslib_es6.__assign({ className: cx__default['default'](FormGroup_module['default'].wrapper, FormGroup_module['default'][layout], props.className) }, { children: [label, jsxRuntime.jsx("div", tslib_es6.__assign({ className: FormGroup_module['default'].group }, { children: children }), void 0)] }), void 0) }), void 0));
 };
 
-exports.default = FormGroup;
+exports['default'] = FormGroup;

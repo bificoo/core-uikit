@@ -1,3 +1,4 @@
+/// <reference types="react" />
 export declare type FormGroupProps = ReactProps.Component & Partial<{
     formId: string;
     label: JSX.Element;

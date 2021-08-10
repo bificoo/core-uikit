@@ -28,17 +28,17 @@ export default {
 
 export const Default: Story<DropdownProps> = () => {
   return (
-    <Dropdown>
+    <Dropdown
+      onSelect={(
+        e: React.MouseEvent<Element, MouseEvent>,
+        { eventKey }: { eventKey?: ReactProps.EventKey },
+      ) => {
+        console.info(eventKey)
+      }}>
       <Dropdown.Toggle>
         <Button>Page actions</Button>
       </Dropdown.Toggle>
-      <Dropdown.Menu
-        onSelect={(
-          e: React.MouseEvent<Element, MouseEvent>,
-          { eventKey }: { eventKey?: { current: ReactProps.EventKey } },
-        ) => {
-          console.info(eventKey)
-        }}>
+      <Dropdown.Menu>
         <Dropdown.Item eventKey="edit">Edit</Dropdown.Item>
         <Dropdown.Item eventKey="share">Share</Dropdown.Item>
         <Dropdown.Item eventKey="move">Move</Dropdown.Item>

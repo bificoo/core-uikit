@@ -1,3 +1,4 @@
+/// <reference types="react" />
 export declare type ModalFooterProps = {
     confirmText?: string;
     confirmButtonProps?: JSXProps.ButtonElement;

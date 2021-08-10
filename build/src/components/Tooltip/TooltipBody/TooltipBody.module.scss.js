@@ -8,4 +8,4 @@ var css_248z = ".TooltipBody-module_wrapper__2OCSH {\n  box-sizing: border-box;\
 var styled = {"wrapper":"TooltipBody-module_wrapper__2OCSH"};
 styleInject_es['default'](css_248z);
 
-exports.default = styled;
+exports['default'] = styled;

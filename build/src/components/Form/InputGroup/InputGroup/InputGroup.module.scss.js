@@ -8,4 +8,4 @@ var css_248z = ".InputGroup-module_wrapper__1o9HH {\n  -webkit-box-align: center
 var styled = {"wrapper":"InputGroup-module_wrapper__1o9HH","disabled":"InputGroup-module_disabled__3CYtZ","read-only":"InputGroup-module_read-only__3rgC2","prepend":"InputGroup-module_prepend__2cLyD","append":"InputGroup-module_append__ywV0s"};
 styleInject_es['default'](css_248z);
 
-exports.default = styled;
+exports['default'] = styled;

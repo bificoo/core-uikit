@@ -10,4 +10,4 @@ var TooltipBody = function (props) {
     return jsxRuntime.jsx("div", tslib_es6.__assign({ className: TooltipBody_module['default'].wrapper }, { children: props.children }), void 0);
 };
 
-exports.default = TooltipBody;
+exports['default'] = TooltipBody;

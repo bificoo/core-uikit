@@ -8,4 +8,4 @@ var css_248z = ".Dropdown-module_wrapper__2D-oN {\n  position: relative;\n  disp
 var styled = {"wrapper":"Dropdown-module_wrapper__2D-oN"};
 styleInject_es['default'](css_248z);
 
-exports.default = styled;
+exports['default'] = styled;

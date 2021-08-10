@@ -12,10 +12,8 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 var cx__default = /*#__PURE__*/_interopDefaultLegacy(cx);
 
 var DropdownMenu = function (props) {
-    return (jsxRuntime.jsx("div", tslib_es6.__assign({ className: cx__default['default'](Menu_module['default'].wrapper, props.className), style: props.style, onClick: function (e) {
-            props.onSelect && props.onSelect(e, { eventKey: props.activeKey });
-        } }, { children: props.children }), void 0));
+    return (jsxRuntime.jsx("div", tslib_es6.__assign({ className: cx__default['default'](Menu_module['default'].wrapper, props.className), style: props.style }, { children: props.children }), void 0));
 };
 DropdownMenu.displayName = "DropdownMenu";
 
-exports.default = DropdownMenu;
+exports['default'] = DropdownMenu;

@@ -5,7 +5,7 @@ import style from "./Tabs.module.scss"
 import TabsContext from "./TabsContext"
 
 export type TabsProps = {
-  defaultActiveKey: string | number
+  defaultActiveKey: ReactProps.EventKey
   onSelect?: (
     e: React.MouseEvent<Element, MouseEvent>,
     { eventKey }: { eventKey?: ReactProps.EventKey },

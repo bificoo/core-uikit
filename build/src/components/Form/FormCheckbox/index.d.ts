@@ -1,3 +1,4 @@
+/// <reference types="react" />
 export declare type FormCheckboxProps = {
     inline?: boolean;
 } & Omit<JSXProps.InputElement, "type">;

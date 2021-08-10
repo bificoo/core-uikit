@@ -20,4 +20,4 @@ var FormGroupContext = React__default['default'].createContext({
 });
 
 exports.FormGroupContext = FormGroupContext;
-exports.default = FormContext;
+exports['default'] = FormContext;

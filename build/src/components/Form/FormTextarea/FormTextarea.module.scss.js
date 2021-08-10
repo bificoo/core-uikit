@@ -8,4 +8,4 @@ var css_248z = ".FormTextarea-module_wrapper__3MNch {\n  -webkit-box-align: cent
 var styled = {"wrapper":"FormTextarea-module_wrapper__3MNch","disabled":"FormTextarea-module_disabled__2qMB1","read-only":"FormTextarea-module_read-only__k68OR","control":"FormTextarea-module_control__2_3uO"};
 styleInject_es['default'](css_248z);
 
-exports.default = styled;
+exports['default'] = styled;

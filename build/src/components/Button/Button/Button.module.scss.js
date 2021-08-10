@@ -8,4 +8,4 @@ var css_248z = ".Button-module_wrapper__13gnx.Button-module_primary__3zHGc[disab
 var styled = {"wrapper":"Button-module_wrapper__13gnx","primary":"Button-module_primary__3zHGc","secondary":"Button-module_secondary__2ffPm","important":"Button-module_important__PAUhz","block":"Button-module_block__2coKL"};
 styleInject_es['default'](css_248z);
 
-exports.default = styled;
+exports['default'] = styled;

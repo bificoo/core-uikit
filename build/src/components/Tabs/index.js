@@ -49,4 +49,4 @@ var Tabs = function (_a) {
 };
 Tabs.Tab = index['default'];
 
-exports.default = Tabs;
+exports['default'] = Tabs;

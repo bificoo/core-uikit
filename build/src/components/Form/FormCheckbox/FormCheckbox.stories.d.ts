@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { Story, Meta } from "@storybook/react";
 import { FormCheckboxProps } from "components/Form";
 declare const _default: Meta<import("@storybook/react").Args>;

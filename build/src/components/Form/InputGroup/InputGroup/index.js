@@ -25,4 +25,4 @@ var InputGroup = function (props) {
             _a), props.className) }, { children: props.children }), void 0));
 };
 
-exports.default = InputGroup;
+exports['default'] = InputGroup;

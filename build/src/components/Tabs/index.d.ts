@@ -1,6 +1,6 @@
 import React from "react";
 export declare type TabsProps = {
-    defaultActiveKey: string | number;
+    defaultActiveKey: ReactProps.EventKey;
     onSelect?: (e: React.MouseEvent<Element, MouseEvent>, { eventKey }: {
         eventKey?: ReactProps.EventKey;
     }) => void;

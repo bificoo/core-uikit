@@ -16,7 +16,7 @@ const DropdownItem = ({ ...props }: DropdownItemProps) => {
         { [styled.active]: props.eventKey === activeKey },
         props.className,
       )}
-      onClick={() => setActiveKey(props.eventKey)}>
+      onClick={e => setActiveKey(e, { eventKey: props.eventKey })}>
       {props.children}
     </div>
   )

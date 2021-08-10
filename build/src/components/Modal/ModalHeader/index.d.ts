@@ -1,3 +1,4 @@
+/// <reference types="react" />
 export declare type ModalHeaderProps = {
     title?: string;
 } & ReactProps.WithClassName;

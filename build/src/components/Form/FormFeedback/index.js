@@ -16,4 +16,4 @@ var FormFeedback = function (_a) {
     return (jsxRuntime.jsx("p", tslib_es6.__assign({ className: cx__default['default'](FormFeedback_module['default'].wrapper, className) }, props, { children: props.children }), void 0));
 };
 
-exports.default = FormFeedback;
+exports['default'] = FormFeedback;

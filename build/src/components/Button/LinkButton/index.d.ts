@@ -1,3 +1,4 @@
+/// <reference types="react" />
 export declare type LinkButtonProps = {
     /**
      * 按鈕樣式

@@ -17,4 +17,4 @@ var Badge = function (_a) {
     return (jsxRuntime.jsx("span", tslib_es6.__assign({ className: cx__default['default'](Badge_module['default'].wrapper, Badge_module['default'][variant], (_b = {}, _b[Badge_module['default'].pill] = pill, _b), className) }, props, { children: children }), void 0));
 };
 
-exports.default = Badge;
+exports['default'] = Badge;

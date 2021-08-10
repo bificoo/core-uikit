@@ -28,4 +28,4 @@ var Form = Object.assign(index$3['default'], {
     Group: index$a['default'],
 });
 
-exports.default = Form;
+exports['default'] = Form;

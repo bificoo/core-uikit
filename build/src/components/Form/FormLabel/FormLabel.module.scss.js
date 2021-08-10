@@ -8,4 +8,4 @@ var css_248z = ".FormLabel-module_wrapper__2IGQJ {\n  position: relative;\n  dis
 var styled = {"wrapper":"FormLabel-module_wrapper__2IGQJ","required":"FormLabel-module_required__261Gv"};
 styleInject_es['default'](css_248z);
 
-exports.default = styled;
+exports['default'] = styled;

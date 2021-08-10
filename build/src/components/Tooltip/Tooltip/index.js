@@ -49,4 +49,4 @@ var Tooltip = function (_a) {
                     } }, { children: tooltip.body }), void 0) }, void 0)] }), void 0));
 };
 
-exports.default = Tooltip;
+exports['default'] = Tooltip;

@@ -8,4 +8,4 @@ var css_248z = ".Prepend-module_wrapper__CM_VM {\n  display: flex;\n  justify-co
 var styled = {"wrapper":"Prepend-module_wrapper__CM_VM"};
 styleInject_es['default'](css_248z);
 
-exports.default = styled;
+exports['default'] = styled;

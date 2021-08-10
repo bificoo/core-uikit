@@ -8,4 +8,4 @@ var css_248z = ".FormInput-module_wrapper__2bmyd {\n  -webkit-box-align: center;
 var styled = {"wrapper":"FormInput-module_wrapper__2bmyd","disabled":"FormInput-module_disabled__2oydP","read-only":"FormInput-module_read-only__3-H3Z","control":"FormInput-module_control__FmJpI"};
 styleInject_es['default'](css_248z);
 
-exports.default = styled;
+exports['default'] = styled;

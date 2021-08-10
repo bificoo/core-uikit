@@ -22,4 +22,4 @@ var FormLabel = function (_a) {
             _b)) }, props, { children: props.children }), void 0));
 };
 
-exports.default = FormLabel;
+exports['default'] = FormLabel;

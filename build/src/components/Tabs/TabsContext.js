@@ -14,4 +14,4 @@ var TabsContext = React__default['default'].createContext({
     },
 });
 
-exports.default = TabsContext;
+exports['default'] = TabsContext;

@@ -8,4 +8,4 @@ var css_248z = ".FormGroup-module_wrapper__OFNtj {\n  display: flex;\n  flex-dir
 var styled = {"wrapper":"FormGroup-module_wrapper__OFNtj","group":"FormGroup-module_group__1Q69o","vertical":"FormGroup-module_vertical__3U51_"};
 styleInject_es['default'](css_248z);
 
-exports.default = styled;
+exports['default'] = styled;

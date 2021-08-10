@@ -8,4 +8,4 @@ var css_248z = ".FormCheckbox-module_wrapper__2getb {\n  display: flex; }\n  .Fo
 var styled = {"wrapper":"FormCheckbox-module_wrapper__2getb","label":"FormCheckbox-module_label__1v0Sq","check":"FormCheckbox-module_check__13VI6","content":"FormCheckbox-module_content__1uIA5","inline":"FormCheckbox-module_inline__qsOku"};
 styleInject_es['default'](css_248z);
 
-exports.default = styled;
+exports['default'] = styled;

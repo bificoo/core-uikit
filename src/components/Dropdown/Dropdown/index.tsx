@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from "react"
+import React, { useMemo, useRef, useState } from "react"
 import cx from "classnames"
 import Popup from "reactjs-popup"
 import { PopupActions } from "reactjs-popup/dist/types"
@@ -8,11 +8,16 @@ import DropdownMenu from "../DropdownMenu"
 import styled from "./Dropdown.module.scss"
 
 export type DropdownProps = {
+  defaultActiveKey?: ReactProps.EventKey
   style?: React.CSSProperties
+  onSelect?: (
+    e: React.MouseEvent<Element, MouseEvent>,
+    { eventKey }: { eventKey?: ReactProps.EventKey },
+  ) => void
 } & ReactProps.Component
 
 const Dropdown = ({ ...props }: DropdownProps) => {
-  const activeKey = useRef<ReactProps.EventKey>("")
+  const [eventKey, setEventKay] = useState(props.defaultActiveKey)
   const popupRef = useRef<PopupActions | null>(null)
 
   const dropdown = useMemo(() => {
@@ -24,7 +29,7 @@ const Dropdown = ({ ...props }: DropdownProps) => {
         triggerElement = child
       }
       if (child.type === DropdownMenu) {
-        menuElement = React.cloneElement(child, { activeKey: activeKey })
+        menuElement = child
       }
     })
     return {
@@ -33,15 +38,18 @@ const Dropdown = ({ ...props }: DropdownProps) => {
     }
   }, [props.children])
 
-  const handleClickItem = (eventKey?: ReactProps.EventKey) => {
+  const handleClickItem = (
+    e: React.MouseEvent<Element, MouseEvent>,
+    { eventKey }: { eventKey?: ReactProps.EventKey },
+  ) => {
     if (!eventKey) return
-    activeKey.current = eventKey
+    setEventKay(eventKey)
+    props.onSelect && props.onSelect(e, { eventKey })
     popupRef.current?.close()
   }
 
   return (
-    <DropdownContext.Provider
-      value={{ activeKey: activeKey.current, setActiveKey: handleClickItem }}>
+    <DropdownContext.Provider value={{ activeKey: eventKey, setActiveKey: handleClickItem }}>
       <div className={cx(styled.wrapper, props.className)} style={props.style}>
         <Popup
           ref={popupRef}

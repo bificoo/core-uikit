@@ -44,4 +44,4 @@ var FormInput = React__default['default'].forwardRef(function FormInput(_a, ref)
             } }), void 0) }), void 0));
 });
 
-exports.default = FormInput;
+exports['default'] = FormInput;

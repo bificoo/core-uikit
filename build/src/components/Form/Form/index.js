@@ -25,4 +25,4 @@ var Form = function (_a) {
     return (jsxRuntime.jsx(FormContext['default'].Provider, tslib_es6.__assign({ value: { attributes: attributes, setAttributes: update } }, { children: jsxRuntime.jsx("form", tslib_es6.__assign({}, props, { onSubmit: submit }, { children: props.children }), void 0) }), void 0));
 };
 
-exports.default = Form;
+exports['default'] = Form;

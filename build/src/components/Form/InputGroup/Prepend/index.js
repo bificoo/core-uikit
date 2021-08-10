@@ -23,4 +23,4 @@ var Prepend = function (props) {
             _a), props.className) }, { children: props.children }), void 0));
 };
 
-exports.default = Prepend;
+exports['default'] = Prepend;

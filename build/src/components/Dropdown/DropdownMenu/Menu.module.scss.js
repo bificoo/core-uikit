@@ -8,4 +8,4 @@ var css_248z = ".Menu-module_wrapper__3gZHJ {\n  padding: 4px 0;\n  width: 100px
 var styled = {"wrapper":"Menu-module_wrapper__3gZHJ"};
 styleInject_es['default'](css_248z);
 
-exports.default = styled;
+exports['default'] = styled;

@@ -4,21 +4,11 @@ import styled from "./Menu.module.scss"
 
 export type DropdownMenuProps = {
   style?: React.CSSProperties
-  activeKey?: { current: ReactProps.EventKey }
-  onSelect?: (
-    e: React.MouseEvent<Element, MouseEvent>,
-    { eventKey }: { eventKey?: { current: ReactProps.EventKey } },
-  ) => void
 } & ReactProps.Component
 
 const DropdownMenu = (props: DropdownMenuProps) => {
   return (
-    <div
-      className={cx(styled.wrapper, props.className)}
-      style={props.style}
-      onClick={(e: React.MouseEvent<Element, MouseEvent>) => {
-        props.onSelect && props.onSelect(e, { eventKey: props.activeKey })
-      }}>
+    <div className={cx(styled.wrapper, props.className)} style={props.style}>
       {props.children}
     </div>
   )

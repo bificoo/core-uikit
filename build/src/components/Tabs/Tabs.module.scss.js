@@ -8,4 +8,4 @@ var css_248z = ".Tabs-module_wrapper__28cFS {\n  display: flex;\n  overflow: hid
 var style = {"wrapper":"Tabs-module_wrapper__28cFS","nav-tabs":"Tabs-module_nav-tabs__xrEnb","tab":"Tabs-module_tab__WknCx","active":"Tabs-module_active__31XFG","tab-content":"Tabs-module_tab-content__37YkY","tab-pane":"Tabs-module_tab-pane__1Iaev"};
 styleInject_es['default'](css_248z);
 
-exports.default = style;
+exports['default'] = style;

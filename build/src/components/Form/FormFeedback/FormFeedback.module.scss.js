@@ -8,4 +8,4 @@ var css_248z = ".FormFeedback-module_wrapper__2xpWX {\n  font-size: 0.857143em;\
 var styled = {"wrapper":"FormFeedback-module_wrapper__2xpWX"};
 styleInject_es['default'](css_248z);
 
-exports.default = styled;
+exports['default'] = styled;

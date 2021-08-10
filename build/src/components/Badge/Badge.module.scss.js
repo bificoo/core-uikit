@@ -8,4 +8,4 @@ var css_248z = ".Badge-module_wrapper__2fWhZ {\n  display: inline-flex;\n  align
 var styled = {"wrapper":"Badge-module_wrapper__2fWhZ","pill":"Badge-module_pill__3HqUb","primary":"Badge-module_primary__wfrUB","secondary":"Badge-module_secondary__enuZm","important":"Badge-module_important__1R3ZN"};
 styleInject_es['default'](css_248z);
 
-exports.default = styled;
+exports['default'] = styled;

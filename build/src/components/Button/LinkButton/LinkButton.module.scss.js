@@ -8,4 +8,4 @@ var css_248z = ".LinkButton-module_wrapper__1DcWg.LinkButton-module_primary__2Nz
 var styled = {"wrapper":"LinkButton-module_wrapper__1DcWg","primary":"LinkButton-module_primary__2NzAD","block":"LinkButton-module_block__zsjLb"};
 styleInject_es['default'](css_248z);
 
-exports.default = styled;
+exports['default'] = styled;

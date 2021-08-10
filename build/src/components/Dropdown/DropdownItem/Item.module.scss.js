@@ -8,4 +8,4 @@ var css_248z = ".Item-module_wrapper__3Wj1_ {\n  overflow: hidden;\n  padding: 8
 var styled = {"wrapper":"Item-module_wrapper__3Wj1_","active":"Item-module_active__8Xc-b"};
 styleInject_es['default'](css_248z);
 
-exports.default = styled;
+exports['default'] = styled;

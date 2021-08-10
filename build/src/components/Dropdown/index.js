@@ -13,4 +13,4 @@ var Dropdown = Object.assign(index['default'], {
     Item: index$3['default'],
 });
 
-exports.default = Dropdown;
+exports['default'] = Dropdown;

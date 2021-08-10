@@ -17,4 +17,4 @@ var Button = function (_a) {
     return (jsxRuntime.jsx("button", tslib_es6.__assign({ className: cx__default['default'](Button_module['default'].wrapper, Button_module['default'][variant], (_b = {}, _b[Button_module['default'].block] = block, _b), className) }, props, { children: children }), void 0));
 };
 
-exports.default = Button;
+exports['default'] = Button;

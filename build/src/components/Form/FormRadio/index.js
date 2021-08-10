@@ -17,4 +17,4 @@ var FormRadio = function (_a) {
     return (jsxRuntime.jsx("div", tslib_es6.__assign({ className: cx__default['default']("component-radio", FormRadio_module['default'].wrapper, (_b = {}, _b[FormRadio_module['default'].inline] = inline, _b), props.className) }, { children: jsxRuntime.jsxs("label", tslib_es6.__assign({ className: FormRadio_module['default'].label }, { children: [jsxRuntime.jsx("input", tslib_es6.__assign({ type: "radio" }, props), void 0), jsxRuntime.jsx("span", tslib_es6.__assign({ className: FormRadio_module['default'].content }, { children: children }), void 0)] }), void 0) }), void 0));
 };
 
-exports.default = FormRadio;
+exports['default'] = FormRadio;

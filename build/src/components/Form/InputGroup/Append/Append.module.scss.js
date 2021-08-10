@@ -8,4 +8,4 @@ var css_248z = ".Append-module_wrapper__1ccyK {\n  display: flex;\n  justify-con
 var styled = {"wrapper":"Append-module_wrapper__1ccyK"};
 styleInject_es['default'](css_248z);
 
-exports.default = styled;
+exports['default'] = styled;

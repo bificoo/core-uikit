@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { ModalDialogProps } from "../ModalDialog";
 import { PopupProps } from "reactjs-popup/dist/types";
 export declare type ModalProps = {

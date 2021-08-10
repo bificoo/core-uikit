@@ -8,4 +8,4 @@ var css_248z = ".FormRadio-module_wrapper__2wzYy {\n  display: flex; }\n  .FormR
 var styled = {"wrapper":"FormRadio-module_wrapper__2wzYy","label":"FormRadio-module_label__1eTcJ","content":"FormRadio-module_content__OJgjv","inline":"FormRadio-module_inline__XGIcz"};
 styleInject_es['default'](css_248z);
 
-exports.default = styled;
+exports['default'] = styled;

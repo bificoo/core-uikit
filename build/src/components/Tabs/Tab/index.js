@@ -20,4 +20,4 @@ var Tab = function (_a) {
     return (jsxRuntime.jsx("div", tslib_es6.__assign({ className: cx__default['default'](Tabs_module['default'].tab, (_b = {}, _b[Tabs_module['default'].active] = props.eventKey === activeKey, _b), props.className), onClick: function () { return setActiveKey(props.eventKey); } }, { children: props.title }), void 0));
 };
 
-exports.default = Tab;
+exports['default'] = Tab;

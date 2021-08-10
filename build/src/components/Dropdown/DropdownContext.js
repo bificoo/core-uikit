@@ -15,4 +15,4 @@ var DropdownContext = React__default['default'].createContext({
 });
 
 exports.DropdownContext = DropdownContext;
-exports.default = DropdownContext;
+exports['default'] = DropdownContext;

@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { ModalHeaderProps } from "../ModalHeader";
 import { ModalFooterProps } from "../ModalFooter";
 export declare type ModalDialogProps = {

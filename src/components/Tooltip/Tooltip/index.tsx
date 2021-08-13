@@ -1,10 +1,10 @@
 import React, { useMemo } from "react"
 import Popup from "reactjs-popup"
 import { PopupProps } from "reactjs-popup/dist/types"
-import cx from "classnames"
-import styled from "../../Dropdown/Dropdown/Dropdown.module.scss"
 import TooltipToggle from "../TooltipToggle"
 import TooltipBody from "../TooltipBody"
+import cx from "classnames"
+import styled from "./Tooltip.module.scss"
 
 export type TooltipProps = PopupProps
 
@@ -35,37 +35,13 @@ const Tooltip = ({
     <div className={cx(styled.wrapper, props.className)}>
       <div>
         <Popup
-          trigger={open => (
-            <button className="button">Trigger - {open ? "Opened" : "Closed"}</button>
-          )}
-          on={["hover", "focus"]}
-          position="right center"
-          closeOnDocumentClick>
-          <span> Popup content </span>
-        </Popup>
-      </div>
-      <div>
-        <Popup
-          trigger={open => React.cloneElement(tooltip.trigger, { open })}
-          position={position}
+          className="core-tooltip"
+          trigger={<span>{tooltip.trigger}</span>}
           on={on}
+          position={position}
           closeOnDocumentClick
-          mouseLeaveDelay={300}
-          mouseEnterDelay={0}
-          arrow={arrow}
-          contentStyle={{
-            width: "auto",
-            border: "none",
-            padding: "8px",
-            boxShadow: "none",
-          }}
-          arrowStyle={{
-            width: "10x",
-            height: "10x",
-            backgroundColor: "#172b4d",
-            top: "8px",
-          }}>
-          {tooltip.body}
+          arrow={arrow}>
+          <span>{tooltip.body}</span>
         </Popup>
       </div>
     </div>

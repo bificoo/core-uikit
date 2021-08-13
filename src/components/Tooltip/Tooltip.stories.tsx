@@ -31,7 +31,7 @@ export default {
 
 export const Default: Story<TooltipProps> = () => {
   return (
-    <Tooltip arrow={false} on="focus">
+    <Tooltip on="click">
       <Tooltip.Toggle>
         <Button variant="primary">Hover over me</Button>
       </Tooltip.Toggle>
@@ -42,7 +42,7 @@ export const Default: Story<TooltipProps> = () => {
 
 export const Right: Story<TooltipProps> = () => {
   return (
-    <Tooltip arrow={false} position="right center">
+    <Tooltip position="right center">
       <Tooltip.Toggle>
         <Button variant="primary">Hover over me</Button>
       </Tooltip.Toggle>
@@ -53,7 +53,7 @@ export const Right: Story<TooltipProps> = () => {
 
 export const Left: Story<TooltipProps> = () => {
   return (
-    <Tooltip arrow={false} position="left center">
+    <Tooltip position="left center">
       <Tooltip.Toggle>
         <Button variant="primary">Hover over me</Button>
       </Tooltip.Toggle>
@@ -64,7 +64,7 @@ export const Left: Story<TooltipProps> = () => {
 
 export const Top: Story<TooltipProps> = () => {
   return (
-    <Tooltip arrow={false} position="top center">
+    <Tooltip position="top center">
       <Tooltip.Toggle>
         <Button variant="primary">Hover over me</Button>
       </Tooltip.Toggle>

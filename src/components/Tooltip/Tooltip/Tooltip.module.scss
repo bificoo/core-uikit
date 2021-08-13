@@ -1,57 +1,32 @@
-@import 'assets/styles/variables';
-
-.wrapper {
-  position: relative;
-  display: inline-flex;
-  cursor: pointer;
+@keyframes anvil {
+  0% {
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(241, 241, 241, 0);
+  }
+  1% {
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(241, 241, 241, 0);
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 500px rgba(241, 241, 241, 0);
+  }
 }
 
+:global {
 
-//.wrapper {
+  .core-tooltip-arrow {
+    color: #172b4d;
+  }
 
-  //padding: 4px 0;
-  //width: 100px;
-  //max-height: 317.5px;
-  //border-radius: 3px;
-  //background: rgb(255, 255, 255);
-  //box-shadow: #091e4240 0px 4px 8px -2px, #091e424f 0px 0px 1px;
+  .core-tooltip-content {
+    border-radius: 3px;
+    background-color: #172b4d;
+    color: #fff;
+    padding: 10px 14px;
 
-
-
-  //.arrow {
-  //  position: absolute;
-  //  z-index: 1;
-  //  width: 10px;
-  //  height: 10px;
-  //
-  //  &:after {
-  //    position: absolute;
-  //    top: -5px;
-  //    width: 7px;
-  //    height: 7px;
-  //    background-color: #172b4d;
-  //    box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
-  //    content: ' ';
-  //    transform: rotate(45deg);
-  //  }
-  //}
-
-  //&[data-popper-placement^='top'] > .arrow {
-  //  bottom: -12px;
-  //}
-  //
-  //&[data-popper-placement^='right'] > .arrow {
-  //  top: 6px !important;
-  //  left: -4px;
-  //}
-  //
-  //&[data-popper-placement^='left'] > .arrow {
-  //  top: 7px !important;
-  //  right: -7px;
-  //}
-//}
-
-//.children {
-//  display: inline-block;
-//  width: auto;
-//}
+    &:local {
+      animation: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
+    }
+  }
+}

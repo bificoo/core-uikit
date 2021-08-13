@@ -6,10 +6,10 @@ var tslib_es6 = require('../../../../node_modules/tslib/tslib.es6.js');
 var jsxRuntime = require('react/jsx-runtime');
 var React = require('react');
 var reactjsPopup_esm = require('../../../../node_modules/reactjs-popup/dist/reactjs-popup.esm.js');
-var cx = require('classnames');
-var Dropdown_module = require('../../Dropdown/Dropdown/Dropdown.module.scss.js');
 var index = require('../TooltipToggle/index.js');
 var index$1 = require('../TooltipBody/index.js');
+var cx = require('classnames');
+var Tooltip_module = require('./Tooltip.module.scss.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -36,17 +36,7 @@ var Tooltip = function (_a) {
             body: bodyElement,
         };
     }, [props.children]);
-    return (jsxRuntime.jsxs("div", tslib_es6.__assign({ className: cx__default['default'](Dropdown_module['default'].wrapper, props.className) }, { children: [jsxRuntime.jsx("div", { children: jsxRuntime.jsx(reactjsPopup_esm['default'], tslib_es6.__assign({ trigger: function (open) { return (jsxRuntime.jsxs("button", tslib_es6.__assign({ className: "button" }, { children: ["Trigger - ", open ? "Opened" : "Closed"] }), void 0)); }, on: ["hover", "focus"], position: "right center", closeOnDocumentClick: true }, { children: jsxRuntime.jsx("span", { children: " Popup content " }, void 0) }), void 0) }, void 0), jsxRuntime.jsx("div", { children: jsxRuntime.jsx(reactjsPopup_esm['default'], tslib_es6.__assign({ trigger: function (open) { return React__default['default'].cloneElement(tooltip.trigger, { open: open }); }, position: position, on: on, closeOnDocumentClick: true, mouseLeaveDelay: 300, mouseEnterDelay: 0, arrow: arrow, contentStyle: {
-                        width: "auto",
-                        border: "none",
-                        padding: "8px",
-                        boxShadow: "none",
-                    }, arrowStyle: {
-                        width: "10x",
-                        height: "10x",
-                        backgroundColor: "#172b4d",
-                        top: "8px",
-                    } }, { children: tooltip.body }), void 0) }, void 0)] }), void 0));
+    return (jsxRuntime.jsx("div", tslib_es6.__assign({ className: cx__default['default'](Tooltip_module['default'].wrapper, props.className) }, { children: jsxRuntime.jsx("div", { children: jsxRuntime.jsx(reactjsPopup_esm['default'], tslib_es6.__assign({ className: "core-tooltip", trigger: jsxRuntime.jsx("span", { children: tooltip.trigger }, void 0), on: on, position: position, closeOnDocumentClick: true, arrow: arrow }, { children: jsxRuntime.jsx("span", { children: tooltip.body }, void 0) }), void 0) }, void 0) }), void 0));
 };
 
 exports['default'] = Tooltip;

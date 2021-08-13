@@ -33,17 +33,15 @@ const Tooltip = ({
 
   return (
     <div className={cx(styled.wrapper, props.className)}>
-      <div>
-        <Popup
-          className="core-tooltip"
-          trigger={<span>{tooltip.trigger}</span>}
-          on={on}
-          position={position}
-          closeOnDocumentClick
-          arrow={arrow}>
-          <span>{tooltip.body}</span>
-        </Popup>
-      </div>
+      <Popup
+        className="core-tooltip"
+        trigger={<span>{tooltip.trigger}</span>}
+        on={on}
+        position={position}
+        closeOnDocumentClick
+        arrow={arrow}>
+        <span>{tooltip.body}</span>
+      </Popup>
     </div>
   )
 }

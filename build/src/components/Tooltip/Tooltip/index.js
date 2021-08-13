@@ -36,7 +36,7 @@ var Tooltip = function (_a) {
             body: bodyElement,
         };
     }, [props.children]);
-    return (jsxRuntime.jsx("div", tslib_es6.__assign({ className: cx__default['default'](Tooltip_module['default'].wrapper, props.className) }, { children: jsxRuntime.jsx("div", { children: jsxRuntime.jsx(reactjsPopup_esm['default'], tslib_es6.__assign({ className: "core-tooltip", trigger: jsxRuntime.jsx("span", { children: tooltip.trigger }, void 0), on: on, position: position, closeOnDocumentClick: true, arrow: arrow }, { children: jsxRuntime.jsx("span", { children: tooltip.body }, void 0) }), void 0) }, void 0) }), void 0));
+    return (jsxRuntime.jsx("div", tslib_es6.__assign({ className: cx__default['default'](Tooltip_module['default'].wrapper, props.className) }, { children: jsxRuntime.jsx(reactjsPopup_esm['default'], tslib_es6.__assign({ className: "core-tooltip", trigger: jsxRuntime.jsx("span", { children: tooltip.trigger }, void 0), on: on, position: position, closeOnDocumentClick: true, arrow: arrow }, { children: jsxRuntime.jsx("span", { children: tooltip.body }, void 0) }), void 0) }), void 0));
 };
 
 exports['default'] = Tooltip;

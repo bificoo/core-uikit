@@ -31,12 +31,15 @@ export default {
 
 export const Default: Story<TooltipProps> = () => {
   return (
-    <Tooltip on="click">
-      <Tooltip.Toggle>
-        <Button variant="primary">Hover over me</Button>
-      </Tooltip.Toggle>
-      <Tooltip.Body>Design System Tooltip</Tooltip.Body>
-    </Tooltip>
+    <>
+      text
+      <Tooltip on="click">
+        <Tooltip.Toggle>
+          <Button variant="primary">Hover over me</Button>
+        </Tooltip.Toggle>
+        <Tooltip.Body>Design System Tooltip</Tooltip.Body>
+      </Tooltip>
+    </>
   )
 }
 

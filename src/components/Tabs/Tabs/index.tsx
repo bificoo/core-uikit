@@ -1,8 +1,8 @@
 import React, { useReducer, useRef, useMemo } from "react"
 import cx from "classnames"
-import Tab from "./Tab"
+import Tab from "../Tab"
 import style from "./Tabs.module.scss"
-import TabsContext from "./TabsContext"
+import TabsContext from "../TabsContext"
 
 export type TabsProps = {
   defaultActiveKey: ReactProps.EventKey

@@ -29,23 +29,6 @@
       background-color: rgb(235, 236, 240);
       content: '';
     }
-
-    .tab {
-      position: relative;
-      overflow: hidden;
-      margin: 0;
-      padding: 6px 20px;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      line-height: 1.8;
-      cursor: pointer;
-
-      &.active {
-        border-bottom: 2px solid;
-        color: #4d7bca;
-        font-weight: 500;
-      }
-    }
   }
 
   .tab-content {

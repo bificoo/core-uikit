@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import cx from "classnames"
-import style from "../Tabs.module.scss"
+import styled from "./Tab.module.scss"
 import TabsContext from "../TabsContext"
 
 export type TabProps = {
@@ -12,7 +12,11 @@ const Tab = ({ ...props }: TabProps) => {
   const { activeKey, setActiveKey } = useContext(TabsContext)
   return (
     <div
-      className={cx(style.tab, { [style.active]: props.eventKey === activeKey }, props.className)}
+      className={cx(
+        styled.wrapper,
+        { [styled.active]: props.eventKey === activeKey },
+        props.className,
+      )}
       onClick={() => setActiveKey(props.eventKey)}>
       {props.title}
     </div>

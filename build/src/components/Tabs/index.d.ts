@@ -1,12 +1,10 @@
-import React from "react";
-export declare type TabsProps = {
-    defaultActiveKey: ReactProps.EventKey;
-    onSelect?: (e: React.MouseEvent<Element, MouseEvent>, { eventKey }: {
-        eventKey?: ReactProps.EventKey;
-    }) => void;
-} & ReactProps.Component;
+/// <reference types="react" />
+export type { TabsProps } from "./Tabs";
+export type { TabProps } from "./Tab";
 declare const Tabs: {
-    ({ ...props }: TabsProps): JSX.Element;
+    ({ ...props }: import("./Tabs").TabsProps): JSX.Element;
+    Tab: ({ ...props }: import("./Tab").TabProps) => JSX.Element;
+} & {
     Tab: ({ ...props }: import("./Tab").TabProps) => JSX.Element;
 };
 export default Tabs;

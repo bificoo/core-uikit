@@ -3,8 +3,7 @@ import Popup from "reactjs-popup"
 import { PopupProps } from "reactjs-popup/dist/types"
 import TooltipToggle from "../TooltipToggle"
 import TooltipBody from "../TooltipBody"
-import cx from "classnames"
-import styled from "./Tooltip.module.scss"
+import "./Tooltip.scss"
 
 export type TooltipProps = PopupProps
 
@@ -32,17 +31,15 @@ const Tooltip = ({
   }, [props.children])
 
   return (
-    <div className={cx(styled.wrapper, props.className)}>
-      <Popup
-        className="core-tooltip"
-        trigger={<span>{tooltip.trigger}</span>}
-        on={on}
-        position={position}
-        closeOnDocumentClick
-        arrow={arrow}>
-        <span>{tooltip.body}</span>
-      </Popup>
-    </div>
+    <Popup
+      className="core-tooltip"
+      trigger={<span>{tooltip.trigger}</span>}
+      on={on}
+      position={position}
+      closeOnDocumentClick
+      arrow={arrow}>
+      <span>{tooltip.body}</span>
+    </Popup>
   )
 }
 

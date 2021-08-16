@@ -8,7 +8,7 @@ var React = require('react');
 var reactjsPopup_esm = require('../../../../node_modules/reactjs-popup/dist/reactjs-popup.esm.js');
 var index = require('../TooltipToggle/index.js');
 var index$1 = require('../TooltipBody/index.js');
-require('./Tooltip.scss.js');
+require('./Tooltip.module.scss.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 

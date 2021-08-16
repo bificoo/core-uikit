@@ -3,7 +3,7 @@ import Popup from "reactjs-popup"
 import { PopupProps } from "reactjs-popup/dist/types"
 import TooltipToggle from "../TooltipToggle"
 import TooltipBody from "../TooltipBody"
-import "./Tooltip.scss"
+import "./Tooltip.module.scss"
 
 export type TooltipProps = PopupProps
 

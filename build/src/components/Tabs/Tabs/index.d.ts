@@ -5,8 +5,5 @@ export declare type TabsProps = {
         eventKey?: ReactProps.EventKey;
     }) => void;
 } & ReactProps.Component;
-declare const Tabs: {
-    ({ ...props }: TabsProps): JSX.Element;
-    Tab: ({ ...props }: import("../Tab").TabProps) => JSX.Element;
-};
+declare const Tabs: ({ ...props }: TabsProps) => JSX.Element;
 export default Tabs;

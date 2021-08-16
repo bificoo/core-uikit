@@ -1,7 +1,7 @@
 import React, { useReducer, useRef, useMemo } from "react"
 import cx from "classnames"
 import Tab from "../Tab"
-import style from "./Tabs.module.scss"
+import styled from "./Tabs.module.scss"
 import TabsContext from "../TabsContext"
 
 export type TabsProps = {
@@ -33,11 +33,11 @@ const Tabs = ({ ...props }: TabsProps): JSX.Element => {
   return (
     <TabsContext.Provider value={{ activeKey: activeKey.current, setActiveKey: handleClickTab }}>
       <div
-        className={cx(style.wrapper, props.className)}
+        className={cx(styled.wrapper, props.className)}
         onClick={(e: React.MouseEvent<Element, MouseEvent>) =>
           props.onSelect && props.onSelect(e, { eventKey: activeKey.current })
         }>
-        <nav className={style["nav-tabs"]}>
+        <nav className={styled["nav-tabs"]}>
           {React.Children.map(props.children, child => {
             if (!React.isValidElement(child)) return
             return (
@@ -50,7 +50,7 @@ const Tabs = ({ ...props }: TabsProps): JSX.Element => {
           })}
         </nav>
         {hasChild && (
-          <div className={style["tab-content"]}>
+          <div className={styled["tab-content"]}>
             {React.Children.map(props.children, child => {
               if (!React.isValidElement(child)) return
 
@@ -64,7 +64,5 @@ const Tabs = ({ ...props }: TabsProps): JSX.Element => {
     </TabsContext.Provider>
   )
 }
-
-Tabs.Tab = Tab
 
 export default Tabs

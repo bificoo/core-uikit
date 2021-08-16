@@ -47,6 +47,5 @@ var Tabs = function (_a) {
                         }
                     }) }), void 0))] }), void 0) }), void 0));
 };
-Tabs.Tab = index['default'];
 
 exports['default'] = Tabs;

@@ -30,7 +30,7 @@ export type {
 // export { default as Modal } from "./components/Modal"
 // export type { ModalProps } from "./components/Modal"
 
-export { default as Tabs } from "./components/Tabs/Tabs"
+export { default as Tabs } from "./components/Tabs"
 export type { TabsProps, TabProps } from "./components/Tabs"
 
 export { default as Tooltip } from "./components/Tooltip"

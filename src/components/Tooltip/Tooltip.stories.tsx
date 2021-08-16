@@ -31,15 +31,12 @@ export default {
 
 export const Default: Story<TooltipProps> = () => {
   return (
-    <>
-      text
-      <Tooltip on="click">
-        <Tooltip.Toggle>
-          <Button variant="primary">Hover over me</Button>
-        </Tooltip.Toggle>
-        <Tooltip.Body>Design System Tooltip</Tooltip.Body>
-      </Tooltip>
-    </>
+    <Tooltip>
+      <Tooltip.Toggle>
+        <Button variant="primary">Hover over me</Button>
+      </Tooltip.Toggle>
+      <Tooltip.Body>Design System Tooltip</Tooltip.Body>
+    </Tooltip>
   )
 }
 
@@ -72,6 +69,30 @@ export const Top: Story<TooltipProps> = () => {
         <Button variant="primary">Hover over me</Button>
       </Tooltip.Toggle>
       <Tooltip.Body>Design System Tooltip</Tooltip.Body>
+    </Tooltip>
+  )
+}
+
+export const Click: Story<TooltipProps> = () => {
+  return (
+    <Tooltip on="click" position="bottom center">
+      <Tooltip.Toggle>
+        <Button variant="primary">Hover over me</Button>
+      </Tooltip.Toggle>
+      <Tooltip.Body>Design System Tooltip</Tooltip.Body>
+    </Tooltip>
+  )
+}
+
+export const LongText: Story<TooltipProps> = () => {
+  return (
+    <Tooltip on="click" position="bottom center">
+      <Tooltip.Toggle>
+        <Button variant="primary">Hover over me</Button>
+      </Tooltip.Toggle>
+      <Tooltip.Body>
+        有進行存款且投注過的行為用戶，依據距離上次行為天數的遠近、頻率的高低、金額的高低來劃分成8個用戶群體。
+      </Tooltip.Body>
     </Tooltip>
   )
 }

@@ -6,3 +6,5 @@ export declare const Default: Story<TooltipProps>;
 export declare const Right: Story<TooltipProps>;
 export declare const Left: Story<TooltipProps>;
 export declare const Top: Story<TooltipProps>;
+export declare const Click: Story<TooltipProps>;
+export declare const LongText: Story<TooltipProps>;

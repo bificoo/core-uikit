@@ -83,7 +83,7 @@
         font-size: 14px;
         line-height: 30px;
         outline: none;
-        border-radius: 0;
+        border-radius: 3px;
         color: #172B4D;
         transition: border .4s, background 0.1s;
       }
@@ -91,6 +91,7 @@
       &:not(.DayPicker--interactionDisabled) {
         .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
           background-color: rgba(9, 30, 66, 0.08);
+          border-radius: 0;
         }
       }
 
@@ -110,7 +111,7 @@
         }
       }
 
-      .DayPicker-Day--outside {
+      .DayPicker-Day--disabled, .DayPicker-Day--outside {
         color: rgb(165, 173, 186);
       }
     }

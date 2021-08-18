@@ -24,59 +24,57 @@ const Template: Story<RangePickerProps> = args => <RangePicker {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  onChange: date => {
-    console.info(date)
+  onChange: (startDate, endDate) => {
+    console.info(startDate, endDate)
   },
 }
 
-// export const SpecificDate = Template.bind({})
-// SpecificDate.args = {
-//   date: new Date("2021-12-06"),
-//   onChange: date => {
-//     console.info(date)
-//   },
-// }
-//
-// export const SpecificMinDate = Template.bind({})
-// SpecificMinDate.args = {
-//   date: new Date("2021-12-06"),
-//   minDate: new Date("2021-12-03"),
-//   onChange: date => {
-//     console.info(date)
-//   },
-// }
-//
-// export const SpecificMaxDate = Template.bind({})
-// SpecificMaxDate.args = {
-//   date: new Date("2021-12-06"),
-//   maxDate: new Date("2021-12-10"),
-//   onChange: date => {
-//     console.info(date)
-//   },
-// }
-//
-// export const SpecificDisabledDays = Template.bind({})
-// SpecificDisabledDays.args = {
-//   date: new Date("2021-12-06"),
-//   minDate: new Date("2021-12-03"),
-//   maxDate: new Date("2021-12-10"),
-//   onChange: date => {
-//     console.info(date)
-//   },
-// }
-//
-// export const DateFormat = Template.bind({})
-// DateFormat.args = {
-//   dateFormat: "YYYY.MM.DD",
-//   onChange: date => {
-//     console.info(date)
-//   },
-// }
-//
-// export const placeholder = Template.bind({})
-// placeholder.args = {
-//   placeholder: "請選擇日期",
-//   onChange: date => {
-//     console.info(date)
-//   },
-// }
+export const SpecificStartDate = Template.bind({})
+SpecificStartDate.args = {
+  startDate: new Date("2021-08-04"),
+  onChange: (startDate, endDate) => {
+    console.info(startDate, endDate)
+  },
+}
+
+export const SpecificEndDate = Template.bind({})
+SpecificEndDate.args = {
+  endDate: new Date("2021-08-14"),
+  onChange: (startDate, endDate) => {
+    console.info(startDate, endDate)
+  },
+}
+
+export const SpecificRange = Template.bind({})
+SpecificRange.args = {
+  startDate: new Date("2021-08-04"),
+  endDate: new Date("2021-08-14"),
+  onChange: (startDate, endDate) => {
+    console.info(startDate, endDate)
+  },
+}
+
+export const SpecificMinDate = Template.bind({})
+SpecificMinDate.args = {
+  minDate: new Date("2021-08-3"),
+  onChange: (startDate, endDate) => {
+    console.info(startDate, endDate)
+  },
+}
+
+export const SpecificMaxDate = Template.bind({})
+SpecificMaxDate.args = {
+  maxDate: new Date("2021-08-10"),
+  onChange: (startDate, endDate) => {
+    console.info(startDate, endDate)
+  },
+}
+
+export const SpecificLimitDate = Template.bind({})
+SpecificLimitDate.args = {
+  minDate: new Date("2021-08-3"),
+  maxDate: new Date("2021-08-10"),
+  onChange: (startDate, endDate) => {
+    console.info(startDate, endDate)
+  },
+}

@@ -85,6 +85,7 @@
       &:not(.DayPicker--interactionDisabled) {
         .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
           background-color: rgba(9, 30, 66, 0.08);
+          border-radius: 0;
         }
       }
 
@@ -121,7 +122,7 @@
         border-bottom-right-radius: 3px !important;
       }
 
-      .DayPicker-Day--outside {
+      .DayPicker-Day--disabled, .DayPicker-Day--outside {
         color: rgb(165, 173, 186);
         background-color: transparent;
       }

@@ -22,7 +22,6 @@ const DatePicker = ({ dateFormat = "YYYY-MM-DD", ...props }: DatePickerProps) =>
   const datePickerInputRef = useRef<DayPickerInput>(null)
 
   const dayPickerProps: DayPickerProps = {
-    showOutsideDays: true,
     weekdaysShort: ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"],
     onDayClick: (date: Date, { selected, disabled }) => {
       if (selected || disabled) return

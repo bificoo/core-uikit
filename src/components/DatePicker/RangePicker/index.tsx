@@ -14,19 +14,19 @@ export type RangePickerProps = {
   maxDate?: Date
   dateFormat?: string
   placeholder?: string
-  onChange?: (date: Date) => void
+  onChange?: (startDate: Date, endDate: Date) => void
 }
 
 const RangePicker = ({ dateFormat = "YYYY-MM-DD", ...props }) => {
-  const [startDate, setStartDate] = useState(props?.startDate || new Date())
-  const [endDate, setEndDate] = useState(props?.endDate || new Date())
-  const currentMonth = useRef<Date>(startDate)
+  const start = props?.startDate || props?.endDate
+  const [startDate, setStartDate] = useState<Date | undefined>(start)
+  const [endDate, setEndDate] = useState<Date | undefined>(props?.endDate)
+  const currentMonth = useRef<Date | undefined>(startDate)
   const datePickerContainerRef = useRef(null)
   const datePickerInputRef = useRef<DayPickerInput>(null)
 
   const dayPickerProps: DayPickerProps = {
     className: styled.wrapper,
-    showOutsideDays: true,
     numberOfMonths: 2,
     month: startDate,
     weekdaysShort: ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"],
@@ -35,13 +35,14 @@ const RangePicker = ({ dateFormat = "YYYY-MM-DD", ...props }) => {
       start: startDate,
       end: endDate,
     },
-    onDayClick: date => {
+    onDayClick: (date: Date, { selected, disabled }) => {
+      if (selected || disabled) return
       const range = DateUtils.addDayToRange(date, {
         from: startDate,
         to: endDate,
       })
-      setStartDate(range.from)
-      setEndDate(range.to)
+      range.from !== null && setStartDate(range.from)
+      range.to !== null && setEndDate(range.to)
       props.onChange && props.onChange(range.from, range.to)
     },
     onMonthChange: date => {
@@ -89,7 +90,7 @@ const RangePicker = ({ dateFormat = "YYYY-MM-DD", ...props }) => {
           overlayWrapper: styled.overlayWrapper,
         }}
         value={startDate}
-        format={props.dateFormat}
+        format={dateFormat}
         formatDate={formatDate}
         parseDate={parseDate}
         placeholder={

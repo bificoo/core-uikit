@@ -12,6 +12,9 @@ export type {
   DropdownToggleProps,
 } from "./components/Dropdown"
 
+export { default as DatePicker, RangePicker } from "./components/DatePicker"
+export type { DatePickerProps, RangePickerProps } from "./components/DatePicker"
+
 export { default as Form, InputGroup, Prepend, Append } from "./components/Form"
 export type {
   FormProps,

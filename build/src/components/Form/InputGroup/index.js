@@ -12,4 +12,4 @@ require('./Append/Append.module.scss.js');
 
 
 
-exports.default = index$2['default'];
+exports.default = index$2;

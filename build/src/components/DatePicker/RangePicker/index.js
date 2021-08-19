@@ -1,7 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var _tslib = require('../../../../_virtual/_tslib.js');
 var jsxRuntime = require('react/jsx-runtime');
 var React = require('react');
@@ -22,7 +20,7 @@ var RangePicker = function (_a) {
     var datePickerContainerRef = React.useRef(null);
     var datePickerInputRef = React.useRef(null);
     var dayPickerProps = {
-        className: RangePicker_module['default'].wrapper,
+        className: RangePicker_module.wrapper,
         numberOfMonths: 2,
         month: startDate,
         weekdaysShort: ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"],
@@ -59,7 +57,7 @@ var RangePicker = function (_a) {
         var _a;
         (_a = datePickerInputRef === null || datePickerInputRef === void 0 ? void 0 : datePickerInputRef.current) === null || _a === void 0 ? void 0 : _a.setState({ month: currentMonth.current });
     }, [startDate]);
-    useOutsideEvent['default']({
+    useOutsideEvent({
         refs: [datePickerContainerRef],
         onClickOutside: function () {
             var _a;
@@ -72,12 +70,12 @@ var RangePicker = function (_a) {
     React.useEffect(function () {
         setEndDate(props.endDate);
     }, [props.endDate]);
-    return (jsxRuntime.jsx("div", _tslib.__assign({ ref: datePickerContainerRef }, { children: jsxRuntime.jsx(index['default'], { ref: datePickerInputRef, classNames: {
-                container: RangePicker_module['default'].container,
-                overlay: RangePicker_module['default'].overlay,
-                overlayWrapper: RangePicker_module['default'].overlayWrapper,
+    return (jsxRuntime.jsx("div", _tslib.__assign({ ref: datePickerContainerRef }, { children: jsxRuntime.jsx(index, { ref: datePickerInputRef, classNames: {
+                container: RangePicker_module.container,
+                overlay: RangePicker_module.overlay,
+                overlayWrapper: RangePicker_module.overlayWrapper,
             }, value: startDate, format: dateFormat, formatDate: utils.formatDate, parseDate: utils.parseDate, placeholder: props.placeholder ||
-                utils.formatDate(new Date(), dateFormat) + " ~ " + utils.formatDate(new Date(), dateFormat), hideOnDayClick: false, component: function (props) { return (jsxRuntime.jsx(index$1['default'], _tslib.__assign({ startDate: startDate, endDate: endDate, dateFormat: dateFormat }, props), void 0)); }, dayPickerProps: dayPickerProps, onDayChange: handleDayChange }, void 0) }), void 0));
+                utils.formatDate(new Date(), dateFormat) + " ~ " + utils.formatDate(new Date(), dateFormat), hideOnDayClick: false, component: function (props) { return (jsxRuntime.jsx(index$1, _tslib.__assign({ startDate: startDate, endDate: endDate, dateFormat: dateFormat }, props), void 0)); }, dayPickerProps: dayPickerProps, onDayChange: handleDayChange }, void 0) }), void 0));
 };
 
-exports['default'] = RangePicker;
+module.exports = RangePicker;

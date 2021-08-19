@@ -1,7 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var _tslib = require('../../../../_virtual/_tslib.js');
 var jsxRuntime = require('react/jsx-runtime');
 var React = require('react');
@@ -33,13 +31,13 @@ var Tabs = function (_a) {
         });
         return has;
     }, [props.children]);
-    return (jsxRuntime.jsx(TabsContext['default'].Provider, _tslib.__assign({ value: { activeKey: activeKey.current, setActiveKey: handleClickTab } }, { children: jsxRuntime.jsxs("div", _tslib.__assign({ className: cx__default['default'](Tabs_module['default'].wrapper, props.className), onClick: function (e) {
+    return (jsxRuntime.jsx(TabsContext.Provider, _tslib.__assign({ value: { activeKey: activeKey.current, setActiveKey: handleClickTab } }, { children: jsxRuntime.jsxs("div", _tslib.__assign({ className: cx__default['default'](Tabs_module.wrapper, props.className), onClick: function (e) {
                 return props.onSelect && props.onSelect(e, { eventKey: activeKey.current });
-            } }, { children: [jsxRuntime.jsx("nav", _tslib.__assign({ className: Tabs_module['default']["nav-tabs"] }, { children: React__default['default'].Children.map(props.children, function (child) {
+            } }, { children: [jsxRuntime.jsx("nav", _tslib.__assign({ className: Tabs_module["nav-tabs"] }, { children: React__default['default'].Children.map(props.children, function (child) {
                         if (!React__default['default'].isValidElement(child))
                             return;
-                        return (jsxRuntime.jsx(index['default'], { className: child.props.className, title: child.props.title, eventKey: child.props.eventKey }, void 0));
-                    }) }), void 0), hasChild && (jsxRuntime.jsx("div", _tslib.__assign({ className: Tabs_module['default']["tab-content"] }, { children: React__default['default'].Children.map(props.children, function (child) {
+                        return (jsxRuntime.jsx(index, { className: child.props.className, title: child.props.title, eventKey: child.props.eventKey }, void 0));
+                    }) }), void 0), hasChild && (jsxRuntime.jsx("div", _tslib.__assign({ className: Tabs_module["tab-content"] }, { children: React__default['default'].Children.map(props.children, function (child) {
                         if (!React__default['default'].isValidElement(child))
                             return;
                         if (activeKey.current === child.props.eventKey) {
@@ -48,4 +46,4 @@ var Tabs = function (_a) {
                     }) }), void 0))] }), void 0) }), void 0));
 };
 
-exports['default'] = Tabs;
+module.exports = Tabs;

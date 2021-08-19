@@ -1,7 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var React = require('react');
 
 var useOutsideEvent = function (_a) {
@@ -22,4 +20,4 @@ var useOutsideEvent = function (_a) {
     }, [refs, onClickOutside]);
 };
 
-exports['default'] = useOutsideEvent;
+module.exports = useOutsideEvent;

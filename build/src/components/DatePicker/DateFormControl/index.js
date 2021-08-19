@@ -1,7 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var _tslib = require('../../../../_virtual/_tslib.js');
 var jsxRuntime = require('react/jsx-runtime');
 var React = require('react');
@@ -24,4 +22,4 @@ var DateFormControl = React__default['default'].forwardRef(function DateFormCont
     return jsxRuntime.jsx(index['default'].Input, _tslib.__assign({ ref: ref, style: { width: "200px" } }, props, { value: value }), void 0);
 });
 
-exports['default'] = DateFormControl;
+module.exports = DateFormControl;

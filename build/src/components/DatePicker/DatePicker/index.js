@@ -1,7 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var _tslib = require('../../../../_virtual/_tslib.js');
 var jsxRuntime = require('react/jsx-runtime');
 var React = require('react');
@@ -35,7 +33,7 @@ var DatePicker = function (_a) {
     if (props === null || props === void 0 ? void 0 : props.minDate) {
         dayPickerProps.disabledDays = _tslib.__assign(_tslib.__assign({}, dayPickerProps.disabledDays), { before: props.minDate });
     }
-    useOutsideEvent['default']({
+    useOutsideEvent({
         refs: [datePickerContainerRef],
         onClickOutside: function () {
             var _a;
@@ -45,11 +43,11 @@ var DatePicker = function (_a) {
     React.useEffect(function () {
         setDate(props.date);
     }, [props.date]);
-    return (jsxRuntime.jsx("div", _tslib.__assign({ ref: datePickerContainerRef }, { children: jsxRuntime.jsx(index['default'], { ref: datePickerInputRef, classNames: {
-                container: DatePicker_module['default'].container,
-                overlay: DatePicker_module['default'].overlay,
-                overlayWrapper: DatePicker_module['default'].overlayWrapper,
-            }, value: date, format: dateFormat, formatDate: utils.formatDate, parseDate: utils.parseDate, hideOnDayClick: false, placeholder: props.placeholder || day['default'](new Date()).format(dateFormat), component: function (props) { return jsxRuntime.jsx(index$1['default'].Input, _tslib.__assign({}, props), void 0); }, dayPickerProps: dayPickerProps }, void 0) }), void 0));
+    return (jsxRuntime.jsx("div", _tslib.__assign({ ref: datePickerContainerRef }, { children: jsxRuntime.jsx(index, { ref: datePickerInputRef, classNames: {
+                container: DatePicker_module.container,
+                overlay: DatePicker_module.overlay,
+                overlayWrapper: DatePicker_module.overlayWrapper,
+            }, value: date, format: dateFormat, formatDate: utils.formatDate, parseDate: utils.parseDate, hideOnDayClick: false, placeholder: props.placeholder || day(new Date()).format(dateFormat), component: function (props) { return jsxRuntime.jsx(index$1['default'].Input, _tslib.__assign({}, props), void 0); }, dayPickerProps: dayPickerProps }, void 0) }), void 0));
 };
 
-exports['default'] = DatePicker;
+module.exports = DatePicker;

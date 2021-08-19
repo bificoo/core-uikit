@@ -9,4 +9,4 @@ require('./LinkButton/LinkButton.module.scss.js');
 
 
 
-exports.default = index$1['default'];
+exports.default = index$1;

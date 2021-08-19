@@ -1,7 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var _tslib = require('../../../../_virtual/_tslib.js');
 var jsxRuntime = require('react/jsx-runtime');
 var React = require('react');
@@ -22,10 +20,10 @@ var Tooltip = function (_a) {
         React__default['default'].Children.forEach(props.children, function (child) {
             if (!React__default['default'].isValidElement(child))
                 return;
-            if (child.type === index['default']) {
+            if (child.type === index) {
                 triggerElement = child;
             }
-            else if (child.type === index$1['default']) {
+            else if (child.type === index$1) {
                 bodyElement = child;
             }
         });
@@ -37,4 +35,4 @@ var Tooltip = function (_a) {
     return (jsxRuntime.jsx(reactjsPopup_esm['default'], _tslib.__assign({ className: "core-tooltip", trigger: jsxRuntime.jsx("span", { children: tooltip.trigger }, void 0), on: on, position: position, closeOnDocumentClick: true, arrow: arrow }, { children: jsxRuntime.jsx("span", { children: tooltip.body }, void 0) }), void 0));
 };
 
-exports['default'] = Tooltip;
+module.exports = Tooltip;

@@ -1,7 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var _tslib = require('../../../../_virtual/_tslib.js');
 var jsxRuntime = require('react/jsx-runtime');
 var React = require('react');
@@ -17,9 +15,9 @@ var FormLabel = function (_a) {
     var _b;
     var _c = _a.required, required = _c === void 0 ? false : _c, className = _a.className, htmlFor = _a.htmlFor, props = _tslib.__rest(_a, ["required", "className", "htmlFor"]);
     var attributes = React.useContext(FormContext.FormGroupContext).attributes;
-    return (jsxRuntime.jsx("label", _tslib.__assign({ htmlFor: htmlFor || (attributes === null || attributes === void 0 ? void 0 : attributes.formId), className: cx__default['default'](FormLabel_module['default'].wrapper, className, (_b = {},
-            _b[FormLabel_module['default'].required] = required,
+    return (jsxRuntime.jsx("label", _tslib.__assign({ htmlFor: htmlFor || (attributes === null || attributes === void 0 ? void 0 : attributes.formId), className: cx__default['default'](FormLabel_module.wrapper, className, (_b = {},
+            _b[FormLabel_module.required] = required,
             _b)) }, props, { children: props.children }), void 0));
 };
 
-exports['default'] = FormLabel;
+module.exports = FormLabel;

@@ -1,7 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var _tslib = require('../../../../_virtual/_tslib.js');
 var jsxRuntime = require('react/jsx-runtime');
 var React = require('react');
@@ -18,7 +16,7 @@ var cx__default = /*#__PURE__*/_interopDefaultLegacy(cx);
 
 var FormGroup = function (props) {
     var _a = React.useState({
-        formId: props.formId || uuid['default'](),
+        formId: props.formId || uuid(),
         entered: false,
         disabled: false,
         readOnly: false,
@@ -38,14 +36,14 @@ var FormGroup = function (props) {
     React__default['default'].Children.forEach(props.children, function (child, index$1) {
         if (!React__default['default'].isValidElement(child))
             return;
-        if (child.type === index['default']) {
+        if (child.type === index) {
             label = React__default['default'].cloneElement(child, _tslib.__assign(_tslib.__assign({}, child.props), { style: _tslib.__assign(_tslib.__assign({}, child.props.style), { width: labelWidth + "px" }) }));
         }
         else {
             children.push(React__default['default'].cloneElement(child, { key: index$1 }));
         }
     });
-    return (jsxRuntime.jsx(FormContext.FormGroupContext.Provider, _tslib.__assign({ value: { attributes: attributes, setAttributes: update } }, { children: jsxRuntime.jsxs("div", _tslib.__assign({ className: cx__default['default'](FormGroup_module['default'].wrapper, FormGroup_module['default'][layout], props.className) }, { children: [label, jsxRuntime.jsx("div", _tslib.__assign({ className: FormGroup_module['default'].group }, { children: children }), void 0)] }), void 0) }), void 0));
+    return (jsxRuntime.jsx(FormContext.FormGroupContext.Provider, _tslib.__assign({ value: { attributes: attributes, setAttributes: update } }, { children: jsxRuntime.jsxs("div", _tslib.__assign({ className: cx__default['default'](FormGroup_module.wrapper, FormGroup_module[layout], props.className) }, { children: [label, jsxRuntime.jsx("div", _tslib.__assign({ className: FormGroup_module.group }, { children: children }), void 0)] }), void 0) }), void 0));
 };
 
-exports['default'] = FormGroup;
+module.exports = FormGroup;

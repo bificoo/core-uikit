@@ -14,4 +14,4 @@ require('./RangePicker/RangePicker.module.scss.js');
 
 
 
-exports.default = index['default'];
+exports.default = index;

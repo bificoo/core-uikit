@@ -15,7 +15,7 @@ export default {
   output: {
     dir: "build",
     format: "cjs",
-    exports: "named",
+    // exports: "named",
     preserveModules: true,
   },
   plugins: [

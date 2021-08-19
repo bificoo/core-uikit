@@ -1,7 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var _tslib = require('../../../../_virtual/_tslib.js');
 var jsxRuntime = require('react/jsx-runtime');
 var cx = require('classnames');
@@ -13,7 +11,7 @@ var cx__default = /*#__PURE__*/_interopDefaultLegacy(cx);
 
 var FormFeedback = function (_a) {
     var className = _a.className, props = _tslib.__rest(_a, ["className"]);
-    return (jsxRuntime.jsx("p", _tslib.__assign({ className: cx__default['default'](FormFeedback_module['default'].wrapper, className) }, props, { children: props.children }), void 0));
+    return (jsxRuntime.jsx("p", _tslib.__assign({ className: cx__default['default'](FormFeedback_module.wrapper, className) }, props, { children: props.children }), void 0));
 };
 
-exports['default'] = FormFeedback;
+module.exports = FormFeedback;

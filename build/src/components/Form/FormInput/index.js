@@ -1,7 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var _tslib = require('../../../../_virtual/_tslib.js');
 var jsxRuntime = require('react/jsx-runtime');
 var React = require('react');
@@ -29,13 +27,13 @@ var FormInput = React__default['default'].forwardRef(function FormInput(_a, ref)
             readOnly: props.readOnly,
         });
     }, [entered, isValid, isInvalid, props.disabled, props.readOnly]);
-    return (jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default['default']("component-input", FormInput_module['default'].wrapper, (_b = {},
-            _b[FormInput_module['default'].entered] = entered,
-            _b[FormInput_module['default'].disabled] = !!props.disabled,
-            _b[FormInput_module['default']["read-only"]] = !!props.readOnly,
-            _b[FormInput_module['default']["is-valid"]] = isValid,
-            _b[FormInput_module['default']["is-invalid"]] = isInvalid,
-            _b)) }, { children: jsxRuntime.jsx("input", _tslib.__assign({}, props, { ref: ref, type: type, id: attributes === null || attributes === void 0 ? void 0 : attributes.formId, className: cx__default['default'](FormInput_module['default'].control, className), onChange: function (e) {
+    return (jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default['default']("component-input", FormInput_module.wrapper, (_b = {},
+            _b[FormInput_module.entered] = entered,
+            _b[FormInput_module.disabled] = !!props.disabled,
+            _b[FormInput_module["read-only"]] = !!props.readOnly,
+            _b[FormInput_module["is-valid"]] = isValid,
+            _b[FormInput_module["is-invalid"]] = isInvalid,
+            _b)) }, { children: jsxRuntime.jsx("input", _tslib.__assign({}, props, { ref: ref, type: type, id: attributes === null || attributes === void 0 ? void 0 : attributes.formId, className: cx__default['default'](FormInput_module.control, className), onChange: function (e) {
                 if (e.target.value.trim() === "")
                     setEntered(false);
                 else
@@ -44,4 +42,4 @@ var FormInput = React__default['default'].forwardRef(function FormInput(_a, ref)
             } }), void 0) }), void 0));
 });
 
-exports['default'] = FormInput;
+module.exports = FormInput;

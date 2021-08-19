@@ -18,15 +18,15 @@ var index$9 = require('./components/Form/InputGroup/Append/index.js');
 
 
 
-exports.Badge = index['default'];
-exports.Button = index$1['default'];
-exports.LinkButton = index$2['default'];
-exports.Dropdown = index$3['default'];
-exports.DatePicker = index$4['default'];
-exports.RangePicker = index$5['default'];
+exports.Badge = index;
+exports.Button = index$1;
+exports.LinkButton = index$2;
+exports.Dropdown = index$3;
+exports.DatePicker = index$4;
+exports.RangePicker = index$5;
 exports.Form = index$6['default'];
-exports.Tabs = index$a['default'];
-exports.Tooltip = index$b['default'];
-exports.InputGroup = index$7['default'];
-exports.Prepend = index$8['default'];
-exports.Append = index$9['default'];
+exports.Tabs = index$a;
+exports.Tooltip = index$b;
+exports.InputGroup = index$7;
+exports.Prepend = index$8;
+exports.Append = index$9;

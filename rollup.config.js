@@ -16,7 +16,7 @@ export default {
     dir: "build",
     format: "cjs",
     exports: "named",
-    preserveModules: false,
+    preserveModules: true,
   },
   plugins: [
     peerDepsExternal(),

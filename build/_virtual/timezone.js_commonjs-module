@@ -1,7 +1,3 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var timezone = {exports: {}};
 
-exports.timezone = timezone;
+export { timezone as t };

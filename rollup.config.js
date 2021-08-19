@@ -14,17 +14,16 @@ export default {
   input: "src/index.ts",
   output: {
     dir: "build",
-    format: "cjs",
+    format: "esm",
     exports: "named",
     preserveModules: true,
   },
+  external: ["classnames", "react", "react-dom"],
   plugins: [
     peerDepsExternal(),
     resolve(),
     commonjs(),
-    typescript({
-      tsconfig: "tsconfig.json"
-    }),
+    typescript({ useTsconfigDeclarationDir: true }),
     postcss({
       extract: false,
       modules: true,
@@ -41,7 +40,7 @@ export default {
     url(),
     svgr(),
     copy({
-      targets: [{ src: 'src/types/*', dest: 'build/src/types' }]
+      targets: [{ src: "src/types/*", dest: "build/src/types" }],
     }),
   ],
 }

@@ -1,17 +1,9 @@
-'use strict';
+import React__default from 'react';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var React = require('react');
-
-function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
-
-var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
-
-var TabsContext = React__default['default'].createContext({
+var TabsContext = React__default.createContext({
     setActiveKey: function () {
         // set attributes
     },
 });
 
-exports['default'] = TabsContext;
+export { TabsContext as default };

@@ -1,12 +1,8 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var React = require('react');
+import { useEffect } from 'react';
 
 var useOutsideEvent = function (_a) {
     var refs = _a.refs, onClickOutside = _a.onClickOutside;
-    React.useEffect(function () {
+    useEffect(function () {
         var containsTarget = function (ref, event) {
             return !((ref === null || ref === void 0 ? void 0 : ref.current) && !(ref === null || ref === void 0 ? void 0 : ref.current.contains(event.target)));
         };
@@ -22,4 +18,4 @@ var useOutsideEvent = function (_a) {
     }, [refs, onClickOutside]);
 };
 
-exports['default'] = useOutsideEvent;
+export { useOutsideEvent as default };

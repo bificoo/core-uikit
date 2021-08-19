@@ -1,12 +1,5 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var index$1 = require('./Button/index.js');
-require('react/jsx-runtime');
-require('classnames');
-require('./LinkButton/LinkButton.module.scss.js');
-
-
-
-exports.default = index$1['default'];
+import Button from './Button/index.js';
+export { default } from './Button/index.js';
+import 'react/jsx-runtime';
+import 'classnames';
+import './LinkButton/LinkButton.module.scss.js';

@@ -1,7 +1,3 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var LocaleUtils = {};
 
-exports.__exports = LocaleUtils;
+export { LocaleUtils as __exports };

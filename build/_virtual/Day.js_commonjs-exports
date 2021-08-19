@@ -1,7 +1,3 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var Day = {};
 
-exports.__exports = Day;
+export { Day as __exports };

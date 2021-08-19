@@ -1,7 +1,3 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var classNames = {};
 
-exports.__exports = classNames;
+export { classNames as __exports };

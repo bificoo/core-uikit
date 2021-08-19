@@ -1,51 +1,42 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var tslib_es6 = require('../../../../node_modules/tslib/tslib.es6.js');
-var jsxRuntime = require('react/jsx-runtime');
-var React = require('react');
-var index = require('../FormLabel/index.js');
-var FormContext = require('../FormContext.js');
-var uuid = require('../../../utils/uuid.js');
-var FormGroup_module = require('./FormGroup.module.scss.js');
-var cx = require('classnames');
-
-function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
-
-var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
-var cx__default = /*#__PURE__*/_interopDefaultLegacy(cx);
+import { __assign } from '../../../../node_modules/tslib/tslib.es6.js';
+import { jsx, jsxs } from 'react/jsx-runtime';
+import React__default, { useState, useContext } from 'react';
+import FormLabel from '../FormLabel/index.js';
+import FormContext, { FormGroupContext } from '../FormContext.js';
+import uuid from '../../../utils/uuid.js';
+import styled from './FormGroup.module.scss.js';
+import cx from 'classnames';
 
 var FormGroup = function (props) {
-    var _a = React.useState({
-        formId: props.formId || uuid['default'](),
+    var _a = useState({
+        formId: props.formId || uuid(),
         entered: false,
         disabled: false,
         readOnly: false,
         isValid: null,
         isInvalid: null,
     }), attributes = _a[0], setAttributes = _a[1];
-    var formAttributes = React.useContext(FormContext['default']).attributes;
+    var formAttributes = useContext(FormContext).attributes;
     var layout = props.layout || (formAttributes === null || formAttributes === void 0 ? void 0 : formAttributes.layout) || "horizontal";
     var labelWidth = props.labelWidth || (formAttributes === null || formAttributes === void 0 ? void 0 : formAttributes.labelWidth) || "auto";
     var update = function (attributes) {
         setAttributes(function (prev) {
-            return tslib_es6.__assign(tslib_es6.__assign({}, prev), attributes);
+            return __assign(__assign({}, prev), attributes);
         });
     };
     var label = null;
     var children = [];
-    React__default['default'].Children.forEach(props.children, function (child, index$1) {
-        if (!React__default['default'].isValidElement(child))
+    React__default.Children.forEach(props.children, function (child, index) {
+        if (!React__default.isValidElement(child))
             return;
-        if (child.type === index['default']) {
-            label = React__default['default'].cloneElement(child, tslib_es6.__assign(tslib_es6.__assign({}, child.props), { style: tslib_es6.__assign(tslib_es6.__assign({}, child.props.style), { width: labelWidth + "px" }) }));
+        if (child.type === FormLabel) {
+            label = React__default.cloneElement(child, __assign(__assign({}, child.props), { style: __assign(__assign({}, child.props.style), { width: labelWidth + "px" }) }));
         }
         else {
-            children.push(React__default['default'].cloneElement(child, { key: index$1 }));
+            children.push(React__default.cloneElement(child, { key: index }));
         }
     });
-    return (jsxRuntime.jsx(FormContext.FormGroupContext.Provider, tslib_es6.__assign({ value: { attributes: attributes, setAttributes: update } }, { children: jsxRuntime.jsxs("div", tslib_es6.__assign({ className: cx__default['default'](FormGroup_module['default'].wrapper, FormGroup_module['default'][layout], props.className) }, { children: [label, jsxRuntime.jsx("div", tslib_es6.__assign({ className: FormGroup_module['default'].group }, { children: children }), void 0)] }), void 0) }), void 0));
+    return (jsx(FormGroupContext.Provider, __assign({ value: { attributes: attributes, setAttributes: update } }, { children: jsxs("div", __assign({ className: cx(styled.wrapper, styled[layout], props.className) }, { children: [label, jsx("div", __assign({ className: styled.group }, { children: children }), void 0)] }), void 0) }), void 0));
 };
 
-exports['default'] = FormGroup;
+export { FormGroup as default };

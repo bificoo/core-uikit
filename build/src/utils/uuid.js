@@ -1,9 +1,5 @@
-'use strict';
+import { nanoid } from '../../node_modules/nanoid/index.js';
 
-Object.defineProperty(exports, '__esModule', { value: true });
+var uuid = nanoid;
 
-var index = require('../../node_modules/nanoid/index.js');
-
-var uuid = index.nanoid;
-
-exports['default'] = uuid;
+export { uuid as default };

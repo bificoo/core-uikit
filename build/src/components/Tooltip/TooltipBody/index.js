@@ -1,13 +1,9 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var tslib_es6 = require('../../../../node_modules/tslib/tslib.es6.js');
-var jsxRuntime = require('react/jsx-runtime');
-var TooltipBody_module = require('./TooltipBody.module.scss.js');
+import { __assign } from '../../../../node_modules/tslib/tslib.es6.js';
+import { jsx } from 'react/jsx-runtime';
+import styled from './TooltipBody.module.scss.js';
 
 var TooltipBody = function (props) {
-    return jsxRuntime.jsx("div", tslib_es6.__assign({ className: TooltipBody_module['default'].wrapper }, { children: props.children }), void 0);
+    return jsx("div", __assign({ className: styled.wrapper }, { children: props.children }), void 0);
 };
 
-exports['default'] = TooltipBody;
+export { TooltipBody as default };

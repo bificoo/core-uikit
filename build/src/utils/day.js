@@ -1,21 +1,17 @@
-'use strict';
+import utc from '../../node_modules/dayjs/plugin/utc.js';
+import timezone from '../../node_modules/dayjs/plugin/timezone.js';
+import duration from '../../node_modules/dayjs/plugin/duration.js';
+import customParseFormat from '../../node_modules/dayjs/plugin/customParseFormat.js';
+import dayjs from '../../node_modules/dayjs/dayjs.min.js';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var utc = require('../../node_modules/dayjs/plugin/utc.js');
-var timezone = require('../../node_modules/dayjs/plugin/timezone.js');
-var duration = require('../../node_modules/dayjs/plugin/duration.js');
-var customParseFormat = require('../../node_modules/dayjs/plugin/customParseFormat.js');
-var dayjs_min = require('../../node_modules/dayjs/dayjs.min.js');
-
-dayjs_min['default'].extend(utc['default']);
-dayjs_min['default'].extend(timezone['default']);
-dayjs_min['default'].extend(duration['default']);
-dayjs_min['default'].extend(customParseFormat['default']);
+dayjs.extend(utc);
+dayjs.extend(timezone);
+dayjs.extend(duration);
+dayjs.extend(customParseFormat);
 var day = function (config, format, strict) {
     // return dayjs.utc(date, "America/New_York") //.tz("America/New_York")
-    return dayjs_min['default'].utc(config, format, strict);
+    return dayjs.utc(config, format, strict);
 };
-day.duration = dayjs_min['default'].duration;
+day.duration = dayjs.duration;
 
-exports['default'] = day;
+export { day as default };

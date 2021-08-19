@@ -1,7 +1,3 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var DateUtils = {};
 
-exports.__exports = DateUtils;
+export { DateUtils as __exports };

@@ -14,9 +14,9 @@ export default {
   input: "src/index.ts",
   output: {
     dir: "build",
-    format: "esm",
+    format: "cjs",
     exports: "named",
-    preserveModules: true,
+    // preserveModules: true,
   },
   external: ["classnames", "react", "react-dom"],
   plugins: [

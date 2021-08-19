@@ -24,7 +24,7 @@ const DatePicker = ({ dateFormat = "YYYY-MM-DD", ...props }: DatePickerProps) =>
   const dayPickerProps: DayPickerProps = {
     weekdaysShort: ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"],
     onDayClick: (date: Date, { selected, disabled }) => {
-      if (selected || disabled) return
+      if (disabled) return
       setDate(date)
       props?.onChange && props.onChange(date)
     },

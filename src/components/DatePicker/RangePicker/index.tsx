@@ -36,7 +36,7 @@ const RangePicker = ({ dateFormat = "YYYY-MM-DD", ...props }) => {
       end: endDate,
     },
     onDayClick: (date: Date, { selected, disabled }) => {
-      if (selected || disabled) return
+      if (disabled) return
       const range = DateUtils.addDayToRange(date, {
         from: startDate,
         to: endDate,

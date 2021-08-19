@@ -20,8 +20,8 @@ var DatePicker = function (_a) {
     var dayPickerProps = {
         weekdaysShort: ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"],
         onDayClick: function (date, _a) {
-            var selected = _a.selected, disabled = _a.disabled;
-            if (selected || disabled)
+            _a.selected; var disabled = _a.disabled;
+            if (disabled)
                 return;
             setDate(date);
             (props === null || props === void 0 ? void 0 : props.onChange) && props.onChange(date);

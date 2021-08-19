@@ -32,8 +32,8 @@ var RangePicker = function (_a) {
             end: endDate,
         },
         onDayClick: function (date, _a) {
-            var selected = _a.selected, disabled = _a.disabled;
-            if (selected || disabled)
+            _a.selected; var disabled = _a.disabled;
+            if (disabled)
                 return;
             var range = index$2.__exports.DateUtils.addDayToRange(date, {
                 from: startDate,

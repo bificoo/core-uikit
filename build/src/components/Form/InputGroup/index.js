@@ -1,8 +1,15 @@
-import InputGroup from './InputGroup/index.js';
-export { default } from './InputGroup/index.js';
-import 'react/jsx-runtime';
-import 'react';
-import '../FormContext.js';
-import './Prepend/Prepend.module.scss.js';
-import 'classnames';
-import './Append/Append.module.scss.js';
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var index$2 = require('./InputGroup/index.js');
+require('react/jsx-runtime');
+require('react');
+require('../FormContext.js');
+require('./Prepend/Prepend.module.scss.js');
+require('classnames');
+require('./Append/Append.module.scss.js');
+
+
+
+exports.default = index$2['default'];

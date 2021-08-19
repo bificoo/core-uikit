@@ -1,13 +1,21 @@
-import { __rest, __assign } from '../../../../node_modules/tslib/tslib.es6.js';
-import { jsx, jsxs } from 'react/jsx-runtime';
-import cx from 'classnames';
-import { ReactComponent as SvgCheck } from './check.svg.js';
-import styled from './FormCheckbox.module.scss.js';
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var tslib_es6 = require('../../../../node_modules/tslib/tslib.es6.js');
+var jsxRuntime = require('react/jsx-runtime');
+var cx = require('classnames');
+var check = require('./check.svg.js');
+var FormCheckbox_module = require('./FormCheckbox.module.scss.js');
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var cx__default = /*#__PURE__*/_interopDefaultLegacy(cx);
 
 var FormCheckbox = function (_a) {
     var _b;
-    var children = _a.children, inline = _a.inline, props = __rest(_a, ["children", "inline"]);
-    return (jsx("div", __assign({ className: cx("component-checkbox", styled.wrapper, (_b = {}, _b[styled.inline] = inline, _b), props.className) }, { children: jsxs("label", __assign({ className: styled.label }, { children: [jsx("input", __assign({ type: "checkbox" }, props), void 0), !props.checked ? (jsx(SvgCheck, { className: cx(styled.check) }, void 0)) : (jsx(SvgCheck, { className: cx(styled.check) }, void 0)), jsx("span", __assign({ className: styled.content }, { children: children }), void 0)] }), void 0) }), void 0));
+    var children = _a.children, inline = _a.inline, props = tslib_es6.__rest(_a, ["children", "inline"]);
+    return (jsxRuntime.jsx("div", tslib_es6.__assign({ className: cx__default['default']("component-checkbox", FormCheckbox_module['default'].wrapper, (_b = {}, _b[FormCheckbox_module['default'].inline] = inline, _b), props.className) }, { children: jsxRuntime.jsxs("label", tslib_es6.__assign({ className: FormCheckbox_module['default'].label }, { children: [jsxRuntime.jsx("input", tslib_es6.__assign({ type: "checkbox" }, props), void 0), !props.checked ? (jsxRuntime.jsx(check.ReactComponent, { className: cx__default['default'](FormCheckbox_module['default'].check) }, void 0)) : (jsxRuntime.jsx(check.ReactComponent, { className: cx__default['default'](FormCheckbox_module['default'].check) }, void 0)), jsxRuntime.jsx("span", tslib_es6.__assign({ className: FormCheckbox_module['default'].content }, { children: children }), void 0)] }), void 0) }), void 0));
 };
 
-export { FormCheckbox as default };
+exports['default'] = FormCheckbox;

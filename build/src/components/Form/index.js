@@ -1,27 +1,31 @@
-import Form$1 from './Form/index.js';
-import FormLabel from './FormLabel/index.js';
-import FormInput from './FormInput/index.js';
-import FormTextarea from './FormTextarea/index.js';
-import FormCheckbox from './FormCheckbox/index.js';
-import FormRadio from './FormRadio/index.js';
-import FormFeedback from './FormFeedback/index.js';
-import FormGroup from './FormGroup/index.js';
-import 'react/jsx-runtime';
-import 'react';
-import './FormContext.js';
-import './InputGroup/InputGroup/InputGroup.module.scss.js';
-import 'classnames';
-import './InputGroup/Prepend/Prepend.module.scss.js';
-import './InputGroup/Append/Append.module.scss.js';
+'use strict';
 
-var Form = Object.assign(Form$1, {
-    Label: FormLabel,
-    Input: FormInput,
-    Textarea: FormTextarea,
-    Checkbox: FormCheckbox,
-    Radio: FormRadio,
-    Feedback: FormFeedback,
-    Group: FormGroup,
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var index$3 = require('./Form/index.js');
+var index$4 = require('./FormLabel/index.js');
+var index$5 = require('./FormInput/index.js');
+var index$6 = require('./FormTextarea/index.js');
+var index$7 = require('./FormCheckbox/index.js');
+var index$8 = require('./FormRadio/index.js');
+var index$9 = require('./FormFeedback/index.js');
+var index$a = require('./FormGroup/index.js');
+require('react/jsx-runtime');
+require('react');
+require('./FormContext.js');
+require('./InputGroup/InputGroup/InputGroup.module.scss.js');
+require('classnames');
+require('./InputGroup/Prepend/Prepend.module.scss.js');
+require('./InputGroup/Append/Append.module.scss.js');
+
+var Form = Object.assign(index$3['default'], {
+    Label: index$4['default'],
+    Input: index$5['default'],
+    Textarea: index$6['default'],
+    Checkbox: index$7['default'],
+    Radio: index$8['default'],
+    Feedback: index$9['default'],
+    Group: index$a['default'],
 });
 
-export { Form as default };
+exports['default'] = Form;

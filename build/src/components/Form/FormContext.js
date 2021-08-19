@@ -1,14 +1,23 @@
-import React__default from 'react';
+'use strict';
 
-var FormContext = React__default.createContext({
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var React = require('react');
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
+
+var FormContext = React__default['default'].createContext({
     setAttributes: function () {
         // set attributes
     },
 });
-var FormGroupContext = React__default.createContext({
+var FormGroupContext = React__default['default'].createContext({
     setAttributes: function () {
         // set attributes
     },
 });
 
-export { FormGroupContext, FormContext as default };
+exports.FormGroupContext = FormGroupContext;
+exports['default'] = FormContext;

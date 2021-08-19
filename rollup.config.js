@@ -16,14 +16,15 @@ export default {
     dir: "build",
     format: "cjs",
     exports: "named",
-    // preserveModules: true,
+    preserveModules: true,
   },
-  external: ["classnames", "react", "react-dom"],
   plugins: [
     peerDepsExternal(),
     resolve(),
     commonjs(),
-    typescript({ useTsconfigDeclarationDir: true }),
+    typescript({
+      tsconfig: "tsconfig.json",
+    }),
     postcss({
       extract: false,
       modules: true,

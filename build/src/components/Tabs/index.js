@@ -1,8 +1,12 @@
-import Tabs$1 from './Tabs/index.js';
-import Tab from './Tab/index.js';
+'use strict';
 
-var Tabs = Object.assign(Tabs$1, {
-    Tab: Tab,
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var index = require('./Tabs/index.js');
+var index$1 = require('./Tab/index.js');
+
+var Tabs = Object.assign(index['default'], {
+    Tab: index$1['default'],
 });
 
-export { Tabs as default };
+exports['default'] = Tabs;

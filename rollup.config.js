@@ -16,14 +16,12 @@ export default {
     dir: "build",
     format: "cjs",
     exports: "named",
-    preserveModules: true,
+    preserveModules: false,
   },
   plugins: [
     peerDepsExternal(),
     commonjs(),
-    typescript({
-      tsconfig: "tsconfig.json",
-    }),
+    typescript(),
     resolve({ browser: true, mainFields: ["module"] }),
     postcss({
       extract: false,

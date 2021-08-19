@@ -1,5 +1,7 @@
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 var _tslib = require('../../../../_virtual/_tslib.js');
 var jsxRuntime = require('react/jsx-runtime');
 var React = require('react');
@@ -25,10 +27,10 @@ var Dropdown = function (_a) {
         React__default['default'].Children.forEach(props.children, function (child) {
             if (!React__default['default'].isValidElement(child))
                 return;
-            if (child.type === index) {
+            if (child.type === index['default']) {
                 triggerElement = child;
             }
-            if (child.type === index$1) {
+            if (child.type === index$1['default']) {
                 menuElement = child;
             }
         });
@@ -46,7 +48,7 @@ var Dropdown = function (_a) {
         props.onSelect && props.onSelect(e, { eventKey: eventKey });
         (_b = popupRef.current) === null || _b === void 0 ? void 0 : _b.close();
     };
-    return (jsxRuntime.jsx(DropdownContext.DropdownContext.Provider, _tslib.__assign({ value: { activeKey: eventKey, setActiveKey: handleClickItem } }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default['default'](Dropdown_module.wrapper, props.className), style: props.style }, { children: jsxRuntime.jsx(reactjsPopup_esm['default'], _tslib.__assign({ ref: popupRef, trigger: function (open) { return dropdown.trigger && React__default['default'].cloneElement(dropdown.trigger, { open: open }); }, position: "bottom center", on: "click", closeOnDocumentClick: true, mouseLeaveDelay: 300, mouseEnterDelay: 0, arrow: false, contentStyle: {
+    return (jsxRuntime.jsx(DropdownContext.DropdownContext.Provider, _tslib.__assign({ value: { activeKey: eventKey, setActiveKey: handleClickItem } }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default['default'](Dropdown_module['default'].wrapper, props.className), style: props.style }, { children: jsxRuntime.jsx(reactjsPopup_esm['default'], _tslib.__assign({ ref: popupRef, trigger: function (open) { return dropdown.trigger && React__default['default'].cloneElement(dropdown.trigger, { open: open }); }, position: "bottom center", on: "click", closeOnDocumentClick: true, mouseLeaveDelay: 300, mouseEnterDelay: 0, arrow: false, contentStyle: {
                     width: "100px",
                     border: "none",
                     padding: "8px",
@@ -54,4 +56,4 @@ var Dropdown = function (_a) {
                 } }, { children: dropdown.menu }), void 0) }), void 0) }), void 0));
 };
 
-module.exports = Dropdown;
+exports['default'] = Dropdown;

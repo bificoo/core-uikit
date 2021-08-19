@@ -1,5 +1,7 @@
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 var _tslib = require('../../../../_virtual/_tslib.js');
 var jsxRuntime = require('react/jsx-runtime');
 var React = require('react');
@@ -27,13 +29,13 @@ var FormTextarea = React__default['default'].forwardRef(function FormTextarea(_a
             readOnly: !!props.readOnly,
         });
     }, [entered, isValid, isInvalid, props.disabled, props.readOnly]);
-    return (jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default['default']("component-textarea", FormTextarea_module.wrapper, (_b = {},
-            _b[FormTextarea_module.entered] = entered,
-            _b[FormTextarea_module.disabled] = !!props.disabled,
-            _b[FormTextarea_module["read-only"]] = !!props.readOnly,
-            _b[FormTextarea_module["is-valid"]] = isValid,
-            _b[FormTextarea_module["is-invalid"]] = isInvalid,
-            _b)) }, { children: jsxRuntime.jsx("textarea", _tslib.__assign({}, props, { ref: ref, id: attributes === null || attributes === void 0 ? void 0 : attributes.formId, className: cx__default['default'](FormTextarea_module.control, className), onChange: function (e) {
+    return (jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default['default']("component-textarea", FormTextarea_module['default'].wrapper, (_b = {},
+            _b[FormTextarea_module['default'].entered] = entered,
+            _b[FormTextarea_module['default'].disabled] = !!props.disabled,
+            _b[FormTextarea_module['default']["read-only"]] = !!props.readOnly,
+            _b[FormTextarea_module['default']["is-valid"]] = isValid,
+            _b[FormTextarea_module['default']["is-invalid"]] = isInvalid,
+            _b)) }, { children: jsxRuntime.jsx("textarea", _tslib.__assign({}, props, { ref: ref, id: attributes === null || attributes === void 0 ? void 0 : attributes.formId, className: cx__default['default'](FormTextarea_module['default'].control, className), onChange: function (e) {
                 if (e.target.value.trim() === "")
                     setEntered(false);
                 else
@@ -42,4 +44,4 @@ var FormTextarea = React__default['default'].forwardRef(function FormTextarea(_a
             } }), void 0) }), void 0));
 });
 
-module.exports = FormTextarea;
+exports['default'] = FormTextarea;

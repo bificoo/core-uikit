@@ -2,8 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var index = require('../../node_modules/nanoid/index.js');
+var index_prod = require('../../node_modules/nanoid/index.prod.js');
 
-var uuid = index.nanoid;
+var uuid = index_prod.nanoid;
 
 exports['default'] = uuid;

@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var tslib_es6 = require('../../../../node_modules/tslib/tslib.es6.js');
+var _tslib = require('../../../../_virtual/_tslib.js');
 var jsxRuntime = require('react/jsx-runtime');
 var React = require('react');
 var reactjsPopup_esm = require('../../../../node_modules/reactjs-popup/dist/reactjs-popup.esm.js');
@@ -14,12 +14,12 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
-var Tooltip = function (_a) {
-    var _b = _a.on, on = _b === void 0 ? "hover" : _b, _c = _a.position, position = _c === void 0 ? "bottom center" : _c, _d = _a.arrow, arrow = _d === void 0 ? true : _d, props = tslib_es6.__rest(_a, ["on", "position", "arrow"]);
-    var tooltip = React.useMemo(function () {
-        var triggerElement = jsxRuntime.jsx("div", {}, void 0);
-        var bodyElement = null;
-        React__default['default'].Children.forEach(props.children, function (child) {
+const Tooltip = (_a) => {
+    var { on = "hover", position = "bottom center", arrow = true } = _a, props = _tslib.__rest(_a, ["on", "position", "arrow"]);
+    const tooltip = React.useMemo(() => {
+        let triggerElement = jsxRuntime.jsx("div", {}, void 0);
+        let bodyElement = null;
+        React__default['default'].Children.forEach(props.children, child => {
             if (!React__default['default'].isValidElement(child))
                 return;
             if (child.type === index['default']) {
@@ -34,7 +34,7 @@ var Tooltip = function (_a) {
             body: bodyElement,
         };
     }, [props.children]);
-    return (jsxRuntime.jsx(reactjsPopup_esm['default'], tslib_es6.__assign({ className: "core-tooltip", trigger: jsxRuntime.jsx("span", { children: tooltip.trigger }, void 0), on: on, position: position, closeOnDocumentClick: true, arrow: arrow }, { children: jsxRuntime.jsx("span", { children: tooltip.body }, void 0) }), void 0));
+    return (jsxRuntime.jsx(reactjsPopup_esm['default'], Object.assign({ className: "core-tooltip", trigger: jsxRuntime.jsx("span", { children: tooltip.trigger }, void 0), on: on, position: position, closeOnDocumentClick: true, arrow: arrow }, { children: jsxRuntime.jsx("span", { children: tooltip.body }, void 0) }), void 0));
 };
 
 exports['default'] = Tooltip;

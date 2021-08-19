@@ -18,7 +18,7 @@ require('classnames');
 require('./InputGroup/Prepend/Prepend.module.scss.js');
 require('./InputGroup/Append/Append.module.scss.js');
 
-var Form = Object.assign(index$3['default'], {
+const Form = Object.assign(index$3['default'], {
     Label: index$4['default'],
     Input: index$5['default'],
     Textarea: index$6['default'],

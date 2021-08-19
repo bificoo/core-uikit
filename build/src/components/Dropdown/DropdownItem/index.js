@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var tslib_es6 = require('../../../../node_modules/tslib/tslib.es6.js');
+var _tslib = require('../../../../_virtual/_tslib.js');
 var jsxRuntime = require('react/jsx-runtime');
 var React = require('react');
 var cx = require('classnames');
@@ -13,11 +13,10 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 
 var cx__default = /*#__PURE__*/_interopDefaultLegacy(cx);
 
-var DropdownItem = function (_a) {
-    var _b;
-    var props = tslib_es6.__rest(_a, []);
-    var _c = React.useContext(DropdownContext.DropdownContext), activeKey = _c.activeKey, setActiveKey = _c.setActiveKey;
-    return (jsxRuntime.jsx("div", tslib_es6.__assign({ className: cx__default['default'](Item_module['default'].wrapper, (_b = {}, _b[Item_module['default'].active] = props.eventKey === activeKey, _b), props.className), onClick: function (e) { return setActiveKey(e, { eventKey: props.eventKey }); } }, { children: props.children }), void 0));
+const DropdownItem = (_a) => {
+    var props = _tslib.__rest(_a, []);
+    const { activeKey, setActiveKey } = React.useContext(DropdownContext.DropdownContext);
+    return (jsxRuntime.jsx("div", Object.assign({ className: cx__default['default'](Item_module['default'].wrapper, { [Item_module['default'].active]: props.eventKey === activeKey }, props.className), onClick: e => setActiveKey(e, { eventKey: props.eventKey }) }, { children: props.children }), void 0));
 };
 
 exports['default'] = DropdownItem;

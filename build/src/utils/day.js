@@ -12,7 +12,7 @@ dayjs_min['default'].extend(utc['default']);
 dayjs_min['default'].extend(timezone['default']);
 dayjs_min['default'].extend(duration['default']);
 dayjs_min['default'].extend(customParseFormat['default']);
-var day = function (config, format, strict) {
+const day = (config, format, strict) => {
     // return dayjs.utc(date, "America/New_York") //.tz("America/New_York")
     return dayjs_min['default'].utc(config, format, strict);
 };

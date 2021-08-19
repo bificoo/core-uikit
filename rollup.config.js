@@ -20,11 +20,11 @@ export default {
   },
   plugins: [
     peerDepsExternal(),
-    resolve(),
     commonjs(),
     typescript({
       tsconfig: "tsconfig.json",
     }),
+    resolve({ browser: true, mainFields: ["module"] }),
     postcss({
       extract: false,
       modules: true,

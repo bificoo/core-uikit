@@ -8,8 +8,8 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
-var TabsContext = React__default['default'].createContext({
-    setActiveKey: function () {
+const TabsContext = React__default['default'].createContext({
+    setActiveKey: () => {
         // set attributes
     },
 });

@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var tslib_es6 = require('../../../../node_modules/tslib/tslib.es6.js');
+var _tslib = require('../../../../_virtual/_tslib.js');
 var jsxRuntime = require('react/jsx-runtime');
 var React = require('react');
 var index = require('../../../../node_modules/react-day-picker/DayPickerInput/index.js');
@@ -12,15 +12,14 @@ var day = require('../../../utils/day.js');
 var utils = require('../utils.js');
 var DatePicker_module = require('./DatePicker.module.scss.js');
 
-var DatePicker = function (_a) {
-    var _b = _a.dateFormat, dateFormat = _b === void 0 ? "YYYY-MM-DD" : _b, props = tslib_es6.__rest(_a, ["dateFormat"]);
-    var _c = React.useState(props.date || new Date()), date = _c[0], setDate = _c[1];
-    var datePickerContainerRef = React.useRef(null);
-    var datePickerInputRef = React.useRef(null);
-    var dayPickerProps = {
+const DatePicker = (_a) => {
+    var { dateFormat = "YYYY-MM-DD" } = _a, props = _tslib.__rest(_a, ["dateFormat"]);
+    const [date, setDate] = React.useState(props.date || new Date());
+    const datePickerContainerRef = React.useRef(null);
+    const datePickerInputRef = React.useRef(null);
+    const dayPickerProps = {
         weekdaysShort: ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"],
-        onDayClick: function (date, _a) {
-            _a.selected; var disabled = _a.disabled;
+        onDayClick: (date, { selected, disabled }) => {
             if (disabled)
                 return;
             setDate(date);
@@ -33,23 +32,23 @@ var DatePicker = function (_a) {
         };
     }
     if (props === null || props === void 0 ? void 0 : props.minDate) {
-        dayPickerProps.disabledDays = tslib_es6.__assign(tslib_es6.__assign({}, dayPickerProps.disabledDays), { before: props.minDate });
+        dayPickerProps.disabledDays = Object.assign(Object.assign({}, dayPickerProps.disabledDays), { before: props.minDate });
     }
     useOutsideEvent['default']({
         refs: [datePickerContainerRef],
-        onClickOutside: function () {
+        onClickOutside: () => {
             var _a;
             (_a = datePickerInputRef === null || datePickerInputRef === void 0 ? void 0 : datePickerInputRef.current) === null || _a === void 0 ? void 0 : _a.hideDayPicker();
         },
     });
-    React.useEffect(function () {
+    React.useEffect(() => {
         setDate(props.date);
     }, [props.date]);
-    return (jsxRuntime.jsx("div", tslib_es6.__assign({ ref: datePickerContainerRef }, { children: jsxRuntime.jsx(index['default'], { ref: datePickerInputRef, classNames: {
+    return (jsxRuntime.jsx("div", Object.assign({ ref: datePickerContainerRef }, { children: jsxRuntime.jsx(index['default'], { ref: datePickerInputRef, classNames: {
                 container: DatePicker_module['default'].container,
                 overlay: DatePicker_module['default'].overlay,
                 overlayWrapper: DatePicker_module['default'].overlayWrapper,
-            }, value: date, format: dateFormat, formatDate: utils.formatDate, parseDate: utils.parseDate, hideOnDayClick: false, placeholder: props.placeholder || day['default'](new Date()).format(dateFormat), component: function (props) { return jsxRuntime.jsx(index$1['default'].Input, tslib_es6.__assign({}, props), void 0); }, dayPickerProps: dayPickerProps }, void 0) }), void 0));
+            }, value: date, format: dateFormat, formatDate: utils.formatDate, parseDate: utils.parseDate, hideOnDayClick: false, placeholder: props.placeholder || day['default'](new Date()).format(dateFormat), component: (props) => jsxRuntime.jsx(index$1['default'].Input, Object.assign({}, props), void 0), dayPickerProps: dayPickerProps }, void 0) }), void 0));
 };
 
 exports['default'] = DatePicker;

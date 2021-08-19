@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var tslib_es6 = require('../../../../node_modules/tslib/tslib.es6.js');
+var _tslib = require('../../../../_virtual/_tslib.js');
 var jsxRuntime = require('react/jsx-runtime');
 var React = require('react');
 var FormContext = require('../FormContext.js');
@@ -14,28 +14,26 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 var cx__default = /*#__PURE__*/_interopDefaultLegacy(cx);
 
-var FormInput = React__default['default'].forwardRef(function FormInput(_a, ref) {
-    var _b;
-    if (ref === void 0) { ref = null; }
-    var className = _a.className, _c = _a.type, type = _c === void 0 ? "text" : _c, isValid = _a.isValid, isInvalid = _a.isInvalid, props = tslib_es6.__rest(_a, ["className", "type", "isValid", "isInvalid"]);
-    var _d = React.useContext(FormContext.FormGroupContext), attributes = _d.attributes, setAttributes = _d.setAttributes;
-    var _e = React.useState(false), entered = _e[0], setEntered = _e[1];
-    React.useEffect(function () {
+const FormInput = React__default['default'].forwardRef(function FormInput(_a, ref = null) {
+    var { className, type = "text", isValid, isInvalid } = _a, props = _tslib.__rest(_a, ["className", "type", "isValid", "isInvalid"]);
+    const { attributes, setAttributes } = React.useContext(FormContext.FormGroupContext);
+    const [entered, setEntered] = React.useState(false);
+    React.useEffect(() => {
         setAttributes({
-            entered: entered,
-            isValid: isValid,
-            isInvalid: isInvalid,
+            entered,
+            isValid,
+            isInvalid,
             disabled: props.disabled,
             readOnly: props.readOnly,
         });
     }, [entered, isValid, isInvalid, props.disabled, props.readOnly]);
-    return (jsxRuntime.jsx("div", tslib_es6.__assign({ className: cx__default['default']("component-input", FormInput_module['default'].wrapper, (_b = {},
-            _b[FormInput_module['default'].entered] = entered,
-            _b[FormInput_module['default'].disabled] = !!props.disabled,
-            _b[FormInput_module['default']["read-only"]] = !!props.readOnly,
-            _b[FormInput_module['default']["is-valid"]] = isValid,
-            _b[FormInput_module['default']["is-invalid"]] = isInvalid,
-            _b)) }, { children: jsxRuntime.jsx("input", tslib_es6.__assign({}, props, { ref: ref, type: type, id: attributes === null || attributes === void 0 ? void 0 : attributes.formId, className: cx__default['default'](FormInput_module['default'].control, className), onChange: function (e) {
+    return (jsxRuntime.jsx("div", Object.assign({ className: cx__default['default']("component-input", FormInput_module['default'].wrapper, {
+            [FormInput_module['default'].entered]: entered,
+            [FormInput_module['default'].disabled]: !!props.disabled,
+            [FormInput_module['default']["read-only"]]: !!props.readOnly,
+            [FormInput_module['default']["is-valid"]]: isValid,
+            [FormInput_module['default']["is-invalid"]]: isInvalid,
+        }) }, { children: jsxRuntime.jsx("input", Object.assign({}, props, { ref: ref, type: type, id: attributes === null || attributes === void 0 ? void 0 : attributes.formId, className: cx__default['default'](FormInput_module['default'].control, className), onChange: e => {
                 if (e.target.value.trim() === "")
                     setEntered(false);
                 else

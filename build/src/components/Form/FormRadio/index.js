@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var tslib_es6 = require('../../../../node_modules/tslib/tslib.es6.js');
+var _tslib = require('../../../../_virtual/_tslib.js');
 var jsxRuntime = require('react/jsx-runtime');
 var cx = require('classnames');
 var FormRadio_module = require('./FormRadio.module.scss.js');
@@ -11,10 +11,9 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 
 var cx__default = /*#__PURE__*/_interopDefaultLegacy(cx);
 
-var FormRadio = function (_a) {
-    var _b;
-    var children = _a.children, inline = _a.inline, props = tslib_es6.__rest(_a, ["children", "inline"]);
-    return (jsxRuntime.jsx("div", tslib_es6.__assign({ className: cx__default['default']("component-radio", FormRadio_module['default'].wrapper, (_b = {}, _b[FormRadio_module['default'].inline] = inline, _b), props.className) }, { children: jsxRuntime.jsxs("label", tslib_es6.__assign({ className: FormRadio_module['default'].label }, { children: [jsxRuntime.jsx("input", tslib_es6.__assign({ type: "radio" }, props), void 0), jsxRuntime.jsx("span", tslib_es6.__assign({ className: FormRadio_module['default'].content }, { children: children }), void 0)] }), void 0) }), void 0));
+const FormRadio = (_a) => {
+    var { children, inline } = _a, props = _tslib.__rest(_a, ["children", "inline"]);
+    return (jsxRuntime.jsx("div", Object.assign({ className: cx__default['default']("component-radio", FormRadio_module['default'].wrapper, { [FormRadio_module['default'].inline]: inline }, props.className) }, { children: jsxRuntime.jsxs("label", Object.assign({ className: FormRadio_module['default'].label }, { children: [jsxRuntime.jsx("input", Object.assign({ type: "radio" }, props), void 0), jsxRuntime.jsx("span", Object.assign({ className: FormRadio_module['default'].content }, { children: children }), void 0)] }), void 0) }), void 0));
 };
 
 exports['default'] = FormRadio;

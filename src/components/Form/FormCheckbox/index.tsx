@@ -20,7 +20,7 @@ const FormCheckbox = React.forwardRef(function FormCheckbox(
         props.className,
       )}>
       <label className={styled.label}>
-        <input ref={ref} type="checkbox" {...props} />
+        <input {...props} ref={ref} type="checkbox" />
         {!props.checked ? (
           <CheckIcon className={cx(styled.check)} />
         ) : (

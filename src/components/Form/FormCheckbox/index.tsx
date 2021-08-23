@@ -1,7 +1,7 @@
+import React from "react"
 import cx from "classnames"
 import { ReactComponent as CheckIcon } from "./check.svg"
 import styled from "./FormCheckbox.module.scss"
-import React from "react"
 
 export type FormCheckboxProps = {
   inline?: boolean

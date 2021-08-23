@@ -1,12 +1,16 @@
 import cx from "classnames"
 import { ReactComponent as CheckIcon } from "./check.svg"
 import styled from "./FormCheckbox.module.scss"
+import React from "react"
 
 export type FormCheckboxProps = {
   inline?: boolean
 } & Omit<JSXProps.InputElement, "type">
 
-const FormCheckbox = ({ children, inline, ...props }: FormCheckboxProps) => {
+const FormCheckbox = React.forwardRef(function FormCheckbox(
+  { children, inline, ...props }: FormCheckboxProps,
+  ref: React.Ref<HTMLInputElement> = null,
+) {
   return (
     <div
       className={cx(
@@ -16,7 +20,7 @@ const FormCheckbox = ({ children, inline, ...props }: FormCheckboxProps) => {
         props.className,
       )}>
       <label className={styled.label}>
-        <input type="checkbox" {...props} />
+        <input ref={ref} type="checkbox" {...props} />
         {!props.checked ? (
           <CheckIcon className={cx(styled.check)} />
         ) : (
@@ -26,6 +30,6 @@ const FormCheckbox = ({ children, inline, ...props }: FormCheckboxProps) => {
       </label>
     </div>
   )
-}
+})
 
 export default FormCheckbox

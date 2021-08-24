@@ -19,13 +19,9 @@ const FormCheckbox = React.forwardRef(function FormCheckbox(
         { [styled.inline]: inline },
         props.className,
       )}>
-      <label className={styled.label}>
+      <label className={cx(styled.label, { [styled.disabled]: props.disabled })}>
         <input {...props} ref={ref} type="checkbox" />
-        {!props.checked ? (
-          <CheckIcon className={cx(styled.check)} />
-        ) : (
-          <CheckIcon className={cx(styled.check)} />
-        )}
+        <CheckIcon className={cx(styled.check)} />
         <span className={styled.content}>{children}</span>
       </label>
     </div>

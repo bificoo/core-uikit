@@ -12,6 +12,10 @@
     cursor: pointer;
     line-height: 1.33333;
 
+    &.disabled {
+      cursor: not-allowed;
+    }
+
     input {
       & + .check {
         --local-background: #FAFBFC;
@@ -77,6 +81,29 @@
       &:checked:focus + .check {
         --checkbox-border-color: var(--local-border-focus);
       }
+
+      &:disabled, &:disabled:hover {
+        & + .check {
+          --checkbox-background-color: var(--local-background-disabled);
+          --checkbox-border-color: var(--local-border-disabled);
+          color: var(--checkbox-background-color);
+          fill: var(--checkbox-tick-color);
+          pointer-events: none;
+          cursor: not-allowed;
+        }
+
+        & + .check + .content {
+          color: #97a0af;
+          cursor: not-allowed;
+        }
+      }
+
+      &:disabled:checked, &:disabled:checked:hover  {
+        & + .check {
+          --checkbox-tick-color: var(--local-tick-disabled);
+          fill: var(--checkbox-tick-color);
+        }
+      }
     }
 
     .check {
@@ -91,6 +118,7 @@
     .content {
       padding-right: 4px;
       padding-left: 4px;
+      user-select: none;
     }
   }
 

@@ -30,6 +30,20 @@ Checked.args = {
   children: "Checkbox",
 }
 
+export const Disabled = Template.bind({})
+Disabled.args = {
+  defaultChecked: false,
+  disabled: true,
+  children: "Checkbox",
+}
+
+export const DisabledChecked = Template.bind({})
+DisabledChecked.args = {
+  defaultChecked: true,
+  disabled: true,
+  children: "Checkbox",
+}
+
 export const Chinese = Template.bind({})
 Chinese.args = {
   children: "複選選項",

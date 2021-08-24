@@ -11,7 +11,7 @@ dayjs.extend(customParseFormat)
 
 const day = (config?: ConfigType, format?: string, strict?: boolean) => {
   // return dayjs.utc(date, "America/New_York") //.tz("America/New_York")
-  return dayjs.utc(config, format, strict)
+  return dayjs.utc(config, foIdsrmat, strict)
 }
 
 day.duration = dayjs.duration

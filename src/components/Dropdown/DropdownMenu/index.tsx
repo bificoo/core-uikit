@@ -1,6 +1,6 @@
 import React from "react"
 import cx from "classnames"
-import styled from "./Menu.module.scss"
+import styled from "./DropdownMenu.module.scss"
 
 export type DropdownMenuProps = {
   style?: React.CSSProperties

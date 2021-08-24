@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import cx from "classnames"
-import styled from "./Item.module.scss"
+import styled from "./DropdownItem.module.scss"
 import DropdownContext from "../DropdownContext"
 
 export type DropdownItemProps = {

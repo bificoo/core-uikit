@@ -12,5 +12,6 @@ declare const Dropdown: (({ ...props }: import("./Dropdown").DropdownProps) => J
         displayName: string;
     };
     Item: ({ ...props }: import("./DropdownItem").DropdownItemProps) => JSX.Element;
+    Arrow: () => JSX.Element;
 };
 export default Dropdown;

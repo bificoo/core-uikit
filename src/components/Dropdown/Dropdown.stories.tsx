@@ -67,3 +67,24 @@ export const InlineStyle: Story<DropdownProps> = () => {
     </Dropdown>
   )
 }
+
+export const Arrow: Story<DropdownProps> = () => {
+  return (
+    <Dropdown>
+      <Dropdown.Toggle>
+        <Button>
+          Page actions
+          <Dropdown.Arrow />
+        </Button>
+      </Dropdown.Toggle>
+      <Dropdown.Menu>
+        <Dropdown.Item eventKey="edit">Edit</Dropdown.Item>
+        <Dropdown.Item eventKey="share">Share</Dropdown.Item>
+        <Dropdown.Item eventKey="move">Move</Dropdown.Item>
+        <Dropdown.Item eventKey="clone">Clone</Dropdown.Item>
+        <Dropdown.Item eventKey="delete">Delete</Dropdown.Item>
+        <Dropdown.Item eventKey="report">Report</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  )
+}

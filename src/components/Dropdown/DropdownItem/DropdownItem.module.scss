@@ -9,18 +9,10 @@
   transition: all 0.2s;
   cursor: pointer;
 
-  &.active {
-    background-color: rgb(179, 212, 255);
+  &:hover {
+    background-color: rgb(244, 245, 247);
     color: rgb(23, 43, 77);
     text-decoration: none;
-  }
-
-  &:hover {
-    &:not(.active) {
-      background-color: rgb(244, 245, 247);
-      color: rgb(23, 43, 77);
-      text-decoration: none;
-    }
   }
 
   &:active {

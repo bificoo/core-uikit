@@ -8,14 +8,10 @@ export type DropdownItemProps = {
 } & ReactProps.Component
 
 const DropdownItem = ({ ...props }: DropdownItemProps) => {
-  const { activeKey, setActiveKey } = useContext(DropdownContext)
+  const { setActiveKey } = useContext(DropdownContext)
   return (
     <div
-      className={cx(
-        styled.wrapper,
-        { [styled.active]: props.eventKey === activeKey },
-        props.className,
-      )}
+      className={cx(styled.wrapper, props.className)}
       onClick={e => setActiveKey(e, { eventKey: props.eventKey })}>
       {props.children}
     </div>

@@ -5,7 +5,7 @@ import styled from "./FormCheckbox.module.scss"
 
 export type FormCheckboxProps = {
   inline?: boolean
-} & Omit<JSXProps.InputElement, "type" | "css">
+} & Omit<JSXProps.InputElement, "type">
 
 const FormCheckbox = React.forwardRef(function FormCheckbox(
   { children, inline, ...props }: FormCheckboxProps,

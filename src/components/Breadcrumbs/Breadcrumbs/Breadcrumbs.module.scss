@@ -1,0 +1,11 @@
+.items{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.items > li:last-child::after{
+    content: "";
+}
+

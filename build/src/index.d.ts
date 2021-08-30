@@ -1,7 +1,7 @@
 export { default as Badge } from "./components/Badge";
 export type { BadgeProps } from "./components/Badge";
 export { default as Breadcrumbs } from "./components/Breadcrumbs";
-export type { BreadcrumbsItemProps } from "./components/Breadcrumbs";
+export type { BreadcrumbsProps, BreadcrumbsItemProps } from "./components/Breadcrumbs";
 export { default as Button, LinkButton } from "./components/Button";
 export type { ButtonProps, LinkButtonProps } from "./components/Button";
 export { default as Dropdown } from "./components/Dropdown";

@@ -1,4 +1,5 @@
 import BreadcrumbsBase from "./Breadcrumbs"
+export type { BreadcrumbsProps } from "./Breadcrumbs"
 
 import BreadcrumbsItem from "./BreadcrumbsItem"
 export type { BreadcrumbsItemProps } from "./BreadcrumbsItem"

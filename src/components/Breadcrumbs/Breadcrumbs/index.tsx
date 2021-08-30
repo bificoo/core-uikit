@@ -1,6 +1,6 @@
 import styled from "./Breadcrumbs.module.scss"
 
-type BreadcrumbsProps = ReactProps.WithChildren
+export type BreadcrumbsProps = ReactProps.WithChildren
 
 const Breadcrumbs = (props: BreadcrumbsProps) => {
   return (

@@ -49,7 +49,7 @@ Chinese.args = {
   children: "複選選項",
 }
 
-export const VerticalMulti = () => {
+export const CheckboxGroup = () => {
   return (
     <>
       <Form.Checkbox>Checkbox1</Form.Checkbox>
@@ -58,7 +58,7 @@ export const VerticalMulti = () => {
   )
 }
 
-export const HorizontalMulti = () => {
+export const InlineCheckboxGroup = () => {
   return (
     <Form.Group>
       <Form.Label>請選擇檢視下載欄位：</Form.Label>

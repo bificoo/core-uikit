@@ -35,7 +35,7 @@ Chinese.args = {
   children: "單選選項",
 }
 
-export const VerticalMulti = () => {
+export const RadioGroup = () => {
   return (
     <>
       <Form.Radio>Radio1</Form.Radio>
@@ -44,7 +44,7 @@ export const VerticalMulti = () => {
   )
 }
 
-export const HorizontalMulti = () => {
+export const InlineRadioGroup = () => {
   return (
     <>
       <Form.Radio inline>Radio1</Form.Radio>

@@ -2,7 +2,7 @@ import { Story, Meta } from "@storybook/react"
 
 import Form, { FormRadioProps } from "components/Form"
 export default {
-  title: "Components/Form/Radio",
+  title: "Data Entry/Form.Radio",
   component: Form.Radio,
   argTypes: {
     className: {

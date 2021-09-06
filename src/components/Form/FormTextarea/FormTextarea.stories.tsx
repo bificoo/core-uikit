@@ -2,7 +2,7 @@ import { Story, Meta } from "@storybook/react"
 
 import Form, { FormTextareaProps } from "components/Form"
 export default {
-  title: "Components/Form/Textarea",
+  title: "Data Entry/Form.Textarea",
   component: Form.Textarea,
   argTypes: {
     className: {

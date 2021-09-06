@@ -2,7 +2,7 @@ import { Story, Meta } from "@storybook/react"
 import Tabs, { TabsProps } from "components/Tabs"
 
 export default {
-  title: "Components/Tabs",
+  title: "Navigation/Tabs",
   component: Tabs,
   argTypes: {
     className: {

@@ -1,7 +1,7 @@
 import { Story, Meta } from "@storybook/react"
 import Form, { FormInputProps } from "components/Form"
 export default {
-  title: "Components/Form/Input",
+  title: "Data Entry/Form.Input",
   component: Form.Input,
   argTypes: {
     className: {

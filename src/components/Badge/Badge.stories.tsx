@@ -2,7 +2,7 @@ import { Story, Meta } from "@storybook/react"
 import Badge, { BadgeProps } from "components/Badge"
 
 export default {
-  title: "Components/Badge",
+  title: "Data Display/Badge",
   component: Badge,
   argTypes: {
     className: {

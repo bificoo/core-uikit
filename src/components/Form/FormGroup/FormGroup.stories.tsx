@@ -2,7 +2,7 @@ import { Story, Meta } from "@storybook/react"
 
 import Form from "components/Form"
 export default {
-  title: "Components/Form/Group",
+  title: "Data Entry/Form.Group",
   component: Form.Group,
   subcomponents: { FormInput: Form.Input },
   argTypes: {

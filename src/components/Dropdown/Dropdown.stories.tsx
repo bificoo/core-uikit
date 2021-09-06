@@ -4,7 +4,7 @@ import Button from "components/Button"
 import React from "react"
 
 export default {
-  title: "Components/Dropdown",
+  title: "Navigation/Dropdown",
   component: Dropdown,
   argTypes: {
     className: {

@@ -4,7 +4,7 @@ import Tooltip, { TooltipProps } from "./index"
 import React from "react"
 
 export default {
-  title: "Components/Tooltip",
+  title: "General/Tooltip",
   component: Tooltip,
   argTypes: {
     className: {

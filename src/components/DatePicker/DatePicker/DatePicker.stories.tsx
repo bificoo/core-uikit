@@ -4,7 +4,7 @@ import DatePicker, { DatePickerProps } from "components/DatePicker"
 import React from "react"
 
 export default {
-  title: "Components/Date/DatePicker",
+  title: "Data Entry/DatePicker",
   component: DatePicker,
   argTypes: {
     className: {

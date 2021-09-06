@@ -2,7 +2,7 @@ import { Story, Meta } from "@storybook/react"
 
 import Form, { InputGroup, Prepend, Append } from "components/Form"
 export default {
-  title: "Components/Form/InputGroup",
+  title: "Data Entry/InputGroup",
   component: InputGroup,
   subcomponents: { Prepend, Append },
   argTypes: {

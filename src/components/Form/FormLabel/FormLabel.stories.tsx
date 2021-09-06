@@ -2,7 +2,7 @@ import { Story, Meta } from "@storybook/react"
 
 import Form, { FormLabelProps } from "components/Form"
 export default {
-  title: "Components/Form/Label",
+  title: "Data Entry/Form.Label",
   component: Form.Checkbox,
   argTypes: {
     className: {

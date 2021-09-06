@@ -4,7 +4,7 @@ import { RangePicker, RangePickerProps } from "components/DatePicker"
 import React from "react"
 
 export default {
-  title: "Components/Date/RangePicker",
+  title: "Data Entry/RangePicker",
   component: RangePicker,
   argTypes: {
     className: {

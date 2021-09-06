@@ -2,7 +2,7 @@ import { Story, Meta } from "@storybook/react"
 
 import Form, { FormCheckboxProps } from "components/Form"
 export default {
-  title: "Components/Form/Checkbox",
+  title: "Data Entry/Form.Checkbox",
   component: Form.Checkbox,
   argTypes: {
     className: {

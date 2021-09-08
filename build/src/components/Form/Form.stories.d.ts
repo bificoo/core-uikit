@@ -4,3 +4,4 @@ export default _default;
 export declare const VerticalForm: Story;
 export declare const HorizontalForm: Story;
 export declare const MixedLayoutForm: Story;
+export declare const Validation: Story;

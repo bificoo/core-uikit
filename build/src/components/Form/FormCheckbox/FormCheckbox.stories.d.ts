@@ -8,5 +8,5 @@ export declare const Checked: Story<FormCheckboxProps>;
 export declare const Disabled: Story<FormCheckboxProps>;
 export declare const DisabledChecked: Story<FormCheckboxProps>;
 export declare const Chinese: Story<FormCheckboxProps>;
-export declare const VerticalMulti: () => JSX.Element;
-export declare const HorizontalMulti: () => JSX.Element;
+export declare const CheckboxGroup: () => JSX.Element;
+export declare const InlineCheckboxGroup: () => JSX.Element;

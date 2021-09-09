@@ -103,7 +103,7 @@ export const HorizontalForm: Story = () => (
 )
 
 export const MixedLayoutForm: Story = () => (
-  <Form labelWidth={100}>
+  <Form>
     <Form.Group layout="vertical">
       <Form.Label>Email address</Form.Label>
       <Form.Input placeholder="name@example.com" />
@@ -116,12 +116,12 @@ export const MixedLayoutForm: Story = () => (
       <Form.Label>Feedback</Form.Label>
       <Form.Textarea />
     </Form.Group>
-    <Form.Group>
+    <Form.Group labelWidth={100}>
       <Form.Label>Sex</Form.Label>
       <Form.Radio name="sex">Male</Form.Radio>
       <Form.Radio name="sex">Female</Form.Radio>
     </Form.Group>
-    <Form.Group>
+    <Form.Group labelWidth={100}>
       <Form.Label>Interesting</Form.Label>
       <Form.Checkbox name="sex">Apple</Form.Checkbox>
       <Form.Checkbox name="sex">Orange</Form.Checkbox>
@@ -131,7 +131,6 @@ export const MixedLayoutForm: Story = () => (
   </Form>
 )
 
-let renderCount = 0
 export const Validation: Story = () => {
   const {
     register,
@@ -139,10 +138,8 @@ export const Validation: Story = () => {
     formState: { errors },
   } = useForm<Inputs>()
   const onSubmit: SubmitHandler<Inputs> = useCallback(data => console.log(data), [])
-  renderCount++
   return (
-    <Form labelWidth={100} onSubmit={handleSubmit(onSubmit)}>
-      <p>renderCount: {renderCount}</p>
+    <Form onSubmit={handleSubmit(onSubmit)}>
       <Form.Group>
         <Form.Label>Email address</Form.Label>
         <Form.Input {...register("email")} placeholder="name@example.com" />

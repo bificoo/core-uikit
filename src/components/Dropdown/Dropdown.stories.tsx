@@ -56,7 +56,13 @@ export const InlineStyle: Story<DropdownProps> = () => {
       <Dropdown.Toggle>
         <Button>Page actions</Button>
       </Dropdown.Toggle>
-      <Dropdown.Menu style={{ width: "200px" }}>
+      <Dropdown.Menu
+        style={{
+          width: "120px",
+          left: "50%",
+          position: "absolute",
+          transform: "translateX(-50%)",
+        }}>
         <Dropdown.Item eventKey="edit">Edit</Dropdown.Item>
         <Dropdown.Item eventKey="share">Share</Dropdown.Item>
         <Dropdown.Item eventKey="move">Move</Dropdown.Item>

@@ -2,7 +2,6 @@ import React, { useRef, useState, useEffect } from "react"
 import DayPickerInput from "react-day-picker/DayPickerInput"
 import { DayPickerInputProps, DayPickerProps } from "react-day-picker/types"
 import Form from "components/Form"
-import useOutsideEvent from "hooks/useOutsideEvent"
 import day from "utils/day"
 import { formatDate, parseDate } from "../utils"
 import styled from "./DatePicker.module.scss"
@@ -18,12 +17,11 @@ export type DatePickerProps = {
 
 const DatePicker = ({ dateFormat = "YYYY-MM-DD", ...props }: DatePickerProps) => {
   const [date, setDate] = useState(props.date || new Date())
-  const datePickerContainerRef = useRef(null)
   const datePickerInputRef = useRef<DayPickerInput>(null)
 
   const dayPickerProps: DayPickerProps = {
     weekdaysShort: ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"],
-    onDayClick: (date: Date, { selected, disabled }) => {
+    onDayClick: (date: Date, { disabled }) => {
       if (disabled) return
       setDate(date)
       props?.onChange && props.onChange(date)
@@ -41,21 +39,13 @@ const DatePicker = ({ dateFormat = "YYYY-MM-DD", ...props }: DatePickerProps) =>
     }
   }
 
-  useOutsideEvent({
-    refs: [datePickerContainerRef],
-    onClickOutside: () => {
-      datePickerInputRef?.current?.hideDayPicker()
-    },
-  })
-
   useEffect(() => {
     setDate(props.date)
   }, [props.date])
 
   return (
-    <div ref={datePickerContainerRef}>
+    <div>
       <DayPickerInput
-        ref={datePickerInputRef}
         classNames={{
           container: styled.container,
           overlay: styled.overlay,
@@ -65,10 +55,21 @@ const DatePicker = ({ dateFormat = "YYYY-MM-DD", ...props }: DatePickerProps) =>
         format={dateFormat}
         formatDate={formatDate}
         parseDate={parseDate}
-        hideOnDayClick={false}
         placeholder={props.placeholder || day(new Date()).format(dateFormat)}
-        component={(props: DayPickerInputProps["component"]) => <Form.Input {...props} />}
+        component={React.forwardRef(function FormInput(
+          props: DayPickerInputProps["component"],
+          ref,
+        ) {
+          return <Form.Input ref={ref} {...props} />
+        })}
         dayPickerProps={dayPickerProps}
+        inputProps={{
+          ref: datePickerInputRef,
+          readOnly: true,
+          style: {
+            cursor: "pointer",
+          },
+        }}
       />
     </div>
   )

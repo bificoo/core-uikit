@@ -52,6 +52,10 @@
         }
       }
 
+      .DayPicker-Months {
+        flex-wrap: nowrap;
+      }
+
       .DayPicker-Month {
         width: 310px;
         margin: 0;

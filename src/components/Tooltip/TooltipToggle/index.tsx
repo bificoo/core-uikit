@@ -11,9 +11,9 @@ const TooltipToggle = forwardRef<Ref, TooltipToggleProps>(function TooltipToggle
   ref,
 ) {
   return (
-    <div className={props.className} onClick={props.onClick} ref={ref}>
+    <span className={props.className} onClick={props.onClick} ref={ref}>
       {props.children}
-    </div>
+    </span>
   )
 })
 

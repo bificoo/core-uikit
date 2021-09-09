@@ -1,0 +1,26 @@
+.wrapper {
+  :global {
+    .rs-table-row {
+      border-bottom: 1px solid #dfe1e6;
+      color: #172b4d;
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    }
+
+    .rs-table-row-header {
+      border-bottom: 2px solid #dfe1e6;
+    }
+
+    .rs-table-cell-header {
+      .rs-table-cell-content {
+        color: #7a869a;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1.66666667;
+        letter-spacing: 0;
+        text-transform: none;
+        height: auto !important;
+      }
+    }
+
+  }
+}

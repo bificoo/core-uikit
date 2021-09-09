@@ -1,12 +1,19 @@
 const path = require("path")
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   webpackFinal: async (config, { configType }) => {
+    config.plugins.push(new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }))
     config.module.rules.push(
       {
         test: /\.less$/,
         use: [
-          require.resolve('style-loader'),
+          MiniCssExtractPlugin.loader,
           require.resolve('css-loader'),
           {
             loader: require.resolve('less-loader'),

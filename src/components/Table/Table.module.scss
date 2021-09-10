@@ -22,5 +22,12 @@
       }
     }
 
+    .rs-table-hover {
+      .rs-table-row:not(.rs-table-row-header):hover {
+        .rs-table-cell-group, .rs-table-cell {
+          background-color: #fafbfc;
+        }
+      }
+    }
   }
 }

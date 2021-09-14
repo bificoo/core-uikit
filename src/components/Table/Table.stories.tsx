@@ -1,11 +1,12 @@
 import React, { useState } from "react"
 import { Meta } from "@storybook/react"
-import Table, { TableProps, TableCellProps } from "components/Table"
-import Form, { FormCheckboxProps } from "components/Form"
-import { LinkButton } from "components/Button"
+import Table, { TableProps, TableCellProps, TablePaginationProps } from "components/Table"
+import Form from "components/Form"
+import Dropdown from "components/Dropdown"
+import Button, { LinkButton } from "components/Button"
 import fakeData from "./users.json"
 import Tooltip from "../Tooltip"
-
+import RsuiteTable from "rsuite/lib/Table"
 const { Column, HeaderCell, Cell, Pagination } = Table
 
 type usersProps = {
@@ -439,7 +440,7 @@ export const CustomColumnTable = () => {
 
   return (
     <div>
-      <Table height={420} data={fakeData} id="table" rowHeight={72}>
+      <Table height={400} data={fakeData} id="table" rowHeight={72}>
         <Column width={50} align="center" verticalAlign="middle">
           <HeaderCell style={{ padding: 0 }}>
             <Form.Checkbox checked={checked} onChange={handleCheckAll} />
@@ -470,7 +471,6 @@ export const CustomColumnTable = () => {
 }
 
 export const SortTable = () => {
-  const [addColumn, setAddColumn] = useState(false)
   const [sortColumn, setSortColumn] = useState<string | undefined>()
   const [sortType, setSortType] = useState<TableProps["sortType"] | undefined>()
   const [loading, setLoading] = useState(false)
@@ -511,7 +511,7 @@ export const SortTable = () => {
   return (
     <div>
       <Table
-        height={420}
+        height={400}
         data={getData()}
         sortColumn={sortColumn}
         sortType={sortType}
@@ -545,6 +545,84 @@ export const SortTable = () => {
           <Cell dataKey="companyName" />
         </Column>
       </Table>
+    </div>
+  )
+}
+
+export const PaginationTable = () => {
+  const [loading, setLoading] = React.useState(false)
+  const [limit, setLimit] = React.useState(2)
+  const [page, setPage] = React.useState(1)
+
+  const handleSelect = (dataKey: number) => {
+    console.info("handleSelect", dataKey)
+    setPage(dataKey)
+  }
+
+  const handleChangeLength = (dataKey: number) => {
+    console.info("handleChangeLength", dataKey)
+    setPage(1)
+    setLimit(dataKey)
+  }
+
+  const data = fakeData.filter((v, i) => {
+    const start = limit * (page - 1)
+    const end = start + limit
+    return i >= start && i < end
+  })
+
+  return (
+    <div>
+      <Table height={400} data={data} loading={loading}>
+        <Column width={50} align="center" fixed>
+          <HeaderCell>Id</HeaderCell>
+          <Cell dataKey="id" />
+        </Column>
+
+        <Column width={100} fixed>
+          <HeaderCell>First Name</HeaderCell>
+          <Cell dataKey="firstName" />
+        </Column>
+
+        <Column width={100}>
+          <HeaderCell>Last Name</HeaderCell>
+          <Cell dataKey="lastName" />
+        </Column>
+
+        <Column width={200}>
+          <HeaderCell>City</HeaderCell>
+          <Cell dataKey="city" />
+        </Column>
+        <Column width={200} flexGrow={1}>
+          <HeaderCell>Company Name</HeaderCell>
+          <Cell dataKey="companyName" />
+        </Column>
+      </Table>
+      <RsuiteTable.Pagination
+        lengthMenu={[
+          {
+            value: 2,
+            label: 2,
+          },
+          {
+            value: 4,
+            label: 4,
+          },
+        ]}
+        // prev
+        // next
+        // first
+        // last
+        // showLengthMenu
+        // showInfo
+        maxButtons={6}
+        pages={fakeData.length / limit}
+        activePage={page}
+        displayLength={limit}
+        total={fakeData.length}
+        onSelect={handleSelect}
+        onChangeLength={handleChangeLength}
+      />
     </div>
   )
 }

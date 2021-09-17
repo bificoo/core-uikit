@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export declare type DropdownItemProps = {
     eventKey: ReactProps.EventKey;
 } & ReactProps.Component;

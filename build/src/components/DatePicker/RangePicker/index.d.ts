@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export declare type RangePickerProps = {
     startDate?: Date;
     endDate?: Date;

@@ -1,3 +1,19 @@
-import Table from "rsuite/lib/Table";
+import React from "react";
+import { TableProps as RsuiteTableProps, ColumnGroupProps } from "rsuite/lib/Table";
 import "rsuite/lib/Table/styles";
+import "rsuite/lib/Pagination/styles";
+import "rsuite/lib/SelectPicker/styles";
+import "rsuite/lib/Divider/styles";
+export type { TableColumnProps, TableCellProps, TableInstance } from "rsuite/lib/Table";
+export declare type TableColumnGroupProps = ColumnGroupProps;
+export declare type TableProps = {
+    limitMenu?: number[];
+} & RsuiteTableProps;
+declare const Table: {
+    ({ limitMenu, maxButtons, data, ...props }: TableProps): JSX.Element;
+    Column: React.ComponentType<import("rsuite/lib/Table").TableColumnProps>;
+    ColumnGroup: React.ComponentType<ColumnGroupProps>;
+    HeaderCell: React.ComponentType<import("rsuite/lib/@types/common").StandardProps>;
+    Cell: React.ComponentType<import("rsuite/lib/Table").TableCellProps>;
+};
 export default Table;

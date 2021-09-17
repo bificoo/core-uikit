@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export declare type FormLabelProps = JSXProps.LabelElement & {
     required?: boolean;
 };

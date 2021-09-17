@@ -1,5 +1,12 @@
-/// <reference types="react" />
 import { Meta } from "@storybook/react";
 declare const _default: Meta<import("@storybook/react").Args>;
 export default _default;
-export declare const Default: () => JSX.Element;
+export declare const DefaultTable: () => JSX.Element;
+export declare const VirtualizedLargeTable: () => JSX.Element;
+export declare const ResizableTable: () => JSX.Element;
+export declare const FluidTable: () => JSX.Element;
+export declare const FixedColumnTable: () => JSX.Element;
+export declare const WordWrapTable: () => JSX.Element;
+export declare const CustomColumnTable: () => JSX.Element;
+export declare const SortTable: () => JSX.Element;
+export declare const PaginationTable: () => JSX.Element;

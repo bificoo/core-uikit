@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export type { TooltipProps } from "./Tooltip";
 export type { TooltipToggleProps } from "./TooltipToggle";
 declare const Tooltip: (({ on, position, arrow, ...props }: import("reactjs-popup/dist/types").PopupProps) => JSX.Element) & {

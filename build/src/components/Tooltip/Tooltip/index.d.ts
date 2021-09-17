@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { PopupProps } from "reactjs-popup/dist/types";
 import "./Tooltip.module.scss";
 export declare type TooltipProps = PopupProps;

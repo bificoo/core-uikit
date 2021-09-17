@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export type { FormProps } from "./Form";
 export type { FormLabelProps } from "./FormLabel";
 export type { FormInputProps } from "./FormInput";

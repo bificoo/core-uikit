@@ -1,5 +1,4 @@
-/// <reference types="react" />
-export type { DropdownProps } from "./Dropdown";
+export type { DropdownProps, DropdownSelectEventProps } from "./Dropdown";
 export type { DropdownToggleProps } from "./DropdownToggle";
 export type { DropdownMenuProps } from "./DropdownMenu";
 export type { DropdownItemProps } from "./DropdownItem";
@@ -12,6 +11,6 @@ declare const Dropdown: (({ ...props }: import("./Dropdown").DropdownProps) => J
         displayName: string;
     };
     Item: ({ ...props }: import("./DropdownItem").DropdownItemProps) => JSX.Element;
-    Arrow: () => JSX.Element;
+    Arrow: ({ direction }: import("./DropdownArrow").DropdownArrowProps) => JSX.Element;
 };
 export default Dropdown;

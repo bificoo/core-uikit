@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export declare type TabProps = {
     title: string;
     eventKey: ReactProps.EventKey;

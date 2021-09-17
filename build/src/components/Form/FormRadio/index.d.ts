@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export declare type FormRadioProps = {
     inline?: boolean;
 } & Omit<JSXProps.InputElement, "type">;

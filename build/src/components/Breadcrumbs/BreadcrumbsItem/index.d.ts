@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export declare type BreadcrumbsItemProps = {
     href?: string;
     text: string;

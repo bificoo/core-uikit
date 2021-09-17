@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export declare type DatePickerProps = {
     date: Date;
     minDate?: Date;

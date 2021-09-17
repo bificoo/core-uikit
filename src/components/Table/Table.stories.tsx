@@ -1,13 +1,11 @@
 import React, { useState } from "react"
 import { Meta } from "@storybook/react"
-import Table, { TableProps, TableCellProps, TablePaginationProps } from "components/Table"
+import Table, { TableProps, TableCellProps } from "components/Table"
 import Form from "components/Form"
-import Dropdown from "components/Dropdown"
-import Button, { LinkButton } from "components/Button"
+import { LinkButton } from "components/Button"
 import fakeData from "./users.json"
 import Tooltip from "../Tooltip"
-import RsuiteTable from "rsuite/lib/Table"
-const { Column, HeaderCell, Cell, Pagination } = Table
+const { Column, HeaderCell, Cell } = Table
 
 type usersProps = {
   id: number
@@ -551,29 +549,10 @@ export const SortTable = () => {
 
 export const PaginationTable = () => {
   const [loading, setLoading] = React.useState(false)
-  const [limit, setLimit] = React.useState(2)
-  const [page, setPage] = React.useState(1)
-
-  const handleSelect = (dataKey: number) => {
-    console.info("handleSelect", dataKey)
-    setPage(dataKey)
-  }
-
-  const handleChangeLength = (dataKey: number) => {
-    console.info("handleChangeLength", dataKey)
-    setPage(1)
-    setLimit(dataKey)
-  }
-
-  const data = fakeData.filter((v, i) => {
-    const start = limit * (page - 1)
-    const end = start + limit
-    return i >= start && i < end
-  })
 
   return (
     <div>
-      <Table height={400} data={data} loading={loading}>
+      <Table height={400} data={fakeData} loading={loading}>
         <Column width={50} align="center" fixed>
           <HeaderCell>Id</HeaderCell>
           <Cell dataKey="id" />
@@ -598,31 +577,6 @@ export const PaginationTable = () => {
           <Cell dataKey="companyName" />
         </Column>
       </Table>
-      <RsuiteTable.Pagination
-        lengthMenu={[
-          {
-            value: 2,
-            label: 2,
-          },
-          {
-            value: 4,
-            label: 4,
-          },
-        ]}
-        // prev
-        // next
-        // first
-        // last
-        // showLengthMenu
-        // showInfo
-        maxButtons={6}
-        pages={fakeData.length / limit}
-        activePage={page}
-        displayLength={limit}
-        total={fakeData.length}
-        onSelect={handleSelect}
-        onChangeLength={handleChangeLength}
-      />
     </div>
   )
 }

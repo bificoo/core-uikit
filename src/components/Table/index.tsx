@@ -11,20 +11,18 @@ export type { TableColumnProps, TableCellProps, TableInstance } from "rsuite/lib
 export type TableColumnGroupProps = ColumnGroupProps
 
 export type TableProps = {
-  limits?: number[]
+  limitMenu?: number[]
 } & RsuiteTableProps
 
-const Table = ({ limits = [2, 4], maxButtons = 5, data = [], ...props }: TableProps) => {
-  const [limit, setLimit] = useState(limits[0])
+const Table = ({ limitMenu = [2, 4], maxButtons = 5, data = [], ...props }: TableProps) => {
+  const [limit, setLimit] = useState(limitMenu[0])
   const [page, setPage] = useState(1)
 
   const handleSelect = (dataKey: number) => {
-    console.info("handleSelect", dataKey)
     setPage(dataKey)
   }
 
   const handleChangeLength = (dataKey: number) => {
-    console.info("handleChangeLength", dataKey)
     setPage(1)
     setLimit(dataKey)
   }
@@ -44,24 +42,10 @@ const Table = ({ limits = [2, 4], maxButtons = 5, data = [], ...props }: TablePr
           pages={data.length / limit}
           activePage={page}
           total={data.length}
+          limitMenu={limitMenu}
+          limit={limit}
           onSelect={handleSelect}
-        />
-      )}
-      {data && data.length !== 0 && (
-        <RsuiteTable.Pagination
-          lengthMenu={limits.map((limit: number) => ({
-            value: limit,
-            label: limit,
-          }))}
-          first={false}
-          last={false}
-          maxButtons={maxButtons}
-          pages={data.length / limit}
-          activePage={page}
-          displayLength={limit}
-          total={data.length}
-          onSelect={handleSelect}
-          onChangeLength={handleChangeLength}
+          onLimitChange={handleChangeLength}
         />
       )}
     </div>

@@ -4,3 +4,8 @@
   cursor: pointer;
 }
 
+:global {
+  .dropdown-content {
+    padding: 10px 0 !important;
+  }
+}

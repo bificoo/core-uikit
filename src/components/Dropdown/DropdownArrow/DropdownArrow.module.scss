@@ -1,13 +1,14 @@
 .wrapper {
   width: 24px;
   height: 24px;
-  display: inline-block;
+  display: inline-flex;
   flex-shrink: 0;
   line-height: 1;
   --icon-primary-color: currentColor;
   --icon-secondary-color: #FFFFFF;
 
   > svg {
+    display: block;
     overflow: hidden;
     pointer-events: none;
     max-width: 100%;
@@ -15,5 +16,12 @@
     color: var(--icon-primary-color);
     fill: var(--icon-secondary-color);
     vertical-align: bottom;
+  }
+
+  &.direction-up {
+    transform: rotate(180deg);
+  }
+
+  &.direction-down {
   }
 }

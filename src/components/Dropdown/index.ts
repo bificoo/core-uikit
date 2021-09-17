@@ -1,5 +1,5 @@
 import DropdownBase from "./Dropdown"
-export type { DropdownProps } from "./Dropdown"
+export type { DropdownProps, DropdownSelectEventProps } from "./Dropdown"
 
 import DropdownToggle from "./DropdownToggle"
 export type { DropdownToggleProps } from "./DropdownToggle"

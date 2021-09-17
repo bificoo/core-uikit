@@ -7,12 +7,13 @@ import DropdownToggle from "../DropdownToggle"
 import DropdownMenu from "../DropdownMenu"
 import styled from "./Dropdown.module.scss"
 
+export type DropdownSelectEventProps = { eventKey?: ReactProps.EventKey }
 export type DropdownProps = {
   defaultActiveKey?: ReactProps.EventKey
   style?: React.CSSProperties
   onSelect?: (
     e: React.MouseEvent<Element, MouseEvent>,
-    { eventKey }: { eventKey?: ReactProps.EventKey },
+    { eventKey }: DropdownSelectEventProps,
   ) => void
 } & ReactProps.Component
 
@@ -53,6 +54,7 @@ const Dropdown = ({ ...props }: DropdownProps) => {
       <div className={cx(styled.wrapper, props.className)} style={props.style}>
         <Popup
           ref={popupRef}
+          className="dropdown"
           trigger={open => dropdown.trigger && React.cloneElement(dropdown.trigger, { open })}
           position={["bottom center", "top center"]}
           keepTooltipInside

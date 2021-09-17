@@ -1,6 +1,9 @@
 import { ReactComponent as ArrowIcon } from "./arrow.svg"
 import cx from "classnames"
 import styled from "./Pagination.module.scss"
+import Dropdown, { DropdownSelectEventProps } from "../Dropdown"
+import Button from "../Button"
+import React from "react"
 
 const getRange = ({
   activePage,
@@ -38,7 +41,10 @@ export type PaginationProps = {
   pages: number
   activePage?: number
   maxButtons?: number
+  limit?: number
+  limitMenu?: number[]
   onSelect?: (page: number) => void
+  onLimitChange?: (limit: number) => void
 }
 
 const Pagination = ({ activePage = 1, maxButtons = 5, ...props }: PaginationProps) => {
@@ -47,11 +53,36 @@ const Pagination = ({ activePage = 1, maxButtons = 5, ...props }: PaginationProp
     if (page === activePage) return
     props.onSelect && props.onSelect(page)
   }
+  const handleSelectLimit = (e: React.MouseEvent, { eventKey }: DropdownSelectEventProps) => {
+    if (eventKey && props.onLimitChange) {
+      props.onLimitChange(+eventKey)
+    }
+  }
 
   return (
     <div className={styled.wrapper}>
-      <div className={styled.total}>
-        總共<span>{props.total}</span>筆
+      <div className={styled.pager}>
+        {props.limitMenu && props.limitMenu.length !== 0 && (
+          <Dropdown className={styled.limit} onSelect={handleSelectLimit}>
+            <Dropdown.Toggle>
+              <Button variant="secondary">
+                {props.limit} <Dropdown.Arrow />
+              </Button>
+            </Dropdown.Toggle>
+            <Dropdown.Menu style={{ width: "59px" }}>
+              {props.limitMenu.map(limit => (
+                <Dropdown.Item key={limit} eventKey={limit}>
+                  {limit}
+                </Dropdown.Item>
+              ))}
+            </Dropdown.Menu>
+          </Dropdown>
+        )}
+        <span>/ 頁</span>
+        <div className={styled.divider} />
+        <div className={styled.total}>
+          總共<span>{props.total}</span>筆
+        </div>
       </div>
       <div className={styled.pages}>
         <div

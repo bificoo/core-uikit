@@ -1,0 +1,7 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var getGlobal = {};
+
+exports.__exports = getGlobal;

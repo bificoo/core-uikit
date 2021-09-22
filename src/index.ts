@@ -36,6 +36,14 @@ export type {
 // export { default as Modal } from "./components/Modal"
 // export type { ModalProps } from "./components/Modal"
 
+export { default as Table } from "./components/Table"
+export type {
+  TableProps,
+  TableCellProps,
+  TableColumnProps,
+  TableColumnGroupProps,
+} from "./components/Table"
+
 export { default as Tabs } from "./components/Tabs"
 export type { TabsProps, TabProps } from "./components/Tabs"
 

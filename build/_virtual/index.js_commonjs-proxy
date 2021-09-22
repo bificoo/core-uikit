@@ -1,0 +1,10 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var _commonjsHelpers = require('./_commonjsHelpers.js');
+var index = require('../node_modules/rsuite-table/es/index.js');
+
+var require$$1 = /*@__PURE__*/_commonjsHelpers.getAugmentedNamespace(index);
+
+exports['default'] = require$$1;

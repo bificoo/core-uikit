@@ -1,0 +1,7 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var _cloneBuffer = {exports: {}};
+
+exports._cloneBuffer = _cloneBuffer;

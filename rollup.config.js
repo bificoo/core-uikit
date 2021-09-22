@@ -26,12 +26,18 @@ export default {
     postcss({
       extract: false,
       modules: true,
-      extensions: [".css", ".sass", ".scss"],
+      extensions: [".css", ".sass", ".scss", ".less"],
       use: [
         [
           "sass",
           {
             includePaths: [path.resolve("src"), path.resolve("node_modules")],
+          },
+        ],
+        [
+          "less",
+          {
+            javascriptEnabled: true,
           },
         ],
       ],

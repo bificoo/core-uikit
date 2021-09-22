@@ -2,6 +2,6 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var Divider = {exports: {}};
+var Pagination = {exports: {}};
 
-exports.Divider = Divider;
+exports.Pagination = Pagination;

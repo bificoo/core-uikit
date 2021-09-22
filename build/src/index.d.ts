@@ -8,6 +8,8 @@ export { default as Dropdown } from "./components/Dropdown";
 export type { DropdownProps, DropdownItemProps, DropdownMenuProps, DropdownToggleProps, } from "./components/Dropdown";
 export { default as Form, InputGroup, Prepend, Append } from "./components/Form";
 export type { FormProps, FormLabelProps, FormInputProps, FormTextareaProps, FormCheckboxProps, FormRadioProps, FormFeedbackProps, FormGroupProps, InputGroupProps, PrependProps, AppendProps, } from "./components/Form";
+export { default as Table } from "./components/Table";
+export type { TableProps, TableCellProps, TableColumnProps, TableColumnGroupProps, } from "./components/Table";
 export { default as Tabs } from "./components/Tabs";
 export type { TabsProps, TabProps } from "./components/Tabs";
 export { default as Tooltip } from "./components/Tooltip";

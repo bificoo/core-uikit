@@ -18,6 +18,12 @@ export default {
     exports: "named",
     preserveModules: true,
   },
+  onwarn: function (warning) {
+    if (warning.code === "THIS_IS_UNDEFINED") {
+      return
+    }
+    console.error(warning.message)
+  },
   plugins: [
     peerDepsExternal(),
     commonjs(),

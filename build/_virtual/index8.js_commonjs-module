@@ -2,6 +2,6 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var SafeAnchor = {exports: {}};
+var reactIs = {exports: {}};
 
-exports.SafeAnchor = SafeAnchor;
+exports.reactIs = reactIs;

@@ -2,6 +2,6 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var Icon = {exports: {}};
+var reactIs = {exports: {}};
 
-exports.Icon = Icon;
+exports.reactIs = reactIs;

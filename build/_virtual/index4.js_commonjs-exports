@@ -2,6 +2,6 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var List = {};
+var AutoSizer = {};
 
-exports.__exports = List;
+exports.__exports = AutoSizer;

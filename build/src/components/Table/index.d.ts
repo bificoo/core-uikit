@@ -1,9 +1,6 @@
 import React from "react";
 import { TableProps as RsuiteTableProps, ColumnGroupProps } from "rsuite/lib/Table";
 import "rsuite/lib/Table/styles";
-import "rsuite/lib/Pagination/styles";
-import "rsuite/lib/SelectPicker/styles";
-import "rsuite/lib/Divider/styles";
 export type { TableColumnProps, TableCellProps, TableInstance } from "rsuite/lib/Table";
 export declare type TableColumnGroupProps = ColumnGroupProps;
 export declare type TableProps = {

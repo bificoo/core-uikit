@@ -15,6 +15,7 @@ export type {
   DropdownToggleProps,
 } from "./components/Dropdown"
 
+// TODO: 打包後會發生問題，待解決
 // export { default as DatePicker, RangePicker } from "./components/DatePicker"
 // export type { DatePickerProps, RangePickerProps } from "./components/DatePicker"
 
@@ -33,16 +34,18 @@ export type {
   AppendProps,
 } from "./components/Form"
 
+// TODO: 降版 React 後需要調整
 // export { default as Modal } from "./components/Modal"
 // export type { ModalProps } from "./components/Modal"
 
-export { default as Table } from "./components/Table"
-export type {
-  TableProps,
-  TableCellProps,
-  TableColumnProps,
-  TableColumnGroupProps,
-} from "./components/Table"
+// TODO: 打包後會發生 Uncaught TypeError: Cannot set properties of undefined (setting 'exports')，待解決
+// export { default as Table } from "./components/Table"
+// export type {
+//   TableProps,
+//   TableCellProps,
+//   TableColumnProps,
+//   TableColumnGroupProps,
+// } from "./components/Table"
 
 export { default as Tabs } from "./components/Tabs"
 export type { TabsProps, TabProps } from "./components/Tabs"

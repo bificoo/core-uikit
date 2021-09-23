@@ -2,6 +2,6 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var Pagination = {exports: {}};
+var SelectPicker = {exports: {}};
 
-exports.Pagination = Pagination;
+exports.SelectPicker = SelectPicker;

@@ -10,6 +10,7 @@ export type { ButtonProps, LinkButtonProps } from "./components/Button"
 export { default as Dropdown } from "./components/Dropdown"
 export type {
   DropdownProps,
+  DropdownSelectEventProps,
   DropdownItemProps,
   DropdownMenuProps,
   DropdownToggleProps,

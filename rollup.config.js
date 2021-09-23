@@ -18,14 +18,11 @@ export default {
     exports: "named",
     preserveModules: true,
   },
-  // onwarn: function (warning) {
-  //   if (warning.code === "THIS_IS_UNDEFINED") {
-  //     return
-  //   }
-  //   console.error(warning.message)
-  // },
   moduleContext: id => {
-    const thisAsWindowForModules = ["node_modules/dom-lib/es/utils/emptyFunction.js"]
+    const thisAsWindowForModules = [
+      "node_modules/dom-lib/es/utils/emptyFunction.js",
+      "node_modules/@babel/runtime/helpers/interopRequireDefault.js",
+    ]
 
     if (thisAsWindowForModules.some(id_ => id.trimRight().endsWith(id_))) {
       return "window"

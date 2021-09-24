@@ -56,7 +56,7 @@ const Dropdown = ({ ...props }: DropdownProps) => {
           ref={popupRef}
           className="dropdown"
           trigger={open => dropdown.trigger && React.cloneElement(dropdown.trigger, { open })}
-          position={["bottom center", "top center"]}
+          position={["bottom center"]}
           keepTooltipInside
           on="click"
           closeOnDocumentClick
@@ -64,7 +64,6 @@ const Dropdown = ({ ...props }: DropdownProps) => {
           mouseEnterDelay={0}
           arrow={false}
           contentStyle={{
-            width: "100px",
             border: "none",
             padding: "8px",
             boxShadow: "none",

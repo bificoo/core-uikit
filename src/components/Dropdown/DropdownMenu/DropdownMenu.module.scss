@@ -1,9 +1,13 @@
 .wrapper {
+  position: absolute;
   padding: 4px 0;
   max-height: 317.5px;
+  min-width: 100px;
   border-radius: 3px;
   background: rgb(255, 255, 255);
   box-shadow: #091e4240 0px 4px 8px -2px, #091e424f 0px 0px 1px;
+  left: 50%;
+  transform: translateX(-50%);
   overflow: auto;
 }
 

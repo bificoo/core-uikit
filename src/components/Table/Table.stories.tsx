@@ -499,6 +499,8 @@ export const SortTable = () => {
   const handleSortColumn = (sortColumn: string, sortType: TableProps["sortType"]) => {
     setLoading(true)
 
+    console.info(sortColumn, sortType)
+
     setTimeout(() => {
       setSortColumn(sortColumn)
       setSortType(sortType)

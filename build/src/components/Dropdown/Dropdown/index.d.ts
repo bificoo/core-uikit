@@ -5,7 +5,7 @@ export declare type DropdownSelectEventProps = {
 };
 export declare type DropdownProps = {
     defaultActiveKey?: ReactProps.EventKey;
-    position: PopupPosition[];
+    position?: PopupPosition[];
     style?: React.CSSProperties;
     onSelect?: (e: React.MouseEvent<Element, MouseEvent>, { eventKey }: DropdownSelectEventProps) => void;
 } & ReactProps.Component;

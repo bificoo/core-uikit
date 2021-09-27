@@ -10,7 +10,7 @@ import styled from "./Dropdown.module.scss"
 export type DropdownSelectEventProps = { eventKey?: ReactProps.EventKey }
 export type DropdownProps = {
   defaultActiveKey?: ReactProps.EventKey
-  position: PopupPosition[]
+  position?: PopupPosition[]
   style?: React.CSSProperties
   onSelect?: (
     e: React.MouseEvent<Element, MouseEvent>,

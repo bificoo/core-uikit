@@ -2,7 +2,7 @@ import { Story, Meta } from "@storybook/react"
 import Avatar from "components/Avatar"
 
 export default {
-  title: "Navigation/Avatar",
+  title: "Data Display/Avatar",
   component: Avatar,
   argTypes: {},
 } as Meta

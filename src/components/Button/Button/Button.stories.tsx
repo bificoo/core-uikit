@@ -1,6 +1,7 @@
 import { Story, Meta } from "@storybook/react"
 
 import Button, { ButtonProps } from "components/Button"
+import ButtonGroup from "components/Button/ButtonGroup"
 
 export default {
   title: "General/Button",
@@ -47,4 +48,28 @@ Block.args = {
 export const Chinese = Template.bind({})
 Chinese.args = {
   children: "按鈕",
+}
+
+export const Group: Story = () => {
+  return (
+    <div>
+      <ButtonGroup
+        onSelect={(
+          e: React.MouseEvent<Element, MouseEvent>,
+          { eventKey }: { eventKey?: ReactProps.EventKey },
+        ) => {
+          console.info(eventKey)
+        }}>
+        <Button variant="secondary" eventKey="日">
+          日
+        </Button>
+        <Button variant="secondary" eventKey="周">
+          周
+        </Button>
+        <Button variant="secondary" eventKey="月">
+          月
+        </Button>
+      </ButtonGroup>
+    </div>
+  )
 }

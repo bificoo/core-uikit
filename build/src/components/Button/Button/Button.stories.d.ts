@@ -8,3 +8,4 @@ export declare const Important: Story<ButtonProps>;
 export declare const Disabled: Story<ButtonProps>;
 export declare const Block: Story<ButtonProps>;
 export declare const Chinese: Story<ButtonProps>;
+export declare const Group: Story;

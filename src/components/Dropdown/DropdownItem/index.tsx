@@ -7,7 +7,7 @@ export type DropdownItemProps = {
   eventKey: ReactProps.EventKey
 } & ReactProps.Component
 
-const DropdownItem = ({ ...props }: DropdownItemProps) => {
+const DropdownItem = (props: DropdownItemProps) => {
   const { setActiveKey } = useContext(DropdownContext)
   return (
     <div

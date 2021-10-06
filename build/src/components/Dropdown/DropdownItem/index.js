@@ -13,8 +13,7 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 
 var cx__default = /*#__PURE__*/_interopDefaultLegacy(cx);
 
-var DropdownItem = function (_a) {
-    var props = _tslib.__rest(_a, []);
+var DropdownItem = function (props) {
     var setActiveKey = React.useContext(DropdownContext.DropdownContext).setActiveKey;
     return (jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default['default'](DropdownItem_module['default'].wrapper, props.className), onClick: function (e) { return setActiveKey(e, { eventKey: props.eventKey }); } }, { children: props.children }), void 0));
 };

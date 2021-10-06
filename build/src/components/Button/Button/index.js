@@ -14,10 +14,10 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 var cx__default = /*#__PURE__*/_interopDefaultLegacy(cx);
 
 var Button = function (_a) {
-    var _b, _c;
-    var _d = _a.variant, variant = _d === void 0 ? "primary" : _d, _e = _a.block, block = _e === void 0 ? false : _e, className = _a.className, _f = _a.children, children = _f === void 0 ? "Click" : _f, eventKey = _a.eventKey, onClick = _a.onClick, props = _tslib.__rest(_a, ["variant", "block", "className", "children", "eventKey", "onClick"]);
-    var _g = React.useContext(ButtonContext.ButtonContext), activeKey = _g.activeKey, setActiveKey = _g.setActiveKey;
-    return (jsxRuntime.jsx("button", _tslib.__assign({ className: cx__default['default'](Button_module['default'].wrapper, Button_module['default'][variant], (_b = {}, _b[Button_module['default'].block] = block, _b), (_c = {}, _c[Button_module['default'].selected] = eventKey && eventKey === activeKey, _c), className), onClick: function (e) {
+    var _b;
+    var _c = _a.variant, variant = _c === void 0 ? "primary" : _c, _d = _a.block, block = _d === void 0 ? false : _d, className = _a.className, _e = _a.children, children = _e === void 0 ? "Click" : _e, eventKey = _a.eventKey, onClick = _a.onClick, props = _tslib.__rest(_a, ["variant", "block", "className", "children", "eventKey", "onClick"]);
+    var _f = React.useContext(ButtonContext.ButtonContext), activeKey = _f.activeKey, setActiveKey = _f.setActiveKey;
+    return (jsxRuntime.jsx("button", _tslib.__assign({ className: cx__default['default'](Button_module['default'].wrapper, Button_module['default'][variant], (_b = {}, _b[Button_module['default'].block] = block, _b), { active: eventKey && eventKey === activeKey }, className), onClick: function (e) {
             if (eventKey) {
                 setActiveKey(e, { eventKey: eventKey });
             }

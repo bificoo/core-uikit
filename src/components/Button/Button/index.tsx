@@ -17,7 +17,6 @@ export type ButtonProps = {
   /**
    * ButtonGroup使用
    */
-  isSelected?: boolean
   eventKey?: ReactProps.EventKey
 } & JSXProps.ButtonElement
 
@@ -37,7 +36,7 @@ const Button = ({
         styled.wrapper,
         styled[variant],
         { [styled.block]: block },
-        { [styled.selected]: eventKey && eventKey === activeKey },
+        { active: eventKey && eventKey === activeKey },
         className,
       )}
       onClick={e => {

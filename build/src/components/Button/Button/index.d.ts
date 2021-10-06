@@ -9,7 +9,9 @@ export declare type ButtonProps = {
      * @default false
      */
     block?: boolean;
-    isSelected?: boolean;
+    /**
+     * ButtonGroup使用
+     */
     eventKey?: ReactProps.EventKey;
 } & JSXProps.ButtonElement;
 declare const Button: ({ variant, block, className, children, eventKey, onClick, ...props }: ButtonProps) => JSX.Element;

@@ -1,18 +1,28 @@
-@import 'assets/styles/mixins';
+@import "assets/styles/mixins";
 
 .outer {
+  :global {
     button {
-        border-radius: 0 ;
-        min-width: em(50);
+      border-radius: 0;
+      min-width: em(50);
 
+      &.active {
+        color: white;
+        background-color: #253858;
+
+        &:hover {
+          background-color: #253858 !important;
+          color: white !important;
+        }
+      }
     }
+  }
 
-    button:first-child {
-        border-radius: 3px 0 0 3px;
-    }
+  button:first-child {
+    border-radius: 3px 0 0 3px;
+  }
 
-    button:last-child {
-        border-radius: 0 3px 3px 0;
-    }
-
+  button:last-child {
+    border-radius: 0 3px 3px 0;
+  }
 }

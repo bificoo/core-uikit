@@ -48,7 +48,7 @@ export const VerticalForm: Story = () => (
   </Form>
 )
 
-export const HorizontalForm: Story = () => (
+export const HorizontalLabelForm: Story = () => (
   <Form labelWidth={100}>
     <Form.Group>
       <Form.Label>Email address</Form.Label>
@@ -100,6 +100,28 @@ export const HorizontalForm: Story = () => (
     </Form.Group>
     <Button type="submit">Submit</Button>
   </Form>
+)
+
+export const HorizontalForm: Story = () => (
+  <Form.Horizontal>
+    <Form.Group>
+      <Form.Label>Email address</Form.Label>
+      <Form.Input placeholder="name@example.com" />
+    </Form.Group>
+    <Form.Group>
+      <Form.Label>Password</Form.Label>
+      <Form.Input type="password" placeholder="Password" />
+    </Form.Group>
+    <Form.Divider />
+    <Form.Group>
+      <Form.Label>Email address</Form.Label>
+      <Form.Input placeholder="name@example.com" />
+    </Form.Group>
+    <Form.Group>
+      <Form.Label>Password</Form.Label>
+      <Form.Input type="password" placeholder="Password" />
+    </Form.Group>
+  </Form.Horizontal>
 )
 
 export const MixedLayoutForm: Story = () => (

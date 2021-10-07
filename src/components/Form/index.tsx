@@ -22,6 +22,9 @@ export type { FormFeedbackProps } from "./FormFeedback"
 import FormGroup from "./FormGroup"
 export type { FormGroupProps } from "./FormGroup"
 
+import FormDivider from "./FormDivider"
+import FormHorizontal from "./FormHorizontal"
+
 import InputGroup, { Prepend, Append } from "./InputGroup"
 export type { InputGroupProps, PrependProps, AppendProps } from "./InputGroup"
 
@@ -33,6 +36,8 @@ const Form = Object.assign(FormBase, {
   Radio: FormRadio,
   Feedback: FormFeedback,
   Group: FormGroup,
+  Divider: FormDivider,
+  Horizontal: FormHorizontal,
 })
 
 export { InputGroup, Prepend, Append }

@@ -20,6 +20,8 @@ declare const Form: (({ layout, labelWidth, ...props }: import("./Form").FormPro
     Radio: ({ children, inline, ...props }: import("./FormRadio").FormRadioProps) => JSX.Element;
     Feedback: ({ className, ...props }: import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>) => JSX.Element;
     Group: (props: import("./FormGroup").FormGroupProps) => JSX.Element;
+    Divider: () => JSX.Element;
+    Horizontal: (props: ReactProps.WithChildren) => JSX.Element;
 };
 export { InputGroup, Prepend, Append };
 export default Form;

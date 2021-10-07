@@ -60,15 +60,9 @@ export const Group: Story = () => {
         ) => {
           console.info(eventKey)
         }}>
-        <Button variant="secondary" eventKey="日">
-          日
-        </Button>
-        <Button variant="secondary" eventKey="周">
-          周
-        </Button>
-        <Button variant="secondary" eventKey="月">
-          月
-        </Button>
+        <Button eventKey="日">日</Button>
+        <Button eventKey="周">周</Button>
+        <Button eventKey="月">月</Button>
       </ButtonGroup>
     </div>
   )

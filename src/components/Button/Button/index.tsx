@@ -33,6 +33,7 @@ const Button = ({
   return (
     <button
       className={cx(
+        "core-uikit-button",
         styled.wrapper,
         styled[variant],
         { [styled.block]: block },

@@ -6,3 +6,4 @@ export declare const Default: Story<DropdownProps>;
 export declare const InlineStyle: Story<DropdownProps>;
 export declare const Arrow: Story<DropdownProps>;
 export declare const MultiDropdown: Story<DropdownProps>;
+export declare const KeepTooltipInside: Story<DropdownProps>;

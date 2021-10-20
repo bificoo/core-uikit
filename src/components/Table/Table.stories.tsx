@@ -167,6 +167,38 @@ export const ResizableTable = () => {
   )
 }
 
+export const RowHightTable = () => {
+  return (
+    <Table
+      height={400}
+      rowHeight={60}
+      data={fakeData}
+      onRowClick={data => {
+        console.log(data)
+      }}>
+      <Column width={70} align="center" verticalAlign="middle">
+        <HeaderCell>Id</HeaderCell>
+        <Cell dataKey="id" />
+      </Column>
+
+      <Column width={200} verticalAlign="middle">
+        <HeaderCell>First Name</HeaderCell>
+        <Cell dataKey="firstName" />
+      </Column>
+
+      <Column width={200} verticalAlign="middle">
+        <HeaderCell>Last Name</HeaderCell>
+        <Cell dataKey="lastName" />
+      </Column>
+
+      <Column width={200} verticalAlign="middle">
+        <HeaderCell>City</HeaderCell>
+        <Cell dataKey="city" />
+      </Column>
+    </Table>
+  )
+}
+
 export const FluidTable = () => {
   return (
     <Table height={400} data={fakeData}>

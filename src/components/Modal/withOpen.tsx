@@ -1,4 +1,6 @@
+import React from "react"
 import ReactDOM from "react-dom"
+import Modal, { ModalProps } from "./Modal"
 
 export const getPopupRoot = () => {
   let popupRoot = document.getElementById("popup-root")
@@ -10,18 +12,14 @@ export const getPopupRoot = () => {
   return popupRoot
 }
 
-export const isSetModal = () => {
-  const popupRoot = getPopupRoot()
-  return popupRoot.hasChildNodes()
-}
+export function open(Modal: React.FC<ModalProps>, config: ModalProps) {
+  const modalRoot = getPopupRoot()
+  const modalDiv = document.createElement("div")
+  modalRoot.appendChild(modalDiv)
 
-const popupRoot = getPopupRoot()
-const root = ReactDOM.createRoot(popupRoot)
-
-function open(Modal, config) {
-  function bindClose(config) {
+  function bindClose(config: ModalProps) {
     const { onConfirm, onCancel, onClose, ...theOtherConfig } = config
-    const bind = fn =>
+    const bind = (fn?: () => void) =>
       fn
         ? () => {
             typeof fn === "function" && fn()
@@ -37,17 +35,16 @@ function open(Modal, config) {
     }
   }
 
-  function render(config) {
-    root.render(<Modal {...bindClose(config)} />)
+  function render(config: ModalProps) {
+    ReactDOM.render(<Modal {...bindClose(config)} />, modalDiv)
   }
 
-  function update(newConfig) {
-    currentConfig = {
+  function update(newConfig: ModalProps) {
+    render({
       ...config,
       ...newConfig,
       open: true,
-    }
-    render(currentConfig)
+    })
   }
 
   function close() {
@@ -68,22 +65,16 @@ function open(Modal, config) {
   }
 }
 
-function withAlert(config) {
+export function withAlert(config: ModalProps) {
   return {
     ...config,
     cancelText: null,
   }
 }
 
-function withConfirm(config) {
+export function withConfirm(config: ModalProps) {
   return {
     ...config,
     cancelText: config.cancelText,
   }
-}
-
-export default function withOpen(ModalComponent) {
-  ModalComponent.alert = config => open(ModalComponent, withAlert(config))
-  ModalComponent.confirm = config => open(ModalComponent, withConfirm(config))
-  return ModalComponent
 }

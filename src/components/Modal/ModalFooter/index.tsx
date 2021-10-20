@@ -6,7 +6,7 @@ export type ModalFooterProps = {
   confirmText?: string
   confirmButtonProps?: JSXProps.ButtonElement
   onConfirm?: () => void
-  cancelText?: string
+  cancelText?: string | null
   cancelButtonProps?: JSXProps.ButtonElement
   onCancel?: () => void
   onClose?: () => void

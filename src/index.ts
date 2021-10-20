@@ -38,9 +38,8 @@ export type {
   AppendProps,
 } from "./components/Form"
 
-// TODO: 降版 React 後需要調整
-// export { default as Modal } from "./components/Modal"
-// export type { ModalProps } from "./components/Modal"
+export { default as Modal } from "./components/Modal"
+export type { ModalProps } from "./components/Modal"
 
 // TODO: 打包後會發生 Uncaught TypeError: Cannot set properties of undefined (setting 'exports')，待解決
 // export { default as Table } from "./components/Table"

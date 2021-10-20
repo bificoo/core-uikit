@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react"
 import Button from "components/Button"
 import Modal from "components/Modal/index"
 export default {
-  title: "Components/Modal",
+  title: "General/Modal",
   argTypes: {
     className: {
       control: false,

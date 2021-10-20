@@ -80,3 +80,22 @@ export const FunctionalConfirmModal: Story = () => {
     </>
   )
 }
+
+export const CustomModal: Story = () => {
+  const [open, setOpen] = useState(false)
+  return (
+    <>
+      <Button variant="primary" onClick={() => setOpen(true)}>
+        Open Custom Modal
+      </Button>
+      <Modal
+        title="建立分群"
+        open={open}
+        confirmText="建立"
+        cancelText="取消"
+        onClose={() => setOpen(false)}>
+        <div style={{ width: "500px", height: "500px" }}>分群內容</div>
+      </Modal>
+    </>
+  )
+}

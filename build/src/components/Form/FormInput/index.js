@@ -35,7 +35,7 @@ var FormInput = React__default['default'].forwardRef(function FormInput(_a, ref)
             _b[FormInput_module['default']["read-only"]] = !!props.readOnly,
             _b[FormInput_module['default']["is-valid"]] = isValid,
             _b[FormInput_module['default']["is-invalid"]] = isInvalid,
-            _b)) }, { children: jsxRuntime.jsx("input", _tslib.__assign({}, props, { ref: ref, type: type, id: attributes === null || attributes === void 0 ? void 0 : attributes.formId, className: cx__default['default'](FormInput_module['default'].control, className), onChange: function (e) {
+            _b)), style: props.style }, { children: jsxRuntime.jsx("input", _tslib.__assign({}, props, { ref: ref, type: type, id: attributes === null || attributes === void 0 ? void 0 : attributes.formId, className: cx__default['default'](FormInput_module['default'].control, className), onChange: function (e) {
                 if (e.target.value.trim() === "")
                     setEntered(false);
                 else

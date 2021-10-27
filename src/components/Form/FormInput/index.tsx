@@ -34,7 +34,8 @@ const FormInput = React.forwardRef(function FormInput(
         [styled["read-only"]]: !!props.readOnly,
         [styled["is-valid"]]: isValid,
         [styled["is-invalid"]]: isInvalid,
-      })}>
+      })}
+      style={props.style}>
       <input
         {...props}
         ref={ref}

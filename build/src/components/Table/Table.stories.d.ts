@@ -4,6 +4,7 @@ export default _default;
 export declare const DefaultTable: () => JSX.Element;
 export declare const VirtualizedLargeTable: () => JSX.Element;
 export declare const ResizableTable: () => JSX.Element;
+export declare const RowHightTable: () => JSX.Element;
 export declare const FluidTable: () => JSX.Element;
 export declare const FixedColumnTable: () => JSX.Element;
 export declare const WordWrapTable: () => JSX.Element;

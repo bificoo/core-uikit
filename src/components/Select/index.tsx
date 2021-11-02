@@ -1,98 +1,125 @@
-import { useState, useRef } from "react"
+import cx from "classnames"
+import React, { useState, useRef, useEffect } from "react"
 import styled from "./Select.module.scss"
 import { ReactComponent as ClearIcon } from "./clear.svg"
 import { ReactComponent as DownArrowIcon } from "./down-arrow.svg"
 import { ReactComponent as RemoveIcon } from "./remove.svg"
+import Popup from "reactjs-popup"
+import { PopupActions } from "reactjs-popup/dist/types"
+import Option from "./Option"
 
 export type SelectProps = {
-  options: Omit<optionsType, "id">[]
-  isMulti: boolean
-  placeholder: string
+  isMulti?: boolean
+  placeholder?: string
+  onChange?: (value: OptionType[]) => void
 } & ReactProps.Component
 
-type optionsType = { id: number; label: string; value: string }
-
-const useArrayId = (array: Array<Omit<optionsType, "id">>) => {
-  return array.map((item, index: number) => ({ ...item, id: index }))
+export type OptionType = {
+  label: string
+  value: string | number
 }
 
 const Select = ({ isMulti = false, ...props }: SelectProps) => {
-  const initialOptions = useArrayId(props.options)
-  const [options, setOptions] = useState(initialOptions)
-  const [selected, setSelected] = useState<Array<optionsType>>([])
+  const popupRef = useRef<PopupActions | null>(null)
+  const [selected, setSelected] = useState<Array<OptionType>>([])
 
-  const handleClick = (item: optionsType) => {
+  const handleClick = (option: OptionType) => {
     if (isMulti) {
-      setSelected(prev => (prev?.length > 0 ? [...prev, item] : [item]))
-      setOptions(prev => prev.filter(option => option.value !== item.value))
+      setSelected(prev => [...prev, option])
     } else {
-      setSelected([item])
+      setSelected([option])
+      popupRef.current?.close()
     }
   }
+
   const handleClear = () => {
-    setOptions(prev => [...prev, ...selected].sort((a, b) => a.id - b.id))
     setSelected([])
   }
 
-  const handleRemoveItem = (item: optionsType) => {
+  const handleRemoveItem = (item: OptionType) => {
     setSelected(prev => prev.filter(option => option.value !== item.value))
-    setOptions(prev => [...prev, item].sort((a, b) => a.id - b.id))
   }
+
+  useEffect(() => {
+    props.onChange && props.onChange(selected)
+  }, [selected])
 
   return (
     <div className={styled.wrapper}>
       <div className={styled.container}>
-        <div className={styled.control}>
-          {props.placeholder && selected.length === 0 && (
-            <div className={styled.placeholder}>{props.placeholder}</div>
-          )}
+        <Popup
+          ref={popupRef}
+          trigger={open => (
+            <div className={cx(styled.control, { [styled.active]: open })}>
+              {props.placeholder && selected.length === 0 && (
+                <div className={styled.placeholder}>{props.placeholder}</div>
+              )}
 
-          <div className={styled["vale-container"]}>
-            {isMulti ? (
-              <>
-                {selected.map((item, index) => (
-                  <div key={index} className={styled["multi-value"]}>
-                    <div className={styled.label}>{item.label}</div>
-                    <div className={styled.remove} onClick={() => handleRemoveItem(item)}>
-                      <RemoveIcon />
-                    </div>
-                  </div>
-                ))}
-              </>
-            ) : (
-              <>
-                {selected.map((item, index) => (
-                  <div key={index} className={styled["single-value"]}>
-                    <div className={styled.label}>{item.label}</div>
-                  </div>
-                ))}
-              </>
-            )}
-          </div>
-          <div className={styled.indicator}>
-            {isMulti && selected.length > 0 && (
-              <div className={styled["clear-indicator"]} onClick={handleClear}>
-                <span>
-                  <ClearIcon />
-                </span>
+              <div className={styled["vale-container"]}>
+                {isMulti ? (
+                  <>
+                    {selected.map((item, index) => (
+                      <div key={index} className={styled["multi-value"]}>
+                        <div className={styled.label}>{item.label}</div>
+                        <div className={styled.remove} onClick={() => handleRemoveItem(item)}>
+                          <RemoveIcon />
+                        </div>
+                      </div>
+                    ))}
+                  </>
+                ) : (
+                  <>
+                    {selected.map((item, index) => (
+                      <div key={index} className={styled["single-value"]}>
+                        <div className={styled.label}>{item.label}</div>
+                      </div>
+                    ))}
+                  </>
+                )}
               </div>
-            )}
-            <div className={styled["dropdown-indicator"]}>
-              <DownArrowIcon />
+              <div className={styled.indicator}>
+                {isMulti && selected.length > 0 && (
+                  <div className={styled["clear-indicator"]} onClick={handleClear}>
+                    <span>
+                      <ClearIcon />
+                    </span>
+                  </div>
+                )}
+                <div className={styled["dropdown-indicator"]}>
+                  <DownArrowIcon />
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          )}
+          position="bottom left"
+          on="click"
+          closeOnDocumentClick
+          mouseLeaveDelay={300}
+          mouseEnterDelay={0}
+          arrow={false}
+          contentStyle={{
+            border: "none",
+            padding: "8px",
+            boxShadow: "none",
+          }}>
+          <div className={styled.menu}>
+            {React.Children.map(props.children, child => {
+              if (!React.isValidElement(child)) return
 
-        <div className={styled.menu}>
-          {options.map(option => (
-            <div key={option.value} className={styled.item} onClick={() => handleClick(option)}>
-              {option.label}
-            </div>
-          ))}
-        </div>
+              if (
+                child.type === Option &&
+                selected.map(option => option.value).indexOf(child.props.value) === -1
+              ) {
+                return React.cloneElement(child, { onClick: handleClick })
+              }
+            })}
+          </div>
+        </Popup>
       </div>
     </div>
   )
 }
+
+Select.Option = Option
 
 export default Select

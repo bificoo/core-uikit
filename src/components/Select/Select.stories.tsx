@@ -7,11 +7,8 @@ export default {
   argTypes: {},
 } as Meta
 
-const Template: Story<SelectProps> = args => <Select {...args} />
-
-export const SingleSelect = Template.bind({})
-SingleSelect.args = {
-  options: [
+export const SingleSelect: Story<SelectProps> = () => {
+  const options = [
     { label: "Vanilla", value: "vanilla" },
     { label: "Strawberry", value: "strawberry" },
     { label: "Chocolate", value: "chocolate" },
@@ -19,14 +16,21 @@ SingleSelect.args = {
     { label: "Passionfruit", value: "passionfruit" },
     { label: "Hazelnut", value: "hazelnut" },
     { label: "Durian", value: "durian" },
-  ],
-  placeholder: "Select..",
+  ]
+
+  return (
+    <Select placeholder="Select..">
+      {options.map(option => (
+        <Select.Option key={option.value} label={option.label} value={option.value}>
+          {option.label}
+        </Select.Option>
+      ))}
+    </Select>
+  )
 }
 
-export const MultiSelect = Template.bind({})
-MultiSelect.args = {
-  isMulti: true,
-  options: [
+export const MultiSelect: Story<SelectProps> = () => {
+  const options = [
     { label: "Vanilla", value: "vanilla" },
     { label: "Strawberry", value: "strawberry" },
     { label: "Chocolate", value: "chocolate" },
@@ -34,6 +38,15 @@ MultiSelect.args = {
     { label: "Passionfruit", value: "passionfruit" },
     { label: "Hazelnut", value: "hazelnut" },
     { label: "Durian", value: "durian" },
-  ],
-  placeholder: "Select..",
+  ]
+
+  return (
+    <Select isMulti placeholder="Select.." onChange={value => console.log(value)}>
+      {options.map(option => (
+        <Select.Option key={option.value} label={option.label} value={option.value}>
+          {option.label}
+        </Select.Option>
+      ))}
+    </Select>
+  )
 }

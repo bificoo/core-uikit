@@ -41,6 +41,9 @@ export type {
 export { default as Modal } from "./components/Modal"
 export type { ModalProps } from "./components/Modal"
 
+export { default as Select } from "./components/Select"
+export type { SelectProps, OptionType } from "./components/Select"
+
 // TODO: 打包後會發生 Uncaught TypeError: Cannot set properties of undefined (setting 'exports')，待解決
 // export { default as Table } from "./components/Table"
 // export type {

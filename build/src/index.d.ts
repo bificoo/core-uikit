@@ -12,6 +12,8 @@ export { default as Form, InputGroup, Prepend, Append } from "./components/Form"
 export type { FormProps, FormLabelProps, FormInputProps, FormTextareaProps, FormCheckboxProps, FormRadioProps, FormFeedbackProps, FormGroupProps, InputGroupProps, PrependProps, AppendProps, } from "./components/Form";
 export { default as Modal } from "./components/Modal";
 export type { ModalProps } from "./components/Modal";
+export { default as Select } from "./components/Select";
+export type { SelectProps, OptionType } from "./components/Select";
 export { default as Tabs } from "./components/Tabs";
 export type { TabsProps, TabProps } from "./components/Tabs";
 export { default as Tooltip } from "./components/Tooltip";

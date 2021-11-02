@@ -40,4 +40,11 @@ function __rest(s, e) {
     return t;
 }
 
+function __spreadArray(to, from) {
+    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
+        to[j] = from[i];
+    return to;
+}
+
 exports.__rest = __rest;
+exports.__spreadArray = __spreadArray;

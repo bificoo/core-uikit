@@ -1,6 +1,7 @@
 export declare type SelectProps = {
     isMulti?: boolean;
     placeholder?: string;
+    defaultValue?: OptionType;
     onChange?: (value: OptionType[]) => void;
 } & ReactProps.Component;
 export declare type OptionType = {

@@ -21,7 +21,7 @@ var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 var Select = function (_a) {
     var _b = _a.isMulti, isMulti = _b === void 0 ? false : _b, props = _tslib.__rest(_a, ["isMulti"]);
     var popupRef = React.useRef(null);
-    var _c = React.useState([]), selected = _c[0], setSelected = _c[1];
+    var _c = React.useState(props.defaultValue ? [props.defaultValue] : []), selected = _c[0], setSelected = _c[1];
     var handleClick = function (option) {
         var _a;
         if (isMulti) {

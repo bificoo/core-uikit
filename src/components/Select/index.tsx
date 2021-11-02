@@ -11,6 +11,7 @@ import Option from "./Option"
 export type SelectProps = {
   isMulti?: boolean
   placeholder?: string
+  defaultValue?: OptionType
   onChange?: (value: OptionType[]) => void
 } & ReactProps.Component
 
@@ -21,7 +22,9 @@ export type OptionType = {
 
 const Select = ({ isMulti = false, ...props }: SelectProps) => {
   const popupRef = useRef<PopupActions | null>(null)
-  const [selected, setSelected] = useState<Array<OptionType>>([])
+  const [selected, setSelected] = useState<Array<OptionType>>(
+    props.defaultValue ? [props.defaultValue] : [],
+  )
 
   const handleClick = (option: OptionType) => {
     if (isMulti) {

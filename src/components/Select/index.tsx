@@ -12,12 +12,21 @@ export type SelectProps = {
   isMulti?: boolean
   placeholder?: string
   defaultValue?: OptionType
-  onChange?: (value: OptionType[]) => void
+  onChange?: (
+    e: React.MouseEvent<Element, MouseEvent>,
+    {
+      selected,
+      selectedList,
+    }: {
+      selected: ReactProps.EventKey | null
+      selectedList: ReactProps.EventKey[]
+    },
+  ) => void
 } & ReactProps.Component
 
 export type OptionType = {
-  label: string
-  value: string | number
+  value: string
+  eventKey: ReactProps.EventKey
 }
 
 const Select = ({ isMulti = false, ...props }: SelectProps) => {
@@ -26,26 +35,34 @@ const Select = ({ isMulti = false, ...props }: SelectProps) => {
     props.defaultValue ? [props.defaultValue] : [],
   )
 
-  const handleClick = (option: OptionType) => {
+  const handleClick = (e: React.MouseEvent<Element, MouseEvent>, option: OptionType) => {
     if (isMulti) {
-      setSelected(prev => [...prev, option])
+      const newSelected = selected.map(option => option.eventKey).concat(option.eventKey)
+      setSelected([...selected, option])
+
+      props.onChange && props.onChange(e, { selected: option.eventKey, selectedList: newSelected })
     } else {
       setSelected([option])
+      props.onChange &&
+        props.onChange(e, { selected: option.eventKey, selectedList: [option.eventKey] })
       popupRef.current?.close()
     }
   }
 
-  const handleClear = () => {
+  const handleClear = (e: React.MouseEvent<Element, MouseEvent>) => {
     setSelected([])
+    props.onChange && props.onChange(e, { selected: null, selectedList: [] })
   }
 
-  const handleRemoveItem = (item: OptionType) => {
-    setSelected(prev => prev.filter(option => option.value !== item.value))
+  const handleRemoveItem = (e: React.MouseEvent<Element, MouseEvent>, item: OptionType) => {
+    const newSelected = selected.filter(option => option.eventKey !== item.eventKey)
+    setSelected(newSelected)
+    props.onChange &&
+      props.onChange(e, {
+        selected: null,
+        selectedList: newSelected.map(option => option.eventKey),
+      })
   }
-
-  useEffect(() => {
-    props.onChange && props.onChange(selected)
-  }, [selected])
 
   return (
     <div className={styled.wrapper}>
@@ -63,8 +80,8 @@ const Select = ({ isMulti = false, ...props }: SelectProps) => {
                   <>
                     {selected.map((item, index) => (
                       <div key={index} className={styled["multi-value"]}>
-                        <div className={styled.label}>{item.label}</div>
-                        <div className={styled.remove} onClick={() => handleRemoveItem(item)}>
+                        <div className={styled.label}>{item.value}</div>
+                        <div className={styled.remove} onClick={e => handleRemoveItem(e, item)}>
                           <RemoveIcon />
                         </div>
                       </div>
@@ -72,11 +89,13 @@ const Select = ({ isMulti = false, ...props }: SelectProps) => {
                   </>
                 ) : (
                   <>
-                    {selected.map((item, index) => (
-                      <div key={index} className={styled["single-value"]}>
-                        <div className={styled.label}>{item.label}</div>
-                      </div>
-                    ))}
+                    {selected.map((item, index) => {
+                      return (
+                        <div key={index} className={styled["single-value"]}>
+                          <div className={styled.label}>{item.value}</div>
+                        </div>
+                      )
+                    })}
                   </>
                 )}
               </div>
@@ -109,10 +128,11 @@ const Select = ({ isMulti = false, ...props }: SelectProps) => {
             {React.Children.map(props.children, child => {
               if (!React.isValidElement(child)) return
 
-              if (
-                child.type === Option &&
-                selected.map(option => option.value).indexOf(child.props.value) === -1
-              ) {
+              if (isMulti && child.type === Option) {
+                if (selected.map(option => option.eventKey).indexOf(child.props.eventKey) === -1) {
+                  return React.cloneElement(child, { onClick: handleClick })
+                }
+              } else {
                 return React.cloneElement(child, { onClick: handleClick })
               }
             })}

@@ -1,12 +1,16 @@
+import React from "react";
 export declare type SelectProps = {
     isMulti?: boolean;
     placeholder?: string;
     defaultValue?: OptionType;
-    onChange?: (value: OptionType[]) => void;
+    onChange?: (e: React.MouseEvent<Element, MouseEvent>, { selected, selectedList, }: {
+        selected: ReactProps.EventKey | null;
+        selectedList: ReactProps.EventKey[];
+    }) => void;
 } & ReactProps.Component;
 export declare type OptionType = {
-    label: string;
-    value: string | number;
+    value: string;
+    eventKey: ReactProps.EventKey;
 };
 declare const Select: {
     ({ isMulti, ...props }: SelectProps): JSX.Element;

@@ -1,9 +1,10 @@
+/// <reference types="react" />
 import { OptionType } from "./index";
 export declare type OptionProps = {
     disabled?: boolean;
-    label: string;
-    value: string | number;
-    onClick?: (option: OptionType) => void;
+    value: string;
+    eventKey: ReactProps.EventKey;
+    onClick?: (e: React.MouseEvent<Element, MouseEvent>, option: OptionType) => void;
 } & ReactProps.Component;
 declare const Option: ({ ...props }: OptionProps) => JSX.Element;
 export default Option;

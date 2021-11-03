@@ -9,20 +9,20 @@ export default {
 
 export const SingleSelect: Story<SelectProps> = () => {
   const options = [
-    { label: "Vanilla", value: "vanilla" },
-    { label: "Strawberry", value: "strawberry" },
-    { label: "Chocolate", value: "chocolate" },
-    { label: "Mango", value: "mango" },
-    { label: "Passionfruit", value: "passionfruit" },
-    { label: "Hazelnut", value: "hazelnut" },
-    { label: "Durian", value: "durian" },
+    { value: "Vanilla", eventKey: "vanilla" },
+    { value: "Strawberry", eventKey: "strawberry" },
+    { value: "Chocolate", eventKey: "chocolate" },
+    { value: "Mango", eventKey: "mango" },
+    { value: "Passionfruit", eventKey: "passionfruit" },
+    { value: "Hazelnut", eventKey: "hazelnut" },
+    { value: "Durian", eventKey: "durian" },
   ]
 
   return (
-    <Select placeholder="Select..">
+    <Select placeholder="Select.." defaultValue={options[0]}>
       {options.map(option => (
-        <Select.Option key={option.value} label={option.label} value={option.value}>
-          {option.label}
+        <Select.Option key={option.value} value={option.value} eventKey={option.eventKey}>
+          {option.value}
         </Select.Option>
       ))}
     </Select>
@@ -31,22 +31,24 @@ export const SingleSelect: Story<SelectProps> = () => {
 
 export const MultiSelect: Story<SelectProps> = () => {
   const options = [
-    { label: "Vanilla", value: "vanilla" },
-    { label: "Strawberry", value: "strawberry" },
-    { label: "Chocolate", value: "chocolate" },
-    { label: "Mango", value: "mango" },
-    { label: "Passionfruit", value: "passionfruit" },
-    { label: "Hazelnut", value: "hazelnut" },
-    { label: "Durian", value: "durian" },
+    { value: "Vanilla", eventKey: "vanilla" },
+    { value: "Strawberry", eventKey: "strawberry" },
+    { value: "Chocolate", eventKey: "chocolate" },
+    { value: "Mango", eventKey: "mango" },
+    { value: "Passionfruit", eventKey: "passionfruit" },
+    { value: "Hazelnut", eventKey: "hazelnut" },
+    { value: "Durian", eventKey: "durian" },
   ]
 
   return (
-    <Select isMulti placeholder="Select.." onChange={value => console.log(value)}>
-      {options.map(option => (
-        <Select.Option key={option.value} label={option.label} value={option.value}>
-          {option.label}
-        </Select.Option>
-      ))}
-    </Select>
+    <>
+      <Select isMulti placeholder="Select.." onChange={(e, value) => console.log(value)}>
+        {options.map(option => (
+          <Select.Option key={option.value} value={option.value} eventKey={option.eventKey}>
+            {option.value}
+          </Select.Option>
+        ))}
+      </Select>
+    </>
   )
 }

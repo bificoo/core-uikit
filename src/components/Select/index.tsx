@@ -1,5 +1,5 @@
 import cx from "classnames"
-import React, { useState, useRef, useEffect } from "react"
+import React, { useState, useRef, useEffect, CSSProperties } from "react"
 import styled from "./Select.module.scss"
 import { ReactComponent as ClearIcon } from "./clear.svg"
 import { ReactComponent as DownArrowIcon } from "./down-arrow.svg"
@@ -12,6 +12,7 @@ export type SelectProps = {
   isMulti?: boolean
   placeholder?: string
   defaultValue?: OptionType
+  style?: CSSProperties
   onChange?: (
     e: React.MouseEvent<Element, MouseEvent>,
     {
@@ -65,7 +66,7 @@ const Select = ({ isMulti = false, ...props }: SelectProps) => {
   }
 
   return (
-    <div className={styled.wrapper}>
+    <div className={styled.wrapper} style={props.style}>
       <div className={styled.container}>
         <Popup
           ref={popupRef}

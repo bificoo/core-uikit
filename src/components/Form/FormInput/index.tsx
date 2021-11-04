@@ -6,7 +6,7 @@ import styled from "./FormInput.module.scss"
 
 export type FormInputProps = FormControlProps &
   Omit<JSXProps.InputElement, "type" | "css"> & {
-    type?: "text" | "password"
+    type?: "text" | "password" | "number"
   }
 
 const FormInput = React.forwardRef(function FormInput(

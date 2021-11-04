@@ -17,12 +17,16 @@
   height: em(36);
   vertical-align: middle;
 
-  &.required:before {
-    content: "*";
-    left: -10px;
-    position: absolute;
-    color: #de350b;
-    display: inline-block;
-    padding-right: 5px;
+  span {
+    position: relative;
+
+    &.required:before {
+      content: "*";
+      left: -10px;
+      position: absolute;
+      color: #de350b;
+      display: inline-block;
+      padding-right: 5px;
+    }
   }
 }

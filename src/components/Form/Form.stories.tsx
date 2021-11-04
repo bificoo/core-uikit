@@ -127,24 +127,24 @@ export const HorizontalForm: Story = () => (
 export const MixedLayoutForm: Story = () => (
   <Form>
     <Form.Group layout="vertical">
-      <Form.Label>Email address</Form.Label>
+      <Form.Label required>Email address</Form.Label>
       <Form.Input placeholder="name@example.com" />
     </Form.Group>
     <Form.Group layout="vertical">
-      <Form.Label>Password</Form.Label>
+      <Form.Label required>Password</Form.Label>
       <Form.Input type="password" placeholder="Password" />
     </Form.Group>
     <Form.Group layout="vertical">
-      <Form.Label>Feedback</Form.Label>
+      <Form.Label required>Feedback</Form.Label>
       <Form.Textarea />
     </Form.Group>
     <Form.Group labelWidth={100}>
-      <Form.Label>Sex</Form.Label>
+      <Form.Label required>Sex</Form.Label>
       <Form.Radio name="sex">Male</Form.Radio>
       <Form.Radio name="sex">Female</Form.Radio>
     </Form.Group>
     <Form.Group labelWidth={100}>
-      <Form.Label>Interesting</Form.Label>
+      <Form.Label required>Interesting</Form.Label>
       <Form.Checkbox name="sex">Apple</Form.Checkbox>
       <Form.Checkbox name="sex">Orange</Form.Checkbox>
       <Form.Checkbox name="sex">Banana</Form.Checkbox>

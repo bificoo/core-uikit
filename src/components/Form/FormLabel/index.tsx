@@ -12,11 +12,9 @@ const FormLabel = ({ required = false, className, htmlFor, ...props }: FormLabel
   return (
     <label
       htmlFor={htmlFor || attributes?.formId}
-      className={cx(styled.wrapper, className, {
-        [styled.required]: required,
-      })}
+      className={cx(styled.wrapper, className)}
       {...props}>
-      {props.children}
+      <span className={cx({ [styled.required]: required })}>{props.children}</span>
     </label>
   )
 }

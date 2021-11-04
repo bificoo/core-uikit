@@ -17,7 +17,7 @@ import FormRadio from "./FormRadio"
 export type { FormRadioProps } from "./FormRadio"
 
 import { FormHelperMessage, FormValidMessage, FormErrorMessage } from "./FormMessage"
-// export type { FormMessageProps } from "./FormMessage"
+export type { FormMessageProps } from "./FormMessage"
 
 import FormGroup from "./FormGroup"
 export type { FormGroupProps } from "./FormGroup"

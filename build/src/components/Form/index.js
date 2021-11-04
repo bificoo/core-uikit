@@ -8,7 +8,7 @@ var index$5 = require('./FormInput/index.js');
 var index$6 = require('./FormTextarea/index.js');
 var index$7 = require('./FormCheckbox/index.js');
 var index$8 = require('./FormRadio/index.js');
-var index$9 = require('./FormFeedback/index.js');
+var index$9 = require('./FormMessage/index.js');
 var index$a = require('./FormGroup/index.js');
 var index$b = require('./FormDivider/index.js');
 var index$c = require('./FormHorizontal/index.js');
@@ -26,7 +26,9 @@ var Form = Object.assign(index$3['default'], {
     Textarea: index$6['default'],
     Checkbox: index$7['default'],
     Radio: index$8['default'],
-    Feedback: index$9['default'],
+    HelperMessage: index$9.FormHelperMessage,
+    ValidMessage: index$9.FormValidMessage,
+    ErrorMessage: index$9.FormErrorMessage,
     Group: index$a['default'],
     Divider: index$b['default'],
     Horizontal: index$c['default'],

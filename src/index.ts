@@ -31,7 +31,7 @@ export type {
   FormTextareaProps,
   FormCheckboxProps,
   FormRadioProps,
-  FormFeedbackProps,
+  FormMessageProps,
   FormGroupProps,
   InputGroupProps,
   PrependProps,

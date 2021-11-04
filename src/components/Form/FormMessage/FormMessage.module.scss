@@ -6,7 +6,18 @@
     line-height: 1.33333;
     font-weight: normal;
     font-family: $font-family;
-    color: #de350b;
     margin-top: 4px;
     display: flex;
+
+    &.helper {
+        color: #6B778C;
+    }
+
+    &.valid {
+        color: #00875A;
+    }
+
+    &.error {
+        color: #DE350B;
+    }
 }

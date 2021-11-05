@@ -32,8 +32,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function SvgRemove(props) {
   return /*#__PURE__*/React__namespace.createElement("svg", _extends({
-    width: 24,
-    height: 24
+    viewBox: "0 0 24 24"
   }, props), _circle || (_circle = /*#__PURE__*/React__namespace.createElement("circle", {
     fill: "currentColor",
     cx: 12,

@@ -1,5 +1,6 @@
 import { Story, Meta } from "@storybook/react"
 import Select, { SelectProps } from "components/Select"
+import Button from "components/Button"
 
 export default {
   title: "Data Entry/Select",
@@ -18,8 +19,9 @@ export const SingleSelect: Story<SelectProps> = () => {
     { value: "Durian", eventKey: "durian" },
   ]
 
+  //  defaultValue={options[0]}
   return (
-    <Select placeholder="Select.." defaultValue={options[0]}>
+    <Select placeholder="Select..">
       {options.map(option => (
         <Select.Option key={option.value} value={option.value} eventKey={option.eventKey}>
           {option.value}
@@ -41,7 +43,7 @@ export const MultiSelect: Story<SelectProps> = () => {
   ]
 
   return (
-    <>
+    <div style={{ display: "flex" }}>
       <Select isMulti placeholder="Select.." onChange={(e, value) => console.log(value)}>
         {options.map(option => (
           <Select.Option key={option.value} value={option.value} eventKey={option.eventKey}>
@@ -49,6 +51,6 @@ export const MultiSelect: Story<SelectProps> = () => {
           </Select.Option>
         ))}
       </Select>
-    </>
+    </div>
   )
 }

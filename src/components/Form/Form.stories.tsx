@@ -129,7 +129,7 @@ export const MixedLayoutForm: Story = () => (
     <Form.Group layout="vertical">
       <Form.Label required>Email address</Form.Label>
       <Form.Input placeholder="name@example.com" />
-      <Form.Text>Email 格式須正確</Form.Text>
+      <Form.HelperMessage>Email 格式須正確</Form.HelperMessage>
     </Form.Group>
     <Form.Group layout="vertical">
       <Form.Label required>Password</Form.Label>
@@ -174,9 +174,11 @@ export const Validation: Story = () => {
           placeholder="Password"
           {...register("password", { required: true, maxLength: 8 })}
         />
-        {errors?.password?.type === "required" && <Form.Text>This field is required</Form.Text>}
+        {errors?.password?.type === "required" && (
+          <Form.HelperMessage>This field is required</Form.HelperMessage>
+        )}
         {errors?.password?.type === "maxLength" && (
-          <Form.Text>Password cannot exceed 8 characters</Form.Text>
+          <Form.ErrorMessage>Password cannot exceed 8 characters</Form.ErrorMessage>
         )}
       </Form.Group>
       <Button type="submit">Submit</Button>

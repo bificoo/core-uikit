@@ -54,7 +54,7 @@ export default {
     }),
     url(),
     svgr({
-      dimensions: false,
+      removeDimensions: true,
     }),
     copy({
       targets: [{ src: "src/types/*", dest: "build/src/types" }],

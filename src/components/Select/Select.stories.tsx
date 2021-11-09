@@ -54,3 +54,30 @@ export const MultiSelect: Story<SelectProps> = () => {
     </div>
   )
 }
+
+export const ScrollSelect: Story<SelectProps> = () => {
+  const options = [
+    { value: "Vanilla", eventKey: "vanilla" },
+    { value: "Strawberry", eventKey: "strawberry" },
+    { value: "Chocolate", eventKey: "chocolate" },
+    { value: "Mango", eventKey: "mango" },
+    { value: "Passionfruit", eventKey: "passionfruit" },
+    { value: "Hazelnut", eventKey: "hazelnut" },
+    { value: "Durian", eventKey: "durian" },
+    { value: "Apple", eventKey: "apple" },
+    { value: "Banana", eventKey: "banana" },
+    { value: "Orange", eventKey: "orange" },
+    { value: "Cherry", eventKey: "cherry" },
+    { value: "Blueberry", eventKey: "blueberry" },
+  ]
+
+  return (
+    <Select placeholder="Select..">
+      {options.map(option => (
+        <Select.Option key={option.value} value={option.value} eventKey={option.eventKey}>
+          {option.value}
+        </Select.Option>
+      ))}
+    </Select>
+  )
+}

@@ -33,8 +33,8 @@ var Select = function (_a) {
             setSelected([option]);
             props.onChange &&
                 props.onChange(e, { selected: option.eventKey, selectedList: [option.eventKey] });
-            (_a = popupRef.current) === null || _a === void 0 ? void 0 : _a.close();
         }
+        (_a = popupRef.current) === null || _a === void 0 ? void 0 : _a.close();
     };
     var handleClear = function (e) {
         setSelected([]);
@@ -56,9 +56,9 @@ var Select = function (_a) {
                                     }) }, void 0)) }), void 0), jsxRuntime.jsxs("div", _tslib.__assign({ className: Select_module['default'].indicator }, { children: [isMulti && selected.length > 0 && (jsxRuntime.jsx("div", _tslib.__assign({ className: Select_module['default']["clear-indicator"], onClick: handleClear }, { children: jsxRuntime.jsx("span", { children: jsxRuntime.jsx(clear.ReactComponent, {}, void 0) }, void 0) }), void 0)), jsxRuntime.jsx("div", _tslib.__assign({ className: Select_module['default']["dropdown-indicator"] }, { children: jsxRuntime.jsx(downArrow.ReactComponent, {}, void 0) }), void 0)] }), void 0)] }), void 0));
                 }, position: "bottom left", on: "click", closeOnDocumentClick: true, mouseLeaveDelay: 300, mouseEnterDelay: 0, arrow: false, contentStyle: {
                     border: "none",
-                    padding: "8px",
+                    paddingTop: "8px",
                     boxShadow: "none",
-                } }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: Select_module['default'].menu }, { children: React__default['default'].Children.map(props.children, function (child) {
+                } }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: Select_module['default'].menu, style: props.style }, { children: React__default['default'].Children.map(props.children, function (child) {
                         if (!React__default['default'].isValidElement(child))
                             return;
                         if (isMulti && child.type === Option['default']) {

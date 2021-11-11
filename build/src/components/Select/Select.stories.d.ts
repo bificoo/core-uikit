@@ -4,3 +4,4 @@ declare const _default: Meta<import("@storybook/react").Args>;
 export default _default;
 export declare const SingleSelect: Story<SelectProps>;
 export declare const MultiSelect: Story<SelectProps>;
+export declare const ScrollSelect: Story<SelectProps>;

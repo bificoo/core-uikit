@@ -46,8 +46,8 @@ const Select = ({ isMulti = false, ...props }: SelectProps) => {
       setSelected([option])
       props.onChange &&
         props.onChange(e, { selected: option.eventKey, selectedList: [option.eventKey] })
-      popupRef.current?.close()
     }
+    popupRef.current?.close()
   }
 
   const handleClear = (e: React.MouseEvent<Element, MouseEvent>) => {
@@ -122,10 +122,10 @@ const Select = ({ isMulti = false, ...props }: SelectProps) => {
           arrow={false}
           contentStyle={{
             border: "none",
-            padding: "8px",
+            paddingTop: "8px",
             boxShadow: "none",
           }}>
-          <div className={styled.menu}>
+          <div className={styled.menu} style={props.style}>
             {React.Children.map(props.children, child => {
               if (!React.isValidElement(child)) return
 

@@ -1,7 +1,7 @@
 import React, { useMemo, useRef, useState } from "react"
 import cx from "classnames"
 import Popup from "reactjs-popup"
-import { PopupActions, PopupPosition, PopupProps } from "reactjs-popup/dist/types"
+import { PopupActions, PopupProps } from "reactjs-popup/dist/types"
 import DropdownContext from "../DropdownContext"
 import DropdownToggle from "../DropdownToggle"
 import DropdownMenu from "../DropdownMenu"
@@ -10,7 +10,6 @@ import styled from "./Dropdown.module.scss"
 export type DropdownSelectEventProps = { eventKey?: ReactProps.EventKey }
 export type DropdownProps = {
   defaultActiveKey?: ReactProps.EventKey
-  position?: PopupPosition[] // TODO: remove
   keepTooltipInside?: PopupProps["keepTooltipInside"]
   style?: React.CSSProperties
   onSelect?: (
@@ -19,7 +18,7 @@ export type DropdownProps = {
   ) => void
 } & ReactProps.Component
 
-const Dropdown = ({ position = ["bottom center", "top center"], ...props }: DropdownProps) => {
+const Dropdown = ({ ...props }: DropdownProps) => {
   const [eventKey, setEventKay] = useState(props.defaultActiveKey)
   const popupRef = useRef<PopupActions | null>(null)
 
@@ -58,7 +57,7 @@ const Dropdown = ({ position = ["bottom center", "top center"], ...props }: Drop
           ref={popupRef}
           className="dropdown"
           trigger={open => dropdown.trigger && React.cloneElement(dropdown.trigger, { open })}
-          position={position}
+          position={["bottom left"]}
           // keepTooltipInside
           on="click"
           closeOnDocumentClick

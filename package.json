@@ -14,8 +14,7 @@
     "eject": "react-scripts eject",
     "eslint": "eslint 'src/**/*.{js,ts,tsx}'",
     "eslint:fix": "eslint 'src/**/*.{js,ts,tsx}' --quiet --fix",
-    "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "storybook": "start-storybook -p 6006 -s public"
+    "analyze": "source-map-explorer 'build/static/js/*.js'"
   },
   "husky": {
     "hooks": {

@@ -49,21 +49,3 @@ export const Chinese = Template.bind({})
 Chinese.args = {
   children: "按鈕",
 }
-
-export const Group: Story = () => {
-  return (
-    <div>
-      <ButtonGroup
-        onSelect={(
-          e: React.MouseEvent<Element, MouseEvent>,
-          { eventKey }: { eventKey?: ReactProps.EventKey },
-        ) => {
-          console.info(eventKey)
-        }}>
-        <Button eventKey="日">日</Button>
-        <Button eventKey="周">周</Button>
-        <Button eventKey="月">月</Button>
-      </ButtonGroup>
-    </div>
-  )
-}

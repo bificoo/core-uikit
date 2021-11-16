@@ -1,0 +1,10 @@
+.wrapper {
+  padding: 8px;
+  color: #45536C;
+  font-size: 14px;
+  display: none;
+
+  &.expanded {
+    display: flex;
+  }
+}

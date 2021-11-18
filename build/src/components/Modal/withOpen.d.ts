@@ -21,6 +21,7 @@ export declare function withAlert(config: ModalProps): {
     onCancel?: (() => void) | undefined;
     onClose?: ((() => void) & ((event?: React.SyntheticEvent<Element, Event> | KeyboardEvent | TouchEvent | MouseEvent | undefined) => void)) | undefined;
     children?: React.ReactNode;
+    style?: React.CSSProperties | undefined;
     closeOnDocumentClick?: boolean | undefined;
 };
 export declare function withConfirm(config: ModalProps): {
@@ -39,5 +40,6 @@ export declare function withConfirm(config: ModalProps): {
     onCancel?: (() => void) | undefined;
     onClose?: ((() => void) & ((event?: React.SyntheticEvent<Element, Event> | KeyboardEvent | TouchEvent | MouseEvent | undefined) => void)) | undefined;
     children?: React.ReactNode;
+    style?: React.CSSProperties | undefined;
     closeOnDocumentClick?: boolean | undefined;
 };

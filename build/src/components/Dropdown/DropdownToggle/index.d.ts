@@ -5,5 +5,5 @@ export declare type DropdownToggleProps = {
 export declare type Ref = HTMLDivElement;
 declare const DropdownToggle: React.ForwardRefExoticComponent<{
     onClick?: React.MouseEventHandler<HTMLElement> | undefined;
-} & ReactProps.WithChildren & ReactProps.WithClassName & React.RefAttributes<HTMLDivElement>>;
+} & ReactProps.WithChildren & ReactProps.WithClassName & ReactProps.WithStyle & React.RefAttributes<HTMLDivElement>>;
 export default DropdownToggle;

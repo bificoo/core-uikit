@@ -18,9 +18,13 @@ const Tabs = ({ ...props }: TabsProps): JSX.Element => {
   const [activeKey, setActiveKey] = useState(props.defaultActiveKey)
   const prevActiveKey = usePrevious(activeKey)
 
-  const handleClickTab = (eventKey?: ReactProps.EventKey) => {
+  const handleClickTab = (
+    e: React.MouseEvent<Element, MouseEvent>,
+    { eventKey }: { eventKey?: ReactProps.EventKey },
+  ) => {
     if (!eventKey) return
     setActiveKey(eventKey)
+    props.onSelect && props.onSelect(e, { eventKey })
   }
 
   const hasChild = useMemo(() => {
@@ -39,12 +43,7 @@ const Tabs = ({ ...props }: TabsProps): JSX.Element => {
 
   return (
     <TabsContext.Provider value={{ activeKey, setActiveKey: handleClickTab }}>
-      <div
-        className={cx(styled.wrapper, props.className)}
-        onClick={(e: React.MouseEvent<Element, MouseEvent>) =>
-          props.onSelect && props.onSelect(e, { eventKey: activeKey })
-        }
-        style={props.style}>
+      <div className={cx(styled.wrapper, props.className)} style={props.style}>
         <nav className={styled["nav-tabs"]}>
           {React.Children.map(props.children, child => {
             if (!React.isValidElement(child)) return

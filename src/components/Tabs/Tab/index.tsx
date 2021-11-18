@@ -17,7 +17,9 @@ const Tab = ({ ...props }: TabProps) => {
         { [styled.active]: props.eventKey === activeKey },
         props.className,
       )}
-      onClick={() => setActiveKey(props.eventKey)}>
+      onClick={e => {
+        setActiveKey(e, { eventKey: props.eventKey })
+      }}>
       {props.title}
     </div>
   )

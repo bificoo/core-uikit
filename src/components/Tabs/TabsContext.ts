@@ -2,7 +2,10 @@ import React from "react"
 
 export type TabsContextProps = {
   activeKey?: ReactProps.EventKey
-  setActiveKey: (eventKey: ReactProps.EventKey) => void
+  setActiveKey: (
+    e: React.MouseEvent<Element, MouseEvent>,
+    { eventKey }: { eventKey: ReactProps.EventKey },
+  ) => void
 }
 
 const TabsContext = React.createContext<TabsContextProps>({

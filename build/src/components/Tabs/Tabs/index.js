@@ -19,10 +19,12 @@ var Tabs = function (_a) {
     var props = _tslib.__rest(_a, []);
     var _b = React.useState(props.defaultActiveKey), activeKey = _b[0], setActiveKey = _b[1];
     var prevActiveKey = usePrevious['default'](activeKey);
-    var handleClickTab = function (eventKey) {
+    var handleClickTab = function (e, _a) {
+        var eventKey = _a.eventKey;
         if (!eventKey)
             return;
         setActiveKey(eventKey);
+        props.onSelect && props.onSelect(e, { eventKey: eventKey });
     };
     var hasChild = React.useMemo(function () {
         var has = false;
@@ -37,9 +39,7 @@ var Tabs = function (_a) {
             setActiveKey(props.activeKey);
         }
     }, [activeKey, props.activeKey]);
-    return (jsxRuntime.jsx(TabsContext['default'].Provider, _tslib.__assign({ value: { activeKey: activeKey, setActiveKey: handleClickTab } }, { children: jsxRuntime.jsxs("div", _tslib.__assign({ className: cx__default['default'](Tabs_module['default'].wrapper, props.className), onClick: function (e) {
-                return props.onSelect && props.onSelect(e, { eventKey: activeKey });
-            }, style: props.style }, { children: [jsxRuntime.jsxs("nav", _tslib.__assign({ className: Tabs_module['default']["nav-tabs"] }, { children: [React__default['default'].Children.map(props.children, function (child) {
+    return (jsxRuntime.jsx(TabsContext['default'].Provider, _tslib.__assign({ value: { activeKey: activeKey, setActiveKey: handleClickTab } }, { children: jsxRuntime.jsxs("div", _tslib.__assign({ className: cx__default['default'](Tabs_module['default'].wrapper, props.className), style: props.style }, { children: [jsxRuntime.jsxs("nav", _tslib.__assign({ className: Tabs_module['default']["nav-tabs"] }, { children: [React__default['default'].Children.map(props.children, function (child) {
                             if (!React__default['default'].isValidElement(child))
                                 return;
                             return child;

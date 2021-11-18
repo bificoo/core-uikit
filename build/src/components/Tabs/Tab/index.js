@@ -17,7 +17,9 @@ var Tab = function (_a) {
     var _b;
     var props = _tslib.__rest(_a, []);
     var _c = React.useContext(TabsContext['default']), activeKey = _c.activeKey, setActiveKey = _c.setActiveKey;
-    return (jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default['default'](Tab_module['default'].wrapper, (_b = {}, _b[Tab_module['default'].active] = props.eventKey === activeKey, _b), props.className), onClick: function () { return setActiveKey(props.eventKey); } }, { children: props.title }), void 0));
+    return (jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default['default'](Tab_module['default'].wrapper, (_b = {}, _b[Tab_module['default'].active] = props.eventKey === activeKey, _b), props.className), onClick: function (e) {
+            setActiveKey(e, { eventKey: props.eventKey });
+        } }, { children: props.title }), void 0));
 };
 
 exports['default'] = Tab;

@@ -181,7 +181,8 @@ declare global {
     type EventKey = string | number
     type WithChildren = { children?: React.ReactNode }
     type WithClassName = { className?: string }
-    type Component = WithChildren & WithClassName
+    type WithStyle = { style?: React.CSSProperties }
+    type Component = WithChildren & WithClassName & WithStyle
   }
 }
 export default global

@@ -1,11 +1,13 @@
-import React, { useReducer, useRef, useMemo } from "react"
+import React, { useReducer, useState, useMemo, useEffect } from "react"
 import cx from "classnames"
-import Tab from "../Tab"
 import styled from "./Tabs.module.scss"
 import TabsContext from "../TabsContext"
+import usePrevious from "hooks/usePrevious"
 
 export type TabsProps = {
   defaultActiveKey: ReactProps.EventKey
+  activeKey?: ReactProps.EventKey
+  extraContent?: JSX.Element
   onSelect?: (
     e: React.MouseEvent<Element, MouseEvent>,
     { eventKey }: { eventKey?: ReactProps.EventKey },
@@ -13,13 +15,12 @@ export type TabsProps = {
 } & ReactProps.Component
 
 const Tabs = ({ ...props }: TabsProps): JSX.Element => {
-  const activeKey = useRef<ReactProps.EventKey>(props.defaultActiveKey)
-  const [, forceUpdate] = useReducer(x => x + 1, 0)
+  const [activeKey, setActiveKey] = useState(props.defaultActiveKey)
+  const prevActiveKey = usePrevious(activeKey)
 
   const handleClickTab = (eventKey?: ReactProps.EventKey) => {
     if (!eventKey) return
-    activeKey.current = eventKey
-    forceUpdate()
+    setActiveKey(eventKey)
   }
 
   const hasChild = useMemo(() => {
@@ -30,31 +31,33 @@ const Tabs = ({ ...props }: TabsProps): JSX.Element => {
     return has
   }, [props.children])
 
+  useEffect(() => {
+    if (props.activeKey && prevActiveKey === activeKey && activeKey !== props.activeKey) {
+      setActiveKey(props.activeKey)
+    }
+  }, [activeKey, props.activeKey])
+
   return (
-    <TabsContext.Provider value={{ activeKey: activeKey.current, setActiveKey: handleClickTab }}>
+    <TabsContext.Provider value={{ activeKey, setActiveKey: handleClickTab }}>
       <div
         className={cx(styled.wrapper, props.className)}
         onClick={(e: React.MouseEvent<Element, MouseEvent>) =>
-          props.onSelect && props.onSelect(e, { eventKey: activeKey.current })
-        }>
+          props.onSelect && props.onSelect(e, { eventKey: activeKey })
+        }
+        style={props.style}>
         <nav className={styled["nav-tabs"]}>
           {React.Children.map(props.children, child => {
             if (!React.isValidElement(child)) return
-            return (
-              <Tab
-                className={child.props.className}
-                title={child.props.title}
-                eventKey={child.props.eventKey}
-              />
-            )
+            return child
           })}
+          <div className={styled["extra-content"]}>{props.extraContent}</div>
         </nav>
         {hasChild && (
           <div className={styled["tab-content"]}>
             {React.Children.map(props.children, child => {
               if (!React.isValidElement(child)) return
 
-              if (activeKey.current === child.props.eventKey) {
+              if (activeKey === child.props.eventKey) {
                 return child.props.children
               }
             })}

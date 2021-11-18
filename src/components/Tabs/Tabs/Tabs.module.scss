@@ -31,6 +31,14 @@
     }
   }
 
+  .extra-content {
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    line-height: 1;
+    flex: 1;
+  }
+
   .tab-content {
     position: relative;
     margin-bottom: 30px;

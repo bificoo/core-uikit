@@ -4,6 +4,7 @@ export declare type SelectProps = {
     placeholder?: string;
     defaultValue?: OptionType;
     style?: CSSProperties;
+    disabled?: boolean;
     onChange?: (e: React.MouseEvent<Element, MouseEvent>, { selected, selectedList, }: {
         selected: ReactProps.EventKey | null;
         selectedList: ReactProps.EventKey[];

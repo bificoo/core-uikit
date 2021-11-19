@@ -7,6 +7,7 @@ export declare type DropdownProps = {
     defaultActiveKey?: ReactProps.EventKey;
     keepTooltipInside?: PopupProps["keepTooltipInside"];
     style?: React.CSSProperties;
+    disabled?: boolean;
     onSelect?: (e: React.MouseEvent<Element, MouseEvent>, { eventKey }: DropdownSelectEventProps) => void;
 } & ReactProps.Component;
 declare const Dropdown: ({ ...props }: DropdownProps) => JSX.Element;

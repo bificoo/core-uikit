@@ -48,9 +48,7 @@ var Dropdown = function (_a) {
         props.onSelect && props.onSelect(e, { eventKey: eventKey });
         (_b = popupRef.current) === null || _b === void 0 ? void 0 : _b.close();
     };
-    return (jsxRuntime.jsx(DropdownContext.DropdownContext.Provider, _tslib.__assign({ value: { activeKey: eventKey, setActiveKey: handleClickItem } }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default['default'](Dropdown_module['default'].wrapper, props.className), style: props.style }, { children: jsxRuntime.jsx(reactjsPopup_esm['default'], _tslib.__assign({ ref: popupRef, className: "dropdown", trigger: function (open) { return dropdown.trigger && React__default['default'].cloneElement(dropdown.trigger, { open: open }); }, position: ["bottom left"], 
-                // keepTooltipInside
-                on: "click", closeOnDocumentClick: true, mouseLeaveDelay: 300, mouseEnterDelay: 0, arrow: false, contentStyle: {
+    return (jsxRuntime.jsx(DropdownContext.DropdownContext.Provider, _tslib.__assign({ value: { activeKey: eventKey, setActiveKey: handleClickItem } }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default['default'](Dropdown_module['default'].wrapper, props.className), style: props.style }, { children: jsxRuntime.jsx(reactjsPopup_esm['default'], _tslib.__assign({ ref: popupRef, className: "dropdown", trigger: function (open) { return dropdown.trigger && React__default['default'].cloneElement(dropdown.trigger, { open: open }); }, position: ["bottom left"], disabled: props.disabled, on: "click", closeOnDocumentClick: true, mouseLeaveDelay: 300, mouseEnterDelay: 0, arrow: false, contentStyle: {
                     border: "none",
                     padding: "8px",
                     boxShadow: "none",

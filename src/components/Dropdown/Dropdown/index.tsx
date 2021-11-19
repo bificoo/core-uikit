@@ -12,6 +12,7 @@ export type DropdownProps = {
   defaultActiveKey?: ReactProps.EventKey
   keepTooltipInside?: PopupProps["keepTooltipInside"]
   style?: React.CSSProperties
+  disabled?: boolean
   onSelect?: (
     e: React.MouseEvent<Element, MouseEvent>,
     { eventKey }: DropdownSelectEventProps,
@@ -58,7 +59,7 @@ const Dropdown = ({ ...props }: DropdownProps) => {
           className="dropdown"
           trigger={open => dropdown.trigger && React.cloneElement(dropdown.trigger, { open })}
           position={["bottom left"]}
-          // keepTooltipInside
+          disabled={props.disabled}
           on="click"
           closeOnDocumentClick
           mouseLeaveDelay={300}

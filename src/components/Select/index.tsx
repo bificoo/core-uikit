@@ -13,6 +13,7 @@ export type SelectProps = {
   placeholder?: string
   defaultValue?: OptionType
   style?: CSSProperties
+  disabled?: boolean
   onChange?: (
     e: React.MouseEvent<Element, MouseEvent>,
     {
@@ -120,6 +121,7 @@ const Select = ({ isMulti = false, ...props }: SelectProps) => {
           mouseLeaveDelay={300}
           mouseEnterDelay={0}
           arrow={false}
+          disabled={props.disabled}
           contentStyle={{
             border: "none",
             paddingTop: "8px",

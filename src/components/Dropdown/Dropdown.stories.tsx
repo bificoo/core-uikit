@@ -133,30 +133,27 @@ export const MultiDropdown: Story<DropdownProps> = () => {
   )
 }
 
-// export const KeepTooltipInside: Story<DropdownProps> = () => {
-//   return (
-//     <div
-//       className="keep-inside-example"
-//       style={{
-//         height: "200px",
-//         paddingTop: "150px",
-//       }}>
-//       <Dropdown keepTooltipInside=".keep-inside-example">
-//         <Dropdown.Toggle>
-//           <Button>
-//             Page actions
-//             <Dropdown.Arrow />
-//           </Button>
-//         </Dropdown.Toggle>
-//         <Dropdown.Menu>
-//           <Dropdown.Item eventKey="edit">Edit</Dropdown.Item>
-//           <Dropdown.Item eventKey="share">Share</Dropdown.Item>
-//           <Dropdown.Item eventKey="move">Move</Dropdown.Item>
-//           <Dropdown.Item eventKey="clone">Clone</Dropdown.Item>
-//           <Dropdown.Item eventKey="delete">Delete</Dropdown.Item>
-//           <Dropdown.Item eventKey="report">Report</Dropdown.Item>
-//         </Dropdown.Menu>
-//       </Dropdown>
-//     </div>
-//   )
-// }
+export const Disabled: Story<DropdownProps> = () => {
+  return (
+    <Dropdown
+      disabled
+      onSelect={(
+        e: React.MouseEvent<Element, MouseEvent>,
+        { eventKey }: { eventKey?: ReactProps.EventKey },
+      ) => {
+        console.info(eventKey)
+      }}>
+      <Dropdown.Toggle>
+        <Button disabled>Page actions</Button>
+      </Dropdown.Toggle>
+      <Dropdown.Menu>
+        <Dropdown.Item eventKey="edit">Edit</Dropdown.Item>
+        <Dropdown.Item eventKey="share">Share</Dropdown.Item>
+        <Dropdown.Item eventKey="move">Move</Dropdown.Item>
+        <Dropdown.Item eventKey="clone">Clone</Dropdown.Item>
+        <Dropdown.Item eventKey="delete">Delete</Dropdown.Item>
+        <Dropdown.Item eventKey="report">Report</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  )
+}

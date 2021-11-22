@@ -96,7 +96,7 @@ export const Disabled: Story<SelectProps> = () => {
   ]
 
   return (
-    <Select defaultValue={options[0]} placeholder="Select.." disabled>
+    <Select isMulti defaultValue={[options[0], options[1]]} disabled>
       {options.map(option => (
         <Select.Option key={option.value} value={option.value} eventKey={option.eventKey}>
           {option.value}

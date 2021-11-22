@@ -71,7 +71,12 @@ const Select = ({ isMulti = false, ...props }: SelectProps) => {
         <Popup
           ref={popupRef}
           trigger={open => (
-            <div className={cx(styled.control, { [styled.active]: open })}>
+            <div
+              className={cx(
+                styled.control,
+                { [styled.active]: open },
+                { [styled.disabled]: props.disabled },
+              )}>
               {props.placeholder && selected.length === 0 && (
                 <div className={styled.placeholder}>{props.placeholder}</div>
               )}
@@ -82,9 +87,11 @@ const Select = ({ isMulti = false, ...props }: SelectProps) => {
                     {selected.map((item, index) => (
                       <div key={index} className={styled["multi-value"]}>
                         <div className={styled.label}>{item.value}</div>
-                        <div className={styled.remove} onClick={e => handleRemoveItem(e, item)}>
-                          <RemoveIcon />
-                        </div>
+                        {!props.disabled && (
+                          <div className={styled.remove} onClick={e => handleRemoveItem(e, item)}>
+                            <RemoveIcon />
+                          </div>
+                        )}
                       </div>
                     ))}
                   </>
@@ -103,9 +110,7 @@ const Select = ({ isMulti = false, ...props }: SelectProps) => {
               <div className={styled.indicator}>
                 {isMulti && selected.length > 0 && (
                   <div className={styled["clear-indicator"]} onClick={handleClear}>
-                    <span>
-                      <ClearIcon />
-                    </span>
+                    <span>{!props.disabled && <ClearIcon />}</span>
                   </div>
                 )}
                 <div className={styled["dropdown-indicator"]}>

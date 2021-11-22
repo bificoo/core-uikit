@@ -27,6 +27,16 @@
         cursor: pointer;
       }
 
+      &.disabled {
+        border-color: #091e420a;
+        background: #091e420a;
+        color: #a5adba;
+        text-decoration: none;
+        cursor: not-allowed;
+
+        user-select: none;
+      }
+
       .placeholder {
         margin: 0 2px;
         color: var(--text-lowEmphasis, #5e6c84);
@@ -52,9 +62,8 @@
           .label {
             overflow: hidden;
             box-sizing: border-box;
-            padding: 2px 2px 2px 6px;
+            padding: 2px 6px 2px 6px;
             border-radius: 2px;
-            color: var(--text-highEmphasis, hsl(0, 0%, 20%));
             text-overflow: ellipsis;
             white-space: nowrap;
             font-size: 85%;
@@ -95,23 +104,14 @@
           color: var(--text-lowEmphasis, #a5adba);
 
           > span {
-            // display: inline-block;
-            // flex-shrink: 0;
-            // width: 16px;
-            // height: 16px;
             line-height: 1;
 
             > svg {
               overflow: hidden;
-
-// max-width: 100%;
-              // max-height: 100%;
               width: 16px;
               height: 16px;
               color: #a5adba;
               vertical-align: bottom;
-
-// pointer-events: none;
 
               fill: #fff;
             }
@@ -129,12 +129,12 @@
 }
 
 .menu {
+  overflow: scroll;
   margin-bottom: 8px;
   margin-left: 2px;
   padding-top: 8px;
   padding-bottom: 8px;
   max-height: 300px;
-  overflow: scroll;
   width: 100%;
   border-radius: 4px;
   background-color: var(--background-overlay, white);

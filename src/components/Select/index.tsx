@@ -11,7 +11,7 @@ import Option from "./Option"
 export type SelectProps = {
   isMulti?: boolean
   placeholder?: string
-  defaultValue?: OptionType
+  defaultValue?: OptionType | OptionType[]
   style?: CSSProperties
   disabled?: boolean
   onChange?: (
@@ -21,7 +21,7 @@ export type SelectProps = {
       selectedList,
     }: {
       selected: ReactProps.EventKey | null
-      selectedList: ReactProps.EventKey[]
+      selectedList: OptionType[]
     },
   ) => void
 } & ReactProps.Component
@@ -34,19 +34,18 @@ export type OptionType = {
 const Select = ({ isMulti = false, ...props }: SelectProps) => {
   const popupRef = useRef<PopupActions | null>(null)
   const [selected, setSelected] = useState<Array<OptionType>>(
-    props.defaultValue ? [props.defaultValue] : [],
+    Array.isArray(props.defaultValue) ? props.defaultValue : [],
   )
 
   const handleClick = (e: React.MouseEvent<Element, MouseEvent>, option: OptionType) => {
     if (isMulti) {
-      const newSelected = selected.map(option => option.eventKey).concat(option.eventKey)
+      const newSelected = selected.concat(option)
       setSelected([...selected, option])
 
       props.onChange && props.onChange(e, { selected: option.eventKey, selectedList: newSelected })
     } else {
       setSelected([option])
-      props.onChange &&
-        props.onChange(e, { selected: option.eventKey, selectedList: [option.eventKey] })
+      props.onChange && props.onChange(e, { selected: option.eventKey, selectedList: [option] })
     }
     popupRef.current?.close()
   }
@@ -62,7 +61,7 @@ const Select = ({ isMulti = false, ...props }: SelectProps) => {
     props.onChange &&
       props.onChange(e, {
         selected: null,
-        selectedList: newSelected.map(option => option.eventKey),
+        selectedList: newSelected,
       })
   }
 

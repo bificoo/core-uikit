@@ -2,12 +2,12 @@ import React, { CSSProperties } from "react";
 export declare type SelectProps = {
     isMulti?: boolean;
     placeholder?: string;
-    defaultValue?: OptionType;
+    defaultValue?: OptionType | OptionType[];
     style?: CSSProperties;
     disabled?: boolean;
     onChange?: (e: React.MouseEvent<Element, MouseEvent>, { selected, selectedList, }: {
         selected: ReactProps.EventKey | null;
-        selectedList: ReactProps.EventKey[];
+        selectedList: OptionType[];
     }) => void;
 } & ReactProps.Component;
 export declare type OptionType = {

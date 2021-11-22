@@ -42,7 +42,11 @@ export const Multiple: Story<SelectProps> = () => {
 
   return (
     <div style={{ display: "flex" }}>
-      <Select isMulti placeholder="Select.." onChange={(e, value) => console.log(value)}>
+      <Select
+        isMulti
+        defaultValue={[options[0], options[1]]}
+        placeholder="Select.."
+        onChange={(e, value) => console.log("onChange", value)}>
         {options.map(option => (
           <Select.Option key={option.value} value={option.value} eventKey={option.eventKey}>
             {option.value}

@@ -21,18 +21,17 @@ var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 var Select = function (_a) {
     var _b = _a.isMulti, isMulti = _b === void 0 ? false : _b, props = _tslib.__rest(_a, ["isMulti"]);
     var popupRef = React.useRef(null);
-    var _c = React.useState(props.defaultValue ? [props.defaultValue] : []), selected = _c[0], setSelected = _c[1];
+    var _c = React.useState(Array.isArray(props.defaultValue) ? props.defaultValue : []), selected = _c[0], setSelected = _c[1];
     var handleClick = function (e, option) {
         var _a;
         if (isMulti) {
-            var newSelected = selected.map(function (option) { return option.eventKey; }).concat(option.eventKey);
+            var newSelected = selected.concat(option);
             setSelected(_tslib.__spreadArray(_tslib.__spreadArray([], selected, true), [option]));
             props.onChange && props.onChange(e, { selected: option.eventKey, selectedList: newSelected });
         }
         else {
             setSelected([option]);
-            props.onChange &&
-                props.onChange(e, { selected: option.eventKey, selectedList: [option.eventKey] });
+            props.onChange && props.onChange(e, { selected: option.eventKey, selectedList: [option] });
         }
         (_a = popupRef.current) === null || _a === void 0 ? void 0 : _a.close();
     };
@@ -46,7 +45,7 @@ var Select = function (_a) {
         props.onChange &&
             props.onChange(e, {
                 selected: null,
-                selectedList: newSelected.map(function (option) { return option.eventKey; }),
+                selectedList: newSelected,
             });
     };
     return (jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default['default'](Select_module['default'].wrapper, props.className), style: props.style }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: Select_module['default'].container }, { children: jsxRuntime.jsx(reactjsPopup_esm['default'], _tslib.__assign({ ref: popupRef, trigger: function (open) {

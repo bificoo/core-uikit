@@ -1,14 +1,13 @@
 @import 'assets/styles/mixins';
 
-%disabled {
+@mixin disabled {
   &[disabled],
   &[disabled]:hover,
   &[disabled]:active,
   &[disabled]:active:hover {
-    background: #091e420a;
     cursor: not-allowed;
     text-decoration: none;
-    color: #a5adba;
+    @content
   }
 }
 
@@ -22,7 +21,7 @@
   font-size: inherit;
   font-style: normal;
   font-family: inherit;
-  min-width: em(100);
+  min-width: 68px;
   max-width: 100%;
   position: relative;
   text-align: center;
@@ -30,9 +29,9 @@
   transition: background 0.1s ease-out 0s, box-shadow 0.15s cubic-bezier(0.47, 0.03, 0.49, 1.38) 0s;
   white-space: nowrap;
   cursor: pointer;
-  height: em(38);
-  line-height: em(38);
-  padding: 0px 10px;
+  height: 32px;
+  line-height: 32px;
+  padding: 0px 12px;
   vertical-align: middle;
   width: auto;
   -webkit-box-pack: center;
@@ -56,37 +55,68 @@
   }
 
   &.primary {
-    background: #0052cc;
+    background: #557CC4;
     color: #ffffff;
-    @extend %disabled;
+
+    @include disabled {
+      background: #557CC4;
+      color: #ffffff;
+      opacity: 0.5;
+    }
 
     &:not([disabled]) {
       &:hover {
-        background: #0065ff;
+        background: #0052CC;
         color: #ffffff;
       }
 
       &:active {
-        background: #0747a6;
+        background: #2D62C4;
         color: #ffffff;
       }
     }
   }
 
   &.secondary {
-    background: #091e420a;
-    color: #42526e;
-    @extend %disabled;
+    background: #ffffff;
+    color: #557CC4;
+    border: 1px solid #557CC4;
+
+    @include disabled {
+      color: #557CC4;
+      border-color: #557CC4;
+      opacity: 0.5;
+    }
 
     &:not([disabled]) {
       &:hover{
-        background: #091e4214;
-        color: #42526e;
+        background: #0052CC;
+        color: #ffffff;
       }
 
       &:active {
-        background: #b3d4ff99;
-        color: #0052cc;
+        background: #2D62C4;
+        color: #ffffff;
+      }
+    }
+  }
+
+  &.transparent {
+    background: transparent;
+    color: #557CC4;
+
+    @include disabled {
+      color: #557CC4;
+      opacity: 0.5;
+    }
+
+    &:not([disabled]) {
+      &:hover{
+        color: #0052CC;
+      }
+
+      &:active {
+        color: #2D62C4;
       }
     }
   }
@@ -94,7 +124,12 @@
   &.important {
     background: #de350b;
     color: #ffffff;
-    @extend %disabled;
+
+    @include disabled {
+      background: #de350b;
+      color: #ffffff;
+      opacity: 0.5;
+    }
 
     &:not([disabled]) {
       &:hover{

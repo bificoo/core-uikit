@@ -8,7 +8,7 @@ export type ButtonProps = {
    * 按鈕樣式
    * @default 'primary'
    */
-  variant?: "primary" | "secondary" | "important"
+  variant?: "primary" | "secondary" | "transparent" | "important"
   /**
    * 按鈕滿版
    * @default false

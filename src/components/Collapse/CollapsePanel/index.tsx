@@ -9,9 +9,10 @@ const CollapsePanel = (props: CollapsePanelProps) => {
   const { expanded } = useContext(CollapseContext)
   return (
     <div
-      className={cx(styled.wrapper, {
+      className={cx(props.className, styled.wrapper, {
         [styled.expanded]: expanded,
-      })}>
+      })}
+      style={props.style}>
       {props.children}
     </div>
   )

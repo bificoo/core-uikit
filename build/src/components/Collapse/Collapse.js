@@ -14,7 +14,7 @@ var Collapse = function (props) {
             setExpended: function (expanded) {
                 setExpended(expanded);
             },
-        } }, { children: jsxRuntime.jsx("div", { children: props.children }, void 0) }), void 0));
+        } }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: props.className, style: props.style }, { children: props.children }), void 0) }), void 0));
 };
 
 exports['default'] = Collapse;

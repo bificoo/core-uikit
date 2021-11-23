@@ -17,7 +17,7 @@ var cx__default = /*#__PURE__*/_interopDefaultLegacy(cx);
 var CollapseHeader = function (props) {
     var _a;
     var _b = React.useContext(CollapseContext.CollapseContext), expanded = _b.expanded, setExpended = _b.setExpended;
-    return (jsxRuntime.jsxs("header", _tslib.__assign({ className: cx__default['default'](CollapseHeader_module['default'].wrapper, (_a = {}, _a[CollapseHeader_module['default'].expanded] = expanded, _a)), onClick: function () { return setExpended(!expanded); } }, { children: [props.children, " ", jsxRuntime.jsx(chevron.ReactComponent, {}, void 0)] }), void 0));
+    return (jsxRuntime.jsxs("header", _tslib.__assign({ className: cx__default['default'](props.className, CollapseHeader_module['default'].wrapper, (_a = {}, _a[CollapseHeader_module['default'].expanded] = expanded, _a)), onClick: function () { return setExpended(!expanded); }, style: props.style }, { children: [props.children, " ", jsxRuntime.jsx(chevron.ReactComponent, {}, void 0)] }), void 0));
 };
 
 exports['default'] = CollapseHeader;

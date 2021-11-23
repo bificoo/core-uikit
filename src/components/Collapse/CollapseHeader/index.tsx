@@ -10,8 +10,9 @@ const CollapseHeader = (props: CollapseHeaderProps) => {
   const { expanded, setExpended } = useContext(CollapseContext)
   return (
     <header
-      className={cx(styled.wrapper, { [styled.expanded]: expanded })}
-      onClick={() => setExpended(!expanded)}>
+      className={cx(props.className, styled.wrapper, { [styled.expanded]: expanded })}
+      onClick={() => setExpended(!expanded)}
+      style={props.style}>
       {props.children} <ChevronIcon />
     </header>
   )

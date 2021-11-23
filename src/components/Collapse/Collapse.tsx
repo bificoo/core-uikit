@@ -14,7 +14,9 @@ const Collapse = (props: CollapseProps) => {
           setExpended(expanded)
         },
       }}>
-      <div>{props.children}</div>
+      <div className={props.className} style={props.style}>
+        {props.children}
+      </div>
     </CollapseContext.Provider>
   )
 }

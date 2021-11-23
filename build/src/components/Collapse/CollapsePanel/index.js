@@ -16,9 +16,9 @@ var cx__default = /*#__PURE__*/_interopDefaultLegacy(cx);
 var CollapsePanel = function (props) {
     var _a;
     var expanded = React.useContext(CollapseContext.CollapseContext).expanded;
-    return (jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default['default'](CollapsePanel_module['default'].wrapper, (_a = {},
+    return (jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default['default'](props.className, CollapsePanel_module['default'].wrapper, (_a = {},
             _a[CollapsePanel_module['default'].expanded] = expanded,
-            _a)) }, { children: props.children }), void 0));
+            _a)), style: props.style }, { children: props.children }), void 0));
 };
 
 exports['default'] = CollapsePanel;

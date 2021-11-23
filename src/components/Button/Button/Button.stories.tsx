@@ -21,24 +21,10 @@ Primary.args = {
   children: "Primary button",
 }
 
-export const PrimaryDisabled = Template.bind({})
-PrimaryDisabled.args = {
-  variant: "primary",
-  disabled: true,
-  children: "Primary disabled button",
-}
-
 export const Secondary = Template.bind({})
 Secondary.args = {
   variant: "secondary",
   children: "Secondary button",
-}
-
-export const SecondaryDisabled = Template.bind({})
-SecondaryDisabled.args = {
-  variant: "secondary",
-  disabled: true,
-  children: "Secondary disabled button",
 }
 
 export const Important = Template.bind({})
@@ -47,24 +33,10 @@ Important.args = {
   children: "Important button",
 }
 
-export const ImportantDisabled = Template.bind({})
-ImportantDisabled.args = {
-  variant: "important",
+export const Disabled = Template.bind({})
+Disabled.args = {
   disabled: true,
-  children: "Important disabled button",
-}
-
-export const Transparent = Template.bind({})
-Transparent.args = {
-  variant: "transparent",
-  children: "Transparent button",
-}
-
-export const TransparentDisabled = Template.bind({})
-TransparentDisabled.args = {
-  variant: "transparent",
-  disabled: true,
-  children: "Transparent disabled button",
+  children: "Disabled button",
 }
 
 export const Block = Template.bind({})

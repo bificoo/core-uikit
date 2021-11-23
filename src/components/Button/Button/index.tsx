@@ -15,6 +15,11 @@ export type ButtonProps = {
    */
   block?: boolean
   /**
+   * 按鈕是否為選取的狀態
+   * @default false
+   */
+  selected?: boolean
+  /**
    * ButtonGroup使用
    */
   eventKey?: ReactProps.EventKey
@@ -22,6 +27,7 @@ export type ButtonProps = {
 
 const Button = ({
   variant = "primary",
+  selected = false,
   block = false,
   className,
   children = "Click",
@@ -37,6 +43,7 @@ const Button = ({
         styled.wrapper,
         styled[variant],
         { [styled.block]: block },
+        { [styled.selected]: selected },
         { active: eventKey && eventKey === activeKey },
         className,
       )}

@@ -10,9 +10,14 @@ export declare type ButtonProps = {
      */
     block?: boolean;
     /**
+     * 按鈕是否為選取的狀態
+     * @default false
+     */
+    selected?: boolean;
+    /**
      * ButtonGroup使用
      */
     eventKey?: ReactProps.EventKey;
 } & JSXProps.ButtonElement;
-declare const Button: ({ variant, block, className, children, eventKey, onClick, ...props }: ButtonProps) => JSX.Element;
+declare const Button: ({ variant, selected, block, className, children, eventKey, onClick, ...props }: ButtonProps) => JSX.Element;
 export default Button;

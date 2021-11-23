@@ -5,6 +5,7 @@ export default _default;
 export declare const Primary: Story<ButtonProps>;
 export declare const Secondary: Story<ButtonProps>;
 export declare const Important: Story<ButtonProps>;
+export declare const Selected: Story<ButtonProps>;
 export declare const Disabled: Story<ButtonProps>;
 export declare const Block: Story<ButtonProps>;
 export declare const Chinese: Story<ButtonProps>;

@@ -7,7 +7,7 @@ export type FormFieldsetProps = {
 
 const FormFieldset = ({ inline = false, ...props }: FormFieldsetProps) => {
   return (
-    <fieldset className={cx({ [styled.inline]: inline }, props.className)}>
+    <fieldset className={cx(styled.wrapper, { [styled.inline]: inline }, props.className)}>
       {props.children}
     </fieldset>
   )

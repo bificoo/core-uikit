@@ -22,6 +22,9 @@ export type { FormMessageProps } from "./FormMessage"
 import FormGroup from "./FormGroup"
 export type { FormGroupProps } from "./FormGroup"
 
+import FormFieldset from "./FormFieldset"
+export type { FormFieldsetProps } from "./FormFieldset"
+
 import FormDivider from "./FormDivider"
 import FormHorizontal from "./FormHorizontal"
 
@@ -38,6 +41,7 @@ const Form = Object.assign(FormBase, {
   ValidMessage: FormValidMessage,
   ErrorMessage: FormErrorMessage,
   Group: FormGroup,
+  Fieldset: FormFieldset,
   Divider: FormDivider,
   Horizontal: FormHorizontal,
 })

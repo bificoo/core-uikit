@@ -6,6 +6,7 @@ export type { FormCheckboxProps } from "./FormCheckbox";
 export type { FormRadioProps } from "./FormRadio";
 export type { FormMessageProps } from "./FormMessage";
 export type { FormGroupProps } from "./FormGroup";
+export type { FormFieldsetProps } from "./FormFieldset";
 import InputGroup, { Prepend, Append } from "./InputGroup";
 export type { InputGroupProps, PrependProps, AppendProps } from "./InputGroup";
 declare const Form: (({ layout, labelWidth, ...props }: import("./Form").FormProps) => JSX.Element) & {
@@ -22,6 +23,7 @@ declare const Form: (({ layout, labelWidth, ...props }: import("./Form").FormPro
     ValidMessage: (props: import("./FormMessage").FormMessageProps) => JSX.Element;
     ErrorMessage: (props: import("./FormMessage").FormMessageProps) => JSX.Element;
     Group: (props: import("./FormGroup").FormGroupProps) => JSX.Element;
+    Fieldset: ({ inline, ...props }: import("./FormFieldset").FormFieldsetProps) => JSX.Element;
     Divider: () => JSX.Element;
     Horizontal: (props: ReactProps.WithChildren) => JSX.Element;
 };

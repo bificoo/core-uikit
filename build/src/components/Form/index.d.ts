@@ -23,7 +23,7 @@ declare const Form: (({ layout, labelWidth, ...props }: import("./Form").FormPro
     ValidMessage: (props: import("./FormMessage").FormMessageProps) => JSX.Element;
     ErrorMessage: (props: import("./FormMessage").FormMessageProps) => JSX.Element;
     Group: (props: import("./FormGroup").FormGroupProps) => JSX.Element;
-    Fieldset: ({ inline, ...props }: import("./FormFieldset").FormFieldsetProps) => JSX.Element;
+    Fieldset: ({ inline, className, ...props }: import("./FormFieldset").FormFieldsetProps) => JSX.Element;
     Divider: () => JSX.Element;
     Horizontal: (props: ReactProps.WithChildren) => JSX.Element;
 };

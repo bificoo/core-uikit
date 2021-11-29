@@ -5,9 +5,9 @@ export type FormFieldsetProps = {
   inline?: boolean
 } & JSXProps.FieldsetElement
 
-const FormFieldset = ({ inline = false, ...props }: FormFieldsetProps) => {
+const FormFieldset = ({ inline = false, className, ...props }: FormFieldsetProps) => {
   return (
-    <fieldset className={cx(styled.wrapper, { [styled.inline]: inline }, props.className)}>
+    <fieldset className={cx(styled.wrapper, { [styled.inline]: inline }, className)} {...props}>
       {props.children}
     </fieldset>
   )

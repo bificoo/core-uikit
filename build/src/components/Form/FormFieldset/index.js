@@ -13,8 +13,8 @@ var cx__default = /*#__PURE__*/_interopDefaultLegacy(cx);
 
 var FormFieldset = function (_a) {
     var _b;
-    var _c = _a.inline, inline = _c === void 0 ? false : _c, props = _tslib.__rest(_a, ["inline"]);
-    return (jsxRuntime.jsx("fieldset", _tslib.__assign({ className: cx__default['default'](FormFieldset_module['default'].wrapper, (_b = {}, _b[FormFieldset_module['default'].inline] = inline, _b), props.className) }, { children: props.children }), void 0));
+    var _c = _a.inline, inline = _c === void 0 ? false : _c, className = _a.className, props = _tslib.__rest(_a, ["inline", "className"]);
+    return (jsxRuntime.jsx("fieldset", _tslib.__assign({ className: cx__default['default'](FormFieldset_module['default'].wrapper, (_b = {}, _b[FormFieldset_module['default'].inline] = inline, _b), className) }, props, { children: props.children }), void 0));
 };
 
 exports['default'] = FormFieldset;

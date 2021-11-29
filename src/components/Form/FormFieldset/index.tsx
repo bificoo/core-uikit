@@ -2,8 +2,8 @@ import cx from "classnames"
 import styled from "./FormFieldset.module.scss"
 
 export type FormFieldsetProps = {
-  inline: boolean
-} & ReactProps.Component
+  inline?: boolean
+} & JSXProps.FieldsetElement
 
 const FormFieldset = ({ inline = false, ...props }: FormFieldsetProps) => {
   return (

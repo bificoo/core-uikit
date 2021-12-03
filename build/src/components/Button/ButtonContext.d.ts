@@ -4,6 +4,7 @@ export declare type ButtonContextProps = {
     setActiveKey: (e: React.MouseEvent<Element, MouseEvent>, { eventKey }: {
         eventKey?: ReactProps.EventKey;
     }) => void;
+    selectKey?: ReactProps.EventKey;
 };
 declare const ButtonContext: React.Context<ButtonContextProps>;
 export { ButtonContext };

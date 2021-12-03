@@ -12,6 +12,7 @@ export type ButtonGroupProps = {
 
 const ButtonGroup = (props: ButtonGroupProps) => {
   const [eventKey, setEventKay] = useState(props.defaultActiveKey)
+  const [selectKey, setSelectKey] = useState(props.defaultActiveKey)
 
   const handleClickItem = (
     e: React.MouseEvent<Element, MouseEvent>,
@@ -20,10 +21,12 @@ const ButtonGroup = (props: ButtonGroupProps) => {
     if (!eventKey) return
     setEventKay(eventKey)
     props.onSelect && props.onSelect(e, { eventKey })
+    setSelectKey(eventKey)
   }
 
   return (
-    <ButtonContext.Provider value={{ activeKey: eventKey, setActiveKey: handleClickItem }}>
+    <ButtonContext.Provider
+      value={{ activeKey: eventKey, setActiveKey: handleClickItem, selectKey: selectKey }}>
       <div className={styled.outer}>{props.children}</div>
     </ButtonContext.Provider>
   )

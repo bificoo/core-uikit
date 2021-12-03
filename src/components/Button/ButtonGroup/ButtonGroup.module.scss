@@ -5,35 +5,22 @@
     .core-uikit-button {
       border-radius: 0;
       box-sizing: border-box;
-      border: 1px solid #2D62C4;
+      border: 1px solid rgba(#EBECF0,0.5);
       min-width: 38px;
-      background: #ffffff;
-      color: #45536C;
 
       &+.core-uikit-button {
         border-left: none;
       }
-      &:not([disabled]) {
-        &:hover{
-          background: #0052CC;
-          color: #ffffff;
-        }
-  
-        &:active {
-          background: #2D62C4;
-          color: #ffffff;
-        }
-      }
-  
-      &.active {
-        color: white;
-        background-color: #2D62C4;
 
-        &:hover {
-          background-color: #2D62C4 ;
-          color: white ;
-        }
-      }
+      // &.active {
+      //   color: white;
+      //   background-color: #253858;
+
+      //   &:hover {
+      //     background-color: #253858 ;
+      //     color: white ;
+      //   }
+      // }
     }
   }
 

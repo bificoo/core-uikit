@@ -35,7 +35,8 @@ const Button = ({
   onClick,
   ...props
 }: ButtonProps) => {
-  const { activeKey, setActiveKey } = useContext(ButtonContext)
+  const { activeKey, setActiveKey, selectKey } = useContext(ButtonContext)
+
   return (
     <button
       className={cx(
@@ -43,7 +44,7 @@ const Button = ({
         styled.wrapper,
         styled[variant],
         { [styled.block]: block },
-        { [styled.selected]: selected },
+        { [styled.selected]: selected && selectKey === eventKey },
         { active: eventKey && eventKey === activeKey },
         className,
       )}

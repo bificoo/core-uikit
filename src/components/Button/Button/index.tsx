@@ -44,8 +44,7 @@ const Button = ({
         styled.wrapper,
         styled[variant],
         { [styled.block]: block },
-        { [styled.selected]: selected && activeKey === eventKey },
-        { active: eventKey && eventKey === activeKey },
+        { [styled.selected]: selected || (activeKey && activeKey === eventKey) },
         className,
       )}
       onClick={e => {

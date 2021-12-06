@@ -35,7 +35,7 @@ const Button = ({
   onClick,
   ...props
 }: ButtonProps) => {
-  const { activeKey, setActiveKey, selectKey } = useContext(ButtonContext)
+  const { activeKey, setActiveKey } = useContext(ButtonContext)
 
   return (
     <button
@@ -44,7 +44,7 @@ const Button = ({
         styled.wrapper,
         styled[variant],
         { [styled.block]: block },
-        { [styled.selected]: selected && selectKey === eventKey },
+        { [styled.selected]: selected && activeKey === eventKey },
         { active: eventKey && eventKey === activeKey },
         className,
       )}

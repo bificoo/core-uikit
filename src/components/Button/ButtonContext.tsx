@@ -6,7 +6,6 @@ export type ButtonContextProps = {
     e: React.MouseEvent<Element, MouseEvent>,
     { eventKey }: { eventKey?: ReactProps.EventKey },
   ) => void
-  selectKey?: ReactProps.EventKey
 }
 
 const ButtonContext = React.createContext<ButtonContextProps>({

@@ -30,6 +30,7 @@ const ButtonGroup = (props: ButtonGroupProps) => {
         if (child.type === Button) {
           return React.cloneElement(child, {
             ...child.props,
+            variant: "secondary",
             selected: child.props.eventKey === eventKey,
             onClick: handleClick,
           })

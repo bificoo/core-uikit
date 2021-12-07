@@ -24,15 +24,9 @@ export const Default: Story = () => {
         ) => {
           console.info(eventKey)
         }}>
-        <Button variant="secondary" eventKey="daily">
-          日
-        </Button>
-        <Button variant="secondary" eventKey="weekly">
-          周
-        </Button>
-        <Button variant="secondary" eventKey="monthly">
-          月
-        </Button>
+        <Button eventKey="daily">日</Button>
+        <Button eventKey="weekly">周</Button>
+        <Button eventKey="monthly">月</Button>
       </ButtonGroup>
     </div>
   )

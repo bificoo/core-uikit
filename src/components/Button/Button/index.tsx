@@ -23,7 +23,7 @@ export type ButtonProps = {
    */
   eventKey?: ReactProps.EventKey
   onClick?: (
-    e: React.MouseEvent<Element, MouseEvent>,
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     { eventKey }?: { eventKey?: ReactProps.EventKey },
   ) => void
 } & JSXProps.ButtonElement
@@ -49,7 +49,7 @@ const Button = ({
         className,
       )}
       onClick={e => {
-        onClick && onClick(e, { eventKey })
+        onClick && onClick(e, { eventKey: eventKey })
       }}
       {...props}>
       {children}

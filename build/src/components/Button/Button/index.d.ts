@@ -1,3 +1,4 @@
+import React from "react";
 export declare type ButtonProps = {
     /**
      * 按鈕樣式
@@ -18,6 +19,9 @@ export declare type ButtonProps = {
      * ButtonGroup使用
      */
     eventKey?: ReactProps.EventKey;
+    onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, { eventKey }?: {
+        eventKey?: ReactProps.EventKey;
+    }) => void;
 } & JSXProps.ButtonElement;
 declare const Button: ({ variant, selected, block, className, children, eventKey, onClick, ...props }: ButtonProps) => JSX.Element;
 export default Button;

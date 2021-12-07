@@ -24,9 +24,38 @@ export const Default: Story = () => {
         ) => {
           console.info(eventKey)
         }}>
-        <Button eventKey="daily">日</Button>
-        <Button eventKey="weekly">周</Button>
-        <Button eventKey="monthly">月</Button>
+        <Button variant="secondary" eventKey="daily">
+          日
+        </Button>
+        <Button variant="secondary" eventKey="weekly">
+          周
+        </Button>
+        <Button variant="secondary" eventKey="monthly">
+          月
+        </Button>
+      </ButtonGroup>
+    </div>
+  )
+}
+export const Disabled: Story = () => {
+  return (
+    <div>
+      <ButtonGroup
+        onSelect={(
+          e: React.MouseEvent<Element, MouseEvent>,
+          { eventKey }: { eventKey?: ReactProps.EventKey },
+        ) => {
+          console.info(eventKey)
+        }}>
+        <Button disabled eventKey="daily">
+          日
+        </Button>
+        <Button disabled eventKey="weekly">
+          周
+        </Button>
+        <Button disabled eventKey="monthly">
+          月
+        </Button>
       </ButtonGroup>
     </div>
   )

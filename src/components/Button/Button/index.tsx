@@ -1,7 +1,6 @@
-import React, { useContext } from "react"
+import React from "react"
 import cx from "classnames"
 import styled from "./Button.module.scss"
-import ButtonContext from "../ButtonContext"
 
 export type ButtonProps = {
   /**
@@ -23,6 +22,10 @@ export type ButtonProps = {
    * ButtonGroup使用
    */
   eventKey?: ReactProps.EventKey
+  onClick?: (
+    e: React.MouseEvent<Element, MouseEvent>,
+    { eventKey }?: { eventKey?: ReactProps.EventKey },
+  ) => void
 } & JSXProps.ButtonElement
 
 const Button = ({
@@ -35,8 +38,6 @@ const Button = ({
   onClick,
   ...props
 }: ButtonProps) => {
-  const { activeKey, setActiveKey } = useContext(ButtonContext)
-
   return (
     <button
       className={cx(
@@ -44,15 +45,11 @@ const Button = ({
         styled.wrapper,
         styled[variant],
         { [styled.block]: block },
-        { [styled.selected]: selected || (activeKey && activeKey === eventKey) },
+        { [styled.selected]: selected },
         className,
       )}
       onClick={e => {
-        if (eventKey) {
-          setActiveKey(e, { eventKey })
-        } else {
-          onClick && onClick(e)
-        }
+        onClick && onClick(e, { eventKey })
       }}
       {...props}>
       {children}

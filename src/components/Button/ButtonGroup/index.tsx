@@ -1,6 +1,6 @@
 import React, { useState } from "react"
+import Button from "../Button"
 import styled from "./ButtonGroup.module.scss"
-import ButtonContext from "../ButtonContext"
 
 export type ButtonGroupProps = {
   defaultActiveKey?: ReactProps.EventKey
@@ -13,19 +13,30 @@ export type ButtonGroupProps = {
 const ButtonGroup = (props: ButtonGroupProps) => {
   const [eventKey, setEventKay] = useState(props.defaultActiveKey)
 
-  const handleClickItem = (
+  const handleClick = (
     e: React.MouseEvent<Element, MouseEvent>,
     { eventKey }: { eventKey?: ReactProps.EventKey },
   ) => {
     if (!eventKey) return
+
     setEventKay(eventKey)
     props.onSelect && props.onSelect(e, { eventKey })
   }
 
   return (
-    <ButtonContext.Provider value={{ activeKey: eventKey, setActiveKey: handleClickItem }}>
-      <div className={styled.outer}>{props.children}</div>
-    </ButtonContext.Provider>
+    <div className={styled.outer}>
+      {React.Children.map(props.children, child => {
+        if (!React.isValidElement(child)) return
+        if (child.type === Button) {
+          return React.cloneElement(child, {
+            ...child.props,
+            selected: child.props.eventKey === eventKey,
+            onClick: handleClick,
+          })
+        }
+        return null
+      })}
+    </div>
   )
 }
 export default ButtonGroup

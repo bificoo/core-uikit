@@ -109,14 +109,3 @@ export const BodyStyle: Story<TooltipProps> = () => {
     </Tooltip>
   )
 }
-
-export const OffsetY: Story<TooltipProps> = () => {
-  return (
-    <Tooltip offsetY={8}>
-      <Tooltip.Toggle>
-        <Button variant="primary">Hover over me</Button>
-      </Tooltip.Toggle>
-      <Tooltip.Body>Design System Tooltip</Tooltip.Body>
-    </Tooltip>
-  )
-}

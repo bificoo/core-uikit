@@ -8,3 +8,5 @@ export declare const Left: Story<TooltipProps>;
 export declare const Top: Story<TooltipProps>;
 export declare const Click: Story<TooltipProps>;
 export declare const LongText: Story<TooltipProps>;
+export declare const BodyStyle: Story<TooltipProps>;
+export declare const OffsetY: Story<TooltipProps>;

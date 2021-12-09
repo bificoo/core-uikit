@@ -96,3 +96,27 @@ export const LongText: Story<TooltipProps> = () => {
     </Tooltip>
   )
 }
+
+export const BodyStyle: Story<TooltipProps> = () => {
+  return (
+    <Tooltip position="right center">
+      <Tooltip.Toggle>
+        <Button variant="primary">Hover over me</Button>
+      </Tooltip.Toggle>
+      <Tooltip.Body style={{ background: "pink", borderColor: "purple" }}>
+        Design System Tooltip
+      </Tooltip.Body>
+    </Tooltip>
+  )
+}
+
+export const OffsetY: Story<TooltipProps> = () => {
+  return (
+    <Tooltip offsetY={8}>
+      <Tooltip.Toggle>
+        <Button variant="primary">Hover over me</Button>
+      </Tooltip.Toggle>
+      <Tooltip.Body>Design System Tooltip</Tooltip.Body>
+    </Tooltip>
+  )
+}

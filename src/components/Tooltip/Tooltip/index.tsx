@@ -7,14 +7,7 @@ import "./Tooltip.module.scss"
 
 export type TooltipProps = PopupProps
 
-const Tooltip = ({
-  on = ["hover"],
-  position = "bottom center",
-  arrow = false,
-  offsetX = 8,
-  offsetY = 0,
-  ...props
-}: TooltipProps) => {
+const Tooltip = ({ on = "hover", position = "bottom center", ...props }: TooltipProps) => {
   const tooltip = useMemo(() => {
     let triggerElement = <div />
     let bodyElement = null
@@ -43,9 +36,8 @@ const Tooltip = ({
       position={position}
       closeOnDocumentClick
       contentStyle={tooltip.bodyStyle}
-      arrow={arrow}
-      offsetX={offsetX}
-      offsetY={offsetY}>
+      arrow={true}
+      arrowStyle={{ display: "none" }}>
       <span>{tooltip.body}</span>
     </Popup>
   )

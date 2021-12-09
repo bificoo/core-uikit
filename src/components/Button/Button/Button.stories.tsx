@@ -34,7 +34,7 @@ Important.args = {
 export const Selected = Template.bind({})
 Selected.args = {
   selected: true,
-  children: "Disabled button",
+  children: "Selected button",
 }
 
 export const Disabled = Template.bind({})

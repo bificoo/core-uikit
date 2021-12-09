@@ -26,7 +26,7 @@
   &.selected:hover,
   &.selected:active,
   &.selected:active:hover {
-    background: #253858 !important; 
+    background: #253858; 
     cursor: default;
     text-decoration: none;
     color: #ffffff !important;
@@ -89,37 +89,37 @@
     background: #0052cc;
     color: #ffffff;
     @extend %disabled;
-    @extend %selected;
-
+    
     &:not([disabled]) {
       &:hover {
         background: #0065ff;
         color: #ffffff;
       }
-
+      
       &:active {
         background: #0747a6;
         color: #ffffff;
       }
+      @extend %selected;
     }
   }
 
   &.secondary {
-    background: rgba(#EBECF0,0.5);
-    color: #42526E;
+    background:#EBECF0;
+    color: #45536C;
     @extend %disabled;
-    @extend %selected;
-
+    
     &:not([disabled]) {
       &:hover{
-        background: #EBECF0;
-        color: #42526E;
+        background: #E1E2E6;
+        color: #45536C;
       }
-
+      
       &:active {
-        background: rgba(179,212,255,0.6);
+        background: #D1E5FF;
         color: #0052CC;
       }
+      @extend %selected;
     }
   }
 

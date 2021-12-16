@@ -33,7 +33,7 @@ var Dropdown = function (_a) {
                 triggerElement = child;
             }
             if (child.type === index$1['default']) {
-                menuElement = React__default['default'].cloneElement(child, { style: { width: clientWidth } });
+                menuElement = React__default['default'].cloneElement(child, { style: { minWidth: clientWidth } });
             }
         });
         return {

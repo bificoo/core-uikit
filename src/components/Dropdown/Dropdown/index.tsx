@@ -34,7 +34,7 @@ const Dropdown = ({ ...props }: DropdownProps) => {
         triggerElement = child
       }
       if (child.type === DropdownMenu) {
-        menuElement = React.cloneElement(child, { style: { width: clientWidth } })
+        menuElement = React.cloneElement(child, { style: { minWidth: clientWidth } })
       }
     })
 

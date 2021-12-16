@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from "react"
+import React, { useMemo, useRef, useState, useLayoutEffect } from "react"
 import cx from "classnames"
 import Popup from "reactjs-popup"
 import { PopupActions, PopupProps } from "reactjs-popup/dist/types"
@@ -20,8 +20,10 @@ export type DropdownProps = {
 } & ReactProps.Component
 
 const Dropdown = ({ ...props }: DropdownProps) => {
+  const [clientWidth, setClientWidth] = useState(0)
   const [eventKey, setEventKay] = useState(props.defaultActiveKey)
   const popupRef = useRef<PopupActions | null>(null)
+  const triggerRef = useRef<HTMLInputElement>(null)
 
   const dropdown = useMemo(() => {
     let triggerElement = <div />
@@ -32,14 +34,15 @@ const Dropdown = ({ ...props }: DropdownProps) => {
         triggerElement = child
       }
       if (child.type === DropdownMenu) {
-        menuElement = child
+        menuElement = React.cloneElement(child, { style: { width: clientWidth } })
       }
     })
+
     return {
       trigger: triggerElement,
       menu: menuElement,
     }
-  }, [props.children])
+  }, [props.children, clientWidth])
 
   const handleClickItem = (
     e: React.MouseEvent<Element, MouseEvent>,
@@ -51,9 +54,13 @@ const Dropdown = ({ ...props }: DropdownProps) => {
     popupRef.current?.close()
   }
 
+  useLayoutEffect(() => {
+    setClientWidth(triggerRef.current?.clientWidth || 0)
+  }, [])
+
   return (
     <DropdownContext.Provider value={{ activeKey: eventKey, setActiveKey: handleClickItem }}>
-      <div className={cx(styled.wrapper, props.className)} style={props.style}>
+      <div className={cx(styled.wrapper, props.className)} style={props.style} ref={triggerRef}>
         <Popup
           ref={popupRef}
           className="dropdown"

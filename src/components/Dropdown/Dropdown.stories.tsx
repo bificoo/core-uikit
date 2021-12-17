@@ -157,3 +157,27 @@ export const Disabled: Story<DropdownProps> = () => {
     </Dropdown>
   )
 }
+
+export const Automatically: Story<DropdownProps> = () => {
+  return (
+    <Dropdown
+      onSelect={(
+        e: React.MouseEvent<Element, MouseEvent>,
+        { eventKey }: { eventKey?: ReactProps.EventKey },
+      ) => {
+        console.info(eventKey)
+      }}>
+      <Dropdown.Toggle>
+        <Button>Automatically width with Dropdown Toggle</Button>
+      </Dropdown.Toggle>
+      <Dropdown.Menu>
+        <Dropdown.Item eventKey="edit">Edit</Dropdown.Item>
+        <Dropdown.Item eventKey="share">Share</Dropdown.Item>
+        <Dropdown.Item eventKey="move">Move</Dropdown.Item>
+        <Dropdown.Item eventKey="clone">Clone</Dropdown.Item>
+        <Dropdown.Item eventKey="delete">Delete</Dropdown.Item>
+        <Dropdown.Item eventKey="report">Report</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  )
+}

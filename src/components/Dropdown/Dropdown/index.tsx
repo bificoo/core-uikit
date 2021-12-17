@@ -20,7 +20,7 @@ export type DropdownProps = {
 } & ReactProps.Component
 
 const Dropdown = ({ ...props }: DropdownProps) => {
-  const [clientWidth, setClientWidth] = useState(0)
+  const [clientWidth, setClientWidth] = useState(100)
   const [eventKey, setEventKay] = useState(props.defaultActiveKey)
   const popupRef = useRef<PopupActions | null>(null)
   const triggerRef = useRef<HTMLInputElement>(null)
@@ -34,7 +34,9 @@ const Dropdown = ({ ...props }: DropdownProps) => {
         triggerElement = child
       }
       if (child.type === DropdownMenu) {
-        menuElement = React.cloneElement(child, { style: { minWidth: clientWidth } })
+        menuElement = React.cloneElement(child, {
+          style: { ...child.props.style, minWidth: clientWidth },
+        })
       }
     })
 
@@ -55,7 +57,7 @@ const Dropdown = ({ ...props }: DropdownProps) => {
   }
 
   useLayoutEffect(() => {
-    setClientWidth(triggerRef.current?.clientWidth || 0)
+    setClientWidth(triggerRef.current?.clientWidth || 100)
   }, [])
 
   return (

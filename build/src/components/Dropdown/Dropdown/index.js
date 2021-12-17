@@ -19,7 +19,7 @@ var cx__default = /*#__PURE__*/_interopDefaultLegacy(cx);
 
 var Dropdown = function (_a) {
     var props = _tslib.__rest(_a, []);
-    var _b = React.useState(0), clientWidth = _b[0], setClientWidth = _b[1];
+    var _b = React.useState(100), clientWidth = _b[0], setClientWidth = _b[1];
     var _c = React.useState(props.defaultActiveKey), eventKey = _c[0], setEventKay = _c[1];
     var popupRef = React.useRef(null);
     var triggerRef = React.useRef(null);
@@ -33,7 +33,9 @@ var Dropdown = function (_a) {
                 triggerElement = child;
             }
             if (child.type === index$1['default']) {
-                menuElement = React__default['default'].cloneElement(child, { style: { minWidth: clientWidth } });
+                menuElement = React__default['default'].cloneElement(child, {
+                    style: _tslib.__assign(_tslib.__assign({}, child.props.style), { minWidth: clientWidth }),
+                });
             }
         });
         return {
@@ -52,7 +54,7 @@ var Dropdown = function (_a) {
     };
     React.useLayoutEffect(function () {
         var _a;
-        setClientWidth(((_a = triggerRef.current) === null || _a === void 0 ? void 0 : _a.clientWidth) || 0);
+        setClientWidth(((_a = triggerRef.current) === null || _a === void 0 ? void 0 : _a.clientWidth) || 100);
     }, []);
     return (jsxRuntime.jsx(DropdownContext.DropdownContext.Provider, _tslib.__assign({ value: { activeKey: eventKey, setActiveKey: handleClickItem } }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default['default'](Dropdown_module['default'].wrapper, props.className), style: props.style, ref: triggerRef }, { children: jsxRuntime.jsx(reactjsPopup_esm['default'], _tslib.__assign({ ref: popupRef, className: "dropdown", trigger: function (open) { return dropdown.trigger && React__default['default'].cloneElement(dropdown.trigger, { open: open }); }, position: ["bottom left"], disabled: props.disabled, on: "click", closeOnDocumentClick: true, mouseLeaveDelay: 300, mouseEnterDelay: 0, arrow: false, contentStyle: {
                     border: "none",

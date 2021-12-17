@@ -1,7 +1,7 @@
 import { Story, Meta } from "@storybook/react"
 import Dropdown, { DropdownProps } from "components/Dropdown"
 import Button from "components/Button"
-import React from "react"
+import { useState } from "react"
 
 export default {
   title: "Navigation/Dropdown",
@@ -28,10 +28,7 @@ export default {
 export const Default: Story<DropdownProps> = () => {
   return (
     <Dropdown
-      onSelect={(
-        e: React.MouseEvent<Element, MouseEvent>,
-        { eventKey }: { eventKey?: ReactProps.EventKey },
-      ) => {
+      onSelect={(_, { eventKey }: { eventKey?: ReactProps.EventKey }) => {
         console.info(eventKey)
       }}>
       <Dropdown.Toggle>
@@ -55,13 +52,7 @@ export const InlineStyle: Story<DropdownProps> = () => {
       <Dropdown.Toggle>
         <Button>Page actions</Button>
       </Dropdown.Toggle>
-      <Dropdown.Menu
-        style={{
-          width: "120px",
-          left: "50%",
-          position: "absolute",
-          transform: "translateX(-50%)",
-        }}>
+      <Dropdown.Menu>
         <Dropdown.Item eventKey="edit">Edit</Dropdown.Item>
         <Dropdown.Item eventKey="share">Share</Dropdown.Item>
         <Dropdown.Item eventKey="move">Move</Dropdown.Item>
@@ -97,7 +88,7 @@ export const Arrow: Story<DropdownProps> = () => {
 export const MultiDropdown: Story<DropdownProps> = () => {
   return (
     <>
-      <Dropdown>
+      <Dropdown style={{ marginRight: "10px" }}>
         <Dropdown.Toggle>
           <Button>
             Page actions1
@@ -137,10 +128,7 @@ export const Disabled: Story<DropdownProps> = () => {
   return (
     <Dropdown
       disabled
-      onSelect={(
-        e: React.MouseEvent<Element, MouseEvent>,
-        { eventKey }: { eventKey?: ReactProps.EventKey },
-      ) => {
+      onSelect={(_, { eventKey }: { eventKey?: ReactProps.EventKey }) => {
         console.info(eventKey)
       }}>
       <Dropdown.Toggle>
@@ -158,25 +146,20 @@ export const Disabled: Story<DropdownProps> = () => {
   )
 }
 
-export const Automatically: Story<DropdownProps> = () => {
+export const Adaptive: Story<DropdownProps> = () => {
+  const [value, setValue] = useState("我是文字")
   return (
     <Dropdown
-      onSelect={(
-        e: React.MouseEvent<Element, MouseEvent>,
-        { eventKey }: { eventKey?: ReactProps.EventKey },
-      ) => {
-        console.info(eventKey)
+      onSelect={(_, { eventKey }: { eventKey?: ReactProps.EventKey }) => {
+        setValue(eventKey + "")
       }}>
       <Dropdown.Toggle>
-        <Button>Automatically width with Dropdown Toggle</Button>
+        <Button>{value}</Button>
       </Dropdown.Toggle>
       <Dropdown.Menu>
-        <Dropdown.Item eventKey="edit">Edit</Dropdown.Item>
-        <Dropdown.Item eventKey="share">Share</Dropdown.Item>
-        <Dropdown.Item eventKey="move">Move</Dropdown.Item>
-        <Dropdown.Item eventKey="clone">Clone</Dropdown.Item>
-        <Dropdown.Item eventKey="delete">Delete</Dropdown.Item>
-        <Dropdown.Item eventKey="report">Report</Dropdown.Item>
+        <Dropdown.Item eventKey="短">短</Dropdown.Item>
+        <Dropdown.Item eventKey="我是中等長度的文字">我是中等長度的文字</Dropdown.Item>
+        <Dropdown.Item eventKey="我是文字">我是文字</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
   )

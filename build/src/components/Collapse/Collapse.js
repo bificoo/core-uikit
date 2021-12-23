@@ -17,4 +17,4 @@ var Collapse = function (props) {
         } }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: props.className, style: props.style }, { children: props.children }), void 0) }), void 0));
 };
 
-exports['default'] = Collapse;
+exports["default"] = Collapse;

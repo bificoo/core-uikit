@@ -10,4 +10,4 @@ var DropdownToggle = React.forwardRef(function DropdownToggle(props, ref) {
     return (jsxRuntime.jsx("div", _tslib.__assign({ className: props.className, onClick: props.onClick, ref: ref }, { children: props.children }), void 0));
 });
 
-exports['default'] = DropdownToggle;
+exports["default"] = DropdownToggle;

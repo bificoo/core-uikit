@@ -15,7 +15,7 @@ var cx__default = /*#__PURE__*/_interopDefaultLegacy(cx);
 
 var DropdownItem = function (props) {
     var setActiveKey = React.useContext(DropdownContext.DropdownContext).setActiveKey;
-    return (jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default['default'](DropdownItem_module['default'].wrapper, props.className), onClick: function (e) { return setActiveKey(e, { eventKey: props.eventKey }); } }, { children: props.children }), void 0));
+    return (jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default["default"](DropdownItem_module["default"].wrapper, props.className), onClick: function (e) { return setActiveKey(e, { eventKey: props.eventKey }); } }, { children: props.children }), void 0));
 };
 
-exports['default'] = DropdownItem;
+exports["default"] = DropdownItem;

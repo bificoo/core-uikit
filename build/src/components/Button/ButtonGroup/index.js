@@ -21,14 +21,14 @@ var ButtonGroup = function (props) {
         setEventKay(eventKey);
         props.onSelect && props.onSelect(e, { eventKey: eventKey });
     };
-    return (jsxRuntime.jsx("div", _tslib.__assign({ className: ButtonGroup_module['default'].outer }, { children: React__default['default'].Children.map(props.children, function (child) {
-            if (!React__default['default'].isValidElement(child))
+    return (jsxRuntime.jsx("div", _tslib.__assign({ className: ButtonGroup_module["default"].outer }, { children: React__default["default"].Children.map(props.children, function (child) {
+            if (!React__default["default"].isValidElement(child))
                 return;
-            if (child.type === index['default']) {
-                return React__default['default'].cloneElement(child, _tslib.__assign(_tslib.__assign({}, child.props), { variant: "secondary", selected: child.props.eventKey === eventKey, onClick: handleClick }));
+            if (child.type === index["default"]) {
+                return React__default["default"].cloneElement(child, _tslib.__assign(_tslib.__assign({}, child.props), { variant: "secondary", selected: child.props.eventKey === eventKey, onClick: handleClick }));
             }
             return null;
         }) }), void 0));
 };
 
-exports['default'] = ButtonGroup;
+exports["default"] = ButtonGroup;

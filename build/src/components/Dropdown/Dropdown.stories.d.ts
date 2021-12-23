@@ -7,4 +7,4 @@ export declare const InlineStyle: Story<DropdownProps>;
 export declare const Arrow: Story<DropdownProps>;
 export declare const MultiDropdown: Story<DropdownProps>;
 export declare const Disabled: Story<DropdownProps>;
-export declare const Automatically: Story<DropdownProps>;
+export declare const Adaptive: Story<DropdownProps>;

@@ -22,7 +22,7 @@ var Form = function (_a) {
         e.preventDefault();
         props.onSubmit && props.onSubmit(e);
     };
-    return (jsxRuntime.jsx(FormContext['default'].Provider, _tslib.__assign({ value: { attributes: attributes, setAttributes: update } }, { children: jsxRuntime.jsx("form", _tslib.__assign({}, props, { onSubmit: submit }, { children: props.children }), void 0) }), void 0));
+    return (jsxRuntime.jsx(FormContext["default"].Provider, _tslib.__assign({ value: { attributes: attributes, setAttributes: update } }, { children: jsxRuntime.jsx("form", _tslib.__assign({}, props, { onSubmit: submit }, { children: props.children }), void 0) }), void 0));
 };
 
-exports['default'] = Form;
+exports["default"] = Form;

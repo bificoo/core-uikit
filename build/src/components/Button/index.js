@@ -8,8 +8,8 @@ require('react/jsx-runtime');
 require('classnames');
 require('./LinkButton/LinkButton.module.scss.js');
 
-var Button = Object.assign(index$1['default'], {
-    Group: index$2['default'],
+var Button = Object.assign(index$1["default"], {
+    Group: index$2["default"],
 });
 
-exports['default'] = Button;
+exports["default"] = Button;

@@ -8,7 +8,7 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
-var CollapseContext = React__default['default'].createContext({
+var CollapseContext = React__default["default"].createContext({
     expanded: false,
     setExpended: function () {
         //
@@ -16,4 +16,4 @@ var CollapseContext = React__default['default'].createContext({
 });
 
 exports.CollapseContext = CollapseContext;
-exports['default'] = CollapseContext;
+exports["default"] = CollapseContext;

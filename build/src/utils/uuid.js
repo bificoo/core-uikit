@@ -6,4 +6,4 @@ var index_prod = require('../../node_modules/nanoid/index.prod.js');
 
 var uuid = index_prod.nanoid;
 
-exports["default"] = uuid;
+exports['default'] = uuid;

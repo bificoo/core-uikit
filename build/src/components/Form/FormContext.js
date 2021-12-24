@@ -8,16 +8,16 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
-var FormContext = React__default["default"].createContext({
+var FormContext = React__default['default'].createContext({
     setAttributes: function () {
         // set attributes
     },
 });
-var FormGroupContext = React__default["default"].createContext({
+var FormGroupContext = React__default['default'].createContext({
     setAttributes: function () {
         // set attributes
     },
 });
 
 exports.FormGroupContext = FormGroupContext;
-exports["default"] = FormContext;
+exports['default'] = FormContext;

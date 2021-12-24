@@ -19,13 +19,13 @@ var Modal = function (_a) {
         if (!open && opened.current)
             props.onExited && props.onExited();
     }, [open, props.onExited]);
-    return (jsxRuntime.jsxs(reactjsPopup_esm["default"], _tslib.__assign({ modal: true, lockScroll: true, open: open, closeOnDocumentClick: backdrop, closeOnEscape: true, onClose: props.onClose, contentStyle: {
+    return (jsxRuntime.jsxs(reactjsPopup_esm['default'], _tslib.__assign({ modal: true, lockScroll: true, open: open, closeOnDocumentClick: backdrop, closeOnEscape: true, onClose: props.onClose, contentStyle: {
             background: "transparent",
             border: "none",
             width: "auto",
         }, overlayStyle: {
             backgroundColor: "#091e428a",
-        } }, { children: [custom && props.children, !custom && (jsxRuntime.jsx(index["default"], _tslib.__assign({ title: props.title, content: props.content, confirmText: props.confirmText, confirmButtonProps: props.confirmButtonProps, cancelText: props.cancelText, cancelButtonProps: props.cancelButtonProps, onConfirm: props.onConfirm, onCancel: props.onCancel, onClose: props.onClose }, { children: props.children }), void 0))] }), void 0));
+        } }, { children: [custom && props.children, !custom && (jsxRuntime.jsx(index['default'], _tslib.__assign({ title: props.title, content: props.content, confirmText: props.confirmText, confirmButtonProps: props.confirmButtonProps, cancelText: props.cancelText, cancelButtonProps: props.cancelButtonProps, onConfirm: props.onConfirm, onCancel: props.onCancel, onClose: props.onClose }, { children: props.children }), void 0))] }), void 0));
 };
 
-exports["default"] = Modal;
+exports['default'] = Modal;

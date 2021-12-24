@@ -14,7 +14,7 @@ var cx__default = /*#__PURE__*/_interopDefaultLegacy(cx);
 
 var DropdownArrow = function (_a) {
     var _b = _a.direction, direction = _b === void 0 ? "down" : _b;
-    return (jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default["default"](DropdownArrow_module["default"].wrapper, DropdownArrow_module["default"]["direction-".concat(direction)]) }, { children: jsxRuntime.jsx(arrow.ReactComponent, {}, void 0) }), void 0));
+    return (jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default['default'](DropdownArrow_module['default'].wrapper, DropdownArrow_module['default']["direction-" + direction]) }, { children: jsxRuntime.jsx(arrow.ReactComponent, {}, void 0) }), void 0));
 };
 
-exports["default"] = DropdownArrow;
+exports['default'] = DropdownArrow;

@@ -26,14 +26,14 @@ var Dropdown = function (_a) {
     var dropdown = React.useMemo(function () {
         var triggerElement = jsxRuntime.jsx("div", {}, void 0);
         var menuElement = null;
-        React__default["default"].Children.forEach(props.children, function (child) {
-            if (!React__default["default"].isValidElement(child))
+        React__default['default'].Children.forEach(props.children, function (child) {
+            if (!React__default['default'].isValidElement(child))
                 return;
-            if (child.type === index["default"]) {
+            if (child.type === index['default']) {
                 triggerElement = child;
             }
-            if (child.type === index$1["default"]) {
-                menuElement = React__default["default"].cloneElement(child, {
+            if (child.type === index$1['default']) {
+                menuElement = React__default['default'].cloneElement(child, {
                     style: _tslib.__assign(_tslib.__assign({}, child.props.style), { minWidth: clientWidth }),
                 });
             }
@@ -56,11 +56,11 @@ var Dropdown = function (_a) {
         var _a;
         setClientWidth(((_a = triggerRef.current) === null || _a === void 0 ? void 0 : _a.clientWidth) || 100);
     }, []);
-    return (jsxRuntime.jsx(DropdownContext.DropdownContext.Provider, _tslib.__assign({ value: { activeKey: eventKey, setActiveKey: handleClickItem } }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default["default"](Dropdown_module["default"].wrapper, props.className), style: props.style, ref: triggerRef }, { children: jsxRuntime.jsx(reactjsPopup_esm["default"], _tslib.__assign({ ref: popupRef, className: "dropdown", trigger: function (open) { return dropdown.trigger && React__default["default"].cloneElement(dropdown.trigger, { open: open }); }, position: ["bottom left"], disabled: props.disabled, on: "click", closeOnDocumentClick: true, mouseLeaveDelay: 300, mouseEnterDelay: 0, arrow: false, contentStyle: {
+    return (jsxRuntime.jsx(DropdownContext.DropdownContext.Provider, _tslib.__assign({ value: { activeKey: eventKey, setActiveKey: handleClickItem } }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default['default'](Dropdown_module['default'].wrapper, props.className), style: props.style, ref: triggerRef }, { children: jsxRuntime.jsx(reactjsPopup_esm['default'], _tslib.__assign({ ref: popupRef, className: "dropdown", trigger: function (open) { return dropdown.trigger && React__default['default'].cloneElement(dropdown.trigger, { open: open }); }, position: ["bottom left"], disabled: props.disabled, on: "click", closeOnDocumentClick: true, mouseLeaveDelay: 300, mouseEnterDelay: 0, arrow: false, contentStyle: {
                     border: "none",
                     padding: "8px",
                     boxShadow: "none",
                 } }, { children: dropdown.menu }), void 0) }), void 0) }), void 0));
 };
 
-exports["default"] = Dropdown;
+exports['default'] = Dropdown;

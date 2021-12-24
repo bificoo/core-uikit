@@ -21,7 +21,7 @@ var ModalFooter = function (props) {
         props.onCancel && props.onCancel();
         props.onClose && props.onClose();
     };
-    return (jsxRuntime.jsxs("footer", _tslib.__assign({ className: cx__default["default"](ModalFooter_module["default"].wrapper, props.className) }, { children: [!!props.cancelText && (jsxRuntime.jsx(index["default"], _tslib.__assign({ variant: "secondary", onClick: handleCancel }, props.cancelButtonProps, { children: props.cancelText }), void 0)), jsxRuntime.jsx(index["default"], _tslib.__assign({ onClick: handleConfirm }, props.confirmButtonProps, { children: props.confirmText }), void 0)] }), void 0));
+    return (jsxRuntime.jsxs("footer", _tslib.__assign({ className: cx__default['default'](ModalFooter_module['default'].wrapper, props.className) }, { children: [!!props.cancelText && (jsxRuntime.jsx(index['default'], _tslib.__assign({ variant: "secondary", onClick: handleCancel }, props.cancelButtonProps, { children: props.cancelText }), void 0)), jsxRuntime.jsx(index['default'], _tslib.__assign({ onClick: handleConfirm }, props.confirmButtonProps, { children: props.confirmText }), void 0)] }), void 0));
 };
 
-exports["default"] = ModalFooter;
+exports['default'] = ModalFooter;

@@ -36,7 +36,7 @@ function open(Modal, config) {
         return _tslib.__assign(_tslib.__assign({}, theOtherConfig), { onConfirm: bind(onConfirm), onCancel: bind(onCancel), onClose: bind(onClose) });
     }
     function render(config) {
-        ReactDOM__default["default"].render(jsxRuntime.jsx(Modal, _tslib.__assign({}, bindClose(config)), void 0), modalDiv);
+        ReactDOM__default['default'].render(jsxRuntime.jsx(Modal, _tslib.__assign({}, bindClose(config)), void 0), modalDiv);
     }
     function update(newConfig) {
         render(_tslib.__assign(_tslib.__assign(_tslib.__assign({}, config), newConfig), { open: true }));

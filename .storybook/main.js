@@ -26,14 +26,15 @@ module.exports = {
         ]
       },
     );
+    config.resolve.extensions.push(".ts", ".tsx");
     config.resolve.modules.push(path.resolve(__dirname, "../src"));
     return config;
   },
-  "stories": [
+  stories: [
     "../src/**/*.stories.mdx",
     "../src/**/*.stories.@(js|jsx|ts|tsx)"
   ],
-  "addons": [
+  addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     // https://github.com/storybookjs/storybook/issues/9796

@@ -24,7 +24,7 @@ export type ButtonProps = {
   eventKey?: ReactProps.EventKey
   onClick?: (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-    { eventKey }?: { eventKey?: ReactProps.EventKey },
+    eventKey?: { eventKey?: ReactProps.EventKey },
   ) => void
 } & JSXProps.ButtonElement
 

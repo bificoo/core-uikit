@@ -3,6 +3,8 @@ import cx from "classnames"
 import styled from "./Pagination.module.scss"
 import Dropdown, { DropdownSelectEventProps } from "../Dropdown"
 import Button from "../Button"
+import TextButton from "components/Button/TextButton"
+import Icon from "components/Icon"
 import React from "react"
 
 const getRange = ({
@@ -65,9 +67,9 @@ const Pagination = ({ activePage = 1, maxButtons = 5, ...props }: PaginationProp
         {props.limitMenu && props.limitMenu.length !== 0 && (
           <Dropdown className={styled.limit} onSelect={handleSelectLimit}>
             <Dropdown.Toggle>
-              <Button variant="secondary">
-                {props.limit} <Dropdown.Arrow />
-              </Button>
+              <TextButton variant="secondary">
+                <div style={{ display: "flex", flex: 1 }}>{props.limit}</div> <Icon.Arrow />
+              </TextButton>
             </Dropdown.Toggle>
             <Dropdown.Menu style={{ width: "59px" }}>
               {props.limitMenu.map(limit => (

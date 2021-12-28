@@ -1,6 +1,8 @@
 import { Story, Meta } from "@storybook/react"
 import Dropdown, { DropdownProps } from "components/Dropdown"
 import Button from "components/Button"
+import TextButton from "components/Button/TextButton"
+import Icon from "components/Icon"
 import { useState } from "react"
 
 export default {
@@ -68,10 +70,10 @@ export const Arrow: Story<DropdownProps> = () => {
   return (
     <Dropdown>
       <Dropdown.Toggle>
-        <Button>
+        <TextButton>
           Page actions
-          <Dropdown.Arrow />
-        </Button>
+          <Icon.Arrow />
+        </TextButton>
       </Dropdown.Toggle>
       <Dropdown.Menu>
         <Dropdown.Item eventKey="edit">Edit</Dropdown.Item>
@@ -90,10 +92,10 @@ export const MultiDropdown: Story<DropdownProps> = () => {
     <>
       <Dropdown style={{ marginRight: "10px" }}>
         <Dropdown.Toggle>
-          <Button>
+          <TextButton>
             Page actions1
-            <Dropdown.Arrow />
-          </Button>
+            <Icon.Arrow />
+          </TextButton>
         </Dropdown.Toggle>
         <Dropdown.Menu>
           <Dropdown.Item eventKey="edit">Edit</Dropdown.Item>
@@ -106,10 +108,10 @@ export const MultiDropdown: Story<DropdownProps> = () => {
       </Dropdown>
       <Dropdown>
         <Dropdown.Toggle>
-          <Button>
+          <TextButton>
             Page actions2
-            <Dropdown.Arrow />
-          </Button>
+            <Icon.Arrow />
+          </TextButton>
         </Dropdown.Toggle>
         <Dropdown.Menu>
           <Dropdown.Item eventKey="edit">Edit</Dropdown.Item>

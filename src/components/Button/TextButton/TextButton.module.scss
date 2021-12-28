@@ -1,0 +1,174 @@
+@import 'assets/styles/mixins';
+
+%disabled {
+  &[disabled],
+  &[disabled]:hover,
+  &[disabled]:active,
+  &[disabled]:active:hover {
+    background: #E4E5E6;
+    cursor: not-allowed;
+    text-decoration: none;
+    color: #8B919C;
+  }
+}
+
+@mixin disabled {
+  &[disabled],
+  &[disabled]:hover,
+  &[disabled]:active,
+  &[disabled]:active:hover {
+    @content
+  }
+}
+
+%selected {
+  &.selected,
+  &.selected:hover,
+  &.selected:active,
+  &.selected:active:hover {
+    background: #253858; 
+    cursor: default;
+    text-decoration: none;
+    color: #ffffff;
+  }
+}
+
+@mixin selected {
+  &.selected,
+  &.selected:hover,
+  &.selected:active,
+  &.selected:active:hover {
+    @content
+  }
+}
+
+.wrapper {
+  -webkit-box-align: baseline;
+  align-items: center;
+  border-width: 0px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: inline-flex;
+  font-size: inherit;
+  font-style: normal;
+  font-family: inherit;
+  min-width: em(100);
+  max-width: 100%;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.1s ease-out 0s, box-shadow 0.15s cubic-bezier(0.47, 0.03, 0.49, 1.38) 0s;
+  white-space: nowrap;
+  cursor: pointer;
+  height: em(32);
+  line-height: em(32);
+  padding: 0 12px;
+  vertical-align: middle;
+  width: auto;
+  -webkit-box-pack: center;
+  justify-content: center;
+
+  &:hover {
+    text-decoration: inherit;
+    transition-duration: 0s, 0.15s;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    transition-duration: 0s, 0s;
+  }
+
+  &.block {
+    width: 100%;
+  }
+
+  &.primary {
+    background: #0052cc;
+    color: #ffffff;
+    @extend %disabled;
+    
+    &:not([disabled]) {
+      &:hover {
+        background: #0065ff;
+        color: #ffffff;
+      }
+      
+      &:active {
+        background: #0747a6;
+        color: #ffffff;
+      }
+      @extend %selected;
+    }
+  }
+
+  &.secondary {
+    background:#EBECF0;
+    color: #45536C;
+    @extend %disabled;
+    
+    &:not([disabled]) {
+      &:hover{
+        background: #E1E2E6;
+        color: #45536C;
+      }
+      
+      &:active {
+        background: #D1E5FF;
+        color: #0052CC;
+      }
+      @extend %selected;
+    }
+  }
+
+  &.text {
+    background: transparent;
+    color: #0052CC;
+    @include disabled {
+      background: transparent;
+      color: #8B919C;
+    }
+
+    @include selected {
+      background: transparent;
+      color: #253858;
+    }
+
+    &:not([disabled]) {
+      &:hover{
+        background: #F6F6F7;
+        color: #0065FF;
+      }
+
+      &:active {
+        background: transparent;
+        color: #0747A6;
+      }
+    }
+  }
+
+  &.important {
+    background: #de350b;
+    color: #ffffff;
+    @extend %disabled;
+
+    @include selected {
+      background: #bf2600;
+      color: #ffffff;
+    }
+
+    &:not([disabled]) {
+      &:hover{
+        background: #ff5630;
+        color: #ffffff;
+      }
+
+      &:active {
+        background: #bf2600;
+        color: #ffffff;
+      }
+    }
+  }
+}

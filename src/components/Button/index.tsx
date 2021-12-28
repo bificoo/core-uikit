@@ -8,6 +8,10 @@ import LinkButton from "./LinkButton"
 export { LinkButton }
 export type { LinkButtonProps } from "./LinkButton"
 
+import TextButton from "./TextButton"
+export { TextButton }
+export type { TextButtonProps } from "./TextButton"
+
 const Button = Object.assign(ButtonBase, {
   Group: ButtonGroup,
 })

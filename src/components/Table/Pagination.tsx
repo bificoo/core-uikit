@@ -2,8 +2,7 @@ import { ReactComponent as ArrowIcon } from "./arrow.svg"
 import cx from "classnames"
 import styled from "./Pagination.module.scss"
 import Dropdown, { DropdownSelectEventProps } from "../Dropdown"
-import Button from "../Button"
-import TextButton from "components/Button/TextButton"
+import Button from "components/Button"
 import Icon from "components/Icon"
 import React from "react"
 
@@ -67,9 +66,9 @@ const Pagination = ({ activePage = 1, maxButtons = 5, ...props }: PaginationProp
         {props.limitMenu && props.limitMenu.length !== 0 && (
           <Dropdown className={styled.limit} onSelect={handleSelectLimit}>
             <Dropdown.Toggle>
-              <TextButton variant="secondary">
-                <div style={{ display: "flex", flex: 1 }}>{props.limit}</div> <Icon.Arrow />
-              </TextButton>
+              <Button variant="secondary" appendIcon>
+                {props.limit} <Icon.Arrow />
+              </Button>
             </Dropdown.Toggle>
             <Dropdown.Menu style={{ width: "59px" }}>
               {props.limitMenu.map(limit => (

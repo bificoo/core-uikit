@@ -7,7 +7,7 @@ export type ArrowProps = {
   style?: React.CSSProperties
 }
 
-const Arrow = ({ direction = "down", style = {} }: ArrowProps) => {
+const Arrow = ({ direction = "down", style }: ArrowProps) => {
   return (
     <div className={cx(styled.wrapper, styled[`direction-${direction}`])} style={style}>
       <ArrowIcon />

@@ -13,7 +13,7 @@ var cx__default = /*#__PURE__*/_interopDefaultLegacy(cx);
 
 var FormMessage = function (_a) {
     var className = _a.className, props = _tslib.__rest(_a, ["className"]);
-    return (jsxRuntime.jsx("p", _tslib.__assign({ className: cx__default["default"](FormMessage_module["default"].wrapper, FormMessage_module["default"][props.variant], className) }, props, { children: props.children }), void 0));
+    return (jsxRuntime.jsx("p", _tslib.__assign({ className: cx__default['default'](FormMessage_module['default'].wrapper, FormMessage_module['default'][props.variant], className) }, props, { children: props.children }), void 0));
 };
 
-exports["default"] = FormMessage;
+exports['default'] = FormMessage;

@@ -10,4 +10,4 @@ var TooltipToggle = React.forwardRef(function TooltipToggle(props, ref) {
     return (jsxRuntime.jsx("span", _tslib.__assign({ className: props.className, onClick: props.onClick, ref: ref }, { children: props.children }), void 0));
 });
 
-exports["default"] = TooltipToggle;
+exports['default'] = TooltipToggle;

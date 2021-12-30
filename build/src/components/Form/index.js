@@ -21,19 +21,19 @@ require('classnames');
 require('./InputGroup/Prepend/Prepend.module.scss.js');
 require('./InputGroup/Append/Append.module.scss.js');
 
-var Form = Object.assign(index$3["default"], {
-    Label: index$4["default"],
-    Input: index$5["default"],
-    Textarea: index$6["default"],
-    Checkbox: index$7["default"],
-    Radio: index$8["default"],
+var Form = Object.assign(index$3['default'], {
+    Label: index$4['default'],
+    Input: index$5['default'],
+    Textarea: index$6['default'],
+    Checkbox: index$7['default'],
+    Radio: index$8['default'],
     HelperMessage: index$9.FormHelperMessage,
     ValidMessage: index$9.FormValidMessage,
     ErrorMessage: index$9.FormErrorMessage,
-    Group: index$a["default"],
-    Fieldset: index$b["default"],
-    Divider: index$c["default"],
-    Horizontal: index$d["default"],
+    Group: index$a['default'],
+    Fieldset: index$b['default'],
+    Divider: index$c['default'],
+    Horizontal: index$d['default'],
 });
 
-exports["default"] = Form;
+exports['default'] = Form;

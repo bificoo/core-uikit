@@ -13,4 +13,4 @@ function usePrevious(value) {
     return ref.current;
 }
 
-exports["default"] = usePrevious;
+exports['default'] = usePrevious;

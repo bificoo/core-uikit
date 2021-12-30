@@ -7,7 +7,7 @@ var jsxRuntime = require('react/jsx-runtime');
 var ModalHeader_module = require('./ModalHeader.module.scss.js');
 
 var ModalHeader = function (props) {
-    return (jsxRuntime.jsx("header", _tslib.__assign({ className: ModalHeader_module["default"].wrapper }, { children: jsxRuntime.jsx("h1", { children: props.title }, void 0) }), void 0));
+    return (jsxRuntime.jsx("header", _tslib.__assign({ className: ModalHeader_module['default'].wrapper }, { children: jsxRuntime.jsx("h1", { children: props.title }, void 0) }), void 0));
 };
 
-exports["default"] = ModalHeader;
+exports['default'] = ModalHeader;

@@ -8,11 +8,11 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
-var DropdownContext = React__default["default"].createContext({
+var DropdownContext = React__default['default'].createContext({
     setActiveKey: function () {
         // set attributes
     },
 });
 
 exports.DropdownContext = DropdownContext;
-exports["default"] = DropdownContext;
+exports['default'] = DropdownContext;

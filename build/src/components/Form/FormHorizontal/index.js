@@ -7,7 +7,7 @@ var jsxRuntime = require('react/jsx-runtime');
 var FormHorizontal_module = require('./FormHorizontal.module.scss.js');
 
 var FormHorizontal = function (props) {
-    return jsxRuntime.jsx("div", _tslib.__assign({ className: FormHorizontal_module["default"].wrapper }, { children: props.children }), void 0);
+    return jsxRuntime.jsx("div", _tslib.__assign({ className: FormHorizontal_module['default'].wrapper }, { children: props.children }), void 0);
 };
 
-exports["default"] = FormHorizontal;
+exports['default'] = FormHorizontal;

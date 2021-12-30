@@ -20,13 +20,13 @@ var Tooltip = function (_a) {
         var triggerElement = jsxRuntime.jsx("div", {}, void 0);
         var bodyElement = null;
         var bodyStyle = {};
-        React__default["default"].Children.forEach(props.children, function (child) {
-            if (!React__default["default"].isValidElement(child))
+        React__default['default'].Children.forEach(props.children, function (child) {
+            if (!React__default['default'].isValidElement(child))
                 return;
-            if (child.type === index["default"]) {
+            if (child.type === index['default']) {
                 triggerElement = child;
             }
-            else if (child.type === index$1["default"]) {
+            else if (child.type === index$1['default']) {
                 bodyElement = child;
                 bodyStyle = child.props.style || {};
             }
@@ -37,7 +37,7 @@ var Tooltip = function (_a) {
             bodyStyle: bodyStyle,
         };
     }, [props.children]);
-    return (jsxRuntime.jsx(reactjsPopup_esm["default"], _tslib.__assign({ className: "core-tooltip", trigger: jsxRuntime.jsx("span", { children: tooltip.trigger }, void 0), on: on, position: position, closeOnDocumentClick: true, contentStyle: tooltip.bodyStyle, arrow: true, arrowStyle: { display: "none" } }, { children: jsxRuntime.jsx("span", { children: tooltip.body }, void 0) }), void 0));
+    return (jsxRuntime.jsx(reactjsPopup_esm['default'], _tslib.__assign({ className: "core-tooltip", trigger: jsxRuntime.jsx("span", { children: tooltip.trigger }, void 0), on: on, position: position, closeOnDocumentClick: true, contentStyle: tooltip.bodyStyle, arrow: true, arrowStyle: { display: "none" } }, { children: jsxRuntime.jsx("span", { children: tooltip.body }, void 0) }), void 0));
 };
 
-exports["default"] = Tooltip;
+exports['default'] = Tooltip;

@@ -7,7 +7,7 @@ var jsxRuntime = require('react/jsx-runtime');
 var TooltipBody_module = require('./TooltipBody.module.scss.js');
 
 var TooltipBody = function (props) {
-    return (jsxRuntime.jsx("div", _tslib.__assign({ className: TooltipBody_module["default"].wrapper, style: props.style }, { children: props.children }), void 0));
+    return (jsxRuntime.jsx("div", _tslib.__assign({ className: TooltipBody_module['default'].wrapper, style: props.style }, { children: props.children }), void 0));
 };
 
-exports["default"] = TooltipBody;
+exports['default'] = TooltipBody;

@@ -12,8 +12,8 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 var cx__default = /*#__PURE__*/_interopDefaultLegacy(cx);
 
 var DropdownMenu = function (props) {
-    return (jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default['default'](DropdownMenu_module['default'].wrapper, props.className), style: props.style }, { children: props.children }), void 0));
+    return (jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default["default"](DropdownMenu_module["default"].wrapper, props.className), style: props.style }, { children: props.children }), void 0));
 };
 DropdownMenu.displayName = "DropdownMenu";
 
-exports['default'] = DropdownMenu;
+exports["default"] = DropdownMenu;

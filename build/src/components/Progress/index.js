@@ -6,4 +6,4 @@ var Progress = require('./Progress.js');
 
 
 
-exports.default = Progress['default'];
+exports["default"] = Progress["default"];

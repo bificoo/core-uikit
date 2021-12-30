@@ -14,7 +14,7 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 var cx__default = /*#__PURE__*/_interopDefaultLegacy(cx);
 
-var FormTextarea = React__default['default'].forwardRef(function FormTextarea(_a, ref) {
+var FormTextarea = React__default["default"].forwardRef(function FormTextarea(_a, ref) {
     var _b;
     if (ref === void 0) { ref = null; }
     var className = _a.className, isValid = _a.isValid, isInvalid = _a.isInvalid, props = _tslib.__rest(_a, ["className", "isValid", "isInvalid"]);
@@ -29,13 +29,13 @@ var FormTextarea = React__default['default'].forwardRef(function FormTextarea(_a
             readOnly: !!props.readOnly,
         });
     }, [entered, isValid, isInvalid, props.disabled, props.readOnly]);
-    return (jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default['default']("component-textarea", FormTextarea_module['default'].wrapper, (_b = {},
-            _b[FormTextarea_module['default'].entered] = entered,
-            _b[FormTextarea_module['default'].disabled] = !!props.disabled,
-            _b[FormTextarea_module['default']["read-only"]] = !!props.readOnly,
-            _b[FormTextarea_module['default']["is-valid"]] = isValid,
-            _b[FormTextarea_module['default']["is-invalid"]] = isInvalid,
-            _b)) }, { children: jsxRuntime.jsx("textarea", _tslib.__assign({}, props, { ref: ref, id: attributes === null || attributes === void 0 ? void 0 : attributes.formId, className: cx__default['default'](FormTextarea_module['default'].control, className), onChange: function (e) {
+    return (jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default["default"]("component-textarea", FormTextarea_module["default"].wrapper, (_b = {},
+            _b[FormTextarea_module["default"].entered] = entered,
+            _b[FormTextarea_module["default"].disabled] = !!props.disabled,
+            _b[FormTextarea_module["default"]["read-only"]] = !!props.readOnly,
+            _b[FormTextarea_module["default"]["is-valid"]] = isValid,
+            _b[FormTextarea_module["default"]["is-invalid"]] = isInvalid,
+            _b)) }, { children: jsxRuntime.jsx("textarea", _tslib.__assign({}, props, { ref: ref, id: attributes === null || attributes === void 0 ? void 0 : attributes.formId, className: cx__default["default"](FormTextarea_module["default"].control, className), onChange: function (e) {
                 if (e.target.value.trim() === "")
                     setEntered(false);
                 else
@@ -44,4 +44,4 @@ var FormTextarea = React__default['default'].forwardRef(function FormTextarea(_a
             } }), void 0) }), void 0));
 });
 
-exports['default'] = FormTextarea;
+exports["default"] = FormTextarea;

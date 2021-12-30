@@ -48,28 +48,28 @@ var Select = function (_a) {
                 selectedList: newSelected,
             });
     };
-    return (jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default['default'](Select_module['default'].wrapper, props.className), style: props.style }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: Select_module['default'].container }, { children: jsxRuntime.jsx(reactjsPopup_esm['default'], _tslib.__assign({ ref: popupRef, trigger: function (open) {
+    return (jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default["default"](Select_module["default"].wrapper, props.className), style: props.style }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: Select_module["default"].container }, { children: jsxRuntime.jsx(reactjsPopup_esm["default"], _tslib.__assign({ ref: popupRef, trigger: function (open) {
                     var _a, _b;
-                    return (jsxRuntime.jsxs("div", _tslib.__assign({ className: cx__default['default'](Select_module['default'].control, (_a = {}, _a[Select_module['default'].active] = open, _a), (_b = {}, _b[Select_module['default'].disabled] = props.disabled, _b)) }, { children: [props.placeholder && selected.length === 0 && (jsxRuntime.jsx("div", _tslib.__assign({ className: Select_module['default'].placeholder }, { children: props.placeholder }), void 0)), jsxRuntime.jsx("div", _tslib.__assign({ className: Select_module['default']["vale-container"] }, { children: isMulti ? (jsxRuntime.jsx(jsxRuntime.Fragment, { children: selected.map(function (item, index) { return (jsxRuntime.jsxs("div", _tslib.__assign({ className: Select_module['default']["multi-value"] }, { children: [jsxRuntime.jsx("div", _tslib.__assign({ className: Select_module['default'].label }, { children: item.value }), void 0), !props.disabled && (jsxRuntime.jsx("div", _tslib.__assign({ className: Select_module['default'].remove, onClick: function (e) { return handleRemoveItem(e, item); } }, { children: jsxRuntime.jsx(remove.ReactComponent, {}, void 0) }), void 0))] }), index)); }) }, void 0)) : (jsxRuntime.jsx(jsxRuntime.Fragment, { children: selected.map(function (item, index) {
-                                        return (jsxRuntime.jsx("div", _tslib.__assign({ className: Select_module['default']["single-value"] }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: Select_module['default'].label }, { children: item.value }), void 0) }), index));
-                                    }) }, void 0)) }), void 0), jsxRuntime.jsxs("div", _tslib.__assign({ className: Select_module['default'].indicator }, { children: [isMulti && selected.length > 0 && (jsxRuntime.jsx("div", _tslib.__assign({ className: Select_module['default']["clear-indicator"], onClick: handleClear }, { children: jsxRuntime.jsx("span", { children: !props.disabled && jsxRuntime.jsx(clear.ReactComponent, {}, void 0) }, void 0) }), void 0)), jsxRuntime.jsx("div", _tslib.__assign({ className: Select_module['default']["dropdown-indicator"] }, { children: jsxRuntime.jsx(downArrow.ReactComponent, {}, void 0) }), void 0)] }), void 0)] }), void 0));
+                    return (jsxRuntime.jsxs("div", _tslib.__assign({ className: cx__default["default"](Select_module["default"].control, (_a = {}, _a[Select_module["default"].active] = open, _a), (_b = {}, _b[Select_module["default"].disabled] = props.disabled, _b)) }, { children: [props.placeholder && selected.length === 0 && (jsxRuntime.jsx("div", _tslib.__assign({ className: Select_module["default"].placeholder }, { children: props.placeholder }), void 0)), jsxRuntime.jsx("div", _tslib.__assign({ className: Select_module["default"]["vale-container"] }, { children: isMulti ? (jsxRuntime.jsx(jsxRuntime.Fragment, { children: selected.map(function (item, index) { return (jsxRuntime.jsxs("div", _tslib.__assign({ className: Select_module["default"]["multi-value"] }, { children: [jsxRuntime.jsx("div", _tslib.__assign({ className: Select_module["default"].label }, { children: item.value }), void 0), !props.disabled && (jsxRuntime.jsx("div", _tslib.__assign({ className: Select_module["default"].remove, onClick: function (e) { return handleRemoveItem(e, item); } }, { children: jsxRuntime.jsx(remove.ReactComponent, {}, void 0) }), void 0))] }), index)); }) }, void 0)) : (jsxRuntime.jsx(jsxRuntime.Fragment, { children: selected.map(function (item, index) {
+                                        return (jsxRuntime.jsx("div", _tslib.__assign({ className: Select_module["default"]["single-value"] }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: Select_module["default"].label }, { children: item.value }), void 0) }), index));
+                                    }) }, void 0)) }), void 0), jsxRuntime.jsxs("div", _tslib.__assign({ className: Select_module["default"].indicator }, { children: [isMulti && selected.length > 0 && (jsxRuntime.jsx("div", _tslib.__assign({ className: Select_module["default"]["clear-indicator"], onClick: handleClear }, { children: jsxRuntime.jsx("span", { children: !props.disabled && jsxRuntime.jsx(clear.ReactComponent, {}, void 0) }, void 0) }), void 0)), jsxRuntime.jsx("div", _tslib.__assign({ className: Select_module["default"]["dropdown-indicator"] }, { children: jsxRuntime.jsx(downArrow.ReactComponent, {}, void 0) }), void 0)] }), void 0)] }), void 0));
                 }, position: "bottom left", on: "click", closeOnDocumentClick: true, mouseLeaveDelay: 300, mouseEnterDelay: 0, arrow: false, disabled: props.disabled, contentStyle: {
                     border: "none",
                     paddingTop: "8px",
                     boxShadow: "none",
-                } }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: Select_module['default'].menu, style: props.style }, { children: React__default['default'].Children.map(props.children, function (child) {
-                        if (!React__default['default'].isValidElement(child))
+                } }, { children: jsxRuntime.jsx("div", _tslib.__assign({ className: Select_module["default"].menu, style: props.style }, { children: React__default["default"].Children.map(props.children, function (child) {
+                        if (!React__default["default"].isValidElement(child))
                             return;
-                        if (isMulti && child.type === Option['default']) {
+                        if (isMulti && child.type === Option["default"]) {
                             if (selected.map(function (option) { return option.eventKey; }).indexOf(child.props.eventKey) === -1) {
-                                return React__default['default'].cloneElement(child, { onClick: handleClick });
+                                return React__default["default"].cloneElement(child, { onClick: handleClick });
                             }
                         }
                         else {
-                            return React__default['default'].cloneElement(child, { onClick: handleClick });
+                            return React__default["default"].cloneElement(child, { onClick: handleClick });
                         }
                     }) }), void 0) }), void 0) }), void 0) }), void 0));
 };
-Select.Option = Option['default'];
+Select.Option = Option["default"];
 
-exports['default'] = Select;
+exports["default"] = Select;

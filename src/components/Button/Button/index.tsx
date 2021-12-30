@@ -48,6 +48,7 @@ const Button = ({
         { [styled.selected]: selected },
         className,
       )}
+      style={props.style}
       onClick={e => {
         onClick && onClick(e, { eventKey: eventKey })
       }}

@@ -1,6 +1,7 @@
 import { Story, Meta } from "@storybook/react"
 import Dropdown, { DropdownProps } from "components/Dropdown"
 import Button from "components/Button"
+import Icon from "components/Icon"
 import { useState } from "react"
 
 export default {
@@ -70,7 +71,7 @@ export const Arrow: Story<DropdownProps> = () => {
       <Dropdown.Toggle>
         <Button>
           Page actions
-          <Dropdown.Arrow />
+          <Icon.Arrow />
         </Button>
       </Dropdown.Toggle>
       <Dropdown.Menu>
@@ -92,7 +93,7 @@ export const MultiDropdown: Story<DropdownProps> = () => {
         <Dropdown.Toggle>
           <Button>
             Page actions1
-            <Dropdown.Arrow />
+            <Icon.Arrow />
           </Button>
         </Dropdown.Toggle>
         <Dropdown.Menu>
@@ -108,7 +109,7 @@ export const MultiDropdown: Story<DropdownProps> = () => {
         <Dropdown.Toggle>
           <Button>
             Page actions2
-            <Dropdown.Arrow />
+            <Icon.Arrow />
           </Button>
         </Dropdown.Toggle>
         <Dropdown.Menu>

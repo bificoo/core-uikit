@@ -8,7 +8,7 @@ export type TabProps = {
   eventKey: ReactProps.EventKey
 } & ReactProps.Component
 
-const Tab = ({ ...props }: TabProps) => {
+const Tab = (props: TabProps) => {
   const { activeKey, setActiveKey } = useContext(TabsContext)
   return (
     <div

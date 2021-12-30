@@ -1,5 +1,6 @@
 import { Story, Meta } from "@storybook/react"
 import Button, { ButtonProps } from "components/Button"
+import Icon from "components/Icon"
 
 export default {
   title: "General/Button",
@@ -31,6 +32,12 @@ Important.args = {
   children: "Important button",
 }
 
+export const Text = Template.bind({})
+Text.args = {
+  variant: "text",
+  children: "Text button",
+}
+
 export const Selected = Template.bind({})
 Selected.args = {
   selected: true,
@@ -52,4 +59,36 @@ Block.args = {
 export const Chinese = Template.bind({})
 Chinese.args = {
   children: "按鈕",
+}
+
+export const LeftArrowIcon: Story<ButtonProps> = () => {
+  return (
+    <>
+      <div style={{ marginBottom: "10px" }}>
+        <Button>Left Arrow</Button>
+      </div>
+      <div>
+        <Button>
+          <Icon.Arrow />
+          Left Arrow
+        </Button>
+      </div>
+    </>
+  )
+}
+
+export const RightArrowIcon: Story<ButtonProps> = () => {
+  return (
+    <>
+      <div style={{ marginBottom: "10px" }}>
+        <Button>Right Arrow</Button>
+      </div>
+      <div>
+        <Button>
+          Right Arrow
+          <Icon.Arrow />
+        </Button>
+      </div>
+    </>
+  )
 }

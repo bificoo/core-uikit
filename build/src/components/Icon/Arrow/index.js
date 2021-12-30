@@ -14,7 +14,7 @@ var cx__default = /*#__PURE__*/_interopDefaultLegacy(cx);
 
 var Arrow = function (_a) {
     var _b = _a.direction, direction = _b === void 0 ? "down" : _b, style = _a.style;
-    return (jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default['default'](Arrow_module['default'].wrapper, Arrow_module['default']["direction-" + direction]), style: style }, { children: jsxRuntime.jsx(arrow.ReactComponent, {}, void 0) }), void 0));
+    return (jsxRuntime.jsx("div", _tslib.__assign({ className: cx__default["default"](Arrow_module["default"].wrapper, Arrow_module["default"]["direction-".concat(direction)]), style: style }, { children: jsxRuntime.jsx(arrow.ReactComponent, {}, void 0) }), void 0));
 };
 
-exports['default'] = Arrow;
+exports["default"] = Arrow;

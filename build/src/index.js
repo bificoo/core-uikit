@@ -22,20 +22,20 @@ var index$a = require('./components/Form/InputGroup/Append/index.js');
 
 
 
-exports.Avatar = index['default'];
-exports.Badge = index$1['default'];
-exports.Breadcrumbs = index$2['default'];
-exports.Button = index$3['default'];
-exports.Collapse = index$5['default'];
-exports.Dropdown = index$6['default'];
-exports.Form = index$7['default'];
-exports.Icon = index$b['default'];
-exports.Modal = index$c['default'];
-exports.Progress = Progress['default'];
-exports.Select = index$d['default'];
-exports.Tabs = index$e['default'];
-exports.Tooltip = index$f['default'];
-exports.LinkButton = index$4['default'];
-exports.InputGroup = index$8['default'];
-exports.Prepend = index$9['default'];
-exports.Append = index$a['default'];
+exports.Avatar = index["default"];
+exports.Badge = index$1["default"];
+exports.Breadcrumbs = index$2["default"];
+exports.Button = index$3["default"];
+exports.Collapse = index$5["default"];
+exports.Dropdown = index$6["default"];
+exports.Form = index$7["default"];
+exports.Icon = index$b["default"];
+exports.Modal = index$c["default"];
+exports.Progress = Progress["default"];
+exports.Select = index$d["default"];
+exports.Tabs = index$e["default"];
+exports.Tooltip = index$f["default"];
+exports.LinkButton = index$4["default"];
+exports.InputGroup = index$8["default"];
+exports.Prepend = index$9["default"];
+exports.Append = index$a["default"];

@@ -2,13 +2,9 @@ import React from "react"
 import Icon from "components/Icon"
 import Button, { ButtonProps } from "components/Button/Button"
 
-export type IconButtonProps = {
-  appendIcon?: boolean
-} & ButtonProps
+export type IconButtonProps = ButtonProps
 
-const IconButton = ({ appendIcon = false, ...props }: IconButtonProps) => {
-  if (!appendIcon) return <Button {...props} />
-
+const IconButton = (props: IconButtonProps) => {
   const iconConfig = { leftIcon: false, rightIcon: false }
   React.Children.forEach(props.children, (child, index) => {
     if (!React.isValidElement(child)) return
@@ -18,7 +14,7 @@ const IconButton = ({ appendIcon = false, ...props }: IconButtonProps) => {
     }
   })
 
-  const customChildren: React.ReactElement[] = []
+  const customChildren: React.ReactNode[] = []
   React.Children.forEach(props.children, (child, index) => {
     if (React.isValidElement(child) && child.type === Icon.Arrow) {
       customChildren.push(
@@ -27,7 +23,9 @@ const IconButton = ({ appendIcon = false, ...props }: IconButtonProps) => {
           style: index === 0 ? { marginRight: "4px" } : { marginLeft: "4px" },
         }),
       )
-    } else customChildren.push(React.isValidElement(child) ? child : <div>{child}</div>)
+    } else if (child) {
+      customChildren.push(child)
+    }
   })
 
   return (

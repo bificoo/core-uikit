@@ -69,7 +69,7 @@ export const Arrow: Story<DropdownProps> = () => {
   return (
     <Dropdown>
       <Dropdown.Toggle>
-        <Button appendIcon>
+        <Button>
           Page actions
           <Icon.Arrow />
         </Button>
@@ -91,7 +91,7 @@ export const MultiDropdown: Story<DropdownProps> = () => {
     <>
       <Dropdown style={{ marginRight: "10px" }}>
         <Dropdown.Toggle>
-          <Button appendIcon>
+          <Button>
             Page actions1
             <Icon.Arrow />
           </Button>
@@ -107,7 +107,7 @@ export const MultiDropdown: Story<DropdownProps> = () => {
       </Dropdown>
       <Dropdown>
         <Dropdown.Toggle>
-          <Button appendIcon>
+          <Button>
             Page actions2
             <Icon.Arrow />
           </Button>

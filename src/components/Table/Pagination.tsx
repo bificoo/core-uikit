@@ -66,7 +66,7 @@ const Pagination = ({ activePage = 1, maxButtons = 5, ...props }: PaginationProp
         {props.limitMenu && props.limitMenu.length !== 0 && (
           <Dropdown className={styled.limit} onSelect={handleSelectLimit}>
             <Dropdown.Toggle>
-              <Button variant="secondary" appendIcon>
+              <Button variant="secondary">
                 {props.limit} <Icon.Arrow />
               </Button>
             </Dropdown.Toggle>

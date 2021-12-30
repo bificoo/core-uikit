@@ -1,7 +1,5 @@
-export type { ButtonProps } from "./Button"
-
-import ButtonBase from "./IconButton"
-export type { IconButtonProps } from "./IconButton"
+import ButtonBase, { IconButtonProps } from "./IconButton"
+export type ButtonProps = IconButtonProps
 
 import ButtonGroup from "./ButtonGroup"
 export type { ButtonGroupProps } from "./ButtonGroup"

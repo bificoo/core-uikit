@@ -41,7 +41,7 @@ export type {
 } from "./components/Form"
 
 export { default as Icon } from "./components/Icon"
-export type { ArrowProps } from "./components/Icon"
+export type { IconArrowProps } from "./components/Icon"
 
 export { default as Modal } from "./components/Modal"
 export type { ModalProps } from "./components/Modal"

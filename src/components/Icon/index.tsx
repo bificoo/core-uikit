@@ -1,6 +1,8 @@
 import Arrow from "./Arrow"
-export type { ArrowProps } from "./Arrow"
+export type { IconArrowProps } from "./Arrow"
 
-const Icon = Object.assign({}, { Arrow })
+const Icon = {
+  Arrow,
+}
 
 export default Icon

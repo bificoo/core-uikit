@@ -19,7 +19,7 @@ export declare type ButtonProps = {
      * ButtonGroup使用
      */
     eventKey?: ReactProps.EventKey;
-    onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, { eventKey }?: {
+    onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, eventKey?: {
         eventKey?: ReactProps.EventKey;
     }) => void;
 } & JSXProps.ButtonElement;

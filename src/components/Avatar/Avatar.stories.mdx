@@ -1,17 +1,17 @@
-import { Meta, Story, Canvas, Props } from "@storybook/addon-docs";
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs";
 import { Avatar } from "../Avatar";
 
 <Meta title="Data Display/Avatar" />
 
 Here's some _markdown_!
 
+export const Template = (args) => <Avatar {...args} />;
+
 # Default
 
-<Canvas>
-  <Story name="Default">
-    <Avatar />
-  </Story>
-</Canvas>
+<Preview>
+  <Story name="Default">{Template.bind({})}</Story>
+</Preview>
 
 # Props
 
@@ -19,20 +19,28 @@ Here's some _markdown_!
 
 # Text
 
-<Canvas>
-  <Story name="Text">
-    <Avatar style={{ color: "white", backgroundColor: "#2894FF" }}>
-      Avatar
-    </Avatar>
+<Preview>
+  <Story
+    name="Text"
+    args={{
+      style: { color: "white", backgroundColor: "#2894FF" },
+    }}
+  >
+    {Template.bind({})}
   </Story>
-</Canvas>
+</Preview>
 
 # Image
 
-<Canvas>
-  <Story name="Image">
-    <Avatar >
-      <img src="https://img-c.udemycdn.com/user/75x75/147569164_c957.jpg"></img>
-    </Avatar>
+<Preview>
+  <Story
+    name="Image"
+    args={{
+      children: (
+        <img src="https://img-c.udemycdn.com/user/75x75/147569164_c957.jpg" />
+      ),
+    }}
+  >
+    {Template.bind({})}
   </Story>
-</Canvas>
+</Preview>

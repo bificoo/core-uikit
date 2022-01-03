@@ -1,13 +1,13 @@
 import styled from "./Avatar.module.scss"
 
-export type AvatarProps = { 
+export type AvatarProps = {
   /**
-   * @default 'primary'
+   * The CSS styles.
    */
   style?: React.CSSProperties
- } & { children?: React.ReactNode }
+} & { children?: React.ReactNode }
 
-const Avatar = (props: AvatarProps) => {
+export const Avatar = (props: AvatarProps) => {
   const defaultAvatar = (
     <div className={styled["default-avatar"]}>
       <svg width="24" height="24" viewBox="0 0 24 24" role="presentation">
@@ -26,5 +26,3 @@ const Avatar = (props: AvatarProps) => {
     </div>
   )
 }
-
-export default Avatar

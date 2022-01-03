@@ -1,20 +1,51 @@
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
-import { Button } from "../../stories/Button.tsx";
-// import { Badge } from "../Badge/index.tsx";
+import { Badge } from "../Badge";
 
-<Meta title="Test" />
+<Meta title="Data Display/Badge" />
 
 Here's some _markdown_!
 
-# Preview
+# Primary
 
 <Preview>
-  <Story name="button">
-    {/* <Badge>5</Badge> */}
-    <Button>hello</Button>
+  <Story name="Primary">
+    <Badge variant="primary" pill={true}>5</Badge>
   </Story>
 </Preview>
 
 # Props
 
-<Props of={Button} />
+<Props of={Badge} />
+
+
+# Secondary
+
+<Preview>
+  <Story name="Secondary">
+    <Badge variant="secondary" pill={true}>20</Badge>
+  </Story>
+</Preview>
+
+# Important
+
+<Preview>
+  <Story name="Important">
+    <Badge variant="important" pill={true}>99+</Badge>
+  </Story>
+</Preview>
+
+# SecondaryEnglish
+
+<Preview>
+  <Story name="SecondaryEnglish">
+    <Badge variant="secondary" pill={true}>New</Badge>
+  </Story>
+</Preview>
+
+# SecondaryChinese
+
+<Preview>
+  <Story name="SecondaryChinese">
+    <Badge variant="secondary" pill={true}>標籤樣式</Badge>
+  </Story>
+</Preview>

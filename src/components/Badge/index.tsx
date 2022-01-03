@@ -12,9 +12,19 @@ export type BadgeProps = {
    * @default false
    */
   pill?: boolean
-} & { children?: React.ReactNode } & { className?: string }
+} & {
+  /**
+   * Provide content to be rendered inside of a
+   */
+  children?: React.ReactNode
+} & {
+  /**
+   * Provide a custom className that is applied to the containing
+   */
+  className?: string
+}
 
-const Badge = ({
+export const Badge = ({
   variant = "primary",
   pill = false,
   className,
@@ -29,5 +39,3 @@ const Badge = ({
     </span>
   )
 }
-
-export default Badge

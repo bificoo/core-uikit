@@ -1,0 +1,38 @@
+import { Meta, Story, Canvas, Props } from "@storybook/addon-docs";
+import { Avatar } from "../Avatar";
+
+<Meta title="Data Display/Avatar" />
+
+Here's some _markdown_!
+
+# Default
+
+<Canvas>
+  <Story name="Default">
+    <Avatar />
+  </Story>
+</Canvas>
+
+# Props
+
+<Props of={Avatar} />
+
+# Text
+
+<Canvas>
+  <Story name="Text">
+    <Avatar style={{ color: "white", backgroundColor: "#2894FF" }}>
+      Avatar
+    </Avatar>
+  </Story>
+</Canvas>
+
+# Image
+
+<Canvas>
+  <Story name="Image">
+    <Avatar >
+      <img src="https://img-c.udemycdn.com/user/75x75/147569164_c957.jpg"></img>
+    </Avatar>
+  </Story>
+</Canvas>

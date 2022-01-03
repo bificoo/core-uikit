@@ -179,8 +179,18 @@ declare global {
 
   namespace ReactProps {
     type EventKey = string | number
-    type WithChildren = { children?: React.ReactNode }
-    type WithClassName = { className?: string }
+    type WithChildren = {
+      /**
+       * Provide content to be rendered inside of a
+       */
+      children?: React.ReactNode
+    }
+    type WithClassName = { 
+      /**
+       * Provide a custom className that is applied to the containing
+       */
+      className?: string 
+    }
     type WithStyle = { style?: React.CSSProperties }
     type Component = WithChildren & WithClassName & WithStyle
   }

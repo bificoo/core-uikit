@@ -1,0 +1,20 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import { Button } from "../../stories/Button.tsx";
+// import { Badge } from "../Badge/index.tsx";
+
+<Meta title="Test" />
+
+Here's some _markdown_!
+
+# Preview
+
+<Preview>
+  <Story name="button">
+    {/* <Badge>5</Badge> */}
+    <Button>hello</Button>
+  </Story>
+</Preview>
+
+# Props
+
+<Props of={Button} />

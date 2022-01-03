@@ -2,5 +2,8 @@ import { addons } from '@storybook/addons';
 
 addons.setConfig({
     panelPosition: 'right',
-    showRoots: false
+    sidebar: {
+        showRoots: false,
+        collapsedRoots: ['other'],
+    },
 });

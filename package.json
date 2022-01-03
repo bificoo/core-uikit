@@ -1,101 +1,14 @@
 {
   "name": "core-uikit",
-  "version": "1.0.0",
-  "main": "build/src/index.js",
-  "types": "build/src/index.d.ts",
-  "license": "MIT",
-  "files": [
-    "build"
-  ],
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "start-storybook -p 6006 -s public",
-    "build": "build-storybook -s public",
-    "build:library": "rollup -c",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "eslint": "eslint 'src/**/*.{js,ts,tsx}'",
-    "eslint:fix": "eslint 'src/**/*.{js,ts,tsx}' --quiet --fix",
-    "analyze": "source-map-explorer 'build/static/js/*.js'"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint-staged"
-    }
-  },
-  "lint-staged": {
-    "src/**/*.{js,ts,tsx}": [
-      "eslint --fix",
-      "git add"
-    ]
-  },
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^17.0.11",
-    "@types/react-dom": "^17.0.7",
-    "dayjs": "^1.10.6",
-    "nanoid": "^3.1.23",
-    "react": "^17.0.2",
-    "react-day-picker": "^7.4.10",
-    "react-dom": "^17.0.2",
-    "react-hook-form": "^7.9.0",
-    "react-scripts": "4.0.3",
-    "reactjs-popup": "^2.0.5",
-    "rsuite": "^4.10.3",
-    "sass": "^1.45.1",
-    "source-map-explorer": "^2.5.2",
-    "typescript": "^4.3.5",
-    "web-vitals": "^1.0.1"
-  },
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^20.0.0",
-    "@rollup/plugin-node-resolve": "^13.0.0",
-    "@rollup/plugin-url": "^6.0.0",
-    "@storybook/addon-actions": "^6.2.9",
-    "@storybook/addon-essentials": "^6.2.9",
-    "@storybook/addon-links": "^6.2.9",
-    "@storybook/node-logger": "^6.2.9",
-    "@storybook/preset-create-react-app": "^3.1.7",
-    "@storybook/react": "^6.2.9",
-    "@svgr/rollup": "^5.5.0",
-    "@typescript-eslint/parser": "^4.25.0",
-    "classnames": "^2.3.1",
-    "eslint": "^7.27.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-jest": "^24.3.6",
-    "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-react": "^7.24.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "less": "^4.1.1",
-    "less-loader": "7.3.0",
-    "lint-staged": "11.0.0",
-    "mini-css-extract-plugin": "^1.0.0",
-    "postcss": "^8.3.5",
-    "prettier": "^2.3.0",
-    "rollup": "^2.53.0",
-    "rollup-plugin-copy": "^3.4.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.0",
-    "rollup-plugin-typescript2": "^0.30.0"
-  },
-  "peerDependencies": {
-    "classnames": ">=2.3.1",
-    "react": ">=16.9.0",
-    "react-dom": ">=16.9.0"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": [
@@ -112,5 +25,44 @@
         }
       }
     ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.7.13",
+    "@types/react": "^17.0.20",
+    "@types/react-dom": "^17.0.9",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "5.0.0",
+    "sass": "^1.45.1",
+    "typescript": "^4.4.2",
+    "web-vitals": "^2.1.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.4.9",
+    "@storybook/addon-essentials": "^6.4.9",
+    "@storybook/addon-links": "^6.4.9",
+    "@storybook/builder-webpack5": "^6.4.9",
+    "@storybook/manager-webpack5": "^6.4.9",
+    "@storybook/node-logger": "^6.4.9",
+    "@storybook/preset-create-react-app": "^4.0.0",
+    "@storybook/react": "^6.4.9",
+    "classnames": "^2.3.1",
+    "webpack": "^5.65.0"
   }
 }

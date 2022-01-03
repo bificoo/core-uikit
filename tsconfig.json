@@ -1,12 +1,8 @@
 {
   "compilerOptions": {
-    "rootDir": "./",
     "baseUrl": "src",
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext", "es6", "es2016", "es2017"],
-    "sourceMap": true,
-    "jsx": "react-jsx",
-    "types": ["react/next", "react-dom/next"],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -19,18 +15,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "noEmitOnError": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "declaration": true,
-    "declarationDir": "build",
-    "outDir": "build",
+    "jsx": "react-jsx",
+    "types": ["node"]
   },
-  "include": ["src/**/*"],
-  "exclude": [
-    "node_modules",
-    "build",
-    "public",
-  ],
-  "typeRoots": ["node_modules/@types/**/*.d.ts", "src/types/global.d.ts"]
+  "include": ["src"]
 }

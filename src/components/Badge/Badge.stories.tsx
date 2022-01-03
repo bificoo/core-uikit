@@ -1,5 +1,5 @@
 import { Story, Meta } from "@storybook/react"
-import Badge, { BadgeProps } from "components/Badge"
+import Badge, { BadgeProps } from "../Badge"
 
 export default {
   title: "Data Display/Badge",

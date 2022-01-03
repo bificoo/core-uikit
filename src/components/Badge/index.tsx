@@ -1,7 +1,7 @@
 import cx from "classnames"
 import styled from "./Badge.module.scss"
 
-export type BadgeProps = ReactProps.Component & {
+export type BadgeProps = {
   /**
    * 標籤樣式
    * @default 'primary'
@@ -12,7 +12,7 @@ export type BadgeProps = ReactProps.Component & {
    * @default false
    */
   pill?: boolean
-}
+} & { children?: React.ReactNode } & { className?: string }
 
 const Badge = ({
   variant = "primary",

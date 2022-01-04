@@ -5,12 +5,7 @@ export type AvatarProps = {
    * The CSS styles.
    */
   style?: React.CSSProperties
-} & { 
-  /**
-   * Provide content to be rendered inside of a
-   */
-  children?: React.ReactNode 
-}
+} & ReactProps.WithChildren
 
 export const Avatar = (props: AvatarProps) => {
   const defaultAvatar = (

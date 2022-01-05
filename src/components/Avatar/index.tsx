@@ -1,11 +1,7 @@
 import styled from "./Avatar.module.scss"
+import { WithChildren, WithStyle } from "types/common"
 
-export type AvatarProps = {
-  /**
-   * The CSS styles.
-   */
-  style?: React.CSSProperties
-} & ReactProps.WithChildren
+export type AvatarProps = WithStyle & WithChildren
 
 export const Avatar = (props: AvatarProps) => {
   const defaultAvatar = (

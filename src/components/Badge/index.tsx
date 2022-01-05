@@ -1,5 +1,6 @@
 import cx from "classnames"
 import styled from "./Badge.module.scss"
+import { WithChildren, WithClassName } from "types/common"
 
 export type BadgeProps = {
   /**
@@ -12,17 +13,7 @@ export type BadgeProps = {
    * @default false
    */
   pill?: boolean
-} & {
-  /**
-   * Provide content to be rendered inside of a
-   */
-  children?: React.ReactNode
-} & {
-  /**
-   * Provide a custom className that is applied to the containing
-   */
-  className?: string
-}
+} & WithChildren & WithClassName
 
 export const Badge = ({
   variant = "primary",

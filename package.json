@@ -2,6 +2,10 @@
   "name": "core-uikit",
   "version": "0.1.0",
   "license": "MIT",
+  "main": "build/src/index.js",
+  "files": [
+    "build"
+  ],
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -71,6 +75,7 @@
     "@storybook/node-logger": "^6.4.9",
     "@storybook/preset-create-react-app": "^4.0.0",
     "@storybook/react": "^6.4.9",
+    "@svgr/rollup": "^6.1.2",
     "classnames": "^2.3.1",
     "rollup": "^2.62.0",
     "rollup-plugin-copy": "^3.4.0",

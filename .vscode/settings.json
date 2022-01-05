@@ -1,4 +1,7 @@
 {
-  "cSpell.words": ["Jheng"],
+  "cSpell.words": [
+    "Jheng",
+    "svgr"
+  ],
   "css.lint.unknownAtRules": "ignore"
 }

@@ -21,4 +21,4 @@ export type WithStyle = {
 
 export type EventKey = string | number;
 
-export type Component = WithChildren & WithClassName & WithStyle
+export type WithComponent = WithChildren & WithClassName & WithStyle

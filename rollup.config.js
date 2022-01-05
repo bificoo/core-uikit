@@ -6,6 +6,7 @@ import postcss from "rollup-plugin-postcss";
 import del from "rollup-plugin-delete";
 import url from "@rollup/plugin-url"
 import copy from "rollup-plugin-copy"
+import svgr from "@svgr/rollup"
 
 const path = require("path");
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
@@ -19,17 +20,18 @@ export default {
     format: "cjs",
     exports: "named",
     sourcemap: true,
-    preserveModules: true,
-    globals: { react: 'React' }
+    globals: { react: 'React' },
   },
+  preserveModules: true,
   plugins: [
     url(),
+    svgr({ removeDimensions: true }),
     del({ targets: 'build/*' }),
     copy({ targets: [{ src: "src/types/*", dest: "build/src/types" }] }),
-    commonjs(),
+    commonjs({ include: ['node_modules/**'] }),
     peerDepsExternal(),
-    typescript({ tsconfig: './tsconfig.json', useTsconfigDeclarationDir: true }),
-    resolve({ extensions, browser: true, mainFields: ["module"] }),
+    typescript({ useTsconfigDeclarationDir: true }),
+    resolve({ extensions, browser: true, mainFields: ["main"] }),
     postcss({
       extract: false,
       modules: true,

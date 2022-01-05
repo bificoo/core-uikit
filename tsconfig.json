@@ -23,7 +23,10 @@
     "declaration": true,
     "declarationDir": "build",
     "jsx": "react-jsx",
-    "types": ["node"]
+    "types": ["node"],
+    "plugins": [
+			{ "transform": "@zerollup/ts-transform-paths" }
+		]
   },
   "include": ["src"],
   "exclude": ["node_modules", "build", "public"],

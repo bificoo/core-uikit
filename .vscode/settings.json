@@ -1,7 +1,9 @@
 {
   "cSpell.words": [
     "Jheng",
-    "svgr"
+    "svgr",
+    "ttypescript",
+    "zerollup"
   ],
   "css.lint.unknownAtRules": "ignore"
 }

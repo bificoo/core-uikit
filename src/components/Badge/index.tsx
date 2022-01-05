@@ -1,6 +1,6 @@
 import cx from "classnames"
 import styled from "./Badge.module.scss"
-import { WithComponent } from "../../types/common"
+import { WithComponent } from "types/common"
 
 export type BadgeProps = {
   /**

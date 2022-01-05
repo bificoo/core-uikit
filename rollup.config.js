@@ -7,6 +7,7 @@ import del from "rollup-plugin-delete";
 import url from "@rollup/plugin-url"
 import copy from "rollup-plugin-copy"
 import svgr from "@svgr/rollup"
+import ttypescript from 'ttypescript'
 
 const path = require("path");
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
@@ -28,9 +29,11 @@ export default {
     svgr({ removeDimensions: true }),
     del({ targets: 'build/*' }),
     copy({ targets: [{ src: "src/types/*", dest: "build/src/types" }] }),
+    // Node.js 有些套件需要加入include設定才會正常
     commonjs({ include: ['node_modules/**'] }),
     peerDepsExternal(),
-    typescript({ useTsconfigDeclarationDir: true }),
+    // https://github.com/zerkalica/zerollup/issues/11
+    typescript({ useTsconfigDeclarationDir: true, clean: true, typescript: ttypescript }),
     resolve({ extensions, browser: true, mainFields: ["main"] }),
     postcss({
       extract: false,

@@ -1,5 +1,5 @@
 import styled from "./Avatar.module.scss"
-import { WithChildren, WithStyle } from "../../types/common"
+import { WithChildren, WithStyle } from "types/common"
 
 export type AvatarProps = WithStyle & WithChildren
 

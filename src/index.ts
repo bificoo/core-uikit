@@ -5,6 +5,8 @@ export type { AvatarProps } from "./components/Avatar"
 export { Badge } from "./components/Badge"
 export type { BadgeProps } from "./components/Badge"
 
+export { default as Button, LinkButton } from "./components/Button"
+export type { ButtonProps, ButtonGroupProps, LinkButtonProps } from "./components/Button"
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals

@@ -1,0 +1,153 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs";
+import { Button } from "../Button";
+import Icon from "components/Icon";
+
+<Meta title="General/Button" component={Button} />
+
+Here's some _markdown_!
+
+export const Template = (args) => <Button {...args} />;
+
+# Primary
+
+<Preview>
+  <Story
+    name="Primary"
+    args={{
+      variant: "primary",
+      children: "Primary Button",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+# Props
+
+<Props of={Button} />
+
+# Secondary
+
+<Preview>
+  <Story
+    name="Secondary"
+    args={{
+      variant: "secondary",
+      children: "Secondary Button",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+# Important
+
+<Preview>
+  <Story
+    name="Important"
+    args={{
+      variant: "important",
+      children: "Important Button",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+# Text
+
+<Preview>
+  <Story
+    name="Text"
+    args={{
+      variant: "text",
+      children: "Text Button",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+# Selected
+
+<Preview>
+  <Story
+    name="Selected"
+    args={{
+      selected: true,
+      children: "Selected Button",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+# Disabled
+
+<Preview>
+  <Story
+    name="Disabled"
+    args={{
+      disabled: true,
+      children: "Disabled Button",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+# Block
+
+<Preview>
+  <Story
+    name="Block"
+    args={{
+      block: true,
+      children: "Block button",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+# Chinese
+
+<Preview>
+  <Story
+    name="Chinese"
+    args={{
+      children: "按鈕",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+# LeftArrowIcon
+
+<Preview>
+  <div style={{ marginBottom: "10px" }}>
+    <Button>Left Arrow</Button>
+  </div>
+  <div>
+    <Button>
+      <Icon.Arrow />
+      Left Arrow
+    </Button>
+  </div>
+</Preview>
+
+
+# RightArrowIcon
+
+<Preview>
+  <div style={{ marginBottom: "10px" }}>
+    <Button>RightArrowIcon</Button>
+  </div>
+  <div>
+    <Button>
+      Right Arrow
+      <Icon.Arrow />
+    </Button>
+  </div>
+</Preview>

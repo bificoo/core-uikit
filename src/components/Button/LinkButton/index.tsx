@@ -1,25 +1,17 @@
 import cx from "classnames"
 import styled from "./LinkButton.module.scss"
+import { WithClassName, WithChildren } from "types/common"
 
-export type LinkButtonProps = {
-  /**
-   * 按鈕樣式
-   * @default 'primary'
-   */
-  variant?: "primary"
-} & JSXProps.AElement
+export type LinkButtonProps = WithClassName & WithChildren & JSX.IntrinsicElements["a"]
 
-const Button = ({
-  variant = "primary",
+export const LinkButton = ({
   className,
   children = "Click",
   ...props
 }: LinkButtonProps) => {
   return (
-    <a className={cx(styled.wrapper, styled[variant], className)} {...props}>
+    <a className={cx(styled.wrapper, styled.primary, className)} {...props}>
       {children}
     </a>
   )
 }
-
-export default Button

@@ -1,22 +1,26 @@
-import React from "react"
+import React,{PropsWithChildren} from "react"
 import cx from "classnames"
 import styled from "./Button.module.scss"
-import { WithComponent,EventKey } from "types/common"
+import { WithComponent, EventKey } from "types/common"
+
+const VARIANT = {
+  PRIMARY: 'primary',
+  SECONDARY: 'secondary',
+  IMPORTANT: 'important',
+  TEXT: 'text'
+} as const;
 
 export type ButtonProps = {
   /**
    * 按鈕樣式
-   * @default 'primary'
    */
-  variant?: "primary" | "secondary" | "important" | "text"
+  variant?: typeof VARIANT[keyof typeof VARIANT]
   /**
    * 按鈕滿版
-   * @default false
    */
   block?: boolean
   /**
    * 按鈕是否為選取的狀態
-   * @default false
    */
   selected?: boolean
   /**
@@ -38,7 +42,7 @@ export const Button = ({
   eventKey,
   onClick,
   ...props
-}: ButtonProps) => {
+}: PropsWithChildren<ButtonProps>) => {
   return (
     <button
       className={cx(

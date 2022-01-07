@@ -9,7 +9,7 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ["Introduction","General", "Navigation", "Data Entry", "Data Display"],
+      order: ["Introduction", "General", "Navigation", "Data Entry", "Data Display"],
     },
   },
 }

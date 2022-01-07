@@ -5,7 +5,7 @@ import ButtonGroup from "components/Button/ButtonGroup"
 
 export default {
   title: "General/ButtonGroup",
-  component: Button,
+  component: ButtonGroup,
   argTypes: {
     className: {
       control: false,
@@ -17,7 +17,7 @@ export const Default: Story = () => {
   return (
     <div>
       <ButtonGroup
-        defaultActiveKey={"daily"}
+        defaultActiveKey="daily"
         onSelect={(
           e: React.MouseEvent<Element, MouseEvent>,
           { eventKey }: { eventKey?: ReactProps.EventKey },

@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import IconButton from "components/Button/IconButton"
 import styled from "./ButtonGroup.module.scss"
-import { WithChildren } from "types/common"
+import { WithChildren,WithClassName } from "types/common"
 
 type EventKey = string | number;
 
@@ -17,7 +17,7 @@ export type ButtonGroupProps = {
     e: React.MouseEvent<Element, MouseEvent>,
     { eventKey }: { eventKey?: EventKey },
   ) => void
-} & WithChildren
+} & WithChildren & WithClassName
 
 const ButtonGroup = (props: ButtonGroupProps) => {
   const [eventKey, setEventKay] = useState(props.defaultActiveKey)

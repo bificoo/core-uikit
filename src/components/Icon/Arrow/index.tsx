@@ -1,11 +1,14 @@
 import { ReactComponent as ArrowIcon } from "../Arrow/arrow.svg"
 import styled from "./Arrow.module.scss"
 import cx from "classnames"
+import { WithClassName , WithStyle } from "types/common"
 
 export type IconArrowProps = {
+  /**
+   * Specify the icon transfer direction
+   */
   direction?: "up" | "down" | "right" | "left"
-  style?: React.CSSProperties
-}
+} & WithClassName & WithStyle
 
 const Arrow = ({ direction = "down", style }: IconArrowProps) => {
   return (

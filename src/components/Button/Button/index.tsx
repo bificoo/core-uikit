@@ -1,4 +1,4 @@
-import React,{PropsWithChildren} from "react"
+import React, { PropsWithChildren } from "react"
 import cx from "classnames"
 import styled from "./Button.module.scss"
 import { WithComponent, EventKey } from "types/common"
@@ -12,21 +12,24 @@ const VARIANT = {
 
 export type ButtonProps = {
   /**
-   * 按鈕樣式
+   * Specify the type of the
    */
   variant?: typeof VARIANT[keyof typeof VARIANT]
   /**
-   * 按鈕滿版
+   * The size is full of the button.
    */
   block?: boolean
   /**
-   * 按鈕是否為選取的狀態
+   * Specify whether the Button is currently selected
    */
   selected?: boolean
   /**
-   * ButtonGroup使用
+   * Unique ID of the ButtonGroup
    */
   eventKey?: EventKey
+  /**
+   * Provide an optional function to be called when the button element is clicked
+   */
   onClick?: (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     eventKey?: { eventKey?: EventKey },

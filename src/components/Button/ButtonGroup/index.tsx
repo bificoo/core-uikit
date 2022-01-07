@@ -6,7 +6,13 @@ import { WithChildren } from "types/common"
 type EventKey = string | number;
 
 export type ButtonGroupProps = {
+  /**
+   * Default values for the ButtonGroup.
+   */
   defaultActiveKey?: EventKey
+  /**
+   * Called when selected value has changed.
+   */
   onSelect?: (
     e: React.MouseEvent<Element, MouseEvent>,
     { eventKey }: { eventKey?: EventKey },

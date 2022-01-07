@@ -7,7 +7,7 @@ export type WithChildren = {
 
 export type WithClassName = {
   /**
-   * Provide a custom className that is applied to the containing
+   * For css customization.
    */
   className?: string;
 };

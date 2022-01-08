@@ -14,7 +14,7 @@ export type WithClassName = {
 
 export type WithStyle = {
   /**
-   * The CSS styles.
+   * The css styles.
    */
   style?: React.CSSProperties;
 };

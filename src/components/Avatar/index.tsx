@@ -22,3 +22,5 @@ export const Avatar = (props: AvatarProps) => {
     </div>
   )
 }
+
+Avatar.displayName = Avatar

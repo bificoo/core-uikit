@@ -1,0 +1,34 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs";
+import Progress from "../Progress";
+
+<Meta title="General/Progress" component={Progress} />
+
+Here's some _markdown_!
+
+# Default
+
+<Preview>
+  <Story name="Default">
+    <Progress percent={30} />
+  </Story>
+</Preview>
+
+# Props
+
+<Props of={Progress} />
+
+# Empty
+
+<Preview>
+  <Story name="Empty">
+    <Progress percent={0} />
+  </Story>
+</Preview>
+
+# Full
+
+<Preview>
+  <Story name="Full">
+    <Progress percent={100} />
+  </Story>
+</Preview>

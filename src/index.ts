@@ -13,6 +13,13 @@ export { default as Button, LinkButton } from "./components/Button"
 export type { ButtonProps, ButtonGroupProps, LinkButtonProps } from "./components/Button"
 
 export { default as Collapse } from "./components/Collapse"
+
+export { default as Progress } from "./components/Progress"
+export type { ProgressProps } from "./components/Progress"
+
+export { default as Tabs } from "./components/Tabs"
+export type { TabsProps, TabProps } from "./components/Tabs"
+
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals

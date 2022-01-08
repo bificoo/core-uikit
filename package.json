@@ -3,17 +3,16 @@
   "version": "0.1.0",
   "license": "MIT",
   "main": "build/src/index.js",
+  "types": "build/src/types/index.d.ts",
   "files": [
     "build"
   ],
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "start-storybook -p 6006 -s public",
+    "build": "build-storybook -s public",
     "build:library": "rollup -c",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

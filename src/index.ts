@@ -13,9 +13,13 @@ export { default as Button, LinkButton } from "./components/Button"
 export type { ButtonProps, ButtonGroupProps, LinkButtonProps } from "./components/Button"
 
 export { default as Collapse } from "./components/Collapse"
+export type { CollapseProps } from "./components/Collapse"
 
 export { default as Progress } from "./components/Progress"
 export type { ProgressProps } from "./components/Progress"
+
+export { default as Select } from "./components/Select"
+export type { SelectProps, SelectOptionType } from "./components/Select"
 
 export { default as Tabs } from "./components/Tabs"
 export type { TabsProps, TabProps } from "./components/Tabs"

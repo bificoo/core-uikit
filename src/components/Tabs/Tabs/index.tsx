@@ -6,9 +6,21 @@ import usePrevious from "hooks/usePrevious"
 import { WithComponent, EventKey } from "types/common"
 
 export type TabsProps = {
-  defaultActiveKey: ReactProps.EventKey
+  /**
+   * The default tabs active key.
+   */
+  defaultActiveKey: EventKey
+  /**
+    * The current active tab index
+    */
   activeKey?: EventKey
+  /**
+   * For tabs customization extra content.
+   */
   extraContent?: JSX.Element
+  /**
+   * Callback fired when selected tab changed.
+   */
   onSelect?: (
     e: React.MouseEvent<Element, MouseEvent>,
     { eventKey }: { eventKey?: EventKey },
@@ -21,7 +33,7 @@ const Tabs = ({ ...props }: TabsProps): JSX.Element => {
 
   const handleClickTab = (
     e: React.MouseEvent<Element, MouseEvent>,
-    { eventKey }: { eventKey?: ReactProps.EventKey },
+    { eventKey }: { eventKey?: EventKey },
   ) => {
     if (!eventKey) return
     setActiveKey(eventKey)

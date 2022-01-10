@@ -6,11 +6,11 @@ import { WithComponent, EventKey } from "types/common"
 
 export type TabProps = {
   /**
-   * Specify the Tab's text of the
+   * The tab content.
    */
   title: string
   /**
-   * Unique ID of the Tab
+   * The tab key.
    */
   eventKey: EventKey
 } & WithComponent

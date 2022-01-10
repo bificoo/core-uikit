@@ -2,7 +2,7 @@ import styled from "./Progress.module.scss"
 import { WithComponent } from "types/common"
 
 export type ProgressProps = {
-  /** Progress percent between <code>0-100</code>. */
+  /** Progress percent between <code>0-100</code> */
   percent: number
 } & WithComponent
 

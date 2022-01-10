@@ -3,11 +3,14 @@ import CollapseContext from "./CollapseContext"
 import { WithComponent } from "types/common"
 
 export type CollapseProps = {
+  /**
+   * Specify if the is expanded
+   */
   defaultExpanded?: boolean
 } & WithComponent
 
-const Collapse = (props: CollapseProps) => {
-  const [expanded, setExpended] = useState(props.defaultExpanded)
+const Collapse = ({ defaultExpanded = false, ...props }: CollapseProps) => {
+  const [expanded, setExpended] = useState(defaultExpanded)
   return (
     <CollapseContext.Provider
       value={{

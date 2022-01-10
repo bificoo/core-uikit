@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react"
 
 function usePrevious<T>(value: T): T {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // @ts-ignore
   const ref: any = useRef<T>()
 
   useEffect(() => {

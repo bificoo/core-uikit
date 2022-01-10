@@ -6,9 +6,6 @@ export default {
   title: "General/LinkButton",
   component: LinkButton,
   argTypes: {
-    as: {
-      control: false,
-    },
     className: {
       control: false,
     },

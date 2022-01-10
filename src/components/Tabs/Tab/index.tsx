@@ -32,4 +32,6 @@ const Tab = (props: TabProps) => {
   )
 }
 
+Tab.display = Tab
+
 export default Tab

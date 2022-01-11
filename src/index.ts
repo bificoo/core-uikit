@@ -39,6 +39,9 @@ export type { RangePickerProps } from "./components/DatePicker"
 export { default as Icon } from "./components/Icon"
 export type { IconArrowProps } from "./components/Icon"
 
+export { default as Modal } from "./components/Modal"
+export type { ModalProps } from "./components/Modal"
+
 export { default as Progress } from "./components/Progress"
 export type { ProgressProps } from "./components/Progress"
 

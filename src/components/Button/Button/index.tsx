@@ -24,7 +24,7 @@ export type ButtonProps = {
    */
   selected?: boolean
   /**
-   * Unique ID of the ButtonGroup
+   * The button's key for the ButtonGroup.
    */
   eventKey?: EventKey
   /**

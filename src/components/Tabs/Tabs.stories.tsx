@@ -6,7 +6,7 @@ import Tabs, { TabsProps } from "components/Tabs"
 export default {
   title: "Navigation/Tabs",
   component: Tabs,
-  subcomponents: { Tab: Tabs.Tab },
+  subcomponents: { "Tabs.Tab": Tabs.Tab },
   argTypes: {
     className: {
       control: false,

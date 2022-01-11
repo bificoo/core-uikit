@@ -1,5 +1,5 @@
 import cx from "classnames"
-import React, { useState, useRef, CSSProperties } from "react"
+import React, { useState, useRef } from "react"
 import styled from "./Select.module.scss"
 import { ReactComponent as ClearIcon } from "./svg/clear.svg"
 import { ReactComponent as RemoveIcon } from "./svg/remove.svg"
@@ -40,6 +40,8 @@ export type SelectProps = {
     },
   ) => void
 } & WithComponent
+
+export type { SelectOptionProps } from "./SelectOption"
 
 export type SelectOptionType = {
   value: string

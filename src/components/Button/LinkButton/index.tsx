@@ -15,3 +15,7 @@ export const LinkButton = ({
     </a>
   )
 }
+
+LinkButton.display = LinkButton
+
+export default LinkButton

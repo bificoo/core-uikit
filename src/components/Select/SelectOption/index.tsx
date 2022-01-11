@@ -2,14 +2,26 @@ import styled from "../Select.module.scss"
 import { SelectOptionType } from "../index"
 import { WithComponent } from "types/common"
 
-export type OptionProps = {
+export type SelectOptionProps = {
+  /**
+   * If true, the input will be disabled.
+   */
   disabled?: boolean
+  /**
+   * The select option value.
+   */
   value: string
+  /**
+   * The select option key.
+   */
   eventKey: ReactProps.EventKey
+  /**
+   * Callback when click.
+   */
   onClick?: (e: React.MouseEvent<Element, MouseEvent>, option: SelectOptionType) => void
 } & WithComponent
 
-const Option = ({ ...props }: OptionProps) => {
+const SelectOption = ({ ...props }: SelectOptionProps) => {
   return (
     <div
       className={styled.item}
@@ -20,4 +32,4 @@ const Option = ({ ...props }: OptionProps) => {
     </div>
   )
 }
-export default Option
+export default SelectOption

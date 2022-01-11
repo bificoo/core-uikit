@@ -4,6 +4,7 @@ import Select, { SelectProps } from "components/Select"
 export default {
   title: "Data Entry/Select",
   component: Select,
+  subcomponents: { "Select.Option": Select.Option },
   argTypes: {},
 } as Meta
 

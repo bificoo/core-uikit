@@ -1,0 +1,31 @@
+@keyframes anvil {
+  0% {
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(241, 241, 241, 0);
+  }
+  1% {
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(241, 241, 241, 0);
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 500px rgba(241, 241, 241, 0);
+  }
+}
+
+:global {
+  .core-tooltip-content {
+    max-width: 180px;
+    border-radius: 3px;
+    background-color: #fff;
+    color: #45536C;
+    padding: 10px 14px;
+    box-sizing: border-box;
+    box-shadow: 0px 3px 5px rgba(9, 30, 66, 0.2), 0px 0px 1px rgba(9, 30, 66, 0.31) !important;
+    border-radius: 3px;
+
+    :local {
+      animation: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
+    }
+  }
+}

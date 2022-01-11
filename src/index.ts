@@ -15,6 +15,9 @@ export type { ButtonProps, ButtonGroupProps, LinkButtonProps } from "./component
 export { default as Collapse } from "./components/Collapse"
 export type { CollapseProps } from "./components/Collapse"
 
+export { default as Icon } from "./components/Icon"
+export type { IconArrowProps } from "./components/Icon"
+
 export { default as Progress } from "./components/Progress"
 export type { ProgressProps } from "./components/Progress"
 
@@ -23,6 +26,9 @@ export type { SelectProps, SelectOptionType } from "./components/Select"
 
 export { default as Tabs } from "./components/Tabs"
 export type { TabsProps, TabProps } from "./components/Tabs"
+
+export { default as Tooltip } from "./components/Tooltip"
+export type { TooltipProps, TooltipToggleProps } from "./components/Tooltip"
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

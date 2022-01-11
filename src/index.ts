@@ -15,6 +15,15 @@ export type { ButtonProps, ButtonGroupProps, LinkButtonProps } from "./component
 export { default as Collapse } from "./components/Collapse"
 export type { CollapseProps } from "./components/Collapse"
 
+export { default as Dropdown } from "./components/Dropdown"
+export type {
+  DropdownProps,
+  DropdownSelectEventProps,
+  DropdownItemProps,
+  DropdownMenuProps,
+  DropdownToggleProps,
+} from "./components/Dropdown"
+
 export { default as Form, InputGroup, Prepend, Append } from "./components/Form"
 export type {
   FormProps,

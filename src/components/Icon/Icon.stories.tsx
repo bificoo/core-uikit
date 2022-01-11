@@ -5,9 +5,6 @@ export default {
   title: "General/Icon",
   component: Icon.Arrow,
   argTypes: {
-    as: {
-      control: false,
-    },
     className: {
       control: false,
     },

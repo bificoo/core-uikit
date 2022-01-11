@@ -1,0 +1,23 @@
+.wrapper {
+  overflow: hidden;
+  padding: 4px 16px;
+  width: auto;
+  background-color: #ffffff;
+  color: #45536C;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  transition: all 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #EBECF0;
+    color: #45536C;
+    text-decoration: none;
+  }
+
+  &:active {
+    background-color: #EBECF0;
+    color: #45536C;
+    text-decoration: none;
+  }
+}

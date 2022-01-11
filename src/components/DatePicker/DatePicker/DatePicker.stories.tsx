@@ -5,11 +5,7 @@ import DatePicker, { DatePickerProps } from "components/DatePicker"
 export default {
   title: "Data Entry/DatePicker",
   component: DatePicker,
-  argTypes: {
-    className: {
-      control: false,
-    },
-  },
+  argTypes: {},
   decorators: [
     Story => (
       <div style={{ display: "flex", justifyContent: "center", padding: "30px 0 300px" }}>

@@ -15,7 +15,7 @@ export type SelectProps = {
    */
   isMulti?: boolean
   /**
-   * Default input place holder.
+   * Default input placeholder.
    */
   placeholder?: string
   /**

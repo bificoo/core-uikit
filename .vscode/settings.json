@@ -5,6 +5,7 @@
     "subcomponents",
     "svgr",
     "ttypescript",
+    "uikit",
     "zerollup"
   ],
   "css.lint.unknownAtRules": "ignore",

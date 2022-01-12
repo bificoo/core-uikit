@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "main": "build/src/index.js",
-  "types": "build/src/types/index.d.ts",
+  "types": "build/src/index.d.ts",
   "files": [
     "build"
   ],

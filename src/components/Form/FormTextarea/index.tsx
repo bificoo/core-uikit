@@ -21,7 +21,7 @@ const FormTextarea = React.forwardRef(function FormTextarea(
       disabled: !!props.disabled,
       readOnly: !!props.readOnly,
     })
-  }, [entered, isValid, isInvalid, props.disabled, props.readOnly])
+  }, [entered, isValid, isInvalid, props.disabled, props.readOnly, setAttributes])
 
   return (
     <div

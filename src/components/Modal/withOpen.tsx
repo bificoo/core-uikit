@@ -1,6 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import Modal, { ModalProps } from "./Modal"
+import { ModalProps } from "./Modal"
 
 export const getPopupRoot = () => {
   let popupRoot = document.getElementById("popup-root")

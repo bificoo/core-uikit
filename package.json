@@ -1,6 +1,14 @@
 {
   "name": "@frontend1/core-uikit",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.bigdatainn-prd.site/frontend1/project"
+  },
   "version": "1.0.0",
+  "publishConfig": {
+    "@frontend1:registry": "https://gitlab.bigdatainn-prd.site/api/v4/projects/55/packages/npm/"
+  },
   "license": "MIT",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",
@@ -13,9 +21,6 @@
     "build:library": "rollup -c",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  },
-  "publishConfig": {
-    "@frontend1:registry": "https://gitlab.bigdatainn-prd.site/api/v4/projects/55/packages/npm/"
   },
   "eslintConfig": {
     "extends": [

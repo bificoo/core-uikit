@@ -1,11 +1,17 @@
 import React, { useState, useRef, useCallback, useEffect } from "react"
 import { DateUtils } from "react-day-picker"
 import { DayPickerInputProps, DayPickerProps } from "react-day-picker/types"
-import DayPickerInput from "react-day-picker/DayPickerInput"
+import DayPickerInputType from "react-day-picker/types/DayPickerInput"
 import DateFormControl from "../DateFormControl"
 import useOutsideEvent from "hooks/useOutsideEvent"
 import { formatDate, parseDate } from "../utils"
 import styled from "./RangePicker.module.scss"
+
+// import DayPickerInput from 'react-day-picker/DayPickerInput'
+
+import DPI from 'react-day-picker/DayPickerInput';
+// @ts-ignore
+const DayPickerInput = DPI.__esModule ? DPI.default : DPI
 
 export type RangePickerProps = {
   /**
@@ -44,7 +50,7 @@ const RangePicker = ({ dateFormat = "YYYY-MM-DD", ...props }: RangePickerProps) 
   const [endDate, setEndDate] = useState<Date | undefined>(props?.endDate)
   const currentMonth = useRef<Date | undefined>(startDate)
   const datePickerContainerRef = useRef(null)
-  const datePickerInputRef = useRef<DayPickerInput>(null)
+  const datePickerInputRef = useRef<DayPickerInputType>(null)
 
   const dayPickerProps: DayPickerProps = {
     className: styled.wrapper,
@@ -64,7 +70,7 @@ const RangePicker = ({ dateFormat = "YYYY-MM-DD", ...props }: RangePickerProps) 
       })
       range.from !== null && setStartDate(range.from)
       range.to !== null && setEndDate(range.to)
-      if(range.from && range.to)
+      if (range.from && range.to)
         props.onChange && props.onChange(range.from, range.to)
     },
     onMonthChange: date => {

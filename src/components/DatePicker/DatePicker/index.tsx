@@ -1,10 +1,15 @@
 import React, { useRef, useState, useEffect } from "react"
-import DayPickerInput from "react-day-picker/DayPickerInput"
 import { DayPickerInputProps, DayPickerProps } from "react-day-picker/types"
+import DayPickerInputType from "react-day-picker/types/DayPickerInput"
 import Form from "components/Form"
 import day from "utils/day"
 import { formatDate, parseDate } from "../utils"
 import styled from "./DatePicker.module.scss"
+
+// https://github.com/gpbl/react-day-picker/issues/1194#issuecomment-814065458
+import DPI from 'react-day-picker/DayPickerInput';
+// @ts-ignore
+const DayPickerInput = DPI.__esModule ? DPI.default : DPI
 
 export type DatePickerProps = {
   /**
@@ -35,7 +40,7 @@ export type DatePickerProps = {
 
 const DatePicker = ({ dateFormat = "YYYY-MM-DD", ...props }: DatePickerProps) => {
   const [date, setDate] = useState(props.date || new Date())
-  const datePickerInputRef = useRef<DayPickerInput>(null)
+  const datePickerInputRef = useRef<DayPickerInputType>(null)
 
   const dayPickerProps: DayPickerProps = {
     weekdaysShort: ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"],

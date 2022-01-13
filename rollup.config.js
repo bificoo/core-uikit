@@ -17,7 +17,7 @@ export default {
   input: "src/index",
   output: {
     dir: "build",
-    format: "cjs",
+    format: "es",
     exports: "named",
     preserveModules: true,
   },

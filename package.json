@@ -1,6 +1,6 @@
 {
   "name": "@frontend1/core-uikit",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "license": "MIT",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",

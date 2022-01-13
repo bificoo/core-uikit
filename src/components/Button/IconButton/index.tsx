@@ -21,6 +21,7 @@ const IconButton = (props: IconButtonProps) => {
         React.cloneElement(child, {
           ...child.props,
           style: index === 0 ? { marginRight: "4px" } : { marginLeft: "4px" },
+          key: index,
         }),
       )
     } else if (child) {

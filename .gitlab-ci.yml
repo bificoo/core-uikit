@@ -1,0 +1,13 @@
+image: node:15.4
+
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  only: ['tags']
+  script:
+    - yarn
+    - yarn build:library
+    - echo "//gitlab.bigdatainn-prd.site/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}" > .yarnrc
+    - yarn publish

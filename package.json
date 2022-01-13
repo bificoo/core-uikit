@@ -1,5 +1,5 @@
 {
-  "name": "core-uikit",
+  "name": "@frontend1/core-uikit",
   "version": "0.1.0",
   "license": "MIT",
   "main": "build/src/index.js",
@@ -13,6 +13,9 @@
     "build:library": "rollup -c",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "publishConfig": {
+    "@xenby-group:registry": "https://gitlab.bigdatainn-prd.site/api/v4/projects/55/packages/npm/"
   },
   "eslintConfig": {
     "extends": [

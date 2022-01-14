@@ -26,3 +26,19 @@ export const ArrowIconDirectionRight: Story<IconArrowProps> = () => {
 export const ArrowIconDirectionLeft: Story<IconArrowProps> = () => {
   return <Icon.Arrow direction={"left"} />
 }
+
+export const MagnifyingGlass: Story = () => {
+  return <Icon.MagnifyingGlass />
+}
+
+export const ActivitiesParticipate: Story = () => {
+  return <Icon.ActivitiesParticipate />
+}
+
+export const User: Story = () => {
+  return <Icon.User />
+}
+
+export const Infor: Story = () => {
+  return <Icon.Infor />
+}

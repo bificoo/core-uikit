@@ -13,4 +13,5 @@ deploy:
     - yarn
     - yarn build:library
     - ls -al
+    - npm config set always-auth true
     - npm publish

@@ -1,12 +1,12 @@
 import Arrow from "./Arrow"
 export type { IconArrowProps } from "./Arrow"
-import MagnifyingGlass from "./MagnifyingGlass"
-import ActivitiesParticipate from "./ActivitiesParticipate"
+import Search from "./Search"
+import Group from "./Group"
 import User from "./User"
-import Infor from "./Infor"
+import Information from "./Information"
 
 const Icon = {
-  Arrow,MagnifyingGlass,ActivitiesParticipate,User,Infor,
+  Arrow,Search,Group,User,Information,
 }
 
 export default Icon

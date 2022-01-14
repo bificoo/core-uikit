@@ -1,7 +1,7 @@
- image: node:16.6.1-stretch
+image: node:16.6.1-stretch
 
- stages:
-   - deploy
+stages:
+  - deploy
 
 deploy:
   stage: deploy

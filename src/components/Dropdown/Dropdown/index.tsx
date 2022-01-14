@@ -14,6 +14,7 @@ export type DropdownProps = {
    * The default dropdown active key.
    */
   defaultActiveKey?: EventKey
+  // TODO: rename props
   keepTooltipInside?: PopupProps["keepTooltipInside"]
   /**
    * If true, the dropdown will be disabled.

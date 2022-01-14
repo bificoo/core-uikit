@@ -1,6 +1,6 @@
 import { ModalProps } from "./Modal";
 export type { ModalProps } from "./Modal";
-declare const _default: (({ open, backdrop, custom, onExited, ...props }: ModalProps) => JSX.Element) & {
+declare const Modal: (({ open, backdrop, custom, onExited, ...props }: ModalProps) => JSX.Element) & {
     alert: (config: ModalProps) => {
         destroy: () => void;
         update: (newConfig: ModalProps) => void;
@@ -10,4 +10,4 @@ declare const _default: (({ open, backdrop, custom, onExited, ...props }: ModalP
         update: (newConfig: ModalProps) => void;
     };
 };
-export default _default;
+export default Modal;

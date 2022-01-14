@@ -6,3 +6,7 @@ export declare const ArrowIconDirectionUp: Story<IconArrowProps>;
 export declare const ArrowIconDirectionDown: Story<IconArrowProps>;
 export declare const ArrowIconDirectionRight: Story<IconArrowProps>;
 export declare const ArrowIconDirectionLeft: Story<IconArrowProps>;
+export declare const Search: Story;
+export declare const Group: Story;
+export declare const User: Story;
+export declare const Information: Story;

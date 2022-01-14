@@ -1,20 +1,16 @@
-# image: node:16.6.1-stretch
+ image: node:16.6.1-stretch
 
-# stages:
-#   - deploy
+ stages:
+   - deploy
 
-# deploy:
-#   stage: deploy
-# #  only: ['tags']
-#   script:
-#     - echo CI_PROJECT_ID $CI_PROJECT_ID
-#     - echo CI_JOB_TOKEN $CI_JOB_TOKEN
-#     - echo "\"_authToken\" \"${CI_JOB_TOKEN}\""
-#     - echo "\"@frontend1:registry\" \"https://gitlab.bigdatainn-prd.site/api/v4/packages/npm/\"" >> .yarnrc
-#     - echo "\"//https://gitlab.bigdatainn-prd.site/api/v4/packages/npm/:_authToken\" \"${CI_JOB_TOKEN}\"" >> .yarnrc
-#     - echo "\"//https://gitlab.bigdatainn-prd.site/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken\" \"${CI_JOB_TOKEN}\"" >> .yarnrc
-#     - cat .yarnrc
-#     - yarn
-#     - yarn build:library
-#     - ls -al
-#     - yarn publish
+deploy:
+  stage: deploy
+#  only: ['tags']
+  script:
+    - echo CI_PROJECT_ID $CI_PROJECT_ID
+    - echo CI_JOB_TOKEN $CI_JOB_TOKEN
+    - cat .npmrc
+    - yarn
+    - yarn build:library
+    - ls -al
+    - npm publish

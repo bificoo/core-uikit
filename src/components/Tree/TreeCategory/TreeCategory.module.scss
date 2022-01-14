@@ -1,0 +1,32 @@
+.category {
+  margin-bottom: 4px;
+  display: flex;
+  height: 32px;
+  align-items: center;
+  color: #45536C;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+
+  &.active {
+    font-weight: bold;
+    color: #0052CC;
+  }
+
+  &:hover {
+    background: #F6F6F7;
+  }
+
+  &.bold {
+    font-weight: bold;
+  }
+}
+
+.content {
+  flex-direction: column;
+  display: none;
+
+  &.expanded {
+    display: flex;
+  }
+}

@@ -1,0 +1,20 @@
+.item {
+  margin-bottom: 4px;
+  display: inline-flex;
+  height: 32px;
+  align-items: center;
+  color: #45536C;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+
+  &.active {
+    color: #0052CC;
+    background: #F6F6F7;
+    font-weight: bold;
+  }
+
+  &:hover {
+    background: #F6F6F7;
+  }
+}

@@ -1,6 +1,3 @@
 export declare type AppendProps = ReactProps.Component;
-declare const Append: {
-    (props: AppendProps): JSX.Element;
-    display: any;
-};
+declare const Append: (props: AppendProps) => JSX.Element;
 export default Append;

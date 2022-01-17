@@ -24,6 +24,5 @@ const InputGroup = (props: InputGroupProps) => {
     </div>
   )
 }
-InputGroup.display = InputGroup
 
 export default InputGroup

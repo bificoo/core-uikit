@@ -22,6 +22,5 @@ const Append = (props: AppendProps) => {
     </div>
   )
 }
-Append.display = Append
 
 export default Append

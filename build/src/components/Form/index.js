@@ -9,9 +9,13 @@ import FormGroup from './FormGroup/index.js';
 import FormFieldset from './FormFieldset/index.js';
 import FormDivider from './FormDivider/index.js';
 import FormHorizontal from './FormHorizontal/index.js';
-export { default as InputGroup } from './InputGroup/InputGroup/index.js';
-export { default as Prepend } from './InputGroup/Prepend/index.js';
-export { default as Append } from './InputGroup/Append/index.js';
+import 'react/jsx-runtime';
+import 'react';
+import './FormContext.js';
+import './InputGroup/InputGroup/InputGroup.module.scss.js';
+import 'classnames';
+import './InputGroup/Prepend/Prepend.module.scss.js';
+import './InputGroup/Append/Append.module.scss.js';
 
 var Form = Object.assign(Form$1, {
     Label: FormLabel,

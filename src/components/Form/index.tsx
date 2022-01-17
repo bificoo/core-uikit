@@ -18,8 +18,8 @@ import FormFieldset from "./FormFieldset"
 
 import FormDivider from "./FormDivider"
 import FormHorizontal from "./FormHorizontal"
-import InputGroup, { Prepend, Append } from "./InputGroup"
 
+import InputGroup, { Prepend, Append } from "./InputGroup"
 export type { FormProps } from "./Form"
 export type { FormLabelProps } from "./FormLabel"
 export type { FormInputProps } from "./FormInput"

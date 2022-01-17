@@ -22,6 +22,5 @@ const Prepend = (props: PrependProps) => {
     </div>
   )
 }
-Prepend.display = Prepend
 
 export default Prepend

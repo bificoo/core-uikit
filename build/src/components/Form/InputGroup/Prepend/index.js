@@ -14,6 +14,5 @@ var Prepend = function (props) {
             _a[styled["read-only"]] = attributes === null || attributes === void 0 ? void 0 : attributes.readOnly,
             _a), props.className) }, { children: props.children }), void 0));
 };
-Prepend.display = Prepend;
 
 export { Prepend as default };

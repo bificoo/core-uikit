@@ -16,6 +16,5 @@ var InputGroup = function (props) {
             _a[styled["is-invalid"]] = attributes === null || attributes === void 0 ? void 0 : attributes.isInvalid,
             _a), props.className) }, { children: props.children }), void 0));
 };
-InputGroup.display = InputGroup;
 
 export { InputGroup as default };

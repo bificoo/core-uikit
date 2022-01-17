@@ -19,7 +19,7 @@ var FormTextarea = React__default.forwardRef(function FormTextarea(_a, ref) {
             disabled: !!props.disabled,
             readOnly: !!props.readOnly,
         });
-    }, [entered, isValid, isInvalid, props.disabled, props.readOnly, setAttributes]);
+    }, [entered, isValid, isInvalid, props.disabled, props.readOnly]);
     return (jsx("div", __assign({ className: cx("component-textarea", styled.wrapper, (_b = {},
             _b[styled.entered] = entered,
             _b[styled.disabled] = !!props.disabled,

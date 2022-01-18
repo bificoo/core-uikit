@@ -1,12 +1,15 @@
 import { __assign, __spreadArray } from '../../../../node_modules/tslib/tslib.es6.js';
 import { jsx } from 'react/jsx-runtime';
-import React__default, { useState, useEffect } from 'react';
+import React__default, { useState, useRef, useEffect } from 'react';
 import { TreeContext } from '../TreeContext.js';
 
 var Tree = function (_a) {
     var defaultActiveKey = _a.defaultActiveKey, onClick = _a.onClick, children = _a.children;
     var _b = useState(), activeKey = _b[0], setActiveKey = _b[1];
+    var inited = useRef(true);
     useEffect(function () {
+        if (!inited.current)
+            return;
         var target = {};
         var findEventKey = function (props, nodes) {
             props.children && React__default.Children.forEach(props.children, function (child) {
@@ -20,7 +23,8 @@ var Tree = function (_a) {
             });
         };
         findEventKey({ children: children }, []);
-    }, [defaultActiveKey]);
+        inited.current = false;
+    }, [children, defaultActiveKey]);
     return (jsx(TreeContext.Provider, __assign({ value: {
             activeKey: activeKey,
             setActiveKey: function (activeKey, nodes) {

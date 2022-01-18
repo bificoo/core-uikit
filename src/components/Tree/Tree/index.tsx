@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import { WithChildren } from "types/common"
 import TreeContext from "../TreeContext"
 
@@ -10,8 +10,11 @@ export type TreeProps = {
 
 const Tree = ({ defaultActiveKey, onClick, children }: TreeProps) => {
   const [activeKey, setActiveKey] = useState<string[]>()
+  const inited = useRef(true)
 
   useEffect(() => {
+    if (!inited.current) return
+
     const target: { [key: string]: string[] } = {}
     const findEventKey = (
       props: {
@@ -32,7 +35,8 @@ const Tree = ({ defaultActiveKey, onClick, children }: TreeProps) => {
     }
 
     findEventKey({ children }, [])
-  }, [defaultActiveKey])
+    inited.current = false
+  }, [children, defaultActiveKey])
 
   return (
     <TreeContext.Provider

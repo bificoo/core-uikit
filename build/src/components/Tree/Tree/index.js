@@ -20,12 +20,12 @@ var Tree = function (_a) {
             });
         };
         findEventKey({ children: children }, []);
-    }, [children, defaultActiveKey]);
+    }, [defaultActiveKey]);
     return (jsx(TreeContext.Provider, __assign({ value: {
             activeKey: activeKey,
-            setActiveKey: function (activeKey, parents) {
-                setActiveKey(parents);
-                onClick(activeKey, { parents: parents.filter(function (el) { return el !== activeKey; }) });
+            setActiveKey: function (activeKey, nodes) {
+                setActiveKey(nodes);
+                onClick(activeKey, { parents: nodes.filter(function (el) { return el !== activeKey; }) });
             },
         } }, { children: React__default.Children.map(children, function (child, index) {
             if (React__default.isValidElement(child)) {

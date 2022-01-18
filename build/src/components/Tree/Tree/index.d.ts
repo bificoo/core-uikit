@@ -5,6 +5,6 @@ export declare type TreeProps = {
     onClick: (targetKey: string, moreInfo: {
         parents: string[];
     }) => void;
-} & ReactProps.WithChildren;
+} & WithChildren;
 declare const Tree: ({ defaultActiveKey, onClick, children }: TreeProps) => JSX.Element;
 export default Tree;

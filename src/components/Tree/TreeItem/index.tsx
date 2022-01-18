@@ -16,7 +16,7 @@ const TreeItem = (props: TreeItemProps) => {
     <div
       className={cx(styled.item, { [styled.active]: activeKey?.some(el => el === props.eventKey) })}
       style={{ paddingLeft: `${((props.nodes?.length || 0)) * 20}px` }}
-      onClick={() => props.nodes && setActiveKey(props.nodes)}>
+      onClick={() => props.nodes && setActiveKey(props.eventKey, props.nodes)}>
       {props.renderName}
     </div>
   )

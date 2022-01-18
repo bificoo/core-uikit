@@ -8,14 +8,14 @@ export default {
 } as Meta
 
 export const Default: Story = () => {
-  const eventHandler = (nodes?: string[]) => {
-    // 回傳目前所在頁面的全部節點路徑
-    console.log("nodes", nodes)
+  const eventHandler = (targetKey: string, moreInfo: { parents: string[] }) => {
+    console.log("targetKey", targetKey)
+    console.log("parents", moreInfo.parents)
   }
 
   return (
     <div style={{ width: "240px" }}>
-      <Tree onClick={eventHandler} defaultActiveKey={["I", "I01", "AgeGroup"]}>
+      <Tree onClick={eventHandler} defaultActiveKey={"AgeGroup"}>
         <Tree.Category renderName={"個人資料主題(52)"} eventKey={"I"}>
           <Tree.Category renderName={"個人資料(4)"} eventKey={"I01"}>
             <Tree.Item renderName={"性別"} eventKey={"Gender"} />

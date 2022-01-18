@@ -1,40 +1,57 @@
 import React, { useState, useMemo, useEffect } from "react"
+import { WithChildren } from "types/common"
 import TreeContext from "../TreeContext"
 
 export type TreeProps = {
-  defaultActiveKey?: string[]
-  onClick: (nodes?: string[]) => void
+  children: WithChildren,
+  defaultActiveKey?: string
+  onClick: (targetKey: string, moreInfo: { parents: string[] }) => void
 } & ReactProps.WithChildren
 
-const Tree = (props: TreeProps) => {
-  const [eventKey, setEventKey] = useState(props.defaultActiveKey)
-
-  const customChildren: React.ReactNode[] = []
-  React.Children.forEach(props.children, (child, index) => {
-    if (React.isValidElement(child)) {
-      customChildren.push(
-        React.cloneElement(child, {
-          ...child.props,
-          nodes: [child.props.eventKey], 
-          key: index,
-        }),
-      )
-    }
-  })
+const Tree = ({ defaultActiveKey, onClick, children }: TreeProps) => {
+  const [activeKey, setActiveKey] = useState<string[]>()
 
   useEffect(() => {
-    eventKey && props.onClick(eventKey)
-  }, [eventKey, props.onClick])
+    const target: { [key: string]: string[] } = {}
+    const findEventKey = (
+      props: {
+        children?: React.ReactElement | React.ReactElement[] | React.ReactNode
+        eventKey?: string
+      },
+      nodes: string[],
+    ) => {
+      props.children && React.Children.forEach(props.children, child => {
+        if (React.isValidElement(child)) {
+          target[child.props.eventKey] = [...nodes, child.props.eventKey]
+          findEventKey(child.props, [...nodes, child.props.eventKey])
+          if (!child.props.children && (child.props.eventKey === defaultActiveKey)) {
+            setActiveKey(target[child.props.eventKey])
+          }
+        }
+      })
+    }
+
+    findEventKey({ children }, [])
+  }, [children, defaultActiveKey])
 
   return (
     <TreeContext.Provider
       value={{
-        activeKey: eventKey,
-        setActiveKey: eventKey => {
-          setEventKey(eventKey)
+        activeKey,
+        setActiveKey: (activeKey, parents) => {
+          setActiveKey(parents)
+          onClick(activeKey, { parents: parents.filter(el => el !== activeKey) })
         },
       }}>
-      {customChildren}
+      {React.Children.map(children, (child, index) => {
+        if (React.isValidElement(child)) {
+          return React.cloneElement(child, {
+            ...child.props,
+            nodes: [child.props.eventKey], 
+            key: index,
+          })
+        }
+      })}
     </TreeContext.Provider>
   )
 }

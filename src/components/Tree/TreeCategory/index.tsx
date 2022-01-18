@@ -1,12 +1,10 @@
-import React, { useContext, useMemo, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import Icon from "components/Icon"
 import styled from "./TreeCategory.module.scss"
 import cx from "classnames"
 import TreeContext from "../TreeContext"
-import { act } from "react-dom/test-utils"
 
 export type TreeCategoryProps = {
-  children?: React.ReactElement | React.ReactElement[]
   renderName: React.ReactNode
   eventKey: string
   nodes?: string[]
@@ -16,26 +14,9 @@ const TreeCategory = (props: TreeCategoryProps) => {
   const { activeKey } = useContext(TreeContext)
   const [expanded, setExpanded] = useState(false)
 
-  const customChildren: React.ReactNode[] = []
-  React.Children.forEach(props.children, (child, index) => {
-    if (React.isValidElement(child)) {      
-      customChildren.push(
-        React.cloneElement(child, {
-          ...child.props,
-          nodes: props.nodes && [...props.nodes, child.props.eventKey],
-          key: index,
-        }),
-      )
-    }
-  })
-
-  const active = useMemo(() => {
-    return activeKey?.some(el => {
-      if (el === props.eventKey) {
-        setExpanded(true)
-        return true
-      }
-      return false
+  useEffect(() => {
+    activeKey?.some(el => {
+      if (el === props.eventKey) setExpanded(true)
     })
   }, [activeKey, props.eventKey])
 
@@ -43,7 +24,7 @@ const TreeCategory = (props: TreeCategoryProps) => {
     <div>
       <div
         className={cx(styled.category, {
-          [styled.active]: active,
+          [styled.active]: activeKey?.some(el => el === props.eventKey),
           [styled["first-level"]]: props.nodes?.length === 1,
         })}
         style={{ paddingLeft: `${((props.nodes?.length || 0) - 1) * 20}px` }}
@@ -51,7 +32,16 @@ const TreeCategory = (props: TreeCategoryProps) => {
         <Icon.Arrow direction={!expanded ? "up" : "down"} />
         {props.renderName}
       </div>
-      <div className={cx(styled.content, { [styled.expanded]: expanded })}>{customChildren}</div>
+      <div className={cx(styled.content, { [styled.expanded]: expanded })}>
+        {React.Children.map(props.children, (child, index) => {
+          if (React.isValidElement(child)) {
+            return React.cloneElement(child, {
+              ...child.props,
+              nodes: props.nodes && [...props.nodes, child.props.eventKey],
+              key: index,
+            })
+          }
+        })}</div>
     </div>
   )
 }

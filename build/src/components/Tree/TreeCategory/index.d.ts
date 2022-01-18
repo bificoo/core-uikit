@@ -1,6 +1,5 @@
 import React from "react";
 export declare type TreeCategoryProps = {
-    children?: React.ReactElement | React.ReactElement[];
     renderName: React.ReactNode;
     eventKey: string;
     nodes?: string[];

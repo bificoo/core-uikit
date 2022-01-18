@@ -1,25 +1,37 @@
-import { __assign } from '../../../../node_modules/tslib/tslib.es6.js';
+import { __assign, __spreadArray } from '../../../../node_modules/tslib/tslib.es6.js';
 import { jsx } from 'react/jsx-runtime';
 import React__default, { useState, useEffect } from 'react';
 import { TreeContext } from '../TreeContext.js';
 
-var Tree = function (props) {
-    var _a = useState(props.defaultActiveKey), eventKey = _a[0], setEventKey = _a[1];
-    var customChildren = [];
-    React__default.Children.forEach(props.children, function (child, index) {
-        if (React__default.isValidElement(child)) {
-            customChildren.push(React__default.cloneElement(child, __assign(__assign({}, child.props), { nodes: [child.props.eventKey], key: index })));
-        }
-    });
+var Tree = function (_a) {
+    var defaultActiveKey = _a.defaultActiveKey, onClick = _a.onClick, children = _a.children;
+    var _b = useState(), activeKey = _b[0], setActiveKey = _b[1];
     useEffect(function () {
-        eventKey && props.onClick(eventKey);
-    }, [eventKey, props.onClick]);
+        var target = {};
+        var findEventKey = function (props, nodes) {
+            props.children && React__default.Children.forEach(props.children, function (child) {
+                if (React__default.isValidElement(child)) {
+                    target[child.props.eventKey] = __spreadArray(__spreadArray([], nodes, true), [child.props.eventKey], false);
+                    findEventKey(child.props, __spreadArray(__spreadArray([], nodes, true), [child.props.eventKey], false));
+                    if (!child.props.children && (child.props.eventKey === defaultActiveKey)) {
+                        setActiveKey(target[child.props.eventKey]);
+                    }
+                }
+            });
+        };
+        findEventKey({ children: children }, []);
+    }, [children, defaultActiveKey]);
     return (jsx(TreeContext.Provider, __assign({ value: {
-            activeKey: eventKey,
-            setActiveKey: function (eventKey) {
-                setEventKey(eventKey);
+            activeKey: activeKey,
+            setActiveKey: function (activeKey, parents) {
+                setActiveKey(parents);
+                onClick(activeKey, { parents: parents.filter(function (el) { return el !== activeKey; }) });
             },
-        } }, { children: customChildren }), void 0));
+        } }, { children: React__default.Children.map(children, function (child, index) {
+            if (React__default.isValidElement(child)) {
+                return React__default.cloneElement(child, __assign(__assign({}, child.props), { nodes: [child.props.eventKey], key: index }));
+            }
+        }) }), void 0));
 };
 
 export { Tree as default };

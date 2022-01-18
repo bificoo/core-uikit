@@ -2,8 +2,9 @@ import { useContext } from "react"
 import { FormGroupContext } from "components/Form/FormContext"
 import styled from "./InputGroup.module.scss"
 import cx from "classnames"
+import { WithComponent } from "types/common"
 
-export type InputGroupProps = ReactProps.Component
+export type InputGroupProps = WithComponent
 
 const InputGroup = (props: InputGroupProps) => {
   const { attributes } = useContext(FormGroupContext)

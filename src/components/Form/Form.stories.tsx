@@ -12,11 +12,8 @@ type Inputs = {
 
 export default {
   title: "Data Entry/Form",
-  argTypes: {
-    className: {
-      control: false,
-    },
-  },
+  component: Form,
+  argTypes: {},
 } as Meta
 
 export const VerticalForm: Story = () => (

@@ -4,11 +4,7 @@ import Form, { FormCheckboxProps } from "components/Form"
 export default {
   title: "Data Entry/Form.Checkbox",
   component: Form.Checkbox,
-  argTypes: {
-    className: {
-      control: false,
-    },
-  },
+  argTypes: {},
 } as Meta
 
 const Template: Story<FormCheckboxProps> = ({ children, ...args }) => {

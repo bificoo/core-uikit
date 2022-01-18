@@ -4,8 +4,8 @@ export default {
   title: "Data Entry/Form.Input",
   component: Form.Input,
   argTypes: {
-    className: {
-      control: false,
+    placeholder:{
+      description: 'Default input placeholder.',
     },
   },
 } as Meta

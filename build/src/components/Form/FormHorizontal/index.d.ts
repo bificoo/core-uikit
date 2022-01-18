@@ -1,2 +1,3 @@
-declare const FormHorizontal: (props: ReactProps.WithChildren) => JSX.Element;
+import { WithChildren } from "../../../types/common";
+declare const FormHorizontal: (props: WithChildren) => JSX.Element;
 export default FormHorizontal;

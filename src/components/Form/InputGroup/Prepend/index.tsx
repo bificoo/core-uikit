@@ -2,8 +2,9 @@ import { useContext } from "react"
 import { FormGroupContext } from "components/Form/FormContext"
 import styled from "./Prepend.module.scss"
 import cx from "classnames"
+import { WithComponent } from "types/common"
 
-export type PrependProps = ReactProps.Component
+export type PrependProps = WithComponent
 
 const Prepend = (props: PrependProps) => {
   const { attributes } = useContext(FormGroupContext)

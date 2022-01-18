@@ -1,5 +1,7 @@
+/// <reference types="react" />
+import { WithChildren, WithClassName } from "../../../types/common";
 export declare type FormRadioProps = {
     inline?: boolean;
-} & Omit<JSXProps.InputElement, "type">;
+} & WithClassName & WithChildren & Omit<JSX.IntrinsicElements["input"], "type">;
 declare const FormRadio: ({ children, inline, ...props }: FormRadioProps) => JSX.Element;
 export default FormRadio;

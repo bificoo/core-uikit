@@ -5,8 +5,8 @@ export default {
   title: "Data Entry/Form.Textarea",
   component: Form.Textarea,
   argTypes: {
-    className: {
-      control: false,
+    placeholder:{
+      description: 'Default input placeholder.',
     },
   },
 } as Meta

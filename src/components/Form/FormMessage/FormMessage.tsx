@@ -1,6 +1,8 @@
 import cx from "classnames"
 import styled from "./FormMessage.module.scss"
-export type FormMessageProps = JSXProps.PElement & {
+import { WithChildren, WithClassName } from "types/common"
+
+export type FormMessageProps = JSX.IntrinsicElements["p"] & WithChildren & WithClassName & {
   variant: "helper" | "valid" | "error"
 }
 

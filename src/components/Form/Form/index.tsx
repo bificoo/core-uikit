@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import FormContext, { FormAttributes } from "../FormContext"
 
-export type FormProps = JSXProps.FormElement & FormAttributes
+export type FormProps = JSX.IntrinsicElements["form"] & FormAttributes
 
 const Form = ({ layout, labelWidth, ...props }: FormProps) => {
   const [attributes, setAttributes] = useState<FormAttributes>({

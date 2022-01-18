@@ -4,7 +4,7 @@ import { FormControlProps } from "../types"
 import cx from "classnames"
 import styled from "./FormTextarea.module.scss"
 
-export type FormTextareaProps = FormControlProps & JSXProps.TextareaElement
+export type FormTextareaProps = FormControlProps & JSX.IntrinsicElements["textarea"]
 export type FormTextareaRef = React.Ref<HTMLTextAreaElement>
 const FormTextarea = React.forwardRef(function FormTextarea(
   { className, isValid, isInvalid, ...props }: FormTextareaProps,

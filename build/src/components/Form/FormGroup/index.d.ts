@@ -1,5 +1,6 @@
 /// <reference types="react" />
-export declare type FormGroupProps = ReactProps.Component & Partial<{
+import { WithComponent } from "../../../types/common";
+export declare type FormGroupProps = WithComponent & Partial<{
     formId: string;
     label: JSX.Element;
     layout: "horizontal" | "vertical";

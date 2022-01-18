@@ -1,9 +1,10 @@
 import cx from "classnames"
 import styled from "./FormRadio.module.scss"
+import { WithChildren, WithClassName } from "types/common"
 
 export type FormRadioProps = {
   inline?: boolean
-} & Omit<JSXProps.InputElement, "type">
+} & WithClassName & WithChildren & Omit<JSX.IntrinsicElements["input"], "type">
 
 const FormRadio = ({ children, inline, ...props }: FormRadioProps) => {
   return (

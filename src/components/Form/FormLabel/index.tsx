@@ -3,7 +3,7 @@ import { FormGroupContext } from "components/Form/FormContext"
 import styled from "./FormLabel.module.scss"
 import cx from "classnames"
 
-export type FormLabelProps = JSXProps.LabelElement & {
+export type FormLabelProps = JSX.IntrinsicElements["label"] & {
   required?: boolean
 }
 

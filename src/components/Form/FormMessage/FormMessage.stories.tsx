@@ -6,11 +6,7 @@ import Form from "components/Form"
 export default {
   title: "Data Entry/Form.Message",
   component: FormMessage,
-  argTypes: {
-    className: {
-      control: false,
-    },
-  },
+  argTypes: {},
 } as Meta
 
 export const HelperMessage = () => <Form.HelperMessage>I am helper message.</Form.HelperMessage>

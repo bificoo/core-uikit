@@ -2,10 +2,12 @@ import React from "react"
 import cx from "classnames"
 import { ReactComponent as CheckIcon } from "./check.svg"
 import styled from "./FormCheckbox.module.scss"
+import { WithChildren, WithClassName } from "types/common"
 
 export type FormCheckboxProps = {
   inline?: boolean
-} & Omit<JSXProps.InputElement, "type" | "css">
+  disabled?: boolean
+} & WithChildren & WithClassName & Omit<JSX.IntrinsicElements["input"], "type" | "css"> 
 
 const FormCheckbox = React.forwardRef(function FormCheckbox(
   { children, inline, ...props }: FormCheckboxProps,

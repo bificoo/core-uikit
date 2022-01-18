@@ -4,8 +4,9 @@ import FormContext, { FormGroupContext, FormGroupAttributes } from "components/F
 import uuid from "utils/uuid"
 import styled from "./FormGroup.module.scss"
 import cx from "classnames"
+import { WithComponent } from "types/common"
 
-export type FormGroupProps = ReactProps.Component &
+export type FormGroupProps = WithComponent &
   Partial<{
     formId: string
     label: JSX.Element

@@ -3,9 +3,10 @@ import { FormGroupContext } from "components/Form/FormContext"
 import { FormControlProps } from "../types"
 import cx from "classnames"
 import styled from "./FormInput.module.scss"
+import { WithClassName } from "types/common"
 
-export type FormInputProps = FormControlProps &
-  Omit<JSXProps.InputElement, "type" | "css"> & {
+export type FormInputProps = FormControlProps & WithClassName &
+  Omit<JSX.IntrinsicElements["input"], "type" | "css"> & {
     type?: "text" | "password" | "number"
   }
 

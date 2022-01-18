@@ -14,5 +14,6 @@ var Append = function (props) {
             _a[styled["read-only"]] = attributes === null || attributes === void 0 ? void 0 : attributes.readOnly,
             _a), props.className) }, { children: props.children }), void 0));
 };
+Append.display = Append;
 
 export { Append as default };

@@ -2,54 +2,39 @@ import React, { useState, useMemo, useEffect } from "react"
 import TreeContext from "../TreeContext"
 
 export type TreeProps = {
-  defaultActiveKey?: string
+  defaultActiveKey?: string[]
   onClick: (nodes?: string[]) => void
 } & ReactProps.WithChildren
 
 const Tree = (props: TreeProps) => {
   const [eventKey, setEventKey] = useState(props.defaultActiveKey)
-  const levelMap = useMemo(() => {
-    const target: { [key: string]: { level?: number; nodes?: string[] } } = {}
-    const saveLevel = (
-      props: {
-        children?: React.ReactElement | React.ReactElement[] | React.ReactNode
-        eventKey?: string
-      },
-      level: number,
-      nodes: string[],
-    ) => {
-      if (props.children) {
-        React.Children.forEach(props.children, child => {
-          if (React.isValidElement(child)) {
-            target[child.props.eventKey] = {
-              level: level,
-              nodes: [...nodes, child.props.eventKey],
-            }
-            saveLevel(child.props, level + 1, [...nodes, child.props.eventKey])
-          }
-        })
-      }
-      return level
-    }
 
-    saveLevel(props, 0, [])
-    return target
-  }, [props.children])
+  const customChildren: React.ReactNode[] = []
+  React.Children.forEach(props.children, (child, index) => {
+    if (React.isValidElement(child)) {
+      customChildren.push(
+        React.cloneElement(child, {
+          ...child.props,
+          nodes: [child.props.eventKey], 
+          key: index,
+        }),
+      )
+    }
+  })
 
   useEffect(() => {
-    eventKey && props.onClick(levelMap?.[eventKey]?.nodes)
-  }, [eventKey])
+    eventKey && props.onClick(eventKey)
+  }, [eventKey, props.onClick])
 
   return (
     <TreeContext.Provider
       value={{
-        levelMap: levelMap,
         activeKey: eventKey,
         setActiveKey: eventKey => {
           setEventKey(eventKey)
         },
       }}>
-      {props.children}
+      {customChildren}
     </TreeContext.Provider>
   )
 }

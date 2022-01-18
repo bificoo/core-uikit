@@ -1,9 +1,8 @@
 import React from "react"
 
 export type TreeContextProps = {
-  activeKey?: string
-  setActiveKey: (key: string) => void
-  levelMap?: { [key: string]: { level?: number; path?: string[] } }
+  activeKey?: string[]
+  setActiveKey: (key: string[]) => void
 }
 
 const TreeContext = React.createContext<TreeContextProps>({

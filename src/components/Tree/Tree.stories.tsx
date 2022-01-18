@@ -2,7 +2,7 @@ import { Story, Meta } from "@storybook/react"
 import Tree from "components/Tree/index"
 
 export default {
-  title: "General/Tree",
+  title: "Data/Tree",
   component: Tree,
   argTypes: {},
 } as Meta
@@ -15,7 +15,7 @@ export const Default: Story = () => {
 
   return (
     <div style={{ width: "240px" }}>
-      <Tree onClick={eventHandler} defaultActiveKey="AgeGroup">
+      <Tree onClick={eventHandler} defaultActiveKey={["I", "I01", "AgeGroup"]}>
         <Tree.Category renderName={"個人資料主題(52)"} eventKey={"I"}>
           <Tree.Category renderName={"個人資料(4)"} eventKey={"I01"}>
             <Tree.Item renderName={"性別"} eventKey={"Gender"} />

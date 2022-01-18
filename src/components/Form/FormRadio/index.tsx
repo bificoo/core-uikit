@@ -3,6 +3,9 @@ import styled from "./FormRadio.module.scss"
 import { WithChildren, WithClassName } from "types/common"
 
 export type FormRadioProps = {
+  /**
+   * If true, the checkbox will be inline style.
+   */
   inline?: boolean
 } & WithClassName & WithChildren & Omit<JSX.IntrinsicElements["input"], "type">
 

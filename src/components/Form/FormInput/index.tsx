@@ -7,6 +7,9 @@ import { WithClassName } from "types/common"
 
 export type FormInputProps = FormControlProps & WithClassName &
   Omit<JSX.IntrinsicElements["input"], "type" | "css"> & {
+    /**
+     * Specify the type of the
+     */
     type?: "text" | "password" | "number"
   }
 

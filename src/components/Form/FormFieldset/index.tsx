@@ -3,6 +3,9 @@ import styled from "./FormFieldset.module.scss"
 import { WithChildren, WithClassName } from "types/common"
 
 export type FormFieldsetProps = {
+  /**
+   * If true, the checkbox will be inline style.
+   */
   inline?: boolean
 } & WithChildren & WithClassName & JSX.IntrinsicElements["fieldset"]
 

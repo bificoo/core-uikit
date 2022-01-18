@@ -3,6 +3,9 @@ import styled from "./FormMessage.module.scss"
 import { WithChildren, WithClassName } from "types/common"
 
 export type FormMessageProps = JSX.IntrinsicElements["p"] & WithChildren & WithClassName & {
+  /**
+   * Specify the type of the
+   */
   variant: "helper" | "valid" | "error"
 }
 

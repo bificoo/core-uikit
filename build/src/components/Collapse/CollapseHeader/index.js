@@ -7,8 +7,8 @@ import { useContext } from 'react';
 import cx from 'classnames';
 
 var CollapseHeader = function (props) {
-    var _a = useContext(CollapseContext), expanded = _a.expanded, setExpended = _a.setExpended;
-    return (jsxs("header", __assign({ className: cx(props.className, styled.wrapper), onClick: function () { return setExpended(!expanded); }, style: props.style }, { children: [props.children, " ", jsx(Icon.Arrow, { direction: !expanded ? "up" : "down", style: { marginLeft: "4px" } }, void 0)] }), void 0));
+    var _a = useContext(CollapseContext), expanded = _a.expanded, setExpanded = _a.setExpanded;
+    return (jsxs("header", __assign({ className: cx(props.className, styled.wrapper), onClick: function () { return setExpanded(!expanded); }, style: props.style }, { children: [props.children, " ", jsx(Icon.Arrow, { direction: !expanded ? "up" : "down", style: { marginLeft: "4px" } }, void 0)] }), void 0));
 };
 
 export { CollapseHeader as default };

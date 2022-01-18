@@ -10,13 +10,13 @@ export type CollapseProps = {
 } & WithComponent
 
 const Collapse = ({ defaultExpanded = false, ...props }: CollapseProps) => {
-  const [expanded, setExpended] = useState(defaultExpanded)
+  const [expanded, setExpanded] = useState(defaultExpanded)
   return (
     <CollapseContext.Provider
       value={{
         expanded: expanded || false,
-        setExpended: expanded => {
-          setExpended(expanded)
+        setExpanded: expanded => {
+          setExpanded(expanded)
         },
       }}>
       <div className={props.className} style={props.style}>

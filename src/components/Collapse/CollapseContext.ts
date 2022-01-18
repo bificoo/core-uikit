@@ -2,12 +2,12 @@ import React from "react"
 
 export type CollapseContextProps = {
   expanded: boolean
-  setExpended: (expanded: boolean) => void
+  setExpanded: (expanded: boolean) => void
 }
 
 const CollapseContext = React.createContext<CollapseContextProps>({
   expanded: false,
-  setExpended: () => {
+  setExpanded: () => {
     //
   },
 })

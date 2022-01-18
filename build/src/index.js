@@ -2,6 +2,7 @@ export { Avatar } from './components/Avatar/index.js';
 export { Badge } from './components/Badge/index.js';
 export { default as Breadcrumbs } from './components/Breadcrumbs/index.js';
 export { default as Button } from './components/Button/index.js';
+export { default as Tree } from './components/Tree/index.js';
 export { default as Collapse } from './components/Collapse/index.js';
 export { default as Dropdown } from './components/Dropdown/index.js';
 export { default as Form } from './components/Form/index.js';

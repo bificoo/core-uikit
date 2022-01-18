@@ -6,6 +6,7 @@ export { default as Breadcrumbs } from "./components/Breadcrumbs";
 export type { BreadcrumbsProps, BreadcrumbsItemProps } from "./components/Breadcrumbs";
 export { default as Button, LinkButton } from "./components/Button";
 export type { ButtonProps, ButtonGroupProps, LinkButtonProps } from "./components/Button";
+export { default as Tree } from "./components/Tree";
 export { default as Collapse } from "./components/Collapse";
 export type { CollapseProps } from "./components/Collapse";
 export { default as Dropdown } from "./components/Dropdown";

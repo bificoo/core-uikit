@@ -20,7 +20,6 @@ var FormInput = React__default.forwardRef(function FormInput(_a, ref) {
             readOnly: props.readOnly,
         });
     }, [entered, isValid, isInvalid, props.disabled, props.readOnly]);
-    console.log('FormInput Test');
     return (jsx("div", __assign({ className: cx("component-input", styled.wrapper, (_b = {},
             _b[styled.entered] = entered,
             _b[styled.disabled] = !!props.disabled,

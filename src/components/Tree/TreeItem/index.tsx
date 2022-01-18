@@ -1,5 +1,6 @@
 import React, { useContext } from "react"
 import TreeContext from "../TreeContext"
+import { WithChildren } from "types/common"
 import styled from "./TreeItem.module.scss"
 import cx from "classnames"
 
@@ -7,7 +8,7 @@ export type TreeItemProps = {
   renderName?: React.ReactNode
   eventKey: string
   nodes?: string[]
-} & ReactProps.WithChildren
+} & WithChildren
 
 const TreeItem = (props: TreeItemProps) => {
   const { activeKey, setActiveKey } = useContext(TreeContext)

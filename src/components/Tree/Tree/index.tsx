@@ -6,7 +6,7 @@ export type TreeProps = {
   children: WithChildren,
   defaultActiveKey?: string
   onClick: (targetKey: string, moreInfo: { parents: string[] }) => void
-} & ReactProps.WithChildren
+} & WithChildren
 
 const Tree = ({ defaultActiveKey, onClick, children }: TreeProps) => {
   const [activeKey, setActiveKey] = useState<string[]>()
@@ -32,15 +32,15 @@ const Tree = ({ defaultActiveKey, onClick, children }: TreeProps) => {
     }
 
     findEventKey({ children }, [])
-  }, [children, defaultActiveKey])
+  }, [defaultActiveKey])
 
   return (
     <TreeContext.Provider
       value={{
         activeKey,
-        setActiveKey: (activeKey, parents) => {
-          setActiveKey(parents)
-          onClick(activeKey, { parents: parents.filter(el => el !== activeKey) })
+        setActiveKey: (activeKey, nodes) => {
+          setActiveKey(nodes)
+          onClick(activeKey, { parents: nodes.filter(el => el !== activeKey) })
         },
       }}>
       {React.Children.map(children, (child, index) => {

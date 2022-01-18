@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react"
 import Icon from "components/Icon"
+import { WithChildren } from "types/common"
 import styled from "./TreeCategory.module.scss"
 import cx from "classnames"
 import TreeContext from "../TreeContext"
@@ -8,7 +9,7 @@ export type TreeCategoryProps = {
   renderName: React.ReactNode
   eventKey: string
   nodes?: string[]
-} & ReactProps.WithChildren
+} & WithChildren
 
 const TreeCategory = (props: TreeCategoryProps) => {
   const { activeKey } = useContext(TreeContext)

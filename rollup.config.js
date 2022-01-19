@@ -21,6 +21,19 @@ export default {
     exports: "named",
     preserveModules: true,
   },
+  onwarn: function (warning) {
+    // 跳過一些警告
+    // https://github.com/rollup/rollup/issues/794
+    // https://rollupjs.org/guide/en/#error-this-is-undefined
+    if (warning.code === 'THIS_IS_UNDEFINED') return;
+    if (warning.code === 'CIRCULAR_DEPENDENCY') return;
+    if (warning.code === 'UNUSED_EXTERNAL_IMPORT') return;
+
+    // 拋出異常
+    if (warning.code === 'NON_EXISTENT_EXPORT') throw new Error(warning.message);
+
+    console.warn(warning.message);
+  },
   plugins: [
     del({ targets: 'build/*' }),
     peerDepsExternal(),

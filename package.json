@@ -70,6 +70,7 @@
     "react-hook-form": "^7.22.5",
     "react-scripts": "5.0.0",
     "reactjs-popup": "^2.0.5",
+    "rsuite-table": "^5.3.2",
     "sass": "^1.45.1",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
@@ -89,6 +90,7 @@
     "@svgr/rollup": "^6.1.2",
     "@zerollup/ts-transform-paths": "^1.7.18",
     "classnames": "^2.3.1",
+    "less-loader": "^10.2.0",
     "rollup": "^2.62.0",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-delete": "^2.0.0",

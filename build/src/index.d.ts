@@ -25,6 +25,8 @@ export { default as Progress } from "./components/Progress";
 export type { ProgressProps } from "./components/Progress";
 export { default as Select } from "./components/Select";
 export type { SelectProps, SelectOptionType } from "./components/Select";
+export { default as Table } from "./components/Table";
+export type { TableProps, TableCellProps, TableColumnGroupProps, } from "./components/Table";
 export { default as Tabs } from "./components/Tabs";
 export type { TabsProps, TabProps } from "./components/Tabs";
 export { default as Tooltip } from "./components/Tooltip";

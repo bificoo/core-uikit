@@ -59,6 +59,14 @@ export type { ProgressProps } from "./components/Progress"
 export { default as Select } from "./components/Select"
 export type { SelectProps, SelectOptionType } from "./components/Select"
 
+// TODO: 打包後會發生 Uncaught TypeError: Cannot set properties of undefined (setting 'exports')，待解決
+export { default as Table } from "./components/Table"
+export type {
+  TableProps,
+  TableCellProps,
+  TableColumnGroupProps,
+} from "./components/Table"
+
 export { default as Tabs } from "./components/Tabs"
 export type { TabsProps, TabProps } from "./components/Tabs"
 

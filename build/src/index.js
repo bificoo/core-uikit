@@ -13,6 +13,7 @@ export { default as Icon } from './components/Icon/index.js';
 export { default as Modal } from './components/Modal/index.js';
 export { default as Progress } from './components/Progress/index.js';
 export { default as Select } from './components/Select/index.js';
+export { default as Table } from './components/Table/index.js';
 export { default as Tabs } from './components/Tabs/index.js';
 export { default as Tooltip } from './components/Tooltip/index.js';
 export { default as InputGroup } from './components/Form/InputGroup/InputGroup/index.js';

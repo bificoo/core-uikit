@@ -18,7 +18,7 @@ var QueryStatus = function (_a) {
             return jsx(NoData, {}, void 0);
         else
             return jsx(Fragment, { children: children }, void 0);
-    }, [loading, renderNoData, error, noData, children]);
+    }, [loading, error, noData, children]);
 };
 
 export { QueryStatus as default };

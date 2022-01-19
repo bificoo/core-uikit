@@ -1,14 +1,14 @@
 .category {
   display: flex;
-  align-items: center;
   margin-bottom: 4px;
-  height: 32px;
+  padding: 4px 0;
+  min-height: 32px;
   color: #45536c;
   font-weight: 400;
   font-size: 14px;
   cursor: pointer;
-
   user-select: none;
+  box-sizing: border-box;
 
   &.active {
     color: #0052cc;
@@ -21,6 +21,11 @@
 
   &.first-level {
     font-weight: bold;
+  }
+
+  .name {
+    display: flex;
+    align-items: center;
   }
 }
 

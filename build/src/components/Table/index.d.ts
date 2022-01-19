@@ -10,10 +10,9 @@ export declare type TableProps = {
     renderTotal?: ((total: number) => React.ReactNode) | boolean;
     /** 切換頁面時觸發事件 */
     onSelectPage?: (page: number, limit: number) => void;
-    maxButtons?: number;
 } & RsuiteTableProps;
 declare const Table: {
-    ({ limitMenu, maxButtons, data, renderTotal, onSelectPage, ...props }: TableProps): JSX.Element;
+    ({ limitMenu, data, renderTotal, onSelectPage, ...props }: TableProps): JSX.Element;
     Column: typeof Column;
     ColumnGroup: React.ForwardRefExoticComponent<ColumnGroupProps & React.RefAttributes<HTMLDivElement>>;
     HeaderCell: React.ForwardRefExoticComponent<import("rsuite-table").HeaderCellProps & React.RefAttributes<HTMLDivElement>>;

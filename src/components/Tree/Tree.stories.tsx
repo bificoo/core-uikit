@@ -26,11 +26,11 @@ export const Default: Story = () => {
             <Tree.Item renderName="年齡層" eventKey="AgeGroup" />
             <Tree.Category renderName="Inside(2)" eventKey="I099">
               <Tree.Item renderName="Test" eventKey="test" />
-              <Tree.Item renderName="Test2" eventKey="test2" />
+              <Tree.Item renderName="Test2Test2" eventKey="test2" />
             </Tree.Category>
           </Tree.Category>
-          <Tree.Category renderName="生存資料(10)" eventKey="I03">
-            <Tree.Item renderName="三十日內活躍天數" eventKey="ActiveDayL30d" />
+          <Tree.Category renderName="很多生存資料故意顯示過長的情況(10)" eventKey="I03">
+            <Tree.Item renderName="三十日內活躍天數故意顯示過長的情況" eventKey="ActiveDayL30d" />
             <Tree.Item renderName="七日內活躍天數" eventKey="ActiveDayL7d" />
             <Tree.Item renderName="生涯活躍天數" eventKey="ActiveDayLifetime" />
             <Tree.Item renderName="三十日內投注存款天數" eventKey="BetOrDepositDayCountL30d" />

@@ -1,14 +1,14 @@
 .item {
   display: inline-flex;
-  align-items: center;
   margin-bottom: 4px;
-  height: 32px;
+  align-items: center;
+  min-height: 32px;
   color: #45536c;
   font-weight: 400;
   font-size: 14px;
   cursor: pointer;
-
   user-select: none;
+  box-sizing: border-box;
 
   &.active {
     background: #f6f6f7;
@@ -18,5 +18,9 @@
 
   &:hover {
     background: #f6f6f7;
+  }
+
+  > span {
+    padding: 4px 0;
   }
 }

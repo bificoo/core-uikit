@@ -5,7 +5,7 @@ import TreeContext from "../TreeContext"
 export type TreeProps = {
   children: WithChildren,
   defaultActiveKey?: string
-  onClick: (targetKey: string, moreInfo: { parents: string[] }) => void
+  onClick?: (targetKey: string, moreInfo: { parents: string[] }) => void
 } & WithChildren
 
 const Tree = ({ defaultActiveKey, onClick, children }: TreeProps) => {
@@ -44,7 +44,7 @@ const Tree = ({ defaultActiveKey, onClick, children }: TreeProps) => {
         activeKey,
         setActiveKey: (activeKey, nodes) => {
           setActiveKey(nodes)
-          onClick(activeKey, { parents: nodes.filter(el => el !== activeKey) })
+          onClick && onClick(activeKey, { parents: nodes.filter(el => el !== activeKey) })
         },
       }}>
       {React.Children.map(children, (child, index) => {

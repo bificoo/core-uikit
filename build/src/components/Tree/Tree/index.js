@@ -29,7 +29,7 @@ var Tree = function (_a) {
             activeKey: activeKey,
             setActiveKey: function (activeKey, nodes) {
                 setActiveKey(nodes);
-                onClick(activeKey, { parents: nodes.filter(function (el) { return el !== activeKey; }) });
+                onClick && onClick(activeKey, { parents: nodes.filter(function (el) { return el !== activeKey; }) });
             },
         } }, { children: React__default.Children.map(children, function (child, index) {
             if (React__default.isValidElement(child)) {

@@ -30,12 +30,14 @@ export type TableProps = {
 
   /** 切換頁面時觸發事件 */
   onSelectPage?: (page: number, limit: number) => void
+
+  maxButtons?: number
 } & RsuiteTableProps
 
 // TODO: 此元件應移到 core-uikit 專案中
 const Table = ({
   limitMenu = [10, 30, 50, 100],
-  // maxButtons = 5,
+  maxButtons = 5,
   data = [],
   renderTotal = true,
   onSelectPage,
@@ -71,7 +73,7 @@ const Table = ({
       />
       {data && data.length !== 0 && (
         <Pagination
-          // maxButtons={maxButtons}
+          maxButtons={maxButtons}
           pages={Math.ceil(data.length / limit)}
           activePage={page}
           total={data.length}

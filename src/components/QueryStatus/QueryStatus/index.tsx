@@ -24,7 +24,7 @@ const QueryStatus = ({
     else if (renderNoData && noData) return renderNoData
     else if (noData) return <NoData />
     else return <>{children}</>
-  }, [loading, error, noData, children])
+  }, [loading, renderNoData, error, noData, children])
 }
 
 export default QueryStatus

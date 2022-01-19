@@ -5,7 +5,10 @@ import styled from "./TreeItem.module.scss"
 import cx from "classnames"
 
 export type TreeItemProps = {
-  renderName?: React.ReactNode
+  renderName: React.ReactNode
+  /**
+   * The tree item key.
+   */
   eventKey: string
   nodes?: string[]
 } & WithChildren

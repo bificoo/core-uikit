@@ -7,6 +7,9 @@ import TreeContext from "../TreeContext"
 
 export type TreeCategoryProps = {
   renderName: React.ReactNode
+  /**
+   * The tree category key.
+   */
   eventKey: string
   nodes?: string[]
 } & WithChildren

@@ -6,9 +6,9 @@ import { TreeContext } from '../TreeContext.js';
 var Tree = function (_a) {
     var defaultActiveKey = _a.defaultActiveKey, onClick = _a.onClick, children = _a.children;
     var _b = useState(), activeKey = _b[0], setActiveKey = _b[1];
-    var inited = useRef(true);
+    var init = useRef(true);
     useEffect(function () {
-        if (!inited.current)
+        if (!init.current)
             return;
         var target = {};
         var findEventKey = function (props, nodes) {
@@ -23,7 +23,7 @@ var Tree = function (_a) {
             });
         };
         findEventKey({ children: children }, []);
-        inited.current = false;
+        init.current = false;
     }, [children, defaultActiveKey]);
     return (jsx(TreeContext.Provider, __assign({ value: {
             activeKey: activeKey,

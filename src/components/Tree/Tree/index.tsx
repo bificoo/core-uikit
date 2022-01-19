@@ -4,16 +4,22 @@ import TreeContext from "../TreeContext"
 
 export type TreeProps = {
   children: WithChildren,
+  /**
+   * The default tree menu active key.
+   */
   defaultActiveKey?: string
-  onClick: (targetKey: string, moreInfo: { parents: string[] }) => void
+  /**
+   * Called when clicked value has changed.
+   */
+  onClick?: (targetKey: string, moreInfo: { parents: string[] }) => void
 } & WithChildren
 
 const Tree = ({ defaultActiveKey, onClick, children }: TreeProps) => {
   const [activeKey, setActiveKey] = useState<string[]>()
-  const inited = useRef(true)
+  const init = useRef(true)
 
   useEffect(() => {
-    if (!inited.current) return
+    if (!init.current) return
 
     const target: { [key: string]: string[] } = {}
     const findEventKey = (
@@ -35,7 +41,7 @@ const Tree = ({ defaultActiveKey, onClick, children }: TreeProps) => {
     }
 
     findEventKey({ children }, [])
-    inited.current = false
+    init.current = false
   }, [children, defaultActiveKey])
 
   return (
@@ -44,7 +50,7 @@ const Tree = ({ defaultActiveKey, onClick, children }: TreeProps) => {
         activeKey,
         setActiveKey: (activeKey, nodes) => {
           setActiveKey(nodes)
-          onClick(activeKey, { parents: nodes.filter(el => el !== activeKey) })
+          onClick && onClick(activeKey, { parents: nodes.filter(el => el !== activeKey) })
         },
       }}>
       {React.Children.map(children, (child, index) => {

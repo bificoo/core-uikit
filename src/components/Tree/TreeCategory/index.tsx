@@ -7,6 +7,9 @@ import TreeContext from "../TreeContext"
 
 export type TreeCategoryProps = {
   renderName: React.ReactNode
+  /**
+   * The tree category key.
+   */
   eventKey: string
   nodes?: string[]
 } & WithChildren
@@ -30,7 +33,7 @@ const TreeCategory = (props: TreeCategoryProps) => {
         })}
         style={{ paddingLeft: `${((props.nodes?.length || 0) - 1) * 20}px` }}
         onClick={() => setExpanded(prev => !prev)}>
-        <Icon.Arrow direction={!expanded ? "up" : "down"} />
+        <Icon.Arrow direction={!expanded ? "right" : "down"} />
         {props.renderName}
       </div>
       <div className={cx(styled.content, { [styled.expanded]: expanded })}>

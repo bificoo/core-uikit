@@ -19,7 +19,7 @@ const Tree = ({ defaultActiveKey, onClick, children }: TreeProps) => {
   const init = useRef(true)
 
   useEffect(() => {
-    if (!init.current) return
+    if (!init.current || (React.Children.count(children) === 0)) return
 
     const target: { [key: string]: string[] } = {}
     const findEventKey = (

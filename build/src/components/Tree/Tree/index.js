@@ -8,7 +8,7 @@ var Tree = function (_a) {
     var _b = useState(), activeKey = _b[0], setActiveKey = _b[1];
     var init = useRef(true);
     useEffect(function () {
-        if (!init.current)
+        if (!init.current || (React__default.Children.count(children) === 0))
             return;
         var target = {};
         var findEventKey = function (props, nodes) {

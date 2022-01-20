@@ -1,7 +1,7 @@
 stages:
   - build
   - deploy
-##  - clean-cache
+  - clean-cache
 
 cache:
   key: ${CI_COMMIT_REF_SLUG}
@@ -29,11 +29,11 @@ deploy-gcs:
     - gcloud auth activate-service-account --key-file $GCS_KEY
     - gsutil -m rsync -d -r storybook-static gs://core-uikit-storybook
 
-##invalid-CDNcache:
-##  image: google/cloud-sdk:slim
-##  stage: clean-cache
-##  only:
-##    - master
-##  script:
-##    - gcloud auth activate-service-account --key-file $GCS_KEY
-##    - gcloud compute url-maps invalidate-cdn-cache xxx --path "/*" --async --project $PROJECT_ID
+invalid-CDNcache:
+  image: google/cloud-sdk:slim
+  stage: clean-cache
+  only:
+    - master
+  script:
+    - gcloud auth activate-service-account --key-file $GCS_KEY
+    - gcloud compute url-maps invalidate-cdn-cache storybook-website --path "/*" --async --project $PROJECT_ID

@@ -11,13 +11,12 @@ cache:
 build:
   stage: build
   image: node:16.6.1-stretch
-  variables:
-    CI: "false"
   script:
     - yarn 
     - yarn build
   cache:
   artifacts:
+    expire_in: 1 hour
     paths:
       - ./storybook-static
 

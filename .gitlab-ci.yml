@@ -36,4 +36,4 @@ invalid-CDNcache:
     - master
   script:
     - gcloud auth activate-service-account --key-file $GCS_KEY
-    - gcloud compute url-maps invalidate-cdn-cache storybook-website --path "/*" --async --project $PROJECT_ID
+    - gcloud compute url-maps invalidate-cdn-cache storybook-website-lb --path "/*" --async --project $PROJECT_ID

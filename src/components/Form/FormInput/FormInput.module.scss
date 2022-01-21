@@ -6,7 +6,7 @@
   align-items: center;
   background-color: #fafbfc;
   border-color: #dfe1e6;
-  color: #091e42;
+  color: #45536c;
   cursor: text;
   border-radius: 3px;
   border-width: 1px;
@@ -31,7 +31,7 @@
     }
     &:focus-within {
       background-color: #fff;
-      border-color: #4c9aff;
+      border-color: #2d62c4;
     }
   }
 
@@ -45,7 +45,7 @@
   }
 
   input.control {
-    padding: 0 10px;
+    padding: 0 8px;
     height: 30px;
     background: #0000;
     border: 0;
@@ -61,7 +61,7 @@
 
     &::placeholder,
     &::-webkit-input-placeholder {
-      color: #7a869a;
+      color: #8B919C;
       font-family: $font-family;
     }
 

@@ -1,18 +1,39 @@
-#image: node:16.6.1-stretch
-#
-#stages:
-#  - deploy
-#
-#deploy:
-#  stage: deploy
-##  only: ['tags']
-#  script:
-#    - echo CI_PROJECT_ID $CI_PROJECT_ID
-#    - echo CI_JOB_TOKEN $CI_JOB_TOKEN
-#    - echo "//${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}">.npmrc
-#    - cat .npmrc
-#    - yarn
-#    - yarn build:library
-#    - ls -al
-#    - npm config set always-auth true
-#    - npm publish
+stages:
+  - build
+  - deploy
+  - clean-cache
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+
+build:
+  stage: build
+  image: node:16.6.1-stretch
+  script:
+    - yarn 
+    - yarn build
+  cache:
+  artifacts:
+    expire_in: 1 hour
+    paths:
+      - ./storybook-static
+
+deploy-gcs:
+  image: google/cloud-sdk:slim
+  stage: deploy
+  only:
+    - master
+  script:
+    - gcloud auth activate-service-account --key-file $GCS_KEY
+    - gsutil -m rsync -d -r storybook-static gs://core-uikit-storybook
+
+invalid-CDNcache:
+  image: google/cloud-sdk:slim
+  stage: clean-cache
+  only:
+    - master
+  script:
+    - gcloud auth activate-service-account --key-file $GCS_KEY
+    - gcloud compute url-maps invalidate-cdn-cache storybook-website-lb --path "/*" --async --project $PROJECT_ID

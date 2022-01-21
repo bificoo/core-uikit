@@ -28,7 +28,7 @@ const FormInput = React.forwardRef(function FormInput(
       disabled: props.disabled,
       readOnly: props.readOnly,
     })
-  }, [entered, isValid, isInvalid, props.disabled, props.readOnly,setAttributes])
+  }, [entered, isValid, isInvalid, props.disabled, props.readOnly])
 
   return (
     <div

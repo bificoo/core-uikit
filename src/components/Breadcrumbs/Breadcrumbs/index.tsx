@@ -1,13 +1,25 @@
+import React from "react"
+import Icon from "components/Icon"
 import styled from "./Breadcrumbs.module.scss"
 import { WithChildren } from "types/common"
 
 export type BreadcrumbsProps = WithChildren
 
 const Breadcrumbs = (props: BreadcrumbsProps) => {
+  const childrenLength = React.Children.count(props.children)
   return (
-    <div className={styled.wrapper}>
-      <ol className={styled.items}>{props.children}</ol>
-    </div>
+    <ol className={styled.items}>
+      {React.Children.map(props.children, (child, i) => {
+        if (!React.isValidElement(child)) return
+        const isNode = (i < childrenLength - 1)
+        return (
+          <>
+            {child}
+            {isNode && <Icon.Arrow direction="right" className={styled.icon} />}
+          </>
+        )
+      })}
+    </ol>
   )
 }
 

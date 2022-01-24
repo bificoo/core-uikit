@@ -7,6 +7,14 @@
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
+
+  .icon {
+    > svg {
+      > path {
+        fill: #C9CBCE;
+      }
+    }
+  }
 }
 
 .items > li:last-child::after {

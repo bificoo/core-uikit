@@ -7,10 +7,9 @@ export type BreadcrumbsItemProps = {
    * Redirect url of breadcrumbs item
    */
   href?: string
-  text: string
 } & WithChildren
 
-const BreadcrumbsItem = ({ href, text, children }: BreadcrumbsItemProps) => {
+const BreadcrumbsItem = ({ href, children }: BreadcrumbsItemProps) => {
   return (
     <li className={styled.wrapper}>
       <a

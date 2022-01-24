@@ -1,5 +1,4 @@
 import cx from "classnames"
-import Icon from "components/Icon"
 import styled from "./BreadcrumbsItem.module.scss"
 import { WithChildren } from "types/common"
 
@@ -9,10 +8,9 @@ export type BreadcrumbsItemProps = {
    */
   href?: string
   text: string
-  isNode?: boolean
 } & WithChildren
 
-const BreadcrumbsItem = ({ href, text, children, isNode }: BreadcrumbsItemProps) => {
+const BreadcrumbsItem = ({ href, text, children }: BreadcrumbsItemProps) => {
   return (
     <li className={styled.wrapper}>
       <a
@@ -20,7 +18,6 @@ const BreadcrumbsItem = ({ href, text, children, isNode }: BreadcrumbsItemProps)
         href={href}>
         {children}
       </a>
-      {isNode && <Icon.Arrow direction="right" className={styled.icon} />}
     </li>
   )
 }

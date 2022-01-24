@@ -1,4 +1,5 @@
 import React from "react"
+import Icon from "components/Icon"
 import styled from "./Breadcrumbs.module.scss"
 import { WithChildren } from "types/common"
 
@@ -10,9 +11,13 @@ const Breadcrumbs = (props: BreadcrumbsProps) => {
     <ol className={styled.items}>
       {React.Children.map(props.children, (child, i) => {
         if (!React.isValidElement(child)) return
-        return React.cloneElement(child, {
-          isNode: i < childrenLength - 1,
-        })
+        const isNode = (i < childrenLength - 1)
+        return (
+          <>
+            {child}
+            {isNode && <Icon.Arrow direction="right" className={styled.icon} />}
+          </>
+        )
       })}
     </ol>
   )

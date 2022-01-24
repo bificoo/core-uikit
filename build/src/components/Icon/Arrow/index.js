@@ -5,8 +5,8 @@ import styled from './Arrow.module.scss.js';
 import cx from 'classnames';
 
 var Arrow = function (_a) {
-    var _b = _a.direction, direction = _b === void 0 ? "down" : _b, style = _a.style;
-    return (jsx("div", __assign({ className: cx(styled.wrapper, styled["direction-".concat(direction)]), style: style }, { children: jsx(SvgArrow, {}, void 0) }), void 0));
+    var className = _a.className, _b = _a.direction, direction = _b === void 0 ? "down" : _b, style = _a.style;
+    return (jsx("div", __assign({ className: cx(styled.wrapper, className, styled["direction-".concat(direction)]), style: style }, { children: jsx(SvgArrow, {}, void 0) }), void 0));
 };
 
 export { Arrow as default };

@@ -18,10 +18,10 @@ var TreeCategory = function (props) {
         });
     }, [activeKey, props.eventKey]);
     useEffect(function () {
-        if (props.expanded !== expanded && props.expanded !== undefined) {
+        if (props.expanded !== undefined) {
             setExpanded(props.expanded);
         }
-    }, [expanded, props.expanded]);
+    }, [props.expanded]);
     return (jsxs("div", __assign({ className: styled.wrapper }, { children: [jsxs("div", __assign({ className: cx(styled.category, (_a = {},
                     _a[styled.active] = activeKey === null || activeKey === void 0 ? void 0 : activeKey.some(function (el) { return el === props.eventKey; }),
                     _a[styled["first-level"]] = ((_c = props.nodes) === null || _c === void 0 ? void 0 : _c.length) === 1,

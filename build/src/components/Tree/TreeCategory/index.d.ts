@@ -7,6 +7,7 @@ export declare type TreeCategoryProps = {
      */
     eventKey: string;
     nodes?: string[];
+    expanded?: boolean;
 } & WithChildren;
 declare const TreeCategory: (props: TreeCategoryProps) => JSX.Element;
 export default TreeCategory;

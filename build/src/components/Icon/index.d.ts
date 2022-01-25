@@ -1,6 +1,6 @@
 export type { IconArrowProps } from "./Arrow";
 declare const Icon: {
-    Arrow: ({ direction, style }: import("./Arrow").IconArrowProps) => JSX.Element;
+    Arrow: ({ className, direction, style }: import("./Arrow").IconArrowProps) => JSX.Element;
     Search: () => JSX.Element;
     Group: () => JSX.Element;
     User: () => JSX.Element;

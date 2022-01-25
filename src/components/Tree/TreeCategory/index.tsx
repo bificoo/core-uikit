@@ -12,6 +12,7 @@ export type TreeCategoryProps = {
    */
   eventKey: string
   nodes?: string[]
+  expanded?: boolean
 } & WithChildren
 
 const TreeCategory = (props: TreeCategoryProps) => {
@@ -24,8 +25,14 @@ const TreeCategory = (props: TreeCategoryProps) => {
     })
   }, [activeKey, props.eventKey])
 
+  useEffect(() => {
+    if(props.expanded !== expanded && props.expanded !== undefined){
+       setExpanded(props.expanded)
+    }
+  }, [expanded, props.expanded])
+
   return (
-    <div>
+    <div className={styled.wrapper}>
       <div
         className={cx(styled.category, {
           [styled.active]: activeKey?.some(el => el === props.eventKey),

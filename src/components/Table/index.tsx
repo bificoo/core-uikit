@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect, useRef } from "react"
 
 
 import {
@@ -45,6 +45,7 @@ const Table = ({
 }: TableProps) => {
   const [limit, setLimit] = useState(limitMenu[0])
   const [page, setPage] = useState(1)
+  const dataRef = useRef(data)
 
   const handleSelect = (page: number) => {
     setPage(page)
@@ -63,6 +64,14 @@ const Table = ({
     return i >= start && i < end
   })
 
+
+  useEffect(() => {
+    if (JSON.stringify(dataRef.current) !== JSON.stringify(data)) {
+      setPage(1)
+      dataRef.current = data
+    }
+  }, [data])
+
   return (
     <div className={styled.wrapper}>
       <RsuiteTable
@@ -75,7 +84,7 @@ const Table = ({
         <Pagination
           maxButtons={maxButtons}
           pages={Math.ceil(data.length / limit)}
-          activePage={page > Math.ceil(data.length / limit) ? 1 : page}
+          activePage={page}
           total={data.length}
           limitMenu={limitMenu}
           limit={limit}

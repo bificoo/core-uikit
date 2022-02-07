@@ -75,7 +75,7 @@ const Table = ({
         <Pagination
           maxButtons={maxButtons}
           pages={Math.ceil(data.length / limit)}
-          activePage={page}
+          activePage={page > Math.ceil(data.length / limit) ? 1 : page}
           total={data.length}
           limitMenu={limitMenu}
           limit={limit}

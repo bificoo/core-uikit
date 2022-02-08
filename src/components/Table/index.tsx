@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect } from "react"
 
 
 import {
@@ -17,6 +17,7 @@ import Pagination from "./Pagination"
 import 'rsuite-table/dist/css/rsuite-table.min.css';
 import styled from "./Table.module.scss"
 import QueryStatus from "components/QueryStatus"
+import usePrevious from "hooks/usePrevious"
 
 export type { CellProps as TableCellProps } from "rsuite-table/es"
 export type TableColumnGroupProps = ColumnGroupProps
@@ -45,7 +46,7 @@ const Table = ({
 }: TableProps) => {
   const [limit, setLimit] = useState(limitMenu[0])
   const [page, setPage] = useState(1)
-  const dataRef = useRef(data)
+  const dataPrevious = usePrevious(data)
 
   const handleSelect = (page: number) => {
     setPage(page)
@@ -66,11 +67,10 @@ const Table = ({
 
 
   useEffect(() => {
-    if (JSON.stringify(dataRef.current) !== JSON.stringify(data)) {
+    if (JSON.stringify(dataPrevious) !== JSON.stringify(data)) {
       setPage(1)
-      dataRef.current = data
     }
-  }, [data])
+  }, [data, dataPrevious])
 
   return (
     <div className={styled.wrapper}>

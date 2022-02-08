@@ -1,6 +1,6 @@
 import { __rest, __assign } from '../../../node_modules/tslib/tslib.es6.js';
 import { jsxs, jsx } from 'react/jsx-runtime';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Table$1 from '../../../node_modules/rsuite-table/es/Table.js';
 import Column from '../../../node_modules/rsuite-table/es/Column.js';
 import Cell from '../../../node_modules/rsuite-table/es/Cell.js';
@@ -10,13 +10,14 @@ import Pagination from './Pagination.js';
 import '../../../node_modules/rsuite-table/dist/css/rsuite-table.min.css.js';
 import styled from './Table.module.scss.js';
 import QueryStatus from '../QueryStatus/index.js';
+import usePrevious from '../../hooks/usePrevious.js';
 
 // TODO: 此元件應移到 core-uikit 專案中
 var Table = function (_a) {
     var _b = _a.limitMenu, limitMenu = _b === void 0 ? [10, 30, 50, 100] : _b, _c = _a.maxButtons, maxButtons = _c === void 0 ? 5 : _c, _d = _a.data, data = _d === void 0 ? [] : _d, _e = _a.renderTotal, renderTotal = _e === void 0 ? true : _e, onSelectPage = _a.onSelectPage, props = __rest(_a, ["limitMenu", "maxButtons", "data", "renderTotal", "onSelectPage"]);
     var _f = useState(limitMenu[0]), limit = _f[0], setLimit = _f[1];
     var _g = useState(1), page = _g[0], setPage = _g[1];
-    var dataRef = useRef(data);
+    var dataPrevious = usePrevious(data);
     var handleSelect = function (page) {
         setPage(page);
         onSelectPage && onSelectPage(page, limit);
@@ -32,11 +33,10 @@ var Table = function (_a) {
         return i >= start && i < end;
     });
     useEffect(function () {
-        if (JSON.stringify(dataRef.current) !== JSON.stringify(data)) {
+        if (JSON.stringify(dataPrevious) !== JSON.stringify(data)) {
             setPage(1);
-            dataRef.current = data;
         }
-    }, [data]);
+    }, [data, dataPrevious]);
     return (jsxs("div", __assign({ className: styled.wrapper }, { children: [jsx(Table$1, __assign({}, props, { autoHeight: true, data: visualData, renderLoading: function () { return props.loading && jsx(QueryStatus.Loading, {}, void 0); } }), void 0), data && data.length !== 0 && (jsx(Pagination, { maxButtons: maxButtons, pages: Math.ceil(data.length / limit), activePage: page, total: data.length, limitMenu: limitMenu, limit: limit, renderTotal: typeof renderTotal === "function" ? function () { return renderTotal(data.length); } : renderTotal, onSelect: handleSelect, onLimitChange: handleChangeLength }, void 0))] }), void 0));
 };
 Table.Column = Column;

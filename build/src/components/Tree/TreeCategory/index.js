@@ -12,16 +12,14 @@ var TreeCategory = function (props) {
     var activeKey = useContext(TreeContext).activeKey;
     var _e = useState(false), expanded = _e[0], setExpanded = _e[1];
     useEffect(function () {
-        activeKey === null || activeKey === void 0 ? void 0 : activeKey.some(function (el) {
-            if (el === props.eventKey)
-                setExpanded(true);
-        });
-    }, [activeKey, props.eventKey]);
-    useEffect(function () {
         if (props.expanded !== undefined) {
             setExpanded(props.expanded);
         }
-    }, [props.expanded]);
+        activeKey === null || activeKey === void 0 ? void 0 : activeKey.forEach(function (el) {
+            if (el === props.eventKey)
+                setExpanded(true);
+        });
+    }, [activeKey, props.eventKey, props.expanded]);
     return (jsxs("div", __assign({ className: styled.wrapper }, { children: [jsxs("div", __assign({ className: cx(styled.category, (_a = {},
                     _a[styled.active] = activeKey === null || activeKey === void 0 ? void 0 : activeKey.some(function (el) { return el === props.eventKey; }),
                     _a[styled["first-level"]] = ((_c = props.nodes) === null || _c === void 0 ? void 0 : _c.length) === 1,

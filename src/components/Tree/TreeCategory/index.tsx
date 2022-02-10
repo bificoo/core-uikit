@@ -20,16 +20,13 @@ const TreeCategory = (props: TreeCategoryProps) => {
   const [expanded, setExpanded] = useState(false)
 
   useEffect(() => {
-    activeKey?.some(el => {
-      if (el === props.eventKey) setExpanded(true)
-    })
-  }, [activeKey, props.eventKey])
-
-  useEffect(() => {
     if (props.expanded !== undefined) {
       setExpanded(props.expanded)
     }
-  }, [props.expanded])
+    activeKey?.forEach(el => {
+      if (el === props.eventKey) setExpanded(true)
+    })
+  }, [activeKey, props.eventKey, props.expanded])
 
   return (
     <div className={styled.wrapper}>

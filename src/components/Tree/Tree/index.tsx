@@ -5,11 +5,11 @@ import TreeContext from "../TreeContext"
 export type TreeProps = {
   children: WithChildren,
   /**
-   * Expanded key.
+   * The expanded list key.
    */
   expanded: string[]
   /**
-   * Actived key.
+   * The actived list key.
    */
   selected?: string[]
   /**
@@ -35,7 +35,6 @@ const Tree = ({ expanded, selected, onNodeToggle, onNodeSelect, children }: Tree
         if (React.isValidElement(child)) {
           return React.cloneElement(child, {
             ...child.props,
-            nodes: [child.props.eventKey], 
             key: index,
           })
         }

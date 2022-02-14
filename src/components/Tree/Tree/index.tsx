@@ -9,15 +9,15 @@ export type TreeProps = {
    */
   expanded: string[]
   /**
-   * The actived list key.
+   * The active list key.
    */
   selected?: string[]
   /**
-   * Click the expanded item.
+   * Click the tree category.
    */
   onNodeToggle: (nodeIds: string[]) => void
   /**
-   * Click the the Item which can't expand.
+   * Click the tree item.
    */
   onNodeSelect: (nodeIds: string[]) => void
 } & WithChildren

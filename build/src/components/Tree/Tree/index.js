@@ -12,7 +12,7 @@ var Tree = function (_a) {
             onNodeSelect: onNodeSelect,
         } }, { children: React__default.Children.map(children, function (child, index) {
             if (React__default.isValidElement(child)) {
-                return React__default.cloneElement(child, __assign(__assign({}, child.props), { nodes: [child.props.eventKey], key: index }));
+                return React__default.cloneElement(child, __assign(__assign({}, child.props), { key: index }));
             }
         }) }), void 0));
 };

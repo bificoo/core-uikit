@@ -1,20 +1,19 @@
 import { WithChildren } from "../../../types/common";
 export declare type TreeProps = {
-    children: WithChildren;
     /**
-     * Expanded key.
+     * The expanded list key.
      */
     expanded: string[];
     /**
-     * Actived key.
+     * The active list key.
      */
     selected?: string[];
     /**
-     * Click the expanded item.
+     * Click the tree category.
      */
     onNodeToggle: (nodeIds: string[]) => void;
     /**
-     * Click the the Item which can't expand.
+     * Click the tree item.
      */
     onNodeSelect: (nodeIds: string[]) => void;
 } & WithChildren;

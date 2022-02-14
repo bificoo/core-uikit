@@ -1,8 +1,5 @@
 import React from "react";
-export declare type TreeContextProps = {
-    activeKey?: string[];
-    setActiveKey: (activeKey: string, nodes: string[]) => void;
-};
-declare const TreeContext: React.Context<TreeContextProps>;
+import { TreeProps } from "./Tree/index";
+declare const TreeContext: React.Context<TreeProps>;
 export { TreeContext };
 export default TreeContext;

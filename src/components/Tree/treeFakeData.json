@@ -1,0 +1,192 @@
+[
+  {
+    "id": "GE",
+    "name": "游戏行为主题",
+    "count": 52,
+    "category": [
+      {
+        "id": "GE01",
+        "name": "总览",
+        "count": 15,
+        "labels": [
+          {
+            "id": "BetPreferHour",
+            "name": "最新1日游戏活跃时段"
+          },
+          {
+            "id": "BetPreferHourL7d",
+            "name": "过去7日游戏活跃时段"
+          },
+          {
+            "id": "BetPreferHourL30d",
+            "name": "过去30日游戏活跃时段"
+          },
+          {
+            "id": "BetPreferHourLifetime",
+            "name": "生涯游戏活跃时段"
+          }
+        ]
+      },
+      {
+        "id": "GE03",
+        "name": "彩票游戏",
+        "count": 4,
+        "labels": [
+          {
+            "id": "LotteryGameOrderCount",
+            "name": "彩票游戏注单数"
+          },
+          {
+            "id": "LotteryGameOrderCountL7d",
+            "name": "过去7日彩票游戏注单数"
+          },
+          {
+            "id": "LotteryGameOrderCountL30d",
+            "name": "过去30日彩票游戏注单数"
+          },
+          {
+            "id": "LotteryGameOrderCountLifetime",
+            "name": "生涯彩票游戏注单数"
+          }
+        ]
+      },
+      {
+        "id": "GE04",
+        "name": "电子游戏老虎机",
+        "count": 4,
+        "labels": [
+          {
+            "id": "CasinoGameOrderCount",
+            "name": "电子注单数"
+          },
+          {
+            "id": "CasinoGameOrderCountL7d",
+            "name": "过去7日电子注单数"
+          },
+          {
+            "id": "CasinoGameOrderCountL30d",
+            "name": "过去30日电子注单数"
+          },
+          {
+            "id": "CasinoGameOrderCountLifetime",
+            "name": "生涯电子注单数"
+          }
+        ]
+      },
+      {
+        "id": "GE05",
+        "name": "捕鱼机",
+        "count": 4,
+        "labels": [
+          {
+            "id": "FishingGameOrderCount",
+            "name": "捕鱼注单数"
+          },
+          {
+            "id": "FishingGameOrderCountL7d",
+            "name": "过去7日捕鱼注单数"
+          },
+          {
+            "id": "FishingGameOrderCountL30d",
+            "name": "过去30日捕鱼注单数"
+          },
+          {
+            "id": "FishingGameOrderCountLifetime",
+            "name": "生涯捕鱼注单数"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "I",
+    "name": "个人资料主题",
+    "count": 31,
+    "category": [
+      {
+        "id": "I01",
+        "name": "个人资料",
+        "count": 2,
+        "labels": [
+          {
+            "id": "AgeGroup",
+            "name": "年龄层"
+          },
+          {
+            "id": "Gender",
+            "name": "性别"
+          }
+        ]
+      },
+      {
+        "id": "I02",
+        "name": "注册资料",
+        "count": 4,
+        "labels": [
+          {
+            "id": "HaveAgent",
+            "name": "是否有代理"
+          },
+          {
+            "id": "RegisterCountry",
+            "name": "注册国家"
+          },
+          {
+            "id": "RegisterRegion",
+            "name": "注册地区"
+          },
+          {
+            "id": "RegisterToNextLoginDayCount",
+            "name": "注册后再次登入日与注册日相隔天数"
+          }
+        ]
+      },
+      {
+        "id": "I03",
+        "name": "生存资料",
+        "count": 8,
+        "labels": [
+          {
+            "id": "LifetimeDay",
+            "name": "生涯天数"
+          },
+          {
+            "id": "IsActive",
+            "name": "最新1日是否活跃"
+          },
+          {
+            "id": "ActiveDayL7d",
+            "name": "过去7日活跃天数"
+          },
+          {
+            "id": "ActiveDayL30d",
+            "name": "过去30日活跃天数"
+          },
+          {
+            "id": "ActiveDayLifetime",
+            "name": "生涯活跃天数"
+          }
+        ]
+      },
+      {
+        "id": "I04",
+        "name": "首次",
+        "count": 3,
+        "labels": [
+          {
+            "id": "RegisterTo1stEffDepositDayCount",
+            "name": "首次有效存款与注册日相隔天数"
+          },
+          {
+            "id": "RegisterTo2ndEffDepositDayCount",
+            "name": "第二次有效存款与注册日相隔天数"
+          },
+          {
+            "id": "RegisterTo1stEffWithdrawDayCount",
+            "name": "首次有效提款与注册日相隔天数"
+          }
+        ]
+      }
+    ]
+  }
+]

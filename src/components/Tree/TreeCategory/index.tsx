@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react"
+import React, { useContext, useRef } from "react"
 import Icon from "components/Icon"
 import { WithChildren } from "types/common"
 import styled from "./TreeCategory.module.scss"
@@ -11,46 +11,44 @@ export type TreeCategoryProps = {
    * The tree category key.
    */
   eventKey: string
+  /**
+   * The tree category nodes.
+   */
   nodes?: string[]
-  expanded?: boolean
 } & WithChildren
 
 const TreeCategory = (props: TreeCategoryProps) => {
-  const { activeKey } = useContext(TreeContext)
-  const [expanded, setExpanded] = useState(false)
-
-  useEffect(() => {
-    activeKey?.some(el => {
-      if (el === props.eventKey) setExpanded(true)
-    })
-  }, [activeKey, props.eventKey])
-
-  useEffect(() => {
-    if (props.expanded !== undefined) {
-      setExpanded(props.expanded)
-    }
-  }, [props.expanded])
+  const { selected, expanded, onNodeToggle } = useContext(TreeContext)
+  const expandedRef = useRef(expanded?.some(el => el === props.eventKey))
+  const nodes: string[] = props.nodes ? [...props.nodes, props.eventKey] : [props.eventKey]
 
   return (
     <div className={styled.wrapper}>
       <div
         className={cx(styled.category, {
-          [styled.active]: activeKey?.some(el => el === props.eventKey),
-          [styled["first-level"]]: props.nodes?.length === 1,
+          [styled.active]: selected?.some(el => el === props.eventKey),
+          [styled["first-level"]]: nodes.length === 1,
         })}
-        style={{ paddingLeft: `${((props.nodes?.length || 0) - 1) * 20}px` }}
-        onClick={() => setExpanded(prev => !prev)}>
-        <Icon.Arrow direction={!expanded ? "right" : "down"} />
+        style={{ paddingLeft: `${(nodes.length - 1) * 20}px` }}
+        onClick={() => {
+          const result: string[] = [...expanded]
+
+          if (!expandedRef.current) result.push(props.eventKey)
+          else {
+            const index = result.indexOf(props.eventKey)
+            result.splice(index, 1)
+          }
+          expandedRef.current = !expandedRef.current
+          onNodeToggle(result)
+        }
+        }>
+        <Icon.Arrow direction={expanded?.some(el => el === props.eventKey) ? "down" : "right"} />
         <div className={styled.name}>{props.renderName}</div>
       </div>
-      <div className={cx(styled.content, { [styled.expanded]: expanded })}>
+      <div className={cx(styled.content, { [styled.expanded]: expanded?.some(el => el === props.eventKey) })}>
         {React.Children.map(props.children, (child, index) => {
           if (React.isValidElement(child)) {
-            return React.cloneElement(child, {
-              ...child.props,
-              nodes: props.nodes && [...props.nodes, child.props.eventKey],
-              key: index,
-            })
+            return React.cloneElement(child, { ...child.props, nodes, key: index })
           }
         })}</div>
     </div>

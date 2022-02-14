@@ -1,12 +1,12 @@
 import React from "react"
+import { TreeProps } from "./Tree/index"
 
-export type TreeContextProps = {
-  activeKey?: string[]
-  setActiveKey: (activeKey: string, nodes: string[]) => void
-}
-
-const TreeContext = React.createContext<TreeContextProps>({
-  setActiveKey: () => {
+const TreeContext = React.createContext<TreeProps>({
+  expanded: [],
+  onNodeToggle: () => {
+    // set attributes
+  },
+  onNodeSelect: () => {
     // set attributes
   },
 })

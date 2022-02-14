@@ -2,15 +2,21 @@ import { WithChildren } from "../../../types/common";
 export declare type TreeProps = {
     children: WithChildren;
     /**
-     * The default tree menu active key.
+     * Expanded key.
      */
-    defaultActiveKey?: string;
+    expanded: string[];
     /**
-     * Called when clicked value has changed.
+     * Actived key.
      */
-    onClick?: (targetKey: string, moreInfo: {
-        parents: string[];
-    }) => void;
+    selected?: string[];
+    /**
+     * Click the expanded item.
+     */
+    onNodeToggle: (nodeIds: string[]) => void;
+    /**
+     * Click the the Item which can't expand.
+     */
+    onNodeSelect: (nodeIds: string[]) => void;
 } & WithChildren;
-declare const Tree: ({ defaultActiveKey, onClick, children }: TreeProps) => JSX.Element;
+declare const Tree: ({ expanded, selected, onNodeToggle, onNodeSelect, children }: TreeProps) => JSX.Element;
 export default Tree;

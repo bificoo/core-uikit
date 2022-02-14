@@ -1,7 +1,9 @@
 import React from "react";
 export declare type TreeContextProps = {
-    activeKey?: string[];
-    setActiveKey: (activeKey: string, nodes: string[]) => void;
+    selected?: string[];
+    expanded: string[];
+    onNodeToggle: (nodeIds: string[]) => void;
+    onNodeSelect: (nodeIds: string[]) => void;
 };
 declare const TreeContext: React.Context<TreeContextProps>;
 export { TreeContext };

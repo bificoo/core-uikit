@@ -1,12 +1,18 @@
 import React from "react"
 
 export type TreeContextProps = {
-  activeKey?: string[]
-  setActiveKey: (activeKey: string, nodes: string[]) => void
+  selected?: string[]
+  expanded: string[] // 展開的list
+  onNodeToggle: (nodeIds: string[]) => void
+  onNodeSelect: (nodeIds: string[]) => void
 }
 
 const TreeContext = React.createContext<TreeContextProps>({
-  setActiveKey: () => {
+  expanded: [],
+  onNodeToggle: () => {
+    // set attributes
+  },
+  onNodeSelect: () => {
     // set attributes
   },
 })

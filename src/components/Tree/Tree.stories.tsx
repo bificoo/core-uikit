@@ -1,7 +1,7 @@
 import { Story, Meta } from "@storybook/react"
 import Tree from "components/Tree"
-import Button from "components/Button"
 import { useState } from "react"
+import fakeData from "./treeFakeData.json"
 
 export default {
   title: "Data/Tree",
@@ -14,85 +14,82 @@ export default {
 } as Meta
 
 export const Default: Story = () => {
-  const eventHandler = (targetKey: string, moreInfo: { parents: string[] }) => {
-    console.log("targetKey", targetKey)
-    console.log("parents", moreInfo.parents)
+  const [expanded, setExpanded] = useState<string[]>([])
+  const [selected, setSelected] = useState<string[]>([])
+
+  const handleSelect = (nodeIds: string[]) => {
+    setSelected(nodeIds)
+  }
+
+  const handleToggle = (nodeIds: string[]) => {
+    setExpanded(nodeIds)
   }
 
   return (
     <div style={{ width: "240px" }}>
-      <Tree onClick={eventHandler} defaultActiveKey="AgeGroup">
-        <Tree.Category renderName="個人資料主題(52)" eventKey="I">
-          <Tree.Category renderName="個人資料(4)" eventKey="I01">
-            <Tree.Item renderName="性別" eventKey="Gender" />
-            <Tree.Item renderName="年齡層" eventKey="AgeGroup" />
-            <Tree.Category renderName="Inside(2)" eventKey="I099">
-              <Tree.Item renderName="Test" eventKey="test" />
-              <Tree.Item renderName="Test2Test2" eventKey="test2" />
-            </Tree.Category>
+      <Tree
+        expanded={expanded}
+        selected={selected}
+        onNodeToggle={handleToggle}
+        onNodeSelect={handleSelect}>
+        {fakeData.map(theme => (
+          <Tree.Category
+            key={theme.id}
+            renderName={`${theme.name}(${theme.count})`}
+            eventKey={theme.id}>
+            {theme.category.map(category => (
+              <Tree.Category
+                key={category.id}
+                renderName={`${category.name}(${category.count})`}
+                eventKey={category.id}>
+                {category.labels.map(label => (
+                  <Tree.Item key={label.id} renderName={label.name} eventKey={label.id} />
+                ))}
+              </Tree.Category>
+            ))}
           </Tree.Category>
-          <Tree.Category renderName="很多生存資料故意顯示過長的情況(10)" eventKey="I03">
-            <Tree.Item renderName="三十日內活躍天數故意顯示過長的情況" eventKey="ActiveDayL30d" />
-            <Tree.Item renderName="七日內活躍天數" eventKey="ActiveDayL7d" />
-            <Tree.Item renderName="生涯活躍天數" eventKey="ActiveDayLifetime" />
-            <Tree.Item renderName="三十日內投注存款天數" eventKey="BetOrDepositDayCountL30d" />
-          </Tree.Category>
-          <Tree.Category renderName="用戶價值(1)" eventKey="I06">
-            <Tree.Item renderName="AG捕魚用戶價值" eventKey="UserAgFishingRFMLifetime" />
-          </Tree.Category>
-        </Tree.Category>
-        <Tree.Category renderName="優惠與活動主題(10)" eventKey="P">
-          <Tree.Category renderName="優惠活動(9)" eventKey="P01">
-            <Tree.Item
-              renderName="完善訊息參與度"
-              eventKey="DepositPromotionJoinPercentageLifetime"
-            />
-          </Tree.Category>
-        </Tree.Category>
+        ))}
       </Tree>
     </div>
   )
 }
 
-export const ControlExpand: Story = () => {
-  const eventHandler = (targetKey: string, moreInfo: { parents: string[] }) => {
-    console.log("targetKey", targetKey)
-    console.log("parents", moreInfo.parents)
+export const SpecifyKey: Story = () => {
+  const [expanded, setExpanded] = useState(["GE", "GE01"])
+  const [selected, setSelected] = useState(["GE", "GE01", "BetPreferHour"])
+
+  const handleSelect = (nodeIds: string[]) => {
+    setSelected(nodeIds)
   }
 
-  const [click, setClick] = useState(false)
+  const handleToggle = (nodeIds: string[]) => {
+    setExpanded(nodeIds)
+  }
 
   return (
     <div style={{ width: "240px" }}>
-      <Button style={{ marginBottom: "25px" }} onClick={() => setClick(!click)}>Click</Button>
-      <Tree onClick={eventHandler} defaultActiveKey="AgeGroup">
-        <Tree.Category renderName="個人資料主題(52)" eventKey="I" expanded={click}>
-          <Tree.Category renderName="個人資料(4)" eventKey="I01">
-            <Tree.Item renderName="性別" eventKey="Gender" />
-            <Tree.Item renderName="年齡層" eventKey="AgeGroup" />
-            <Tree.Category renderName="Inside(2)" eventKey="I099">
-              <Tree.Item renderName="Test" eventKey="test" />
-              <Tree.Item renderName="Test2Test2" eventKey="test2" />
-            </Tree.Category>
+      <Tree
+        expanded={expanded}
+        selected={selected}
+        onNodeToggle={handleToggle}
+        onNodeSelect={handleSelect}>
+        {fakeData.map(theme => (
+          <Tree.Category
+            key={theme.id}
+            renderName={`${theme.name}(${theme.count})`}
+            eventKey={theme.id}>
+            {theme.category.map(category => (
+              <Tree.Category
+                key={category.id}
+                renderName={`${category.name}(${category.count})`}
+                eventKey={category.id}>
+                {category.labels.map(label => (
+                  <Tree.Item key={label.id} renderName={label.name} eventKey={label.id} />
+                ))}
+              </Tree.Category>
+            ))}
           </Tree.Category>
-          <Tree.Category renderName="很多生存資料故意顯示過長的情況(10)" eventKey="I03" expanded={click}>
-            <Tree.Item renderName="三十日內活躍天數故意顯示過長的情況" eventKey="ActiveDayL30d" />
-            <Tree.Item renderName="七日內活躍天數" eventKey="ActiveDayL7d" />
-            <Tree.Item renderName="生涯活躍天數" eventKey="ActiveDayLifetime" />
-            <Tree.Item renderName="三十日內投注存款天數" eventKey="BetOrDepositDayCountL30d" />
-          </Tree.Category>
-          <Tree.Category renderName="用戶價值(1)" eventKey="I06">
-            <Tree.Item renderName="AG捕魚用戶價值" eventKey="UserAgFishingRFMLifetime" />
-          </Tree.Category>
-        </Tree.Category>
-        <Tree.Category renderName="優惠與活動主題(10)" eventKey="P" expanded={click}>
-          <Tree.Category renderName="優惠活動(9)" eventKey="P01">
-            <Tree.Item
-              renderName="完善訊息參與度"
-              eventKey="DepositPromotionJoinPercentageLifetime"
-            />
-          </Tree.Category>
-        </Tree.Category>
+        ))}
       </Tree>
     </div>
   )

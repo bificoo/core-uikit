@@ -10,17 +10,20 @@ export type TreeItemProps = {
    * The tree item key.
    */
   eventKey: string
+  /**
+   * The tree item nodes.
+   */
   nodes?: string[]
 } & WithChildren
 
 const TreeItem = (props: TreeItemProps) => {
-  const { activeKey, setActiveKey } = useContext(TreeContext)
+  const { selected, onNodeSelect } = useContext(TreeContext)
 
   return (
     <div
-      className={cx(styled.item, { [styled.active]: activeKey?.some(el => el === props.eventKey) })}
+      className={cx(styled.item, { [styled.active]: selected?.some(el => el === props.eventKey) })}
       style={{ paddingLeft: `${((props.nodes?.length || 0)) * 20}px` }}
-      onClick={() => props.nodes && setActiveKey(props.eventKey, props.nodes)}>
+      onClick={() => props.nodes && onNodeSelect(props.nodes)}>
       <span>{props.renderName}</span>
     </div>
   )

@@ -6,6 +6,9 @@ export declare type TreeItemProps = {
      * The tree item key.
      */
     eventKey: string;
+    /**
+     * The tree item nodes.
+     */
     nodes?: string[];
 } & WithChildren;
 declare const TreeItem: (props: TreeItemProps) => JSX.Element;

@@ -3,7 +3,6 @@ import { WithChildren } from "types/common"
 import TreeContext from "../TreeContext"
 
 export type TreeProps = {
-  children: WithChildren,
   /**
    * The expanded list key.
    */

@@ -1,13 +1,7 @@
 import React from "react"
+import { TreeProps } from "./Tree/index"
 
-export type TreeContextProps = {
-  selected?: string[]
-  expanded: string[] // 展開的list
-  onNodeToggle: (nodeIds: string[]) => void
-  onNodeSelect: (nodeIds: string[]) => void
-}
-
-const TreeContext = React.createContext<TreeContextProps>({
+const TreeContext = React.createContext<TreeProps>({
   expanded: [],
   onNodeToggle: () => {
     // set attributes

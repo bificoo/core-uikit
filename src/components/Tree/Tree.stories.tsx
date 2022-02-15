@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import fakeData from "./treeFakeData.json"
 
 export default {
-  title: "Data/Tree",
+  title: "Data Display/Tree", 
   component: Tree,
   subcomponents: {
     "Tree.Category": Tree.Category,

@@ -1,6 +1,6 @@
 import { Story, Meta } from "@storybook/react"
 import Tree from "components/Tree"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import fakeData from "./treeFakeData.json"
 
 export default {
@@ -107,10 +107,12 @@ export const DelaySetSelectedKey: Story = () => {
     setExpanded(nodeIds)
   }
 
-  setTimeout(() => {
-    setSelected(["GE", "GE01", "BetPreferHour"])
-    setExpanded(["GE", "GE01"])
-  }, 3000)
+  useEffect(() => {
+    setTimeout(() => {
+      setSelected(["GE", "GE01", "BetPreferHour"])
+      setExpanded(["GE", "GE01"])
+    }, 3000)
+  }, [])
 
   return (
     <div style={{ width: "240px" }}>

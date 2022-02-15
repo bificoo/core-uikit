@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react"
+import React, { useContext, useEffect, useRef } from "react"
 import Icon from "components/Icon"
 import { WithChildren } from "types/common"
 import styled from "./TreeCategory.module.scss"
@@ -19,8 +19,12 @@ export type TreeCategoryProps = {
 
 const TreeCategory = (props: TreeCategoryProps) => {
   const { selected, expanded, onNodeToggle } = useContext(TreeContext)
-  const expandedRef = useRef(expanded?.some(el => el === props.eventKey))
+  const expandedRef = useRef(false)
   const nodes: string[] = props.nodes ? [...props.nodes, props.eventKey] : [props.eventKey]
+
+  useEffect(() => {
+    expandedRef.current = expanded?.some(el => el === props.eventKey)
+  }, [expanded, props.eventKey])
 
   return (
     <div className={styled.wrapper}>

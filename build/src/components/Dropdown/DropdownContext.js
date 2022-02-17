@@ -4,6 +4,9 @@ var DropdownContext = React__default.createContext({
     setActiveKey: function () {
         // set attributes
     },
+    handlePopupClose: function () {
+        // set attributes
+    }
 });
 
 export { DropdownContext, DropdownContext as default };

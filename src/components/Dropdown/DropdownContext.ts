@@ -7,12 +7,16 @@ export type DropdownContextProps = {
     e: React.MouseEvent<Element, MouseEvent>,
     { eventKey }: { eventKey?: EventKey },
   ) => void
+  handlePopupClose: () => void
 }
 
 const DropdownContext = React.createContext<DropdownContextProps>({
   setActiveKey: () => {
     // set attributes
   },
+  handlePopupClose: () => {
+    // set attributes
+  }
 })
 
 export { DropdownContext }

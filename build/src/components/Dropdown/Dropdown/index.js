@@ -43,11 +43,15 @@ var Dropdown = function (_a) {
         props.onSelect && props.onSelect(e, { eventKey: eventKey });
         (_b = popupRef.current) === null || _b === void 0 ? void 0 : _b.close();
     };
+    var handlePopupClose = function () {
+        var _a;
+        (_a = popupRef.current) === null || _a === void 0 ? void 0 : _a.close();
+    };
     useLayoutEffect(function () {
         var _a;
         setClientWidth(((_a = triggerRef.current) === null || _a === void 0 ? void 0 : _a.clientWidth) || 100);
     }, []);
-    return (jsx(DropdownContext.Provider, __assign({ value: { activeKey: eventKey, setActiveKey: handleClickItem } }, { children: jsx("div", __assign({ className: cx(styled.wrapper, props.className), style: props.style, ref: triggerRef }, { children: jsx(Popup, __assign({ ref: popupRef, className: "dropdown", trigger: function (open) { return dropdown.trigger && React__default.cloneElement(dropdown.trigger, { open: open }); }, position: ["bottom left"], disabled: props.disabled, on: "click", closeOnDocumentClick: true, mouseLeaveDelay: 300, mouseEnterDelay: 0, arrow: false, contentStyle: {
+    return (jsx(DropdownContext.Provider, __assign({ value: { activeKey: eventKey, setActiveKey: handleClickItem, handlePopupClose: handlePopupClose } }, { children: jsx("div", __assign({ className: cx(styled.wrapper, props.className), style: props.style, ref: triggerRef }, { children: jsx(Popup, __assign({ ref: popupRef, className: "dropdown", trigger: function (open) { return dropdown.trigger && React__default.cloneElement(dropdown.trigger, { open: open }); }, position: ["bottom left"], disabled: props.disabled, on: "click", closeOnDocumentClick: true, mouseLeaveDelay: 300, mouseEnterDelay: 0, arrow: false, contentStyle: {
                     border: "none",
                     padding: "8px",
                     boxShadow: "none",

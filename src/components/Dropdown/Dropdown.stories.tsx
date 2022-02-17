@@ -2,7 +2,7 @@ import { Story, Meta } from "@storybook/react"
 import Dropdown, { DropdownProps } from "components/Dropdown"
 import Button from "components/Button"
 import Icon from "components/Icon"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default {
   title: "Navigation/Dropdown",
@@ -24,7 +24,7 @@ export const Default: Story<DropdownProps> = () => {
       <Dropdown.Toggle>
         <Button>Page actions</Button>
       </Dropdown.Toggle>
-      <Dropdown.Menu>
+      <Dropdown.Menu onClose={false}>
         <Dropdown.Item eventKey="edit">Edit</Dropdown.Item>
         <Dropdown.Item eventKey="share">Share</Dropdown.Item>
         <Dropdown.Item eventKey="move">Move</Dropdown.Item>
@@ -154,3 +154,26 @@ export const Adaptive: Story<DropdownProps> = () => {
     </Dropdown>
   )
 }
+
+export const ControlMenuDisplay: Story<DropdownProps> = () => {
+  const [menuClosed, setMenuClosed] = useState(false)
+
+  useEffect(() => {
+    if (menuClosed) setMenuClosed(false)
+  }, [menuClosed])
+
+  return (
+    <Dropdown>
+      <Dropdown.Toggle>
+        <Button>Answer</Button>
+      </Dropdown.Toggle>
+      <Dropdown.Menu onClose={menuClosed}>
+        <div style={{ textAlign: "center"}}>A</div>
+        <div style={{ textAlign: "center"}}>B</div>
+        <div style={{ textAlign: "center"}}>C</div>
+        <Button style={{ width: "100%" }} onClick={() => setMenuClosed(true)}>Close</Button>
+      </Dropdown.Menu>
+    </Dropdown>
+  )
+}
+

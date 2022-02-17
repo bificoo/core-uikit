@@ -66,12 +66,16 @@ const Dropdown = ({ ...props }: DropdownProps) => {
     popupRef.current?.close()
   }
 
+  const handlePopupClose = () => {
+    popupRef.current?.close()
+  }
+
   useLayoutEffect(() => {
     setClientWidth(triggerRef.current?.clientWidth || 100)
   }, [])
 
   return (
-    <DropdownContext.Provider value={{ activeKey: eventKey, setActiveKey: handleClickItem }}>
+    <DropdownContext.Provider value={{ activeKey: eventKey, setActiveKey: handleClickItem, handlePopupClose }}>
       <div className={cx(styled.wrapper, props.className)} style={props.style} ref={triggerRef}>
         <Popup
           ref={popupRef}

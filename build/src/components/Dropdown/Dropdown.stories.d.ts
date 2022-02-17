@@ -8,3 +8,4 @@ export declare const Arrow: Story<DropdownProps>;
 export declare const MultiDropdown: Story<DropdownProps>;
 export declare const Disabled: Story<DropdownProps>;
 export declare const Adaptive: Story<DropdownProps>;
+export declare const ControlMenuDisplay: Story<DropdownProps>;

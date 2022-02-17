@@ -5,6 +5,7 @@ export declare type DropdownContextProps = {
     setActiveKey: (e: React.MouseEvent<Element, MouseEvent>, { eventKey }: {
         eventKey?: EventKey;
     }) => void;
+    handlePopupClose: () => void;
 };
 declare const DropdownContext: React.Context<DropdownContextProps>;
 export { DropdownContext };

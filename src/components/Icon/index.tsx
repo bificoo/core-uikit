@@ -1,4 +1,4 @@
-import Image from "./svg"
+import Svg from "./svg"
 import cx from "classnames"
 import styled from "./Icon.module.scss"
 import { WithClassName, WithStyle } from "types/common"
@@ -8,14 +8,14 @@ export const Icon = (props: { type: string } & WithClassName & WithStyle) => {
   const compName = camelCased.charAt(0).toUpperCase() + camelCased.slice(1)
 
   const compareIcon: { [key: string]: JSX.Element } = {
-    'ArrowUp': <Image.ArrowUp />,
-    'ArrowDown': <Image.ArrowDown />,
-    'ArrowLeft': <Image.ArrowLeft />,
-    'ArrowRight': <Image.ArrowRight />,
-    'Search': <Image.Search />,
-    'Group': <Image.Group />,
-    'User': <Image.User />,
-    'Information': <Image.Information />,
+    'ArrowUp': <Svg.ArrowUp />,
+    'ArrowDown': <Svg.ArrowDown />,
+    'ArrowLeft': <Svg.ArrowLeft />,
+    'ArrowRight': <Svg.ArrowRight />,
+    'Search': <Svg.Search />,
+    'Group': <Svg.Group />,
+    'User': <Svg.User />,
+    'Information': <Svg.Information />,
   }
 
   return (

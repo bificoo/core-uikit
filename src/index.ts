@@ -21,6 +21,7 @@ export { default as Dropdown } from "./components/Dropdown"
 export type {
   DropdownProps,
   DropdownSelectEventProps,
+  DropdownActions,
   DropdownItemProps,
   DropdownMenuProps,
   DropdownToggleProps,

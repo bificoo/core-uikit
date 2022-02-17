@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState, useLayoutEffect } from "react"
+import React, { useMemo, useRef, useState, useLayoutEffect, useImperativeHandle, forwardRef } from "react"
 import cx from "classnames"
 import Popup from "reactjs-popup"
 import { PopupActions, PopupProps } from "reactjs-popup/dist/types"
@@ -9,6 +9,12 @@ import styled from "./Dropdown.module.scss"
 import { WithComponent, EventKey } from "types/common"
 
 export type DropdownSelectEventProps = { eventKey?: EventKey }
+export type DropdownActions = {
+  /**
+   * Closed the menu.
+   */
+  close: () => void
+}
 export type DropdownProps = {
   /**
    * The default dropdown active key.
@@ -29,7 +35,12 @@ export type DropdownProps = {
   ) => void
 } & WithComponent
 
-const Dropdown = ({ ...props }: DropdownProps) => {
+export type Ref = HTMLDivElement
+
+const Dropdown = forwardRef<DropdownActions, DropdownProps>(function Dropdown(
+  props: DropdownProps,
+  ref,
+) {
   const [clientWidth, setClientWidth] = useState(100)
   const [eventKey, setEventKay] = useState(props.defaultActiveKey)
   const popupRef = useRef<PopupActions | null>(null)
@@ -66,16 +77,16 @@ const Dropdown = ({ ...props }: DropdownProps) => {
     popupRef.current?.close()
   }
 
-  const handlePopupClose = () => {
-    popupRef.current?.close()
-  }
-
   useLayoutEffect(() => {
     setClientWidth(triggerRef.current?.clientWidth || 100)
   }, [])
 
+  useImperativeHandle(ref, () => ({
+    close: () => popupRef.current && popupRef.current?.close()
+  }))
+
   return (
-    <DropdownContext.Provider value={{ activeKey: eventKey, setActiveKey: handleClickItem, handlePopupClose }}>
+    <DropdownContext.Provider value={{ activeKey: eventKey, setActiveKey: handleClickItem }}>
       <div className={cx(styled.wrapper, props.className)} style={props.style} ref={triggerRef}>
         <Popup
           ref={popupRef}
@@ -98,6 +109,6 @@ const Dropdown = ({ ...props }: DropdownProps) => {
       </div>
     </DropdownContext.Provider>
   )
-}
+})
 
 export default Dropdown

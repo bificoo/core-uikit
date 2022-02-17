@@ -1,8 +1,8 @@
 import { Story, Meta } from "@storybook/react"
-import Dropdown, { DropdownProps } from "components/Dropdown"
+import Dropdown, { DropdownProps, DropdownActions } from "components/Dropdown"
 import Button from "components/Button"
 import Icon from "components/Icon"
-import { useEffect, useState } from "react"
+import { useState, useRef } from "react"
 
 export default {
   title: "Navigation/Dropdown",
@@ -24,7 +24,7 @@ export const Default: Story<DropdownProps> = () => {
       <Dropdown.Toggle>
         <Button>Page actions</Button>
       </Dropdown.Toggle>
-      <Dropdown.Menu onClose={false}>
+      <Dropdown.Menu>
         <Dropdown.Item eventKey="edit">Edit</Dropdown.Item>
         <Dropdown.Item eventKey="share">Share</Dropdown.Item>
         <Dropdown.Item eventKey="move">Move</Dropdown.Item>
@@ -156,22 +156,18 @@ export const Adaptive: Story<DropdownProps> = () => {
 }
 
 export const ControlMenuDisplay: Story<DropdownProps> = () => {
-  const [menuClosed, setMenuClosed] = useState(false)
-
-  useEffect(() => {
-    if (menuClosed) setMenuClosed(false)
-  }, [menuClosed])
+  const dropdownRef = useRef<DropdownActions>(null);
 
   return (
-    <Dropdown>
+    <Dropdown ref={dropdownRef}>
       <Dropdown.Toggle>
         <Button>Answer</Button>
       </Dropdown.Toggle>
-      <Dropdown.Menu onClose={menuClosed}>
+      <Dropdown.Menu>
         <div style={{ textAlign: "center"}}>A</div>
         <div style={{ textAlign: "center"}}>B</div>
         <div style={{ textAlign: "center"}}>C</div>
-        <Button style={{ width: "100%" }} onClick={() => setMenuClosed(true)}>Close</Button>
+        <Button style={{ width: "100%" }} onClick={() => dropdownRef.current?.close()}>Close</Button>
       </Dropdown.Menu>
     </Dropdown>
   )

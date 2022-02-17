@@ -1,8 +1,8 @@
 import { Story, Meta } from "@storybook/react"
-import Dropdown, { DropdownProps } from "components/Dropdown"
+import Dropdown, { DropdownProps, DropdownActions } from "components/Dropdown"
 import Button from "components/Button"
 import Icon from "components/Icon"
-import { useState } from "react"
+import { useState, useRef } from "react"
 
 export default {
   title: "Navigation/Dropdown",
@@ -154,3 +154,22 @@ export const Adaptive: Story<DropdownProps> = () => {
     </Dropdown>
   )
 }
+
+export const ControlMenuDisplay: Story<DropdownProps> = () => {
+  const dropdownRef = useRef<DropdownActions>(null);
+
+  return (
+    <Dropdown ref={dropdownRef}>
+      <Dropdown.Toggle>
+        <Button>Answer</Button>
+      </Dropdown.Toggle>
+      <Dropdown.Menu>
+        <div style={{ textAlign: "center"}}>A</div>
+        <div style={{ textAlign: "center"}}>B</div>
+        <div style={{ textAlign: "center"}}>C</div>
+        <Button style={{ width: "100%" }} onClick={() => dropdownRef.current?.close()}>Close</Button>
+      </Dropdown.Menu>
+    </Dropdown>
+  )
+}
+

@@ -10,7 +10,7 @@ export { default as Tree } from "./components/Tree";
 export { default as Collapse } from "./components/Collapse";
 export type { CollapseProps } from "./components/Collapse";
 export { default as Dropdown } from "./components/Dropdown";
-export type { DropdownProps, DropdownSelectEventProps, DropdownItemProps, DropdownMenuProps, DropdownToggleProps, } from "./components/Dropdown";
+export type { DropdownProps, DropdownSelectEventProps, DropdownActions, DropdownItemProps, DropdownMenuProps, DropdownToggleProps, } from "./components/Dropdown";
 export { default as Form, InputGroup, Prepend, Append } from "./components/Form";
 export type { FormProps, FormLabelProps, FormInputProps, FormTextareaProps, FormCheckboxProps, FormRadioProps, FormMessageProps, FormGroupProps, InputGroupProps, PrependProps, AppendProps, } from "./components/Form";
 export { default as DatePicker } from "./components/DatePicker";

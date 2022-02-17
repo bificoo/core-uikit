@@ -6,6 +6,5 @@ import styled from './DropdownMenu.module.scss.js';
 var DropdownMenu = function (props) {
     return (jsx("div", __assign({ className: cx(styled.wrapper, props.className), style: props.style }, { children: props.children }), void 0));
 };
-DropdownMenu.displayName = "DropdownMenu";
 
 export { DropdownMenu as default };

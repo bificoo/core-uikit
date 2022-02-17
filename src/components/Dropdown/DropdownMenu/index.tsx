@@ -1,4 +1,3 @@
-import React from "react"
 import cx from "classnames"
 import styled from "./DropdownMenu.module.scss"
 import { WithComponent } from "types/common"
@@ -12,7 +11,5 @@ const DropdownMenu = (props: DropdownMenuProps) => {
     </div>
   )
 }
-
-DropdownMenu.displayName = "DropdownMenu"
 
 export default DropdownMenu

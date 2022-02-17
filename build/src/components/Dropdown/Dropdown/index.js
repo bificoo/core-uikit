@@ -1,6 +1,6 @@
-import { __rest, __assign } from '../../../../node_modules/tslib/tslib.es6.js';
+import { __assign } from '../../../../node_modules/tslib/tslib.es6.js';
 import { jsx } from 'react/jsx-runtime';
-import React__default, { useState, useRef, useMemo, useLayoutEffect } from 'react';
+import React__default, { forwardRef, useState, useRef, useMemo, useLayoutEffect, useImperativeHandle } from 'react';
 import cx from 'classnames';
 import Popup from '../../../../node_modules/reactjs-popup/dist/reactjs-popup.esm.js';
 import { DropdownContext } from '../DropdownContext.js';
@@ -8,10 +8,9 @@ import DropdownToggle from '../DropdownToggle/index.js';
 import DropdownMenu from '../DropdownMenu/index.js';
 import styled from './Dropdown.module.scss.js';
 
-var Dropdown = function (_a) {
-    var props = __rest(_a, []);
-    var _b = useState(100), clientWidth = _b[0], setClientWidth = _b[1];
-    var _c = useState(props.defaultActiveKey), eventKey = _c[0], setEventKay = _c[1];
+var Dropdown = forwardRef(function Dropdown(props, ref) {
+    var _a = useState(100), clientWidth = _a[0], setClientWidth = _a[1];
+    var _b = useState(props.defaultActiveKey), eventKey = _b[0], setEventKay = _b[1];
     var popupRef = useRef(null);
     var triggerRef = useRef(null);
     var dropdown = useMemo(function () {
@@ -47,11 +46,14 @@ var Dropdown = function (_a) {
         var _a;
         setClientWidth(((_a = triggerRef.current) === null || _a === void 0 ? void 0 : _a.clientWidth) || 100);
     }, []);
+    useImperativeHandle(ref, function () { return ({
+        close: function () { var _a; return popupRef.current && ((_a = popupRef.current) === null || _a === void 0 ? void 0 : _a.close()); }
+    }); });
     return (jsx(DropdownContext.Provider, __assign({ value: { activeKey: eventKey, setActiveKey: handleClickItem } }, { children: jsx("div", __assign({ className: cx(styled.wrapper, props.className), style: props.style, ref: triggerRef }, { children: jsx(Popup, __assign({ ref: popupRef, className: "dropdown", trigger: function (open) { return dropdown.trigger && React__default.cloneElement(dropdown.trigger, { open: open }); }, position: ["bottom left"], disabled: props.disabled, on: "click", closeOnDocumentClick: true, mouseLeaveDelay: 300, mouseEnterDelay: 0, arrow: false, contentStyle: {
                     border: "none",
                     padding: "8px",
                     boxShadow: "none",
                 } }, { children: dropdown.menu }), void 0) }), void 0) }), void 0));
-};
+});
 
 export { Dropdown as default };

@@ -11,7 +11,7 @@ import { WithComponent, EventKey } from "types/common"
 export type DropdownSelectEventProps = { eventKey?: EventKey }
 export type DropdownActions = {
   /**
-   * Closed the menu.
+   * Close the menu.
    */
   close: () => void
 }
@@ -35,12 +35,7 @@ export type DropdownProps = {
   ) => void
 } & WithComponent
 
-export type Ref = HTMLDivElement
-
-const Dropdown = forwardRef<DropdownActions, DropdownProps>(function Dropdown(
-  props: DropdownProps,
-  ref,
-) {
+const Dropdown = forwardRef<DropdownActions, DropdownProps>(function Dropdown(props, ref) {
   const [clientWidth, setClientWidth] = useState(100)
   const [eventKey, setEventKay] = useState(props.defaultActiveKey)
   const popupRef = useRef<PopupActions | null>(null)

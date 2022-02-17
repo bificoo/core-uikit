@@ -6,7 +6,7 @@ export declare type DropdownSelectEventProps = {
 };
 export declare type DropdownActions = {
     /**
-     * Closed the menu.
+     * Close the menu.
      */
     close: () => void;
 };
@@ -25,7 +25,6 @@ export declare type DropdownProps = {
      */
     onSelect?: (e: React.MouseEvent<Element, MouseEvent>, { eventKey }: DropdownSelectEventProps) => void;
 } & WithComponent;
-export declare type Ref = HTMLDivElement;
 declare const Dropdown: React.ForwardRefExoticComponent<{
     /**
      * The default dropdown active key.

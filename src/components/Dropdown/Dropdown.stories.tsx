@@ -60,7 +60,7 @@ export const Arrow: Story<DropdownProps> = () => {
       <Dropdown.Toggle>
         <Button>
           Page actions
-          <Icon.Arrow />
+          <Icon type="arrow-down" />
         </Button>
       </Dropdown.Toggle>
       <Dropdown.Menu>
@@ -82,7 +82,7 @@ export const MultiDropdown: Story<DropdownProps> = () => {
         <Dropdown.Toggle>
           <Button>
             Page actions1
-            <Icon.Arrow />
+            <Icon type="arrow-down" />
           </Button>
         </Dropdown.Toggle>
         <Dropdown.Menu>
@@ -98,7 +98,7 @@ export const MultiDropdown: Story<DropdownProps> = () => {
         <Dropdown.Toggle>
           <Button>
             Page actions2
-            <Icon.Arrow />
+            <Icon type="arrow-down" />
           </Button>
         </Dropdown.Toggle>
         <Dropdown.Menu>

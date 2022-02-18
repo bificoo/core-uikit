@@ -9,7 +9,6 @@ export { default as Form } from './components/Form/index.js';
 import '../node_modules/react-day-picker/lib/style.css.js';
 export { default as DatePicker } from './components/DatePicker/DatePicker/index.js';
 export { default as RangePicker } from './components/DatePicker/RangePicker/index.js';
-export { default as Icon } from './components/Icon/index.js';
 export { default as Modal } from './components/Modal/index.js';
 export { default as Progress } from './components/Progress/index.js';
 export { default as Select } from './components/Select/index.js';

@@ -1,4 +1,4 @@
-import Icon from "components/Icon"
+import Icon from "components/Icon/index"
 import CollapseContext from "../CollapseContext"
 import styled from "./CollapseHeader.module.scss"
 import { useContext } from "react"
@@ -15,7 +15,7 @@ const CollapseHeader = (props: CollapseHeaderProps) => {
       onClick={() => setExpanded(!expanded)}
       style={props.style}>
       {props.children}{" "}
-      <Icon.Arrow direction={!expanded ? "up" : "down"} style={{ marginLeft: "4px" }} />
+      <Icon type={!expanded ? "arrow-up" : "arrow-down"} style={{ marginLeft: "4px" }} />
     </header>
   )
 }

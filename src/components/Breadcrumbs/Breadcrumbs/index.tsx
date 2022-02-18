@@ -1,5 +1,5 @@
 import React from "react"
-import Icon from "components/Icon"
+import Icon from "components/Icon/index"
 import styled from "./Breadcrumbs.module.scss"
 import { WithChildren } from "types/common"
 
@@ -15,7 +15,7 @@ const Breadcrumbs = (props: BreadcrumbsProps) => {
         return (
           <>
             {child}
-            {isNode && <Icon.Arrow direction="right" className={styled.icon} />}
+            {isNode && <Icon type="arrow-right" className={styled.icon} />}
           </>
         )
       })}

@@ -4,7 +4,7 @@ var _path, _path2, _path3, _path4, _path5;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-const SvgGroupIcon = props => /*#__PURE__*/React.createElement("svg", _extends({
+const SvgGroup = props => /*#__PURE__*/React.createElement("svg", _extends({
   width: 24,
   height: 24,
   fill: "none",
@@ -41,4 +41,4 @@ const SvgGroupIcon = props => /*#__PURE__*/React.createElement("svg", _extends({
   strokeLinejoin: "round"
 })));
 
-export { SvgGroupIcon as ReactComponent };
+export { SvgGroup as ReactComponent };

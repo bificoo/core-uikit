@@ -1,5 +1,5 @@
 import { IconItem, IconGallery } from "@storybook/addon-docs";
-import Icon, { IconArrowProps } from "components/Icon";
+import Icon from "components/Icon";
 
 <Meta title="Icon" component={Icon} />
 
@@ -7,27 +7,27 @@ import Icon, { IconArrowProps } from "components/Icon";
 
 <IconGallery>
   <IconItem name="arrow-up">
-    <Icon.Arrow direction="up" />
+    <Icon type="arrow-up" />
   </IconItem>
   <IconItem name="arrow-down">
-    <Icon.Arrow />
+    <Icon type="arrow-down" />
   </IconItem>
   <IconItem name="arrow-right">
-    <Icon.Arrow direction="right" />
+    <Icon type="arrow-right" />
   </IconItem>
   <IconItem name="arrow-left">
-    <Icon.Arrow direction="left" />
+    <Icon type="arrow-left" />
   </IconItem>
   <IconItem name="search">
-    <Icon.Search />
+    <Icon type="search" />
   </IconItem>
   <IconItem name="group">
-    <Icon.Group />
+    <Icon type="group" />
   </IconItem>
   <IconItem name="user">
-    <Icon.User />
+    <Icon type="user" />
   </IconItem>
   <IconItem name="information">
-    <Icon.Information />
+    <Icon type="information" />
   </IconItem>
 </IconGallery>

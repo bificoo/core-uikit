@@ -6,7 +6,7 @@ import styled from './Select.module.scss.js';
 import { ReactComponent as SvgClear } from './svg/clear.svg.js';
 import { ReactComponent as SvgRemove } from './svg/remove.svg.js';
 import Popup from '../../../node_modules/reactjs-popup/dist/reactjs-popup.esm.js';
-import Icon from '../Icon/index.js';
+import { Icon } from '../Icon/index.js';
 import SelectOption from './SelectOption/index.js';
 
 var Select = function (_a) {
@@ -43,7 +43,7 @@ var Select = function (_a) {
                     var _a, _b;
                     return (jsxs("div", __assign({ className: cx(styled.control, (_a = {}, _a[styled.active] = open, _a), (_b = {}, _b[styled.disabled] = props.disabled, _b)) }, { children: [props.placeholder && selected.length === 0 && (jsx("div", __assign({ className: styled.placeholder }, { children: props.placeholder }), void 0)), jsx("div", __assign({ className: styled["vale-container"] }, { children: isMulti ? (jsx(Fragment, { children: selected.map(function (item, index) { return (jsxs("div", __assign({ className: styled["multi-value"] }, { children: [jsx("div", __assign({ className: styled.label }, { children: item.value }), void 0), !props.disabled && (jsx("div", __assign({ className: styled.remove, onClick: function (e) { return handleRemoveItem(e, item); } }, { children: jsx(SvgRemove, {}, void 0) }), void 0))] }), index)); }) }, void 0)) : (jsx(Fragment, { children: selected.map(function (item, index) {
                                         return (jsx("div", __assign({ className: styled["single-value"] }, { children: jsx("div", __assign({ className: styled.label }, { children: item.value }), void 0) }), index));
-                                    }) }, void 0)) }), void 0), jsxs("div", __assign({ className: styled.indicator }, { children: [isMulti && selected.length > 0 && (jsx("div", __assign({ className: styled["clear-indicator"], onClick: handleClear }, { children: jsx("span", { children: !props.disabled && jsx(SvgClear, {}, void 0) }, void 0) }), void 0)), jsx("div", __assign({ className: styled["dropdown-indicator"] }, { children: jsx(Icon.Arrow, {}, void 0) }), void 0)] }), void 0)] }), void 0));
+                                    }) }, void 0)) }), void 0), jsxs("div", __assign({ className: styled.indicator }, { children: [isMulti && selected.length > 0 && (jsx("div", __assign({ className: styled["clear-indicator"], onClick: handleClear }, { children: jsx("span", { children: !props.disabled && jsx(SvgClear, {}, void 0) }, void 0) }), void 0)), jsx("div", __assign({ className: styled["dropdown-indicator"] }, { children: jsx(Icon, { type: "arrow-down" }, void 0) }), void 0)] }), void 0)] }), void 0));
                 }, position: "bottom left", on: "click", closeOnDocumentClick: true, mouseLeaveDelay: 300, mouseEnterDelay: 0, arrow: false, disabled: props.disabled, contentStyle: {
                     border: "none",
                     paddingTop: "8px",

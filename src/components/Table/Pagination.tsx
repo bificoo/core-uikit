@@ -68,7 +68,7 @@ const Pagination = ({ activePage = 1, maxButtons = 5, ...props }: PaginationProp
           <Dropdown className={styled.limit} onSelect={handleSelectLimit}>
             <Dropdown.Toggle>
               <Button variant="secondary" style={{ minWidth: "75px" }}>
-                {props.limit} <Icon type="arrow-down" />
+                {props.limit} <Icon name="arrow-down" />
               </Button>
             </Dropdown.Toggle>
             <Dropdown.Menu>
@@ -98,7 +98,7 @@ const Pagination = ({ activePage = 1, maxButtons = 5, ...props }: PaginationProp
             [styled.disabled]: activePage === 1,
           })}
           onClick={() => activePage !== 1 && goto(activePage - 1)}>
-          <Icon type="arrow-left" />
+          <Icon name="arrow-left" />
         </div>
         {range.map(page => (
           <div
@@ -115,7 +115,7 @@ const Pagination = ({ activePage = 1, maxButtons = 5, ...props }: PaginationProp
             [styled.disabled]: activePage === props.pages,
           })}
           onClick={() => activePage !== props.pages && goto(activePage + 1)}>
-          <Icon type="arrow-right" />
+          <Icon name="arrow-right" />
         </div>
       </div>
     </div>

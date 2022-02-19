@@ -15,7 +15,7 @@ const Breadcrumbs = (props: BreadcrumbsProps) => {
         return (
           <>
             {child}
-            {isNode && <Icon type="arrow-right" className={styled.icon} />}
+            {isNode && <Icon name="arrow-right" className={styled.icon} />}
           </>
         )
       })}

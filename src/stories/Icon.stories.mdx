@@ -1,61 +1,41 @@
-import { IconItem, IconGallery, ArgsTable } from "@storybook/addon-docs";
+import { Meta, IconItem, IconGallery, ArgsTable } from "@storybook/addon-docs";
 import Icon from "components/Icon";
 
 <Meta title="Icon" component={Icon} />
 
 # Icon
-<br/>
-
-### Use
 
 ```
 import Icon from "components/Icon";
 
-<Icon type="arrow-up" />
+<Icon name="arrow-up" />
 ```
-
-<!-- const argTypes = {
-  label: {
-    name: 'label',
-    type: { name: 'string', required: false },
-    defaultValue: 'Hello',
-    description: 'demo description',
-    table: {
-      type: { summary: 'string' },
-      defaultValue: { summary: 'Hello' },
-    },
-    control: {
-      type: 'text'
-    }
-  }
-} -->
 
 <ArgsTable />
 
-
 <IconGallery>
   <IconItem name="arrow-up">
-    <Icon type="arrow-up" />
+    <Icon name="arrow-up" />
   </IconItem>
   <IconItem name="arrow-down">
-    <Icon type="arrow-down" />
+    <Icon name="arrow-down" />
   </IconItem>
   <IconItem name="arrow-right">
-    <Icon type="arrow-right" />
+    <Icon name="arrow-right" />
   </IconItem>
   <IconItem name="arrow-left">
-    <Icon type="arrow-left" />
+    <Icon name="arrow-left" />
   </IconItem>
   <IconItem name="search">
-    <Icon type="search" />
+    <Icon name="search" />
   </IconItem>
   <IconItem name="group">
-    <Icon type="group" />
+    <Icon name="group" />
   </IconItem>
   <IconItem name="user">
-    <Icon type="user" />
+    <Icon name="user" />
   </IconItem>
   <IconItem name="information">
-    <Icon type="information" />
+    <Icon name="information" />
   </IconItem>
 </IconGallery>

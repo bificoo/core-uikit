@@ -131,7 +131,7 @@ const Select = ({ isMulti = false, ...props }: SelectProps) => {
                   </div>
                 )}
                 <div className={styled["dropdown-indicator"]}>
-                  <Icon type="arrow-down" />
+                  <Icon name="arrow-down" />
                 </div>
               </div>
             </div>

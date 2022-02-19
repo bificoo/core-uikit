@@ -3,8 +3,16 @@ import cx from "classnames"
 import styled from "./Icon.module.scss"
 import { WithClassName, WithStyle } from "types/common"
 
-export const Icon = (props: { type: string } & WithClassName & WithStyle) => {
-  const camelCased = props.type.replace(/-([a-z])/g, g => g[1].toUpperCase())
+export type IconProps = {
+  /**
+   * Fill in the icon name.<br/>
+   * ex: `arrow-up`、`search`、`information`
+   */
+  name: string
+} & WithClassName & WithStyle
+
+export const Icon = (props: IconProps) => {
+  const camelCased = props.name.replace(/-([a-z])/g, g => g[1].toUpperCase())
   const compName = camelCased.charAt(0).toUpperCase() + camelCased.slice(1)
 
   const compareIcon: { [key: string]: JSX.Element } = {

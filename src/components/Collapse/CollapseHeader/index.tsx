@@ -15,7 +15,7 @@ const CollapseHeader = (props: CollapseHeaderProps) => {
       onClick={() => setExpanded(!expanded)}
       style={props.style}>
       {props.children}{" "}
-      <Icon type={!expanded ? "arrow-up" : "arrow-down"} style={{ marginLeft: "4px" }} />
+      <Icon name={!expanded ? "arrow-up" : "arrow-down"} style={{ marginLeft: "4px" }} />
     </header>
   )
 }

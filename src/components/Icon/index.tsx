@@ -5,8 +5,7 @@ import { WithClassName, WithStyle } from "types/common"
 
 export type IconProps = {
   /**
-   * Fill in the icon name.<br/>
-   * ex: `arrow-up`、`search`、`information`
+   * Fill in the icon name.
    */
   name: string
 } & WithClassName & WithStyle

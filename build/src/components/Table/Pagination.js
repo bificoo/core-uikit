@@ -4,7 +4,7 @@ import cx from 'classnames';
 import styled from './Pagination.module.scss.js';
 import Button from '../Button/index.js';
 import Dropdown from '../Dropdown/index.js';
-import Icon from '../Icon/index.js';
+import { Icon } from '../Icon/index.js';
 
 var getRange = function (_a) {
     var activePage = _a.activePage, pages = _a.pages, maxButtons = _a.maxButtons;
@@ -42,16 +42,16 @@ var Pagination = function (_a) {
             props.onLimitChange(+eventKey);
         }
     };
-    return (jsxs("div", __assign({ className: styled.wrapper }, { children: [jsxs("div", __assign({ className: styled.pager }, { children: [props.limitMenu && props.limitMenu.length !== 0 && (jsxs(Dropdown, __assign({ className: styled.limit, onSelect: handleSelectLimit }, { children: [jsx(Dropdown.Toggle, { children: jsxs(Button, __assign({ variant: "secondary", style: { minWidth: "75px" } }, { children: [props.limit, " ", jsx(Icon.Arrow, {}, void 0)] }), void 0) }, void 0), jsx(Dropdown.Menu, { children: props.limitMenu.map(function (limit) { return (jsx(Dropdown.Item, __assign({ eventKey: limit }, { children: limit }), limit)); }) }, void 0)] }), void 0)), jsx("span", __assign({ className: styled.slash }, { children: "/ \u9801" }), void 0), props.renderTotal && (jsxs(Fragment, { children: [jsx("div", { className: styled.divider }, void 0), jsx("div", __assign({ className: styled.total }, { children: typeof props.renderTotal === "function" && (props.renderTotal()) }), void 0)] }, void 0))] }), void 0), jsxs("div", __assign({ className: styled.pages }, { children: [jsx("div", __assign({ className: cx(styled.previous, (_b = {},
+    return (jsxs("div", __assign({ className: styled.wrapper }, { children: [jsxs("div", __assign({ className: styled.pager }, { children: [props.limitMenu && props.limitMenu.length !== 0 && (jsxs(Dropdown, __assign({ className: styled.limit, onSelect: handleSelectLimit }, { children: [jsx(Dropdown.Toggle, { children: jsxs(Button, __assign({ variant: "secondary", style: { minWidth: "75px" } }, { children: [props.limit, " ", jsx(Icon, { type: "arrow-down" }, void 0)] }), void 0) }, void 0), jsx(Dropdown.Menu, { children: props.limitMenu.map(function (limit) { return (jsx(Dropdown.Item, __assign({ eventKey: limit }, { children: limit }), limit)); }) }, void 0)] }), void 0)), jsx("span", __assign({ className: styled.slash }, { children: "/ \u9801" }), void 0), props.renderTotal && (jsxs(Fragment, { children: [jsx("div", { className: styled.divider }, void 0), jsx("div", __assign({ className: styled.total }, { children: typeof props.renderTotal === "function" && (props.renderTotal()) }), void 0)] }, void 0))] }), void 0), jsxs("div", __assign({ className: styled.pages }, { children: [jsx("div", __assign({ className: cx(styled.previous, (_b = {},
                             _b[styled.disabled] = activePage === 1,
-                            _b)), onClick: function () { return activePage !== 1 && goto(activePage - 1); } }, { children: jsx(Icon.Arrow, { direction: "left" }, void 0) }), void 0), range.map(function (page) {
+                            _b)), onClick: function () { return activePage !== 1 && goto(activePage - 1); } }, { children: jsx(Icon, { type: "arrow-left" }, void 0) }), void 0), range.map(function (page) {
                         var _a;
                         return (jsx("div", __assign({ className: cx(styled.page, (_a = {},
                                 _a[styled.active] = page === activePage,
                                 _a)), onClick: function () { return goto(page); } }, { children: page }), "page".concat(page)));
                     }), jsx("div", __assign({ className: cx(styled.next, (_c = {},
                             _c[styled.disabled] = activePage === props.pages,
-                            _c)), onClick: function () { return activePage !== props.pages && goto(activePage + 1); } }, { children: jsx(Icon.Arrow, { direction: "right" }, void 0) }), void 0)] }), void 0)] }), void 0));
+                            _c)), onClick: function () { return activePage !== props.pages && goto(activePage + 1); } }, { children: jsx(Icon, { type: "arrow-right" }, void 0) }), void 0)] }), void 0)] }), void 0));
 };
 
 export { Pagination as default };

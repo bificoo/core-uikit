@@ -5,7 +5,7 @@ import { ReactComponent as ClearIcon } from "./svg/clear.svg"
 import { ReactComponent as RemoveIcon } from "./svg/remove.svg"
 import Popup from "reactjs-popup"
 import { PopupActions } from "reactjs-popup/dist/types"
-import Icon from "components/Icon"
+import Icon from "components/Icon/index"
 import SelectOption from "./SelectOption"
 import { WithComponent, EventKey } from "types/common"
 
@@ -131,7 +131,7 @@ const Select = ({ isMulti = false, ...props }: SelectProps) => {
                   </div>
                 )}
                 <div className={styled["dropdown-indicator"]}>
-                  <Icon.Arrow />
+                  <Icon name="arrow-down" />
                 </div>
               </div>
             </div>

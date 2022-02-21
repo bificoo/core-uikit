@@ -2,7 +2,7 @@ import cx from "classnames"
 import styled from "./Pagination.module.scss"
 import Button from "components/Button"
 import Dropdown from "components/Dropdown"
-import Icon from "components/Icon"
+import Icon from "components/Icon/index"
 import { DropdownSelectEventProps } from "components/Dropdown"
 import React from "react"
 
@@ -68,7 +68,7 @@ const Pagination = ({ activePage = 1, maxButtons = 5, ...props }: PaginationProp
           <Dropdown className={styled.limit} onSelect={handleSelectLimit}>
             <Dropdown.Toggle>
               <Button variant="secondary" style={{ minWidth: "75px" }}>
-                {props.limit} <Icon.Arrow />
+                {props.limit} <Icon name="arrow-down" />
               </Button>
             </Dropdown.Toggle>
             <Dropdown.Menu>
@@ -98,7 +98,7 @@ const Pagination = ({ activePage = 1, maxButtons = 5, ...props }: PaginationProp
             [styled.disabled]: activePage === 1,
           })}
           onClick={() => activePage !== 1 && goto(activePage - 1)}>
-          <Icon.Arrow direction="left" />
+          <Icon name="arrow-left" />
         </div>
         {range.map(page => (
           <div
@@ -115,7 +115,7 @@ const Pagination = ({ activePage = 1, maxButtons = 5, ...props }: PaginationProp
             [styled.disabled]: activePage === props.pages,
           })}
           onClick={() => activePage !== props.pages && goto(activePage + 1)}>
-          <Icon.Arrow direction="right" />
+          <Icon name="arrow-right" />
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import { __assign } from '../../../../node_modules/tslib/tslib.es6.js';
 import { jsx, jsxs, Fragment } from 'react/jsx-runtime';
 import React__default from 'react';
-import Icon from '../../Icon/index.js';
+import { Icon } from '../../Icon/index.js';
 import styled from './Breadcrumbs.module.scss.js';
 
 var Breadcrumbs = function (props) {
@@ -10,7 +10,7 @@ var Breadcrumbs = function (props) {
             if (!React__default.isValidElement(child))
                 return;
             var isNode = (i < childrenLength - 1);
-            return (jsxs(Fragment, { children: [child, isNode && jsx(Icon.Arrow, { direction: "right", className: styled.icon }, void 0)] }, void 0));
+            return (jsxs(Fragment, { children: [child, isNode && jsx(Icon, { type: "arrow-right", className: styled.icon }, void 0)] }, void 0));
         }) }), void 0));
 };
 

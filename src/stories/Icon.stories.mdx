@@ -1,33 +1,44 @@
-import { IconItem, IconGallery } from "@storybook/addon-docs";
-import Icon, { IconArrowProps } from "components/Icon";
+import { Meta, IconItem, IconGallery, ArgsTable } from "@storybook/addon-docs";
+import Icon from "components/Icon";
 
 <Meta title="Icon" component={Icon} />
 
 # Icon
 
+<br/>
+
+### Usage ###
+
+導入路徑 `import Icon from "components/Icon";`
+
+選擇一個圖標名稱複製到剪貼板，並貼至組件參數 `name` 之中 (ex: `<Icon name="arrow-up" />`)
+
+
+<ArgsTable />
+
 <IconGallery>
   <IconItem name="arrow-up">
-    <Icon.Arrow direction="up" />
+    <Icon name="arrow-up" />
   </IconItem>
   <IconItem name="arrow-down">
-    <Icon.Arrow />
+    <Icon name="arrow-down" />
   </IconItem>
   <IconItem name="arrow-right">
-    <Icon.Arrow direction="right" />
+    <Icon name="arrow-right" />
   </IconItem>
   <IconItem name="arrow-left">
-    <Icon.Arrow direction="left" />
+    <Icon name="arrow-left" />
   </IconItem>
   <IconItem name="search">
-    <Icon.Search />
+    <Icon name="search" />
   </IconItem>
   <IconItem name="group">
-    <Icon.Group />
+    <Icon name="group" />
   </IconItem>
   <IconItem name="user">
-    <Icon.User />
+    <Icon name="user" />
   </IconItem>
   <IconItem name="information">
-    <Icon.Information />
+    <Icon name="information" />
   </IconItem>
 </IconGallery>

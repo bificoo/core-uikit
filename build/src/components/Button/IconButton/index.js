@@ -1,7 +1,7 @@
 import { __assign } from '../../../../node_modules/tslib/tslib.es6.js';
 import { jsx } from 'react/jsx-runtime';
 import React__default from 'react';
-import Icon from '../../Icon/index.js';
+import { Icon } from '../../Icon/index.js';
 import { Button } from '../Button/index.js';
 
 var IconButton = function (props) {
@@ -9,7 +9,7 @@ var IconButton = function (props) {
     React__default.Children.forEach(props.children, function (child, index) {
         if (!React__default.isValidElement(child))
             return;
-        if (child.type === Icon.Arrow) {
+        if (child.type === Icon) {
             if (index === 0)
                 iconConfig.leftIcon = true;
             else
@@ -18,7 +18,7 @@ var IconButton = function (props) {
     });
     var customChildren = [];
     React__default.Children.forEach(props.children, function (child, index) {
-        if (React__default.isValidElement(child) && child.type === Icon.Arrow) {
+        if (React__default.isValidElement(child) && child.type === Icon) {
             customChildren.push(React__default.cloneElement(child, __assign(__assign({}, child.props), { style: index === 0 ? { marginRight: "4px" } : { marginLeft: "4px" }, key: index })));
         }
         else if (child) {

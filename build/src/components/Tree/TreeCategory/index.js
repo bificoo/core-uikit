@@ -1,7 +1,7 @@
 import { __spreadArray, __assign } from '../../../../node_modules/tslib/tslib.es6.js';
 import { jsxs, jsx } from 'react/jsx-runtime';
 import React__default, { useContext, useRef, useEffect } from 'react';
-import Icon from '../../Icon/index.js';
+import { Icon } from '../../Icon/index.js';
 import styled from './TreeCategory.module.scss.js';
 import cx from 'classnames';
 import { TreeContext } from '../TreeContext.js';
@@ -27,7 +27,7 @@ var TreeCategory = function (props) {
                     }
                     expandedRef.current = !expandedRef.current;
                     onNodeToggle(result);
-                } }, { children: [jsx(Icon.Arrow, { direction: (expanded === null || expanded === void 0 ? void 0 : expanded.some(function (el) { return el === props.eventKey; })) ? "down" : "right" }, void 0), jsx("div", __assign({ className: styled.name }, { children: props.renderName }), void 0)] }), void 0), jsx("div", __assign({ className: cx(styled.content, (_b = {}, _b[styled.expanded] = expanded === null || expanded === void 0 ? void 0 : expanded.some(function (el) { return el === props.eventKey; }), _b)) }, { children: React__default.Children.map(props.children, function (child, index) {
+                } }, { children: [jsx(Icon, { type: (expanded === null || expanded === void 0 ? void 0 : expanded.some(function (el) { return el === props.eventKey; })) ? "arrow-down" : "arrow-right" }, void 0), jsx("div", __assign({ className: styled.name }, { children: props.renderName }), void 0)] }), void 0), jsx("div", __assign({ className: cx(styled.content, (_b = {}, _b[styled.expanded] = expanded === null || expanded === void 0 ? void 0 : expanded.some(function (el) { return el === props.eventKey; }), _b)) }, { children: React__default.Children.map(props.children, function (child, index) {
                     if (React__default.isValidElement(child)) {
                         return React__default.cloneElement(child, __assign(__assign({}, child.props), { nodes: nodes, key: index }));
                     }

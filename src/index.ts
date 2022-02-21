@@ -48,9 +48,6 @@ export type { DatePickerProps } from "./components/DatePicker"
 export { RangePicker } from "./components/DatePicker"
 export type { RangePickerProps } from "./components/DatePicker"
 
-export { default as Icon } from "./components/Icon"
-export type { IconArrowProps } from "./components/Icon"
-
 export { default as Modal } from "./components/Modal"
 export type { ModalProps } from "./components/Modal"
 

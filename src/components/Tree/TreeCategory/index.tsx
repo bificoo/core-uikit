@@ -46,7 +46,7 @@ const TreeCategory = (props: TreeCategoryProps) => {
           onNodeToggle(result)
         }
         }>
-        <Icon.Arrow direction={expanded?.some(el => el === props.eventKey) ? "down" : "right"} />
+        <Icon name={expanded?.some(el => el === props.eventKey) ? "arrow-down" : "arrow-right"} />
         <div className={styled.name}>{props.renderName}</div>
       </div>
       <div className={cx(styled.content, { [styled.expanded]: expanded?.some(el => el === props.eventKey) })}>

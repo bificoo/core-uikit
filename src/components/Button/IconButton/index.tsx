@@ -1,5 +1,5 @@
 import React from "react"
-import Icon from "components/Icon"
+import Icon from "components/Icon/index"
 import { Button, ButtonProps } from "components/Button/Button"
 
 export type IconButtonProps = ButtonProps
@@ -8,7 +8,7 @@ const IconButton = (props: IconButtonProps) => {
   const iconConfig = { leftIcon: false, rightIcon: false }
   React.Children.forEach(props.children, (child, index) => {
     if (!React.isValidElement(child)) return
-    if (child.type === Icon.Arrow) {
+    if (child.type === Icon) {
       if (index === 0) iconConfig.leftIcon = true
       else iconConfig.rightIcon = true
     }
@@ -16,7 +16,7 @@ const IconButton = (props: IconButtonProps) => {
 
   const customChildren: React.ReactNode[] = []
   React.Children.forEach(props.children, (child, index) => {
-    if (React.isValidElement(child) && child.type === Icon.Arrow) {
+    if (React.isValidElement(child) && child.type === Icon) {
       customChildren.push(
         React.cloneElement(child, {
           ...child.props,

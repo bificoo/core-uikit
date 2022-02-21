@@ -1,63 +1,45 @@
-import { useRef, useEffect } from "react"
-import Popup from "reactjs-popup"
-import ModalDialog, { ModalDialogProps } from "../ModalDialog"
-import { PopupProps } from "reactjs-popup/dist/types"
+import ModalPopup from "../ModalPopup";
+import ModalDialog from "../ModalDialog";
+import Header from "../ModalHeader";
+import Body from "../ModalBody";
+import Footer from "../ModalFooter";
+import { ModalPopupProps } from "../ModalPopup";
+import { ModalBodyProps } from "../ModalBody";
+import { ModalHeaderProps } from "../ModalHeader";
+import { ModalFooterProps } from "../ModalFooter";
+import { PopupProps } from "reactjs-popup/dist/types";
 
-export type ModalProps = {
-  /**
-   * Should the modal appear on screen or not
-   */
-  open?: boolean
-  backdrop?: boolean
-  custom?: boolean
-  onExited?: () => void
-} & ModalDialogProps 
-  & Partial<Pick<PopupProps, "open" | "closeOnDocumentClick" | "onClose" | "children">>
+export type ModalProps = ModalPopupProps &
+  ModalBodyProps &
+  ModalHeaderProps &
+  ModalFooterProps &
+  Partial<
+    Pick<PopupProps, "open" | "closeOnDocumentClick" | "onClose" | "children">
+  >;
 
-const Modal = ({ open = false, backdrop = true, custom = false, onExited, ...props }: ModalProps) => {
-  const opened = useRef(false)
-
-  useEffect(() => {
-    if (open) opened.current = true
-  }, [open])
-
-  useEffect(() => {
-    if (!open && opened.current) onExited && onExited()
-  }, [open, onExited])
-
+const Modal = (props: ModalProps) => {
   return (
-    <Popup
-      modal
-      lockScroll
-      open={open}
-      closeOnDocumentClick={backdrop}
-      closeOnEscape
+    <ModalPopup
+      open={props.open}
+      closeOnDocumentClick={props.backdrop}
+      onExited={props.onExited}
       onClose={props.onClose}
-      contentStyle={{
-        background: "transparent",
-        border: "none",
-        width: "auto",
-      }}
-      overlayStyle={{
-        backgroundColor: "#091e428a",
-      }}>
-      {custom && props.children}
-      {!custom && (
-        <ModalDialog
-          title={props.title}
-          content={props.content}
+    >
+      <ModalDialog>
+        <Header title={props.title} />
+        <Body content={props.content}>{props.children}</Body>
+        <Footer
           confirmText={props.confirmText}
           confirmButtonProps={props.confirmButtonProps}
           cancelText={props.cancelText}
           cancelButtonProps={props.cancelButtonProps}
           onConfirm={props.onConfirm}
           onCancel={props.onCancel}
-          onClose={props.onClose}>
-          {props.children}
-        </ModalDialog>
-      )}
-    </Popup>
-  )
-}
+          onClose={props.onClose}
+        />
+      </ModalDialog>
+    </ModalPopup>
+  );
+};
 
-export default Modal
+export default Modal;

@@ -1,11 +1,4 @@
-import { ModalHeaderProps } from "../ModalHeader";
-import { ModalFooterProps } from "../ModalFooter";
-import { WithChildren } from "../../../types/common";
-export declare type ModalDialogProps = {
-    /**
-     * The Modal content. (props.children > props.content)
-     */
-    content?: string;
-} & ModalHeaderProps & ModalFooterProps & WithChildren;
+import { WithComponent } from "../../../types/common";
+export declare type ModalDialogProps = WithComponent;
 declare const ModalDialog: (props: ModalDialogProps) => JSX.Element;
 export default ModalDialog;

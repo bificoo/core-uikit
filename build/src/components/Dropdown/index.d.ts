@@ -1,5 +1,5 @@
 /// <reference types="react" />
-export type { DropdownProps, DropdownSelectEventProps, DropdownActions } from "./Dropdown";
+export type { DropdownProps, DropdownSelectEventProps, DropdownActions, } from "./Dropdown";
 export type { DropdownToggleProps } from "./DropdownToggle";
 export type { DropdownMenuProps } from "./DropdownMenu";
 export type { DropdownItemProps } from "./DropdownItem";

@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { WithClassName } from "../../../types/common";
+import { WithComponent } from "../../../types/common";
 export declare type ModalFooterProps = {
     /**
      * The text for confirm button.
@@ -29,6 +29,6 @@ export declare type ModalFooterProps = {
      * A callback triggered whenever the modal is closed.
      */
     onClose?: () => void;
-} & WithClassName;
+} & WithComponent;
 declare const ModalFooter: (props: ModalFooterProps) => JSX.Element;
 export default ModalFooter;

@@ -1,9 +1,10 @@
 import { __assign } from '../../../../node_modules/tslib/tslib.es6.js';
-import { jsx } from 'react/jsx-runtime';
+import { jsxs, jsx } from 'react/jsx-runtime';
+import cx from 'classnames';
 import styled from './ModalHeader.module.scss.js';
 
 var ModalHeader = function (props) {
-    return (jsx("header", __assign({ className: styled.wrapper }, { children: jsx("h1", { children: props.title }, void 0) }), void 0));
+    return (jsxs("header", __assign({ className: cx(styled.wrapper, props.className), style: props.style }, { children: [jsx("h1", { children: props.title }, void 0), props.children] }), void 0));
 };
 
 export { ModalHeader as default };

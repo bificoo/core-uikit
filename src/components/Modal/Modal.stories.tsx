@@ -134,7 +134,13 @@ export const CustomPartialModal: Story = () => {
       <Modal.Custom open={open} onClose={() => setOpen(false)}>
         <Modal.Dialog>
           <Header title={"部分客製化"} />
-          <Body style={{ paddingBottom: "20px", height: "200px" }}>
+          <Body
+            style={{
+              paddingBottom: "20px",
+              height: "200px",
+              background: "#eee",
+            }}
+          >
             重新組合 Modal
             的子元件，可以利用部分模組和客製化其他部分的模組，Header 與 Body
             使用原本的模組組合。
@@ -145,6 +151,7 @@ export const CustomPartialModal: Story = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "flex-end",
+              background: "#eee",
             }}
           >
             Footer 則是客製化

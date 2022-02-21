@@ -6,7 +6,9 @@ export type ModalDialogProps = WithComponent;
 
 const ModalDialog = (props: ModalDialogProps) => {
   return (
-    <div className={cx(styled.wrapper, props.className)}>{props.children}</div>
+    <div className={cx(styled.wrapper, props.className)} style={props.style}>
+      {props.children}
+    </div>
   );
 };
 

@@ -6,7 +6,7 @@ import styled from './Icon.module.scss.js';
 
 var Icon = function (props) {
     var _a;
-    var camelCased = props.type.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
+    var camelCased = props.name.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
     var compName = camelCased.charAt(0).toUpperCase() + camelCased.slice(1);
     var compareIcon = {
         'ArrowUp': jsx(Image.ArrowUp, {}, void 0),

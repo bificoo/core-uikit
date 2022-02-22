@@ -1,5 +1,6 @@
 export { Avatar } from './components/Avatar/index.js';
 export { Badge } from './components/Badge/index.js';
+export { Icon } from './components/Icon/index.js';
 export { default as Breadcrumbs } from './components/Breadcrumbs/index.js';
 export { default as Button } from './components/Button/index.js';
 export { default as Tree } from './components/Tree/index.js';

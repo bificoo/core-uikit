@@ -15,7 +15,6 @@ var Icon = function (props) {
         'ArrowRight': jsx(Image.ArrowRight, {}, void 0),
         'Search': jsx(Image.Search, {}, void 0),
         'Group': jsx(Image.Group, {}, void 0),
-        'User': jsx(Image.User, {}, void 0),
         'Information': jsx(Image.Information, {}, void 0),
     };
     return (jsx("div", __assign({ className: cx((_a = {}, _a[styled.arrowWrapper] = compName.includes("Arrow"), _a), props.className), style: __assign({ display: "flex" }, props.style) }, { children: compareIcon[compName] }), void 0));

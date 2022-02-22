@@ -21,7 +21,6 @@ export const Icon = (props: IconProps) => {
     'ArrowRight': <Svg.ArrowRight />,
     'Search': <Svg.Search />,
     'Group': <Svg.Group />,
-    'User': <Svg.User />,
     'Information': <Svg.Information />,
   }
 

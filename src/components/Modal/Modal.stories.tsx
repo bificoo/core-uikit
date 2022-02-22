@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Story, Meta } from "@storybook/react";
 import Button from "components/Button";
-import Modal from "components/Modal/index";
-import ModalDialog from "components/Modal/ModalDialog";
+import Modal, { CustomModal } from "components/Modal";
 import Header from "components/Modal/ModalHeader";
 import Body from "components/Modal/ModalBody";
 
@@ -94,14 +93,14 @@ export const FunctionalConfirmModal: Story = () => {
   );
 };
 
-export const CustomModal: Story = () => {
+export const CustomAllModal: Story = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
       <Button variant="primary" onClick={() => setOpen(true)}>
         Open Custom Modal
       </Button>
-      <Modal.Custom open={open} onClose={() => setOpen(false)}>
+      <CustomModal open={open} onClose={() => setOpen(false)}>
         <div
           style={{
             display: "flex",
@@ -119,7 +118,7 @@ export const CustomModal: Story = () => {
             關閉
           </Button>
         </div>
-      </Modal.Custom>
+      </CustomModal>
     </>
   );
 };
@@ -131,7 +130,7 @@ export const CustomPartialModal: Story = () => {
       <Button variant="primary" onClick={() => setOpen(true)}>
         Open Custom Modal by Module Modal
       </Button>
-      <Modal.Custom open={open} onClose={() => setOpen(false)}>
+      <CustomModal open={open} onClose={() => setOpen(false)}>
         <Modal.Dialog>
           <Header title={"部分客製化"} />
           <Body
@@ -163,7 +162,7 @@ export const CustomPartialModal: Story = () => {
             </Button>
           </footer>
         </Modal.Dialog>
-      </Modal.Custom>
+      </CustomModal>
     </>
   );
 };

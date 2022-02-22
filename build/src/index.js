@@ -19,4 +19,5 @@ export { default as Tooltip } from './components/Tooltip/index.js';
 export { default as InputGroup } from './components/Form/InputGroup/InputGroup/index.js';
 export { default as Prepend } from './components/Form/InputGroup/Prepend/index.js';
 export { default as Append } from './components/Form/InputGroup/Append/index.js';
+export { default as CustomModal } from './components/Modal/CustomModal/index.js';
 export { LinkButton } from './components/Button/LinkButton/index.js';

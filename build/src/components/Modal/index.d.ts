@@ -1,5 +1,7 @@
 import { ModalProps } from "./Modal";
+import CustomModal from "./CustomModal";
 export type { ModalProps } from "./Modal";
+export type { CustomModalProps } from "./CustomModal";
 export type { ModalHeaderProps } from "./ModalHeader";
 export type { ModalFooterProps } from "./ModalFooter";
 declare const Modal: ((props: ModalProps) => JSX.Element) & {
@@ -11,10 +13,10 @@ declare const Modal: ((props: ModalProps) => JSX.Element) & {
         destroy: () => void;
         update: (newConfig: ModalProps) => void;
     };
-    Custom: (props: import("./ModalPopup").ModalPopupProps) => JSX.Element;
     Dialog: (props: import("../../types/common").WithComponent) => JSX.Element;
     Header: (props: import("./ModalHeader").ModalHeaderProps) => JSX.Element;
     Body: (props: import("./ModalBody").ModalBodyProps) => JSX.Element;
     Footer: (props: import("./ModalFooter").ModalFooterProps) => JSX.Element;
 };
+export { CustomModal };
 export default Modal;

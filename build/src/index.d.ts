@@ -4,22 +4,29 @@ export { Badge } from "./components/Badge";
 export type { BadgeProps } from "./components/Badge";
 export { default as Icon } from "./components/Icon";
 export { default as Breadcrumbs } from "./components/Breadcrumbs";
-export type { BreadcrumbsProps, BreadcrumbsItemProps } from "./components/Breadcrumbs";
+export type { BreadcrumbsProps, BreadcrumbsItemProps, } from "./components/Breadcrumbs";
 export { default as Button, LinkButton } from "./components/Button";
-export type { ButtonProps, ButtonGroupProps, LinkButtonProps } from "./components/Button";
+export type { ButtonProps, ButtonGroupProps, LinkButtonProps, } from "./components/Button";
 export { default as Tree } from "./components/Tree";
 export { default as Collapse } from "./components/Collapse";
 export type { CollapseProps } from "./components/Collapse";
 export { default as Dropdown } from "./components/Dropdown";
 export type { DropdownProps, DropdownSelectEventProps, DropdownActions, DropdownItemProps, DropdownMenuProps, DropdownToggleProps, } from "./components/Dropdown";
-export { default as Form, InputGroup, Prepend, Append } from "./components/Form";
+export { default as Form, InputGroup, Prepend, Append, } from "./components/Form";
 export type { FormProps, FormLabelProps, FormInputProps, FormTextareaProps, FormCheckboxProps, FormRadioProps, FormMessageProps, FormGroupProps, InputGroupProps, PrependProps, AppendProps, } from "./components/Form";
 export { default as DatePicker } from "./components/DatePicker";
 export type { DatePickerProps } from "./components/DatePicker";
 export { RangePicker } from "./components/DatePicker";
 export type { RangePickerProps } from "./components/DatePicker";
+<<<<<<< HEAD
 export { default as Modal } from "./components/Modal";
 export type { ModalProps } from "./components/Modal";
+=======
+export { default as Icon } from "./components/Icon";
+export type { IconArrowProps } from "./components/Icon";
+export { default as Modal, CustomModal } from "./components/Modal";
+export type { ModalProps, CustomModalProps, ModalHeaderProps, ModalFooterProps, } from "./components/Modal";
+>>>>>>> 44b3780... refactor(UT-1001): reset custom modal interface
 export { default as Progress } from "./components/Progress";
 export type { ProgressProps } from "./components/Progress";
 export { default as Select } from "./components/Select";

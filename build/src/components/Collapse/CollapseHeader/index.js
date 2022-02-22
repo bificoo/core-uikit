@@ -8,7 +8,7 @@ import cx from 'classnames';
 
 var CollapseHeader = function (props) {
     var _a = useContext(CollapseContext), expanded = _a.expanded, setExpanded = _a.setExpanded;
-    return (jsxs("header", __assign({ className: cx(props.className, styled.wrapper), onClick: function () { return setExpanded(!expanded); }, style: props.style }, { children: [props.children, " ", jsx(Icon, { type: !expanded ? "arrow-up" : "arrow-down", style: { marginLeft: "4px" } }, void 0)] }), void 0));
+    return (jsxs("header", __assign({ className: cx(props.className, styled.wrapper), onClick: function () { return setExpanded(!expanded); }, style: props.style }, { children: [props.children, " ", jsx(Icon, { name: !expanded ? "arrow-up" : "arrow-down", style: { marginLeft: "4px" } }, void 0)] }), void 0));
 };
 
 export { CollapseHeader as default };

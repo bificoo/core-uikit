@@ -10,7 +10,7 @@ var Breadcrumbs = function (props) {
             if (!React__default.isValidElement(child))
                 return;
             var isNode = (i < childrenLength - 1);
-            return (jsxs(Fragment, { children: [child, isNode && jsx(Icon, { type: "arrow-right", className: styled.icon }, void 0)] }, void 0));
+            return (jsxs(Fragment, { children: [child, isNode && jsx(Icon, { name: "arrow-right", className: styled.icon }, void 0)] }, void 0));
         }) }), void 0));
 };
 

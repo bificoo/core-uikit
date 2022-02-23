@@ -8,7 +8,6 @@ const CustomModal = (props: CustomModalProps) => {
     <ModalPopup
       open={props.open}
       closeOnDocumentClick={props.backdrop}
-      onExited={props.onExited}
       onClose={props.onClose}
     >
       {props.children}

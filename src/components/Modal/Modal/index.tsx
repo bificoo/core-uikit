@@ -22,7 +22,6 @@ const Modal = (props: ModalProps) => {
     <ModalPopup
       open={props.open}
       closeOnDocumentClick={props.backdrop}
-      onExited={props.onExited}
       onClose={props.onClose}
     >
       <ModalDialog>

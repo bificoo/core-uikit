@@ -5,6 +5,7 @@ import { ReactComponent as SvgArrowUp } from './ArrowUp.svg.js';
 import { ReactComponent as SvgArrowDown } from './ArrowDown.svg.js';
 import { ReactComponent as SvgArrowLeft } from './ArrowLeft.svg.js';
 import { ReactComponent as SvgArrowRight } from './ArrowRight.svg.js';
+import { ReactComponent as SvgCross } from './Cross.svg.js';
 
 var Image = Object.assign({}, {
     Group: SvgGroup,
@@ -14,6 +15,7 @@ var Image = Object.assign({}, {
     ArrowDown: SvgArrowDown,
     ArrowLeft: SvgArrowLeft,
     ArrowRight: SvgArrowRight,
+    Cross: SvgCross,
 });
 
 export { Image as default };

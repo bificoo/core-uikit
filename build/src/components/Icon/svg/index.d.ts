@@ -20,5 +20,8 @@ declare const Image: {
     ArrowRight: import("react").FunctionComponent<import("react").SVGProps<SVGSVGElement> & {
         title?: string | undefined;
     }>;
+    Cross: import("react").FunctionComponent<import("react").SVGProps<SVGSVGElement> & {
+        title?: string | undefined;
+    }>;
 };
 export default Image;

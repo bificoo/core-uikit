@@ -5,7 +5,6 @@ export declare type ModalPopupProps = {
      */
     open?: boolean;
     backdrop?: boolean;
-    onExited?: () => void;
 } & Partial<Pick<PopupProps, "open" | "closeOnDocumentClick" | "onClose" | "children">>;
-declare const ModalPopup: ({ open, backdrop, onExited, ...props }: ModalPopupProps) => JSX.Element;
+declare const ModalPopup: ({ open, backdrop, ...props }: ModalPopupProps) => JSX.Element;
 export default ModalPopup;

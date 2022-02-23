@@ -1,4 +1,3 @@
-import { useRef, useEffect } from "react";
 import Popup from "reactjs-popup";
 import { PopupProps } from "reactjs-popup/dist/types";
 
@@ -8,7 +7,6 @@ export type ModalPopupProps = {
    */
   open?: boolean;
   backdrop?: boolean;
-  onExited?: () => void;
 } & Partial<
   Pick<PopupProps, "open" | "closeOnDocumentClick" | "onClose" | "children">
 >;
@@ -16,22 +14,13 @@ export type ModalPopupProps = {
 const ModalPopup = ({
   open = false,
   backdrop = true,
-  onExited,
   ...props
 }: ModalPopupProps) => {
-  const opened = useRef(false);
-
-  useEffect(() => {
-    if (open) opened.current = true;
-  }, [open]);
-
-  useEffect(() => {
-    if (!open && opened.current) onExited && onExited();
-  }, [open, onExited]);
 
   return (
     <Popup
       modal
+      nested
       lockScroll
       open={open}
       closeOnDocumentClick={backdrop}

@@ -19,7 +19,7 @@ export type BadgeProps = {
   pill?: boolean
 } & WithComponent
 
-export const Badge = ({
+ const Badge = ({
   variant = "primary",
   pill = false,
   className,
@@ -35,4 +35,5 @@ export const Badge = ({
   )
 }
 
-Badge.displayName = Badge
+export default Badge
+

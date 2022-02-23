@@ -3,7 +3,7 @@ import { WithChildren, WithStyle } from "types/common"
 
 export type AvatarProps = WithStyle & WithChildren
 
-export const Avatar = (props: AvatarProps) => {
+const Avatar = (props: AvatarProps) => {
   const defaultAvatar = (
     <div className={styled["default-avatar"]}>
       <svg width="24" height="24" viewBox="0 0 24 24" role="presentation">
@@ -23,4 +23,4 @@ export const Avatar = (props: AvatarProps) => {
   )
 }
 
-Avatar.displayName = Avatar
+export default Avatar

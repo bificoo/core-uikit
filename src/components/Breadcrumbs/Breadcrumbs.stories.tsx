@@ -1,38 +1,28 @@
-import { Meta, Story, Preview, Props } from "@storybook/addon-docs";
-import Breadcrumbs from "../Breadcrumbs";
+import { Story, Meta } from "@storybook/react"
+import Breadcrumbs from "components/Breadcrumbs"
 
-<Meta title="Navigation/Breadcrumbs" component={Breadcrumbs} />
+export default {
+  title: "Navigation/Breadcrumbs",
+  component: Breadcrumbs,
+  argTypes: {},
+} as Meta
 
-Here's some _markdown_!
-
-# Default
-
-<Preview>
-  <Story name="Default">
+export const Default: Story = () => {
+  return (
     <Breadcrumbs>
       <Breadcrumbs.Item href="/item">item 1</Breadcrumbs.Item>
       <Breadcrumbs.Item href="/item">item 2</Breadcrumbs.Item>
       <Breadcrumbs.Item href="/item">item 3</Breadcrumbs.Item>
     </Breadcrumbs>
-  </Story>
-</Preview>
+  )
+}
 
-# Props
-
-<Props of={Breadcrumbs} />
-
-# Item Props
-
-<Props of={Breadcrumbs.Item} />
-
-# Secondary
-
-<Preview>
-  <Story name="Secondary">
+export const Secondary: Story = () => {
+  return (
     <Breadcrumbs>
       <Breadcrumbs.Item href="/item">item 1</Breadcrumbs.Item>
       <Breadcrumbs.Item href="/item">item 2</Breadcrumbs.Item>
       <Breadcrumbs.Item>item 3</Breadcrumbs.Item>
     </Breadcrumbs>
-  </Story>
-</Preview>
+  )
+}

@@ -17,6 +17,4 @@ const Progress = (props: ProgressProps) => {
   )
 }
 
-Progress.displayName = Progress
-
 export default Progress

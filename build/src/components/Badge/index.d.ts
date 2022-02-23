@@ -14,8 +14,5 @@ export declare type BadgeProps = {
      */
     pill?: boolean;
 } & WithComponent;
-export declare const Badge: {
-    ({ variant, pill, className, children, ...props }: BadgeProps): JSX.Element;
-    displayName: any;
-};
-export {};
+declare const Badge: ({ variant, pill, className, children, ...props }: BadgeProps) => JSX.Element;
+export default Badge;

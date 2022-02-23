@@ -1,6 +1,6 @@
-export { Avatar } from "./components/Avatar";
+export { default as Avatar } from "./components/Avatar";
 export type { AvatarProps } from "./components/Avatar";
-export { Badge } from "./components/Badge";
+export { default as Badge } from "./components/Badge";
 export type { BadgeProps } from "./components/Badge";
 export { default as Icon } from "./components/Icon";
 export { default as Breadcrumbs } from "./components/Breadcrumbs";

@@ -1,0 +1,14 @@
+import { Story, Meta } from "@storybook/react";
+import { ButtonProps } from "./..";
+declare const _default: Meta<import("@storybook/react").Args>;
+export default _default;
+export declare const Primary: Story<import(".").ButtonProps>;
+export declare const Secondary: Story<import(".").ButtonProps>;
+export declare const Important: Story<import(".").ButtonProps>;
+export declare const Text: Story<import(".").ButtonProps>;
+export declare const Selected: Story<import(".").ButtonProps>;
+export declare const Disabled: Story<import(".").ButtonProps>;
+export declare const Block: Story<import(".").ButtonProps>;
+export declare const Chinese: Story<import(".").ButtonProps>;
+export declare const LeftArrowIcon: Story<ButtonProps>;
+export declare const RightArrowIcon: Story<ButtonProps>;

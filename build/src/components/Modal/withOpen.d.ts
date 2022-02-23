@@ -9,7 +9,6 @@ export declare function withAlert(config: ModalProps): {
     cancelText: null;
     open?: boolean | undefined;
     backdrop?: boolean | undefined;
-    onExited?: (() => void) | undefined;
     closeOnDocumentClick?: boolean | undefined;
     onClose?: (((event?: React.SyntheticEvent<Element, Event> | KeyboardEvent | TouchEvent | MouseEvent | undefined) => void) & (() => void)) | undefined;
     children?: React.ReactNode;
@@ -27,7 +26,6 @@ export declare function withConfirm(config: ModalProps): {
     cancelText: string | null | undefined;
     open?: boolean | undefined;
     backdrop?: boolean | undefined;
-    onExited?: (() => void) | undefined;
     closeOnDocumentClick?: boolean | undefined;
     onClose?: (((event?: React.SyntheticEvent<Element, Event> | KeyboardEvent | TouchEvent | MouseEvent | undefined) => void) & (() => void)) | undefined;
     children?: React.ReactNode;

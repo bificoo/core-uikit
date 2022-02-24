@@ -8,7 +8,7 @@ export type DropdownItemProps = {
   /**
    * The dropdown item key.
    */
-  eventKey: EventKey
+  eventKey?: EventKey
 } & WithComponent
 
 const DropdownItem = (props: DropdownItemProps) => {

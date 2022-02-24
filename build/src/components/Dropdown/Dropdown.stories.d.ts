@@ -9,3 +9,4 @@ export declare const MultiDropdown: Story<DropdownProps>;
 export declare const Disabled: Story<DropdownProps>;
 export declare const Adaptive: Story<DropdownProps>;
 export declare const ControlMenuDisplay: Story<DropdownProps>;
+export declare const Checkbox: Story<DropdownProps>;

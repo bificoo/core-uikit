@@ -18,15 +18,8 @@ export { default as DatePicker } from "./components/DatePicker";
 export type { DatePickerProps } from "./components/DatePicker";
 export { RangePicker } from "./components/DatePicker";
 export type { RangePickerProps } from "./components/DatePicker";
-<<<<<<< HEAD
-export { default as Modal } from "./components/Modal";
-export type { ModalProps } from "./components/Modal";
-=======
-export { default as Icon } from "./components/Icon";
-export type { IconArrowProps } from "./components/Icon";
 export { default as Modal, CustomModal } from "./components/Modal";
 export type { ModalProps, CustomModalProps, ModalHeaderProps, ModalFooterProps, } from "./components/Modal";
->>>>>>> 44b3780... refactor(UT-1001): reset custom modal interface
 export { default as Progress } from "./components/Progress";
 export type { ProgressProps } from "./components/Progress";
 export { default as Select } from "./components/Select";

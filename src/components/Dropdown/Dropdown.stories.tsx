@@ -3,14 +3,16 @@ import Dropdown, { DropdownProps, DropdownActions } from "components/Dropdown"
 import Button from "components/Button"
 import Icon from "components/Icon"
 import { useState, useRef } from "react"
+import Form from "components/Form"
+import { useForm } from "react-hook-form"
 
 export default {
   title: "Navigation/Dropdown",
   component: Dropdown,
-  subcomponents: { 
-    "Dropdown.Toggle": Dropdown.Toggle ,
+  subcomponents: {
+    "Dropdown.Toggle": Dropdown.Toggle,
     "Dropdown.Menu": Dropdown.Menu,
-    "Dropdown.Item": Dropdown.Item
+    "Dropdown.Item": Dropdown.Item,
   },
   argTypes: {},
 } as Meta
@@ -164,12 +166,43 @@ export const ControlMenuDisplay: Story<DropdownProps> = () => {
         <Button>Answer</Button>
       </Dropdown.Toggle>
       <Dropdown.Menu>
-        <div style={{ textAlign: "center"}}>A</div>
-        <div style={{ textAlign: "center"}}>B</div>
-        <div style={{ textAlign: "center"}}>C</div>
+        <div style={{ textAlign: "center" }}>A</div>
+        <div style={{ textAlign: "center" }}>B</div>
+        <div style={{ textAlign: "center" }}>C</div>
         <Button style={{ width: "100%" }} onClick={() => dropdownRef.current?.close()}>Close</Button>
       </Dropdown.Menu>
     </Dropdown>
   )
 }
 
+type Inputs = {
+  labels: string[]
+}
+
+export const Checkbox: Story<DropdownProps> = () => {
+  const {
+    register,
+    watch,
+  } = useForm<Inputs>()
+
+  const labelInfo = watch().labels
+  console.log(labelInfo)
+  return (
+    <Dropdown>
+      <Dropdown.Toggle>
+        <Button>
+          Page actions
+          <Icon name="arrow-down" />
+        </Button>
+      </Dropdown.Toggle>
+      <Dropdown.Menu>
+        <Dropdown.Item>
+          <Form.Checkbox value='edit' {...register("labels")}>Edit</Form.Checkbox>
+        </Dropdown.Item>
+        <Dropdown.Item>
+          <Form.Checkbox value='share' {...register("labels")}>Share</Form.Checkbox>
+        </Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  )
+}

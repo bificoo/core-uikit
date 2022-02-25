@@ -2,6 +2,8 @@ import DropdownBase from "./Dropdown";
 import DropdownToggle from "./DropdownToggle";
 import DropdownMenu from "./DropdownMenu";
 import DropdownItem from "./DropdownItem";
+import DropdownHeader from "./DropdownHeader";
+import DropdownFooter from "./DropdownFooter";
 
 export type {
   DropdownProps,
@@ -16,6 +18,8 @@ const Dropdown = Object.assign(DropdownBase, {
   Toggle: DropdownToggle,
   Menu: DropdownMenu,
   Item: DropdownItem,
+  Header: DropdownHeader,
+  Footer: DropdownFooter,
 });
 
 export default Dropdown;

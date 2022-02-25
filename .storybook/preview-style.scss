@@ -7,3 +7,20 @@
 [class^='docblock-argstable'] {
   font-family: 'Poppins';
 }
+
+html {
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 60px;
+    background-color: #c9cbce;
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 60px;
+    background-color: #f6f6f7;
+  }
+}

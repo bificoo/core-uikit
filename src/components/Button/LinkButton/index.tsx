@@ -16,6 +16,4 @@ export const LinkButton = ({
   )
 }
 
-LinkButton.display = LinkButton
-
 export default LinkButton

@@ -1,6 +1,6 @@
 import { Story, Meta } from "@storybook/react"
 import Dropdown, { DropdownProps, DropdownActions } from "components/Dropdown"
-import Button from "components/Button"
+import Button, { LinkButton } from "components/Button"
 import Icon from "components/Icon"
 import { useState, useRef } from "react"
 import Form from "components/Form"
@@ -202,6 +202,65 @@ export const Checkbox: Story<DropdownProps> = () => {
         <Dropdown.Item>
           <Form.Checkbox value='share' {...register("labels")}>Share</Form.Checkbox>
         </Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  )
+}
+
+export const Mix: Story<DropdownProps> = () => {
+  const {
+    register,
+    watch,
+  } = useForm<Inputs>()
+
+  const labelInfo = watch().labels
+  console.log(labelInfo)
+
+  return (
+    <Dropdown>
+      <Dropdown.Toggle>
+        <Button>
+          Page actions
+          <Icon name="arrow-down" />
+        </Button>
+      </Dropdown.Toggle>
+      <Dropdown.Menu>
+        <Dropdown.Header>
+          <div style={{ borderBottom: '1px solid rgb(235, 236, 240)', padding: '0 16px', display: 'flex', alignItems: 'center', height: '36px' }} >
+            <Icon name="search" />
+            <Form.Input placeholder="請輸入標籤值" style={{ border: 'none' }} />
+          </div>
+        </Dropdown.Header>
+        <Dropdown.Item>
+          <Form.Checkbox value='edit' {...register("labels")}>Edit</Form.Checkbox>
+        </Dropdown.Item>
+        <Dropdown.Item>
+          <Form.Checkbox value='share' {...register("labels")}>Share</Form.Checkbox>
+        </Dropdown.Item>
+        <Dropdown.Item>
+          <Form.Checkbox value='move' {...register("labels")}>Move</Form.Checkbox>
+        </Dropdown.Item>
+        <Dropdown.Item>
+          <Form.Checkbox value='clone' {...register("labels")}>Clone</Form.Checkbox>
+        </Dropdown.Item>
+        <Dropdown.Item>
+          <Form.Checkbox value='delete' {...register("labels")}>Delete</Form.Checkbox>
+        </Dropdown.Item>
+        <Dropdown.Item>
+          <Form.Checkbox value='report' {...register("labels")}>Report</Form.Checkbox>
+        </Dropdown.Item>
+        <Dropdown.Item>
+          <Form.Checkbox value='test' {...register("labels")}>Test</Form.Checkbox>
+        </Dropdown.Item>
+        <Dropdown.Item>
+          <Form.Checkbox value='test2' {...register("labels")}>Test2</Form.Checkbox>
+        </Dropdown.Item>
+        <Dropdown.Footer>
+          <div style={{ borderTop: '1px solid rgb(235, 236, 240)', padding: '0 16px', display: 'flex', alignItems: 'center', height: '36px' }} >
+            <LinkButton style={{ marginRight: '8px' }}>確認</LinkButton>
+            <LinkButton>清除</LinkButton>
+          </div>
+        </Dropdown.Footer>
       </Dropdown.Menu>
     </Dropdown>
   )

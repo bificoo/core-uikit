@@ -17,6 +17,7 @@ var Icon = function (props) {
         'Group': jsx(Image.Group, {}, void 0),
         'Information': jsx(Image.Information, {}, void 0),
         'Cross': jsx(Image.Cross, {}, void 0),
+        'Calendar': jsx(Image.Calendar, {}, void 0)
     };
     return (jsx("div", __assign({ className: cx((_a = {}, _a[styled.arrowWrapper] = compName.includes("Arrow"), _a), props.className), style: __assign({ display: "flex" }, props.style) }, { children: compareIcon[compName] }), void 0));
 };

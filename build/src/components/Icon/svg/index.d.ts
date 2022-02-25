@@ -23,5 +23,8 @@ declare const Image: {
     Cross: import("react").FunctionComponent<import("react").SVGProps<SVGSVGElement> & {
         title?: string | undefined;
     }>;
+    Calendar: import("react").FunctionComponent<import("react").SVGProps<SVGSVGElement> & {
+        title?: string | undefined;
+    }>;
 };
 export default Image;

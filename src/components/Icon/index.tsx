@@ -23,6 +23,7 @@ export const Icon = (props: IconProps) => {
     'Group': <Svg.Group />,
     'Information': <Svg.Information />,
     'Cross': <Svg.Cross />,
+    'Calendar':<Svg.Calendar />
   }
 
   return (

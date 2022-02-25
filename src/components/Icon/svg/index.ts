@@ -6,6 +6,7 @@ import { ReactComponent as ArrowDown } from "./ArrowDown.svg"
 import { ReactComponent as ArrowLeft } from "./ArrowLeft.svg"
 import { ReactComponent as ArrowRight } from "./ArrowRight.svg"
 import { ReactComponent as Cross } from "./Cross.svg"
+import { ReactComponent as Calendar } from "./Calendar.svg"
 
 const Image = Object.assign({}, {
   Group,
@@ -16,6 +17,7 @@ const Image = Object.assign({}, {
   ArrowLeft,
   ArrowRight,
   Cross,
+  Calendar,
 })
 
 export default Image

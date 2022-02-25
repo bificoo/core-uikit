@@ -7,6 +7,5 @@ var LinkButton = function (_a) {
     var className = _a.className, _b = _a.children, children = _b === void 0 ? "Click" : _b, props = __rest(_a, ["className", "children"]);
     return (jsx("a", __assign({ className: cx(styled.wrapper, styled.primary, className) }, props, { children: children }), void 0));
 };
-LinkButton.display = LinkButton;
 
 export { LinkButton, LinkButton as default };

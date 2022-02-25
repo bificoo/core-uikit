@@ -14,5 +14,7 @@ declare const Dropdown: import("react").ForwardRefExoticComponent<{
     } & import("../../types/common").WithChildren & import("../../types/common").WithClassName & import("../../types/common").WithStyle & import("react").RefAttributes<HTMLDivElement>>;
     Menu: (props: import("../../types/common").WithComponent) => JSX.Element;
     Item: (props: import("./DropdownItem").DropdownItemProps) => JSX.Element;
+    Header: (props: import("../../types/common").WithComponent) => JSX.Element;
+    Footer: (props: import("../../types/common").WithComponent) => JSX.Element;
 };
 export default Dropdown;

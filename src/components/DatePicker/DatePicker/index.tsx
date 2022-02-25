@@ -33,6 +33,10 @@ export type DatePickerProps = {
    */
   placeholder?: string
   /**
+   * Disabled input box.
+   */
+  disabled?: boolean
+  /**
    * Callback when date change.
    */
   onChange?: (date: Date) => void
@@ -74,6 +78,7 @@ const DatePicker = ({ dateFormat = "YYYY-MM-DD", ...props }: DatePickerProps) =>
           overlay: styled.overlay,
           overlayWrapper: styled.overlayWrapper,
         }}
+        style={{ width: "250px" }}
         value={date}
         format={dateFormat}
         formatDate={formatDate}
@@ -89,6 +94,7 @@ const DatePicker = ({ dateFormat = "YYYY-MM-DD", ...props }: DatePickerProps) =>
         inputProps={{
           ref: datePickerInputRef,
           readOnly: true,
+          disabled: props.disabled,
           style: {
             cursor: "pointer",
           },

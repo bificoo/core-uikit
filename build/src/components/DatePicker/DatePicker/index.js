@@ -38,15 +38,16 @@ var DatePicker = function (_a) {
                 container: styled.container,
                 overlay: styled.overlay,
                 overlayWrapper: styled.overlayWrapper,
-            }, value: date, format: dateFormat, formatDate: formatDate, parseDate: parseDate, placeholder: props.placeholder || day(new Date()).format(dateFormat), component: React__default.forwardRef(function FormInput(props, ref) {
-                return jsx(Form.Input, __assign({ ref: ref }, props));
+            }, style: { width: "250px" }, value: date, format: dateFormat, formatDate: formatDate, parseDate: parseDate, placeholder: props.placeholder || day(new Date()).format(dateFormat), component: React__default.forwardRef(function FormInput(props, ref) {
+                return jsx(Form.Input, __assign({ ref: ref }, props), void 0);
             }), dayPickerProps: dayPickerProps, inputProps: {
                 ref: datePickerInputRef,
                 readOnly: true,
+                disabled: props.disabled,
                 style: {
                     cursor: "pointer",
                 },
-            } }) }));
+            } }, void 0) }, void 0));
 };
 DatePicker.display = DatePicker;
 

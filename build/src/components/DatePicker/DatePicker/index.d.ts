@@ -20,6 +20,10 @@ export declare type DatePickerProps = {
      */
     placeholder?: string;
     /**
+     * Disabled input box.
+     */
+    disabled?: boolean;
+    /**
      * Callback when date change.
      */
     onChange?: (date: Date) => void;

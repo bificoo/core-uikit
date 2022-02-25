@@ -6,6 +6,7 @@ import { ReactComponent as SvgArrowDown } from './ArrowDown.svg.js';
 import { ReactComponent as SvgArrowLeft } from './ArrowLeft.svg.js';
 import { ReactComponent as SvgArrowRight } from './ArrowRight.svg.js';
 import { ReactComponent as SvgCross } from './Cross.svg.js';
+import { ReactComponent as SvgCalendar } from './Calendar.svg.js';
 
 var Image = Object.assign({}, {
     Group: SvgGroup,
@@ -16,6 +17,7 @@ var Image = Object.assign({}, {
     ArrowLeft: SvgArrowLeft,
     ArrowRight: SvgArrowRight,
     Cross: SvgCross,
+    Calendar: SvgCalendar,
 });
 
 export { Image as default };

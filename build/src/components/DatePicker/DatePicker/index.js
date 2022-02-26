@@ -49,6 +49,5 @@ var DatePicker = function (_a) {
                 },
             } }, void 0) }, void 0));
 };
-DatePicker.display = DatePicker;
 
 export { DatePicker as default };

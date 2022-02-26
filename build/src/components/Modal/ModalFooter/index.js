@@ -13,7 +13,7 @@ var ModalFooter = function (props) {
         props.onCancel && props.onCancel();
         props.onClose && props.onClose();
     };
-    return (jsxs("footer", __assign({ className: cx(styled.wrapper, props.className), style: props.style }, { children: [props.children, !!props.cancelText && (jsx(Button, __assign({ variant: "secondary", onClick: handleCancel }, props.cancelButtonProps, { children: props.cancelText }))), jsx(Button, __assign({ onClick: handleConfirm }, props.confirmButtonProps, { children: props.confirmText }))] })));
+    return (jsxs("footer", __assign({ className: cx(styled.wrapper, props.className), style: props.style }, { children: [props.children, !!props.cancelText && (jsx(Button, __assign({ variant: "secondary", onClick: handleCancel }, props.cancelButtonProps, { children: props.cancelText }), void 0)), jsx(Button, __assign({ onClick: handleConfirm }, props.confirmButtonProps, { children: props.confirmText }), void 0)] }), void 0));
 };
 
 export { ModalFooter as default };

@@ -3,7 +3,7 @@ import { jsx } from 'react/jsx-runtime';
 import { forwardRef } from 'react';
 
 var DropdownToggle = forwardRef(function DropdownToggle(props, ref) {
-    return (jsx("div", __assign({ className: props.className, onClick: props.onClick, ref: ref }, { children: props.children })));
+    return (jsx("div", __assign({ className: props.className, onClick: props.onClick, ref: ref }, { children: props.children }), void 0));
 });
 
 export { DropdownToggle as default };

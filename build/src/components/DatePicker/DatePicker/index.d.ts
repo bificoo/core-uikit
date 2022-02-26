@@ -28,8 +28,5 @@ export declare type DatePickerProps = {
      */
     onChange?: (date: Date) => void;
 };
-declare const DatePicker: {
-    ({ dateFormat, ...props }: DatePickerProps): JSX.Element;
-    display: any;
-};
+declare const DatePicker: ({ dateFormat, ...props }: DatePickerProps) => JSX.Element;
 export default DatePicker;

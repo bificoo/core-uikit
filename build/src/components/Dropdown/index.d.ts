@@ -12,7 +12,7 @@ declare const Dropdown: import("react").ForwardRefExoticComponent<{
     Toggle: import("react").ForwardRefExoticComponent<{
         onClick?: import("react").MouseEventHandler<HTMLElement> | undefined;
     } & import("../../types/common").WithChildren & import("../../types/common").WithClassName & import("../../types/common").WithStyle & import("react").RefAttributes<HTMLDivElement>>;
-    Menu: import("react").ForwardRefExoticComponent<import("../../types/common").WithChildren & import("../../types/common").WithClassName & import("../../types/common").WithStyle & import("react").RefAttributes<HTMLDivElement>>;
+    Menu: (props: import("../../types/common").WithComponent) => JSX.Element;
     Item: (props: import("./DropdownItem").DropdownItemProps) => JSX.Element;
     Header: (props: import("../../types/common").WithComponent) => JSX.Element;
     Footer: (props: import("../../types/common").WithComponent) => JSX.Element;

@@ -36,7 +36,7 @@ var FormGroup = function (props) {
             children.push(React__default.cloneElement(child, { key: index }));
         }
     });
-    return (jsx(FormGroupContext.Provider, __assign({ value: { attributes: attributes, setAttributes: update } }, { children: jsxs("div", __assign({ className: cx(styled.wrapper, styled[layout], props.className) }, { children: [label, jsx("div", __assign({ className: styled.group }, { children: children }))] })) })));
+    return (jsx(FormGroupContext.Provider, __assign({ value: { attributes: attributes, setAttributes: update } }, { children: jsxs("div", __assign({ className: cx(styled.wrapper, styled[layout], props.className) }, { children: [label, jsx("div", __assign({ className: styled.group }, { children: children }), void 0)] }), void 0) }), void 0));
 };
 
 export { FormGroup as default };

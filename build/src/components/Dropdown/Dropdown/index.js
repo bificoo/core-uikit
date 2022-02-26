@@ -14,7 +14,7 @@ var Dropdown = forwardRef(function Dropdown(props, ref) {
     var popupRef = useRef(null);
     var triggerRef = useRef(null);
     var dropdown = useMemo(function () {
-        var triggerElement = jsx("div", {});
+        var triggerElement = jsx("div", {}, void 0);
         var menuElement = null;
         React__default.Children.forEach(props.children, function (child) {
             if (!React__default.isValidElement(child))
@@ -53,7 +53,7 @@ var Dropdown = forwardRef(function Dropdown(props, ref) {
                     border: "none",
                     padding: "8px",
                     boxShadow: "none",
-                } }, { children: dropdown.menu })) })) })));
+                } }, { children: dropdown.menu }), void 0) }), void 0) }), void 0));
 });
 
 export { Dropdown as default };

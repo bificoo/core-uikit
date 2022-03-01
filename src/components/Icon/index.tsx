@@ -1,3 +1,4 @@
+import React from "react"
 import Svg from "./svg"
 import cx from "classnames"
 import styled from "./Icon.module.scss"
@@ -8,6 +9,8 @@ export type IconProps = {
    * Fill in the icon name.
    */
   name: string
+  width?: number
+  height?: number
 } & WithClassName & WithStyle
 
 export const Icon = (props: IconProps) => {
@@ -32,7 +35,10 @@ export const Icon = (props: IconProps) => {
 
   return (
     <div className={cx({ [styled.arrowWrapper]: compName.includes("Arrow") }, props.className)} style={{ display: "flex", ...props.style }}>
-      {compareIcon[compName]}
+      {React.cloneElement(compareIcon[compName], {
+        ...(props.width && { width: props.width }),
+        ...(props.height && { height: props.height })
+      })}
     </div>
   )
 }

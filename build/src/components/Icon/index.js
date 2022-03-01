@@ -1,5 +1,6 @@
 import { __assign } from '../../../node_modules/tslib/tslib.es6.js';
 import { jsx } from 'react/jsx-runtime';
+import React__default from 'react';
 import Image from './svg/index.js';
 import cx from 'classnames';
 import styled from './Icon.module.scss.js';
@@ -23,7 +24,7 @@ var Icon = function (props) {
         'Dash': jsx(Image.Dash, {}, void 0),
         'Shortcut': jsx(Image.Shortcut, {}, void 0),
     };
-    return (jsx("div", __assign({ className: cx((_a = {}, _a[styled.arrowWrapper] = compName.includes("Arrow"), _a), props.className), style: __assign({ display: "flex" }, props.style) }, { children: compareIcon[compName] }), void 0));
+    return (jsx("div", __assign({ className: cx((_a = {}, _a[styled.arrowWrapper] = compName.includes("Arrow"), _a), props.className), style: __assign({ display: "flex" }, props.style) }, { children: React__default.cloneElement(compareIcon[compName], __assign(__assign({}, (props.width && { width: props.width })), (props.height && { height: props.height }))) }), void 0));
 };
 
 export { Icon, Icon as default };

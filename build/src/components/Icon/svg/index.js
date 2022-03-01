@@ -10,6 +10,7 @@ import { ReactComponent as SvgCalendar } from './Calendar.svg.js';
 import { ReactComponent as SvgUpTriangle } from './UpTriangle.svg.js';
 import { ReactComponent as SvgDownTriangle } from './DownTriangle.svg.js';
 import { ReactComponent as SvgDash } from './Dash.svg.js';
+import { ReactComponent as SvgShortcut } from './Shortcut.svg.js';
 
 var Image = Object.assign({}, {
     Group: SvgGroup,
@@ -24,6 +25,7 @@ var Image = Object.assign({}, {
     UpTriangle: SvgUpTriangle,
     DownTriangle: SvgDownTriangle,
     Dash: SvgDash,
+    Shortcut: SvgShortcut,
 });
 
 export { Image as default };

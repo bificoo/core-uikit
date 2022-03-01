@@ -23,7 +23,10 @@ export const Icon = (props: IconProps) => {
     'Group': <Svg.Group />,
     'Information': <Svg.Information />,
     'Cross': <Svg.Cross />,
-    'Calendar':<Svg.Calendar />
+    'Calendar': <Svg.Calendar />,
+    'UpTriangle': <Svg.UpTriangle />,
+    'DownTriangle': <Svg.DownTriangle />,
+    'Dash': <Svg.Dash />,
   }
 
   return (

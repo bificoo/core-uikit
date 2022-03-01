@@ -27,6 +27,7 @@ export const Icon = (props: IconProps) => {
     'UpTriangle': <Svg.UpTriangle />,
     'DownTriangle': <Svg.DownTriangle />,
     'Dash': <Svg.Dash />,
+    'Shortcut': <Svg.Shortcut />,
   }
 
   return (

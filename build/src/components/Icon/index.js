@@ -21,6 +21,7 @@ var Icon = function (props) {
         'UpTriangle': jsx(Image.UpTriangle, {}, void 0),
         'DownTriangle': jsx(Image.DownTriangle, {}, void 0),
         'Dash': jsx(Image.Dash, {}, void 0),
+        'Shortcut': jsx(Image.Shortcut, {}, void 0),
     };
     return (jsx("div", __assign({ className: cx((_a = {}, _a[styled.arrowWrapper] = compName.includes("Arrow"), _a), props.className), style: __assign({ display: "flex" }, props.style) }, { children: compareIcon[compName] }), void 0));
 };

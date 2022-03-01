@@ -35,5 +35,8 @@ declare const Image: {
     Dash: import("react").FunctionComponent<import("react").SVGProps<SVGSVGElement> & {
         title?: string | undefined;
     }>;
+    Shortcut: import("react").FunctionComponent<import("react").SVGProps<SVGSVGElement> & {
+        title?: string | undefined;
+    }>;
 };
 export default Image;

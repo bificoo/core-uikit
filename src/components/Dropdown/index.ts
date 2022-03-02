@@ -1,5 +1,5 @@
 import DropdownBase from "./Dropdown";
-import DropdownToggle from "./DropdownToggle";
+import DropdownToggle from "./DropdownToggleForButton";
 import DropdownMenu from "./DropdownMenu";
 import DropdownItem from "./DropdownItem";
 import DropdownHeader from "./DropdownHeader";

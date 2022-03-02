@@ -1,7 +1,7 @@
 import cx from "classnames"
 import styled from "./DropdownMenu.module.scss"
 import { WithComponent } from "types/common"
-import React, {forwardRef} from "react"
+import React, { forwardRef } from "react"
 import DropdownItem from '../DropdownItem'
 import DropdownHeader from '../DropdownHeader'
 import DropdownFooter from '../DropdownFooter'
@@ -9,7 +9,7 @@ import DropdownFooter from '../DropdownFooter'
 export type DropdownMenuProps = WithComponent
 
 const DropdownMenu = forwardRef<HTMLDivElement, DropdownMenuProps>(function Dropdown(props: DropdownMenuProps, ref) {
-  let list: React.ReactElement[] = []
+  const list: React.ReactElement[] = []
 
   React.Children.map(props.children, child => {
     if (!React.isValidElement(child)) return
@@ -26,7 +26,7 @@ const DropdownMenu = forwardRef<HTMLDivElement, DropdownMenuProps>(function Drop
         return null
       })}
       <div className={styled.list}>
-        {list}
+        {list.length > 0 ? list : props.children}
       </div>
       {React.Children.map(props.children, child => {
         if (!React.isValidElement(child)) return

@@ -4,7 +4,7 @@ import React__default, { forwardRef, useState, useRef, useMemo, useLayoutEffect,
 import cx from 'classnames';
 import Popup from '../../../../node_modules/reactjs-popup/dist/reactjs-popup.esm.js';
 import { DropdownContext } from '../DropdownContext.js';
-import DropdownToggle from '../DropdownToggle/index.js';
+import Dropdown$1 from '../index.js';
 import DropdownMenu from '../DropdownMenu/index.js';
 import styled from './Dropdown.module.scss.js';
 
@@ -19,7 +19,8 @@ var Dropdown = forwardRef(function Dropdown(props, ref) {
         React__default.Children.forEach(props.children, function (child) {
             if (!React__default.isValidElement(child))
                 return;
-            if (child.type === DropdownToggle) {
+            if (child.type === Dropdown$1.Toggle) {
+                console.log(child);
                 triggerElement = child;
             }
             if (child.type === DropdownMenu) {

@@ -3,7 +3,7 @@ import cx from "classnames"
 import Popup from "reactjs-popup"
 import { PopupActions, PopupProps } from "reactjs-popup/dist/types"
 import DropdownContext from "../DropdownContext"
-import DropdownToggle from "../DropdownToggle"
+import { default as BaseDropdown } from "../index"
 import DropdownMenu from "../DropdownMenu"
 import styled from "./Dropdown.module.scss"
 import { WithComponent, EventKey } from "types/common"
@@ -46,7 +46,8 @@ const Dropdown = forwardRef<DropdownActions, DropdownProps>(function Dropdown(pr
     let menuElement = null
     React.Children.forEach(props.children, child => {
       if (!React.isValidElement(child)) return
-      if (child.type === DropdownToggle) {
+      if (child.type === BaseDropdown.Toggle) {
+        console.log(child)
         triggerElement = child
       }
       if (child.type === DropdownMenu) {

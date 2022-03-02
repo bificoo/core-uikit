@@ -1,6 +1,7 @@
 import React from "react";
 import { WithComponent } from "../../../types/common";
 export declare type DropdownToggleProps = {
+    open?: boolean;
     /**
      * Callback when click.
      */
@@ -8,6 +9,7 @@ export declare type DropdownToggleProps = {
 } & WithComponent;
 export declare type Ref = HTMLDivElement;
 declare const DropdownToggle: React.ForwardRefExoticComponent<{
+    open?: boolean | undefined;
     /**
      * Callback when click.
      */

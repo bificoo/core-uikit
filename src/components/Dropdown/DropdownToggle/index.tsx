@@ -3,6 +3,7 @@ import { forwardRef } from "react"
 import { WithComponent } from "types/common"
 
 export type DropdownToggleProps = {
+  open?: boolean
   /**
    * Callback when click.
    */

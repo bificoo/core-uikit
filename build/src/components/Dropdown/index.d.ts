@@ -10,9 +10,10 @@ declare const Dropdown: import("react").ForwardRefExoticComponent<{
     onSelect?: ((e: import("react").MouseEvent<Element, MouseEvent>, { eventKey }: import("./Dropdown").DropdownSelectEventProps) => void) | undefined;
 } & import("../../types/common").WithChildren & import("../../types/common").WithClassName & import("../../types/common").WithStyle & import("react").RefAttributes<import("./Dropdown").DropdownActions>> & {
     Toggle: import("react").ForwardRefExoticComponent<{
+        open?: boolean | undefined;
         onClick?: import("react").MouseEventHandler<HTMLElement> | undefined;
     } & import("../../types/common").WithChildren & import("../../types/common").WithClassName & import("../../types/common").WithStyle & import("react").RefAttributes<HTMLDivElement>>;
-    Menu: (props: import("../../types/common").WithComponent) => JSX.Element;
+    Menu: import("react").ForwardRefExoticComponent<import("../../types/common").WithChildren & import("../../types/common").WithClassName & import("../../types/common").WithStyle & import("react").RefAttributes<HTMLDivElement>>;
     Item: (props: import("./DropdownItem").DropdownItemProps) => JSX.Element;
     Header: (props: import("../../types/common").WithComponent) => JSX.Element;
     Footer: (props: import("../../types/common").WithComponent) => JSX.Element;

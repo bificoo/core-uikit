@@ -9,18 +9,18 @@
   }
 }
 
-@mixin disabled {
-  &[disabled], &[disabled]:hover, &[disabled]:active, &[disabled]:active:hover {
-    @content
-  }
-}
-
 %selected {
   &.selected, &.selected:hover, &.selected:active, &.selected:active:hover {
     background: #253858;
     color: #fff;
     text-decoration: none;
     cursor: default;
+  }
+}
+
+@mixin disabled {
+  &[disabled], &[disabled]:hover, &[disabled]:active, &[disabled]:active:hover {
+    @content
   }
 }
 
@@ -75,10 +75,10 @@
   &.primary {
     background: #0052cc;
     color: #fff;
+    @extend %disabled;
+    @extend %selected;
 
-@extend %disabled;
-    &:not([disabled]) {
-      @extend %selected;
+    &:not([disabled]):not(.selected) {
       &:hover {
         background: #0065ff;
         color: #fff;
@@ -94,10 +94,10 @@
   &.secondary {
     background: #ebecf0;
     color: #45536c;
+    @extend %disabled;
+    @extend %selected;
 
-@extend %disabled;
-    &:not([disabled]) {
-      @extend %selected;
+    &:not([disabled]):not(.selected) {
       &:hover {
         background: #e1e2e6;
         color: #45536c;
@@ -114,12 +114,12 @@
     background: transparent;
     color: #0052cc;
 
-@include disabled {
+    @include disabled {
       background: transparent;
       color: #8b919c;
     }
 
-@include selected {
+    @include selected {
       background: transparent;
       color: #253858;
     }
@@ -140,12 +140,13 @@
     background: #de350b;
     color: #fff;
 
-@extend %disabled;
+    @extend %disabled;
 
-@include selected {
+    @include selected {
       background: #bf2600;
       color: #fff;
     }
+
     &:not([disabled]) {
       &:hover {
         background: #ff5630;

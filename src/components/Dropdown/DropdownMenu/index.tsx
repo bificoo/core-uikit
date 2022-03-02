@@ -1,14 +1,14 @@
 import cx from "classnames"
 import styled from "./DropdownMenu.module.scss"
 import { WithComponent } from "types/common"
-import React from "react"
+import React, {forwardRef} from "react"
 import DropdownItem from '../DropdownItem'
 import DropdownHeader from '../DropdownHeader'
 import DropdownFooter from '../DropdownFooter'
 
 export type DropdownMenuProps = WithComponent
 
-const DropdownMenu = (props: DropdownMenuProps) => {
+const DropdownMenu = forwardRef<HTMLDivElement, DropdownMenuProps>(function Dropdown(props: DropdownMenuProps, ref) {
   let list: React.ReactElement[] = []
 
   React.Children.map(props.children, child => {
@@ -35,6 +35,6 @@ const DropdownMenu = (props: DropdownMenuProps) => {
       })}
     </div>
   )
-}
+})
 
 export default DropdownMenu

@@ -19,7 +19,7 @@ const DropdownMenu = forwardRef<HTMLDivElement, DropdownMenuProps>(function Drop
   })
 
   return (
-    <div className={cx(styled.wrapper, props.className)} style={props.style}>
+    <div className={cx(styled.wrapper, props.className)} style={props.style} ref={ref}>
       {React.Children.map(props.children, child => {
         if (!React.isValidElement(child)) return
         if (child.type === DropdownHeader) return child

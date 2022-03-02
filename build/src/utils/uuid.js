@@ -1,4 +1,4 @@
-import { nanoid } from '../../node_modules/nanoid/index.browser.js';
+import { nanoid } from '../../node_modules/nanoid/index.prod.js';
 
 var uuid = nanoid;
 

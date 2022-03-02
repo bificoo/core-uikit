@@ -9,7 +9,7 @@ var FormLabel = function (_a) {
     var _b;
     var _c = _a.required, required = _c === void 0 ? false : _c, className = _a.className, htmlFor = _a.htmlFor, props = __rest(_a, ["required", "className", "htmlFor"]);
     var attributes = useContext(FormGroupContext).attributes;
-    return (jsx("label", __assign({ htmlFor: htmlFor || (attributes === null || attributes === void 0 ? void 0 : attributes.formId), className: cx(styled.wrapper, className) }, props, { children: jsx("span", __assign({ className: cx((_b = {}, _b[styled.required] = required, _b)) }, { children: props.children }), void 0) }), void 0));
+    return (jsx("label", __assign({ htmlFor: htmlFor || (attributes === null || attributes === void 0 ? void 0 : attributes.formId), className: cx(styled.wrapper, className) }, props, { children: jsx("span", __assign({ className: cx((_b = {}, _b[styled.required] = required, _b)) }, { children: props.children })) })));
 };
 
 export { FormLabel as default };

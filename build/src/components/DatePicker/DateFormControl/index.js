@@ -13,7 +13,7 @@ var DateFormControl = React__default.forwardRef(function DateFormControl(_a, ref
         var formatEndDate = endDate && formatDate(endDate, dateFormat);
         return "".concat(formatStartDate, " ~ ").concat(formatEndDate || formatStartDate);
     }, [startDate, endDate, dateFormat]);
-    return jsx(Form.Input, __assign({ ref: ref, style: { width: "200px" } }, props, { value: value }), void 0);
+    return jsx(Form.Input, __assign({ ref: ref, style: { width: "200px" } }, props, { value: value }));
 });
 
 export { DateFormControl as default };

@@ -11,7 +11,7 @@ var Collapse = function (_a) {
             setExpanded: function (expanded) {
                 setExpanded(expanded);
             },
-        } }, { children: jsx("div", __assign({ className: props.className, style: props.style }, { children: props.children }), void 0) }), void 0));
+        } }, { children: jsx("div", __assign({ className: props.className, style: props.style }, { children: props.children })) })));
 };
 
 export { Collapse as default };

@@ -25,7 +25,7 @@ var IconButton = function (props) {
             customChildren.push(child);
         }
     });
-    return (jsx(Button, __assign({ style: __assign(__assign({}, (iconConfig.leftIcon && { paddingLeft: "8px" })), (iconConfig.rightIcon && { paddingRight: "8px" })) }, props, { children: customChildren }), void 0));
+    return (jsx(Button, __assign({ style: __assign(__assign({}, (iconConfig.leftIcon && { paddingLeft: "8px" })), (iconConfig.rightIcon && { paddingRight: "8px" })) }, props, { children: customChildren })));
 };
 
 export { IconButton as default };

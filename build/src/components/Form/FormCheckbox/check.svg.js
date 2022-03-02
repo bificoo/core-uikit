@@ -6,7 +6,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 const SvgCheck = props => /*#__PURE__*/React.createElement("svg", _extends({
   viewBox: "0 0 24 24",
-  className: "check_svg__css-11ziv6u"
+  className: "css-11ziv6u"
 }, props), _g || (_g = /*#__PURE__*/React.createElement("g", {
   fillRule: "evenodd"
 }, /*#__PURE__*/React.createElement("rect", {

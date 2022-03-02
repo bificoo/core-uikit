@@ -10,7 +10,7 @@ var ModalPopup = function (_a) {
             width: "auto",
         }, overlayStyle: {
             backgroundColor: "#091e428a",
-        } }, { children: props.children }), void 0));
+        } }, { children: props.children })));
 };
 
 export { ModalPopup as default };

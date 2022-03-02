@@ -14,7 +14,7 @@ function NoData(_a) {
             _style.height = height;
         return _style;
     }, [width, height]);
-    return (jsxs("div", __assign({ className: styled.wrapper, style: style }, { children: [jsx(SvgNoData, {}, void 0), jsx("div", __assign({ className: styled.text }, { children: "\u6C92\u8CC7\u6599" }), void 0)] }), void 0));
+    return (jsxs("div", __assign({ className: styled.wrapper, style: style }, { children: [jsx(SvgNoData, {}), jsx("div", __assign({ className: styled.text }, { children: "\u6C92\u8CC7\u6599" }))] })));
 }
 
 export { NoData as default };

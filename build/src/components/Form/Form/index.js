@@ -18,7 +18,7 @@ var Form = function (_a) {
         e.preventDefault();
         props.onSubmit && props.onSubmit(e);
     };
-    return (jsx(FormContext.Provider, __assign({ value: { attributes: attributes, setAttributes: update } }, { children: jsx("form", __assign({}, props, { onSubmit: submit }, { children: props.children }), void 0) }), void 0));
+    return (jsx(FormContext.Provider, __assign({ value: { attributes: attributes, setAttributes: update } }, { children: jsx("form", __assign({}, props, { onSubmit: submit }, { children: props.children })) })));
 };
 
 export { Form as default };

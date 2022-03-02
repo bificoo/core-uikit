@@ -7,7 +7,7 @@ import useOutsideEvent from '../../../hooks/useOutsideEvent.js';
 import { formatDate, parseDate } from '../utils.js';
 import styled from './RangePicker.module.scss.js';
 import DayPickerInput$1 from '../../../../node_modules/react-day-picker/DayPickerInput/index.js';
-import { r as reactDayPicker_min } from '../../../../_virtual/react-day-picker.min.js_commonjs-module.js';
+import { r as reactDayPicker_min } from '../../../../_virtual/react-day-picker.min.js';
 
 // @ts-ignore
 var DayPickerInput = DayPickerInput$1.__esModule ? DayPickerInput$1.default : DayPickerInput$1;
@@ -76,7 +76,7 @@ var RangePicker = function (_a) {
                 overlay: styled.overlay,
                 overlayWrapper: styled.overlayWrapper,
             }, value: startDate, format: dateFormat, formatDate: formatDate, parseDate: parseDate, placeholder: props.placeholder ||
-                "".concat(formatDate(new Date(), dateFormat), " ~ ").concat(formatDate(new Date(), dateFormat)), hideOnDayClick: false, component: function (props) { return (jsx(DateFormControl, __assign({ startDate: startDate, endDate: endDate, dateFormat: dateFormat }, props), void 0)); }, dayPickerProps: dayPickerProps, onDayChange: handleDayChange }, void 0) }), void 0));
+                "".concat(formatDate(new Date(), dateFormat), " ~ ").concat(formatDate(new Date(), dateFormat)), hideOnDayClick: false, component: function (props) { return (jsx(DateFormControl, __assign({ startDate: startDate, endDate: endDate, dateFormat: dateFormat }, props))); }, dayPickerProps: dayPickerProps, onDayChange: handleDayChange }) })));
 };
 RangePicker.display = RangePicker;
 

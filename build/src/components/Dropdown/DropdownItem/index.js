@@ -7,7 +7,7 @@ import { DropdownContext } from '../DropdownContext.js';
 
 var DropdownItem = function (props) {
     var setActiveKey = useContext(DropdownContext).setActiveKey;
-    return (jsx("div", __assign({ className: cx(styled.wrapper, props.className), onClick: function (e) { return setActiveKey(e, { eventKey: props.eventKey }); } }, { children: props.children }), void 0));
+    return (jsx("div", __assign({ className: cx(styled.wrapper, props.className), onClick: function (e) { return setActiveKey(e, { eventKey: props.eventKey }); } }, { children: props.children })));
 };
 
 export { DropdownItem as default };

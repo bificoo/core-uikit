@@ -7,8 +7,8 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 const SvgNoData = props => /*#__PURE__*/React.createElement("svg", _extends({
   width: 48,
   height: 24,
-  fill: "none",
-  xmlns: "http://www.w3.org/2000/svg"
+  viewBox: "0 0 48 24",
+  fill: "none"
 }, props), _rect || (_rect = /*#__PURE__*/React.createElement("rect", {
   x: 36,
   y: 21,

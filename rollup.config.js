@@ -56,7 +56,23 @@ export default {
       ],
     }),
     url(),
-    svgr({ removeDimensions: true }),
+    svgr({
+      dimensions: true,
+      svgoConfig: {
+        plugins: [{
+          name: 'preset-default',
+          params: {
+            overrides: {
+              removeViewBox: false,
+            },
+          },
+        },
+        {
+          name: "removeXMLNS",
+        }
+      ]
+      }
+    }),
     copy({ targets: [{ src: "src/types/*", dest: "build/src/types" }] }),
   ],
 }

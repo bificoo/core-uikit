@@ -6,7 +6,7 @@ import styled from './BreadcrumbsItem.module.scss.js';
 var BreadcrumbsItem = function (_a) {
     var _b;
     var href = _a.href, children = _a.children;
-    return (jsx("li", __assign({ className: styled.wrapper }, { children: jsx("a", __assign({ className: cx(styled.text, (_b = {}, _b[styled.active] = !href, _b)), href: href }, { children: children }), void 0) }), void 0));
+    return (jsx("li", __assign({ className: styled.wrapper }, { children: jsx("a", __assign({ className: cx(styled.text, (_b = {}, _b[styled.active] = !href, _b)), href: href }, { children: children })) })));
 };
 
 export { BreadcrumbsItem as default };

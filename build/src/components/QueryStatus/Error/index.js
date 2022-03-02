@@ -13,7 +13,7 @@ function Error(_a) {
             _style.height = height;
         return _style;
     }, [width, height]);
-    return (jsx("div", __assign({ className: styled.wrapper, style: style }, { children: "error :(" }), void 0));
+    return (jsx("div", __assign({ className: styled.wrapper, style: style }, { children: "error :(" })));
 }
 
 export { Error as default };

@@ -20,7 +20,7 @@ var ButtonGroup = function (props) {
                 return React__default.cloneElement(child, __assign(__assign({}, child.props), { variant: "secondary", selected: child.props.eventKey === eventKey, onClick: handleClick }));
             }
             return null;
-        }) }), void 0));
+        }) })));
 };
 
 export { ButtonGroup as default };

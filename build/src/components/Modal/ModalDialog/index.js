@@ -4,7 +4,7 @@ import cx from 'classnames';
 import styled from './ModalDialog.module.scss.js';
 
 var ModalDialog = function (props) {
-    return (jsx("div", __assign({ className: cx(styled.wrapper, props.className), style: props.style }, { children: props.children }), void 0));
+    return (jsx("div", __assign({ className: cx(styled.wrapper, props.className), style: props.style }, { children: props.children })));
 };
 
 export { ModalDialog as default };

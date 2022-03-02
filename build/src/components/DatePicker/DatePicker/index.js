@@ -39,14 +39,14 @@ var DatePicker = function (_a) {
                 overlay: styled.overlay,
                 overlayWrapper: styled.overlayWrapper,
             }, value: date, format: dateFormat, formatDate: formatDate, parseDate: parseDate, placeholder: props.placeholder || day(new Date()).format(dateFormat), component: React__default.forwardRef(function FormInput(props, ref) {
-                return jsx(Form.Input, __assign({ ref: ref }, props), void 0);
+                return jsx(Form.Input, __assign({ ref: ref }, props));
             }), dayPickerProps: dayPickerProps, inputProps: {
                 ref: datePickerInputRef,
                 readOnly: true,
                 style: {
                     cursor: "pointer",
                 },
-            } }, void 0) }, void 0));
+            } }) }));
 };
 DatePicker.display = DatePicker;
 

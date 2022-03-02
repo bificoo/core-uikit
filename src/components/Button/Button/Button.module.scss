@@ -15,15 +15,6 @@
   }
 }
 
-%selected {
-  &.selected, &.selected:hover, &.selected:active, &.selected:active:hover {
-    background: #253858;
-    color: #fff;
-    text-decoration: none;
-    cursor: default;
-  }
-}
-
 @mixin selected {
   &.selected, &.selected:hover, &.selected:active, &.selected:active:hover {
     @content
@@ -77,12 +68,9 @@
     color: #fff;
 
 @extend %disabled;
+
     &:not([disabled]) {
       @extend %selected;
-      &:hover {
-        background: #0065ff;
-        color: #fff;
-      }
 
       &:active {
         background: #0747a6;
@@ -96,8 +84,10 @@
     color: #45536c;
 
 @extend %disabled;
+
     &:not([disabled]) {
       @extend %selected;
+
       &:hover {
         background: #e1e2e6;
         color: #45536c;
@@ -123,6 +113,7 @@
       background: transparent;
       color: #253858;
     }
+
     &:not([disabled]) {
       &:hover {
         background: #f6f6f7;
@@ -146,6 +137,7 @@
       background: #bf2600;
       color: #fff;
     }
+
     &:not([disabled]) {
       &:hover {
         background: #ff5630;
@@ -157,5 +149,14 @@
         color: #fff;
       }
     }
+  }
+}
+
+%selected {
+  &.selected, &.selected:hover, &.selected:active, &.selected:active:hover {
+    background: #253858;
+    color: #fff;
+    text-decoration: none;
+    cursor: default;
   }
 }

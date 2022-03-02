@@ -8,4 +8,5 @@ export declare const SpecificMinDate: Story<DatePickerProps>;
 export declare const SpecificMaxDate: Story<DatePickerProps>;
 export declare const SpecificDisabledDays: Story<DatePickerProps>;
 export declare const DateFormat: Story<DatePickerProps>;
-export declare const placeholder: Story<DatePickerProps>;
+export declare const Placeholder: Story<DatePickerProps>;
+export declare const Disabled: Story<DatePickerProps>;

@@ -2,7 +2,7 @@ export declare type DatePickerProps = {
     /**
      * Date value.
      */
-    date: Date;
+    date?: Date;
     /**
      * Min selectable date.
      */
@@ -28,5 +28,8 @@ export declare type DatePickerProps = {
      */
     onChange?: (date: Date) => void;
 };
-declare const DatePicker: ({ dateFormat, ...props }: DatePickerProps) => JSX.Element;
+declare const DatePicker: {
+    ({ dateFormat, ...props }: DatePickerProps): JSX.Element;
+    display: any;
+};
 export default DatePicker;

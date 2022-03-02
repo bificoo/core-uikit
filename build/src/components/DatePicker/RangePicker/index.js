@@ -83,13 +83,11 @@ var RangePicker = React__default.forwardRef(function RangePicker(_a, ref) {
     useEffect(function () {
         setEndDate(props.endDate);
     }, [props.endDate]);
-    return (jsx("div", __assign({ ref: datePickerContainerRef }, { children: jsx(DayPickerInput, { ref: datePickerInputRef, classNames: {
+    return (jsx("div", __assign({ ref: datePickerContainerRef }, { children: jsx(DayPickerInput, __assign({ ref: datePickerInputRef, classNames: {
                 container: styled.container,
                 overlay: styled.overlay,
                 overlayWrapper: styled.overlayWrapper,
-            }, style: props.style, value: startDate &&
-                endDate &&
-                "".concat(formatDate(startDate, dateFormat), "~").concat(formatDate(endDate, dateFormat)), format: dateFormat, formatDate: formatDate, parseDate: parseDate, placeholder: props.placeholder ||
+            }, style: props.style }, ((startDate || endDate) && { value: "".concat(startDate && formatDate(startDate, dateFormat), "~").concat(endDate ? formatDate(endDate, dateFormat) : startDate && formatDate(startDate, dateFormat)) }), { format: dateFormat, formatDate: formatDate, parseDate: parseDate, placeholder: props.placeholder ||
                 "".concat(formatDate(new Date(), dateFormat), " ~ ").concat(formatDate(new Date(), dateFormat)), hideOnDayClick: false, component: React__default.forwardRef(function FormInput(props, ref) {
                 return jsx(Form.Input, __assign({ ref: ref }, props), void 0);
             }), dayPickerProps: dayPickerProps, inputProps: {
@@ -98,7 +96,7 @@ var RangePicker = React__default.forwardRef(function RangePicker(_a, ref) {
                 style: {
                     cursor: "pointer",
                 },
-            }, onDayChange: handleDayChange }, void 0) }), void 0));
+            }, onDayChange: handleDayChange }), void 0) }), void 0));
 });
 
 export { RangePicker as default };

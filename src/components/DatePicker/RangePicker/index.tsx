@@ -47,9 +47,9 @@ const RangePicker = React.forwardRef(function RangePicker(
   { dateFormat = "YYYY-MM-DD", ...props }: RangePickerProps,
   ref: React.Ref<HTMLInputElement>,
 ) {
-  const [startDate, setStartDate] = useState<Date | undefined>(props?.startDate)
-  const [endDate, setEndDate] = useState<Date | undefined>(props?.endDate)
-  const currentMonth = useRef<Date | undefined>(startDate || endDate)
+  const [startDate, setStartDate] = useState(props?.startDate)
+  const [endDate, setEndDate] = useState(props?.endDate)
+  const currentMonth = useRef(startDate || endDate)
   const datePickerContainerRef = useRef(null)
   const datePickerInputRef = useRef<DayPickerInputType>(null)
 
@@ -131,11 +131,7 @@ const RangePicker = React.forwardRef(function RangePicker(
           overlayWrapper: styled.overlayWrapper,
         }}
         style={props.style}
-        value={
-          startDate &&
-          endDate &&
-          `${formatDate(startDate, dateFormat)}~${formatDate(endDate, dateFormat)}`
-        }
+        {...((startDate || endDate) && { value: `${startDate && formatDate(startDate, dateFormat)}~${endDate ? formatDate(endDate, dateFormat) : startDate && formatDate(startDate, dateFormat)}`})}
         format={dateFormat}
         formatDate={formatDate}
         parseDate={parseDate}

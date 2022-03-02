@@ -32,7 +32,7 @@ var DatePicker = function (_a) {
         dayPickerProps.disabledDays = __assign(__assign({}, dayPickerProps.disabledDays), { before: props.minDate });
     }
     useEffect(function () {
-        setDate(props.date);
+        props.date && setDate(props.date);
     }, [props.date]);
     return (jsx("div", { children: jsx(DayPickerInput, { classNames: {
                 container: styled.container,
@@ -49,5 +49,6 @@ var DatePicker = function (_a) {
                 },
             } }, void 0) }, void 0));
 };
+DatePicker.display = DatePicker;
 
 export { DatePicker as default };

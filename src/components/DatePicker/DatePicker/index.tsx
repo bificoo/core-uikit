@@ -15,7 +15,7 @@ export type DatePickerProps = {
   /**
    * Date value.
    */
-  date: Date
+  date?: Date
   /**
    * Min selectable date.
    */
@@ -67,7 +67,7 @@ const DatePicker = ({ dateFormat = "YYYY-MM-DD", ...props }: DatePickerProps) =>
   }
 
   useEffect(() => {
-    setDate(props.date)
+    props.date && setDate(props.date)
   }, [props.date])
 
   return (

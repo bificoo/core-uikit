@@ -15,15 +15,6 @@ export default {
   ],
 } as Meta
 
-const Template: Story<DatePickerProps> = args => <DatePicker {...args} />
-
-// export const Default = Template.bind({})
-// Default.args = {
-//   onChange: date => {
-//     console.info(date)
-//   },
-// }
-
 export const Default: Story<DatePickerProps> = () => {
   return (
     <DatePicker
@@ -78,18 +69,31 @@ export const SpecificDisabledDays: Story<DatePickerProps> = () => {
   )
 }
 
-export const DateFormat = Template.bind({})
-DateFormat.args = {
-  dateFormat: "YYYY.MM.DD",
-  onChange: date => {
-    console.info(date)
-  },
+export const DateFormat: Story<DatePickerProps> = () => {
+  return (
+    <DatePicker
+      dateFormat="YYYY.MM.DD"
+      onChange={date => {
+        console.info(date)
+      }} />
+  )
 }
 
-export const placeholder = Template.bind({})
-placeholder.args = {
-  placeholder: "請選擇日期",
-  onChange: date => {
-    console.info(date)
-  },
+export const Placeholder: Story<DatePickerProps> = () => {
+  return (
+    <DatePicker
+      placeholder="請選擇日期"
+      onChange={date => {
+        console.info(date)
+      }} />
+  )
+}
+
+
+export const Disabled: Story<DatePickerProps> = () => {
+  return (
+    <DatePicker
+      date={new Date()}
+      disabled={true} />
+  )
 }

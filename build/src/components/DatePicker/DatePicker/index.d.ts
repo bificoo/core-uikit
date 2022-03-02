@@ -2,7 +2,7 @@ export declare type DatePickerProps = {
     /**
      * Date value.
      */
-    date: Date;
+    date?: Date;
     /**
      * Min selectable date.
      */
@@ -19,6 +19,10 @@ export declare type DatePickerProps = {
      * Default input placeholder.
      */
     placeholder?: string;
+    /**
+     * Disabled input box.
+     */
+    disabled?: boolean;
     /**
      * Callback when date change.
      */

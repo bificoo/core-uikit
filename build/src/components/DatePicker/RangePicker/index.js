@@ -1,22 +1,21 @@
 import { __rest, __assign } from '../../../../node_modules/tslib/tslib.es6.js';
 import { jsx } from 'react/jsx-runtime';
-import { useState, useRef, useCallback, useEffect } from 'react';
+import React__default, { useState, useRef, useEffect } from 'react';
 import '../../../../node_modules/react-day-picker/lib/react-day-picker.min.js';
-import DateFormControl from '../DateFormControl/index.js';
+import Form from '../../Form/index.js';
 import useOutsideEvent from '../../../hooks/useOutsideEvent.js';
 import { formatDate, parseDate } from '../utils.js';
 import styled from './RangePicker.module.scss.js';
 import DayPickerInput$1 from '../../../../node_modules/react-day-picker/DayPickerInput/index.js';
-import { r as reactDayPicker_min } from '../../../../_virtual/react-day-picker.min.js';
+import { r as reactDayPicker_min } from '../../../../_virtual/react-day-picker.min.js_commonjs-module.js';
 
 // @ts-ignore
 var DayPickerInput = DayPickerInput$1.__esModule ? DayPickerInput$1.default : DayPickerInput$1;
-var RangePicker = function (_a) {
+var RangePicker = React__default.forwardRef(function RangePicker(_a, ref) {
     var _b = _a.dateFormat, dateFormat = _b === void 0 ? "YYYY-MM-DD" : _b, props = __rest(_a, ["dateFormat"]);
-    var start = (props === null || props === void 0 ? void 0 : props.startDate) || (props === null || props === void 0 ? void 0 : props.endDate);
-    var _c = useState(start), startDate = _c[0], setStartDate = _c[1];
+    var _c = useState(props === null || props === void 0 ? void 0 : props.startDate), startDate = _c[0], setStartDate = _c[1];
     var _d = useState(props === null || props === void 0 ? void 0 : props.endDate), endDate = _d[0], setEndDate = _d[1];
-    var currentMonth = useRef(startDate);
+    var currentMonth = useRef(startDate || endDate);
     var datePickerContainerRef = useRef(null);
     var datePickerInputRef = useRef(null);
     var dayPickerProps = {
@@ -39,11 +38,24 @@ var RangePicker = function (_a) {
             });
             range.from !== null && setStartDate(range.from);
             range.to !== null && setEndDate(range.to);
-            if (range.from && range.to)
-                props.onChange && props.onChange(range.from, range.to);
+            if (!range.from && !range.to) {
+                props.onChange &&
+                    props.onChange({
+                        startDate: startDate || null,
+                        endDate: null,
+                    });
+            }
+            else {
+                props.onChange &&
+                    props.onChange({
+                        startDate: range.from || null,
+                        endDate: range.to || null,
+                    });
+            }
         },
         onMonthChange: function (date) {
             currentMonth.current = date;
+            handleDayChange();
         },
     };
     if (props === null || props === void 0 ? void 0 : props.maxDate) {
@@ -54,10 +66,10 @@ var RangePicker = function (_a) {
     if (props === null || props === void 0 ? void 0 : props.minDate) {
         dayPickerProps.disabledDays = __assign(__assign({}, dayPickerProps.disabledDays), { before: props.minDate });
     }
-    var handleDayChange = useCallback(function () {
+    var handleDayChange = function () {
         var _a;
         (_a = datePickerInputRef === null || datePickerInputRef === void 0 ? void 0 : datePickerInputRef.current) === null || _a === void 0 ? void 0 : _a.setState({ month: currentMonth.current });
-    }, []);
+    };
     useOutsideEvent({
         refs: [datePickerContainerRef],
         onClickOutside: function () {
@@ -71,13 +83,20 @@ var RangePicker = function (_a) {
     useEffect(function () {
         setEndDate(props.endDate);
     }, [props.endDate]);
-    return (jsx("div", __assign({ ref: datePickerContainerRef }, { children: jsx(DayPickerInput, { ref: datePickerInputRef, classNames: {
+    return (jsx("div", __assign({ ref: datePickerContainerRef }, { children: jsx(DayPickerInput, __assign({ ref: datePickerInputRef, classNames: {
                 container: styled.container,
                 overlay: styled.overlay,
                 overlayWrapper: styled.overlayWrapper,
-            }, value: startDate, format: dateFormat, formatDate: formatDate, parseDate: parseDate, placeholder: props.placeholder ||
-                "".concat(formatDate(new Date(), dateFormat), " ~ ").concat(formatDate(new Date(), dateFormat)), hideOnDayClick: false, component: function (props) { return (jsx(DateFormControl, __assign({ startDate: startDate, endDate: endDate, dateFormat: dateFormat }, props))); }, dayPickerProps: dayPickerProps, onDayChange: handleDayChange }) })));
-};
-RangePicker.display = RangePicker;
+            }, style: props.style }, ((startDate || endDate) && { value: "".concat(startDate && formatDate(startDate, dateFormat), "~").concat(endDate ? formatDate(endDate, dateFormat) : startDate && formatDate(startDate, dateFormat)) }), { format: dateFormat, formatDate: formatDate, parseDate: parseDate, placeholder: props.placeholder ||
+                "".concat(formatDate(new Date(), dateFormat), " ~ ").concat(formatDate(new Date(), dateFormat)), hideOnDayClick: false, component: React__default.forwardRef(function FormInput(props, ref) {
+                return jsx(Form.Input, __assign({ ref: ref }, props), void 0);
+            }), dayPickerProps: dayPickerProps, inputProps: {
+                ref: ref,
+                readOnly: true,
+                style: {
+                    cursor: "pointer",
+                },
+            }, onDayChange: handleDayChange }), void 0) }), void 0));
+});
 
 export { RangePicker as default };

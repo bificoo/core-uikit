@@ -1,7 +1,6 @@
 import { Story, Meta } from "@storybook/react"
 import Button from "components/Button"
 import Tooltip, { TooltipProps } from "./index"
-import React from "react"
 
 export default {
   title: "General/Tooltip",

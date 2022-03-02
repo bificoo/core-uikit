@@ -15,7 +15,7 @@ export type DatePickerProps = {
   /**
    * Date value.
    */
-  date: Date
+  date?: Date
   /**
    * Min selectable date.
    */
@@ -32,6 +32,10 @@ export type DatePickerProps = {
    * Default input placeholder.
    */
   placeholder?: string
+  /**
+   * Disabled input box.
+   */
+  disabled?: boolean
   /**
    * Callback when date change.
    */
@@ -63,7 +67,7 @@ const DatePicker = ({ dateFormat = "YYYY-MM-DD", ...props }: DatePickerProps) =>
   }
 
   useEffect(() => {
-    setDate(props.date)
+    props.date && setDate(props.date)
   }, [props.date])
 
   return (
@@ -74,6 +78,7 @@ const DatePicker = ({ dateFormat = "YYYY-MM-DD", ...props }: DatePickerProps) =>
           overlay: styled.overlay,
           overlayWrapper: styled.overlayWrapper,
         }}
+        style={{ width: "250px" }}
         value={date}
         format={dateFormat}
         formatDate={formatDate}
@@ -89,6 +94,7 @@ const DatePicker = ({ dateFormat = "YYYY-MM-DD", ...props }: DatePickerProps) =>
         inputProps={{
           ref: datePickerInputRef,
           readOnly: true,
+          disabled: props.disabled,
           style: {
             cursor: "pointer",
           },

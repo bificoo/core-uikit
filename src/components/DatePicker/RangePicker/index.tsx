@@ -1,13 +1,12 @@
-import React, { useState, useRef, useCallback, useEffect } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import { DateUtils } from "react-day-picker"
 import { DayPickerInputProps, DayPickerProps } from "react-day-picker/types"
 import DayPickerInputType from "react-day-picker/types/DayPickerInput"
-import DateFormControl from "../DateFormControl"
+import Form from "components/Form"
 import useOutsideEvent from "hooks/useOutsideEvent"
 import { formatDate, parseDate } from "../utils"
 import styled from "./RangePicker.module.scss"
-
-// import DayPickerInput from 'react-day-picker/DayPickerInput'
+import { WithComponent } from "types/common"
 
 import DPI from 'react-day-picker/DayPickerInput';
 // @ts-ignore
@@ -41,14 +40,16 @@ export type RangePickerProps = {
   /**
    * Callback when date change.
    */
-  onChange?: (startDate: Date, endDate: Date) => void
-}
+  onChange?: ({ startDate: endDate }: { startDate: Date | null; endDate: Date | null }) => void
+} & WithComponent
 
-const RangePicker = ({ dateFormat = "YYYY-MM-DD", ...props }: RangePickerProps) => {
-  const start = props?.startDate || props?.endDate
-  const [startDate, setStartDate] = useState<Date | undefined>(start)
-  const [endDate, setEndDate] = useState<Date | undefined>(props?.endDate)
-  const currentMonth = useRef<Date | undefined>(startDate)
+const RangePicker = React.forwardRef(function RangePicker(
+  { dateFormat = "YYYY-MM-DD", ...props }: RangePickerProps,
+  ref: React.Ref<HTMLInputElement>,
+) {
+  const [startDate, setStartDate] = useState(props?.startDate)
+  const [endDate, setEndDate] = useState(props?.endDate)
+  const currentMonth = useRef(startDate || endDate)
   const datePickerContainerRef = useRef(null)
   const datePickerInputRef = useRef<DayPickerInputType>(null)
 
@@ -70,11 +71,23 @@ const RangePicker = ({ dateFormat = "YYYY-MM-DD", ...props }: RangePickerProps) 
       })
       range.from !== null && setStartDate(range.from)
       range.to !== null && setEndDate(range.to)
-      if (range.from && range.to)
-        props.onChange && props.onChange(range.from, range.to)
+      if (!range.from && !range.to) {
+        props.onChange &&
+          props.onChange({
+            startDate: startDate || null,
+            endDate: null,
+          })
+      } else {
+        props.onChange &&
+          props.onChange({
+            startDate: range.from || null,
+            endDate: range.to || null,
+          })
+      }
     },
     onMonthChange: date => {
       currentMonth.current = date
+      handleDayChange()
     },
   }
   if (props?.maxDate) {
@@ -89,9 +102,9 @@ const RangePicker = ({ dateFormat = "YYYY-MM-DD", ...props }: RangePickerProps) 
     }
   }
 
-  const handleDayChange = useCallback(() => {
+  const handleDayChange = () => {
     datePickerInputRef?.current?.setState({ month: currentMonth.current })
-  }, [])
+  }
 
   useOutsideEvent({
     refs: [datePickerContainerRef],
@@ -117,7 +130,8 @@ const RangePicker = ({ dateFormat = "YYYY-MM-DD", ...props }: RangePickerProps) 
           overlay: styled.overlay,
           overlayWrapper: styled.overlayWrapper,
         }}
-        value={startDate}
+        style={props.style}
+        {...((startDate || endDate) && { value: `${startDate && formatDate(startDate, dateFormat)}~${endDate ? formatDate(endDate, dateFormat) : startDate && formatDate(startDate, dateFormat)}`})}
         format={dateFormat}
         formatDate={formatDate}
         parseDate={parseDate}
@@ -126,20 +140,24 @@ const RangePicker = ({ dateFormat = "YYYY-MM-DD", ...props }: RangePickerProps) 
           `${formatDate(new Date(), dateFormat)} ~ ${formatDate(new Date(), dateFormat)}`
         }
         hideOnDayClick={false}
-        component={(props: DayPickerInputProps["component"]) => (
-          <DateFormControl
-            startDate={startDate}
-            endDate={endDate}
-            dateFormat={dateFormat}
-            {...props}
-          />
-        )}
+        component={React.forwardRef(function FormInput(
+          props: DayPickerInputProps["component"],
+          ref,
+        ) {
+          return <Form.Input ref={ref} {...props} />
+        })}
         dayPickerProps={dayPickerProps}
+        inputProps={{
+          ref,
+          readOnly: true,
+          style: {
+            cursor: "pointer",
+          },
+        }}
         onDayChange={handleDayChange}
       />
     </div>
   )
-}
-RangePicker.display = RangePicker
+})
 
 export default RangePicker

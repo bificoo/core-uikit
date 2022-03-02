@@ -28,7 +28,7 @@ function open(Modal, config) {
         return __assign(__assign({}, theOtherConfig), { onConfirm: bind(onConfirm), onCancel: bind(onCancel), onClose: bind(onClose) });
     }
     function render(config) {
-        ReactDOM.render(jsx(Modal, __assign({}, bindClose(config))), modalDiv);
+        ReactDOM.render(jsx(Modal, __assign({}, bindClose(config)), void 0), modalDiv);
     }
     function update(newConfig) {
         render(__assign(__assign(__assign({}, config), newConfig), { open: true }));

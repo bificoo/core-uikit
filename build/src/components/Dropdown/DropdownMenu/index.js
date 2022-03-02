@@ -22,7 +22,7 @@ var DropdownMenu = forwardRef(function Dropdown(props, ref) {
                 if (child.type === DropdownHeader)
                     return child;
                 return null;
-            }), jsx("div", __assign({ className: styled.list }, { children: list })), React__default.Children.map(props.children, function (child) {
+            }), jsx("div", __assign({ className: styled.list }, { children: list }), void 0), React__default.Children.map(props.children, function (child) {
                 if (!React__default.isValidElement(child))
                     return;
                 if (child.type === DropdownFooter)

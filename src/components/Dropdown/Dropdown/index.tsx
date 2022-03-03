@@ -47,7 +47,6 @@ const Dropdown = forwardRef<DropdownActions, DropdownProps>(function Dropdown(pr
     React.Children.forEach(props.children, child => {
       if (!React.isValidElement(child)) return
       if (child.type === BaseDropdown.Toggle) {
-        console.log(child)
         triggerElement = child
       }
       if (child.type === DropdownMenu) {

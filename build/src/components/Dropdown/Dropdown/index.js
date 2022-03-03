@@ -20,7 +20,6 @@ var Dropdown = forwardRef(function Dropdown(props, ref) {
             if (!React__default.isValidElement(child))
                 return;
             if (child.type === Dropdown$1.Toggle) {
-                console.log(child);
                 triggerElement = child;
             }
             if (child.type === DropdownMenu) {

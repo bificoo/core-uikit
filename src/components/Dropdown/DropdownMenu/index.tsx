@@ -26,7 +26,7 @@ const DropdownMenu = forwardRef<HTMLDivElement, DropdownMenuProps>(function Drop
         return null
       })}
       <div className={styled.list}>
-        {list.length > 0 ? list : props.children}
+        {list.length >= 0 ? list : props.children}
       </div>
       {React.Children.map(props.children, child => {
         if (!React.isValidElement(child)) return

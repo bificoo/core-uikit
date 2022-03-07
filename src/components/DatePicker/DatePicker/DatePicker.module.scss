@@ -263,6 +263,7 @@
         background-color: #253858;
         color: #fff;
 
+        &:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside),
         &:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {
           background-color: #253858;
           color: #fff;

@@ -38,5 +38,8 @@ declare const Image: {
     Shortcut: import("react").FunctionComponent<import("react").SVGProps<SVGSVGElement> & {
         title?: string | undefined;
     }>;
+    Clock: import("react").FunctionComponent<import("react").SVGProps<SVGSVGElement> & {
+        title?: string | undefined;
+    }>;
 };
 export default Image;

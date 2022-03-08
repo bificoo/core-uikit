@@ -11,6 +11,7 @@ import { ReactComponent as SvgUpTriangle } from './UpTriangle.svg.js';
 import { ReactComponent as SvgDownTriangle } from './DownTriangle.svg.js';
 import { ReactComponent as SvgDash } from './Dash.svg.js';
 import { ReactComponent as SvgShortcut } from './Shortcut.svg.js';
+import { ReactComponent as SvgClock } from './Clock.svg.js';
 
 var Image = Object.assign({}, {
     Group: SvgGroup,
@@ -26,6 +27,7 @@ var Image = Object.assign({}, {
     DownTriangle: SvgDownTriangle,
     Dash: SvgDash,
     Shortcut: SvgShortcut,
+    Clock: SvgClock,
 });
 
 export { Image as default };

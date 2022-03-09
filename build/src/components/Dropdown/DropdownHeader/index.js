@@ -4,7 +4,7 @@ import cx from 'classnames';
 import styled from './DropdownHeader.module.scss.js';
 
 var DropdownHeader = function (props) {
-    return (jsx("div", __assign({ className: cx(styled.wrapper, props.className) }, { children: props.children }), void 0));
+    return (jsx("div", __assign({ className: cx(styled.wrapper, props.className) }, { children: props.children })));
 };
 
 export { DropdownHeader as default };

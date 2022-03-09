@@ -10,7 +10,7 @@ var CollapsePanel = function (props) {
     var expanded = useContext(CollapseContext).expanded;
     return (jsx("div", __assign({ className: cx(props.className, styled.wrapper, (_a = {},
             _a[styled.expanded] = expanded,
-            _a)), style: props.style }, { children: props.children }), void 0));
+            _a)), style: props.style }, { children: props.children })));
 };
 
 export { CollapsePanel as default };

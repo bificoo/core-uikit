@@ -6,7 +6,7 @@ import styled from './FormFieldset.module.scss.js';
 var FormFieldset = function (_a) {
     var _b;
     var _c = _a.inline, inline = _c === void 0 ? false : _c, className = _a.className, props = __rest(_a, ["inline", "className"]);
-    return (jsx("fieldset", __assign({ className: cx(styled.wrapper, (_b = {}, _b[styled.inline] = inline, _b), className) }, props, { children: props.children }), void 0));
+    return (jsx("fieldset", __assign({ className: cx(styled.wrapper, (_b = {}, _b[styled.inline] = inline, _b), className) }, props, { children: props.children })));
 };
 
 export { FormFieldset as default };

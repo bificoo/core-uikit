@@ -45,7 +45,7 @@ var DatePicker = function (_a) {
                 overlay: styled.overlay,
                 overlayWrapper: styled.overlayWrapper,
             }, style: { width: "250px" }, value: date, format: dateFormat, formatDate: formatDate, parseDate: parseDate, placeholder: props.placeholder || day(new Date()).format(dateFormat), component: React__default.forwardRef(function FormInput(props, ref) {
-                return (jsxs(InputGroup, __assign({ className: styled["input-group"] }, { children: [jsx(Form.Input, __assign({ ref: ref }, props), void 0), jsx(Append, __assign({ className: styled.icon }, { children: jsx(Icon, { name: "calendar" }, void 0) }), void 0)] }), void 0));
+                return (jsxs(InputGroup, __assign({ className: styled["input-group"] }, { children: [jsx(Form.Input, __assign({ ref: ref }, props)), jsx(Append, __assign({ className: styled.icon }, { children: jsx(Icon, { name: "calendar" }) }))] })));
             }), dayPickerProps: dayPickerProps, inputProps: {
                 ref: datePickerInputRef,
                 readOnly: true,
@@ -53,7 +53,7 @@ var DatePicker = function (_a) {
                 style: {
                     cursor: "pointer",
                 },
-            } }, void 0) }, void 0));
+            } }) }));
 };
 DatePicker.display = DatePicker;
 

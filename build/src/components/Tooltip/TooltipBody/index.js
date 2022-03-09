@@ -3,7 +3,7 @@ import { jsx } from 'react/jsx-runtime';
 import styled from './TooltipBody.module.scss.js';
 
 var TooltipBody = function (props) {
-    return (jsx("div", __assign({ className: styled.wrapper, style: props.style }, { children: props.children }), void 0));
+    return (jsx("div", __assign({ className: styled.wrapper, style: props.style }, { children: props.children })));
 };
 TooltipBody.display = TooltipBody;
 

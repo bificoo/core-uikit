@@ -12,7 +12,7 @@ var Prepend = function (props) {
             _a[styled.entered] = attributes === null || attributes === void 0 ? void 0 : attributes.entered,
             _a[styled.disabled] = attributes === null || attributes === void 0 ? void 0 : attributes.disabled,
             _a[styled["read-only"]] = attributes === null || attributes === void 0 ? void 0 : attributes.readOnly,
-            _a), props.className) }, { children: props.children }), void 0));
+            _a), props.className) }, { children: props.children })));
 };
 
 export { Prepend as default };

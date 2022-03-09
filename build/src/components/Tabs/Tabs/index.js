@@ -34,13 +34,13 @@ var Tabs = function (_a) {
                             if (!React__default.isValidElement(child))
                                 return;
                             return child;
-                        }), jsx("div", __assign({ className: styled["extra-content"] }, { children: props.extraContent }), void 0)] }), void 0), hasChild && (jsx("div", __assign({ className: styled["tab-content"] }, { children: React__default.Children.map(props.children, function (child) {
+                        }), jsx("div", __assign({ className: styled["extra-content"] }, { children: props.extraContent }))] })), hasChild && (jsx("div", __assign({ className: styled["tab-content"] }, { children: React__default.Children.map(props.children, function (child) {
                         if (!React__default.isValidElement(child))
                             return;
                         if (activeKey === child.props.eventKey) {
                             return child.props.children;
                         }
-                    }) }), void 0))] }), void 0) }), void 0));
+                    }) })))] })) })));
 };
 
 export { Tabs as default };

@@ -10,22 +10,22 @@ var Icon = function (props) {
     var camelCased = props.name.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
     var compName = camelCased.charAt(0).toUpperCase() + camelCased.slice(1);
     var compareIcon = {
-        'ArrowUp': jsx(Image.ArrowUp, {}, void 0),
-        'ArrowDown': jsx(Image.ArrowDown, {}, void 0),
-        'ArrowLeft': jsx(Image.ArrowLeft, {}, void 0),
-        'ArrowRight': jsx(Image.ArrowRight, {}, void 0),
-        'Search': jsx(Image.Search, {}, void 0),
-        'Group': jsx(Image.Group, {}, void 0),
-        'Information': jsx(Image.Information, {}, void 0),
-        'Cross': jsx(Image.Cross, {}, void 0),
-        'Calendar': jsx(Image.Calendar, {}, void 0),
-        'UpTriangle': jsx(Image.UpTriangle, {}, void 0),
-        'DownTriangle': jsx(Image.DownTriangle, {}, void 0),
-        'Dash': jsx(Image.Dash, {}, void 0),
-        'Shortcut': jsx(Image.Shortcut, {}, void 0),
-        'Clock': jsx(Image.Clock, {}, void 0),
+        'ArrowUp': jsx(Image.ArrowUp, {}),
+        'ArrowDown': jsx(Image.ArrowDown, {}),
+        'ArrowLeft': jsx(Image.ArrowLeft, {}),
+        'ArrowRight': jsx(Image.ArrowRight, {}),
+        'Search': jsx(Image.Search, {}),
+        'Group': jsx(Image.Group, {}),
+        'Information': jsx(Image.Information, {}),
+        'Cross': jsx(Image.Cross, {}),
+        'Calendar': jsx(Image.Calendar, {}),
+        'UpTriangle': jsx(Image.UpTriangle, {}),
+        'DownTriangle': jsx(Image.DownTriangle, {}),
+        'Dash': jsx(Image.Dash, {}),
+        'Shortcut': jsx(Image.Shortcut, {}),
+        'Clock': jsx(Image.Clock, {}),
     };
-    return (jsx("div", __assign({ className: cx((_a = {}, _a[styled.arrowWrapper] = compName.includes("Arrow"), _a), props.className), style: __assign({ display: "flex" }, props.style) }, { children: React__default.cloneElement(compareIcon[compName], __assign(__assign({}, (props.width && { width: props.width })), (props.height && { height: props.height }))) }), void 0));
+    return (jsx("div", __assign({ className: cx((_a = {}, _a[styled.arrowWrapper] = compName.includes("Arrow"), _a), props.className), style: __assign({ display: "flex" }, props.style) }, { children: React__default.cloneElement(compareIcon[compName], __assign(__assign({}, (props.width && { width: props.width })), (props.height && { height: props.height }))) })));
 };
 
 export { Icon, Icon as default };

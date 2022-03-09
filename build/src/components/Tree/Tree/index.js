@@ -14,7 +14,7 @@ var Tree = function (_a) {
             if (React__default.isValidElement(child)) {
                 return React__default.cloneElement(child, __assign(__assign({}, child.props), { key: index }));
             }
-        }) }), void 0));
+        }) })));
 };
 
 export { Tree as default };

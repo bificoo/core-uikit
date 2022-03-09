@@ -37,7 +37,7 @@ var Table = function (_a) {
             setPage(1);
         }
     }, [data, dataPrevious]);
-    return (jsxs("div", __assign({ className: styled.wrapper }, { children: [jsx(Table$1, __assign({}, props, { autoHeight: true, data: visualData, renderLoading: function () { return props.loading && jsx(QueryStatus.Loading, {}, void 0); } }), void 0), data && data.length !== 0 && (jsx(Pagination, { maxButtons: maxButtons, pages: Math.ceil(data.length / limit), activePage: page, total: data.length, limitMenu: limitMenu, limit: limit, renderTotal: typeof renderTotal === "function" ? function () { return renderTotal(data.length); } : renderTotal, onSelect: handleSelect, onLimitChange: handleChangeLength }, void 0))] }), void 0));
+    return (jsxs("div", __assign({ className: styled.wrapper }, { children: [jsx(Table$1, __assign({}, props, { autoHeight: true, data: visualData, renderLoading: function () { return props.loading && jsx(QueryStatus.Loading, {}); } })), data && data.length !== 0 && (jsx(Pagination, { maxButtons: maxButtons, pages: Math.ceil(data.length / limit), activePage: page, total: data.length, limitMenu: limitMenu, limit: limit, renderTotal: typeof renderTotal === "function" ? function () { return renderTotal(data.length); } : renderTotal, onSelect: handleSelect, onLimitChange: handleChangeLength }))] })));
 };
 Table.Column = Column;
 Table.ColumnGroup = ColumnGroup;

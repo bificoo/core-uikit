@@ -41,9 +41,9 @@ var Select = function (_a) {
     };
     return (jsx("div", __assign({ className: cx(styled.wrapper, props.className), style: props.style }, { children: jsx("div", __assign({ className: styled.container }, { children: jsx(Popup, __assign({ ref: popupRef, trigger: function (open) {
                     var _a, _b;
-                    return (jsxs("div", __assign({ className: cx(styled.control, (_a = {}, _a[styled.active] = open, _a), (_b = {}, _b[styled.disabled] = props.disabled, _b)) }, { children: [props.placeholder && selected.length === 0 && (jsx("div", __assign({ className: styled.placeholder }, { children: props.placeholder }), void 0)), jsx("div", __assign({ className: styled["vale-container"] }, { children: isMulti ? (jsx(Fragment, { children: selected.map(function (item, index) { return (jsxs("div", __assign({ className: styled["multi-value"] }, { children: [jsx("div", __assign({ className: styled.label }, { children: item.value }), void 0), !props.disabled && (jsx("div", __assign({ className: styled.remove, onClick: function (e) { return handleRemoveItem(e, item); } }, { children: jsx(SvgRemove, {}, void 0) }), void 0))] }), index)); }) }, void 0)) : (jsx(Fragment, { children: selected.map(function (item, index) {
-                                        return (jsx("div", __assign({ className: styled["single-value"] }, { children: jsx("div", __assign({ className: styled.label }, { children: item.value }), void 0) }), index));
-                                    }) }, void 0)) }), void 0), jsxs("div", __assign({ className: styled.indicator }, { children: [isMulti && selected.length > 0 && (jsx("div", __assign({ className: styled["clear-indicator"], onClick: handleClear }, { children: jsx("span", { children: !props.disabled && jsx(SvgClear, {}, void 0) }, void 0) }), void 0)), jsx("div", __assign({ className: styled["dropdown-indicator"] }, { children: jsx(Icon, { name: "arrow-down" }, void 0) }), void 0)] }), void 0)] }), void 0));
+                    return (jsxs("div", __assign({ className: cx(styled.control, (_a = {}, _a[styled.active] = open, _a), (_b = {}, _b[styled.disabled] = props.disabled, _b)) }, { children: [props.placeholder && selected.length === 0 && (jsx("div", __assign({ className: styled.placeholder }, { children: props.placeholder }))), jsx("div", __assign({ className: styled["vale-container"] }, { children: isMulti ? (jsx(Fragment, { children: selected.map(function (item, index) { return (jsxs("div", __assign({ className: styled["multi-value"] }, { children: [jsx("div", __assign({ className: styled.label }, { children: item.value })), !props.disabled && (jsx("div", __assign({ className: styled.remove, onClick: function (e) { return handleRemoveItem(e, item); } }, { children: jsx(SvgRemove, {}) })))] }), index)); }) })) : (jsx(Fragment, { children: selected.map(function (item, index) {
+                                        return (jsx("div", __assign({ className: styled["single-value"] }, { children: jsx("div", __assign({ className: styled.label }, { children: item.value })) }), index));
+                                    }) })) })), jsxs("div", __assign({ className: styled.indicator }, { children: [isMulti && selected.length > 0 && (jsx("div", __assign({ className: styled["clear-indicator"], onClick: handleClear }, { children: jsx("span", { children: !props.disabled && jsx(SvgClear, {}) }) }))), jsx("div", __assign({ className: styled["dropdown-indicator"] }, { children: jsx(Icon, { name: "arrow-down" }) }))] }))] })));
                 }, position: "bottom left", on: "click", closeOnDocumentClick: true, mouseLeaveDelay: 300, mouseEnterDelay: 0, arrow: false, disabled: props.disabled, contentStyle: {
                     border: "none",
                     paddingTop: "8px",
@@ -59,7 +59,7 @@ var Select = function (_a) {
                         else {
                             return React__default.cloneElement(child, { onClick: handleClick });
                         }
-                    }) }), void 0) }), void 0) }), void 0) }), void 0));
+                    }) })) })) })) })));
 };
 Select.Option = SelectOption;
 

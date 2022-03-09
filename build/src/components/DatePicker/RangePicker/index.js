@@ -7,7 +7,7 @@ import useOutsideEvent from '../../../hooks/useOutsideEvent.js';
 import { formatDate, parseDate } from '../utils.js';
 import styled from './RangePicker.module.scss.js';
 import DayPickerInput$1 from '../../../../node_modules/react-day-picker/DayPickerInput/index.js';
-import { r as reactDayPicker_min } from '../../../../_virtual/react-day-picker.min.js_commonjs-module.js';
+import { r as reactDayPicker_min } from '../../../../_virtual/react-day-picker.min.js';
 
 // @ts-ignore
 var DayPickerInput = DayPickerInput$1.__esModule ? DayPickerInput$1.default : DayPickerInput$1;
@@ -89,14 +89,14 @@ var RangePicker = React__default.forwardRef(function RangePicker(_a, ref) {
                 overlayWrapper: styled.overlayWrapper,
             }, style: props.style }, ((startDate || endDate) && { value: "".concat(startDate && formatDate(startDate, dateFormat), "~").concat(endDate ? formatDate(endDate, dateFormat) : startDate && formatDate(startDate, dateFormat)) }), { format: dateFormat, formatDate: formatDate, parseDate: parseDate, placeholder: props.placeholder ||
                 "".concat(formatDate(new Date(), dateFormat), " ~ ").concat(formatDate(new Date(), dateFormat)), hideOnDayClick: false, component: React__default.forwardRef(function FormInput(props, ref) {
-                return jsx(Form.Input, __assign({ ref: ref }, props), void 0);
+                return jsx(Form.Input, __assign({ ref: ref }, props));
             }), dayPickerProps: dayPickerProps, inputProps: {
                 ref: ref,
                 readOnly: true,
                 style: {
                     cursor: "pointer",
                 },
-            }, onDayChange: handleDayChange }), void 0) }), void 0));
+            }, onDayChange: handleDayChange })) })));
 });
 
 export { RangePicker as default };

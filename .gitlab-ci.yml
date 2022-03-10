@@ -15,6 +15,10 @@ install:
     policy: push
   script:
     - yarn install --frozen-lockfile
+  artifacts:
+    expire_in: 1 hour
+    paths:
+      - node_modules
 
 build:story-book:
   stage: build
@@ -33,7 +37,6 @@ build:story-book:
     expire_in: 1 hour
     paths:
       - ./storybook-static
-      - node_modules
 
 build:core-uikit:
   stage: build
@@ -51,6 +54,10 @@ build:core-uikit:
     - ls -al
     - yarn install --frozen-lockfile
     - yarn build:library
+  artifacts:
+    expire_in: 1 hour
+    paths:
+      - build
 
 publish:
   stage: publish

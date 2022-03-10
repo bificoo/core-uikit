@@ -39,8 +39,8 @@ publish:
     - echo "//gitlab.bigdatainn-prd.site/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}" >> .npmrc
     - cat .npmrc
     - ls -al
-    - yarn install --prefer-offline --cache-folder ./cache &> /dev/null
-    - yarn build:library &> /dev/null
+    - yarn install --prefer-offline --cache-folder ./cache
+    - yarn build:library
     - npm publish
 
 deploy-gcs:

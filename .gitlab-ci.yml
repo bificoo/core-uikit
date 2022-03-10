@@ -27,7 +27,6 @@ build:story-book:
     key: $CI_COMMIT_REF_SLUG
     paths:
       - node_modules
-    policy: pull
   except: ['tags']
   needs: ['install']
   script:
@@ -65,6 +64,7 @@ publish:
   cache:
     key: $CI_COMMIT_REF_SLUG
     paths:
+      - node_modules
       - build
     policy: pull
   only: ['tags']

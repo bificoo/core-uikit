@@ -10,7 +10,6 @@ build:
   cache:
     key: $CI_COMMIT_REF_SLUG
     paths:
-      - .cache/*
       - node_modules
     policy: push
   script:
@@ -20,6 +19,7 @@ build:
     expire_in: 1 hour
     paths:
       - ./storybook-static
+      - node_modules
 
 publish:
   stage: publish
@@ -27,7 +27,6 @@ publish:
   cache:
     key: $CI_COMMIT_REF_SLUG
     paths:
-      - .cache/*
       - node_modules
     policy: pull
   only: ['tags']

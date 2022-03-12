@@ -21,5 +21,5 @@ export const Empty: Story = () => {
 }
 
 export const Full: Story = () => {
-  return <Progress percent={100} />
+  return <Progress percent={120} />
 }

@@ -1,7 +1,8 @@
 import React, { useRef, useState, useEffect } from "react"
 import { DayPickerInputProps, DayPickerProps } from "react-day-picker/types"
 import DayPickerInputType from "react-day-picker/types/DayPickerInput"
-import Form from "components/Form"
+import Form, { InputGroup, Append } from "components/Form"
+import Icon from "components/Icon"
 import day from "utils/day"
 import { formatDate, parseDate } from "../utils"
 import styled from "./DatePicker.module.scss"
@@ -88,7 +89,13 @@ const DatePicker = ({ dateFormat = "YYYY-MM-DD", ...props }: DatePickerProps) =>
           props: DayPickerInputProps["component"],
           ref,
         ) {
-          return <Form.Input ref={ref} {...props} />
+          return (
+            <InputGroup className={styled["input-group"]}>
+              <Form.Input ref={ref} {...props} />
+              <Append className={styled.icon}>
+                <Icon name="calendar" />
+              </Append>
+            </InputGroup>)
         })}
         dayPickerProps={dayPickerProps}
         inputProps={{

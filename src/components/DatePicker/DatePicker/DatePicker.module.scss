@@ -263,6 +263,7 @@
         background-color: #253858;
         color: #fff;
 
+        &:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside),
         &:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {
           background-color: #253858;
           color: #fff;
@@ -283,4 +284,25 @@
   top: 45px;
   z-index: 10;
   background: #fff;
+}
+
+.input-group {
+  &:hover {
+    background-color: #ebecf0;
+  }
+
+  &:focus-within {
+    background-color: #fff;
+    border-color: #0052cc;
+
+    .icon {
+      > div {
+        > svg {
+          path:nth-last-child(1) {
+            fill: #557cc4;
+          }
+        }
+      }
+    }
+  }
 }

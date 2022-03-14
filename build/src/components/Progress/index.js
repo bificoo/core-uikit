@@ -5,7 +5,7 @@ import styled from './Progress.module.scss.js';
 var PERCENT_MAX = 100;
 var Progress = function (props) {
     var alignPercent = props.percent > PERCENT_MAX ? PERCENT_MAX : props.percent;
-    return (jsxs("div", __assign({ className: styled.wrapper }, { children: [jsx("div", __assign({ className: styled["progress-bar"] }, { children: jsx("div", { className: styled.inner, style: { width: "".concat(alignPercent, "%") } }) })), jsxs("div", __assign({ className: styled.percent }, { children: [props.percent, "%"] }))] })));
+    return (jsxs("div", __assign({ className: styled.wrapper }, { children: [jsx("div", __assign({ className: styled["progress-bar"] }, { children: jsx("div", { className: styled.inner, style: { width: "".concat(alignPercent, "%") } }, void 0) }), void 0), jsxs("div", __assign({ className: styled.percent }, { children: [props.percent, "%"] }), void 0)] }), void 0));
 };
 
 export { Progress as default };

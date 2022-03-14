@@ -4,7 +4,7 @@ import cx from 'classnames';
 import styled from './ModalBody.module.scss.js';
 
 var ModalBody = function (props) {
-    return (jsx("main", __assign({ className: cx(styled.main, props.className), style: props.style }, { children: props.children || props.content })));
+    return (jsx("main", __assign({ className: cx(styled.main, props.className), style: props.style }, { children: props.children || props.content }), void 0));
 };
 
 export { ModalBody as default };

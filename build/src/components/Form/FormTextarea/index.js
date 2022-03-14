@@ -7,8 +7,8 @@ import styled from './FormTextarea.module.scss.js';
 
 var FormTextarea = React__default.forwardRef(function FormTextarea(_a, ref) {
     var _b;
-    var className = _a.className, isValid = _a.isValid, isInvalid = _a.isInvalid, props = __rest(_a, ["className", "isValid", "isInvalid"]);
     if (ref === void 0) { ref = null; }
+    var className = _a.className, isValid = _a.isValid, isInvalid = _a.isInvalid, props = __rest(_a, ["className", "isValid", "isInvalid"]);
     var _c = useContext(FormGroupContext), attributes = _c.attributes, setAttributes = _c.setAttributes;
     var _d = useState(false), entered = _d[0], setEntered = _d[1];
     useEffect(function () {
@@ -32,7 +32,7 @@ var FormTextarea = React__default.forwardRef(function FormTextarea(_a, ref) {
                 else
                     setEntered(true);
                 props.onChange && props.onChange(e);
-            } })) })));
+            } }), void 0) }), void 0));
 });
 
 export { FormTextarea as default };

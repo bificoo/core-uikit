@@ -14,7 +14,7 @@ var DropdownToggleForButton = forwardRef(function DropdownToggleForButton(props,
                 });
             }
             return child;
-        }) })));
+        }) }), void 0));
 });
 
 export { DropdownToggleForButton as default };

@@ -41,5 +41,11 @@ declare const Image: {
     Clock: import("react").FunctionComponent<import("react").SVGProps<SVGSVGElement> & {
         title?: string | undefined;
     }>;
+    Plus: import("react").FunctionComponent<import("react").SVGProps<SVGSVGElement> & {
+        title?: string | undefined;
+    }>;
+    Trash: import("react").FunctionComponent<import("react").SVGProps<SVGSVGElement> & {
+        title?: string | undefined;
+    }>;
 };
 export default Image;

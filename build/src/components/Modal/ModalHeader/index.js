@@ -4,7 +4,7 @@ import cx from 'classnames';
 import styled from './ModalHeader.module.scss.js';
 
 var ModalHeader = function (props) {
-    return (jsxs("header", __assign({ className: cx(styled.wrapper, props.className), style: props.style }, { children: [jsx("h1", { children: props.title }), props.children] })));
+    return (jsxs("header", __assign({ className: cx(styled.wrapper, props.className), style: props.style }, { children: [jsx("h1", { children: props.title }, void 0), props.children] }), void 0));
 };
 
 export { ModalHeader as default };

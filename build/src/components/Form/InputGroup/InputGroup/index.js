@@ -14,7 +14,7 @@ var InputGroup = function (props) {
             _a[styled["read-only"]] = attributes === null || attributes === void 0 ? void 0 : attributes.readOnly,
             _a[styled["is-valid"]] = attributes === null || attributes === void 0 ? void 0 : attributes.isValid,
             _a[styled["is-invalid"]] = attributes === null || attributes === void 0 ? void 0 : attributes.isInvalid,
-            _a), props.className) }, { children: props.children })));
+            _a), props.className) }, { children: props.children }), void 0));
 };
 
 export { InputGroup as default };

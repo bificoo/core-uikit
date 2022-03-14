@@ -7,8 +7,8 @@ import styled from './FormInput.module.scss.js';
 
 var FormInput = React__default.forwardRef(function FormInput(_a, ref) {
     var _b;
-    var className = _a.className, _c = _a.type, type = _c === void 0 ? "text" : _c, isValid = _a.isValid, isInvalid = _a.isInvalid, props = __rest(_a, ["className", "type", "isValid", "isInvalid"]);
     if (ref === void 0) { ref = null; }
+    var className = _a.className, _c = _a.type, type = _c === void 0 ? "text" : _c, isValid = _a.isValid, isInvalid = _a.isInvalid, props = __rest(_a, ["className", "type", "isValid", "isInvalid"]);
     var _d = useContext(FormGroupContext), attributes = _d.attributes, setAttributes = _d.setAttributes;
     var _e = useState(false), entered = _e[0], setEntered = _e[1];
     useEffect(function () {
@@ -32,7 +32,7 @@ var FormInput = React__default.forwardRef(function FormInput(_a, ref) {
                 else
                     setEntered(true);
                 props.onChange && props.onChange(e);
-            } })) })));
+            } }), void 0) }), void 0));
 });
 
 export { FormInput as default };

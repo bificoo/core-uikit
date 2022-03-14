@@ -12,6 +12,7 @@ import { ReactComponent as DownTriangle } from "./DownTriangle.svg"
 import { ReactComponent as Dash } from "./Dash.svg"
 import { ReactComponent as Shortcut } from "./Shortcut.svg"
 import { ReactComponent as Clock } from "./Clock.svg"
+import { ReactComponent as Plus } from "./Plus.svg"
 
 const Image = Object.assign({}, {
   Group,
@@ -28,6 +29,7 @@ const Image = Object.assign({}, {
   Dash,
   Shortcut,
   Clock,
+  Plus,
 })
 
 export default Image

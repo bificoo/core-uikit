@@ -25,6 +25,7 @@ var Icon = function (props) {
         'Shortcut': jsx(Image.Shortcut, {}, void 0),
         'Clock': jsx(Image.Clock, {}, void 0),
         'Plus': jsx(Image.Plus, {}, void 0),
+        'Trash': jsx(Image.Trash, {}, void 0),
     };
     return (jsx("div", __assign({ className: cx((_a = {}, _a[styled.arrowWrapper] = compName.includes("Arrow"), _a), props.className), style: __assign({ display: "flex" }, props.style) }, { children: React__default.cloneElement(compareIcon[compName], __assign(__assign({}, (props.width && { width: props.width })), (props.height && { height: props.height }))) }), void 0));
 };

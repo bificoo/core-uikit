@@ -1,39 +1,97 @@
 stages:
+  - install
   - build
+  - publish
   - deploy
   - clean-cache
 
-cache:
-  key: ${CI_COMMIT_REF_SLUG}
-  paths:
-    - node_modules/
+install:
+  stage: install
+  image: node:16.6.1-stretch
+  cache:
+    key: $CI_COMMIT_REF_SLUG
+    paths:
+      - node_modules
+    policy: push
+  script:
+    - yarn install --frozen-lockfile
+  artifacts:
+    expire_in: 1 hour
+    paths:
+      - node_modules
 
-build:
+build:story-book:
   stage: build
   image: node:16.6.1-stretch
-  script:
-    - yarn 
-    - yarn build
   cache:
+    key: $CI_COMMIT_REF_SLUG
+    paths:
+      - node_modules
+  except: ['tags']
+  needs: ['install']
+  script:
+    - yarn install --frozen-lockfile
+    - yarn build
   artifacts:
     expire_in: 1 hour
     paths:
       - ./storybook-static
 
-deploy-gcs:
+build:core-uikit:
+  stage: build
+  image: node:16.6.1-stretch
+  cache:
+    key: $CI_COMMIT_REF_SLUG
+    paths:
+      - node_modules
+      - build
+  needs: ['install']
+  script:
+    - echo "@frontend1:registry=https://gitlab.bigdatainn-prd.site/api/v4/projects/${CI_PROJECT_ID}/packages/npm/" >> .npmrc
+    - echo "//gitlab.bigdatainn-prd.site/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}" >> .npmrc
+    - cat .npmrc
+    - ls -al
+    - yarn install --frozen-lockfile
+    - yarn build:library
+  artifacts:
+    expire_in: 1 hour
+    paths:
+      - build
+
+publish:
+  stage: publish
+  image: node:16.6.1-stretch
+  cache:
+    key: $CI_COMMIT_REF_SLUG
+    paths:
+      - node_modules
+      - build
+    policy: pull
+  only: ['tags']
+  needs: ['build:core-uikit']
+  script:
+    - echo "@frontend1:registry=https://gitlab.bigdatainn-prd.site/api/v4/projects/${CI_PROJECT_ID}/packages/npm/" >> .npmrc
+    - echo "//gitlab.bigdatainn-prd.site/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}" >> .npmrc
+    - cat .npmrc
+    - ls ./build -al
+    - npm publish
+
+deploy-gcs:sotry-book:
   image: google/cloud-sdk:slim
   stage: deploy
+  needs: ['build:story-book']
   only:
     - master
   script:
     - gcloud auth activate-service-account --key-file $GCS_KEY
     - gsutil -m rsync -d -r storybook-static gs://core-uikit-storybook
 
-invalid-CDNcache:
+invalid-CDNcache:story-book:
   image: google/cloud-sdk:slim
   stage: clean-cache
   only:
     - master
+  needs: ['deploy-gcs:sotry-book']
   script:
     - gcloud auth activate-service-account --key-file $GCS_KEY
     - gcloud compute url-maps invalidate-cdn-cache storybook-website-lb --path "/*" --async --project $PROJECT_ID

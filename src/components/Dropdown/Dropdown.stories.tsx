@@ -157,7 +157,7 @@ export const Adaptive: Story<DropdownProps> = () => {
   )
 }
 
-export const VirtualizedTable: Story<DropdownProps> = () => (
+export const Virtualized: Story<DropdownProps> = () => (
   <Dropdown virtualized rowHeight={30}>
     <Dropdown.Toggle>
       <Button>Page actions</Button>

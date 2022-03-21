@@ -42,14 +42,11 @@ const DropdownMenu = forwardRef<HTMLDivElement, DropdownMenuProps>(function Drop
           >
             {({ index, style }) => (
               <div style={style}>
-                {React.Children.map(props.children, (child, childIndex) => {
-                  if (!React.isValidElement(child)) return
-                  if (child.type === DropdownItem && childIndex === index) return child
-                })}
+                {list.map((el, elIndex) => (elIndex === index) ? el : null)}
               </div>
             )}
           </FixedSizeList>
-        ) : props.children}
+        ) : null}
       </div>
       {React.Children.map(props.children, child => {
         if (!React.isValidElement(child)) return

@@ -230,7 +230,7 @@ export const Mix: Story<DropdownProps> = () => {
   console.log(labelInfo)
 
   return (
-    <Dropdown>
+    <Dropdown virtualized rowHeight={32}>
       <Dropdown.Toggle>
         <Button>
           Page actions

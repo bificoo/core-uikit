@@ -157,6 +157,19 @@ export const Adaptive: Story<DropdownProps> = () => {
   )
 }
 
+export const VirtualizedTable: Story<DropdownProps> = () => (
+  <Dropdown virtualized rowHeight={30}>
+    <Dropdown.Toggle>
+      <Button>Page actions</Button>
+    </Dropdown.Toggle>
+    <Dropdown.Menu>
+      {[...Array(100)].map((_, idx) => (
+        <Dropdown.Item eventKey={idx} key={idx}>Row {idx}</Dropdown.Item>
+      ))}
+    </Dropdown.Menu>
+  </Dropdown>
+)
+
 export const ControlMenuDisplay: Story<DropdownProps> = () => {
   const dropdownRef = useRef<DropdownActions>(null);
 

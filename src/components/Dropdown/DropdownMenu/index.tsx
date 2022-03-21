@@ -5,8 +5,14 @@ import React, { forwardRef } from "react"
 import DropdownItem from '../DropdownItem'
 import DropdownHeader from '../DropdownHeader'
 import DropdownFooter from '../DropdownFooter'
+import { FixedSizeList } from "react-window"
 
-export type DropdownMenuProps = WithComponent
+export type DropdownMenuProps = {
+  /**
+   * Height of the dropdown item.
+   */
+  rowHeight?: number
+} & WithComponent
 
 const DropdownMenu = forwardRef<HTMLDivElement, DropdownMenuProps>(function Dropdown(props: DropdownMenuProps, ref) {
   const list: React.ReactElement[] = []
@@ -26,7 +32,24 @@ const DropdownMenu = forwardRef<HTMLDivElement, DropdownMenuProps>(function Drop
         return null
       })}
       <div className={styled.list}>
-        {list.length >= 0 ? list : props.children}
+        {list.length >= 0 && props.rowHeight ? (
+          <FixedSizeList
+            className={styled.List}
+            height={props.rowHeight * list.length > 224 ? 224 : props.rowHeight * list.length}
+            itemCount={list.length}
+            itemSize={props.rowHeight}
+            width="100%"
+          >
+            {({ index, style }) => (
+              <div style={style}>
+                {React.Children.map(props.children, (child, childIndex) => {
+                  if (!React.isValidElement(child)) return
+                  if (child.type === DropdownItem && childIndex === index) return child
+                })}
+              </div>
+            )}
+          </FixedSizeList>
+        ) : props.children}
       </div>
       {React.Children.map(props.children, child => {
         if (!React.isValidElement(child)) return

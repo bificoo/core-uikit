@@ -1,7 +1,7 @@
 import cx from "classnames"
 import styled from "./DropdownMenu.module.scss"
 import { WithComponent } from "types/common"
-import React, { forwardRef } from "react"
+import React, { forwardRef, useRef, useEffect, useState } from "react"
 import DropdownItem from '../DropdownItem'
 import DropdownHeader from '../DropdownHeader'
 import DropdownFooter from '../DropdownFooter'
@@ -14,8 +14,15 @@ export type DropdownMenuProps = {
   rowHeight?: number
 } & WithComponent
 
+const LIST_MAX_HEIGHT = 224
+const ITEM_PADDING = 32
+const MENU_MIN_WIDTH = 141
+
 const DropdownMenu = forwardRef<HTMLDivElement, DropdownMenuProps>(function Dropdown(props: DropdownMenuProps, ref) {
   const list: React.ReactElement[] = []
+  const listWrapperRef = useRef<HTMLInputElement>(null)
+  const [maxWidth, setMaxWidth] = useState(0)
+  const [scrollOffset, setScrollOffset] = useState(0)
 
   React.Children.map(props.children, child => {
     if (!React.isValidElement(child)) return
@@ -24,6 +31,17 @@ const DropdownMenu = forwardRef<HTMLDivElement, DropdownMenuProps>(function Drop
     }
   })
 
+  useEffect(() => {
+    const item = listWrapperRef.current?.querySelectorAll("[class*=DropdownItem]")
+    let max = 0
+
+    item?.forEach(el => {
+      const width = el.children[0]?.clientWidth
+      if (width && width > max) max = width
+    })
+    setMaxWidth(max)
+  }, [scrollOffset])
+
   return (
     <div className={cx(styled.wrapper, props.className)} style={props.style} ref={ref}>
       {React.Children.map(props.children, child => {
@@ -31,14 +49,19 @@ const DropdownMenu = forwardRef<HTMLDivElement, DropdownMenuProps>(function Drop
         if (child.type === DropdownHeader) return child
         return null
       })}
-      <div className={styled.list}>
-        {list.length >= 0 && props.rowHeight ? (
+      <div className={styled.list} ref={listWrapperRef}>
+        {list.length > 0 ? props.rowHeight ? (
           <FixedSizeList
             className={styled.List}
-            height={props.rowHeight * list.length > 224 ? 224 : props.rowHeight * list.length}
+            height={props.rowHeight * list.length > LIST_MAX_HEIGHT ? LIST_MAX_HEIGHT : props.rowHeight * list.length}
             itemCount={list.length}
             itemSize={props.rowHeight}
-            width="100%"
+            width={`${maxWidth - ITEM_PADDING > MENU_MIN_WIDTH ? `calc(${maxWidth}px + ${ITEM_PADDING}px)` : "100%"}`}
+            onScroll={ props => { 
+              if (props.scrollOffset > scrollOffset) { 
+                setScrollOffset(props.scrollOffset)
+              }
+            }}
           >
             {({ index, style }) => (
               <div style={style}>
@@ -46,7 +69,7 @@ const DropdownMenu = forwardRef<HTMLDivElement, DropdownMenuProps>(function Drop
               </div>
             )}
           </FixedSizeList>
-        ) : null}
+        ) : list : null}
       </div>
       {React.Children.map(props.children, child => {
         if (!React.isValidElement(child)) return

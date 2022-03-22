@@ -1,10 +1,10 @@
 import cx from "classnames"
 import styled from "./DropdownMenu.module.scss"
 import { WithComponent } from "types/common"
-import React, { forwardRef, useRef, useEffect, useState } from "react"
-import DropdownItem from '../DropdownItem'
-import DropdownHeader from '../DropdownHeader'
-import DropdownFooter from '../DropdownFooter'
+import React, { forwardRef, useRef } from "react"
+import DropdownItem from "../DropdownItem"
+import DropdownHeader from "../DropdownHeader"
+import DropdownFooter from "../DropdownFooter"
 import { FixedSizeList } from "react-window"
 
 export type DropdownMenuProps = {
@@ -14,70 +14,91 @@ export type DropdownMenuProps = {
   rowHeight?: number
 } & WithComponent
 
-const LIST_MAX_HEIGHT = 224
-const ITEM_PADDING = 32
-const MENU_MIN_WIDTH = 141
-
-const DropdownMenu = forwardRef<HTMLDivElement, DropdownMenuProps>(function Dropdown(props: DropdownMenuProps, ref) {
-  const list: React.ReactElement[] = []
-  const listWrapperRef = useRef<HTMLInputElement>(null)
-  const [maxWidth, setMaxWidth] = useState(0)
-  const [scrollOffset, setScrollOffset] = useState(0)
-
-  React.Children.map(props.children, child => {
-    if (!React.isValidElement(child)) return
-    if (child.type === DropdownItem) {
-      list.push(child)
+const getStringWidth = (val: string) => {
+  let len = 0
+  for (let i = 0; i < val.length; i++) {
+    let length = val.charCodeAt(i)
+    if (length >= 0 && length <= 128) {
+      len += 1
+    } else {
+      len += 2
     }
-  })
+  }
+  return len
+}
 
-  useEffect(() => {
-    const item = listWrapperRef.current?.querySelectorAll("[class*=DropdownItem]")
-    let max = 0
+const DropdownMenu = forwardRef<HTMLDivElement, DropdownMenuProps>(
+  function Dropdown(props: DropdownMenuProps, ref) {
+    const list: React.ReactElement[] = []
+    const width = useRef(0)
+    const padding = 32
+    const fontSize = 14
 
-    item?.forEach(el => {
-      const width = el.children[0]?.clientWidth
-      if (width && width > max) max = width
+    React.Children.map(props.children, (child) => {
+      if (!React.isValidElement(child)) return
+
+      if (child.type === DropdownItem) {
+        list.push(child)
+      }
+      if (typeof child.props.children === "string") {
+        const length = getStringWidth(child.props.children)
+        width.current = width.current > length ? width.current : length
+      }
     })
-    setMaxWidth(max)
-  }, [scrollOffset])
 
-  return (
-    <div className={cx(styled.wrapper, props.className)} style={props.style} ref={ref}>
-      {React.Children.map(props.children, child => {
-        if (!React.isValidElement(child)) return
-        if (child.type === DropdownHeader) return child
-        return null
-      })}
-      <div className={styled.list} ref={listWrapperRef}>
-        {list.length > 0 ? props.rowHeight ? (
-          <FixedSizeList
-            className={styled.List}
-            height={props.rowHeight * list.length > LIST_MAX_HEIGHT ? LIST_MAX_HEIGHT : props.rowHeight * list.length}
-            itemCount={list.length}
-            itemSize={props.rowHeight}
-            width={`${maxWidth - ITEM_PADDING > MENU_MIN_WIDTH ? `calc(${maxWidth}px + ${ITEM_PADDING}px)` : "100%"}`}
-            onScroll={ props => { 
-              if (props.scrollOffset > scrollOffset) { 
-                setScrollOffset(props.scrollOffset)
-              }
-            }}
-          >
-            {({ index, style }) => (
-              <div style={style}>
-                {list.map((el, elIndex) => (elIndex === index) ? el : null)}
-              </div>
-            )}
-          </FixedSizeList>
-        ) : list : null}
+    const isRenderItem = React.Children.map(props.children, (child) => {
+      if (!React.isValidElement(child)) return
+      return (
+        child.type === DropdownItem ||
+        child.type === DropdownHeader ||
+        child.type === DropdownFooter
+      )
+    })?.some((el) => el)
+
+    return (
+      <div
+        className={cx(styled.wrapper, props.className)}
+        style={{
+          ...props.style,
+          ...(props.rowHeight && {
+            width: (width.current / 2 + 1) * fontSize + padding,
+          }),
+        }}
+        ref={ref}
+      >
+        {React.Children.map(props.children, (child) => {
+          if (!React.isValidElement(child)) return
+          if (child.type === DropdownHeader) return child
+          return null
+        })}
+        <div className={styled.list}>
+          {/* rowHeight值存在使用VirtualScroll，不存在一般情況 */}
+          {props.rowHeight ? (
+            <FixedSizeList
+              height={props.rowHeight * 7}
+              itemCount={list.length}
+              itemSize={props.rowHeight}
+              width="100%">
+              {({ index, style }) => (
+                <div style={style}>
+                  {React.Children.map(props.children, (child, childIndex) => {
+                    if (!React.isValidElement(child)) return
+                    if (child.type === DropdownItem && childIndex === index) return child
+                  })}
+                </div>
+              )}
+            </FixedSizeList>
+            // 一般情況有使用DropdownItem & 內部完全客製
+          ) : isRenderItem ? list : props.children}
+        </div>
+        {React.Children.map(props.children, (child) => {
+          if (!React.isValidElement(child)) return
+          if (child.type === DropdownFooter) return child
+          return null
+        })}
       </div>
-      {React.Children.map(props.children, child => {
-        if (!React.isValidElement(child)) return
-        if (child.type === DropdownFooter) return child
-        return null
-      })}
-    </div>
-  )
-})
+    )
+  }
+)
 
 export default DropdownMenu

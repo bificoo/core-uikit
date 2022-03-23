@@ -131,7 +131,11 @@ const RangePicker = React.forwardRef(function RangePicker(
           overlayWrapper: styled.overlayWrapper,
         }}
         style={props.style}
-        {...((startDate || endDate) && { value: `${startDate && formatDate(startDate, dateFormat)}~${endDate ? formatDate(endDate, dateFormat) : startDate && formatDate(startDate, dateFormat)}`})}
+        value={
+          startDate &&
+          endDate &&
+          `${formatDate(startDate, dateFormat)}~${formatDate(endDate, dateFormat)}`
+        }        
         format={dateFormat}
         formatDate={formatDate}
         parseDate={parseDate}

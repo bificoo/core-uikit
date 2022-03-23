@@ -157,35 +157,18 @@ export const Adaptive: Story<DropdownProps> = () => {
   )
 }
 
-export const Virtualized: Story<DropdownProps> = () => {
-  const array = ['arguments', 'DropdownToggle', '我是中等長度的文字我是中等長度的文字我是中等長度的文字我是中等長度的文字', '我是文字', 'Row12', 'Row13', 'Row135', 'Row1345', 'Row1453', 'Row13', 'Row13']
-  return (
-    <div style={{ position: "relative" }}>
-      <Dropdown virtualized rowHeight={32}>
-        <Dropdown.Toggle>
-          <Button>Page actions</Button>
-        </Dropdown.Toggle>
-        <Dropdown.Menu>
-          {array.map((item, idx) => (
-            <Dropdown.Item eventKey={idx} key={idx}>{item}</Dropdown.Item>
-          ))}
-        </Dropdown.Menu>
-      </Dropdown>
-      <div style={{ position: "absolute", top: 0, right: 0 }}>
-        <Dropdown virtualized rowHeight={32}>
-          <Dropdown.Toggle>
-            <Button>Page actions</Button>
-          </Dropdown.Toggle>
-          <Dropdown.Menu>
-            {array.map((item, idx) => (
-              <Dropdown.Item eventKey={idx} key={idx}>{item}</Dropdown.Item>
-            ))}
-          </Dropdown.Menu>
-        </Dropdown>
-      </div>
-    </div>
-  )
-}
+export const Virtualized: Story<DropdownProps> = () => (
+  <Dropdown virtualized rowHeight={30}>
+    <Dropdown.Toggle>
+      <Button>Page actions</Button>
+    </Dropdown.Toggle>
+    <Dropdown.Menu>
+      {[...Array(100)].map((_, idx) => (
+        <Dropdown.Item eventKey={idx} key={idx}>Row {idx}</Dropdown.Item>
+      ))}
+    </Dropdown.Menu>
+  </Dropdown>
+)
 
 export const ControlMenuDisplay: Story<DropdownProps> = () => {
   const dropdownRef = useRef<DropdownActions>(null);
@@ -247,7 +230,7 @@ export const Mix: Story<DropdownProps> = () => {
   console.log(labelInfo)
 
   return (
-    <Dropdown>
+    <Dropdown virtualized rowHeight={32}>
       <Dropdown.Toggle>
         <Button>
           Page actions

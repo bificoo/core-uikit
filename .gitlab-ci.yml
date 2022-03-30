@@ -40,6 +40,7 @@ build:story-book:
   #     paths:
   #       - node_modules/
   needs: ['install']
+  except: ['tags']
   script:
     - yarn install --frozen-lockfile
     - yarn build
@@ -59,7 +60,6 @@ build:core-uikit:
   #     paths:
   #       - node_modules/
   needs: ['install']
-  except: ['tags']
   script:
     - yarn install --frozen-lockfile
     - yarn build:library

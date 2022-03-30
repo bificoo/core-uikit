@@ -75,7 +75,7 @@ publish:
       policy: pull
       paths:
         - node_modules/
-  only: ['master']
+  only: ['tags']
   needs: ['build:core-uikit']
   script:
     - export GIT_SSL_NO_VERIFY=1

@@ -8,6 +8,7 @@ stages:
 before_script:
   - touch .npmrc
   - echo "@frontend1:registry=https://gitlab.bigdatainn-prd.site/api/v4/projects/${CI_PROJECT_ID}/packages/npm/" >> .npmrc
+  - echo "//gitlab.bigdatainn-prd.site/api/v4/packages/npm/:_authToken=${CI_JOB_TOKEN}" >> .npmrc
   - echo "//gitlab.bigdatainn-prd.site/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}" >> .npmrc
   - cat .npmrc
   - ls -al
@@ -36,6 +37,7 @@ build:story-book:
       paths:
         - node_modules/
   needs: ['install']
+  except: ['tags']
   script:
     - yarn install --frozen-lockfile
     - yarn build
@@ -73,15 +75,12 @@ publish:
       policy: pull
       paths:
         - node_modules/
-  only: ['master']
+  only:
+    - master
+    - tags
   needs: ['build:core-uikit']
-  before_script:
-    - ""
   script:
     - export GIT_SSL_NO_VERIFY=1
-    - echo "@frontend1:registry=https://gitlab.bigdatainn-prd.site/api/v4/projects/${CI_PROJECT_ID}/packages/npm/" >> .npmrc
-    - echo "//gitlab.bigdatainn-prd.site/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}" >> .npmrc
-    - cat .npmrc
     - ls ./build -al
     - yarn install --frozen-lockfile
     - npm run semantic-release

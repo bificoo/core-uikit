@@ -4,7 +4,7 @@ import { WithComponent } from "types/common"
 const PERCENT_MAX = 100
 
 export type ProgressProps = {
-  /** Progress percent between <code>0-100</code> s*/
+  /** Progress percent between <code>0-100</code> */
   percent: number
 } & WithComponent
 

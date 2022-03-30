@@ -22,7 +22,7 @@
     "build:library": "rollup -c",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "eslintConfig": {
     "extends": [

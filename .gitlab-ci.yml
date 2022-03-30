@@ -59,6 +59,7 @@ build:core-uikit:
   #     paths:
   #       - node_modules/
   needs: ['install']
+  except: ['tags']
   script:
     - yarn install --frozen-lockfile
     - yarn build:library
@@ -70,13 +71,13 @@ build:core-uikit:
 publish:
   stage: publish
   image: node:16.6.1-stretch
-  cache:
-    - key:
-        files:
-          - yarn.lock
-      policy: pull
-      paths:
-        - node_modules/
+  # cache:
+  #   - key:
+  #       files:
+  #         - yarn.lock
+  #     policy: pull
+  #     paths:
+  #       - node_modules/
   only: ['tags']
   needs: ['build:core-uikit']
   before_script:

@@ -8,6 +8,7 @@ stages:
 before_script:
   - touch .npmrc
   - echo "@frontend1:registry=https://gitlab.bigdatainn-prd.site/api/v4/projects/${CI_PROJECT_ID}/packages/npm/" >> .npmrc
+  - echo "//gitlab.bigdatainn-prd.site/api/v4/packages/npm/:_authToken=${CI_JOB_TOKEN}" >> .npmrc
   - echo "//gitlab.bigdatainn-prd.site/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}" >> .npmrc
   - cat .npmrc
   - ls -al
@@ -15,30 +16,26 @@ before_script:
 install:
   stage: install
   image: node:16.6.1-stretch
-  # cache:
-  #   - key:
-  #       files:
-  #         - yarn.lock
-  #     policy: pull-push
-  #     paths:
-  #       - node_modules/
+  cache:
+    - key:
+        files:
+          - yarn.lock
+      policy: pull-push
+      paths:
+        - node_modules/
   script:
     - yarn install --frozen-lockfile
-  artifacts:
-    expire_in: 1 hour
-    paths:
-      - node_modules/
 
 build:story-book:
   stage: build
   image: node:16.6.1-stretch
-  # cache:
-  #   - key:
-  #       files:
-  #         - yarn.lock
-  #     policy: pull
-  #     paths:
-  #       - node_modules/
+  cache:
+    - key:
+        files:
+          - yarn.lock
+      policy: pull
+      paths:
+        - node_modules/
   needs: ['install']
   except: ['tags']
   script:
@@ -52,13 +49,13 @@ build:story-book:
 build:core-uikit:
   stage: build
   image: node:16.6.1-stretch
-  # cache:
-  #   - key:
-  #       files:
-  #         - yarn.lock
-  #     policy: pull
-  #     paths:
-  #       - node_modules/
+  cache:
+    - key:
+        files:
+          - yarn.lock
+      policy: pull
+      paths:
+        - node_modules/
   needs: ['install']
   script:
     - yarn install --frozen-lockfile
@@ -71,26 +68,19 @@ build:core-uikit:
 publish:
   stage: publish
   image: node:16.6.1-stretch
-  # cache:
-  #   - key:
-  #       files:
-  #         - yarn.lock
-  #     policy: pull
-  #     paths:
-  #       - node_modules/
-  only: ['tags']
+  cache:
+    - key:
+        files:
+          - yarn.lock
+      policy: pull
+      paths:
+        - node_modules/
+  only: ['master']
   needs: ['build:core-uikit']
-  before_script:
-    - ""
   script:
     - export GIT_SSL_NO_VERIFY=1
-    # - echo "@frontend1:registry=https://gitlab.bigdatainn-prd.site/api/v4/projects/${CI_PROJECT_ID}/packages/npm/" >> .npmrc
-    # - echo "//gitlab.bigdatainn-prd.site/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}" >> .npmrc
-    # - cat .npmrc
-    - ls -al
     - ls ./build -al
-    # - yarn install --frozen-lockfile
-    # - npm publish
+    - yarn install --frozen-lockfile
     - npm run semantic-release
 
 deploy-gcs:sotry-book:

@@ -78,6 +78,7 @@ publish:
   script:
     - export GIT_SSL_NO_VERIFY=1
     - ls ./build -al
+    - yarn install --frozen-lockfile
     - npm run semantic-release
 
 deploy-gcs:sotry-book:

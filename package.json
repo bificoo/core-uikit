@@ -5,7 +5,7 @@
     "type": "git",
     "url": "https://gitlab.bigdatainn-prd.site/frontend1/core-uikit"
   },
-  "version": "1.2.7",
+  "version": "1.2.8",
   "publishConfig": {
     "@frontend1:registry": "https://gitlab.bigdatainn-prd.site/api/v4/projects/55/packages/npm/"
   },

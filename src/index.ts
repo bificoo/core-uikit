@@ -71,7 +71,7 @@ export type {
 } from "./components/Modal";
 
 export { default as Progress } from "./components/Progress";
-export type { ProgressProps } from "./components/Progress";
+export type { ProgressCircularProps, ProgressBarProps } from "./components/Progress";
 
 export { default as Select } from "./components/Select";
 export type { SelectProps, SelectOptionType } from "./components/Select";

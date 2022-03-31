@@ -16,7 +16,7 @@ const ProgressCircular = ({
   percent,
   size = 97,
   strokeWidth = 10,
-  circleOneStrokeColor = "#C4C4C4",
+  circleOneStrokeColor = "#EBECF0",
   circleTwoStrokeColor = "#557CC4",
 }: ProgressCircularProps) => {
   const center = size / 2

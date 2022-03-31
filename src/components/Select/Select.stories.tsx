@@ -106,3 +106,21 @@ export const Disabled: Story<SelectProps> = () => {
     </Select>
   )
 }
+
+export const ValidationError: Story<SelectProps> = () => {
+  const options = [
+    { value: "Vanilla", eventKey: "vanilla" },
+    { value: "Strawberry", eventKey: "strawberry" },
+    { value: "Chocolate", eventKey: "chocolate" },
+  ]
+
+  return (
+    <Select variant="error" defaultValue={options[0]} placeholder="Select..">
+      {options.map(option => (
+        <Select.Option key={option.value} value={option.value} eventKey={option.eventKey}>
+          {option.value}
+        </Select.Option>
+      ))}
+    </Select>
+  )
+}

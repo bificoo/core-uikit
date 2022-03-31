@@ -1,4 +1,8 @@
 .wrapper {
+
+  &.error {
+    border: 1.5px solid #DE350B;
+  }
   .container {
     position: relative;
     min-width: 250px;

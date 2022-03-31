@@ -27,6 +27,10 @@ export type SelectProps = {
    */
   disabled?: boolean
   /**
+   * Specify the status of value
+   */
+  variant?: "error"
+  /**
    * Callback when select change. 
    */
   onChange?: (
@@ -83,7 +87,7 @@ const Select = ({ isMulti = false, ...props }: SelectProps) => {
   }
 
   return (
-    <div className={cx(styled.wrapper, props.className)} style={props.style}>
+    <div className={cx(styled.wrapper, props.className, styled[props.variant || ""])} style={props.style}>
       <div className={styled.container}>
         <Popup
           ref={popupRef}

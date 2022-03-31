@@ -8,6 +8,10 @@ import { WithClassName } from "types/common"
 export type FormInputProps = FormControlProps & WithClassName &
   Omit<JSX.IntrinsicElements["input"], "type" | "css"> & {
     /**
+     * Specify the status of value
+     */
+    variant?: "error"
+    /**
      * Specify the type of the
      */
     type?: "text" | "password" | "number"
@@ -38,7 +42,8 @@ const FormInput = React.forwardRef(function FormInput(
         [styled["read-only"]]: !!props.readOnly,
         [styled["is-valid"]]: isValid,
         [styled["is-invalid"]]: isInvalid,
-      })}
+      },
+      styled[props.variant || ""])}
       style={props.style}>
       <input
         {...props}

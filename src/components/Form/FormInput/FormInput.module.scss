@@ -80,4 +80,8 @@
       color: currentColor;
     }
   }
+
+  &.error {
+    border: 1.5px solid #DE350B !important;
+  }
 }

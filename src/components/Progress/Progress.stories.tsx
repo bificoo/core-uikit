@@ -4,7 +4,6 @@ import Progress, { ProgressCircularProps, ProgressBarProps } from "components/Pr
 
 export default {
   title: "General/Progress",
-  component: Progress.Bar,
   subcomponents: {
     "Progress.Bar": Progress.Bar,
     "Progress.Circular": Progress.Circular,

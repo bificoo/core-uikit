@@ -19,11 +19,11 @@ const ProgressCircular = ({
   circleOneStrokeColor = "#C4C4C4",
   circleTwoStrokeColor = "#557CC4",
 }: ProgressCircularProps) => {
-  const [offset, setOffset] = useState(0)
   const center = size / 2
   const radius = size / 2 - strokeWidth / 2
   const circumference = 2 * Math.PI * radius
   const alignPercent = percent > PERCENT_MAX ? PERCENT_MAX : percent
+  const [offset, setOffset] = useState(circumference)
 
   useEffect(() => {
     const progressOffset = ((100 - alignPercent) / 100) * circumference

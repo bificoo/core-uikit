@@ -1,11 +1,10 @@
 import React, { useContext, useEffect, useState } from "react"
 import { FormGroupContext } from "components/Form/FormContext"
-import { FormControlProps } from "../types"
 import cx from "classnames"
 import styled from "./FormInput.module.scss"
 import { WithClassName } from "types/common"
 
-export type FormInputProps = FormControlProps & WithClassName &
+export type FormInputProps = WithClassName &
   Omit<JSX.IntrinsicElements["input"], "type" | "css"> & {
     /**
      * Specify the status of value

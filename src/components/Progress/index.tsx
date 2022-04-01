@@ -1,23 +1,9 @@
-import styled from "./Progress.module.scss"
-import { WithComponent } from "types/common"
+import ProgressCircle from "./ProgressCircle"
+import ProgressBar from "./ProgressBar"
 
-const PERCENT_MAX = 100
+export type { ProgressCircleProps } from "./ProgressCircle"
+export type { ProgressBarProps } from "./ProgressBar"
 
-export type ProgressProps = {
-  /** Progress percent between <code>0-100</code> */
-  percent: number
-} & WithComponent
-
-const Progress = (props: ProgressProps) => {
-  const alignPercent = props.percent > PERCENT_MAX ? PERCENT_MAX : props.percent
-  return (
-    <div className={styled.wrapper}>
-      <div className={styled["progress-bar"]}>
-        <div className={styled.inner} style={{ width: `${alignPercent}%` }} />
-      </div>
-      <div className={styled.percent}>{props.percent}%</div>
-    </div>
-  )
-}
+const Progress = Object.assign(ProgressBar, { Circle: ProgressCircle })
 
 export default Progress

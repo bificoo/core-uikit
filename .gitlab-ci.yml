@@ -75,14 +75,14 @@ publish:
       policy: pull
       paths:
         - node_modules/
-  only:
-    - master
+  only: ['tags']
   needs: ['build:core-uikit']
   script:
     - export GIT_SSL_NO_VERIFY=1
     - ls ./build -al
     - yarn install --frozen-lockfile
-    - npm run semantic-release
+    - npm publish
+    # - npm run semantic-release
 
 deploy-gcs:sotry-book:
   image: google/cloud-sdk:slim

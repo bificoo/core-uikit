@@ -4,6 +4,9 @@ import { WithComponent } from "types/common"
 const PERCENT_MAX = 100
 
 export type ProgressBarProps = {
+  /**
+   * The percentage of the progress bar.
+   */
   percent: number
 } & WithComponent
 

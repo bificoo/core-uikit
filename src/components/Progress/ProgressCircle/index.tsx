@@ -1,26 +1,29 @@
 import React, { useEffect, useState } from 'react'
-import styled from "./ProgressCircular.module.scss"
+import styled from "./ProgressCircle.module.scss"
 import { WithComponent } from "types/common"
 
 const PERCENT_MAX = 100
+const DEFAULT_SIZE = 97
+const DEFAULT_STROKE_WIDTH = 10
+const DEFAULT_CIRCLE_COLOR = "#EBECF0"
 
-export type ProgressCircularProps = {
+export type ProgressCircleProps = {
+  /**
+   * The percentage of the progress circle.
+   */
   percent: number
-  size?: number,
-  strokeWidth?: number,
-  circleOneStrokeColor?: string,
-  circleTwoStrokeColor?: string
+  /**
+   * The coulor of the progress circle.
+   */
+  progressCircleColor?: string
 } & WithComponent
 
-const ProgressCircular = ({
+const ProgressCircle = ({
   percent,
-  size = 97,
-  strokeWidth = 10,
-  circleOneStrokeColor = "#EBECF0",
-  circleTwoStrokeColor = "#557CC4",
-}: ProgressCircularProps) => {
-  const center = size / 2
-  const radius = size / 2 - strokeWidth / 2
+  progressCircleColor = "#557CC4",
+}: ProgressCircleProps) => {
+  const center = DEFAULT_SIZE / 2
+  const radius = DEFAULT_SIZE / 2 - DEFAULT_STROKE_WIDTH / 2
   const circumference = 2 * Math.PI * radius
   const alignPercent = percent > PERCENT_MAX ? PERCENT_MAX : percent
   const [offset, setOffset] = useState(circumference)
@@ -31,23 +34,23 @@ const ProgressCircular = ({
 }, [setOffset, circumference, alignPercent, offset])
 
   return (
-    <svg className={styled.svg} width={size} height={size}>
+    <svg className={styled.svg} width={DEFAULT_SIZE} height={DEFAULT_SIZE}>
       <circle
         className={styled["svg-circle-bg"]}
-        stroke={circleOneStrokeColor}
+        stroke={DEFAULT_CIRCLE_COLOR}
         cx={center}
         cy={center}
         r={radius}
-        strokeWidth={strokeWidth}
+        strokeWidth={DEFAULT_STROKE_WIDTH}
       />
       <circle
         strokeDashoffset={offset}
         className={styled["svg-circle"]}
-        stroke={circleTwoStrokeColor}
+        stroke={progressCircleColor}
         cx={center}
         cy={center}
         r={radius}
-        strokeWidth={strokeWidth}
+        strokeWidth={DEFAULT_STROKE_WIDTH}
         strokeDasharray={circumference}
         transform={`rotate(-90 ${center} ${center})`}
       />
@@ -58,4 +61,4 @@ const ProgressCircular = ({
   )
 }
 
-export default ProgressCircular
+export default ProgressCircle

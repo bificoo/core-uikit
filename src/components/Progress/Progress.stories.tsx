@@ -1,12 +1,12 @@
 import { Story, Meta } from "@storybook/react"
 
-import Progress, { ProgressCircularProps, ProgressBarProps } from "components/Progress"
+import Progress, { ProgressCircleProps, ProgressBarProps } from "components/Progress"
 
 export default {
   title: "General/Progress",
   subcomponents: {
     "Progress.Bar": Progress.Bar,
-    "Progress.Circular": Progress.Circular,
+    "Progress.Circle": Progress.Circle,
   },
   argTypes: {
     className: {
@@ -27,20 +27,20 @@ export const FullBar: Story<ProgressBarProps> = () => {
   return <Progress.Bar percent={120} />
 }
 
-export const FullCircular: Story<ProgressCircularProps> = () => {
+export const FullCircle: Story<ProgressCircleProps> = () => {
   return (
-    <Progress.Circular percent={125} />
+    <Progress.Circle percent={125} />
   )
 }
 
-export const Circular: Story<ProgressCircularProps> = () => {
+export const Circle: Story<ProgressCircleProps> = () => {
   return (
-    <Progress.Circular percent={25} />
+    <Progress.Circle percent={25} />
   )
 }
 
-export const EmptyCircular: Story<ProgressCircularProps> = () => {
+export const EmptyCircle: Story<ProgressCircleProps> = () => {
   return (
-    <Progress.Circular percent={0} />
+    <Progress.Circle percent={0} />
   )
 }

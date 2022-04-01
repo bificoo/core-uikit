@@ -33,6 +33,9 @@
       background-color: #fff;
       border-color: #2d62c4;
     }
+    &.error {
+      border: 1.5px solid #DE350B;
+    }
   }
 
   &.disabled {
@@ -79,9 +82,5 @@
       line-height: 1;
       color: currentColor;
     }
-  }
-
-  &.error {
-    border: 1.5px solid #DE350B !important;
   }
 }

@@ -115,7 +115,7 @@ export const ValidationError: Story<SelectProps> = () => {
   ]
 
   return (
-    <Select variant="error" defaultValue={options[0]} placeholder="Select..">
+    <Select variant="invalid" defaultValue={options[0]} placeholder="Select..">
       {options.map(option => (
         <Select.Option key={option.value} value={option.value} eventKey={option.eventKey}>
           {option.value}

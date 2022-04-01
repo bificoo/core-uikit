@@ -23,6 +23,7 @@ export type FormGroupAttributes = Partial<{
   readOnly: boolean
   isValid: boolean | null
   isInvalid: boolean | null
+  variant: "invalid"
 }>
 
 export type FormGroupContextProps = {

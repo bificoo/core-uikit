@@ -56,6 +56,9 @@
       background-color: #fff;
       border-color: #2D62C4;
     }
+    &.invalid {
+      border: 1.5px solid #DE350B;
+    }
   }
 
   &.disabled {

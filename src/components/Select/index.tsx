@@ -29,7 +29,7 @@ export type SelectProps = {
   /**
    * Specify the status of value
    */
-  variant?: "error"
+  variant?: "invalid"
   /**
    * Callback when select change. 
    */

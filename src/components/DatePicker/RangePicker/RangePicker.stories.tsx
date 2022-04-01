@@ -58,6 +58,19 @@ export const SpecificRange: Story<RangePickerProps> = () => {
   )
 }
 
+export const SpecificRangeWithIcon: Story<RangePickerProps> = () => {
+  return (
+    <RangePicker
+      calendarIcon
+      style={{ width: "240px" }}
+      startDate={new Date("2021-08-04")}
+      endDate={new Date("2021-08-14")}
+      onChange={({ startDate, endDate }) => {
+        console.info(startDate, endDate)
+      }} />
+  )
+}
+
 export const SpecificMinDate: Story<RangePickerProps> = () => {
   return (
     <RangePicker

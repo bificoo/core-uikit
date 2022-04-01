@@ -4,8 +4,8 @@ import Progress, { ProgressCircleProps, ProgressBarProps } from "components/Prog
 
 export default {
   title: "General/Progress",
+  component: Progress,
   subcomponents: {
-    "Progress.Bar": Progress.Bar,
     "Progress.Circle": Progress.Circle,
   },
   argTypes: {
@@ -16,15 +16,15 @@ export default {
 } as Meta
 
 export const Default: Story<ProgressBarProps> = () => {
-  return <Progress.Bar percent={30} />
+  return <Progress percent={30} />
 }
 
 export const EmptyBar: Story<ProgressBarProps> = () => {
-  return <Progress.Bar percent={0} />
+  return <Progress percent={0} />
 }
 
 export const FullBar: Story<ProgressBarProps> = () => {
-  return <Progress.Bar percent={120} />
+  return <Progress percent={120} />
 }
 
 export const FullCircle: Story<ProgressCircleProps> = () => {

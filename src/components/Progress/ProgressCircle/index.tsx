@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import styled from "./ProgressCircle.module.scss"
+import { useEffect, useState } from 'react'
 import { WithComponent } from "types/common"
+import styled from "./ProgressCircle.module.scss"
 
 const PERCENT_MAX = 100
 const DEFAULT_SIZE = 97
@@ -13,7 +13,7 @@ export type ProgressCircleProps = {
    */
   percent: number
   /**
-   * The coulor of the progress circle.
+   * The color of the progress circle.
    */
   progressCircleColor?: string
 } & WithComponent

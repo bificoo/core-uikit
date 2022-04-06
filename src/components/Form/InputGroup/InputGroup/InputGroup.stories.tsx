@@ -29,3 +29,13 @@ export const Disabled: Story = () => (
     </InputGroup>
   </Form.Group>
 )
+
+export const Validation: Story = () => (
+  <Form.Group>
+    <InputGroup>
+      <Prepend>$</Prepend>
+      <Form.Input variant="invalid" />
+      <Append>元</Append>
+    </InputGroup>
+  </Form.Group>
+)

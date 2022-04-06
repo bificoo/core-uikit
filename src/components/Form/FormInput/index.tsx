@@ -14,7 +14,7 @@ export type FormInputProps = FormControlProps & WithClassName &
   }
 
 const FormInput = React.forwardRef(function FormInput(
-  { className, type = "text", isValid, isInvalid, ...props }: FormInputProps,
+  { className, type = "text", ...props }: FormInputProps,
   ref: React.Ref<HTMLInputElement> = null,
 ) {
   const { attributes, setAttributes } = useContext(FormGroupContext)
@@ -23,12 +23,11 @@ const FormInput = React.forwardRef(function FormInput(
   useEffect(() => {
     setAttributes({
       entered,
-      isValid,
-      isInvalid,
       disabled: props.disabled,
       readOnly: props.readOnly,
+      variant: props.variant,
     })
-  }, [entered, isValid, isInvalid, props.disabled, props.readOnly])
+  }, [entered, props.disabled, props.readOnly, props.variant])
 
   return (
     <div
@@ -36,9 +35,8 @@ const FormInput = React.forwardRef(function FormInput(
         [styled.entered]: entered,
         [styled.disabled]: !!props.disabled,
         [styled["read-only"]]: !!props.readOnly,
-        [styled["is-valid"]]: isValid,
-        [styled["is-invalid"]]: isInvalid,
-      })}
+      },
+      styled[props.variant || ""])}
       style={props.style}>
       <input
         {...props}

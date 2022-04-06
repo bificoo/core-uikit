@@ -1,4 +1,8 @@
 .wrapper {
+
+  &.invalid {
+    border: 1px solid #DE350B;
+  }
   .container {
     position: relative;
     min-width: 250px;

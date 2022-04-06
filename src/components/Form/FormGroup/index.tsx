@@ -29,8 +29,6 @@ const FormGroup = (props: FormGroupProps) => {
     entered: false,
     disabled: false,
     readOnly: false,
-    isValid: null,
-    isInvalid: null,
   })
   const { attributes: formAttributes } = useContext(FormContext)
   const layout = props.layout || formAttributes?.layout || "horizontal"

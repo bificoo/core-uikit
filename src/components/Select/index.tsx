@@ -5,6 +5,7 @@ import { ReactComponent as ClearIcon } from "./svg/clear.svg"
 import { ReactComponent as RemoveIcon } from "./svg/remove.svg"
 import Popup from "reactjs-popup"
 import { PopupActions } from "reactjs-popup/dist/types"
+import { FormControlProps } from "components/Form/types"
 import Icon from "components/Icon/index"
 import SelectOption from "./SelectOption"
 import { WithComponent, EventKey } from "types/common"
@@ -48,7 +49,7 @@ export type SelectOptionType = {
   eventKey: EventKey
 }
 
-const Select = ({ isMulti = false, ...props }: SelectProps) => {
+const Select = ({ isMulti = false, ...props }: FormControlProps & SelectProps) => {
   const popupRef = useRef<PopupActions | null>(null)
   const [selected, setSelected] = useState<Array<SelectOptionType>>(
     Array.isArray(props.defaultValue) ? props.defaultValue : [],
@@ -83,7 +84,7 @@ const Select = ({ isMulti = false, ...props }: SelectProps) => {
   }
 
   return (
-    <div className={cx(styled.wrapper, props.className)} style={props.style}>
+    <div className={cx(styled.wrapper, props.className, styled[props.variant || ""])} style={props.style}>
       <div className={styled.container}>
         <Popup
           ref={popupRef}

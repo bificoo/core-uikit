@@ -8,6 +8,7 @@ export type InputGroupProps = WithComponent
 
 const InputGroup = (props: InputGroupProps) => {
   const { attributes } = useContext(FormGroupContext)
+
   return (
     <div
       className={cx(
@@ -16,8 +17,7 @@ const InputGroup = (props: InputGroupProps) => {
           [styled.entered]: attributes?.entered,
           [styled.disabled]: attributes?.disabled,
           [styled["read-only"]]: attributes?.readOnly,
-          [styled["is-valid"]]: attributes?.isValid,
-          [styled["is-invalid"]]: attributes?.isInvalid,
+          [styled[attributes?.variant || ""]]: attributes?.variant
         },
         props.className,
       )}>

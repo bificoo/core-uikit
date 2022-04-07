@@ -2,7 +2,8 @@ import React, { useState, useRef, useEffect } from "react"
 import { DateUtils } from "react-day-picker"
 import { DayPickerInputProps, DayPickerProps } from "react-day-picker/types"
 import DayPickerInputType from "react-day-picker/types/DayPickerInput"
-import Form from "components/Form"
+import Form, { InputGroup, Append } from "components/Form"
+import Icon from "components/Icon"
 import useOutsideEvent from "hooks/useOutsideEvent"
 import { formatDate, parseDate } from "../utils"
 import styled from "./RangePicker.module.scss"
@@ -148,7 +149,13 @@ const RangePicker = React.forwardRef(function RangePicker(
           props: DayPickerInputProps["component"],
           ref,
         ) {
-          return <Form.Input ref={ref} {...props} />
+          return (
+            <InputGroup className={styled["input-group"]}>
+              <Form.Input ref={ref} {...props} />
+                <Append className={styled.icon}>
+                <Icon name="calendar" />
+              </Append>
+            </InputGroup>)
         })}
         dayPickerProps={dayPickerProps}
         inputProps={{

@@ -42,14 +42,10 @@ export type RangePickerProps = {
    * Callback when date change.
    */
   onChange?: ({ startDate: endDate }: { startDate: Date | null; endDate: Date | null }) => void
-  /**
-   * Callback when date change.
-   */
-   calendarIcon?: boolean
 } & WithComponent
 
 const RangePicker = React.forwardRef(function RangePicker(
-  { dateFormat = "YYYY-MM-DD", calendarIcon = false, ...props }: RangePickerProps,
+  { dateFormat = "YYYY-MM-DD", ...props }: RangePickerProps,
   ref: React.Ref<HTMLInputElement>,
 ) {
   const [startDate, setStartDate] = useState(props?.startDate)
@@ -153,14 +149,13 @@ const RangePicker = React.forwardRef(function RangePicker(
           props: DayPickerInputProps["component"],
           ref,
         ) {
-          return calendarIcon ? (
+          return (
             <InputGroup className={styled["input-group"]}>
               <Form.Input ref={ref} {...props} />
                 <Append className={styled.icon}>
                 <Icon name="calendar" />
               </Append>
             </InputGroup>)
-            : <Form.Input ref={ref} {...props} />
         })}
         dayPickerProps={dayPickerProps}
         inputProps={{

@@ -17,7 +17,7 @@ export default {
 export const Default: Story<RangePickerProps> = () => {
   return (
     <RangePicker
-      style={{ width: "200px" }}
+      style={{ width: "240px" }}
       onChange={({ startDate, endDate }) => {
         console.info(startDate, endDate)
       }} />
@@ -27,7 +27,7 @@ export const Default: Story<RangePickerProps> = () => {
 export const SpecificStartDate: Story<RangePickerProps> = () => {
   return (
     <RangePicker
-      style={{ width: "200px" }}
+      style={{ width: "240px" }}
       startDate={new Date("2021-08-04")}
       onChange={({ startDate, endDate }) => {
         console.info(startDate, endDate)
@@ -38,7 +38,7 @@ export const SpecificStartDate: Story<RangePickerProps> = () => {
 export const SpecificEndDate: Story<RangePickerProps> = () => {
   return (
     <RangePicker
-      style={{ width: "200px" }}
+      style={{ width: "240px" }}
       endDate={new Date("2021-08-14")}
       onChange={({ startDate, endDate }) => {
         console.info(startDate, endDate)
@@ -49,19 +49,6 @@ export const SpecificEndDate: Story<RangePickerProps> = () => {
 export const SpecificRange: Story<RangePickerProps> = () => {
   return (
     <RangePicker
-      style={{ width: "200px" }}
-      startDate={new Date("2021-08-04")}
-      endDate={new Date("2021-08-14")}
-      onChange={({ startDate, endDate }) => {
-        console.info(startDate, endDate)
-      }} />
-  )
-}
-
-export const SpecificRangeWithIcon: Story<RangePickerProps> = () => {
-  return (
-    <RangePicker
-      calendarIcon
       style={{ width: "240px" }}
       startDate={new Date("2021-08-04")}
       endDate={new Date("2021-08-14")}
@@ -74,7 +61,7 @@ export const SpecificRangeWithIcon: Story<RangePickerProps> = () => {
 export const SpecificMinDate: Story<RangePickerProps> = () => {
   return (
     <RangePicker
-      style={{ width: "200px" }}
+      style={{ width: "240px" }}
       minDate={new Date("2021-08-03")}
       onChange={({ startDate, endDate }) => {
         console.info(startDate, endDate)
@@ -85,7 +72,7 @@ export const SpecificMinDate: Story<RangePickerProps> = () => {
 export const SpecificMaxDate: Story<RangePickerProps> = () => {
   return (
     <RangePicker
-      style={{ width: "200px" }}
+      style={{ width: "240px" }}
       maxDate={new Date("2021-08-10")}
       onChange={({ startDate, endDate }) => {
         console.info(startDate, endDate)
@@ -96,7 +83,7 @@ export const SpecificMaxDate: Story<RangePickerProps> = () => {
 export const SpecificLimitDate: Story<RangePickerProps> = () => {
   return (
     <RangePicker
-      style={{ width: "200px" }}
+      style={{ width: "240px" }}
       minDate={new Date("2021-08-03")}
       maxDate={new Date("2021-08-10")}
       onChange={({ startDate, endDate }) => {

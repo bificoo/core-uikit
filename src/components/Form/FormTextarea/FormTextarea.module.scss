@@ -33,6 +33,9 @@
       background-color: #fff;
       border-color: #4c9aff;
     }
+    &.invalid {
+      border: 1px solid #DE350B;
+    }
   }
 
   &.disabled {

@@ -16,8 +16,9 @@ export const Default: Story = () => {
 }
 
 export const Text: Story = () => {
-  return <Avatar style={{ color: "white", backgroundColor: "#2894FF" }}>A</Avatar>
+  return <Avatar>A</Avatar>
 }
+
 
 export const Image: Story = () => {
   return (

@@ -86,6 +86,7 @@ export const SpecificLimitDate: Story<RangePickerProps> = () => {
       style={{ width: "240px" }}
       minDate={new Date("2021-08-03")}
       maxDate={new Date("2021-08-10")}
+      invalid
       onChange={({ startDate, endDate }) => {
         console.info(startDate, endDate)
       }} />

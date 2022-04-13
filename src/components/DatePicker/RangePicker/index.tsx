@@ -4,6 +4,7 @@ import { DayPickerInputProps, DayPickerProps } from "react-day-picker/types"
 import DayPickerInputType from "react-day-picker/types/DayPickerInput"
 import Form, { InputGroup, Append } from "components/Form"
 import Icon from "components/Icon"
+import cx from "classnames"
 import useOutsideEvent from "hooks/useOutsideEvent"
 import { formatDate, parseDate } from "../utils"
 import styled from "./RangePicker.module.scss"
@@ -42,10 +43,14 @@ export type RangePickerProps = {
    * Callback when date change.
    */
   onChange?: ({ startDate: endDate }: { startDate: Date | null; endDate: Date | null }) => void
+  /**
+   * Callback when date change.
+   */
+  invalid?: boolean
 } & WithComponent
 
 const RangePicker = React.forwardRef(function RangePicker(
-  { dateFormat = "YYYY-MM-DD", ...props }: RangePickerProps,
+  { dateFormat = "YYYY-MM-DD", invalid = false, ...props }: RangePickerProps,
   ref: React.Ref<HTMLInputElement>,
 ) {
   const [startDate, setStartDate] = useState(props?.startDate)
@@ -150,7 +155,7 @@ const RangePicker = React.forwardRef(function RangePicker(
           ref,
         ) {
           return (
-            <InputGroup className={styled["input-group"]}>
+            <InputGroup className={cx(styled["input-group"], { [styled.invalid]: invalid })}>
               <Form.Input ref={ref} {...props} />
                 <Append className={styled.icon}>
                 <Icon name="calendar" />

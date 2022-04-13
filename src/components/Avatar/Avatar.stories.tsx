@@ -19,9 +19,6 @@ export const Text: Story = () => {
   return <Avatar>A</Avatar>
 }
 
-export const Style: Story = () => {
-  return <Avatar style={{ color: "black", backgroundColor: "#2894FF" }}>A</Avatar>
-}
 
 export const Image: Story = () => {
   return (

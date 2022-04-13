@@ -1,7 +1,7 @@
 import styled from "./Avatar.module.scss"
-import { WithChildren, WithStyle } from "types/common"
+import { WithChildren, WithStyle, WithComponent } from "types/common"
 
-export type AvatarProps = WithStyle & WithChildren
+export type AvatarProps = WithStyle & WithChildren & WithComponent
 
 const Avatar = (props: AvatarProps) => {
   const defaultAvatar = (
@@ -15,8 +15,8 @@ const Avatar = (props: AvatarProps) => {
     </div>
   )
   return (
-    <div className={styled.wrapper}>
-      <div className={styled.circle} style={props.style}>
+    <div className={`${styled.wrapper} ${props.className}}`} style={props.style} >
+      <div className={styled.circle}>
         {props.children ? props.children : defaultAvatar}
       </div>
     </div>

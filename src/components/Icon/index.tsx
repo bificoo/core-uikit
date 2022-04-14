@@ -34,6 +34,7 @@ export const Icon = (props: IconProps) => {
     'Clock': <Svg.Clock />,
     'Plus': <Svg.Plus />,
     'Trash': <Svg.Trash />,
+    'Watch': <Svg.Watch />,
   }
 
   return (

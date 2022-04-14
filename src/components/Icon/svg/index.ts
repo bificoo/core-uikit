@@ -14,6 +14,7 @@ import { ReactComponent as Shortcut } from "./Shortcut.svg"
 import { ReactComponent as Clock } from "./Clock.svg"
 import { ReactComponent as Plus } from "./Plus.svg"
 import { ReactComponent as Trash } from "./Trash.svg"
+import { ReactComponent as Watch } from "./Watch.svg"
 
 const Image = Object.assign({}, {
   Group,
@@ -32,6 +33,7 @@ const Image = Object.assign({}, {
   Clock,
   Plus,
   Trash,
+  Watch,
 })
 
 export default Image

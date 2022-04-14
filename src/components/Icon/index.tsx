@@ -35,6 +35,7 @@ export const Icon = (props: IconProps) => {
     'Plus': <Svg.Plus />,
     'Trash': <Svg.Trash />,
     'Watch': <Svg.Watch />,
+    'WatchFilled': <Svg.WatchFilled />,
   }
 
   return (

@@ -1,5 +1,5 @@
 import { Story, Meta } from "@storybook/react"
-
+import Form from "components/Form"
 import DatePicker, { DatePickerProps } from "components/DatePicker"
 
 export default {
@@ -95,5 +95,17 @@ export const Disabled: Story<DatePickerProps> = () => {
     <DatePicker
       date={new Date()}
       disabled={true} />
+  )
+}
+
+export const Invalid: Story<DatePickerProps> = () => {
+  return (
+    <Form.Group>
+      <DatePicker
+        inputProps={{ variant: "invalid" }}
+        onChange={date => {
+          console.info(date)
+        }} />
+    </Form.Group>
   )
 }

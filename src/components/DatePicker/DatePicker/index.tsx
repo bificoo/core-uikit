@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react"
 import { DayPickerInputProps, DayPickerProps } from "react-day-picker/types"
 import DayPickerInputType from "react-day-picker/types/DayPickerInput"
 import Form, { InputGroup, Append } from "components/Form"
+import { FormInputProps } from "../../Form/FormInput"
 import Icon from "components/Icon"
 import day from "utils/day"
 import { formatDate, parseDate } from "../utils"
@@ -41,9 +42,13 @@ export type DatePickerProps = {
    * Callback when date change.
    */
   onChange?: (date: Date) => void
+  /**
+   * Props for the attributes of input.
+   */
+   inputProps?: FormInputProps
 }
 
-const DatePicker = ({ dateFormat = "YYYY-MM-DD", ...props }: DatePickerProps) => {
+const DatePicker = ({ dateFormat = "YYYY-MM-DD", inputProps, ...props }: DatePickerProps) => {
   const [date, setDate] = useState(props.date || new Date())
   const datePickerInputRef = useRef<DayPickerInputType>(null)
 
@@ -105,6 +110,7 @@ const DatePicker = ({ dateFormat = "YYYY-MM-DD", ...props }: DatePickerProps) =>
           style: {
             cursor: "pointer",
           },
+          ...inputProps
         }}
       />
     </div>

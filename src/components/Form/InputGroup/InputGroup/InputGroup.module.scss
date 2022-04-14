@@ -29,6 +29,9 @@
       background-color: #fff;
       border-color: #2D62C4;
     }
+  }
+
+  &:not(.disabled) {
     &.invalid {
       border: 1px solid #DE350B;
     }

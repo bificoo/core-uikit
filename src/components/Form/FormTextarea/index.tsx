@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useState } from "react"
 import { FormGroupContext } from "components/Form/FormContext"
+import { FormControlProps } from "../types"
 import cx from "classnames"
 import styled from "./FormTextarea.module.scss"
 
-export type FormTextareaProps = JSX.IntrinsicElements["textarea"]
+export type FormTextareaProps = FormControlProps & JSX.IntrinsicElements["textarea"]
 export type FormTextareaRef = React.Ref<HTMLTextAreaElement>
 const FormTextarea = React.forwardRef(function FormTextarea(
   { className, ...props }: FormTextareaProps,
@@ -17,8 +18,9 @@ const FormTextarea = React.forwardRef(function FormTextarea(
       entered,
       disabled: !!props.disabled,
       readOnly: !!props.readOnly,
+      variant: props.variant,
     })
-  }, [entered, props.disabled, props.readOnly])
+  }, [entered, props.disabled, props.readOnly, props.variant])
 
   return (
     <div
@@ -26,7 +28,8 @@ const FormTextarea = React.forwardRef(function FormTextarea(
         [styled.entered]: entered,
         [styled.disabled]: !!props.disabled,
         [styled["read-only"]]: !!props.readOnly,
-      })}>
+      },
+      styled[props.variant || ""])}>
       <textarea
         {...props}
         ref={ref}

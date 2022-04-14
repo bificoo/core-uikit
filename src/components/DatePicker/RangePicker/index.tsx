@@ -3,6 +3,7 @@ import { DateUtils } from "react-day-picker"
 import { DayPickerInputProps, DayPickerProps } from "react-day-picker/types"
 import DayPickerInputType from "react-day-picker/types/DayPickerInput"
 import Form, { InputGroup, Append } from "components/Form"
+import { FormInputProps } from "../../Form/FormInput"
 import Icon from "components/Icon"
 import useOutsideEvent from "hooks/useOutsideEvent"
 import { formatDate, parseDate } from "../utils"
@@ -42,10 +43,14 @@ export type RangePickerProps = {
    * Callback when date change.
    */
   onChange?: ({ startDate: endDate }: { startDate: Date | null; endDate: Date | null }) => void
+  /**
+   * Props for the attributes of input.
+   */
+  inputProps?: FormInputProps
 } & WithComponent
 
 const RangePicker = React.forwardRef(function RangePicker(
-  { dateFormat = "YYYY-MM-DD", ...props }: RangePickerProps,
+  { dateFormat = "YYYY-MM-DD", inputProps, ...props }: RangePickerProps,
   ref: React.Ref<HTMLInputElement>,
 ) {
   const [startDate, setStartDate] = useState(props?.startDate)
@@ -164,6 +169,7 @@ const RangePicker = React.forwardRef(function RangePicker(
           style: {
             cursor: "pointer",
           },
+          ...inputProps
         }}
         onDayChange={handleDayChange}
       />

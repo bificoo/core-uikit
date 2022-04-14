@@ -21,6 +21,11 @@ const FormInput = React.forwardRef(function FormInput(
   const [entered, setEntered] = useState(false)
 
   useEffect(() => {
+    if (attributes?.entered === entered &&
+      attributes?.disabled === props.disabled &&
+      attributes?.readOnly === props.readOnly &&
+      attributes?.variant === props.variant) return
+
     setAttributes({
       entered,
       disabled: props.disabled,

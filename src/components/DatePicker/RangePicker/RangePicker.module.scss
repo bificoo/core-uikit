@@ -295,24 +295,3 @@
   z-index: 10;
   background: #fff;
 }
-
-.input-group {
-  &:hover {
-    background-color: #ebecf0;
-  }
-
-  &:focus-within {
-    background-color: #fff;
-    border-color: #0052cc;
-
-    .icon {
-      > div {
-        > svg {
-          path:nth-last-child(1) {
-            fill: #557cc4;
-          }
-        }
-      }
-    }
-  }
-}

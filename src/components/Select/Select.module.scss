@@ -1,6 +1,7 @@
 .wrapper {
 
   &.invalid {
+    border-radius: 3px;
     border: 1px solid #DE350B;
   }
   .container {

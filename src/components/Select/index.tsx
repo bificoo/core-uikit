@@ -40,6 +40,10 @@ export type SelectProps = {
       selectedList: SelectOptionType[]
     },
   ) => void
+  /**
+   * Callback when close the select component. 
+   */
+  onClose?: () => void
 } & WithComponent
 
 export type { SelectOptionProps } from "./SelectOption"
@@ -137,6 +141,7 @@ const Select = ({ isMulti = false, ...props }: FormControlProps & SelectProps) =
               </div>
             </div>
           )}
+          onClose={() => props.onClose && props.onClose()}
           position="bottom left"
           on="click"
           closeOnDocumentClick

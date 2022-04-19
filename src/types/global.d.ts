@@ -185,11 +185,11 @@ declare global {
        */
       children?: React.ReactNode
     }
-    type WithClassName = { 
+    type WithClassName = {
       /**
        * Provide a custom className that is applied to the containing
        */
-      className?: string 
+      className?: string
     }
     type WithStyle = { style?: React.CSSProperties }
     type Component = WithChildren & WithClassName & WithStyle

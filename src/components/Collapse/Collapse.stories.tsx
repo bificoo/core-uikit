@@ -5,7 +5,7 @@ import Collapse from "components/Collapse"
 export default {
   title: "Data Display/Collapse",
   component: Collapse,
-  subcomponents: { 
+  subcomponents: {
     "Collapse.Header": Collapse.Header,
     "Collapse.Panel": Collapse.Panel,
   },

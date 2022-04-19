@@ -3,10 +3,10 @@ import styled from "./Badge.module.scss"
 import { WithComponent } from "types/common"
 
 const VARIANT = {
-  PRIMARY: 'primary',
-  SECONDARY: 'secondary',
-  IMPORTANT: 'important',
-} as const;
+  PRIMARY: "primary",
+  SECONDARY: "secondary",
+  IMPORTANT: "important",
+} as const
 
 export type BadgeProps = {
   /**
@@ -14,12 +14,12 @@ export type BadgeProps = {
    */
   variant?: typeof VARIANT[keyof typeof VARIANT]
   /**
-   * Specify if the is circle 
+   * Specify if the is circle
    */
   pill?: boolean
 } & WithComponent
 
- const Badge = ({
+const Badge = ({
   variant = "primary",
   pill = false,
   className,
@@ -36,4 +36,3 @@ export type BadgeProps = {
 }
 
 export default Badge
-

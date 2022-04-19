@@ -44,17 +44,20 @@ const TreeCategory = (props: TreeCategoryProps) => {
           }
           expandedRef.current = !expandedRef.current
           onNodeToggle(result)
-        }
-        }>
+        }}>
         <Icon name={expanded?.some(el => el === props.eventKey) ? "arrow-down" : "arrow-right"} />
         <div className={styled.name}>{props.renderName}</div>
       </div>
-      <div className={cx(styled.content, { [styled.expanded]: expanded?.some(el => el === props.eventKey) })}>
+      <div
+        className={cx(styled.content, {
+          [styled.expanded]: expanded?.some(el => el === props.eventKey),
+        })}>
         {React.Children.map(props.children, (child, index) => {
           if (React.isValidElement(child)) {
             return React.cloneElement(child, { ...child.props, nodes, key: index })
           }
-        })}</div>
+        })}
+      </div>
     </div>
   )
 }

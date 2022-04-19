@@ -21,4 +21,4 @@ export const typography = {
     l3: 48,
     code: 90,
   },
-} as const;
+} as const

@@ -11,7 +11,7 @@ const Breadcrumbs = (props: BreadcrumbsProps) => {
     <ol className={styled.items}>
       {React.Children.map(props.children, (child, i) => {
         if (!React.isValidElement(child)) return
-        const isNode = (i < childrenLength - 1)
+        const isNode = i < childrenLength - 1
         return (
           <>
             {child}

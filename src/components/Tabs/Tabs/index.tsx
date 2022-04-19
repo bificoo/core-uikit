@@ -11,8 +11,8 @@ export type TabsProps = {
    */
   defaultActiveKey: EventKey
   /**
-    * The current active tab index
-    */
+   * The current active tab index
+   */
   activeKey?: EventKey
   /**
    * For tabs customization extra content.

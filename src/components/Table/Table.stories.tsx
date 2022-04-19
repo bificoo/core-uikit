@@ -425,19 +425,11 @@ const ImageCell = ({ rowData, dataKey, ...props }: TableCellWithUserProps) => {
   )
 }
 
-const CheckCell = ({
-  rowData,
-  onChange,
-  dataKey,
-  ...props
-}: TableCellWithUserProps) => {
+const CheckCell = ({ rowData, onChange, dataKey, ...props }: TableCellWithUserProps) => {
   if (!rowData) return null
   return (
     <Cell {...props} style={{ padding: 0 }}>
-      <Form.Checkbox
-        value={rowData[dataKey]}
-        onChange={onChange}
-      />
+      <Form.Checkbox value={rowData[dataKey]} onChange={onChange} />
     </Cell>
   )
 }

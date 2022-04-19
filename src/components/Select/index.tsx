@@ -28,7 +28,7 @@ export type SelectProps = {
    */
   disabled?: boolean
   /**
-   * Callback when select change. 
+   * Callback when select change.
    */
   onChange?: (
     e: React.MouseEvent<Element, MouseEvent>,
@@ -41,7 +41,7 @@ export type SelectProps = {
     },
   ) => void
   /**
-   * Callback when close the select component. 
+   * Callback when close the select component.
    */
   onClose?: () => void
 } & WithComponent
@@ -88,7 +88,9 @@ const Select = ({ isMulti = false, ...props }: FormControlProps & SelectProps) =
   }
 
   return (
-    <div className={cx(styled.wrapper, props.className, styled[props.variant || ""])} style={props.style}>
+    <div
+      className={cx(styled.wrapper, props.className, styled[props.variant || ""])}
+      style={props.style}>
       <div className={styled.container}>
         <Popup
           ref={popupRef}

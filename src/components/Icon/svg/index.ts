@@ -17,25 +17,28 @@ import { ReactComponent as Trash } from "./Trash.svg"
 import { ReactComponent as Watch } from "./Watch.svg"
 import { ReactComponent as WatchFilled } from "./WatchFilled.svg"
 
-const Image = Object.assign({}, {
-  Group,
-  Information,
-  Search,
-  ArrowUp,
-  ArrowDown,
-  ArrowLeft,
-  ArrowRight,
-  Cross,
-  Calendar,
-  UpTriangle,
-  DownTriangle,
-  Dash,
-  Shortcut,
-  Clock,
-  Plus,
-  Trash,
-  Watch,
-  WatchFilled,
-})
+const Image = Object.assign(
+  {},
+  {
+    Group,
+    Information,
+    Search,
+    ArrowUp,
+    ArrowDown,
+    ArrowLeft,
+    ArrowRight,
+    Cross,
+    Calendar,
+    UpTriangle,
+    DownTriangle,
+    Dash,
+    Shortcut,
+    Clock,
+    Plus,
+    Trash,
+    Watch,
+    WatchFilled,
+  },
+)
 
 export default Image

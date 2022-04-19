@@ -5,7 +5,8 @@ import cx from "classnames"
 import styled from "./FormInput.module.scss"
 import { WithClassName } from "types/common"
 
-export type FormInputProps = FormControlProps & WithClassName &
+export type FormInputProps = FormControlProps &
+  WithClassName &
   Omit<JSX.IntrinsicElements["input"], "type" | "css"> & {
     /**
      * Specify the type of the
@@ -21,10 +22,13 @@ const FormInput = React.forwardRef(function FormInput(
   const [entered, setEntered] = useState(false)
 
   useEffect(() => {
-    if (attributes?.entered === entered &&
+    if (
+      attributes?.entered === entered &&
       attributes?.disabled === props.disabled &&
       attributes?.readOnly === props.readOnly &&
-      attributes?.variant === props.variant) return
+      attributes?.variant === props.variant
+    )
+      return
 
     setAttributes({
       entered,
@@ -36,12 +40,16 @@ const FormInput = React.forwardRef(function FormInput(
 
   return (
     <div
-      className={cx("component-input", styled.wrapper, {
-        [styled.entered]: entered,
-        [styled.disabled]: !!props.disabled,
-        [styled["read-only"]]: !!props.readOnly,
-      },
-      styled[props.variant || ""])}
+      className={cx(
+        "component-input",
+        styled.wrapper,
+        {
+          [styled.entered]: entered,
+          [styled.disabled]: !!props.disabled,
+          [styled["read-only"]]: !!props.readOnly,
+        },
+        styled[props.variant || ""],
+      )}
       style={props.style}>
       <input
         {...props}

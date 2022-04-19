@@ -170,7 +170,9 @@ export const Validation: Story = () => {
           type="password"
           placeholder="Password"
           {...register("password", { required: true, maxLength: 8 })}
-          {...(["maxLength", "required"].some(el => el === errors?.password?.type) ? { variant: "invalid" } : {})}
+          {...(["maxLength", "required"].some(el => el === errors?.password?.type)
+            ? { variant: "invalid" }
+            : {})}
         />
         {errors?.password?.type === "required" && (
           <Form.HelperMessage>This field is required</Form.HelperMessage>

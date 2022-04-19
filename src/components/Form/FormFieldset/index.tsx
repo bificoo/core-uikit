@@ -7,7 +7,9 @@ export type FormFieldsetProps = {
    * If true, the checkbox will be inline style.
    */
   inline?: boolean
-} & WithChildren & WithClassName & JSX.IntrinsicElements["fieldset"]
+} & WithChildren &
+  WithClassName &
+  JSX.IntrinsicElements["fieldset"]
 
 const FormFieldset = ({ inline = false, className, ...props }: FormFieldsetProps) => {
   return (

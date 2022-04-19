@@ -28,19 +28,13 @@ export const FullBar: Story<ProgressBarProps> = () => {
 }
 
 export const FullCircle: Story<ProgressCircleProps> = () => {
-  return (
-    <Progress.Circle percent={125} />
-  )
+  return <Progress.Circle percent={125} />
 }
 
 export const Circle: Story<ProgressCircleProps> = () => {
-  return (
-    <Progress.Circle percent={25} />
-  )
+  return <Progress.Circle percent={25} />
 }
 
 export const EmptyCircle: Story<ProgressCircleProps> = () => {
-  return (
-    <Progress.Circle percent={0} />
-  )
+  return <Progress.Circle percent={0} />
 }

@@ -21,7 +21,8 @@ export const Default: Story<RangePickerProps> = () => {
       style={{ width: "240px" }}
       onChange={({ startDate, endDate }) => {
         console.info(startDate, endDate)
-      }} />
+      }}
+    />
   )
 }
 
@@ -32,7 +33,8 @@ export const SpecificStartDate: Story<RangePickerProps> = () => {
       startDate={new Date("2021-08-04")}
       onChange={({ startDate, endDate }) => {
         console.info(startDate, endDate)
-      }} />
+      }}
+    />
   )
 }
 
@@ -43,7 +45,8 @@ export const SpecificEndDate: Story<RangePickerProps> = () => {
       endDate={new Date("2021-08-14")}
       onChange={({ startDate, endDate }) => {
         console.info(startDate, endDate)
-      }} />
+      }}
+    />
   )
 }
 
@@ -55,7 +58,8 @@ export const SpecificRange: Story<RangePickerProps> = () => {
       endDate={new Date("2021-08-14")}
       onChange={({ startDate, endDate }) => {
         console.info(startDate, endDate)
-      }} />
+      }}
+    />
   )
 }
 
@@ -66,7 +70,8 @@ export const SpecificMinDate: Story<RangePickerProps> = () => {
       minDate={new Date("2021-08-03")}
       onChange={({ startDate, endDate }) => {
         console.info(startDate, endDate)
-      }} />
+      }}
+    />
   )
 }
 
@@ -77,7 +82,8 @@ export const SpecificMaxDate: Story<RangePickerProps> = () => {
       maxDate={new Date("2021-08-10")}
       onChange={({ startDate, endDate }) => {
         console.info(startDate, endDate)
-      }} />
+      }}
+    />
   )
 }
 
@@ -89,7 +95,8 @@ export const SpecificLimitDate: Story<RangePickerProps> = () => {
       maxDate={new Date("2021-08-10")}
       onChange={({ startDate, endDate }) => {
         console.info(startDate, endDate)
-      }} />
+      }}
+    />
   )
 }
 
@@ -101,7 +108,8 @@ export const Invalid: Story<RangePickerProps> = () => {
         inputProps={{ variant: "invalid" }}
         onChange={({ startDate, endDate }) => {
           console.info(startDate, endDate)
-        }} />
+        }}
+      />
     </Form.Group>
   )
 }

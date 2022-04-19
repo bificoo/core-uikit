@@ -21,7 +21,8 @@ export const Default: Story<DatePickerProps> = () => {
       date={new Date()}
       onChange={date => {
         console.info(date)
-      }} />
+      }}
+    />
   )
 }
 
@@ -31,7 +32,8 @@ export const SpecificDate: Story<DatePickerProps> = () => {
       date={new Date("2021-12-06")}
       onChange={date => {
         console.info(date)
-      }} />
+      }}
+    />
   )
 }
 
@@ -42,7 +44,8 @@ export const SpecificMinDate: Story<DatePickerProps> = () => {
       minDate={new Date("2021-12-03")}
       onChange={date => {
         console.info(date)
-      }} />
+      }}
+    />
   )
 }
 
@@ -53,7 +56,8 @@ export const SpecificMaxDate: Story<DatePickerProps> = () => {
       maxDate={new Date("2021-12-10")}
       onChange={date => {
         console.info(date)
-      }} />
+      }}
+    />
   )
 }
 
@@ -65,7 +69,8 @@ export const SpecificDisabledDays: Story<DatePickerProps> = () => {
       maxDate={new Date("2021-12-10")}
       onChange={date => {
         console.info(date)
-      }} />
+      }}
+    />
   )
 }
 
@@ -75,7 +80,8 @@ export const DateFormat: Story<DatePickerProps> = () => {
       dateFormat="YYYY.MM.DD"
       onChange={date => {
         console.info(date)
-      }} />
+      }}
+    />
   )
 }
 
@@ -85,17 +91,13 @@ export const Placeholder: Story<DatePickerProps> = () => {
       placeholder="請選擇日期"
       onChange={date => {
         console.info(date)
-      }} />
+      }}
+    />
   )
 }
 
-
 export const Disabled: Story<DatePickerProps> = () => {
-  return (
-    <DatePicker
-      date={new Date()}
-      disabled={true} />
-  )
+  return <DatePicker date={new Date()} disabled={true} />
 }
 
 export const Invalid: Story<DatePickerProps> = () => {
@@ -105,7 +107,8 @@ export const Invalid: Story<DatePickerProps> = () => {
         inputProps={{ variant: "invalid" }}
         onChange={date => {
           console.info(date)
-        }} />
+        }}
+      />
     </Form.Group>
   )
 }

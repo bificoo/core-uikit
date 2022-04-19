@@ -1,13 +1,13 @@
-import { WithComponent } from "types/common";
-import cx from "classnames";
-import styled from "./ModalHeader.module.scss";
+import { WithComponent } from "types/common"
+import cx from "classnames"
+import styled from "./ModalHeader.module.scss"
 
 export type ModalHeaderProps = {
   /**
    * The Modal header.
    */
-  title?: string;
-} & WithComponent;
+  title?: string
+} & WithComponent
 
 const ModalHeader = (props: ModalHeaderProps) => {
   return (
@@ -15,7 +15,7 @@ const ModalHeader = (props: ModalHeaderProps) => {
       <h1>{props.title}</h1>
       {props.children}
     </header>
-  );
-};
+  )
+}
 
-export default ModalHeader;
+export default ModalHeader

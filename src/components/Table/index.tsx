@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 
-
 import {
   Table as RsuiteTable,
   TableProps as RsuiteTableProps,
@@ -8,13 +7,13 @@ import {
   Cell,
   HeaderCell,
   ColumnGroup,
-  ColumnGroupProps
+  ColumnGroupProps,
 } from "rsuite-table"
 
 // C:\Users\User\Documents\core-uikit\node_modules\rsuite-table\es\less
 
 import Pagination from "./Pagination"
-import 'rsuite-table/dist/css/rsuite-table.min.css';
+import "rsuite-table/dist/css/rsuite-table.min.css"
 import styled from "./Table.module.scss"
 import QueryStatus from "components/QueryStatus"
 import usePrevious from "hooks/usePrevious"
@@ -64,7 +63,6 @@ const Table = ({
     const end = start + limit
     return i >= start && i < end
   })
-
 
   useEffect(() => {
     if (JSON.stringify(dataPrevious) !== JSON.stringify(data)) {

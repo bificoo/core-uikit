@@ -9,7 +9,8 @@ import { formatDate, parseDate } from "../utils"
 import styled from "./DatePicker.module.scss"
 
 // https://github.com/gpbl/react-day-picker/issues/1194#issuecomment-814065458
-import DPI from 'react-day-picker/DayPickerInput';
+import DPI from "react-day-picker/DayPickerInput"
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 const DayPickerInput = DPI.__esModule ? DPI.default : DPI
 
@@ -45,7 +46,7 @@ export type DatePickerProps = {
   /**
    * Props for the attributes of input.
    */
-   inputProps?: FormInputProps
+  inputProps?: FormInputProps
 }
 
 const DatePicker = ({ dateFormat = "YYYY-MM-DD", inputProps, ...props }: DatePickerProps) => {
@@ -100,7 +101,8 @@ const DatePicker = ({ dateFormat = "YYYY-MM-DD", inputProps, ...props }: DatePic
               <Append className={styled.icon}>
                 <Icon name="calendar" />
               </Append>
-            </InputGroup>)
+            </InputGroup>
+          )
         })}
         dayPickerProps={dayPickerProps}
         inputProps={{
@@ -110,7 +112,7 @@ const DatePicker = ({ dateFormat = "YYYY-MM-DD", inputProps, ...props }: DatePic
           style: {
             cursor: "pointer",
           },
-          ...inputProps
+          ...inputProps,
         }}
       />
     </div>

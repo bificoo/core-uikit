@@ -4,11 +4,11 @@ import styled from "./Button.module.scss"
 import { WithComponent, EventKey } from "types/common"
 
 const VARIANT = {
-  PRIMARY: 'primary',
-  SECONDARY: 'secondary',
-  IMPORTANT: 'important',
-  TEXT: 'text'
-} as const;
+  PRIMARY: "primary",
+  SECONDARY: "secondary",
+  IMPORTANT: "important",
+  TEXT: "text",
+} as const
 
 export type ButtonProps = {
   /**
@@ -34,7 +34,8 @@ export type ButtonProps = {
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     eventKey?: { eventKey?: EventKey },
   ) => void
-} & WithComponent & JSX.IntrinsicElements['button']
+} & WithComponent &
+  JSX.IntrinsicElements["button"]
 
 export const Button = ({
   variant = "primary",

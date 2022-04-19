@@ -406,7 +406,7 @@ const NameCell = ({ rowData, dataKey, ...props }: TableCellWithUserProps) => {
   )
 }
 
-const ImageCell = ({ rowData, dataKey, ...props }: TableCellWithUserProps) => {
+const ImageCell = ({ rowData, ...props }: TableCellWithUserProps) => {
   if (!rowData) return null
   return (
     <Cell {...props} style={{ padding: 0 }}>
@@ -425,19 +425,11 @@ const ImageCell = ({ rowData, dataKey, ...props }: TableCellWithUserProps) => {
   )
 }
 
-const CheckCell = ({
-  rowData,
-  onChange,
-  dataKey,
-  ...props
-}: TableCellWithUserProps) => {
+const CheckCell = ({ rowData, onChange, dataKey, ...props }: TableCellWithUserProps) => {
   if (!rowData) return null
   return (
     <Cell {...props} style={{ padding: 0 }}>
-      <Form.Checkbox
-        value={rowData[dataKey]}
-        onChange={onChange}
-      />
+      <Form.Checkbox value={rowData[dataKey]} onChange={onChange} />
     </Cell>
   )
 }
@@ -580,11 +572,9 @@ export const SortTable = () => {
 }
 
 export const PaginationTable = () => {
-  const [loading, setLoading] = React.useState(false)
-
   return (
     <div>
-      <Table height={400} data={fakeData} loading={loading}>
+      <Table height={400} data={fakeData} loading={false}>
         <Column width={50} align="center" fixed>
           <HeaderCell>Id</HeaderCell>
           <Cell dataKey="id" />

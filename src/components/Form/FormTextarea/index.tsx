@@ -24,12 +24,16 @@ const FormTextarea = React.forwardRef(function FormTextarea(
 
   return (
     <div
-      className={cx("component-textarea", styled.wrapper, {
-        [styled.entered]: entered,
-        [styled.disabled]: !!props.disabled,
-        [styled["read-only"]]: !!props.readOnly,
-      },
-      styled[props.variant || ""])}>
+      className={cx(
+        "component-textarea",
+        styled.wrapper,
+        {
+          [styled.entered]: entered,
+          [styled.disabled]: !!props.disabled,
+          [styled["read-only"]]: !!props.readOnly,
+        },
+        styled[props.variant || ""],
+      )}>
       <textarea
         {...props}
         ref={ref}

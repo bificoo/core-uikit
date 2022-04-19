@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { Story, Meta } from "@storybook/react";
-import Button from "components/Button";
-import Modal, { CustomModal } from "components/Modal";
-import Header from "components/Modal/ModalHeader";
-import Body from "components/Modal/ModalBody";
+import { useState } from "react"
+import { Story, Meta } from "@storybook/react"
+import Button from "components/Button"
+import Modal, { CustomModal } from "components/Modal"
+import Header from "components/Modal/ModalHeader"
+import Body from "components/Modal/ModalBody"
 
 export default {
   title: "General/Modal",
@@ -13,29 +13,24 @@ export default {
       control: false,
     },
   },
-} as Meta;
+} as Meta
 
 export const AlertModal: Story = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
   return (
     <>
       <Button variant="primary" onClick={() => setOpen(true)}>
         Open Alert Modal
       </Button>
-      <Modal
-        title="注意"
-        open={open}
-        confirmText="確定"
-        onClose={() => setOpen(false)}
-      >
+      <Modal title="注意" open={open} confirmText="確定" onClose={() => setOpen(false)}>
         點擊確定即可關閉
       </Modal>
     </>
-  );
-};
+  )
+}
 
 export const ConfirmModal: Story = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
   return (
     <>
       <Button variant="primary" onClick={() => setOpen(true)}>
@@ -46,13 +41,12 @@ export const ConfirmModal: Story = () => {
         open={open}
         confirmText="確定"
         cancelText="取消"
-        onClose={() => setOpen(false)}
-      >
+        onClose={() => setOpen(false)}>
         確定要刪除嗎？
       </Modal>
     </>
-  );
-};
+  )
+}
 
 export const FunctionalAlertModal: Story = () => {
   return (
@@ -65,13 +59,12 @@ export const FunctionalAlertModal: Story = () => {
             confirmText: "確定",
             content: "點擊確定即可關閉",
           })
-        }
-      >
+        }>
         Open Functional Alert Modal
       </Button>
     </>
-  );
-};
+  )
+}
 
 export const FunctionalConfirmModal: Story = () => {
   return (
@@ -85,16 +78,15 @@ export const FunctionalConfirmModal: Story = () => {
             cancelText: "取消",
             content: "確定要刪除嗎？",
           })
-        }
-      >
+        }>
         Open Functional Confirm Modal
       </Button>
     </>
-  );
-};
+  )
+}
 
 export const CustomAllModal: Story = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
   return (
     <>
       <Button variant="primary" onClick={() => setOpen(true)}>
@@ -111,8 +103,7 @@ export const CustomAllModal: Story = () => {
             justifyContent: "center",
             alignItems: "center",
             flexDirection: "column",
-          }}
-        >
+          }}>
           完全客製化彈框，Modal 只負責浮動的邏輯。
           <Button onClick={() => setOpen(false)} style={{ marginTop: "10px" }}>
             關閉
@@ -120,11 +111,11 @@ export const CustomAllModal: Story = () => {
         </div>
       </CustomModal>
     </>
-  );
-};
+  )
+}
 
 export const CustomPartialModal: Story = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
   return (
     <>
       <Button variant="primary" onClick={() => setOpen(true)}>
@@ -138,10 +129,8 @@ export const CustomPartialModal: Story = () => {
               paddingBottom: "20px",
               height: "200px",
               background: "#eee",
-            }}
-          >
-            重新組合 Modal
-            的子元件，可以利用部分模組和客製化其他部分的模組，Header 與 Body
+            }}>
+            重新組合 Modal 的子元件，可以利用部分模組和客製化其他部分的模組，Header 與 Body
             使用原本的模組組合。
           </Body>
           <footer
@@ -151,18 +140,14 @@ export const CustomPartialModal: Story = () => {
               alignItems: "center",
               justifyContent: "flex-end",
               background: "#eee",
-            }}
-          >
+            }}>
             Footer 則是客製化
-            <Button
-              onClick={() => setOpen(false)}
-              style={{ marginLeft: "10px" }}
-            >
+            <Button onClick={() => setOpen(false)} style={{ marginLeft: "10px" }}>
               關閉
             </Button>
           </footer>
         </Modal.Dialog>
       </CustomModal>
     </>
-  );
-};
+  )
+}

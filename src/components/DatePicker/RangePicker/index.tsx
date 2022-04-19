@@ -10,7 +10,8 @@ import { formatDate, parseDate } from "../utils"
 import styled from "./RangePicker.module.scss"
 import { WithComponent } from "types/common"
 
-import DPI from 'react-day-picker/DayPickerInput';
+import DPI from "react-day-picker/DayPickerInput"
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 const DayPickerInput = DPI.__esModule ? DPI.default : DPI
 
@@ -141,7 +142,7 @@ const RangePicker = React.forwardRef(function RangePicker(
           startDate &&
           endDate &&
           `${formatDate(startDate, dateFormat)}~${formatDate(endDate, dateFormat)}`
-        }        
+        }
         format={dateFormat}
         formatDate={formatDate}
         parseDate={parseDate}
@@ -157,10 +158,11 @@ const RangePicker = React.forwardRef(function RangePicker(
           return (
             <InputGroup className={styled["input-group"]}>
               <Form.Input ref={ref} {...props} />
-                <Append className={styled.icon}>
+              <Append className={styled.icon}>
                 <Icon name="calendar" />
               </Append>
-            </InputGroup>)
+            </InputGroup>
+          )
         })}
         dayPickerProps={dayPickerProps}
         inputProps={{
@@ -169,7 +171,7 @@ const RangePicker = React.forwardRef(function RangePicker(
           style: {
             cursor: "pointer",
           },
-          ...inputProps
+          ...inputProps,
         }}
         onDayChange={handleDayChange}
       />

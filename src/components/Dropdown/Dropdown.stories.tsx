@@ -33,6 +33,18 @@ export const Default: Story<DropdownProps> = () => {
         <Dropdown.Item eventKey="clone">Clone</Dropdown.Item>
         <Dropdown.Item eventKey="delete">Delete</Dropdown.Item>
         <Dropdown.Item eventKey="report">Report</Dropdown.Item>
+        <Dropdown.Item eventKey="edit">Edit</Dropdown.Item>
+        <Dropdown.Item eventKey="share">Share</Dropdown.Item>
+        <Dropdown.Item eventKey="move">Move</Dropdown.Item>
+        <Dropdown.Item eventKey="clone">Clone</Dropdown.Item>
+        <Dropdown.Item eventKey="delete">Delete</Dropdown.Item>
+        <Dropdown.Item eventKey="report">Report</Dropdown.Item>
+        <Dropdown.Item eventKey="edit">Edit</Dropdown.Item>
+        <Dropdown.Item eventKey="share">Share</Dropdown.Item>
+        <Dropdown.Item eventKey="move">Move</Dropdown.Item>
+        <Dropdown.Item eventKey="clone">Clone</Dropdown.Item>
+        <Dropdown.Item eventKey="delete">Delete</Dropdown.Item>
+        <Dropdown.Item eventKey="report">Report</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
   )
@@ -164,14 +176,16 @@ export const Virtualized: Story<DropdownProps> = () => (
     </Dropdown.Toggle>
     <Dropdown.Menu>
       {[...Array(100)].map((_, idx) => (
-        <Dropdown.Item eventKey={idx} key={idx}>Row {idx}</Dropdown.Item>
+        <Dropdown.Item eventKey={idx} key={idx}>
+          Row {idx}
+        </Dropdown.Item>
       ))}
     </Dropdown.Menu>
   </Dropdown>
 )
 
 export const ControlMenuDisplay: Story<DropdownProps> = () => {
-  const dropdownRef = useRef<DropdownActions>(null);
+  const dropdownRef = useRef<DropdownActions>(null)
 
   return (
     <Dropdown ref={dropdownRef}>
@@ -183,7 +197,9 @@ export const ControlMenuDisplay: Story<DropdownProps> = () => {
           <div style={{ textAlign: "center" }}>A</div>
           <div style={{ textAlign: "center" }}>B</div>
           <div style={{ textAlign: "center" }}>C</div>
-          <Button style={{ width: "100%" }} onClick={() => dropdownRef.current?.close()}>Close</Button>
+          <Button style={{ width: "100%" }} onClick={() => dropdownRef.current?.close()}>
+            Close
+          </Button>
         </Dropdown.Body>
       </Dropdown.Menu>
     </Dropdown>
@@ -195,10 +211,7 @@ type Inputs = {
 }
 
 export const Checkbox: Story<DropdownProps> = () => {
-  const {
-    register,
-    watch,
-  } = useForm<Inputs>()
+  const { register, watch } = useForm<Inputs>()
 
   const labelInfo = watch().labels
   console.log(labelInfo)
@@ -212,10 +225,14 @@ export const Checkbox: Story<DropdownProps> = () => {
       </Dropdown.Toggle>
       <Dropdown.Menu>
         <Dropdown.Item>
-          <Form.Checkbox value='edit' {...register("labels")}>Edit</Form.Checkbox>
+          <Form.Checkbox value="edit" {...register("labels")}>
+            Edit
+          </Form.Checkbox>
         </Dropdown.Item>
         <Dropdown.Item>
-          <Form.Checkbox value='share' {...register("labels")}>Share</Form.Checkbox>
+          <Form.Checkbox value="share" {...register("labels")}>
+            Share
+          </Form.Checkbox>
         </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
@@ -223,10 +240,7 @@ export const Checkbox: Story<DropdownProps> = () => {
 }
 
 export const Mix: Story<DropdownProps> = () => {
-  const {
-    register,
-    watch,
-  } = useForm<Inputs>()
+  const { register, watch } = useForm<Inputs>()
 
   const labelInfo = watch().labels
   console.log(labelInfo)
@@ -241,38 +255,68 @@ export const Mix: Story<DropdownProps> = () => {
       </Dropdown.Toggle>
       <Dropdown.Menu>
         <Dropdown.Header>
-          <div style={{ borderBottom: '1px solid rgb(235, 236, 240)', padding: '0 16px', display: 'flex', alignItems: 'center', height: '36px' }} >
+          <div
+            style={{
+              borderBottom: "1px solid rgb(235, 236, 240)",
+              padding: "0 16px",
+              display: "flex",
+              alignItems: "center",
+              height: "36px",
+            }}>
             <Icon name="search" />
-            <Form.Input placeholder="請輸入標籤值" style={{ border: 'none' }} />
+            <Form.Input placeholder="請輸入標籤值" style={{ border: "none" }} />
           </div>
         </Dropdown.Header>
         <Dropdown.Item>
-          <Form.Checkbox value='edit' {...register("labels")}>Edit</Form.Checkbox>
+          <Form.Checkbox value="edit" {...register("labels")}>
+            Edit
+          </Form.Checkbox>
         </Dropdown.Item>
         <Dropdown.Item>
-          <Form.Checkbox value='share' {...register("labels")}>Share</Form.Checkbox>
+          <Form.Checkbox value="share" {...register("labels")}>
+            Share
+          </Form.Checkbox>
         </Dropdown.Item>
         <Dropdown.Item>
-          <Form.Checkbox value='move' {...register("labels")}>Move</Form.Checkbox>
+          <Form.Checkbox value="move" {...register("labels")}>
+            Move
+          </Form.Checkbox>
         </Dropdown.Item>
         <Dropdown.Item>
-          <Form.Checkbox value='clone' {...register("labels")}>Clone</Form.Checkbox>
+          <Form.Checkbox value="clone" {...register("labels")}>
+            Clone
+          </Form.Checkbox>
         </Dropdown.Item>
         <Dropdown.Item>
-          <Form.Checkbox value='delete' {...register("labels")}>Delete</Form.Checkbox>
+          <Form.Checkbox value="delete" {...register("labels")}>
+            Delete
+          </Form.Checkbox>
         </Dropdown.Item>
         <Dropdown.Item>
-          <Form.Checkbox value='report' {...register("labels")}>Report</Form.Checkbox>
+          <Form.Checkbox value="report" {...register("labels")}>
+            Report
+          </Form.Checkbox>
         </Dropdown.Item>
         <Dropdown.Item>
-          <Form.Checkbox value='test' {...register("labels")}>Test</Form.Checkbox>
+          <Form.Checkbox value="test" {...register("labels")}>
+            Test
+          </Form.Checkbox>
         </Dropdown.Item>
         <Dropdown.Item>
-          <Form.Checkbox value='test2' {...register("labels")}>Test2</Form.Checkbox>
+          <Form.Checkbox value="test2" {...register("labels")}>
+            Test2
+          </Form.Checkbox>
         </Dropdown.Item>
         <Dropdown.Footer>
-          <div style={{ borderTop: '1px solid rgb(235, 236, 240)', padding: '0 16px', display: 'flex', alignItems: 'center', height: '36px' }} >
-            <LinkButton style={{ marginRight: '8px' }}>確認</LinkButton>
+          <div
+            style={{
+              borderTop: "1px solid rgb(235, 236, 240)",
+              padding: "0 16px",
+              display: "flex",
+              alignItems: "center",
+              height: "36px",
+            }}>
+            <LinkButton style={{ marginRight: "8px" }}>確認</LinkButton>
             <LinkButton>清除</LinkButton>
           </div>
         </Dropdown.Footer>
@@ -292,22 +336,38 @@ export const Body: Story<DropdownProps> = () => {
       </Dropdown.Toggle>
       <Dropdown.Menu>
         <Dropdown.Header>
-          <div style={{ borderBottom: '1px solid rgb(235, 236, 240)', padding: '0 16px', display: 'flex', alignItems: 'center', height: '36px' }} >
+          <div
+            style={{
+              borderBottom: "1px solid rgb(235, 236, 240)",
+              padding: "0 16px",
+              display: "flex",
+              alignItems: "center",
+              height: "36px",
+            }}>
             設定
           </div>
         </Dropdown.Header>
-       <Dropdown.Body>
-          <div style={{ display: "flex", flexDirection: "column"}}>
-            語言          
-            <div style={{marginTop: '8px'}}>
-              <Button variant="secondary" style={{marginRight: "2px"}}>簡中</Button>
+        <Dropdown.Body>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            語言
+            <div style={{ marginTop: "8px" }}>
+              <Button variant="secondary" style={{ marginRight: "2px" }}>
+                簡中
+              </Button>
               <Button variant="secondary">繁中</Button>
             </div>
           </div>
-       </Dropdown.Body>
+        </Dropdown.Body>
         <Dropdown.Footer>
-          <div style={{ borderTop: '1px solid rgb(235, 236, 240)', padding: '0 16px', display: 'flex', alignItems: 'center', height: '36px' }} >
-            <LinkButton style={{ marginRight: '8px' }}>確認</LinkButton>
+          <div
+            style={{
+              borderTop: "1px solid rgb(235, 236, 240)",
+              padding: "0 16px",
+              display: "flex",
+              alignItems: "center",
+              height: "36px",
+            }}>
+            <LinkButton style={{ marginRight: "8px" }}>確認</LinkButton>
             <LinkButton>清除</LinkButton>
           </div>
         </Dropdown.Footer>

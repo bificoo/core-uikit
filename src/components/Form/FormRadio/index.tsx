@@ -7,7 +7,9 @@ export type FormRadioProps = {
    * If true, the checkbox will be inline style.
    */
   inline?: boolean
-} & WithClassName & WithChildren & Omit<JSX.IntrinsicElements["input"], "type">
+} & WithClassName &
+  WithChildren &
+  Omit<JSX.IntrinsicElements["input"], "type">
 
 const FormRadio = ({ children, inline, ...props }: FormRadioProps) => {
   return (

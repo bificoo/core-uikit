@@ -85,9 +85,7 @@ const Pagination = ({ activePage = 1, maxButtons = 5, ...props }: PaginationProp
           <>
             <div className={styled.divider} />
             <div className={styled.total}>
-              {typeof props.renderTotal === "function" && (
-                props.renderTotal()
-              )}
+              {typeof props.renderTotal === "function" && props.renderTotal()}
             </div>
           </>
         )}

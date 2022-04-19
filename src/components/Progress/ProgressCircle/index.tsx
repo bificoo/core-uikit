@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react"
 import { WithComponent } from "types/common"
 import styled from "./ProgressCircle.module.scss"
 
@@ -18,10 +18,7 @@ export type ProgressCircleProps = {
   progressCircleColor?: string
 } & WithComponent
 
-const ProgressCircle = ({
-  percent,
-  progressCircleColor = "#557CC4",
-}: ProgressCircleProps) => {
+const ProgressCircle = ({ percent, progressCircleColor = "#557CC4" }: ProgressCircleProps) => {
   const center = DEFAULT_SIZE / 2
   const radius = DEFAULT_SIZE / 2 - DEFAULT_STROKE_WIDTH / 2
   const circumference = 2 * Math.PI * radius
@@ -31,7 +28,7 @@ const ProgressCircle = ({
   useEffect(() => {
     const progressOffset = ((100 - alignPercent) / 100) * circumference
     setOffset(progressOffset)
-}, [setOffset, circumference, alignPercent, offset])
+  }, [setOffset, circumference, alignPercent, offset])
 
   return (
     <svg className={styled.svg} width={DEFAULT_SIZE} height={DEFAULT_SIZE}>
@@ -54,7 +51,7 @@ const ProgressCircle = ({
         strokeDasharray={circumference}
         transform={`rotate(-90 ${center} ${center})`}
       />
-      <text className={styled["svg-circle-text"]} x={center + 5}  y={center + 5}>
+      <text className={styled["svg-circle-text"]} x={center + 5} y={center + 5}>
         {percent}%
       </text>
     </svg>

@@ -7,26 +7,27 @@ export default {
   component: Tooltip,
   subcomponents: {
     "Tooltip.Toggle": Tooltip.Toggle,
-    "Tooltip.Body": Tooltip.Body
+    "Tooltip.Body": Tooltip.Body,
   },
   argTypes: {
-    on:{
-      description: 'Events triggering the tooltip.',
+    on: {
+      description: "Events triggering the tooltip.",
       table: {
         type: {
-          summary: "click | hover"
+          summary: "click | hover",
         },
-        defaultValue: { summary: 'hover' },
+        defaultValue: { summary: "hover" },
       },
       control: false,
     },
     position: {
-      description: 'Position for the tooltip.',
+      description: "Position for the tooltip.",
       table: {
         type: {
-          summary: "top left | top right | bottom right | bottom left | right center | left center | top center | bottom center | center center"
+          summary:
+            "top left | top right | bottom right | bottom left | right center | left center | top center | bottom center | center center",
         },
-        defaultValue: { summary: 'bottom center' },
+        defaultValue: { summary: "bottom center" },
       },
       control: false,
     },

@@ -1,4 +1,11 @@
-import React, { useMemo, useRef, useState, useLayoutEffect, useImperativeHandle, forwardRef } from "react"
+import React, {
+  useMemo,
+  useRef,
+  useState,
+  useLayoutEffect,
+  useImperativeHandle,
+  forwardRef,
+} from "react"
 import cx from "classnames"
 import Popup from "reactjs-popup"
 import { PopupActions, PopupProps } from "reactjs-popup/dist/types"
@@ -87,7 +94,7 @@ const Dropdown = forwardRef<DropdownActions, DropdownProps>(function Dropdown(pr
   }, [])
 
   useImperativeHandle(ref, () => ({
-    close: () => popupRef.current && popupRef.current?.close()
+    close: () => popupRef.current && popupRef.current?.close(),
   }))
 
   return (

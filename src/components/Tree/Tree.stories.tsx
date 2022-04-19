@@ -4,11 +4,11 @@ import { useEffect, useState } from "react"
 import fakeData from "./treeFakeData.json"
 
 export default {
-  title: "Data Display/Tree", 
+  title: "Data Display/Tree",
   component: Tree,
   subcomponents: {
     "Tree.Category": Tree.Category,
-    "Tree.Item": Tree.Item
+    "Tree.Item": Tree.Item,
   },
   argTypes: {},
 } as Meta

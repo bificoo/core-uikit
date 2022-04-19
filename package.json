@@ -5,7 +5,7 @@
     "type": "git",
     "url": "https://gitlab.bigdatainn-prd.site/frontend1/core-uikit"
   },
-  "version": "1.0.31",
+  "version": "1.0.32",
   "publishConfig": {
     "@frontend1:registry": "https://gitlab.bigdatainn-prd.site/api/v4/projects/55/packages/npm/",
     "access": "restricted"
@@ -96,16 +96,16 @@
     "@storybook/preset-create-react-app": "^4.0.0",
     "@storybook/react": "^6.4.9",
     "@svgr/rollup": "^6.1.2",
-    "@zerollup/ts-transform-paths": "^1.7.18",
     "@typescript-eslint/eslint-plugin": "^5.9.1",
     "@typescript-eslint/parser": "^4.25.0",
+    "@zerollup/ts-transform-paths": "^1.7.18",
+    "classnames": "^2.3.1",
     "eslint": "^7.27.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-jest": "^24.3.6",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "4.3.0",
-    "classnames": "^2.3.1",
     "less-loader": "^10.2.0",
     "rollup": "^2.62.0",
     "rollup-plugin-copy": "^3.4.0",

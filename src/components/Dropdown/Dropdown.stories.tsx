@@ -179,10 +179,12 @@ export const ControlMenuDisplay: Story<DropdownProps> = () => {
         <Button>Answer</Button>
       </Dropdown.Toggle>
       <Dropdown.Menu>
-        <div style={{ textAlign: "center" }}>A</div>
-        <div style={{ textAlign: "center" }}>B</div>
-        <div style={{ textAlign: "center" }}>C</div>
-        <Button style={{ width: "100%" }} onClick={() => dropdownRef.current?.close()}>Close</Button>
+        <Dropdown.Body>
+          <div style={{ textAlign: "center" }}>A</div>
+          <div style={{ textAlign: "center" }}>B</div>
+          <div style={{ textAlign: "center" }}>C</div>
+          <Button style={{ width: "100%" }} onClick={() => dropdownRef.current?.close()}>Close</Button>
+        </Dropdown.Body>
       </Dropdown.Menu>
     </Dropdown>
   )
@@ -268,6 +270,41 @@ export const Mix: Story<DropdownProps> = () => {
         <Dropdown.Item>
           <Form.Checkbox value='test2' {...register("labels")}>Test2</Form.Checkbox>
         </Dropdown.Item>
+        <Dropdown.Footer>
+          <div style={{ borderTop: '1px solid rgb(235, 236, 240)', padding: '0 16px', display: 'flex', alignItems: 'center', height: '36px' }} >
+            <LinkButton style={{ marginRight: '8px' }}>確認</LinkButton>
+            <LinkButton>清除</LinkButton>
+          </div>
+        </Dropdown.Footer>
+      </Dropdown.Menu>
+    </Dropdown>
+  )
+}
+
+export const Body: Story<DropdownProps> = () => {
+  return (
+    <Dropdown virtualized rowHeight={32}>
+      <Dropdown.Toggle>
+        <Button>
+          Page actions
+          <Icon name="arrow-down" />
+        </Button>
+      </Dropdown.Toggle>
+      <Dropdown.Menu>
+        <Dropdown.Header>
+          <div style={{ borderBottom: '1px solid rgb(235, 236, 240)', padding: '0 16px', display: 'flex', alignItems: 'center', height: '36px' }} >
+            設定
+          </div>
+        </Dropdown.Header>
+       <Dropdown.Body>
+          <div style={{ display: "flex", flexDirection: "column"}}>
+          語言          
+          <div style={{marginTop: '8px'}}>
+            <Button variant="secondary" style={{marginRight: "2px"}}>簡中</Button>
+            <Button variant="secondary">繁中</Button>
+          </div>
+          </div>
+       </Dropdown.Body>
         <Dropdown.Footer>
           <div style={{ borderTop: '1px solid rgb(235, 236, 240)', padding: '0 16px', display: 'flex', alignItems: 'center', height: '36px' }} >
             <LinkButton style={{ marginRight: '8px' }}>確認</LinkButton>

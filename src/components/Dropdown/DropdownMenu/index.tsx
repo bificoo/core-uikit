@@ -3,6 +3,7 @@ import styled from "./DropdownMenu.module.scss"
 import { WithComponent } from "types/common"
 import React, { forwardRef, useRef, useEffect, useState } from "react"
 import DropdownItem from '../DropdownItem'
+import DropdownBody from '../DropdownBody'
 import DropdownHeader from '../DropdownHeader'
 import DropdownFooter from '../DropdownFooter'
 import { FixedSizeList } from "react-window"
@@ -49,8 +50,13 @@ const DropdownMenu = forwardRef<HTMLDivElement, DropdownMenuProps>(function Drop
         if (child.type === DropdownHeader) return child
         return null
       })}
-      <div className={styled.list} ref={listWrapperRef}>
-        {list.length > 0 ? props.rowHeight ? (
+            {React.Children.map(props.children, child => {
+        if (!React.isValidElement(child)) return
+        if (child.type === DropdownBody) return child
+        return null
+      })}
+      {list.length > 0 ? props.rowHeight ? (
+        <div className={styled.list} ref={listWrapperRef}>
           <FixedSizeList
             className={styled.List}
             height={props.rowHeight * list.length > LIST_MAX_HEIGHT ? LIST_MAX_HEIGHT : props.rowHeight * list.length}
@@ -69,8 +75,8 @@ const DropdownMenu = forwardRef<HTMLDivElement, DropdownMenuProps>(function Drop
               </div>
             )}
           </FixedSizeList>
-        ) : list : null}
-      </div>
+        </div>
+      ) : list : null}
       {React.Children.map(props.children, child => {
         if (!React.isValidElement(child)) return
         if (child.type === DropdownFooter) return child

@@ -2,6 +2,7 @@ import DropdownBase from "./Dropdown";
 import DropdownToggle from "./DropdownToggleForButton";
 import DropdownMenu from "./DropdownMenu";
 import DropdownItem from "./DropdownItem";
+import DropdownBody from "./DropdownBody";
 import DropdownHeader from "./DropdownHeader";
 import DropdownFooter from "./DropdownFooter";
 
@@ -18,6 +19,7 @@ const Dropdown = Object.assign(DropdownBase, {
   Toggle: DropdownToggle,
   Menu: DropdownMenu,
   Item: DropdownItem,
+  Body: DropdownBody,
   Header: DropdownHeader,
   Footer: DropdownFooter,
 });

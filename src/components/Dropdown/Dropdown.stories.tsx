@@ -298,11 +298,11 @@ export const Body: Story<DropdownProps> = () => {
         </Dropdown.Header>
        <Dropdown.Body>
           <div style={{ display: "flex", flexDirection: "column"}}>
-          語言          
-          <div style={{marginTop: '8px'}}>
-            <Button variant="secondary" style={{marginRight: "2px"}}>簡中</Button>
-            <Button variant="secondary">繁中</Button>
-          </div>
+            語言          
+            <div style={{marginTop: '8px'}}>
+              <Button variant="secondary" style={{marginRight: "2px"}}>簡中</Button>
+              <Button variant="secondary">繁中</Button>
+            </div>
           </div>
        </Dropdown.Body>
         <Dropdown.Footer>

@@ -37,6 +37,8 @@ export const Icon = (props: IconProps) => {
     Trash: <Svg.Trash />,
     Watch: <Svg.Watch />,
     WatchFilled: <Svg.WatchFilled />,
+    BookmarkSimple: <Svg.BookmarkSimple />,
+    BookmarkSimpleFilled: <Svg.BookmarkSimpleFilled />,
   }
 
   return (

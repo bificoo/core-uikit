@@ -50,7 +50,7 @@ export type DatePickerProps = {
 }
 
 const DatePicker = ({ dateFormat = "YYYY-MM-DD", inputProps, ...props }: DatePickerProps) => {
-  const [date, setDate] = useState(props.date || new Date())
+  const [date, setDate] = useState(props.date)
   const datePickerInputRef = useRef<DayPickerInputType>(null)
 
   const dayPickerProps: DayPickerProps = {

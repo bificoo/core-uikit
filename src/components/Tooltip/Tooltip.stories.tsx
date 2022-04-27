@@ -121,3 +121,14 @@ export const BodyStyle: Story<TooltipProps> = () => {
     </Tooltip>
   )
 }
+
+export const Prefix: Story<TooltipProps> = () => {
+  return (
+    <Tooltip on="click" position="right center" prefix="test">
+      <Tooltip.Toggle>
+        <Button variant="primary">Hover over me</Button>
+      </Tooltip.Toggle>
+      <Tooltip.Body>Design System Tooltip</Tooltip.Body>
+    </Tooltip>
+  )
+}

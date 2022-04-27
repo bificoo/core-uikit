@@ -380,10 +380,7 @@ const NameCell = ({ rowData, dataKey, ...props }: TableCellWithUserProps) => {
   if (!rowData) return null
   return (
     <Cell {...props}>
-      <Tooltip
-        arrow={false}
-        position={["top left", "bottom left"]}
-        keepTooltipInside="rs-table-body-row-wrapper">
+      <Tooltip position={["top left", "bottom left"]}>
         <Tooltip.Toggle>{rowData[dataKey].toLocaleString()}</Tooltip.Toggle>
         <Tooltip.Body>
           <div>

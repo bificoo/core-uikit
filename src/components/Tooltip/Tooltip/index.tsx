@@ -4,12 +4,14 @@ import { PopupProps } from "reactjs-popup/dist/types"
 import TooltipToggle from "../TooltipToggle"
 import TooltipBody from "../TooltipBody"
 import "./Tooltip.module.scss"
-import { WithChildren } from "types/common"
+import { WithChildren, WithPrefix } from "types/common"
+import cx from "classnames"
 
 export type TooltipProps = {
   on?: PopupProps["on"]
   position?: PopupProps["position"]
-} & WithChildren
+} & WithChildren &
+  WithPrefix
 
 const Tooltip = ({ on = "hover", position = "bottom center", ...props }: TooltipProps) => {
   const tooltip = useMemo(() => {
@@ -34,7 +36,7 @@ const Tooltip = ({ on = "hover", position = "bottom center", ...props }: Tooltip
 
   return (
     <Popup
-      className="core-tooltip"
+      className={cx("core-tooltip", props.prefix)}
       trigger={<span>{tooltip.trigger}</span>}
       on={on}
       position={position}

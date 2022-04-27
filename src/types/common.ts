@@ -19,6 +19,13 @@ export type WithStyle = {
   style?: React.CSSProperties
 }
 
+export type WithPrefix = {
+  /**
+   * The css prefix class name.
+   */
+  prefix?: string
+}
+
 export type EventKey = string | number
 
 export type WithComponent = WithChildren & WithClassName & WithStyle

@@ -5,6 +5,10 @@ stages:
   - deploy
   - clean-cache
 
+
+variables:
+  NODE_IMAGE: node:16.13.0-stretch
+
 before_script:
   - touch .npmrc
   - echo "@frontend1:registry=https://gitlab.bigdatainn-prd.site/api/v4/projects/${CI_PROJECT_ID}/packages/npm/" >> .npmrc
@@ -16,7 +20,7 @@ before_script:
 
 install:
   stage: install
-  image: node:16.6.1-stretch
+  image: $NODE_IMAGE
   cache:
     - key:
         files:
@@ -29,7 +33,7 @@ install:
 
 build:story-book:
   stage: build
-  image: node:16.6.1-stretch
+  image: $NODE_IMAGE
   cache:
     - key:
         files:
@@ -49,7 +53,7 @@ build:story-book:
 
 build:core-uikit:
   stage: build
-  image: node:16.6.1-stretch
+  image: $NODE_IMAGE
   cache:
     - key:
         files:
@@ -68,7 +72,7 @@ build:core-uikit:
 
 publish:
   stage: publish
-  image: node:16.6.1-stretch
+  image: $NODE_IMAGE
   cache:
     - key:
         files:

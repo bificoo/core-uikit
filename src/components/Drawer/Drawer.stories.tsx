@@ -11,7 +11,6 @@ export default {
 
 export const Default: Story = () => {
   const [openDefault, setOpenDefault] = useState(false)
-  console.log("openDefault", openDefault)
   return (
     <div>
       <Button onClick={() => setOpenDefault(!openDefault)}>Open Drawer</Button>
@@ -24,15 +23,33 @@ export const Default: Story = () => {
 
 export const Style: Story = () => {
   const [openStyle, setOpenStyle] = useState(false)
-  console.log("openStyle", openStyle)
-
   return (
     <div>
       <Button onClick={() => setOpenStyle(!openStyle)}>Open Drawer</Button>
       <Drawer
         open={openStyle}
         onClose={() => setOpenStyle(!openStyle)}
-        size={300}
+        style={{
+          backgroundColor: "white",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}>
+        <div>content</div>
+      </Drawer>
+    </div>
+  )
+}
+
+export const Size: Story = () => {
+  const [openSize, setOpenSize] = useState(false)
+  return (
+    <div>
+      <Button onClick={() => setOpenSize(!openSize)}>Open Drawer</Button>
+      <Drawer
+        open={openSize}
+        onClose={() => setOpenSize(!openSize)}
+        size="50%"
         style={{
           backgroundColor: "white",
           display: "flex",

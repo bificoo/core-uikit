@@ -17,6 +17,7 @@ const Drawer = ({
   style,
   ...props
 }: DrawerProps) => {
+  const randomId = Math.random().toString(36).substring(2, 7)
   return (
     <div className={styled.wrapper} {...props}>
       <input
@@ -24,9 +25,9 @@ const Drawer = ({
         className={styled.checkbox}
         onChange={onClose}
         checked={open}
-        id="check"
+        id={`check${randomId}`}
       />
-      <label className={styled.overlay} htmlFor="check" />
+      <label className={styled.overlay} htmlFor={`check${randomId}`} />
       <div
         className={cx(styled.container, className)}
         style={{ width: typeof size === "number" ? `${size}px` : size, ...style }}>

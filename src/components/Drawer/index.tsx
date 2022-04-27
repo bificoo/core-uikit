@@ -5,19 +5,20 @@ import { WithComponent } from "types/common"
 export type DrawerProps = {
   open: boolean
   onClose?: () => void
-  size?: number | string
+  size?: string | number
 } & WithComponent
 
 const Drawer = ({
   open = true,
-  size = "250px",
+  size = 250,
   className,
   onClose,
   children,
+  style,
   ...props
 }: DrawerProps) => {
   return (
-    <div className={cx(styled.wrapper, className)} {...props}>
+    <div className={styled.wrapper} {...props}>
       <input
         type="checkbox"
         className={styled.checkbox}
@@ -26,7 +27,9 @@ const Drawer = ({
         id="check"
       />
       <label className={styled.overlay} htmlFor="check" />
-      <div className={styled.container} style={{ width: size }}>
+      <div
+        className={cx(styled.container, className)}
+        style={{ width: typeof size === "number" ? `${size}px` : size, ...style }}>
         {children}
       </div>
     </div>

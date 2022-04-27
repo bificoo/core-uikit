@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Story, Meta } from "@storybook/react"
 import Drawer from "components/Drawer"
+import Button from "components/Button"
 
 export default {
   title: "Data Display/Drawer",
@@ -9,14 +10,36 @@ export default {
 } as Meta
 
 export const Default: Story = () => {
-  const [open, setOpen] = useState(false)
+  const [openDefault, setOpenDefault] = useState(false)
+  console.log("openDefault", openDefault)
   return (
     <div>
-      <button onClick={() => setOpen(!open)}>open!</button>
-      <Drawer open={open} onClose={() => setOpen(!open)}>
-        <div style={{ backgroundColor: "white", height: "100%", width: "100%" }}>
-          <div>123</div>
-        </div>
+      <Button onClick={() => setOpenDefault(!openDefault)}>Open Drawer</Button>
+      <Drawer open={openDefault} onClose={() => setOpenDefault(!openDefault)}>
+        <div>content</div>
+      </Drawer>
+    </div>
+  )
+}
+
+export const Style: Story = () => {
+  const [openStyle, setOpenStyle] = useState(false)
+  console.log("openStyle", openStyle)
+
+  return (
+    <div>
+      <Button onClick={() => setOpenStyle(!openStyle)}>Open Drawer</Button>
+      <Drawer
+        open={openStyle}
+        onClose={() => setOpenStyle(!openStyle)}
+        size={300}
+        style={{
+          backgroundColor: "white",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}>
+        <div>content</div>
       </Drawer>
     </div>
   )

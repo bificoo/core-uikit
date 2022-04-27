@@ -18,6 +18,7 @@ import { ReactComponent as Watch } from "./Watch.svg"
 import { ReactComponent as WatchFilled } from "./WatchFilled.svg"
 import { ReactComponent as BookmarkSimple } from "./BookmarkSimple.svg"
 import { ReactComponent as BookmarkSimpleFilled } from "./BookmarkSimpleFilled.svg"
+import { ReactComponent as BulletList } from "./BulletList.svg"
 
 const Image = Object.assign(
   {},
@@ -42,6 +43,7 @@ const Image = Object.assign(
     WatchFilled,
     BookmarkSimple,
     BookmarkSimpleFilled,
+    BulletList,
   },
 )
 

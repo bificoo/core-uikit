@@ -6,7 +6,10 @@ import TooltipBody from "../TooltipBody"
 import "./Tooltip.module.scss"
 import { WithChildren } from "types/common"
 
-export type TooltipProps = PopupProps & WithChildren
+export type TooltipProps = {
+  on?: PopupProps["on"]
+  position?: PopupProps["position"]
+} & WithChildren
 
 const Tooltip = ({ on = "hover", position = "bottom center", ...props }: TooltipProps) => {
   const tooltip = useMemo(() => {

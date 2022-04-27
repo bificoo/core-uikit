@@ -77,6 +77,7 @@ export const SpecificDisabledDays: Story<DatePickerProps> = () => {
 export const DateFormat: Story<DatePickerProps> = () => {
   return (
     <DatePicker
+      date={new Date()}
       dateFormat="YYYY.MM.DD"
       onChange={date => {
         console.info(date)

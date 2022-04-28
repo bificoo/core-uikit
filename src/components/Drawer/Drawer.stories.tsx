@@ -4,7 +4,7 @@ import Drawer from "components/Drawer"
 import Button from "components/Button"
 
 export default {
-  title: "Data Display/Drawer",
+  title: "General/Drawer",
   component: Drawer,
   argTypes: {},
 } as Meta
@@ -14,26 +14,11 @@ export const Default: Story = () => {
   return (
     <div>
       <Button onClick={() => setOpenDefault(!openDefault)}>Open Drawer</Button>
-      <Drawer open={openDefault} onClose={() => setOpenDefault(!openDefault)}>
-        <div>content</div>
-      </Drawer>
-    </div>
-  )
-}
-
-export const Style: Story = () => {
-  const [openStyle, setOpenStyle] = useState(false)
-  return (
-    <div>
-      <Button onClick={() => setOpenStyle(!openStyle)}>Open Drawer</Button>
       <Drawer
-        open={openStyle}
-        onClose={() => setOpenStyle(!openStyle)}
-        style={{
-          backgroundColor: "white",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+        open={openDefault}
+        onClose={() => {
+          console.log("close!")
+          setOpenDefault(!openDefault)
         }}>
         <div>content</div>
       </Drawer>
@@ -48,14 +33,11 @@ export const Size: Story = () => {
       <Button onClick={() => setOpenSize(!openSize)}>Open Drawer</Button>
       <Drawer
         open={openSize}
-        onClose={() => setOpenSize(!openSize)}
-        size="50%"
-        style={{
-          backgroundColor: "white",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}>
+        onClose={() => {
+          console.log("close!")
+          setOpenSize(!openSize)
+        }}
+        size="50%">
         <div>content</div>
       </Drawer>
     </div>

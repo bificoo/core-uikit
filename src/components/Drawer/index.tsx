@@ -1,6 +1,7 @@
 import cx from "classnames"
 import styled from "./Drawer.module.scss"
 import { WithComponent } from "types/common"
+import { createPortal } from "react-dom"
 
 export type DrawerProps = {
   open: boolean
@@ -18,8 +19,8 @@ const Drawer = ({
   ...props
 }: DrawerProps) => {
   const randomId = Math.random().toString(36).substring(2, 7)
-  return (
-    <div className={styled.wrapper} {...props}>
+  return createPortal(
+    <div className={cx(styled.wrapper, className)} style={style} {...props}>
       <input
         type="checkbox"
         className={styled.checkbox}
@@ -29,11 +30,12 @@ const Drawer = ({
       />
       <label className={styled.overlay} htmlFor={`check${randomId}`} />
       <div
-        className={cx(styled.container, className)}
-        style={{ width: typeof size === "number" ? `${size}px` : size, ...style }}>
+        className={styled.container}
+        style={{ width: typeof size === "number" ? `${size}px` : size }}>
         {children}
       </div>
-    </div>
+    </div>,
+    document.body,
   )
 }
 

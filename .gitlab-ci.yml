@@ -88,6 +88,11 @@ publish:
     - ls ./build -al
     - yarn install --frozen-lockfile
     - npm run semantic-release
+  artifacts:
+    when: always
+    paths:
+      - .npm/
+    expire_in: 1 day
 
 deploy-gcs:sotry-book:
   image: google/cloud-sdk:slim

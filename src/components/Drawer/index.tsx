@@ -4,8 +4,17 @@ import { WithComponent } from "types/common"
 import { createPortal } from "react-dom"
 
 export type DrawerProps = {
+  /**
+   * Should the drawer appear on screen or not
+   */
   open: boolean
+  /**
+   * A callback function whenever the drawer closed.
+   */
   onClose?: () => void
+  /**
+   * Allows the drawer container custom width
+   */
   size?: string | number
 } & WithComponent
 

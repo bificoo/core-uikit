@@ -92,7 +92,7 @@ publish:
 deploy-gcs:sotry-book:
   image: google/cloud-sdk:slim
   stage: deploy
-  needs: ['build:story-book']
+  needs: ['publish']
   before_script:
     - ""
   only:

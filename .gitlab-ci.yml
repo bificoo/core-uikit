@@ -9,14 +9,12 @@ stages:
 variables:
   NODE_IMAGE: node:16.13.0-stretch
   CI: "false"
-  NPM_LOGS: "$CI_PROJECT_DIR/.npm/"
 
 before_script:
   - touch .npmrc
   - echo "@frontend1:registry=https://gitlab.bigdatainn-prd.site/api/v4/projects/${CI_PROJECT_ID}/packages/npm/" >> .npmrc
-  - echo "//gitlab.bigdatainn-prd.site/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=\${PUBLISH_TOKEN}" >> .npmrc
-  # - echo "//gitlab.bigdatainn-prd.site/api/v4/packages/npm/:_authToken=\${CI_JOB_TOKEN}" >> .npmrc
-  - echo "//gitlab.bigdatainn-prd.site/api/v4/projects/82/packages/npm/:_authToken=\${CI_JOB_TOKEN}" >> .npmrc
+  - echo "//gitlab.bigdatainn-prd.site/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${PUBLISH_TOKEN}" >> .npmrc
+  - echo "//gitlab.bigdatainn-prd.site/api/v4/projects/82/packages/npm/:_authToken=${CI_JOB_TOKEN}" >> .npmrc
   - cat .npmrc
   - ls -al
 
@@ -88,18 +86,14 @@ publish:
     - export GIT_SSL_NO_VERIFY=1
     - ls ./build -al
     - yarn install --frozen-lockfile
-    - npm config ls
-    - npm run semantic-release --verbose
-  artifacts:
-    when: always
-    paths:
-      - NPM_LOGS/_logs/
-    expire_in: 1 day
+    - npm run semantic-release
 
 deploy-gcs:sotry-book:
   image: google/cloud-sdk:slim
   stage: deploy
-  needs: ['publish']
+  needs:
+    - build:story-book
+    - publish
   before_script:
     - ""
   only:

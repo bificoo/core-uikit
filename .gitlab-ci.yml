@@ -9,6 +9,7 @@ stages:
 variables:
   NODE_IMAGE: node:16.13.0-stretch
   CI: "false"
+  NPM_LOGS: "$CI_PROJECT_DIR/.npm/"
 
 before_script:
   - touch .npmrc
@@ -91,7 +92,7 @@ publish:
   artifacts:
     when: always
     paths:
-      - .npm/
+      - .npm/_logs/
     expire_in: 1 day
 
 deploy-gcs:sotry-book:

@@ -17,7 +17,6 @@ export const Default: Story = () => {
       <Drawer
         open={openDefault}
         onClose={() => {
-          console.log("close!")
           setOpenDefault(!openDefault)
         }}>
         <div>content</div>
@@ -34,7 +33,6 @@ export const Size: Story = () => {
       <Drawer
         open={openSize}
         onClose={() => {
-          console.log("close!")
           setOpenSize(!openSize)
         }}
         size="50%">

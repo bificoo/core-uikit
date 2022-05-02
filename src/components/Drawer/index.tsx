@@ -1,7 +1,9 @@
+import { useRef, useEffect } from "react"
 import cx from "classnames"
 import styled from "./Drawer.module.scss"
 import { WithComponent } from "types/common"
 import { createPortal } from "react-dom"
+import useMountTransition from "./useMountTransition"
 
 export type DrawerProps = {
   /**
@@ -27,24 +29,54 @@ const Drawer = ({
   style,
   ...props
 }: DrawerProps) => {
-  const randomId = Math.random().toString(36).substring(2, 7)
+  const isTransitioning = useMountTransition(open, 300)
+
+  // 動態產生dom
+  const createPortalRoot = () => {
+    const drawerRoot = document.createElement("div")
+    drawerRoot.setAttribute("id", "drawer-root")
+    return drawerRoot
+  }
+
+  const portalRootRef = useRef(document.getElementById("drawer-root") || createPortalRoot())
+  const bodyRef = useRef(document.querySelector("body"))
+  const bodyEl = bodyRef.current
+
+  useEffect(() => {
+    bodyEl && bodyEl.appendChild(portalRootRef.current)
+  }, [])
+
+  useEffect(() => {
+    const updatePageScroll = () => {
+      if (open) {
+        bodyEl && (bodyEl.style.overflow = "hidden")
+      } else {
+        bodyEl && (bodyEl.style.overflow = "unset")
+      }
+    }
+    updatePageScroll()
+  }, [open])
+
+  if (!isTransitioning && !open) return null
+
   return createPortal(
-    <div className={cx(styled.wrapper, className)} style={style} {...props}>
-      <input
-        type="checkbox"
-        className={styled.checkbox}
-        onChange={onClose}
-        checked={open}
-        id={`check${randomId}`}
-      />
-      <label className={styled.overlay} htmlFor={`check${randomId}`} />
+    <div
+      className={cx(
+        styled.wrapper,
+        { [styled.in]: isTransitioning },
+        { [styled.active]: open },
+        className,
+      )}
+      style={style}
+      {...props}>
+      <div className={styled.overlay} onClick={onClose} />
       <div
         className={styled.container}
         style={{ width: typeof size === "number" ? `${size}px` : size }}>
         {children}
       </div>
     </div>,
-    document.body,
+    portalRootRef.current,
   )
 }
 

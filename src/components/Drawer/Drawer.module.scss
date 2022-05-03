@@ -21,6 +21,7 @@
     transform: translateX(100%);
     background-color: #fff;
     transition: transform 300ms ease;
+    overflow: scroll;
   }
 
   .overlay {

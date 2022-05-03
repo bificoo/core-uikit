@@ -9,6 +9,20 @@ export default {
   argTypes: {},
 } as Meta
 
+const contentStyle = {
+  alignItems: "center",
+  backgroundColor: "#f4f5f7",
+  borderRadius: "3px",
+  color: "#6b778c",
+  display: "flex",
+  fontSize: "2em",
+  fontWeight: 500,
+  flexGrow: 1,
+  justifyContent: "center",
+  height: "calc(100% - 20px)",
+  margin: "10px",
+}
+
 export const Default: Story = () => {
   const [openDefault, setOpenDefault] = useState(false)
   return (
@@ -19,7 +33,7 @@ export const Default: Story = () => {
         onClose={() => {
           setOpenDefault(!openDefault)
         }}>
-        <div>content</div>
+        <div style={contentStyle}>content</div>
       </Drawer>
     </div>
   )
@@ -36,7 +50,23 @@ export const Size: Story = () => {
           setOpenSize(!openSize)
         }}
         size="50%">
-        <div>content</div>
+        <div style={contentStyle}>content</div>
+      </Drawer>
+    </div>
+  )
+}
+
+export const Scroll: Story = () => {
+  const [openDefault, setOpenDefault] = useState(false)
+  return (
+    <div>
+      <Button onClick={() => setOpenDefault(!openDefault)}>Open Drawer</Button>
+      <Drawer
+        open={openDefault}
+        onClose={() => {
+          setOpenDefault(!openDefault)
+        }}>
+        <div style={{ minHeight: "1000px ", ...contentStyle }}>content</div>
       </Drawer>
     </div>
   )

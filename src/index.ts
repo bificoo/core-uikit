@@ -44,6 +44,8 @@ export type {
   AppendProps,
 } from "./components/Form"
 
+export { default as Drawer } from "./components/Drawer"
+
 export { default as DatePicker } from "./components/DatePicker"
 export type { DatePickerProps } from "./components/DatePicker"
 

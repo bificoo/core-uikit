@@ -21,6 +21,7 @@ export type FormGroupAttributes = Partial<{
   entered: boolean
   disabled: boolean
   readOnly: boolean
+  plaintext: boolean
   variant: "invalid"
 }>
 

@@ -12,6 +12,10 @@ export type FormInputProps = FormControlProps &
      * Specify the type of the
      */
     type?: "text" | "password" | "number"
+    /**
+     * Render the input as plain text
+     */
+    plaintext?: boolean
   }
 
 const FormInput = React.forwardRef(function FormInput(
@@ -26,7 +30,8 @@ const FormInput = React.forwardRef(function FormInput(
       attributes?.entered === entered &&
       attributes?.disabled === props.disabled &&
       attributes?.readOnly === props.readOnly &&
-      attributes?.variant === props.variant
+      attributes?.variant === props.variant &&
+      attributes?.plaintext === props.plaintext
     )
       return
 
@@ -35,8 +40,9 @@ const FormInput = React.forwardRef(function FormInput(
       disabled: props.disabled,
       readOnly: props.readOnly,
       variant: props.variant,
+      plaintext: props.plaintext,
     })
-  }, [entered, props.disabled, props.readOnly, props.variant])
+  }, [entered, props.disabled, props.readOnly, props.variant, props.plaintext])
 
   return (
     <div
@@ -47,6 +53,7 @@ const FormInput = React.forwardRef(function FormInput(
           [styled.entered]: entered,
           [styled.disabled]: !!props.disabled,
           [styled["read-only"]]: !!props.readOnly,
+          [styled.plaintext]: !!props.plaintext,
         },
         styled[props.variant || ""],
       )}

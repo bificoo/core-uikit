@@ -47,6 +47,12 @@
     user-select: none;
   }
 
+  &.plaintext {
+    background-color: transparent;
+    border-color: transparent;
+    pointer-events: none;
+  }
+
   input.control {
     padding: 0 8px;
     height: 30px;

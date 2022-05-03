@@ -73,19 +73,11 @@ build:core-uikit:
 publish:
   stage: publish
   image: $NODE_IMAGE
-  cache:
-    - key:
-        files:
-          - yarn.lock
-      policy: pull
-      paths:
-        - node_modules/
   only: ['master']
   needs: ['build:core-uikit']
   script:
     - export GIT_SSL_NO_VERIFY=1
     - ls ./build -al
-    - yarn install --frozen-lockfile
     - npx -p @semantic-release/commit-analyzer -p @semantic-release/release-notes-generator -p @semantic-release/gitlab -p @semantic-release/npm -p @semantic-release/git semantic-release
 
 deploy-gcs:sotry-book:

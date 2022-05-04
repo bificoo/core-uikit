@@ -39,3 +39,13 @@ export const Validation: Story = () => (
     </InputGroup>
   </Form.Group>
 )
+
+export const Plaintext: Story = () => (
+  <Form.Group>
+    <InputGroup>
+      <Prepend>$</Prepend>
+      <Form.Input plaintext value={1000} />
+      <Append>元</Append>
+    </InputGroup>
+  </Form.Group>
+)

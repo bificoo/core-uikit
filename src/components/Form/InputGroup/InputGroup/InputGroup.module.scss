@@ -49,6 +49,7 @@
   &.plaintext {
     background-color: transparent;
     border-color: transparent;
+    cursor: default;
 
     &:not(.disabled):not(.read-only) {
       &:hover {

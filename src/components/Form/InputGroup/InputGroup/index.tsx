@@ -17,6 +17,7 @@ const InputGroup = (props: InputGroupProps) => {
           [styled.entered]: attributes?.entered,
           [styled.disabled]: attributes?.disabled,
           [styled["read-only"]]: attributes?.readOnly,
+          [styled.plaintext]: attributes?.plaintext,
           [styled[attributes?.variant || ""]]: attributes?.variant,
         },
         props.className,

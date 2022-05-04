@@ -46,6 +46,17 @@
     user-select: none;
   }
 
+  &.plaintext {
+    background-color: transparent;
+    border-color: transparent;
+
+    &:not(.disabled):not(.read-only) {
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+
   .prepend,
   .append {
     height: 100%;

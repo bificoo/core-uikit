@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Meta } from "@storybook/react"
-import Table, { TableProps, TableCellProps } from "components/Table"
+import Table, { TableProps, TableCellProps, PaginationTable } from "components/Table"
 import Form from "components/Form"
 import { LinkButton } from "components/Button"
 import fakeData from "./users.json"
@@ -568,10 +568,10 @@ export const SortTable = () => {
   )
 }
 
-export const PaginationTable = () => {
+export const TableWithPagination = () => {
   return (
     <div>
-      <Table height={400} data={fakeData} loading={false}>
+      <PaginationTable height={400} data={fakeData} loading={false}>
         <Column width={50} align="center" fixed>
           <HeaderCell>Id</HeaderCell>
           <Cell dataKey="id" />
@@ -595,7 +595,7 @@ export const PaginationTable = () => {
           <HeaderCell>Company Name</HeaderCell>
           <Cell dataKey="companyName" />
         </Column>
-      </Table>
+      </PaginationTable>
     </div>
   )
 }

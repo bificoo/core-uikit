@@ -17,6 +17,7 @@ export const Default: Story = () => {
   return (
     <div style={{ width: "200px" }}>
       <InlineEdit
+        defaultValue={editValue}
         editing={editing}
         editView={() => (
           <Form.Input
@@ -32,7 +33,7 @@ export const Default: Story = () => {
               <InputGroup>
                 <Form.Input value={editValue || "Enter a value"} plaintext />
                 <Append>
-                  <div onClick={() => setEditing(true)} style={{ cursor: "grab" }}>
+                  <div onClick={() => setEditing(true)} style={{ cursor: "pointer" }}>
                     <Icon name="edit" width={16} height={16} />
                   </div>
                 </Append>
@@ -40,8 +41,8 @@ export const Default: Story = () => {
             </Form.Group>
           </div>
         )}
-        onConfirm={() => {
-          setEditValue(editValue)
+        onConfirm={value => {
+          setEditValue(value)
           setEditing(false)
         }}
         onCancel={() => {

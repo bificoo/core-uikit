@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react"
 
-import {
-  Table as RsuiteTable,
-  TableProps as RsuiteTableProps,
-  ColumnGroupProps,
-} from "rsuite-table"
+import { Table as RsuiteTable, TableProps as RsuiteTableProps, RowDataType } from "rsuite-table"
 
 // C:\Users\User\Documents\core-uikit\node_modules\rsuite-table\es\less
 
@@ -14,10 +10,7 @@ import styled from "./Table.module.scss"
 import QueryStatus from "components/QueryStatus"
 import usePrevious from "hooks/usePrevious"
 
-export type { CellProps as TableCellProps } from "rsuite-table/es"
-export type TableColumnGroupProps = ColumnGroupProps
-
-export type TableProps = {
+export type PaginationTableProps = {
   /** 最多顯示幾筆的下拉選單選項，預設為 10、30、50、100 筆 */
   limitMenu?: number[]
 
@@ -27,7 +20,11 @@ export type TableProps = {
   /** 切換頁面時觸發事件 */
   onSelectPage?: (page: number, limit: number) => void
 
+  /** 控制顯示頁數的按鈕最多顯示幾顆 */
   maxButtons?: number
+
+  /** 表格內容中顯示的資訊 */
+  data?: RowDataType[]
 } & RsuiteTableProps
 
 const PaginationTable = ({
@@ -37,7 +34,7 @@ const PaginationTable = ({
   renderTotal = true,
   onSelectPage,
   ...props
-}: TableProps) => {
+}: PaginationTableProps) => {
   const [limit, setLimit] = useState(limitMenu[0])
   const [page, setPage] = useState(1)
   const dataPrevious = usePrevious(data)
@@ -53,7 +50,7 @@ const PaginationTable = ({
     onSelectPage && onSelectPage(1, dataKey)
   }
 
-  const visualData = data.filter((v, i) => {
+  const visualData = data.filter((_, i) => {
     const start = limit * (page - 1)
     const end = start + limit
     return i >= start && i < end

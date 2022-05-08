@@ -19,14 +19,7 @@ export const Default: Story = () => {
       <InlineEdit
         defaultValue={editValue}
         editing={editing}
-        editView={() => (
-          <Form.Input
-            autoFocus
-            value={editValue}
-            onChange={e => setEditValue(e.target.value)}
-            placeholder="Enter a value"
-          />
-        )}
+        editView={ref => <Form.Input autoFocus ref={ref} placeholder="Enter a value" />}
         readView={() => (
           <div>
             <Form.Group>

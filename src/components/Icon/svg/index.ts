@@ -21,6 +21,7 @@ import { ReactComponent as BookmarkFilled } from "./BookmarkFilled.svg"
 import { ReactComponent as BulletList } from "./BulletList.svg"
 import { ReactComponent as Check } from "./Check.svg"
 import { ReactComponent as Edit } from "./Edit.svg"
+import { ReactComponent as Warning } from "./Warning.svg"
 
 const Image = Object.assign(
   {},
@@ -48,6 +49,7 @@ const Image = Object.assign(
     BulletList,
     Check,
     Edit,
+    Warning,
   },
 )
 

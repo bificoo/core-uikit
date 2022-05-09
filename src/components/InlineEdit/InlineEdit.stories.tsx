@@ -17,9 +17,11 @@ export const Default: Story = () => {
   return (
     <div style={{ width: "200px" }}>
       <InlineEdit
-        defaultValue={editValue}
+        defaultValue={editValue || ""}
         editing={editing}
-        editView={ref => <Form.Input autoFocus ref={ref} placeholder="Enter a value" />}
+        editView={ref => (
+          <Form.Input autoFocus ref={ref} placeholder={editValue ? "" : "Enter a value"} />
+        )}
         readView={() => (
           <div>
             <Form.Group>

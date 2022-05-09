@@ -49,7 +49,9 @@ const InlineEdit = (props: InlineEditProps) => {
   })
 
   const handleConfirm = () => {
-    editValueRef?.current?.value && props.onConfirm(editValueRef?.current?.value)
+    if (editValueRef?.current?.value || editValueRef?.current?.value === "") {
+      props.onConfirm(editValueRef?.current?.value)
+    }
   }
 
   return (

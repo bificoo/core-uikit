@@ -19,7 +19,7 @@ export type FormInputProps = FormControlProps &
   }
 
 const FormInput = React.forwardRef(function FormInput(
-  { className, type = "text", ...props }: FormInputProps,
+  { className, type = "text", plaintext, ...props }: FormInputProps,
   ref: React.Ref<HTMLInputElement> = null,
 ) {
   const { attributes, setAttributes } = useContext(FormGroupContext)
@@ -31,7 +31,7 @@ const FormInput = React.forwardRef(function FormInput(
       attributes?.disabled === props.disabled &&
       attributes?.readOnly === props.readOnly &&
       attributes?.variant === props.variant &&
-      attributes?.plaintext === props.plaintext
+      attributes?.plaintext === plaintext
     )
       return
 
@@ -40,9 +40,9 @@ const FormInput = React.forwardRef(function FormInput(
       disabled: props.disabled,
       readOnly: props.readOnly,
       variant: props.variant,
-      plaintext: props.plaintext,
+      plaintext: plaintext,
     })
-  }, [entered, props.disabled, props.readOnly, props.variant, props.plaintext])
+  }, [entered, props.disabled, props.readOnly, props.variant, plaintext])
 
   return (
     <div
@@ -53,7 +53,7 @@ const FormInput = React.forwardRef(function FormInput(
           [styled.entered]: entered,
           [styled.disabled]: !!props.disabled,
           [styled["read-only"]]: !!props.readOnly,
-          [styled.plaintext]: !!props.plaintext,
+          [styled.plaintext]: !!plaintext,
         },
         styled[props.variant || ""],
       )}

@@ -55,7 +55,7 @@ const InlineEdit = (props: InlineEditProps) => {
   }
 
   return (
-    <div ref={inlineEditRef}>
+    <div ref={inlineEditRef} className={styled.wrapper}>
       {props.editing ? (
         <div>
           <div>{props.editView(editValueRef)}</div>

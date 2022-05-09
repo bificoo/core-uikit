@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react"
+import React, { useLayoutEffect, useRef } from "react"
 import styled from "./InlineEdit.module.scss"
 import Icon from "components/Icon"
 import Button from "components/Button"
@@ -33,16 +33,16 @@ export type InlineEditProps = {
 
 const InlineEdit = (props: InlineEditProps) => {
   const editValueRef = useRef<HTMLInputElement>(null)
-  const InlineEditRef = useRef(null)
+  const inlineEditRef = useRef(null)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (props.editing && editValueRef.current?.value === "") {
       editValueRef.current.value = props.defaultValue || ""
     }
   }, [props.editing, props.defaultValue])
 
   useOutsideEvent({
-    refs: [InlineEditRef],
+    refs: [inlineEditRef],
     onClickOutside: () => {
       props.onCancel()
     },
@@ -55,7 +55,7 @@ const InlineEdit = (props: InlineEditProps) => {
   }
 
   return (
-    <div ref={InlineEditRef}>
+    <div ref={inlineEditRef}>
       {props.editing ? (
         <div>
           <div>{props.editView(editValueRef)}</div>

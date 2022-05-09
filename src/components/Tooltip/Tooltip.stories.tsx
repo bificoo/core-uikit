@@ -34,7 +34,7 @@ export default {
   },
   decorators: [
     Story => (
-      <div style={{ display: "flex", justifyContent: "center", padding: "30px" }}>
+      <div style={{ display: "flex", justifyContent: "start", padding: "30px" }}>
         <Story />
       </div>
     ),
@@ -65,7 +65,7 @@ export const Right: Story<TooltipProps> = () => {
 
 export const Left: Story<TooltipProps> = () => {
   return (
-    <Tooltip position="left center">
+    <Tooltip position="left center" keepTooltipInside="#story--general-tooltip--left">
       <Tooltip.Toggle>
         <Button variant="primary">Hover over me</Button>
       </Tooltip.Toggle>
@@ -98,7 +98,7 @@ export const Click: Story<TooltipProps> = () => {
 
 export const LongText: Story<TooltipProps> = () => {
   return (
-    <Tooltip on="click" position="bottom center">
+    <Tooltip on="click" position="bottom center" keepTooltipInside={true}>
       <Tooltip.Toggle>
         <Button variant="primary">Click me</Button>
       </Tooltip.Toggle>

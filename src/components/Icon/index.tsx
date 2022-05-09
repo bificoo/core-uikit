@@ -40,6 +40,9 @@ export const Icon = (props: IconProps) => {
     Bookmark: <Svg.Bookmark />,
     BookmarkFilled: <Svg.BookmarkFilled />,
     BulletList: <Svg.BulletList />,
+    Check: <Svg.Check />,
+    Edit: <Svg.Edit />,
+    Warning: <Svg.Warning />,
   }
 
   return (

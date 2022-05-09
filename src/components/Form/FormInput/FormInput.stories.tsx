@@ -24,16 +24,25 @@ Text.args = {
   value: "I am text",
 }
 
-// export const Password = Template.bind({})
-// Password.args = {
-//   type: "password",
-//   value: "password",
-// }
+export const Password = Template.bind({})
+Password.args = {
+  type: "password",
+  value: "password",
+}
 
 export const Disabled = Template.bind({})
 Disabled.args = {
   value: "I am text",
   disabled: true,
+}
+
+export const Plaintext: Story<FormInputProps> = () => {
+  return (
+    <div>
+      <Form.Input plaintext value="I am text"></Form.Input>
+      <Form.Input value="I am text"></Form.Input>
+    </div>
+  )
 }
 
 export const Chinese = Template.bind({})

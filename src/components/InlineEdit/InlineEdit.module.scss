@@ -1,0 +1,22 @@
+.buttons {
+  display: flex;
+  justify-content: end;
+  margin-top: 6px;
+
+  .check {
+    margin-right: 4px;
+  }
+
+  .check,
+  .cross {
+    width: 32px;
+    padding-left: 12px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    >div {
+      margin-right: 0px !important;
+    }
+  }
+}

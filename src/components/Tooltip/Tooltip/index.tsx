@@ -10,10 +10,16 @@ import cx from "classnames"
 export type TooltipProps = {
   on?: PopupProps["on"]
   position?: PopupProps["position"]
+  keepTooltipInside?: PopupProps["keepTooltipInside"]
 } & WithChildren &
   WithPrefix
 
-const Tooltip = ({ on = "hover", position = "bottom center", ...props }: TooltipProps) => {
+const Tooltip = ({
+  on = "hover",
+  position = "bottom center",
+  keepTooltipInside = false,
+  ...props
+}: TooltipProps) => {
   const tooltip = useMemo(() => {
     let triggerElement = <div />
     let bodyElement = null
@@ -38,6 +44,7 @@ const Tooltip = ({ on = "hover", position = "bottom center", ...props }: Tooltip
     <Popup
       className={cx("core-tooltip", props.prefix)}
       trigger={<span>{tooltip.trigger}</span>}
+      keepTooltipInside={keepTooltipInside}
       on={on}
       position={position}
       closeOnDocumentClick

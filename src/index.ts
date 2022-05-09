@@ -8,6 +8,9 @@ export type { BadgeProps } from "./components/Badge"
 
 export { default as Icon } from "./components/Icon"
 
+export { default as InlineEdit } from "./components/InlineEdit"
+export type { InlineEditProps } from "./components/InlineEdit"
+
 export { default as Breadcrumbs } from "./components/Breadcrumbs"
 export type { BreadcrumbsProps, BreadcrumbsItemProps } from "./components/Breadcrumbs"
 

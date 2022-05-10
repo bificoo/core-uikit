@@ -15,7 +15,7 @@ export const Default: Story = () => {
   const [editing, setEditing] = useState(false)
 
   return (
-    <div style={{ width: "200px" }}>
+    <div style={{ width: "200px", height: "57px" }}>
       <InlineEdit
         defaultValue={editValue || ""}
         editing={editing}

@@ -3,6 +3,7 @@ import styled from "./InlineEdit.module.scss"
 import Icon from "components/Icon"
 import Button from "components/Button"
 import useOutsideEvent from "hooks/useOutsideEvent"
+import usePrevious from "hooks/usePrevious"
 
 export type InlineEditProps = {
   /**
@@ -16,7 +17,7 @@ export type InlineEditProps = {
   /**
    * The component shown when user is editing (when the inline edit is not in readView).
    */
-  editView: (ref: React.Ref<HTMLInputElement>) => React.ReactNode
+  editView: (ref: React.MutableRefObject<HTMLInputElement | null>) => React.ReactNode
   /**
    *The component shown when not in editView. This is when the inline edit is read-only and not being edited.
    */
@@ -32,12 +33,13 @@ export type InlineEditProps = {
 }
 
 const InlineEdit = (props: InlineEditProps) => {
-  const editValueRef = useRef<HTMLInputElement>(null)
+  const editValueRef = useRef<HTMLInputElement | null>(null)
   const inlineEditRef = useRef(null)
+  const statePrevious = usePrevious(props.editing)
 
   useLayoutEffect(() => {
-    if (props.editing && editValueRef.current?.value === "") {
-      editValueRef.current.value = props.defaultValue || ""
+    if (statePrevious !== props.editing && props.editing) {
+      editValueRef.current && (editValueRef.current.value = props.defaultValue || "")
     }
   }, [props.editing, props.defaultValue])
 

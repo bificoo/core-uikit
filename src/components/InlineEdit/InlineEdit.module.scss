@@ -1,27 +1,17 @@
-.wrapper {
-  position: relative;
+.buttons {
+  display: flex;
 
-  .buttons {
-    width: 100px;
-    height: 100px;
-    background: #4A90E2;
-    display: flex;
+  .check {
+    margin-right: 4px;
+  }
 
-    .check {
-      margin-right: 4px;
-    }
+  .check,
+  .cross {
+    width: 32px;
+    padding-left: 12px !important;
 
-    .check,
-    .cross {
-      width: 32px;
-      padding-left: 12px !important;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      > div {
-        margin-right: 0px !important;
-      }
+    > div {
+      margin-right: 0px !important;
     }
   }
 }

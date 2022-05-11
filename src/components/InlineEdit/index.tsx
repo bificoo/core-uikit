@@ -4,6 +4,7 @@ import Icon from "components/Icon"
 import Button from "components/Button"
 import usePrevious from "hooks/usePrevious"
 import {
+  offset,
   useFloating,
   useClick,
   useRole,
@@ -48,6 +49,7 @@ const InlineEdit = (props: InlineEditProps) => {
     open: props.editing,
     onOpenChange: props.onCancel,
     placement: "bottom-end",
+    middleware: [offset(6)],
   })
 
   const { getReferenceProps, getFloatingProps } = useInteractions([
@@ -81,25 +83,19 @@ const InlineEdit = (props: InlineEditProps) => {
   }
 
   return (
-    <div ref={inlineEditRef} className={styled.wrapper}>
+    <div ref={inlineEditRef}>
       {props.editing ? (
         <div>
           <div {...referenceProps}>{props.editView(editViewRef)}</div>
           <FloatingPortal>
-            <FloatingFocusManager
-              context={context}
-              modal={false}
-              order={["reference", "content"]}
-              returnFocus={false}>
-              <div {...floatingProps}>
-                <Button variant="secondary" className={styled.check} onClick={handleConfirm}>
-                  <Icon name="check" width={16} height={16} className={styled.icon} />
-                </Button>
-                <Button variant="secondary" className={styled.cross} onClick={props.onCancel}>
-                  <Icon name="cross" width={16} height={16} />
-                </Button>
-              </div>
-            </FloatingFocusManager>
+            <div {...floatingProps}>
+              <Button variant="secondary" className={styled.check} onClick={handleConfirm}>
+                <Icon name="check" width={16} height={16} className={styled.icon} />
+              </Button>
+              <Button variant="secondary" className={styled.cross} onClick={props.onCancel}>
+                <Icon name="cross" width={16} height={16} />
+              </Button>
+            </div>
           </FloatingPortal>
         </div>
       ) : (

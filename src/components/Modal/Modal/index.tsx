@@ -13,11 +13,15 @@ export type ModalProps = ModalPopupProps &
   ModalBodyProps &
   ModalHeaderProps &
   ModalFooterProps &
-  Partial<Pick<PopupProps, "open" | "closeOnDocumentClick" | "onClose" | "children">>
+  Partial<Pick<PopupProps, "open" | "lockScroll" | "closeOnDocumentClick" | "onClose" | "children">>
 
 const Modal = (props: ModalProps) => {
   return (
-    <ModalPopup open={props.open} closeOnDocumentClick={props.backdrop} onClose={props.onClose}>
+    <ModalPopup
+      open={props.open}
+      closeOnDocumentClick={props.backdrop}
+      lockScroll={props.lockScroll}
+      onClose={props.onClose}>
       <ModalDialog>
         <Header title={props.title} />
         <Body content={props.content}>{props.children}</Body>

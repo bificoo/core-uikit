@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useEffect, useRef, useState } from "react"
+import React, { useLayoutEffect, useRef } from "react"
 import styled from "./InlineEdit.module.scss"
 import Icon from "components/Icon"
 import Button from "components/Button"
@@ -11,7 +11,6 @@ import {
   useDismiss,
   useInteractions,
   FloatingPortal,
-  FloatingFocusManager,
 } from "@floating-ui/react-dom-interactions"
 
 export type InlineEditProps = {

@@ -2,12 +2,14 @@ import Popup from "reactjs-popup"
 import { PopupProps } from "reactjs-popup/dist/types"
 
 export type ModalPopupProps = {
-  open?: PopupProps["open"]
-  backdrop?: PopupProps["closeOnDocumentClick"]
-  lockScroll?: PopupProps["lockScroll"]
-  onClose?: PopupProps["onClose"]
-  children?: PopupProps["children"]
-}
+  /**
+   * Should the modal appear on screen or not
+   */
+  open?: boolean
+  backdrop?: boolean
+} & Partial<
+  Pick<PopupProps, "open" | "lockScroll" | "closeOnDocumentClick" | "onClose" | "children">
+>
 
 const ModalPopup = ({
   open = false,

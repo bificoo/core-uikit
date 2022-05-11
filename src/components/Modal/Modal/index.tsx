@@ -19,7 +19,7 @@ const Modal = (props: ModalProps) => {
   return (
     <ModalPopup
       open={props.open}
-      backdrop={props.backdrop}
+      closeOnDocumentClick={props.backdrop}
       lockScroll={props.lockScroll}
       onClose={props.onClose}>
       <ModalDialog>

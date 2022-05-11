@@ -1,26 +1,17 @@
-.wrapper {
-  position: relative;
+.buttons {
+  display: flex;
 
-  .buttons {
-    display: flex;
-    margin-top: 6px;
-    position: absolute;
-    right: 0px;
-    .check {
-      margin-right: 4px;
-    }
+  .check {
+    margin-right: 4px;
+  }
 
-    .check,
-    .cross {
-      width: 32px;
-      padding-left: 12px !important;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  .check,
+  .cross {
+    width: 32px;
+    padding-left: 12px !important;
 
-      > div {
-        margin-right: 0px !important;
-      }
+    > div {
+      margin-right: 0px !important;
     }
   }
 }

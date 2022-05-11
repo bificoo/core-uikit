@@ -5,6 +5,7 @@ import Form from "components/Form"
 import { LinkButton } from "components/Button"
 import fakeData from "./users.json"
 import Tooltip from "../Tooltip"
+import InlineEdit from "components/InlineEdit"
 const { Column, HeaderCell, Cell } = Table
 
 type usersProps = {
@@ -597,5 +598,52 @@ export const TableWithPagination = () => {
         </Column>
       </PaginationTable>
     </div>
+  )
+}
+
+export const WithPopupContent = () => {
+  const [editing, setEditing] = useState(false)
+  const [firstName, setFirstName] = useState("Peggy")
+  return (
+    <Table
+      data={[
+        {
+          id: 1,
+          firstName: "Peggy",
+          lastName: "Schuppe",
+        },
+      ]}
+      rowHeight={72}>
+      <Column width={70} align="center" verticalAlign="middle">
+        <HeaderCell>Id</HeaderCell>
+        <Cell dataKey="id" />
+      </Column>
+
+      <Column width={200} align="center" verticalAlign="middle">
+        <HeaderCell>First Name</HeaderCell>
+        <Cell dataKey="firstName">
+          <InlineEdit
+            defaultValue={firstName}
+            editing={editing}
+            editView={ref => <Form.Input autoFocus ref={ref} placeholder="Enter a value" />}
+            readView={() => (
+              <div>
+                {firstName} <LinkButton onClick={() => setEditing(true)}>Edit</LinkButton>
+              </div>
+            )}
+            onConfirm={value => {
+              setFirstName(value)
+              setEditing(false)
+            }}
+            onCancel={() => setEditing(false)}
+          />
+        </Cell>
+      </Column>
+
+      <Column width={200} align="center" verticalAlign="middle">
+        <HeaderCell>Last Name</HeaderCell>
+        <Cell dataKey="lastName" />
+      </Column>
+    </Table>
   )
 }

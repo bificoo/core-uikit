@@ -151,3 +151,22 @@ export const CustomPartialModal: Story = () => {
     </>
   )
 }
+
+export const LockScrollModal: Story = () => {
+  const [open, setOpen] = useState(false)
+  return (
+    <>
+      <Button variant="primary" onClick={() => setOpen(true)}>
+        Open Alert Modal
+      </Button>
+      <Modal
+        lockScroll={false}
+        title="注意"
+        open={open}
+        confirmText="確定"
+        onClose={() => setOpen(false)}>
+        點擊確定即可關閉
+      </Modal>
+    </>
+  )
+}

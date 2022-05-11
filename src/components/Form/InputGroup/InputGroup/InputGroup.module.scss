@@ -21,7 +21,7 @@
   vertical-align: top;
   pointer-events: auto;
 
-  &:not(.disabled):not(.read-only) {
+  &:not(.disabled):not(.read-only):not(.invalid) {
     &:hover {
       background-color: #ebecf0;
     }

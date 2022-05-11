@@ -1,9 +1,17 @@
-import React, { useLayoutEffect, useRef } from "react"
+import React, { useLayoutEffect, useEffect, useRef, useState } from "react"
 import styled from "./InlineEdit.module.scss"
 import Icon from "components/Icon"
 import Button from "components/Button"
-import useOutsideEvent from "hooks/useOutsideEvent"
 import usePrevious from "hooks/usePrevious"
+import {
+  useFloating,
+  useClick,
+  useRole,
+  useDismiss,
+  useInteractions,
+  FloatingPortal,
+  FloatingFocusManager,
+} from "@floating-ui/react-dom-interactions"
 
 export type InlineEditProps = {
   /**
@@ -33,26 +41,42 @@ export type InlineEditProps = {
 }
 
 const InlineEdit = (props: InlineEditProps) => {
-  const editValueRef = useRef<HTMLInputElement | null>(null)
+  const editViewRef = useRef<HTMLInputElement | null>(null)
   const inlineEditRef = useRef(null)
-  const statePrevious = usePrevious(props.editing)
 
+  const { x, y, reference, floating, strategy, context } = useFloating({
+    open: props.editing,
+    onOpenChange: props.onCancel,
+    placement: "bottom-end",
+  })
+
+  const { getReferenceProps, getFloatingProps } = useInteractions([
+    useClick(context),
+    useRole(context),
+    useDismiss(context),
+  ])
+
+  const prevEditing = usePrevious(props.editing)
   useLayoutEffect(() => {
-    if (statePrevious !== props.editing && props.editing) {
-      editValueRef.current && (editValueRef.current.value = props.defaultValue || "")
+    if (prevEditing !== props.editing && props.editing) {
+      editViewRef.current && (editViewRef.current.value = props.defaultValue || "")
     }
   }, [props.editing, props.defaultValue])
 
-  useOutsideEvent({
-    refs: [inlineEditRef],
-    onClickOutside: () => {
-      props.onCancel()
+  const referenceProps = getReferenceProps({ ref: reference })
+  const floatingProps = getFloatingProps({
+    className: styled.buttons,
+    ref: floating,
+    style: {
+      position: strategy,
+      top: y ?? "",
+      left: x ?? "",
     },
   })
 
   const handleConfirm = () => {
-    if (editValueRef?.current?.value || editValueRef?.current?.value === "") {
-      props.onConfirm(editValueRef?.current?.value)
+    if (editViewRef?.current?.value || editViewRef?.current?.value === "") {
+      props.onConfirm(editViewRef?.current?.value)
     }
   }
 
@@ -60,15 +84,23 @@ const InlineEdit = (props: InlineEditProps) => {
     <div ref={inlineEditRef} className={styled.wrapper}>
       {props.editing ? (
         <div>
-          <div>{props.editView(editValueRef)}</div>
-          <div className={styled.buttons}>
-            <Button variant="secondary" className={styled.check} onClick={handleConfirm}>
-              <Icon name="check" width={16} height={16} className={styled.icon} />
-            </Button>
-            <Button variant="secondary" className={styled.cross} onClick={props.onCancel}>
-              <Icon name="cross" width={16} height={16} />
-            </Button>
-          </div>
+          <div {...referenceProps}>{props.editView(editViewRef)}</div>
+          <FloatingPortal>
+            <FloatingFocusManager
+              context={context}
+              modal={false}
+              order={["reference", "content"]}
+              returnFocus={false}>
+              <div {...floatingProps}>
+                <Button variant="secondary" className={styled.check} onClick={handleConfirm}>
+                  <Icon name="check" width={16} height={16} className={styled.icon} />
+                </Button>
+                <Button variant="secondary" className={styled.cross} onClick={props.onCancel}>
+                  <Icon name="cross" width={16} height={16} />
+                </Button>
+              </div>
+            </FloatingFocusManager>
+          </FloatingPortal>
         </div>
       ) : (
         props.readView()

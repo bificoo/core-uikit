@@ -74,6 +74,7 @@ const InlineEdit = (props: InlineEditProps) => {
       position: strategy,
       top: y ?? "",
       left: x ?? "",
+      zIndex: "5",
     },
   })
 

@@ -11,12 +11,12 @@ import QueryStatus from "components/QueryStatus"
 export type TableProps = RsuiteTableProps
 
 // TODO: 此元件應移到 core-uikit 專案中
-const Table = ({ data = [], ...props }: TableProps) => {
+const Table = ({ data = [], autoHeight = true, ...props }: TableProps) => {
   return (
     <div className={styled.wrapper}>
       <RsuiteTable
         {...props}
-        autoHeight
+        autoHeight={autoHeight}
         data={data}
         renderLoading={() => props.loading && <QueryStatus.Loading />}
       />

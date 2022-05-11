@@ -5,6 +5,7 @@ import Button from "components/Button"
 import usePrevious from "hooks/usePrevious"
 import {
   offset,
+  autoUpdate,
   useFloating,
   useClick,
   useRole,
@@ -49,6 +50,7 @@ const InlineEdit = (props: InlineEditProps) => {
     onOpenChange: props.onCancel,
     placement: "bottom-end",
     middleware: [offset(6)],
+    whileElementsMounted: autoUpdate,
   })
 
   const { getReferenceProps, getFloatingProps } = useInteractions([

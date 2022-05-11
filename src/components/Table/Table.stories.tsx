@@ -601,46 +601,49 @@ export const TableWithPagination = () => {
   )
 }
 
-export const WithPopupContent = () => {
+const InlineEditComponent = () => {
   const [editing, setEditing] = useState(false)
   const [firstName, setFirstName] = useState("Peggy")
   return (
-    <Table
-      data={[
-        {
-          id: 1,
-          firstName: "Peggy",
-          lastName: "Schuppe",
-        },
-      ]}
-      rowHeight={72}>
-      <Column width={70} align="center" verticalAlign="middle">
+    <InlineEdit
+      defaultValue={firstName}
+      editing={editing}
+      editView={ref => <Form.Input autoFocus ref={ref} placeholder="Enter a value" />}
+      readView={() => (
+        <div>
+          {firstName} <LinkButton onClick={() => setEditing(true)}>Edit</LinkButton>
+        </div>
+      )}
+      onConfirm={value => {
+        setFirstName(value)
+        setEditing(false)
+      }}
+      onCancel={() => setEditing(false)}
+    />
+  )
+}
+export const WithPopupContent = () => {
+  const data = Array(5).fill({ id: 1, firstName: "Peggy" })
+
+  const handleScroll = () => {
+    window.dispatchEvent(new Event("resize"))
+  }
+
+  return (
+    <Table height={200} autoHeight={false} data={data} rowHeight={72} onScroll={handleScroll}>
+      <Column width={70} verticalAlign="middle">
         <HeaderCell>Id</HeaderCell>
         <Cell dataKey="id" />
       </Column>
 
-      <Column width={200} align="center" verticalAlign="middle">
+      <Column width={200} verticalAlign="middle">
         <HeaderCell>First Name</HeaderCell>
-        <Cell dataKey="firstName">
-          <InlineEdit
-            defaultValue={firstName}
-            editing={editing}
-            editView={ref => <Form.Input autoFocus ref={ref} placeholder="Enter a value" />}
-            readView={() => (
-              <div>
-                {firstName} <LinkButton onClick={() => setEditing(true)}>Edit</LinkButton>
-              </div>
-            )}
-            onConfirm={value => {
-              setFirstName(value)
-              setEditing(false)
-            }}
-            onCancel={() => setEditing(false)}
-          />
+        <Cell>
+          <InlineEditComponent />
         </Cell>
       </Column>
 
-      <Column width={200} align="center" verticalAlign="middle">
+      <Column width={200} verticalAlign="middle">
         <HeaderCell>Last Name</HeaderCell>
         <Cell dataKey="lastName" />
       </Column>

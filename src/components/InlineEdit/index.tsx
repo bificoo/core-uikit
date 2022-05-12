@@ -54,7 +54,9 @@ const InlineEdit = (props: InlineEditProps) => {
   })
 
   const { getReferenceProps, getFloatingProps } = useInteractions([
-    useClick(context),
+    useClick(context, {
+      toggle: false,
+    }),
     useRole(context),
     useDismiss(context),
   ])

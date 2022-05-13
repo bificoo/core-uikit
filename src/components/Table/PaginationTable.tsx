@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 
-import { Table as RsuiteTable, TableProps as RsuiteTableProps, RowDataType } from "rsuite-table"
+import { TableProps as RsuiteTableProps, RowDataType } from "rsuite-table"
 
 // C:\Users\User\Documents\core-uikit\node_modules\rsuite-table\es\less
 
@@ -9,6 +9,7 @@ import "rsuite-table/dist/css/rsuite-table.min.css"
 import styled from "./Table.module.scss"
 import QueryStatus from "components/QueryStatus"
 import usePrevious from "hooks/usePrevious"
+import Table from "./Table"
 
 export type PaginationTableProps = {
   /** 最多顯示幾筆的下拉選單選項，預設為 10、30、50、100 筆 */
@@ -64,7 +65,7 @@ const PaginationTable = ({
 
   return (
     <div className={styled.wrapper}>
-      <RsuiteTable
+      <Table
         {...props}
         autoHeight
         data={visualData}

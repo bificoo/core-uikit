@@ -16,7 +16,8 @@ const DropdownItem = (props: DropdownItemProps) => {
   return (
     <div
       className={cx(styled.wrapper, props.className)}
-      onClick={e => setActiveKey(e, { eventKey: props.eventKey })}>
+      onClick={e => setActiveKey(e, { eventKey: props.eventKey })}
+      data-test="dropdown-item">
       {props.children}
     </div>
   )

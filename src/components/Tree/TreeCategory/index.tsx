@@ -21,7 +21,7 @@ const TreeCategory = (props: TreeCategoryProps) => {
   const { selected, expanded, onNodeToggle } = useContext(TreeContext)
   const expandedRef = useRef(false)
   const nodes: string[] = props.nodes ? [...props.nodes, props.eventKey] : [props.eventKey]
-
+  console.log("nodes", nodes)
   useEffect(() => {
     expandedRef.current = expanded?.some(el => el === props.eventKey)
   }, [expanded, props.eventKey])

@@ -169,21 +169,6 @@ export const Adaptive: Story<DropdownProps> = () => {
   )
 }
 
-export const Virtualized: Story<DropdownProps> = () => (
-  <Dropdown virtualized rowHeight={30}>
-    <Dropdown.Toggle>
-      <Button>Page actions</Button>
-    </Dropdown.Toggle>
-    <Dropdown.Menu>
-      {[...Array(100)].map((_, idx) => (
-        <Dropdown.Item eventKey={idx} key={idx}>
-          Row {idx}
-        </Dropdown.Item>
-      ))}
-    </Dropdown.Menu>
-  </Dropdown>
-)
-
 export const ControlMenuDisplay: Story<DropdownProps> = () => {
   const dropdownRef = useRef<DropdownActions>(null)
 
@@ -246,7 +231,7 @@ export const Mix: Story<DropdownProps> = () => {
   console.log(labelInfo)
 
   return (
-    <Dropdown virtualized rowHeight={32}>
+    <Dropdown>
       <Dropdown.Toggle>
         <Button>
           Page actions
@@ -327,7 +312,7 @@ export const Mix: Story<DropdownProps> = () => {
 
 export const Body: Story<DropdownProps> = () => {
   return (
-    <Dropdown virtualized rowHeight={32}>
+    <Dropdown>
       <Dropdown.Toggle>
         <Button>
           Page actions

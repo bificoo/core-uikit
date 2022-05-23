@@ -34,15 +34,6 @@ export type DropdownProps = {
    */
   disabled?: boolean
   /**
-   * Virtual scroll for dropdown item. If virtualized is true, the props of rowHeight must be defined.
-   */
-  virtualized?: boolean
-  /**
-   * Height of the dropdown item. If rowHeight is defined, the props of virtualized must be defined too.
-   */
-  rowHeight?: number
-  position?: PopupProps["position"]
-  /**
    * Called when selected value has changed.
    */
   onSelect?: (
@@ -68,7 +59,6 @@ const Dropdown = forwardRef<DropdownActions, DropdownProps>(function Dropdown(pr
       if (child.type === DropdownMenu) {
         menuElement = React.cloneElement(child, {
           style: { ...child.props.style, minWidth: clientWidth },
-          ...(props.virtualized ? { rowHeight: props.rowHeight } : {}),
         })
       }
     })
@@ -77,7 +67,7 @@ const Dropdown = forwardRef<DropdownActions, DropdownProps>(function Dropdown(pr
       trigger: triggerElement,
       menu: menuElement,
     }
-  }, [props.children, clientWidth, props.rowHeight, props.virtualized])
+  }, [props.children, clientWidth])
 
   const handleClickItem = (
     e: React.MouseEvent<Element, MouseEvent>,
@@ -104,7 +94,7 @@ const Dropdown = forwardRef<DropdownActions, DropdownProps>(function Dropdown(pr
           ref={popupRef}
           className="dropdown"
           trigger={open => dropdown.trigger && React.cloneElement(dropdown.trigger, { open })}
-          position={props.position || ["bottom left"]}
+          position={["bottom left"]}
           disabled={props.disabled}
           on="click"
           closeOnDocumentClick

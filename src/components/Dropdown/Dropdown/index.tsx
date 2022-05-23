@@ -34,6 +34,19 @@ export type DropdownProps = {
    */
   disabled?: boolean
   /**
+   * Virtual scroll for dropdown item. If virtualized is true, the props of rowHeight must be defined.
+   */
+  virtualized?: boolean
+  /**
+   * Height of the dropdown item. If rowHeight is defined, the props of virtualized must be defined too.
+   */
+  rowHeight?: number
+  position?: PopupProps["position"]
+  /**
+   * Enable when popup inside popup. To make sure onClickOutside behavior will work as expected
+   */
+  nested?: PopupProps["nested"]
+  /**
    * Called when selected value has changed.
    */
   onSelect?: (
@@ -98,6 +111,7 @@ const Dropdown = forwardRef<DropdownActions, DropdownProps>(function Dropdown(pr
           disabled={props.disabled}
           on="click"
           closeOnDocumentClick
+          nested={props.nested}
           mouseLeaveDelay={300}
           mouseEnterDelay={0}
           arrow={false}

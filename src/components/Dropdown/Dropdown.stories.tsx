@@ -2,6 +2,7 @@ import { Story, Meta } from "@storybook/react"
 import Dropdown, { DropdownProps, DropdownActions } from "components/Dropdown"
 import Button, { LinkButton } from "components/Button"
 import Icon from "components/Icon"
+import Tooltip from "components/Tooltip"
 import { useState, useRef } from "react"
 import Form from "components/Form"
 import { useForm } from "react-hook-form"
@@ -356,6 +357,31 @@ export const Body: Story<DropdownProps> = () => {
             <LinkButton>清除</LinkButton>
           </div>
         </Dropdown.Footer>
+      </Dropdown.Menu>
+    </Dropdown>
+  )
+}
+
+export const Nested: Story<DropdownProps> = () => {
+  return (
+    <Dropdown
+      nested={true}
+      onSelect={(_, { eventKey }: { eventKey?: ReactProps.EventKey }) => {
+        console.info(eventKey)
+      }}>
+      <Dropdown.Toggle>
+        <Button>Page actions</Button>
+      </Dropdown.Toggle>
+      <Dropdown.Menu>
+        <Dropdown.Item eventKey="edit">Edit</Dropdown.Item>
+        <Dropdown.Item eventKey="share">Share</Dropdown.Item>
+        <Dropdown.Item eventKey="move">
+          <Tooltip position="right center" offsetX={50} offsetY={35}>
+            <Tooltip.Toggle>Nested</Tooltip.Toggle>
+            <Tooltip.Body>Design System Nested Tooltip</Tooltip.Body>
+          </Tooltip>
+        </Dropdown.Item>
+        <Dropdown.Item eventKey="clone">Clone</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
   )

@@ -11,6 +11,9 @@ export type TooltipProps = {
   on?: PopupProps["on"]
   position?: PopupProps["position"]
   keepTooltipInside?: PopupProps["keepTooltipInside"]
+  offsetX?: PopupProps["offsetX"]
+  offsetY?: PopupProps["offsetY"]
+  nested?: PopupProps["nested"]
 } & WithChildren &
   WithPrefix
 
@@ -47,6 +50,9 @@ const Tooltip = ({
       keepTooltipInside={keepTooltipInside}
       on={on}
       position={position}
+      offsetX={props.offsetX}
+      offsetY={props.offsetY}
+      nested={props.nested}
       closeOnDocumentClick
       contentStyle={tooltip.bodyStyle}
       arrow={true}

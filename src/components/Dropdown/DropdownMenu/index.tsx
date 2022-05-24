@@ -1,12 +1,26 @@
-import cx from "classnames"
-import styled from "./DropdownMenu.module.scss"
-import { WithComponent } from "types/common"
 import React, { forwardRef, useMemo } from "react"
+import Popup from "reactjs-popup"
+import { PopupProps } from "reactjs-popup/dist/types"
+import { WithComponent } from "types/common"
 import DropdownItem from "../DropdownItem"
 import DropdownBody from "../DropdownBody"
 import DropdownHeader from "../DropdownHeader"
 import DropdownFooter from "../DropdownFooter"
-export type DropdownMenuProps = WithComponent
+import MenuContent from "./MenuContent"
+
+export type DropdownMenuProps = {
+  /**
+   * Height of the dropdown item.
+   */
+  rowHeight?: number
+  trigger?: JSX.Element
+  on?: PopupProps["on"]
+  position?: PopupProps["position"]
+  keepTooltipInside?: PopupProps["keepTooltipInside"]
+  offsetX?: PopupProps["offsetX"]
+  offsetY?: PopupProps["offsetY"]
+  nested?: PopupProps["nested"]
+} & WithComponent
 
 const DropdownMenu = forwardRef<HTMLDivElement, DropdownMenuProps>(function Dropdown(
   props: DropdownMenuProps,
@@ -25,7 +39,7 @@ const DropdownMenu = forwardRef<HTMLDivElement, DropdownMenuProps>(function Drop
       if (child.type === DropdownBody) {
         bodyElement = child
       }
-      if (child.type === DropdownItem) {
+      if (child.type === DropdownItem || child.type === DropdownMenu) {
         list.push(child)
       }
       if (child.type === DropdownFooter) {
@@ -41,12 +55,23 @@ const DropdownMenu = forwardRef<HTMLDivElement, DropdownMenuProps>(function Drop
   }, [props.children])
 
   return (
-    <div className={cx(styled.wrapper, props.className)} style={props.style} ref={ref}>
-      {menu.header}
-      {menu.body}
-      {menu.list.length > 0 && <div className={styled.list}>{menu.list}</div>}
-      {menu.footer}
-    </div>
+    <>
+      {!props.trigger ? (
+        <MenuContent ref={ref} menuContent={menu} rowHeight={props.rowHeight} />
+      ) : (
+        <Popup
+          trigger={<span>{props.trigger}</span>}
+          on={props.on}
+          nested={props.nested}
+          position={props.position}
+          offsetX={props.offsetX}
+          offsetY={props.offsetY}
+          closeOnDocumentClick
+          arrow={false}>
+          <MenuContent menuContent={menu} rowHeight={props.rowHeight} />
+        </Popup>
+      )}
+    </>
   )
 })
 

@@ -2,7 +2,6 @@ import { Story, Meta } from "@storybook/react"
 import Dropdown, { DropdownProps, DropdownActions } from "components/Dropdown"
 import Button, { LinkButton } from "components/Button"
 import Icon from "components/Icon"
-import Tooltip from "components/Tooltip"
 import { useState, useRef } from "react"
 import Form from "components/Form"
 import { useForm } from "react-hook-form"
@@ -375,12 +374,26 @@ export const Nested: Story<DropdownProps> = () => {
       <Dropdown.Menu>
         <Dropdown.Item eventKey="edit">Edit</Dropdown.Item>
         <Dropdown.Item eventKey="share">Share</Dropdown.Item>
-        <Dropdown.Item eventKey="move">
-          <Tooltip position="right center" offsetX={50} offsetY={35}>
-            <Tooltip.Toggle>Nested</Tooltip.Toggle>
-            <Tooltip.Body>Design System Nested Tooltip</Tooltip.Body>
-          </Tooltip>
-        </Dropdown.Item>
+        <Dropdown.Menu
+          trigger={<Dropdown.Item>Nested</Dropdown.Item>}
+          nested={true}
+          on="hover"
+          offsetX={100}
+          offsetY={-35}>
+          <Dropdown.Item eventKey="moves">Moves</Dropdown.Item>
+          <Dropdown.Item eventKey="like">Like</Dropdown.Item>
+          <Dropdown.Item eventKey="jagger">Jagger</Dropdown.Item>
+          <Dropdown.Menu
+            trigger={<Dropdown.Item>Nested 2</Dropdown.Item>}
+            nested={true}
+            on="hover"
+            offsetX={100}
+            offsetY={-35}>
+            <Dropdown.Item eventKey="moves2">Moves 2</Dropdown.Item>
+            <Dropdown.Item eventKey="like2">Like 2</Dropdown.Item>
+            <Dropdown.Item eventKey="jagger2">Jagger 2</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown.Menu>
         <Dropdown.Item eventKey="clone">Clone</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>

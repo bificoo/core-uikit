@@ -34,6 +34,10 @@ export type DropdownProps = {
    */
   disabled?: boolean
   /**
+   * Height of the dropdown item. If rowHeight is defined, the props of virtualized must be defined too.
+   */
+  position?: PopupProps["position"]
+  /**
    * Called when selected value has changed.
    */
   onSelect?: (
@@ -42,7 +46,10 @@ export type DropdownProps = {
   ) => void
 } & WithComponent
 
-const Dropdown = forwardRef<DropdownActions, DropdownProps>(function Dropdown(props, ref) {
+const Dropdown = forwardRef<DropdownActions, DropdownProps>(function Dropdown(
+  { position = ["bottom left"], ...props },
+  ref,
+) {
   const [clientWidth, setClientWidth] = useState(100)
   const [eventKey, setEventKay] = useState(props.defaultActiveKey)
   const popupRef = useRef<PopupActions | null>(null)
@@ -94,10 +101,11 @@ const Dropdown = forwardRef<DropdownActions, DropdownProps>(function Dropdown(pr
           ref={popupRef}
           className="dropdown"
           trigger={open => dropdown.trigger && React.cloneElement(dropdown.trigger, { open })}
-          position={["bottom left"]}
+          position={position}
           disabled={props.disabled}
           on="click"
           closeOnDocumentClick
+          nested={true}
           mouseLeaveDelay={300}
           mouseEnterDelay={0}
           arrow={false}

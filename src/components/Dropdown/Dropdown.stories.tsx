@@ -360,3 +360,31 @@ export const Body: Story<DropdownProps> = () => {
     </Dropdown>
   )
 }
+
+export const Nested: Story<DropdownProps> = () => {
+  return (
+    <Dropdown
+      onSelect={(_, { eventKey }: { eventKey?: ReactProps.EventKey }) => {
+        console.info(eventKey)
+      }}>
+      <Dropdown.Toggle>
+        <Button>Page actions</Button>
+      </Dropdown.Toggle>
+      <Dropdown.Menu>
+        <Dropdown.Item eventKey="edit">Edit</Dropdown.Item>
+        <Dropdown.Item eventKey="share">Share</Dropdown.Item>
+        <Dropdown.Menu trigger={<Dropdown.Item>Nested</Dropdown.Item>}>
+          <Dropdown.Item eventKey="moves">Moves</Dropdown.Item>
+          <Dropdown.Item eventKey="like">Like</Dropdown.Item>
+          <Dropdown.Item eventKey="jagger">Jagger</Dropdown.Item>
+          <Dropdown.Menu trigger={<Dropdown.Item>Nested 2</Dropdown.Item>}>
+            <Dropdown.Item eventKey="moves2">Moves 2</Dropdown.Item>
+            <Dropdown.Item eventKey="like2">Like 2</Dropdown.Item>
+            <Dropdown.Item eventKey="jagger2">Jagger 2</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown.Menu>
+        <Dropdown.Item eventKey="clone">Clone</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  )
+}

@@ -1,15 +1,20 @@
-import cx from "classnames"
-import styled from "./DropdownMenu.module.scss"
-import { WithComponent } from "types/common"
 import React, { forwardRef, useMemo } from "react"
+import Popup from "reactjs-popup"
+import { PopupProps } from "reactjs-popup/dist/types"
+import { WithComponent } from "types/common"
 import DropdownItem from "../DropdownItem"
 import DropdownBody from "../DropdownBody"
 import DropdownHeader from "../DropdownHeader"
 import DropdownFooter from "../DropdownFooter"
-export type DropdownMenuProps = WithComponent
+import MenuContent from "./MenuContent"
+
+export type DropdownMenuProps = {
+  trigger?: JSX.Element
+  position?: PopupProps["position"]
+} & WithComponent
 
 const DropdownMenu = forwardRef<HTMLDivElement, DropdownMenuProps>(function Dropdown(
-  props: DropdownMenuProps,
+  { position = ["bottom left"], ...props }: DropdownMenuProps,
   ref,
 ) {
   const menu = useMemo(() => {
@@ -25,7 +30,7 @@ const DropdownMenu = forwardRef<HTMLDivElement, DropdownMenuProps>(function Drop
       if (child.type === DropdownBody) {
         bodyElement = child
       }
-      if (child.type === DropdownItem) {
+      if (child.type === DropdownItem || child.type === DropdownMenu) {
         list.push(child)
       }
       if (child.type === DropdownFooter) {
@@ -41,12 +46,23 @@ const DropdownMenu = forwardRef<HTMLDivElement, DropdownMenuProps>(function Drop
   }, [props.children])
 
   return (
-    <div className={cx(styled.wrapper, props.className)} style={props.style} ref={ref}>
-      {menu.header}
-      {menu.body}
-      {menu.list.length > 0 && <div className={styled.list}>{menu.list}</div>}
-      {menu.footer}
-    </div>
+    <>
+      {!props.trigger ? (
+        <MenuContent ref={ref} menuContent={menu} />
+      ) : (
+        <Popup
+          trigger={<span>{props.trigger}</span>}
+          on="hover"
+          nested={true}
+          position={position}
+          offsetX={85}
+          offsetY={-35}
+          closeOnDocumentClick
+          arrow={false}>
+          <MenuContent menuContent={menu} />
+        </Popup>
+      )}
+    </>
   )
 })
 

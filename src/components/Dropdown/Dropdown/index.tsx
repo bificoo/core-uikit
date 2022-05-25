@@ -38,10 +38,6 @@ export type DropdownProps = {
    */
   position?: PopupProps["position"]
   /**
-   * Enable when popup inside popup. To make sure onClickOutside behavior will work as expected
-   */
-  nested?: PopupProps["nested"]
-  /**
    * Called when selected value has changed.
    */
   onSelect?: (
@@ -51,7 +47,7 @@ export type DropdownProps = {
 } & WithComponent
 
 const Dropdown = forwardRef<DropdownActions, DropdownProps>(function Dropdown(
-  { nested = false, position = ["bottom left"], ...props },
+  { position = ["bottom left"], ...props },
   ref,
 ) {
   const [clientWidth, setClientWidth] = useState(100)
@@ -109,7 +105,7 @@ const Dropdown = forwardRef<DropdownActions, DropdownProps>(function Dropdown(
           disabled={props.disabled}
           on="click"
           closeOnDocumentClick
-          nested={nested}
+          nested={true}
           mouseLeaveDelay={300}
           mouseEnterDelay={0}
           arrow={false}

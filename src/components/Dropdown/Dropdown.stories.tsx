@@ -364,7 +364,6 @@ export const Body: Story<DropdownProps> = () => {
 export const Nested: Story<DropdownProps> = () => {
   return (
     <Dropdown
-      nested={true}
       onSelect={(_, { eventKey }: { eventKey?: ReactProps.EventKey }) => {
         console.info(eventKey)
       }}>

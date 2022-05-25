@@ -4,7 +4,6 @@ import styled from "./DropdownMenu.module.scss"
 import { WithComponent } from "types/common"
 
 export type MenuContentProps = {
-  rowHeight?: number
   ref: React.Ref<HTMLInputElement>
   menuContent: {
     header: React.ReactNode

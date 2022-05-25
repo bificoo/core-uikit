@@ -9,21 +9,12 @@ import DropdownFooter from "../DropdownFooter"
 import MenuContent from "./MenuContent"
 
 export type DropdownMenuProps = {
-  /**
-   * Height of the dropdown item.
-   */
-  rowHeight?: number
   trigger?: JSX.Element
-  on?: PopupProps["on"]
   position?: PopupProps["position"]
-  keepTooltipInside?: PopupProps["keepTooltipInside"]
-  offsetX?: PopupProps["offsetX"]
-  offsetY?: PopupProps["offsetY"]
-  nested?: PopupProps["nested"]
 } & WithComponent
 
 const DropdownMenu = forwardRef<HTMLDivElement, DropdownMenuProps>(function Dropdown(
-  props: DropdownMenuProps,
+  { position = ["bottom left"], ...props }: DropdownMenuProps,
   ref,
 ) {
   const menu = useMemo(() => {
@@ -57,18 +48,18 @@ const DropdownMenu = forwardRef<HTMLDivElement, DropdownMenuProps>(function Drop
   return (
     <>
       {!props.trigger ? (
-        <MenuContent ref={ref} menuContent={menu} rowHeight={props.rowHeight} />
+        <MenuContent ref={ref} menuContent={menu} />
       ) : (
         <Popup
           trigger={<span>{props.trigger}</span>}
-          on={props.on}
-          nested={props.nested}
-          position={props.position}
-          offsetX={props.offsetX}
-          offsetY={props.offsetY}
+          on="hover"
+          nested={true}
+          position={position}
+          offsetX={85}
+          offsetY={-35}
           closeOnDocumentClick
           arrow={false}>
-          <MenuContent menuContent={menu} rowHeight={props.rowHeight} />
+          <MenuContent menuContent={menu} />
         </Popup>
       )}
     </>

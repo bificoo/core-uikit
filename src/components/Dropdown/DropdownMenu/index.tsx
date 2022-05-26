@@ -48,7 +48,7 @@ const DropdownMenu = forwardRef<HTMLDivElement, DropdownMenuProps>(function Drop
   return (
     <>
       {!props.trigger ? (
-        <MenuContent ref={ref} menuContent={menu} />
+        <MenuContent ref={ref} menuContent={menu} {...props} />
       ) : (
         <Popup
           trigger={<span>{props.trigger}</span>}
@@ -59,7 +59,7 @@ const DropdownMenu = forwardRef<HTMLDivElement, DropdownMenuProps>(function Drop
           offsetY={-35}
           closeOnDocumentClick
           arrow={false}>
-          <MenuContent menuContent={menu} />
+          <MenuContent menuContent={menu} {...props} />
         </Popup>
       )}
     </>

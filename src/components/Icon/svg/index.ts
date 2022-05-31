@@ -22,6 +22,7 @@ import { ReactComponent as BulletList } from "./BulletList.svg"
 import { ReactComponent as Check } from "./Check.svg"
 import { ReactComponent as Edit } from "./Edit.svg"
 import { ReactComponent as Warning } from "./Warning.svg"
+import { ReactComponent as ArrowsOutLineVertical } from "./ArrowsOutLineVertical.svg"
 
 const Image = Object.assign(
   {},
@@ -33,6 +34,7 @@ const Image = Object.assign(
     ArrowDown,
     ArrowLeft,
     ArrowRight,
+    ArrowsOutLineVertical,
     Cross,
     Calendar,
     UpTriangle,

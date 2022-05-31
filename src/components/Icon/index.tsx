@@ -23,6 +23,7 @@ export const Icon = (props: IconProps) => {
     ArrowDown: <Svg.ArrowDown />,
     ArrowLeft: <Svg.ArrowLeft />,
     ArrowRight: <Svg.ArrowRight />,
+    ArrowsOutLineVertical: <Svg.ArrowsOutLineVertical />,
     Search: <Svg.Search />,
     Group: <Svg.Group />,
     Information: <Svg.Information />,

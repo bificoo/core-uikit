@@ -16,7 +16,7 @@ export type IconProps = {
 
 export const Icon = (props: IconProps) => {
   const camelCased = props.name.replace(/-([a-z])/g, g => g[1].toUpperCase())
-  const compName = camelCased.charAt(0).toUpperCase() + camelCased.slice(1)
+  const componentName = camelCased.charAt(0).toUpperCase() + camelCased.slice(1)
 
   const compareIcon: { [key: string]: JSX.Element } = {
     ArrowUp: <Svg.ArrowUp />,
@@ -48,9 +48,12 @@ export const Icon = (props: IconProps) => {
 
   return (
     <div
-      className={cx({ [styled.arrowWrapper]: compName.includes("Arrow") }, props.className)}
+      className={cx(
+        { [styled["arrow-wrapper"]]: componentName.includes("Arrow") },
+        props.className,
+      )}
       style={{ display: "flex", ...props.style }}>
-      {React.cloneElement(compareIcon[compName], {
+      {React.cloneElement(compareIcon[componentName], {
         ...(props.width && { width: props.width }),
         ...(props.height && { height: props.height }),
       })}

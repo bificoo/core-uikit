@@ -76,6 +76,14 @@ export const LeftArrowIcon: Story<ButtonProps> = () => {
     </>
   )
 }
+LeftArrowIcon.parameters = {
+  docs: {
+    description: {
+      story:
+        "當按鈕中只有 Icon 和文字，且 Icon 位於最左側，則按鈕的左間距會縮減為 8px，以及 Icon 和文字之間會有 4px 的距離。",
+    },
+  },
+}
 
 export const RightArrowIcon: Story<ButtonProps> = () => {
   return (
@@ -91,4 +99,27 @@ export const RightArrowIcon: Story<ButtonProps> = () => {
       </div>
     </>
   )
+}
+RightArrowIcon.parameters = {
+  docs: {
+    description: {
+      story:
+        "當按鈕中只有 Icon 和文字，且 Icon 位於最右側，則按鈕的右間距會縮減為 8px，以及 Icon 和文字之間會有 4px 的距離。",
+    },
+  },
+}
+
+export const OnlyIcon: Story<ButtonProps> = () => {
+  return (
+    <Button variant="secondary">
+      <Icon name="arrows-out-line-vertical" />
+    </Button>
+  )
+}
+OnlyIcon.parameters = {
+  docs: {
+    description: {
+      story: "當按鈕中只有 Icon 時，間距維持左右 12px。",
+    },
+  },
 }

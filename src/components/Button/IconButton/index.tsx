@@ -6,8 +6,10 @@ export type IconButtonProps = ButtonProps
 
 const IconButton = (props: IconButtonProps) => {
   const iconConfig = { leftIcon: false, rightIcon: false }
+  const count = React.Children.count(props.children)
   React.Children.forEach(props.children, (child, index) => {
-    if (!React.isValidElement(child)) return
+    // 如果 button 中只有 icon，就不處理針對 icon 附加的樣式
+    if (!React.isValidElement(child) || count === 1) return
     if (child.type === Icon) {
       if (index === 0) iconConfig.leftIcon = true
       else iconConfig.rightIcon = true
@@ -16,7 +18,7 @@ const IconButton = (props: IconButtonProps) => {
 
   const customChildren: React.ReactNode[] = []
   React.Children.forEach(props.children, (child, index) => {
-    if (React.isValidElement(child) && child.type === Icon) {
+    if (React.isValidElement(child) && child.type === Icon && count !== 1) {
       customChildren.push(
         React.cloneElement(child, {
           ...child.props,

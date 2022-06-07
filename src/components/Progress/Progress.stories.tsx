@@ -1,12 +1,12 @@
 import { Story, Meta } from "@storybook/react"
 
-import Progress, { ProgressCircleProps, ProgressBarProps } from "components/Progress"
+import ProgressBar, { ProgressCircle, CircleProps, BarProps } from "components/Progress"
 
 export default {
   title: "General/Progress",
-  component: Progress,
+  component: ProgressBar,
   subcomponents: {
-    "Progress.Circle": Progress.Circle,
+    Progress: ProgressBar,
   },
   argTypes: {
     className: {
@@ -15,26 +15,26 @@ export default {
   },
 } as Meta
 
-export const Default: Story<ProgressBarProps> = () => {
-  return <Progress percent={30} />
+export const Default: Story<BarProps> = () => {
+  return <ProgressBar percent={30} />
 }
 
-export const EmptyBar: Story<ProgressBarProps> = () => {
-  return <Progress percent={0} />
+export const EmptyBar: Story<BarProps> = () => {
+  return <ProgressBar percent={0} />
 }
 
-export const FullBar: Story<ProgressBarProps> = () => {
-  return <Progress percent={120} />
+export const FullBar: Story<BarProps> = () => {
+  return <ProgressBar percent={120} />
 }
 
-export const FullCircle: Story<ProgressCircleProps> = () => {
-  return <Progress.Circle percent={125} />
+export const FullCircle: Story<CircleProps> = () => {
+  return <ProgressCircle percent={125} />
 }
 
-export const Circle: Story<ProgressCircleProps> = () => {
-  return <Progress.Circle percent={25} />
+export const DefaultCircle: Story<CircleProps> = () => {
+  return <ProgressCircle percent={25} />
 }
 
-export const EmptyCircle: Story<ProgressCircleProps> = () => {
-  return <Progress.Circle percent={0} />
+export const EmptyCircle: Story<CircleProps> = () => {
+  return <ProgressCircle percent={0} />
 }

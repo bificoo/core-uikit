@@ -7,7 +7,7 @@ const DEFAULT_SIZE = 97
 const DEFAULT_STROKE_WIDTH = 10
 const DEFAULT_CIRCLE_COLOR = "#EBECF0"
 
-export type ProgressCircleProps = {
+export type CircleProps = {
   /**
    * The percentage of the progress circle.
    */
@@ -15,10 +15,10 @@ export type ProgressCircleProps = {
   /**
    * The color of the progress circle.
    */
-  progressCircleColor?: string
+  strokeColor?: string
 } & WithComponent
 
-const ProgressCircle = ({ percent, progressCircleColor = "#557CC4" }: ProgressCircleProps) => {
+const Circle = ({ percent, strokeColor = "#557CC4" }: CircleProps) => {
   const center = DEFAULT_SIZE / 2
   const radius = DEFAULT_SIZE / 2 - DEFAULT_STROKE_WIDTH / 2
   const circumference = 2 * Math.PI * radius
@@ -43,7 +43,7 @@ const ProgressCircle = ({ percent, progressCircleColor = "#557CC4" }: ProgressCi
       <circle
         strokeDashoffset={offset}
         className={styled["svg-circle"]}
-        stroke={progressCircleColor}
+        stroke={strokeColor}
         cx={center}
         cy={center}
         r={radius}
@@ -58,4 +58,4 @@ const ProgressCircle = ({ percent, progressCircleColor = "#557CC4" }: ProgressCi
   )
 }
 
-export default ProgressCircle
+export default Circle

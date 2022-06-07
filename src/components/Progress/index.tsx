@@ -1,9 +1,7 @@
-import ProgressCircle from "./ProgressCircle"
-import ProgressBar from "./ProgressBar"
+import Circle from "./Circle"
+import Bar from "./Bar"
 
-export type { ProgressCircleProps } from "./ProgressCircle"
-export type { ProgressBarProps } from "./ProgressBar"
+export type { CircleProps } from "./Circle"
+export type { BarProps } from "./Bar"
 
-const Progress = Object.assign(ProgressBar, { Circle: ProgressCircle })
-
-export default Progress
+export { Bar as default, Circle as ProgressCircle }

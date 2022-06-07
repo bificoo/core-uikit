@@ -3,14 +3,14 @@ import { WithComponent } from "types/common"
 
 const PERCENT_MAX = 100
 
-export type ProgressBarProps = {
+export type BarProps = {
   /**
    * The percentage of the progress bar.
    */
   percent: number
 } & WithComponent
 
-const ProgressBar = (props: ProgressBarProps) => {
+const ProgressBar = (props: BarProps) => {
   const alignPercent = props.percent > PERCENT_MAX ? PERCENT_MAX : props.percent
   return (
     <div className={styled.wrapper}>

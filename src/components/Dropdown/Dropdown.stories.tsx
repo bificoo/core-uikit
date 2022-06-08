@@ -390,13 +390,13 @@ export const Nested: Story<DropdownProps> = () => {
   )
 }
 
-export const keepTooltipInside: Story<DropdownProps> = () => {
+export const KeepTooltipInside: Story<DropdownProps> = () => {
   return (
     <div className={styled.boundary}>
       <div className={styled.dropdown}>
         <Dropdown
           keepTooltipInside={`.${styled.boundary}`}
-          onSelect={(_, { eventKey }: { eventKey?: ReactProps.EventKey }) => {
+          onSelect={(_, { eventKey }) => {
             console.info(eventKey)
           }}>
           <Dropdown.Toggle>

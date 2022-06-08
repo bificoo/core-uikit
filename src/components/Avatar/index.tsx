@@ -16,8 +16,8 @@ const Avatar = (props: AvatarProps) => {
     </div>
   )
   return (
-    <div className={cx(styled.wrapper, props.className)} style={props.style}>
-      <div className={styled.circle}>{props.children ? props.children : defaultAvatar}</div>
+    <div className={cx(styled.circle, props.className)} style={props.style}>
+      {props.children ? props.children : defaultAvatar}
     </div>
   )
 }

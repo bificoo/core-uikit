@@ -47,7 +47,7 @@ export type DropdownProps = {
 } & WithComponent
 
 const Dropdown = forwardRef<DropdownActions, DropdownProps>(function Dropdown(
-  { position = ["bottom left"], ...props },
+  { position = ["bottom left"], keepTooltipInside = false, ...props },
   ref,
 ) {
   const [clientWidth, setClientWidth] = useState(100)
@@ -113,7 +113,8 @@ const Dropdown = forwardRef<DropdownActions, DropdownProps>(function Dropdown(
             border: "none",
             padding: "8px",
             boxShadow: "none",
-          }}>
+          }}
+          keepTooltipInside={keepTooltipInside}>
           {dropdown.menu}
         </Popup>
       </div>

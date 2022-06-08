@@ -5,6 +5,7 @@ import Icon from "components/Icon"
 import { useState, useRef } from "react"
 import Form from "components/Form"
 import { useForm } from "react-hook-form"
+import styled from "./Dropdown.module.scss"
 
 export default {
   title: "Navigation/Dropdown",
@@ -386,5 +387,43 @@ export const Nested: Story<DropdownProps> = () => {
         <Dropdown.Item eventKey="clone">Clone</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
+  )
+}
+
+export const keepTooltipInside: Story<DropdownProps> = () => {
+  return (
+    <div className={styled.boundary}>
+      <div className={styled.dropdown}>
+        <Dropdown
+          keepTooltipInside={`.${styled.boundary}`}
+          onSelect={(_, { eventKey }: { eventKey?: ReactProps.EventKey }) => {
+            console.info(eventKey)
+          }}>
+          <Dropdown.Toggle>
+            <Button>Page actions</Button>
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            <Dropdown.Item eventKey="edit">Edit</Dropdown.Item>
+            <Dropdown.Item eventKey="share">Share</Dropdown.Item>
+            <Dropdown.Item eventKey="move">Move</Dropdown.Item>
+            <Dropdown.Item eventKey="clone">Clone</Dropdown.Item>
+            <Dropdown.Item eventKey="delete">Delete</Dropdown.Item>
+            <Dropdown.Item eventKey="report">Report</Dropdown.Item>
+            <Dropdown.Item eventKey="edit">Edit</Dropdown.Item>
+            <Dropdown.Item eventKey="share">Share</Dropdown.Item>
+            <Dropdown.Item eventKey="move">Move</Dropdown.Item>
+            <Dropdown.Item eventKey="clone">Clone</Dropdown.Item>
+            <Dropdown.Item eventKey="delete">Delete</Dropdown.Item>
+            <Dropdown.Item eventKey="report">Report</Dropdown.Item>
+            <Dropdown.Item eventKey="edit">Edit</Dropdown.Item>
+            <Dropdown.Item eventKey="share">Share</Dropdown.Item>
+            <Dropdown.Item eventKey="move">Move</Dropdown.Item>
+            <Dropdown.Item eventKey="clone">Clone</Dropdown.Item>
+            <Dropdown.Item eventKey="delete">Delete</Dropdown.Item>
+            <Dropdown.Item eventKey="report">Report</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+      </div>
+    </div>
   )
 }

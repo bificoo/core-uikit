@@ -1,7 +1,6 @@
-import Circle from "./Circle"
-import Bar from "./Bar"
+import Progress from "./Progress"
 
 export type { CircleProps } from "./Circle"
-export type { BarProps } from "./Bar"
+export type { LineProps } from "./Line"
 
-export { Bar as default, Circle as ProgressCircle }
+export default Progress

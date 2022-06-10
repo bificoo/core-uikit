@@ -20,12 +20,13 @@ export type ProgressProps = {
 const PERCENT_MAX = 100
 
 const Progress = ({ type = "line", percent, ...props }: ProgressProps) => {
+  const validProgress = percent > PERCENT_MAX ? PERCENT_MAX : percent
   return type === "line" ? (
-    <Line percent={percent > PERCENT_MAX ? PERCENT_MAX : percent} {...props}>
+    <Line percent={validProgress} {...props}>
       {percent}
     </Line>
   ) : (
-    <Circle percent={percent > PERCENT_MAX ? PERCENT_MAX : percent} {...props}>
+    <Circle percent={validProgress} {...props}>
       {percent}
     </Circle>
   )

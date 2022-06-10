@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
 import { WithComponent } from "types/common"
-import styled from "./ProgressCircle.module.scss"
+import styled from "./Circle.module.scss"
 
-const PERCENT_MAX = 100
+// const PERCENT_MAX = 100
 const DEFAULT_SIZE = 97
 const DEFAULT_STROKE_WIDTH = 10
 const DEFAULT_CIRCLE_COLOR = "#EBECF0"
 
-export type ProgressCircleProps = {
+export type CircleProps = {
   /**
    * The percentage of the progress circle.
    */
@@ -15,20 +15,19 @@ export type ProgressCircleProps = {
   /**
    * The color of the progress circle.
    */
-  progressCircleColor?: string
+  strokeColor?: string
 } & WithComponent
 
-const ProgressCircle = ({ percent, progressCircleColor = "#557CC4" }: ProgressCircleProps) => {
+const Circle = ({ percent, strokeColor = "#557CC4", ...props }: CircleProps) => {
   const center = DEFAULT_SIZE / 2
   const radius = DEFAULT_SIZE / 2 - DEFAULT_STROKE_WIDTH / 2
   const circumference = 2 * Math.PI * radius
-  const alignPercent = percent > PERCENT_MAX ? PERCENT_MAX : percent
   const [offset, setOffset] = useState(circumference)
 
   useEffect(() => {
-    const progressOffset = ((100 - alignPercent) / 100) * circumference
+    const progressOffset = ((100 - percent) / 100) * circumference
     setOffset(progressOffset)
-  }, [setOffset, circumference, alignPercent, offset])
+  }, [setOffset, circumference, percent, offset])
 
   return (
     <svg className={styled.svg} width={DEFAULT_SIZE} height={DEFAULT_SIZE}>
@@ -43,7 +42,7 @@ const ProgressCircle = ({ percent, progressCircleColor = "#557CC4" }: ProgressCi
       <circle
         strokeDashoffset={offset}
         className={styled["svg-circle"]}
-        stroke={progressCircleColor}
+        stroke={strokeColor}
         cx={center}
         cy={center}
         r={radius}
@@ -52,10 +51,10 @@ const ProgressCircle = ({ percent, progressCircleColor = "#557CC4" }: ProgressCi
         transform={`rotate(-90 ${center} ${center})`}
       />
       <text className={styled["svg-circle-text"]} x={center + 5} y={center + 5}>
-        {percent}%
+        {props.children}%
       </text>
     </svg>
   )
 }
 
-export default ProgressCircle
+export default Circle

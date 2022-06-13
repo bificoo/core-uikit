@@ -1,6 +1,8 @@
+import { useRef } from "react"
 import { Story, Meta } from "@storybook/react"
 import Form from "components/Form"
 import DatePicker, { DatePickerProps } from "components/DatePicker"
+import Tooltip, { TooltipActions } from "components/Tooltip"
 
 export default {
   title: "Data Entry/DatePicker",
@@ -111,5 +113,23 @@ export const Invalid: Story<DatePickerProps> = () => {
         }}
       />
     </Form.Group>
+  )
+}
+
+export const WithTooltip: Story<DatePickerProps> = () => {
+  const tooltipRef = useRef<TooltipActions>(null)
+  return (
+    <Tooltip ref={tooltipRef} position="top center">
+      <Tooltip.Toggle>
+        <DatePicker
+          date={new Date()}
+          onChange={date => {
+            console.info(date)
+            tooltipRef.current?.close()
+          }}
+        />
+      </Tooltip.Toggle>
+      <Tooltip.Body>Tooltip example</Tooltip.Body>
+    </Tooltip>
   )
 }

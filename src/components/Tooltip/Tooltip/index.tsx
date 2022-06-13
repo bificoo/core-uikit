@@ -1,25 +1,32 @@
-import React, { useMemo } from "react"
+import React, { useMemo, useRef, forwardRef, useImperativeHandle } from "react"
 import Popup from "reactjs-popup"
-import { PopupProps } from "reactjs-popup/dist/types"
+import { PopupActions, PopupProps } from "reactjs-popup/dist/types"
 import TooltipToggle from "../TooltipToggle"
 import TooltipBody from "../TooltipBody"
 import "./Tooltip.module.scss"
-import { WithChildren, WithPrefix } from "types/common"
+import { WithChildren, WithComponent, WithPrefix } from "types/common"
 import cx from "classnames"
+
+export type TooltipActions = {
+  /**
+   * Close the menu.
+   */
+  close: () => void
+}
 
 export type TooltipProps = {
   on?: PopupProps["on"]
   position?: PopupProps["position"]
   keepTooltipInside?: PopupProps["keepTooltipInside"]
 } & WithChildren &
-  WithPrefix
+  WithPrefix &
+  WithComponent
 
-const Tooltip = ({
-  on = "hover",
-  position = "bottom center",
-  keepTooltipInside = false,
-  ...props
-}: TooltipProps) => {
+const Tooltip = forwardRef<TooltipActions, TooltipProps>(function Tooltip(
+  { on = "hover", position = "bottom center", keepTooltipInside = false, ...props }: TooltipProps,
+  ref,
+) {
+  const popupRef = useRef<PopupActions | null>(null)
   const tooltip = useMemo(() => {
     let triggerElement = <div />
     let bodyElement = null
@@ -40,8 +47,13 @@ const Tooltip = ({
     }
   }, [props.children])
 
+  useImperativeHandle(ref, () => ({
+    close: () => popupRef.current && popupRef.current?.close(),
+  }))
+
   return (
     <Popup
+      ref={popupRef}
       className={cx("core-tooltip", props.prefix)}
       trigger={<span>{tooltip.trigger}</span>}
       keepTooltipInside={keepTooltipInside}
@@ -54,6 +66,6 @@ const Tooltip = ({
       <span>{tooltip.body}</span>
     </Popup>
   )
-}
+})
 
 export default Tooltip

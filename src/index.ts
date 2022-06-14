@@ -77,7 +77,7 @@ export { default as Tabs } from "./components/Tabs"
 export type { TabsProps, TabProps } from "./components/Tabs"
 
 export { default as Tooltip } from "./components/Tooltip"
-export type { TooltipProps, TooltipToggleProps } from "./components/Tooltip"
+export type { TooltipProps, TooltipToggleProps, TooltipActions } from "./components/Tooltip"
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

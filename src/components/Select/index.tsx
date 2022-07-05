@@ -89,7 +89,7 @@ const Select = ({ isMulti = false, ...props }: FormControlProps & SelectProps) =
 
   return (
     <div
-      className={cx(styled.wrapper, props.className, styled[props.variant || ""])}
+      className={cx(styled.wrapper, props.className, { [styled.variant]: props.variant })}
       style={props.style}>
       <div className={styled.container}>
         <Popup

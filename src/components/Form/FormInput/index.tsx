@@ -42,7 +42,7 @@ const FormInput = React.forwardRef(function FormInput(
       variant: props.variant,
       plaintext: plaintext,
     })
-  }, [entered, props.disabled, props.readOnly, props.variant, plaintext])
+  }, [entered, props.disabled, props.readOnly, props.variant, plaintext, setAttributes])
 
   return (
     <div

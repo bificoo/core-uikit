@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useCallback, useState } from "react"
 import FormContext, { FormAttributes } from "../FormContext"
 
 export type FormProps = JSX.IntrinsicElements["form"] & FormAttributes
@@ -9,11 +9,11 @@ const Form = ({ layout, labelWidth, ...props }: FormProps) => {
     labelWidth: labelWidth,
   })
 
-  const update = (attributes: FormAttributes) => {
+  const update = useCallback((attributes: FormAttributes) => {
     setAttributes(prev => {
       return { ...prev, ...attributes }
     })
-  }
+  }, [])
 
   const submit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()

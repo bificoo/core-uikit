@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react"
+import React, { useState, useContext, useCallback } from "react"
 import FormLabel from "../FormLabel"
 import FormContext, { FormGroupContext, FormGroupAttributes } from "components/Form/FormContext"
 import uuid from "utils/uuid"
@@ -33,11 +33,11 @@ const FormGroup = (props: FormGroupProps) => {
   const { attributes: formAttributes } = useContext(FormContext)
   const layout = props.layout || formAttributes?.layout || "horizontal"
   const labelWidth = props.labelWidth || formAttributes?.labelWidth || "auto"
-  const update = (attributes: FormGroupAttributes) => {
+  const update = useCallback((attributes: FormGroupAttributes) => {
     setAttributes(prev => {
       return { ...prev, ...attributes }
     })
-  }
+  }, [])
 
   let label: React.ReactElement | null = null
   const children: React.ReactElement[] = []

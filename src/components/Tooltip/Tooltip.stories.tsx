@@ -85,7 +85,7 @@ export const Top: Story<TooltipProps> = () => {
   )
 }
 
-export const Click: Story<TooltipProps> = () => {
+export const ToggleClick: Story<TooltipProps> = () => {
   return (
     <Tooltip on="click" position="bottom center">
       <Tooltip.Toggle>
@@ -109,7 +109,7 @@ export const LongText: Story<TooltipProps> = () => {
   )
 }
 
-export const BodyStyle: Story<TooltipProps> = () => {
+export const StyledBody: Story<TooltipProps> = () => {
   return (
     <Tooltip position="right center">
       <Tooltip.Toggle>

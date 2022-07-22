@@ -45,6 +45,7 @@ export const Icon = (props: IconProps) => {
     Check: <Svg.Check />,
     Edit: <Svg.Edit />,
     Warning: <Svg.Warning />,
+    Setting: <Svg.Setting />,
   }
 
   return (

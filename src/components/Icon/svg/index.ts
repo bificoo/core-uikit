@@ -24,6 +24,7 @@ import { ReactComponent as Check } from "./Check.svg"
 import { ReactComponent as Edit } from "./Edit.svg"
 import { ReactComponent as Warning } from "./Warning.svg"
 import { ReactComponent as ArrowsOutLineVertical } from "./ArrowsOutLineVertical.svg"
+import { ReactComponent as Setting } from "./Setting.svg"
 
 const Image = Object.assign(
   {},
@@ -54,6 +55,7 @@ const Image = Object.assign(
     Check,
     Edit,
     Warning,
+    Setting,
   },
 )
 

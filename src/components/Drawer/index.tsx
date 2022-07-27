@@ -26,12 +26,12 @@ export type DrawerProps = {
 
 const Drawer = ({
   open = true,
-  size = 300,
+  size = 250,
   className,
   onClose,
   children,
   style,
-  layout = "vertical",
+  layout = "horizontal",
   ...props
 }: DrawerProps) => {
   const isTransitioning = useMountTransition(open, 300)

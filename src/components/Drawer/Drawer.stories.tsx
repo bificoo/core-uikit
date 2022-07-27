@@ -30,7 +30,6 @@ export const LayoutHorizontal: Story = () => {
       <Button onClick={() => setOpenDefault(!openDefault)}>Open Drawer</Button>
       <Drawer
         open={openDefault}
-        layout="horizontal"
         onClose={() => {
           setOpenDefault(!openDefault)
         }}>
@@ -49,7 +48,8 @@ export const LayoutVertical: Story = () => {
         open={openDefault}
         onClose={() => {
           setOpenDefault(!openDefault)
-        }}>
+        }}
+        layout="vertical">
         <div style={contentStyle}>content</div>
       </Drawer>
     </div>

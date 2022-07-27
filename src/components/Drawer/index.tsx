@@ -18,15 +18,20 @@ export type DrawerProps = {
    * Allows the drawer container custom width
    */
   size?: string | number
+  /**
+   * Allows the drawer container custom layout direction
+   */
+  layout?: "vertical" | "horizontal"
 } & WithComponent
 
 const Drawer = ({
   open = true,
-  size = 250,
+  size = 300,
   className,
   onClose,
   children,
   style,
+  layout = "vertical",
   ...props
 }: DrawerProps) => {
   const isTransitioning = useMountTransition(open, 300)
@@ -59,20 +64,22 @@ const Drawer = ({
 
   if (!isTransitioning && !open) return null
 
+  const layoutSize = typeof size === "number" ? `${size}px` : size
+  const containerStyle = layout === "vertical" ? { height: layoutSize } : { width: layoutSize }
+
   return createPortal(
     <div
       className={cx(
         styled.wrapper,
         { [styled.in]: isTransitioning },
         { [styled.active]: open },
+        styled[layout],
         className,
       )}
       style={style}
       {...props}>
       <div className={styled.overlay} onClick={onClose} />
-      <div
-        className={styled.container}
-        style={{ width: typeof size === "number" ? `${size}px` : size }}>
+      <div className={styled.container} style={containerStyle}>
         {children}
       </div>
     </div>,

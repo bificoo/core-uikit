@@ -23,7 +23,7 @@ const contentStyle = {
   margin: "10px",
 }
 
-export const Default: Story = () => {
+export const LayoutHorizontal: Story = () => {
   const [openDefault, setOpenDefault] = useState(false)
   return (
     <div>
@@ -33,6 +33,23 @@ export const Default: Story = () => {
         onClose={() => {
           setOpenDefault(!openDefault)
         }}>
+        <div style={contentStyle}>content</div>
+      </Drawer>
+    </div>
+  )
+}
+
+export const LayoutVertical: Story = () => {
+  const [openDefault, setOpenDefault] = useState(false)
+  return (
+    <div>
+      <Button onClick={() => setOpenDefault(!openDefault)}>Open Drawer</Button>
+      <Drawer
+        open={openDefault}
+        onClose={() => {
+          setOpenDefault(!openDefault)
+        }}
+        layout="vertical">
         <div style={contentStyle}>content</div>
       </Drawer>
     </div>

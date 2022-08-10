@@ -46,6 +46,8 @@ export const Icon = (props: IconProps) => {
     Edit: <Svg.Edit />,
     Warning: <Svg.Warning />,
     Setting: <Svg.Setting />,
+    Lock: <Svg.Lock />,
+    CircleCross: <Svg.CircleCross />,
   }
 
   return (

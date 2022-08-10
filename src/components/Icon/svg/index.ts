@@ -25,6 +25,8 @@ import { ReactComponent as Edit } from "./Edit.svg"
 import { ReactComponent as Warning } from "./Warning.svg"
 import { ReactComponent as ArrowsOutLineVertical } from "./ArrowsOutLineVertical.svg"
 import { ReactComponent as Setting } from "./Setting.svg"
+import { ReactComponent as Lock } from "./Lock.svg"
+import { ReactComponent as CircleCross } from "./CircleCross.svg"
 
 const Image = Object.assign(
   {},
@@ -56,6 +58,8 @@ const Image = Object.assign(
     Edit,
     Warning,
     Setting,
+    Lock,
+    CircleCross,
   },
 )
 

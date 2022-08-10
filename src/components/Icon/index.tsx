@@ -50,6 +50,7 @@ export const Icon = (props: IconProps) => {
     CircleCross: <Svg.CircleCross />,
   }
 
+  console.info("t")
   return (
     <div
       className={cx(

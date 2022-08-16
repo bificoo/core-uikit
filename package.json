@@ -16,6 +16,7 @@
     "start": "start-storybook -p 6006 -s public",
     "build": "build-storybook -s public",
     "build:library": "rollup -c",
+    "deploy": "gh-pages -d storybook-static",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "semantic-release": "semantic-release"
@@ -63,6 +64,7 @@
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
     "dayjs": "^1.10.7",
+    "gh-pages": "^4.0.0",
     "react": ">=16.9.0",
     "react-day-picker": "^7.4.10",
     "react-dom": ">=16.9.0",
